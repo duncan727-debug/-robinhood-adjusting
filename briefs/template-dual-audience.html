@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Florida Business Brief - April 23, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        header {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .masthead {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1f2937;
+        }
+
+        .tagline {
+            font-size: 15px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .date-line {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-top: 12px;
+        }
+
+        .intro {
+            background: #f3f4f6;
+            padding: 24px;
+            margin-bottom: 35px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .intro p {
+            font-size: 15px;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro p:first-child {
+            margin-bottom: 10px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        section h2 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6b7280;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .item {
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .item p:last-child {
+            margin-bottom: 0;
+        }
+
+        .source {
+            font-size: 12px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .key-numbers {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            padding: 24px;
+            background: #f9fafb;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .number-box {
+            text-align: center;
+        }
+
+        .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .number-label {
+            font-size: 12px;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Audience toggle - for template clarity */
+        .audience-note {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        /* Service industry section */
+        .service-insights {
+            background: #eff6ff;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #0284c7;
+        }
+
+        .service-insights h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 16px;
+        }
+
+        .service-insights .insight {
+            margin-bottom: 18px;
+        }
+
+        .service-insights .insight:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-insights .insight-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 6px;
+        }
+
+        .service-insights .insight-text {
+            font-size: 14px;
+            color: #164e63;
+            line-height: 1.6;
+        }
+
+        /* Real estate section */
+        .realestate-insights {
+            background: #fef2f2;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+        }
+
+        .realestate-insights h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #7f1d1d;
+            margin-bottom: 16px;
+        }
+
+        .realestate-insights .insight {
+            margin-bottom: 18px;
+        }
+
+        .realestate-insights .insight:last-child {
+            margin-bottom: 0;
+        }
+
+        .realestate-insights .insight-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #7f1d1d;
+            margin-bottom: 6px;
+        }
+
+        .realestate-insights .insight-text {
+            font-size: 14px;
+            color: #991b1b;
+            line-height: 1.6;
+        }
+
+        footer {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+            margin-top: 35px;
+            font-size: 12px;
+            color: #9ca3af;
+            text-align: center;
+        }
+
+        .footer-note {
+            font-size: 11px;
+            color: #d1d5db;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="masthead">South Florida Business Brief</div>
+            <div class="tagline">Weekly market intelligence for South Florida professionals</div>
+            <div class="date-line">Wednesday, April 23, 2026</div>
+        </header>
+
+        <div class="intro">
+            <p>This week brought renewed momentum across South Florida's business ecosystem. We're seeing strong activity in commercial real estate, expanding employment, and record port activity. Here's what's happening and what it means for your business.</p>
+        </div>
+
+        <div class="key-numbers">
+            <div class="number-box">
+                <div class="number">↑ 3.2%</div>
+                <div class="number-label">Regional Banking Index</div>
+            </div>
+            <div class="number-box">
+                <div class="number">$2.8B</div>
+                <div class="number-label">Active Development Pipeline</div>
+            </div>
+            <div class="number-box">
+                <div class="number">3.2%</div>
+                <div class="number-label">Unemployment (5-yr low)</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Market Overview</h2>
+            <div class="item">
+                <h3>Commercial Real Estate Momentum Accelerates</h3>
+                <p>Enterprise-class properties across Miami-Dade, Broward, and Palm Beach counties are seeing strong investor interest. New capital is entering the market as confidence in the region's fundamentals remains high.</p>
+                <p class="source">Commercial Real Estate Development Association</p>
+            </div>
+            <div class="item">
+                <h3>Regional Employment at Five-Year High</h3>
+                <p>South Florida's unemployment rate dropped to 3.2%, driven by growth in hospitality, healthcare, and professional services. Migration patterns continue to support workforce expansion.</p>
+                <p class="source">Florida Economic Development Council</p>
+            </div>
+            <div class="item">
+                <h3>Port Activity Sets Records</h3>
+                <p>Port Miami and Port Everglades are handling unprecedented cargo volumes. Recent international trade agreements are expanding opportunities for regional logistics, distribution, and import/export services.</p>
+                <p class="source">Port Authority Report</p>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             CHOOSE YOUR AUDIENCE VERSION BELOW
+             Delete the section you don't need for this send
+             ===================================================== -->
+
+        <div class="audience-note">
+            ✏️ TEMPLATE NOTE: Use SERVICE INDUSTRY version below for service professionals. Use REAL ESTATE version for investors/brokers.
+        </div>
+
+        <!-- ==================== SERVICE INDUSTRY VERSION ==================== -->
+        <section class="service-insights">
+            <h3>What This Means For Your Business</h3>
+            <div class="insight">
+                <div class="insight-title">New Construction = New Work Opportunities</div>
+                <div class="insight-text">That $2.8B development pipeline means contractors, electricians, HVAC, and specialty trades are in demand. Property management companies and business service providers are ramping up to service these new projects.</div>
+            </div>
+            <div class="insight">
+                <div class="insight-title">Growing Businesses Need Your Services</div>
+                <div class="insight-text">With employment up and new companies relocating to South Florida, demand is growing for accounting, legal, insurance, staffing, and consulting services. This is lead generation season for B2B service providers.</div>
+            </div>
+            <div class="insight">
+                <div class="insight-title">Commercial Finance Opening Doors</div>
+                <div class="insight-text">Regional banks are actively lending. Business owners are financing expansions and new ventures. If you work with growth-stage companies, now is the time to connect with them through referral partners and networking.</div>
+            </div>
+            <div class="insight">
+                <div class="insight-title">Referral Partner Opportunity</div>
+                <div class="insight-text">With rapid growth, service professionals are busier than ever. Look for partnership opportunities with accountants, brokers, contractors, and consultants who are referring business to complementary service providers.</div>
+            </div>
+        </section>
+
+        <!-- ==================== REAL ESTATE VERSION (COMMENTED OUT) ==================== -->
+        <!--
+        <section class="realestate-insights">
+            <h3>Investment Implications</h3>
+            <div class="insight">
+                <div class="insight-title">Mixed-Use Development Leads Market</div>
+                <div class="insight-text">$2.8B in active projects with emphasis on transit-oriented development and mixed-income housing. These asset classes are attracting institutional capital and showing stronger leasing momentum than traditional office.</div>
+            </div>
+            <div class="insight">
+                <div class="insight-title">Premium Office Commands 12% Rent Premium</div>
+                <div class="insight-text">Class-A properties in Miami's central business district are significantly outpacing suburban markets. Core office in prime locations remains resilient while secondary markets adjust to hybrid work trends.</div>
+            </div>
+            <div class="insight">
+                <div class="insight-title">Financing Environment Favorable</div>
+                <div class="insight-text">Commercial lending is robust with new originations above historical averages. Regional banks are actively competing for deals and offering competitive terms, particularly for stabilized income-producing assets.</div>
+            </div>
+            <div class="insight">
+                <div class="insight-title">Port Activity Strengthens Logistics Real Estate</div>
+                <div class="insight-text">Record cargo volumes at Miami and Everglades ports create demand for industrial warehousing, distribution space, and logistics real estate. Asset classes supporting regional trade are well-positioned.</div>
+            </div>
+        </section>
+        -->
+
+        <footer>
+            <p>South Florida Business Brief is sent weekly to service professionals, investors, and business leaders in the region.</p>
+            <div class="footer-note">Questions or topic suggestions? Reply to this email.</div>
+        </footer>
+    </div>
+</body>
+</html>

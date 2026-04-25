@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robinhood Adjusting — South Florida Insurance Claim Advocates</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:   #0f2d4a;
+      --navy2:  #1a3a5c;
+      --red:    #c41e3a;
+      --gold:   #c9922a;
+      --light:  #f7f8fa;
+      --white:  #ffffff;
+      --text:   #2c2c2c;
+      --muted:  #6b7280;
+      --border: #e2e6ea;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--white);
+      letter-spacing: 1px;
+      line-height: 1.15;
+    }
+
+    .nav-logo .logo-wordmark { display: flex; flex-direction: column; }
+    .nav-logo .logo-sub { font-size: 10px; font-weight: normal; letter-spacing: 2px; color: rgba(255,255,255,.55); text-transform: uppercase; font-family: 'Arial', sans-serif; }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.8);
+      transition: color .2s;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background .2s !important;
+    }
+
+    .nav-cta:hover { background: #a01830 !important; color: var(--white) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1e4976 100%);
+      color: var(--white);
+      padding: 100px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--red);
+    }
+
+    .hero-eyebrow {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    #hero h1 {
+      font-size: 52px;
+      line-height: 1.15;
+      font-weight: bold;
+      margin-bottom: 24px;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #hero h1 em { color: var(--gold); font-style: normal; }
+
+    #hero p {
+      font-size: 20px;
+      color: rgba(255,255,255,.85);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      padding: 16px 36px;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 4px;
+      letter-spacing: .5px;
+      transition: background .2s, transform .1s;
+    }
+
+    .btn-primary:hover { background: #a01830; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 15px 36px;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      border: 2px solid rgba(255,255,255,.5);
+      border-radius: 4px;
+      letter-spacing: .5px;
+      transition: border-color .2s, transform .1s;
+    }
+
+    .btn-secondary:hover { border-color: var(--white); transform: translateY(-1px); }
+
+    .hero-trust {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-item {
+      text-align: center;
+    }
+
+    .hero-trust-item .num {
+      font-size: 36px;
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+    .hero-trust-item .label {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,.65);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 60px; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-photo-block {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 48px 40px;
+      color: var(--white);
+      text-align: center;
+    }
+
+.about-photo-block h3 { font-size: 24px; margin-bottom: 6px; }
+    .about-photo-block .title { color: var(--gold); font-size: 13px; letter-spacing: 1px; font-family: 'Arial', sans-serif; text-transform: uppercase; margin-bottom: 20px; }
+
+    .about-credentials {
+      list-style: none;
+      text-align: left;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,.8);
+      line-height: 2;
+    }
+
+    .about-credentials li::before { content: '✓ '; color: var(--gold); font-weight: bold; }
+
+    .about-content h2 { font-size: 32px; color: var(--navy); margin-bottom: 20px; }
+
+    .about-content p { color: #444; margin-bottom: 16px; font-size: 17px; }
+
+    .about-langs {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lang-badge {
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      color: var(--navy);
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works { background: var(--light); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .step-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 32px 24px;
+      border-top: 4px solid var(--red);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+
+    .step-num {
+      font-size: 40px;
+      font-weight: bold;
+      color: var(--border);
+      margin-bottom: 16px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .step-card h4 { font-size: 17px; color: var(--navy); margin-bottom: 10px; }
+    .step-card p { font-size: 14px; color: var(--muted); font-family: 'Arial', sans-serif; line-height: 1.6; }
+
+    /* ── FOR POLICYHOLDERS ── */
+    #policyholders { background: var(--white); }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .resource-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      transition: box-shadow .2s, border-color .2s;
+    }
+
+    .resource-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+      border-color: var(--navy2);
+    }
+
+    .resource-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .resource-card h4 { font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+    .resource-card p { font-size: 14px; color: var(--muted); font-family: 'Arial', sans-serif; line-height: 1.6; }
+
+    .resource-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      color: var(--red);
+      font-weight: bold;
+      letter-spacing: .3px;
+    }
+
+    .resource-link::after { content: ' →'; }
+
+    /* ── FOR SERVICE PROVIDERS ── */
+    #service-providers { background: var(--navy); color: var(--white); }
+
+    #service-providers .section-title { color: var(--white); }
+    #service-providers .section-subtitle { color: rgba(255,255,255,.7); }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .partner-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      padding: 28px;
+      transition: background .2s;
+    }
+
+    .partner-card:hover { background: rgba(255,255,255,.12); }
+
+    .partner-card h4 { font-size: 16px; color: var(--gold); margin-bottom: 10px; }
+    .partner-card p { font-size: 14px; color: rgba(255,255,255,.7); font-family: 'Arial', sans-serif; line-height: 1.6; }
+
+    .partner-cta-box {
+      background: var(--red);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .partner-cta-box h3 { font-size: 26px; margin-bottom: 12px; }
+    .partner-cta-box p { font-size: 16px; color: rgba(255,255,255,.85); margin-bottom: 28px; }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      padding: 14px 32px;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 4px;
+      letter-spacing: .3px;
+      transition: background .2s;
+    }
+
+    .btn-white:hover { background: var(--light); }
+
+    /* ── CONTENT HUB ── */
+    #content-hub { background: var(--light); }
+
+    .content-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .tab-btn {
+      padding: 12px 28px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--muted);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color .2s, border-color .2s;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .tab-btn.active { color: var(--navy); border-bottom-color: var(--red); }
+    .tab-btn:hover { color: var(--navy); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .briefs-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .brief-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: box-shadow .2s;
+    }
+
+    .brief-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+
+    .brief-date {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .brief-item h4 { font-size: 17px; color: var(--navy); }
+    .brief-item p { font-size: 14px; color: var(--muted); font-family: 'Arial', sans-serif; margin-top: 4px; }
+
+    .brief-arrow {
+      color: var(--red);
+      font-size: 22px;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-left: 24px;
+    }
+
+    /* ── BLOG ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+
+    .blog-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+
+    .blog-card-img {
+      height: 140px;
+      background: linear-gradient(135deg, var(--navy2), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+    }
+
+    .blog-card-body { padding: 24px; }
+
+    .blog-tag {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .blog-card-body h4 { font-size: 16px; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .blog-card-body p { font-size: 13px; color: var(--muted); font-family: 'Arial', sans-serif; line-height: 1.5; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--white); }
+
+    .faq-list { max-width: 760px; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .faq-q {
+      font-size: 17px;
+      color: var(--navy);
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 22px;
+      color: var(--red);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+
+    .faq-item.open .faq-q::after { content: '−'; }
+
+    .faq-a {
+      display: none;
+      margin-top: 14px;
+      font-size: 15px;
+      color: var(--muted);
+      font-family: 'Arial', sans-serif;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy); color: var(--white); }
+
+    #contact .section-title { color: var(--white); }
+    #contact .section-subtitle { color: rgba(255,255,255,.7); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info h3 { font-size: 22px; color: var(--gold); margin-bottom: 20px; }
+
+    .contact-list {
+      list-style: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,.8);
+      line-height: 2.4;
+    }
+
+    .contact-list strong { color: var(--white); }
+
+    .contact-note {
+      margin-top: 28px;
+      padding: 20px;
+      background: rgba(255,255,255,.07);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,.75);
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group label {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 4px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      transition: border-color .2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.35); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .form-group select option { background: var(--navy); }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f17;
+      color: rgba(255,255,255,.5);
+      padding: 40px 60px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo { font-size: 16px; font-weight: bold; color: var(--white); }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: rgba(255,255,255,.5); transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 60px 24px; }
+      #hero { padding: 72px 24px; }
+      #hero h1 { font-size: 34px; }
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .resource-grid,
+      .partners-grid,
+      .blog-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-trust { gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─────────── NAV ─────────── -->
+<nav>
+  <div class="nav-logo">
+    <!-- Small shield nav mark -->
+    <svg width="34" height="42" viewBox="0 0 34 42" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+      <path d="M17,40 C5,33 2,26 2,21 L2,3 L32,3 L32,21 C32,26 29,33 17,40Z" fill="rgba(255,255,255,0.06)" stroke="#c9922a" stroke-width="1.8"/>
+      <path d="M17,36 C7,30 6,24 6,20 L6,7 L28,7 L28,20 C28,24 27,30 17,36Z" fill="none" stroke="#c9922a" stroke-width="0.8" opacity="0.45"/>
+      <path d="M3,24 L17,13 L31,24 L31,27.5 L17,16.5 L3,27.5Z" fill="#c9922a"/>
+      <line x1="9" y1="21" x2="13" y2="10" stroke="#c9922a" stroke-width="1.4" stroke-linecap="round"/>
+      <polygon points="13,9 10.5,13.5 15.5,13.5" fill="#c9922a"/>
+      <line x1="25" y1="21" x2="21" y2="10" stroke="#c9922a" stroke-width="1.4" stroke-linecap="round"/>
+      <polygon points="21,9 18.5,13.5 23.5,13.5" fill="#c9922a"/>
+      <rect x="13" y="30" width="8" height="7" rx="1" fill="none" stroke="#c9922a" stroke-width="1.1"/>
+      <rect x="15.5" y="28" width="3" height="3.5" rx="0.5" fill="#c9922a"/>
+    </svg>
+    <div class="logo-wordmark">
+      <span>Robinhood <span style="color:var(--gold)">Adjusting</span></span>
+      <span class="logo-sub">South Florida</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#policyholders">For Policyholders</a></li>
+    <li><a href="#service-providers">For Partners</a></li>
+    <li><a href="#content-hub">Resources</a></li>
+    <li><a href="providers/index.html">Providers</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+  </ul>
+</nav>
+
+<!-- ─────────── HERO ─────────── -->
+<section id="hero">
+  <div class="hero-eyebrow">South Florida · Licensed Public Adjuster</div>
+  <h1>Your Insurance Company Has an Adjuster.<br><em>Now You Have One Too.</em></h1>
+  <p>We represent property owners — not insurance companies — to make sure you receive every dollar your claim deserves.</p>
+  <div class="hero-buttons">
+    <a href="#contact" class="btn-primary">Get a Free Claim Review</a>
+    <a href="#how-it-works" class="btn-secondary">How It Works</a>
+  </div>
+  <div class="hero-trust">
+    <div class="hero-trust-item">
+      <div class="num">No&nbsp;Fee</div>
+      <div class="label">Unless You Collect</div>
+    </div>
+    <div class="hero-trust-item">
+      <div class="num">100%</div>
+      <div class="label">On Your Side</div>
+    </div>
+    <div class="hero-trust-item">
+      <div class="num">3</div>
+      <div class="label">Languages Spoken</div>
+    </div>
+    <div class="hero-trust-item">
+      <div class="num">FL</div>
+      <div class="label">Licensed &amp; Insured</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── ABOUT ─────────── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo-block">
+        <!-- Coat of Arms -->
+        <svg width="164" height="210" viewBox="0 0 164 210" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto 24px;display:block">
+          <!-- Shield body -->
+          <path d="M82,198 C24,162 8,128 8,100 L8,12 L156,12 L156,100 C156,128 140,162 82,198Z" fill="rgba(255,255,255,0.04)" stroke="#c9922a" stroke-width="3.5"/>
+          <!-- Inner decorative border -->
+          <path d="M82,182 C36,150 22,122 22,99 L22,25 L142,25 L142,99 C142,122 128,150 82,182Z" fill="none" stroke="#c9922a" stroke-width="1.2" opacity="0.4"/>
+          <!-- Chevron -->
+          <path d="M10,112 L82,58 L154,112 L154,128 L82,74 L10,128Z" fill="#c9922a"/>
+          <!-- Left arrow (chief) -->
+          <line x1="36" y1="100" x2="58" y2="38" stroke="#c9922a" stroke-width="2.4" stroke-linecap="round"/>
+          <polygon points="58,36 53,47 63,45" fill="#c9922a"/>
+          <line x1="36" y1="100" x2="30" y2="93" stroke="#c9922a" stroke-width="1.4" opacity="0.8"/>
+          <line x1="36" y1="100" x2="42" y2="107" stroke="#c9922a" stroke-width="1.4" opacity="0.8"/>
+          <!-- Right arrow (chief, crossing left) -->
+          <line x1="128" y1="100" x2="106" y2="38" stroke="#c9922a" stroke-width="2.4" stroke-linecap="round"/>
+          <polygon points="106,36 101,47 111,45" fill="#c9922a"/>
+          <line x1="128" y1="100" x2="134" y2="93" stroke="#c9922a" stroke-width="1.4" opacity="0.8"/>
+          <line x1="128" y1="100" x2="122" y2="107" stroke="#c9922a" stroke-width="1.4" opacity="0.8"/>
+          <!-- Clipboard with magnifying glass (base) -->
+          <rect x="65" y="138" width="34" height="42" rx="2.5" fill="none" stroke="#c9922a" stroke-width="2.2"/>
+          <rect x="75" y="132" width="14" height="9" rx="1.8" fill="#c9922a"/>
+          <line x1="71" y1="151" x2="93" y2="151" stroke="#c9922a" stroke-width="1.6" opacity="0.85"/>
+          <line x1="71" y1="158" x2="93" y2="158" stroke="#c9922a" stroke-width="1.6" opacity="0.85"/>
+          <line x1="71" y1="165" x2="84" y2="165" stroke="#c9922a" stroke-width="1.6" opacity="0.85"/>
+          <circle cx="91" cy="169" r="5.5" fill="none" stroke="#c9922a" stroke-width="1.8"/>
+          <line x1="95" y1="173" x2="98.5" y2="176.5" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Motto banner -->
+          <path d="M8,200 L36,194 L36,207 L8,213Z" fill="#c41e3a"/>
+          <rect x="36" y="194" width="92" height="13" fill="#c41e3a"/>
+          <path d="M156,200 L128,194 L128,207 L156,213Z" fill="#c41e3a"/>
+          <text x="82" y="204.5" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="white" letter-spacing="2.5" font-style="italic">PRO POLICYHOLDER</text>
+        </svg>
+        <h3>Duncan Littlejohn</h3>
+        <div class="title">Founder · Robinhood Adjusting</div>
+        <ul class="about-credentials">
+          <li>Florida Licensed Public Adjuster</li>
+          <li>MBA — FGV (Top Brazilian Business School)</li>
+          <li>NYU Real Estate Finance</li>
+          <li>BA International Relations, Univ. of Colorado</li>
+          <li>10+ Years Financial &amp; Analytical Experience</li>
+          <li>English · Portuguese · Spanish</li>
+          <li>Based in West Palm Beach, Florida</li>
+        </ul>
+      </div>
+      <div class="about-content">
+        <div class="section-label">About</div>
+        <h2>A Financial Analyst in Your Corner</h2>
+        <p>
+          Robinhood Adjusting was built on a simple premise: the money your insurance policy
+          promises you should actually reach you. Most public adjusters come from contracting
+          backgrounds. I come from finance — a decade of institutional investment analysis,
+          fund management, and deal structuring across the US, Brazil, and Latin America.
+        </p>
+        <p>
+          That means when I open your claim, I approach it the way an investor approaches
+          a deal: methodically, with documentation, and with an eye on every line of the
+          policy and every line of the estimate.
+        </p>
+        <p>
+          Insurance companies employ trained adjusters whose job is to settle claims quickly
+          and for as little as possible. My job is the opposite — to make sure you understand
+          what your policy actually covers, document your loss thoroughly, and negotiate the
+          settlement you're entitled to.
+        </p>
+        <p>
+          I serve residential and commercial property owners throughout South Florida. I'm
+          fluent in English, Portuguese, and Spanish — because no one should have to navigate
+          an insurance claim in a language that isn't theirs.
+        </p>
+        <div class="about-langs">
+          <span class="lang-badge">English</span>
+          <span class="lang-badge">Português</span>
+          <span class="lang-badge">Español</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── HOW IT WORKS ─────────── -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">What We Do From First Call to Final Check</h2>
+    <p class="section-subtitle">Four steps. No upfront cost. No obligation until you decide to move forward.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h4>Free Claim Review</h4>
+        <p>We review your policy, the loss, and any prior communications from your carrier — at no cost and no obligation. You'll leave knowing exactly where you stand.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h4>Damage Documentation</h4>
+        <p>We conduct a thorough inspection, photograph and document all damage, and prepare a complete estimate that captures everything your policy may cover.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h4>Claim Filing &amp; Negotiation</h4>
+        <p>We file or reopen your claim, communicate directly with the insurance company on your behalf, and push back on underpayments and denials.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h4>Settlement</h4>
+        <p>We don't close until you've received a fair settlement. Our fee is a percentage of what we recover — so we only get paid when you do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOR POLICYHOLDERS ─────────── -->
+<section id="policyholders">
+  <div class="section-inner">
+    <div class="section-label">For Property Owners</div>
+    <h2 class="section-title">Residential &amp; Commercial Policyholders</h2>
+    <p class="section-subtitle">
+      Whether it's your home, a rental property, or a commercial building, you have rights as a policyholder
+      that most insurance companies won't volunteer to explain.
+    </p>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-icon">🌀</div>
+        <h4>Hurricane &amp; Wind Damage</h4>
+        <p>South Florida's most common loss type. Wind damage, roof claims, and storm surge often lead to disputes over coverage scope and repair methodology.</p>
+        <a href="#contact" class="resource-link">Get a free review</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">💧</div>
+        <h4>Water &amp; Plumbing Losses</h4>
+        <p>Sudden pipe bursts, appliance failures, and water intrusion claims are frequently underpaid or partially denied. We know where to look.</p>
+        <a href="#contact" class="resource-link">Get a free review</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">🔥</div>
+        <h4>Fire &amp; Smoke Damage</h4>
+        <p>Fire claims involve complex line-by-line estimates for structure, contents, and additional living expenses. An independent adjuster is critical here.</p>
+        <a href="#contact" class="resource-link">Get a free review</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">🏢</div>
+        <h4>Commercial Property Claims</h4>
+        <p>Business interruption, equipment loss, and structural damage require a different analytical lens. We bring a finance background to complex commercial claims.</p>
+        <a href="#contact" class="resource-link">Get a free review</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">📋</div>
+        <h4>Denied or Underpaid Claims</h4>
+        <p>Already got a settlement that felt low? Claims can often be reopened. Don't accept a carrier's first offer as the final word.</p>
+        <a href="#contact" class="resource-link">Review my denial</a>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon">🔍</div>
+        <h4>Policy Review &amp; Coverage Questions</h4>
+        <p>Not sure what your policy actually covers? We'll walk through it with you before you even have a claim — so you're not surprised when you need it most.</p>
+        <a href="#contact" class="resource-link">Schedule a review</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOR SERVICE PROVIDERS ─────────── -->
+<section id="service-providers">
+  <div class="section-inner">
+    <div class="section-label">For Service Professionals</div>
+    <h2 class="section-title">Referral Partners &amp; Trade Professionals</h2>
+    <p class="section-subtitle">
+      You're first on the scene. When your customer has insurance-covered damage, you can offer them
+      a resource that costs them nothing and protects their claim.
+    </p>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <h4>Plumbers &amp; Water Mitigation</h4>
+        <p>Water damage is one of the most disputed claim types. When you find a loss, connecting your client with a PA can mean the difference between a fair claim and a closed door.</p>
+      </div>
+      <div class="partner-card">
+        <h4>Roofers &amp; General Contractors</h4>
+        <p>Insurance adjusters and contractors frequently disagree on scope and pricing. We negotiate independently so your estimate gets a fair fight — without you being in the middle.</p>
+      </div>
+      <div class="partner-card">
+        <h4>HVAC &amp; Appliance Technicians</h4>
+        <p>Equipment failure often triggers a broader claim. Your clients may not realize they're entitled to more than just the repair. A quick referral changes their outcome entirely.</p>
+      </div>
+      <div class="partner-card">
+        <h4>Property Managers &amp; HOAs</h4>
+        <p>You manage multiple properties and claims are a recurring reality. Having a trusted PA in your corner keeps your residents covered and reduces your administrative burden.</p>
+      </div>
+      <div class="partner-card">
+        <h4>Real Estate Agents</h4>
+        <p>Your clients buy and sell properties. When damage surfaces — during inspection, after closing, or mid-tenancy — you can be the person who pointed them to the right resource.</p>
+      </div>
+      <div class="partner-card">
+        <h4>Home Service Professionals</h4>
+        <p>House cleaners, caregivers, and nurses are often the first to notice damage in the properties they visit. A simple referral costs nothing and builds goodwill with the families you serve.</p>
+      </div>
+    </div>
+    <div class="partner-cta-box">
+      <h3>Become a Referral Partner</h3>
+      <p>There's no formal program to join and no paperwork. Just a relationship. If you ever encounter a client with an insurance claim, give us a call — we'll handle everything from there.</p>
+      <a href="#contact" class="btn-white">Let's Connect</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── CONTENT HUB ─────────── -->
+<section id="content-hub">
+  <div class="section-inner">
+    <div class="section-label">Resources &amp; Insights</div>
+    <h2 class="section-title">Industry Intelligence, Daily</h2>
+    <p class="section-subtitle">
+      We track South Florida insurance markets, regulatory changes, weather events,
+      and claim trends so you don't have to.
+    </p>
+
+    <div class="content-tabs">
+      <button class="tab-btn active" onclick="showTab('briefs', this)">Daily Briefs</button>
+      <button class="tab-btn" onclick="showTab('weekly', this)">Weekly Trends</button>
+      <button class="tab-btn" onclick="showTab('blog', this)">Articles</button>
+      <button class="tab-btn" onclick="showTab('providers', this)">Trusted Providers</button>
+    </div>
+
+    <!-- BRIEFS -->
+    <div id="tab-briefs" class="tab-panel active">
+      <div class="briefs-list">
+        <a href="briefs/2026-04-24.html" class="brief-item">
+          <div>
+            <div class="brief-date">April 24, 2026</div>
+            <h4>South Florida Insurance Brief</h4>
+            <p>Today's market updates, regulatory news, and claim environment across Miami-Dade, Broward, Palm Beach, Martin, St. Lucie, Indian River, and Brevard.</p>
+          </div>
+          <div class="brief-arrow">→</div>
+        </a>
+        <a href="briefs/2026-04-23.html" class="brief-item">
+          <div>
+            <div class="brief-date">April 23, 2026</div>
+            <h4>South Florida Insurance Brief</h4>
+            <p>Carrier updates, legislative developments, and local loss environment summary.</p>
+          </div>
+          <div class="brief-arrow">→</div>
+        </a>
+        <a href="briefs/2026-04-22.html" class="brief-item">
+          <div>
+            <div class="brief-date">April 22, 2026</div>
+            <h4>South Florida Insurance Brief</h4>
+            <p>Market snapshot, weather watch, and key claim topics for South Florida property owners.</p>
+          </div>
+          <div class="brief-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- WEEKLY -->
+    <div id="tab-weekly" class="tab-panel">
+      <div class="briefs-list">
+        <a href="weekly/2026-17.html" class="brief-item">
+          <div>
+            <div class="brief-date">Week 17 · April 2026</div>
+            <h4>South Florida Insurance Trends — Weekly Roundup</h4>
+            <p>Seven-day synthesis of market shifts, carrier behavior, legislation, and what it means for property owners and contractors.</p>
+          </div>
+          <div class="brief-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- BLOG -->
+    <div id="tab-blog" class="tab-panel">
+      <div class="blog-grid">
+        <a href="articles/what-is-a-public-adjuster.html" class="blog-card" style="display:block;color:inherit;">
+          <div class="blog-card-img">📋</div>
+          <div class="blog-card-body">
+            <div class="blog-tag">Policyholders</div>
+            <h4>What Is a Public Adjuster — and Why Does It Matter?</h4>
+            <p>The difference between a carrier adjuster and a public adjuster is whose interests they represent. Here's what that means for your claim.</p>
+          </div>
+        </a>
+        <a href="articles/before-the-storm.html" class="blog-card" style="display:block;color:inherit;">
+          <div class="blog-card-img">🌀</div>
+          <div class="blog-card-body">
+            <div class="blog-tag">Hurricane Season</div>
+            <h4>Before the Storm: What Every Florida Homeowner Should Do Now</h4>
+            <p>Document your property, review your policy limits, and know who to call. A 30-minute preparation now protects a months-long claims process later.</p>
+          </div>
+        </a>
+        <a href="articles/contractors-and-insurance-scope.html" class="blog-card" style="display:block;color:inherit;">
+          <div class="blog-card-img">🤝</div>
+          <div class="blog-card-body">
+            <div class="blog-tag">Service Partners</div>
+            <h4>Why Contractors Should Never Negotiate Insurance Scope Directly</h4>
+            <p>When your estimate conflicts with the carrier's, a third-party PA keeps the dispute clean and protects your relationship with the homeowner.</p>
+          </div>
+        </a>
+      </div>
+    <!-- PROVIDERS -->
+    <div id="tab-providers" class="tab-panel">
+      <p style="font-family:'Arial',sans-serif; font-size:15px; color:var(--muted); margin-bottom:28px; max-width:620px;">
+        Vetted service professionals across South Florida — organized by county and trade.
+        These are providers we know, trust, and refer when our clients need them.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <a href="providers/index.html?county=miami-dade" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🏙️</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Miami-Dade</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=broward" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🌆</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Broward</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=palm-beach" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🌴</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Palm Beach</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=martin" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🌊</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Martin</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=st-lucie" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🏡</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">St. Lucie</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=indian-river" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🎣</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Indian River</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=brevard" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🚀</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Brevard</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=osceola" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🌿</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Osceola</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+        <a href="providers/index.html?county=orange" style="display:block; background:var(--white); border:1px solid var(--border); border-radius:8px; padding:22px; text-decoration:none; transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:22px; margin-bottom:8px;">🍊</div>
+          <div style="font-size:15px; font-weight:bold; color:var(--navy); margin-bottom:4px;">Orange (Orlando)</div>
+          <div style="font-family:'Arial',sans-serif; font-size:12px; color:var(--muted);">View providers →</div>
+        </a>
+      </div>
+      <div style="margin-top:24px; padding:16px 20px; background:var(--light); border:1px solid var(--border); border-radius:6px; font-family:'Arial',sans-serif; font-size:13px; color:var(--muted);">
+        Are you a service provider in one of these counties? <a href="#contact" style="color:var(--red); font-weight:bold;">Get in touch</a> — we vet and add trusted professionals on a rolling basis.
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── NEWSLETTER ─────────── -->
+<section id="newsletter" style="background: linear-gradient(135deg, var(--red) 0%, #8b1228 100%); padding: 72px 60px;">
+  <div class="section-inner" style="text-align: center;">
+    <div style="font-family:'Arial',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.65); margin-bottom:14px;">Stay Informed</div>
+    <h2 style="font-size:36px; color:#fff; margin-bottom:14px;">Subscribe to Our Newsletter</h2>
+    <p style="font-size:18px; color:rgba(255,255,255,.85); max-width:540px; margin:0 auto 36px; font-family:'Arial',sans-serif;">
+      Daily briefs, weekly trend reports, and plain-language breakdowns of what's happening in the South Florida insurance market — delivered to your inbox.
+    </p>
+    <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap;" onsubmit="handleNewsletter(event)">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none"><input name="bot-field"></p>
+      <input
+        type="email"
+        id="nl-email"
+        placeholder="your@email.com"
+        required
+        style="flex:1; min-width:220px; padding:14px 18px; border:none; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; outline:none;"
+      >
+      <button
+        type="submit"
+        id="nl-btn"
+        style="background:var(--navy); color:#fff; border:none; padding:14px 28px; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; font-weight:bold; cursor:pointer; white-space:nowrap; transition:background .2s;"
+        onmouseover="this.style.background='#0a1e30'"
+        onmouseout="this.style.background='var(--navy)'"
+      >Subscribe Free</button>
+    </form>
+    <p style="margin-top:16px; font-family:'Arial',sans-serif; font-size:12px; color:rgba(255,255,255,.5);">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- ─────────── FAQ ─────────── -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common Questions</h2>
+    <p class="section-subtitle">No jargon. Straight answers.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How much does a public adjuster cost?</div>
+        <div class="faq-a">Public adjusters in Florida work on contingency — typically a percentage of the final settlement. There is no upfront fee, and if we don't recover more for you, you owe us nothing. The exact percentage is disclosed and agreed upon before we begin any work.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I hire a public adjuster after I've already filed a claim?</div>
+        <div class="faq-a">Yes. You can engage a public adjuster at any point during the claims process — even after a settlement offer has been made or after a partial denial. Many of our best outcomes come from reopened or disputed claims.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will hiring a public adjuster slow down my claim?</div>
+        <div class="faq-a">Not typically. The process may take longer than accepting a carrier's first offer, but the goal is a thorough and fair settlement — not a fast one that leaves money on the table. We move as quickly as the claim documentation allows.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What types of properties and claims do you handle?</div>
+        <div class="faq-a">Residential and commercial properties throughout South Florida. Common claim types include wind and hurricane damage, water and plumbing losses, fire and smoke damage, and business interruption claims. If you're unsure whether your situation qualifies, a free review will tell you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you handle cases in Spanish or Portuguese?</div>
+        <div class="faq-a">Yes. I'm fully fluent in English, Spanish, and Brazilian Portuguese and handle claims in all three languages. For many South Florida policyholders, having an adjuster who speaks your language makes a significant difference in understanding what's happening with your claim.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the difference between a public adjuster and a claims attorney?</div>
+        <div class="faq-a">A public adjuster handles the adjustment and negotiation process — documenting damage, preparing estimates, and presenting your claim to the carrier. An attorney handles disputes that reach litigation. Most claims are resolved at the adjustment stage. If litigation becomes necessary, we work alongside your legal counsel.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── CONTACT ─────────── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Start with a Free Claim Review</h2>
+    <p class="section-subtitle">No commitment required. We'll tell you honestly whether we can help and what to expect.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> duncanlittlejohn727@gmail.com</li>
+          <li><strong>Phone:</strong> (561) 316-6455</li>
+          <li><strong>Service Area:</strong> Miami-Dade · Broward · Palm Beach · Martin · St. Lucie · Indian River · Brevard</li>
+          <li><strong>Languages:</strong> English · Español · Português</li>
+        </ul>
+        <div class="contact-note">
+          We typically respond within one business day. For urgent matters involving an
+          active claim or upcoming deadline, note that in your message and we'll prioritize
+          your inquiry.
+        </div>
+      </div>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Maria" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Rodriguez" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="maria@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="(305) 555-0100">
+        </div>
+        <div class="form-group">
+          <label>I am a...</label>
+          <select>
+            <option value="">Select one</option>
+            <option>Residential property owner</option>
+            <option>Commercial property owner</option>
+            <option>Landlord / investor</option>
+            <option>Contractor / service provider</option>
+            <option>Property manager</option>
+            <option>Real estate professional</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your situation</label>
+          <textarea placeholder="Brief description of the damage or claim situation..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; cursor:pointer; border:none; font-family:Arial,sans-serif;">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Robinhood <span>Adjusting</span></div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#policyholders">For Policyholders</a>
+      <a href="#service-providers">For Partners</a>
+      <a href="#content-hub">Resources</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div>© 2026 Robinhood Adjusting · West Palm Beach, Florida · Licensed Public Adjuster</div>
+  </div>
+</footer>
+
+<script>
+  function showTab(name, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleFaq(el) {
+    el.closest('.faq-item').classList.toggle('open');
+  }
+
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const btn = document.getElementById('nl-btn');
+    btn.textContent = "You're subscribed!";
+    btn.style.background = '#1a6e3a';
+    btn.disabled = true;
+    document.getElementById('nl-email').disabled = true;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = 'Message Sent — We\'ll Be in Touch';
+    btn.style.background = '#1a6e3a';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>

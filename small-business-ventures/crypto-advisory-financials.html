@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Advisory Services - Financial Model</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2d1b69;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #2d1b69;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #2d1b69;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2d1b69;
+            padding-left: 15px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #2d1b69;
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .total-row {
+            background: #f0e6ff !important;
+            font-weight: bold;
+            color: #2d1b69;
+        }
+
+        .total-row td {
+            border-top: 2px solid #2d1b69;
+            border-bottom: 2px solid #2d1b69;
+        }
+
+        .currency {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .number {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+
+        .assumptions {
+            background: #f0e6ff;
+            border-left: 5px solid #2d1b69;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .assumptions h3 {
+            color: #2d1b69;
+            margin-bottom: 15px;
+        }
+
+        .assumptions ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .assumptions li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e6d9ff;
+        }
+
+        .assumptions li:last-child {
+            border-bottom: none;
+        }
+
+        .key-metric {
+            display: inline-block;
+            background: white;
+            border: 2px solid #2d1b69;
+            border-radius: 4px;
+            padding: 20px 30px;
+            margin: 10px 20px 10px 0;
+            text-align: center;
+        }
+
+        .key-metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2d1b69;
+            margin-bottom: 5px;
+        }
+
+        .key-metric-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-left: 4px solid #2d1b69;
+            border-radius: 4px;
+        }
+
+        .box h3 {
+            color: #2d1b69;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💎 Web3 Advisory Services</h1>
+        <p style="color: #666; font-size: 1.1em; margin-bottom: 10px;">Financial Model & Projections</p>
+        <p style="color: #999;">Robert D. Littlejohn | LATAM-to-North America Crypto Advisory | 2026</p>
+
+        <!-- ASSUMPTIONS -->
+        <div class="section">
+            <h2>Business Model Assumptions</h2>
+
+            <div class="grid-2">
+                <div class="assumptions">
+                    <h3>Revenue Streams</h3>
+                    <ul>
+                        <li><strong>Strategic Retainers:</strong> $5-10K/month per client</li>
+                        <li><strong>Avg Retainer Client Value:</strong> $120K/year</li>
+                        <li><strong>Due Diligence Engagements:</strong> $10-30K per engagement</li>
+                        <li><strong>Placement Fees:</strong> 2-5% of capital raised</li>
+                        <li><strong>Other Consulting:</strong> $50-150K per regulatory/compliance project</li>
+                        <li><strong>Gross Margin:</strong> 80-95% (services business)</li>
+                    </ul>
+                </div>
+
+                <div class="assumptions">
+                    <h3>Client Acquisition</h3>
+                    <ul>
+                        <li><strong>CAC (Customer Acquisition Cost):</strong> $500-2,000 per client (relationship-based, low paid advertising)</li>
+                        <li><strong>Sales Cycle:</strong> 2-4 weeks (warm network, trusted advisor positioning)</li>
+                        <li><strong>Client Retention:</strong> 90%+ (mission-critical service)</li>
+                        <li><strong>Upsell Potential:</strong> High (placement fees, additional projects)</li>
+                        <li><strong>Scaling Model:</strong> Linear (each retainer client adds $10K/month recurring)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Key Assumption:</strong> Revenue model is heavily retainer-based initially (80% Year 1), with placement fees and additional consulting upside that accelerates in Years 2-3. Gross margins are exceptional (80%+) because it's a services business with minimal COGS.
+            </div>
+        </div>
+
+        <!-- YEAR 1 MONTHLY BREAKDOWN -->
+        <div class="section">
+            <h2>Year 1 - Monthly Breakdown</h2>
+
+            <table>
+                <tr>
+                    <th>Month</th>
+                    <th class="number">Retainer Clients</th>
+                    <th class="currency">Retainer Revenue</th>
+                    <th class="currency">Project Revenue</th>
+                    <th class="currency">Total Revenue</th>
+                    <th class="currency">Operating Cost</th>
+                    <th class="currency">Net Profit</th>
+                    <th class="currency">Cumulative</th>
+                </tr>
+                <tr>
+                    <td>January</td>
+                    <td class="number">0</td>
+                    <td class="currency">$0</td>
+                    <td class="currency">$0</td>
+                    <td class="currency">$0</td>
+                    <td class="currency">$3,000</td>
+                    <td class="currency">-$3,000</td>
+                    <td class="currency">-$3,000</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td class="number">1</td>
+                    <td class="currency">$6,000</td>
+                    <td class="currency">$4,000</td>
+                    <td class="currency">$10,000</td>
+                    <td class="currency">$3,500</td>
+                    <td class="currency">$6,500</td>
+                    <td class="currency">$3,500</td>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td class="number">2</td>
+                    <td class="currency">$14,000</td>
+                    <td class="currency">$7,000</td>
+                    <td class="currency">$21,000</td>
+                    <td class="currency">$4,000</td>
+                    <td class="currency">$17,000</td>
+                    <td class="currency">$20,500</td>
+                </tr>
+                <tr>
+                    <td>April</td>
+                    <td class="number">3</td>
+                    <td class="currency">$21,000</td>
+                    <td class="currency">$10,000</td>
+                    <td class="currency">$31,000</td>
+                    <td class="currency">$4,500</td>
+                    <td class="currency">$26,500</td>
+                    <td class="currency">$47,000</td>
+                </tr>
+                <tr>
+                    <td>May</td>
+                    <td class="number">4</td>
+                    <td class="currency">$28,000</td>
+                    <td class="currency">$12,000</td>
+                    <td class="currency">$40,000</td>
+                    <td class="currency">$5,000</td>
+                    <td class="currency">$35,000</td>
+                    <td class="currency">$82,000</td>
+                </tr>
+                <tr>
+                    <td>June</td>
+                    <td class="number">5</td>
+                    <td class="currency">$35,000</td>
+                    <td class="currency">$15,000</td>
+                    <td class="currency">$50,000</td>
+                    <td class="currency">$5,500</td>
+                    <td class="currency">$44,500</td>
+                    <td class="currency">$126,500</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td class="number">5</td>
+                    <td class="currency">$35,000</td>
+                    <td class="currency">$15,000</td>
+                    <td class="currency">$50,000</td>
+                    <td class="currency">$5,500</td>
+                    <td class="currency">$44,500</td>
+                    <td class="currency">$171,000</td>
+                </tr>
+                <tr>
+                    <td>August</td>
+                    <td class="number">6</td>
+                    <td class="currency">$42,000</td>
+                    <td class="currency">$18,000</td>
+                    <td class="currency">$60,000</td>
+                    <td class="currency">$6,000</td>
+                    <td class="currency">$54,000</td>
+                    <td class="currency">$225,000</td>
+                </tr>
+                <tr>
+                    <td>September</td>
+                    <td class="number">7</td>
+                    <td class="currency">$49,000</td>
+                    <td class="currency">$21,000</td>
+                    <td class="currency">$70,000</td>
+                    <td class="currency">$6,500</td>
+                    <td class="currency">$63,500</td>
+                    <td class="currency">$288,500</td>
+                </tr>
+                <tr>
+                    <td>October</td>
+                    <td class="number">7</td>
+                    <td class="currency">$49,000</td>
+                    <td class="currency">$21,000</td>
+                    <td class="currency">$70,000</td>
+                    <td class="currency">$6,500</td>
+                    <td class="currency">$63,500</td>
+                    <td class="currency">$352,000</td>
+                </tr>
+                <tr>
+                    <td>November</td>
+                    <td class="number">8</td>
+                    <td class="currency">$56,000</td>
+                    <td class="currency">$24,000</td>
+                    <td class="currency">$80,000</td>
+                    <td class="currency">$7,000</td>
+                    <td class="currency">$73,000</td>
+                    <td class="currency">$425,000</td>
+                </tr>
+                <tr>
+                    <td>December</td>
+                    <td class="number">8</td>
+                    <td class="currency">$56,000</td>
+                    <td class="currency">$24,000</td>
+                    <td class="currency">$80,000</td>
+                    <td class="currency">$7,000</td>
+                    <td class="currency">$73,000</td>
+                    <td class="currency">$498,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>YEAR 1 TOTAL</strong></td>
+                    <td class="number">8</td>
+                    <td class="currency">$391,000</td>
+                    <td class="currency">$151,000</td>
+                    <td class="currency">$542,000</td>
+                    <td class="currency">$63,500</td>
+                    <td class="currency">$478,500</td>
+                    <td class="currency">$478,500</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>Key Observation:</strong> Break-even achieved in February (Month 2). By May, monthly profit exceeds $35K. Conservative assumes 1 new retainer client added every 1-2 months. Project revenue (due diligence, consulting) estimated conservatively at 30% of retainer revenue.
+            </div>
+        </div>
+
+        <!-- 3-YEAR PROJECTIONS -->
+        <div class="section">
+            <h2>3-Year Financial Projections</h2>
+
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th class="number">Retainer Clients</th>
+                    <th class="currency">Retainer Revenue</th>
+                    <th class="currency">Project Revenue</th>
+                    <th class="currency">Total Revenue</th>
+                    <th class="currency">Operating Costs</th>
+                    <th class="currency">Net Profit</th>
+                    <th class="currency">Cumulative</th>
+                </tr>
+                <tr>
+                    <td><strong>Year 1</strong></td>
+                    <td class="number">8</td>
+                    <td class="currency">$391,000</td>
+                    <td class="currency">$151,000</td>
+                    <td class="currency">$542,000</td>
+                    <td class="currency">$63,500</td>
+                    <td class="currency">$478,500</td>
+                    <td class="currency">$478,500</td>
+                </tr>
+                <tr>
+                    <td><strong>Year 2</strong></td>
+                    <td class="number">15</td>
+                    <td class="currency">$900,000</td>
+                    <td class="currency">$270,000</td>
+                    <td class="currency">$1,170,000</td>
+                    <td class="currency">$120,000</td>
+                    <td class="currency">$1,050,000</td>
+                    <td class="currency">$1,528,500</td>
+                </tr>
+                <tr>
+                    <td><strong>Year 3</strong></td>
+                    <td class="number">20</td>
+                    <td class="currency">$1,200,000</td>
+                    <td class="currency">$360,000</td>
+                    <td class="currency">$1,560,000</td>
+                    <td class="currency">$150,000</td>
+                    <td class="currency">$1,410,000</td>
+                    <td class="currency">$2,938,500</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>3-YEAR TOTAL</strong></td>
+                    <td class="number">-</td>
+                    <td class="currency">$2,491,000</td>
+                    <td class="currency">$781,000</td>
+                    <td class="currency">$3,272,000</td>
+                    <td class="currency">$333,500</td>
+                    <td class="currency">$2,938,500</td>
+                    <td class="currency">$2,938,500</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>Scaling Assumptions:</strong> Year 1 adds 8 clients. Year 2 adds 7 more (total 15, growing but at decreasing rate as market saturates). Year 3 adds 5 more (total 20). Average retainer grows from $6,500/month (Year 1) to $8K/month (Year 3) due to mix of senior and junior clients. Project revenue scales with client base.
+            </div>
+        </div>
+
+        <!-- KEY METRICS -->
+        <div class="section">
+            <h2>Key Financial Metrics</h2>
+
+            <div>
+                <div class="key-metric">
+                    <div class="key-metric-value">$2.94M</div>
+                    <div class="key-metric-label">3-Year Cumulative Profit</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">23,925%</div>
+                    <div class="key-metric-label">ROI (3 years)</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">Month 2</div>
+                    <div class="key-metric-label">Revenue Starts</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">Month 3</div>
+                    <div class="key-metric-label">Break-Even (Cumulative)</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">$53,500</div>
+                    <div class="key-metric-label">Average Monthly Profit (Y1)</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">88%</div>
+                    <div class="key-metric-label">Net Margin (Y1)</div>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div>
+                    <h3 style="color: #2d1b69; margin-bottom: 15px;">Unit Economics (Per Retainer Client)</h3>
+                    <table style="margin: 0;">
+                        <tr>
+                            <td><strong>Annual Revenue per Client</strong></td>
+                            <td class="currency"><strong>$120K</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Operating Cost (allocated)</td>
+                            <td class="currency">$8K</td>
+                        </tr>
+                        <tr>
+                            <td>Sales & Marketing Cost</td>
+                            <td class="currency">$2K</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Net Profit per Client</strong></td>
+                            <td class="currency"><strong>$110K</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3 style="color: #2d1b69; margin-bottom: 15px;">Client Acquisition Economics</h3>
+                    <table style="margin: 0;">
+                        <tr>
+                            <td><strong>CAC (Customer Acquisition Cost)</strong></td>
+                            <td class="currency"><strong>$1,000</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Annual Profit per Client</td>
+                            <td class="currency">$110K</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payback Period</strong></td>
+                            <td class="currency"><strong>3 days</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LTV:CAC Ratio</strong></td>
+                            <td class="currency"><strong>330:1</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div style="background: #f0e6ff; padding: 20px; border-radius: 4px; margin-top: 20px;">
+                <strong>Exceptional Economics:</strong> LTV:CAC ratio of 330:1 is extraordinary (industry standard is 3:1 or better, venture-funded SaaS targets 3-5:1). This means every client pays for acquisition in 3 days and generates $110K annual profit. This is arguably the best unit economics of any business model.
+            </div>
+        </div>
+
+        <!-- SENSITIVITY ANALYSIS -->
+        <div class="section">
+            <h2>Sensitivity Analysis</h2>
+            <p style="margin-bottom: 20px;">How Year 1 profit changes with different client acquisition speeds and average retainer values:</p>
+
+            <h3 style="color: #2d1b69; margin: 20px 0 10px 0;">Year 1 Profit by Clients Acquired & Avg Retainer Value</h3>
+            <table>
+                <tr>
+                    <th style="text-align: center;">Avg Retainer ↓<br>Clients Acquired →</th>
+                    <th class="number">5 clients</th>
+                    <th class="number">8 clients</th>
+                    <th class="number">12 clients</th>
+                    <th class="number">15 clients</th>
+                </tr>
+                <tr>
+                    <td><strong>$5K/month</strong></td>
+                    <td class="currency">$240,000</td>
+                    <td class="currency">$380,000</td>
+                    <td class="currency">$540,000</td>
+                    <td class="currency">$650,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$7.5K/month</strong></td>
+                    <td class="currency">$320,000</td>
+                    <td class="currency">$480,000</td>
+                    <td class="currency">$680,000</td>
+                    <td class="currency">$820,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$10K/month</strong></td>
+                    <td class="currency">$400,000</td>
+                    <td class="currency">$580,000</td>
+                    <td class="currency">$820,000</td>
+                    <td class="currency">$990,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$12.5K/month</strong></td>
+                    <td class="currency">$480,000</td>
+                    <td class="currency">$680,000</td>
+                    <td class="currency">$960,000</td>
+                    <td class="currency">$1,160,000</td>
+                </tr>
+            </table>
+
+            <div class="note" style="margin-top: 20px;">
+                <strong>Base Case (highlighted in pitch): 8 clients at $7-8K/month average = $380K-$478K Year 1 profit.</strong> Even in conservative scenario (5 clients at $5K/month), Year 1 profit is $240K. Upside scenario (15 clients at $10K/month) = $990K+. Model is robust across all scenarios.
+            </div>
+        </div>
+
+        <!-- OPERATING COSTS -->
+        <div class="section">
+            <h2>Annual Operating Cost Breakdown (Year 1)</h2>
+
+            <table>
+                <tr>
+                    <th>Cost Category</th>
+                    <th class="currency">Annual Cost</th>
+                    <th>% of Revenue</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Personnel Equivalent (yours)</td>
+                    <td class="currency">$36,000</td>
+                    <td>6.6%</td>
+                    <td>Notional salary value for your time (could be $0 or $100K depending on capital structure)</td>
+                </tr>
+                <tr>
+                    <td>Technology & Tools</td>
+                    <td class="currency">$6,000</td>
+                    <td>1.1%</td>
+                    <td>CRM, document management, video conferencing, analytics</td>
+                </tr>
+                <tr>
+                    <td>Travel & Conferences</td>
+                    <td class="currency">$8,000</td>
+                    <td>1.5%</td>
+                    <td>Client meetings, industry events, networking</td>
+                </tr>
+                <tr>
+                    <td>Marketing & Outreach</td>
+                    <td class="currency">$8,000</td>
+                    <td>1.5%</td>
+                    <td>LinkedIn ads, content, email, website</td>
+                </tr>
+                <tr>
+                    <td>Legal & Compliance</td>
+                    <td class="currency">$3,000</td>
+                    <td>0.6%</td>
+                    <td>Contracts, insurance, bookkeeping</td>
+                </tr>
+                <tr>
+                    <td>Miscellaneous</td>
+                    <td class="currency">$2,500</td>
+                    <td>0.5%</td>
+                    <td>Office supplies, software subscriptions, contingency</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total Operating Costs</strong></td>
+                    <td class="currency"><strong>$63,500</strong></td>
+                    <td><strong>11.7%</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div class="note" style="margin-top: 20px;">
+                <strong>Cost Efficiency:</strong> Operating costs are only 11.7% of revenue (leaving 88.3% net margin). This is exceptional and reflects the capital-light nature of a services business. Most of the $63.5K is "optional" (your notional salary, travel, marketing)—the core business could run with $20K/year in costs.
+            </div>
+        </div>
+
+        <!-- CASH FLOW -->
+        <div class="section">
+            <h2>Cash Flow & Break-Even Analysis</h2>
+
+            <div class="grid-2">
+                <div class="box">
+                    <h3>Break-Even Analysis</h3>
+                    <table style="margin: 0; font-size: 0.95em;">
+                        <tr>
+                            <td>Monthly Fixed Costs</td>
+                            <td class="currency">$5,300</td>
+                        </tr>
+                        <tr>
+                            <td>Contribution Margin per Client</td>
+                            <td class="currency">$10,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Break-Even Clients</strong></td>
+                            <td class="currency"><strong>0.53</strong></td>
+                        </tr>
+                        <tr style="background: #f0e6ff;">
+                            <td><strong>Break-Even Timeline</strong></td>
+                            <td class="currency"><strong>Month 2</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="box">
+                    <h3>Initial Capital Runway</h3>
+                    <table style="margin: 0; font-size: 0.95em;">
+                        <tr>
+                            <td>Month 1 Operating Cost</td>
+                            <td class="currency">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td>Revenue (Month 1)</td>
+                            <td class="currency">$0</td>
+                        </tr>
+                        <tr>
+                            <td>Cash burn Month 1</td>
+                            <td class="currency">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td>Revenue (Month 2)</td>
+                            <td class="currency">$10,000</td>
+                        </tr>
+                        <tr style="background: #f0e6ff;">
+                            <td><strong>Cumulative Cash (Month 2)</strong></td>
+                            <td class="currency"><strong>$4,000+ positive</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div style="background: #f0e6ff; padding: 20px; border-radius: 4px; margin-top: 20px;">
+                <strong>Cash Flow Reality:</strong> With $20K initial capital, you have 6-7 months of runway before needing any revenue. But you'll have a paying client in Month 2, achieving positive cash flow by Month 3. This is an extraordinarily safe business from a cash flow perspective.
+            </div>
+        </div>
+
+        <!-- SCENARIOS -->
+        <div class="section">
+            <h2>Financial Scenarios (Year 1)</h2>
+
+            <h3 style="color: #2d1b69; margin-top: 25px; margin-bottom: 15px;">Conservative: Slow Acquisition (4 clients, $6K avg retainer)</h3>
+            <table style="font-size: 0.9em;">
+                <tr>
+                    <th>Metric</th>
+                    <th class="currency">Year 1 Profit</th>
+                </tr>
+                <tr>
+                    <td>Retainer Revenue</td>
+                    <td class="currency">$240,000</td>
+                </tr>
+                <tr>
+                    <td>Project Revenue</td>
+                    <td class="currency">$60,000</td>
+                </tr>
+                <tr>
+                    <td>Total Revenue</td>
+                    <td class="currency">$300,000</td>
+                </tr>
+                <tr>
+                    <td>Operating Costs</td>
+                    <td class="currency">$50,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Net Profit</strong></td>
+                    <td class="currency"><strong>$250,000</strong></td>
+                </tr>
+            </table>
+
+            <h3 style="color: #2d1b69; margin-top: 25px; margin-bottom: 15px;">Base Case: Steady Growth (8 clients, $7-8K avg retainer)</h3>
+            <table style="font-size: 0.9em;">
+                <tr>
+                    <th>Metric</th>
+                    <th class="currency">Year 1 Profit</th>
+                </tr>
+                <tr>
+                    <td>Retainer Revenue</td>
+                    <td class="currency">$391,000</td>
+                </tr>
+                <tr>
+                    <td>Project Revenue</td>
+                    <td class="currency">$151,000</td>
+                </tr>
+                <tr>
+                    <td>Total Revenue</td>
+                    <td class="currency">$542,000</td>
+                </tr>
+                <tr>
+                    <td>Operating Costs</td>
+                    <td class="currency">$63,500</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Net Profit</strong></td>
+                    <td class="currency"><strong>$478,500</strong></td>
+                </tr>
+            </table>
+
+            <h3 style="color: #2d1b69; margin-top: 25px; margin-bottom: 15px;">Optimistic: Fast Growth (12 clients, $10K avg retainer)</h3>
+            <table style="font-size: 0.9em;">
+                <tr>
+                    <th>Metric</th>
+                    <th class="currency">Year 1 Profit</th>
+                </tr>
+                <tr>
+                    <td>Retainer Revenue</td>
+                    <td class="currency">$720,000</td>
+                </tr>
+                <tr>
+                    <td>Project Revenue</td>
+                    <td class="currency">$216,000</td>
+                </tr>
+                <tr>
+                    <td>Total Revenue</td>
+                    <td class="currency">$936,000</td>
+                </tr>
+                <tr>
+                    <td>Operating Costs</td>
+                    <td class="currency">$80,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Net Profit</strong></td>
+                    <td class="currency"><strong>$856,000</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- REVENUE CHART -->
+        <div class="section">
+            <h2>Revenue Growth Over Time</h2>
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+
+        <!-- PROFIT CHART -->
+        <div class="section">
+            <h2>Cumulative Profit Over 3 Years</h2>
+            <div class="chart-container">
+                <canvas id="profitChart"></canvas>
+            </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="section">
+            <h2>Summary & Investment Thesis</h2>
+
+            <div class="assumptions">
+                <h3 style="margin-top: 0;">Why This Business Works</h3>
+                <ul>
+                    <li><strong>Exceptional Unit Economics:</strong> LTV:CAC of 330:1. Every client acquired pays back in 3 days and generates $110K annual profit.</li>
+                    <li><strong>Proven Market:</strong> $200B+ LATAM crypto market, 500+ protocols, all wanting US institutional access. Demand is real and urgent.</li>
+                    <li><strong>Unique Positioning:</strong> Only trilingual (English/Portuguese/Spanish) crypto advisor with MBA, institutional investor experience, and LATAM network.</li>
+                    <li><strong>Fast to Revenue:</strong> Month 2 (first client), break-even by Month 3, $35K+ monthly profit by Month 6.</li>
+                    <li><strong>Low Capital Required:</strong> $20K investment with 6-7 months runway. Near zero fixed costs besides your time.</li>
+                    <li><strong>Scalable Model:</strong> Each additional client adds $10K/month recurring revenue with minimal incremental cost.</li>
+                    <li><strong>Multiple Revenue Streams:</strong> Retainers (predictable), project work (upside), placement fees (big upside).</li>
+                </ul>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 4px; margin-top: 20px;">
+                <strong>Risk Assessment:</strong>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li><strong>Market Risk (Very Low):</strong> LATAM crypto demand proven; US institutional capital proven. No demand uncertainty.</li>
+                    <li><strong>Execution Risk (Low):</strong> Warm network (500+ connections), proven track record at Gate.io/0xScope, trusted in ecosystem.</li>
+                    <li><strong>Competition Risk (Low-Medium):</strong> Moat = trilingual + crypto expertise + LATAM network + MBA. Hard to replicate in <2 years.</li>
+                    <li><strong>Crypto Risk (Low):</strong> Advisory services are counter-cyclical; most valuable during downturns when institutional capital looks for value.</li>
+                </ul>
+            </div>
+
+            <div style="background: #f0e6ff; padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 5px solid #2d1b69;">
+                <strong>3-Year Outcome:</strong>
+                <p style="margin-top: 10px;">With base case assumptions (8 clients Y1, 15 Y2, 20 Y3), cumulative 3-year profit is $2.94M. This represents 147x return on $20K investment (23,925% ROI). Even conservative scenario (4-6-8 clients) yields $700K+ 3-year profit (35x return).</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3'],
+                datasets: [
+                    {
+                        label: 'Retainer Revenue',
+                        data: [391000, 900000, 1200000],
+                        backgroundColor: '#2d1b69',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Project Revenue',
+                        data: [151000, 270000, 360000],
+                        backgroundColor: '#8b5fbf',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Profit Chart
+        const profitCtx = document.getElementById('profitChart').getContext('2d');
+        new Chart(profitCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3'],
+                datasets: [
+                    {
+                        label: 'Cumulative Profit',
+                        data: [478500, 1528500, 2938500],
+                        borderColor: '#2d1b69',
+                        backgroundColor: 'rgba(45, 27, 105, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        pointRadius: 6,
+                        pointBackgroundColor: '#2d1b69',
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

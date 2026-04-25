@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content & Research Pipeline Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .status-card {
+            border-left: 4px solid #667eea;
+            position: relative;
+        }
+
+        .status-card.running {
+            border-left-color: #4caf50;
+            background: #f1f8f6;
+        }
+
+        .status-card.complete {
+            border-left-color: #2196f3;
+            background: #e3f2fd;
+        }
+
+        .status-card.pending {
+            border-left-color: #ff9800;
+            background: #fff3e0;
+        }
+
+        .status-card.failed {
+            border-left-color: #f44336;
+            background: #ffebee;
+        }
+
+        .status-label {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .status-label.running {
+            background: #4caf50;
+            color: white;
+        }
+
+        .status-label.complete {
+            background: #2196f3;
+            color: white;
+        }
+
+        .status-label.pending {
+            background: #ff9800;
+            color: white;
+        }
+
+        .status-label.failed {
+            background: #f44336;
+            color: white;
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .card-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-item {
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            font-size: 12px;
+            border: 2px solid #ddd;
+        }
+
+        .timeline-item.complete {
+            border-color: #4caf50;
+            background: #f1f8f6;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .timeline-item.active {
+            border-color: #667eea;
+            background: #f0f4ff;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .timeline-item.pending {
+            border-color: #ff9800;
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .timeline-arrow {
+            color: #ddd;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .content-item {
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .content-item.draft {
+            border-left: 3px solid #ff9800;
+        }
+
+        .content-item.approved {
+            border-left: 3px solid #2196f3;
+        }
+
+        .content-item.posted {
+            border-left: 3px solid #4caf50;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            color: #666;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-top: 15px;
+        }
+
+        .heatmap-item {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .heatmap-item:hover {
+            transform: scale(1.1);
+        }
+
+        .heatmap-item.low {
+            background: #e0f2f1;
+            color: #00897b;
+        }
+
+        .heatmap-item.medium {
+            background: #81c784;
+        }
+
+        .heatmap-item.high {
+            background: #4caf50;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .alert {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .alert.error {
+            background: #ffebee;
+            border-left-color: #f44336;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .refresh-time {
+            font-size: 11px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                flex-direction: column;
+            }
+
+            .timeline-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Content & Research Pipeline</h1>
+            <div class="subtitle">Daily research → content creation → posting readiness</div>
+        </header>
+
+        <!-- TODAY'S WORKFLOW STATUS -->
+        <div class="section-title">Today's Workflow (Friday, April 24)</div>
+        <div class="grid-3">
+            <div class="card status-card complete">
+                <div class="status-label complete">Complete</div>
+                <div class="card-title">📰 Brief</div>
+                <div class="card-value">4:00am</div>
+                <div class="card-subtitle">Industry research + news</div>
+                <div class="refresh-time">Completed 5:52am EDT</div>
+            </div>
+            <div class="card status-card complete">
+                <div class="status-label complete">Complete</div>
+                <div class="card-title">📄 Content</div>
+                <div class="card-value">3 pieces</div>
+                <div class="card-subtitle">FB, IG, Blog drafts</div>
+                <div class="refresh-time">Completed 5:58am EDT</div>
+            </div>
+            <div class="card status-card complete">
+                <div class="status-label complete">Complete</div>
+                <div class="card-title">🔍 Intelligence</div>
+                <div class="card-value">8 profiles</div>
+                <div class="card-subtitle">Prospect research done</div>
+                <div class="refresh-time">Completed 6:15am EDT</div>
+            </div>
+        </div>
+
+        <!-- POSTING QUEUE -->
+        <div class="section-title">Posting Queue</div>
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">📱 Ready to Post (Waiting for Approval)</div>
+                <div class="content-grid">
+                    <div class="content-item approved">
+                        <strong>Facebook</strong><br/>
+                        <span style="color: #ff9800;">Pending</span>
+                    </div>
+                    <div class="content-item approved">
+                        <strong>Instagram</strong><br/>
+                        <span style="color: #ff9800;">Pending</span>
+                    </div>
+                    <div class="content-item approved">
+                        <strong>Blog</strong><br/>
+                        <span style="color: #ff9800;">Pending</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; font-size: 12px; color: #666;">
+                    ⏱️ All 3 pieces ready. Awaiting your approval before posting.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">✅ Posted (Last 7 Days)</div>
+                <div class="metric-row">
+                    <span class="metric-label">Facebook posts</span>
+                    <span class="metric-value">5</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Instagram posts</span>
+                    <span class="metric-value">5</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Blog posts</span>
+                    <span class="metric-value">2</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Avg. engagement</span>
+                    <span class="metric-value">—</span>
+                </div>
+                <div style="font-size: 11px; color: #999; margin-top: 10px;">
+                    ⚠️ Engagement tracking not yet wired. Need account setup & analytics API.
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT PERFORMANCE -->
+        <div class="section-title">Content Topics (Last 7 Days)</div>
+        <div class="card">
+            <div class="metric-row">
+                <span class="metric-label">Pre-season preparation (hurricane prep)</span>
+                <span class="metric-value">7 pieces</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Remediation & mold claims</span>
+                <span class="metric-value">3 pieces</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Policy changes & depopulation</span>
+                <span class="metric-value">2 pieces</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Service provider partnerships</span>
+                <span class="metric-value">1 piece</span>
+            </div>
+            <div style="margin-top: 15px; font-size: 12px; color: #666;">
+                💡 <strong>Insight:</strong> Pre-season messaging is dominant (70% of output). Strong thematic consistency across 38-day hurricane prep window.
+            </div>
+        </div>
+
+        <!-- RESEARCH PIPELINE -->
+        <div class="section-title">Research Pipeline Status</div>
+        <div class="card">
+            <div class="timeline">
+                <div class="timeline-item complete">
+                    <strong>Brief</strong><br/>4:00am
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-item complete">
+                    <strong>Trends</strong><br/>8:00am*
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-item active">
+                    <strong>Content</strong><br/>Today
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-item pending">
+                    <strong>Post</strong><br/>Your action
+                </div>
+            </div>
+            <div style="margin-top: 15px; font-size: 11px; color: #666;">
+                * Trends job runs Saturdays only at 10am. Brief generates daily Mon-Fri.
+            </div>
+        </div>
+
+        <!-- DAILY CADENCE -->
+        <div class="section-title">Weekly Output Cadence</div>
+        <div class="card">
+            <div class="heatmap">
+                <div class="heatmap-item medium" title="Mon: 3 pieces">Mon<br/>3</div>
+                <div class="heatmap-item medium" title="Tue: 3 pieces">Tue<br/>3</div>
+                <div class="heatmap-item medium" title="Wed: 3 pieces">Wed<br/>3</div>
+                <div class="heatmap-item medium" title="Thu: 3 pieces">Thu<br/>3</div>
+                <div class="heatmap-item high" title="Fri: 3 pieces + rollup">Fri<br/>3</div>
+                <div class="heatmap-item low" title="Sat: 0 (trends day)">Sat<br/>0</div>
+                <div class="heatmap-item low" title="Sun: rest">Sun<br/>—</div>
+            </div>
+            <div style="margin-top: 15px;">
+                <strong>Weekly output:</strong> 15 content pieces (Mon-Fri) = 3 per day × 5 days
+            </div>
+        </div>
+
+        <!-- BOTTLENECKS -->
+        <div class="alert">
+            <strong>⚠️ Current Bottlenecks:</strong>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Manual approval:</strong> All 3 content pieces per day wait for your review before posting</li>
+                <li><strong>No platform integrations:</strong> Can't auto-post to Facebook, Instagram, or blog. Must copy/paste manually</li>
+                <li><strong>Zero engagement data:</strong> No way to see if content is resonating (likes, comments, CTR)</li>
+                <li><strong>Content volume vs. quality:</strong> 15 pieces/week is good, but quality/consistency unknown without feedback</li>
+            </ul>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="section-title">To Improve Visibility</div>
+        <div class="card">
+            <div class="metric-row">
+                <span class="metric-label">✓ Brief status automation</span>
+                <span class="metric-value">—</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">⚠️ Platform integrations (high effort)</span>
+                <span class="metric-value">Blocked</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">⚠️ Analytics wiring (low-medium effort)</span>
+                <span class="metric-value">Next</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">⚠️ Approval workflow automation</span>
+                <span class="metric-value">Future</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Dashboard refreshes daily. Last updated: 2026-04-24 10:25 EDT</p>
+            <p>📍 Data sources: briefs/, content/, ops-review/ directories</p>
+        </div>
+    </div>
+</body>
+</html>

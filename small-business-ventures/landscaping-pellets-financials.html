@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscaping Pellets - Financial Model</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #2c5f2d;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #2c5f2d;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c5f2d;
+            padding-left: 15px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #2c5f2d;
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .total-row {
+            background: #e8f5e9 !important;
+            font-weight: bold;
+            color: #2c5f2d;
+        }
+
+        .total-row td {
+            border-top: 2px solid #2c5f2d;
+            border-bottom: 2px solid #2c5f2d;
+        }
+
+        .currency {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .number {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+
+        .assumptions {
+            background: #f0f8f1;
+            border-left: 5px solid #2c5f2d;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .assumptions h3 {
+            color: #2c5f2d;
+            margin-bottom: 15px;
+        }
+
+        .assumptions ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .assumptions li {
+            padding: 8px 0;
+            border-bottom: 1px solid #c8e6c9;
+        }
+
+        .assumptions li:last-child {
+            border-bottom: none;
+        }
+
+        .key-metric {
+            display: inline-block;
+            background: white;
+            border: 2px solid #2c5f2d;
+            border-radius: 4px;
+            padding: 20px 30px;
+            margin: 10px 20px 10px 0;
+            text-align: center;
+        }
+
+        .key-metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c5f2d;
+            margin-bottom: 5px;
+        }
+
+        .key-metric-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .page-break {
+                page-break-after: always;
+                margin-bottom: 40px;
+            }
+
+            .print-only {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Landscaping Waste Pellet Production</h1>
+        <p style="color: #666; font-size: 1.1em; margin-bottom: 10px;">Financial Model & Projections</p>
+        <p style="color: #999;">South Florida Operations | Updated 2026</p>
+
+        <!-- ASSUMPTIONS -->
+        <div class="section page-break">
+            <h2>Business Assumptions</h2>
+
+            <div class="grid-2">
+                <div class="assumptions">
+                    <h3>Operational Parameters</h3>
+                    <ul>
+                        <li><strong>Machine Capacity:</strong> 0.15 tons/hour</li>
+                        <li><strong>Operating Hours:</strong> 8 hours/day</li>
+                        <li><strong>Working Days/Year:</strong> 250 days</li>
+                        <li><strong>Annual Operating Hours:</strong> 2,000 hours</li>
+                        <li><strong>Conversion Ratio:</strong> 2:1 (raw to finished)</li>
+                        <li><strong>Raw Material Cost:</strong> $0 (free landscaper waste)</li>
+                        <li><strong>Selling Price (Wholesale):</strong> $300/ton</li>
+                    </ul>
+                </div>
+
+                <div class="assumptions">
+                    <h3>Cost Assumptions</h3>
+                    <ul>
+                        <li><strong>Equipment Cost:</strong> $2,500</li>
+                        <li><strong>Site Prep:</strong> $3,000 (one-time)</li>
+                        <li><strong>Chipper/Tools:</strong> $4,000 (one-time)</li>
+                        <li><strong>Electricity:</strong> $1,500/year</li>
+                        <li><strong>Maintenance:</strong> $1,000/year</li>
+                        <li><strong>Fuel (transport):</strong> $1,000/year</li>
+                        <li><strong>Misc/Storage:</strong> $500/year</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Key Assumption:</strong> Raw material is sourced free from local landscaping contractors who want to eliminate disposal costs. This is the core advantage of the South Florida market—year-round waste supply with minimal cost.
+            </div>
+        </div>
+
+        <!-- YEAR 1 MONTHLY BREAKDOWN -->
+        <div class="section page-break">
+            <h2>Year 1 - Monthly Breakdown</h2>
+
+            <table>
+                <tr>
+                    <th>Month</th>
+                    <th class="number">Tons Produced</th>
+                    <th class="currency">Revenue</th>
+                    <th class="currency">Operating Cost</th>
+                    <th class="currency">Net Profit</th>
+                    <th class="currency">Cumulative</th>
+                </tr>
+                <tr>
+                    <td>January (Setup)</td>
+                    <td class="number">8</td>
+                    <td class="currency">$2,400</td>
+                    <td class="currency">$800</td>
+                    <td class="currency">$1,600</td>
+                    <td class="currency">$1,600</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td class="number">15</td>
+                    <td class="currency">$4,500</td>
+                    <td class="currency">$830</td>
+                    <td class="currency">$3,670</td>
+                    <td class="currency">$5,270</td>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td class="number">20</td>
+                    <td class="currency">$6,000</td>
+                    <td class="currency">$860</td>
+                    <td class="currency">$5,140</td>
+                    <td class="currency">$10,410</td>
+                </tr>
+                <tr>
+                    <td>April</td>
+                    <td class="number">25</td>
+                    <td class="currency">$7,500</td>
+                    <td class="currency">$890</td>
+                    <td class="currency">$6,610</td>
+                    <td class="currency">$17,020</td>
+                </tr>
+                <tr>
+                    <td>May</td>
+                    <td class="number">28</td>
+                    <td class="currency">$8,400</td>
+                    <td class="currency">$910</td>
+                    <td class="currency">$7,490</td>
+                    <td class="currency">$24,510</td>
+                </tr>
+                <tr>
+                    <td>June</td>
+                    <td class="number">30</td>
+                    <td class="currency">$9,000</td>
+                    <td class="currency">$930</td>
+                    <td class="currency">$8,070</td>
+                    <td class="currency">$32,580</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td class="number">30</td>
+                    <td class="currency">$9,000</td>
+                    <td class="currency">$930</td>
+                    <td class="currency">$8,070</td>
+                    <td class="currency">$40,650</td>
+                </tr>
+                <tr>
+                    <td>August</td>
+                    <td class="number">30</td>
+                    <td class="currency">$9,000</td>
+                    <td class="currency">$930</td>
+                    <td class="currency">$8,070</td>
+                    <td class="currency">$48,720</td>
+                </tr>
+                <tr>
+                    <td>September</td>
+                    <td class="number">30</td>
+                    <td class="currency">$9,000</td>
+                    <td class="currency">$930</td>
+                    <td class="currency">$8,070</td>
+                    <td class="currency">$56,790</td>
+                </tr>
+                <tr>
+                    <td>October</td>
+                    <td class="number">30</td>
+                    <td class="currency">$9,000</td>
+                    <td class="currency">$930</td>
+                    <td class="currency">$8,070</td>
+                    <td class="currency">$64,860</td>
+                </tr>
+                <tr>
+                    <td>November</td>
+                    <td class="number">28</td>
+                    <td class="currency">$8,400</td>
+                    <td class="currency">$910</td>
+                    <td class="currency">$7,490</td>
+                    <td class="currency">$72,350</td>
+                </tr>
+                <tr>
+                    <td>December</td>
+                    <td class="number">25</td>
+                    <td class="currency">$7,500</td>
+                    <td class="currency">$890</td>
+                    <td class="currency">$6,610</td>
+                    <td class="currency">$78,960</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>YEAR 1 TOTAL</strong></td>
+                    <td class="number">300</td>
+                    <td class="currency">$90,000</td>
+                    <td class="currency">$11,000</td>
+                    <td class="currency">$79,000</td>
+                    <td class="currency">$78,960</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>Note:</strong> Year 1 includes $2,500 equipment + $3,000 site prep = $5,500 initial capital. After covering these upfront costs, net operating profit is ~$78,960. Including initial investment, Year 1 net is ~$73,460.
+            </div>
+        </div>
+
+        <!-- 5-YEAR PROJECTIONS -->
+        <div class="section page-break">
+            <h2>5-Year Financial Projections</h2>
+
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th class="number">Tons Produced</th>
+                    <th class="number">Capacity %</th>
+                    <th class="currency">Revenue</th>
+                    <th class="currency">Operating Costs</th>
+                    <th class="currency">Equipment Investment</th>
+                    <th class="currency">Net Profit</th>
+                    <th class="currency">Cumulative</th>
+                </tr>
+                <tr>
+                    <td><strong>Year 1</strong></td>
+                    <td class="number">300</td>
+                    <td class="number">100%</td>
+                    <td class="currency">$90,000</td>
+                    <td class="currency">$4,000</td>
+                    <td class="currency">$9,500</td>
+                    <td class="currency">$76,500</td>
+                    <td class="currency">$76,500</td>
+                </tr>
+                <tr>
+                    <td><strong>Year 2</strong></td>
+                    <td class="number">350</td>
+                    <td class="number">117%*</td>
+                    <td class="currency">$105,000</td>
+                    <td class="currency">$4,500</td>
+                    <td class="currency">$2,500</td>
+                    <td class="currency">$98,000</td>
+                    <td class="currency">$174,500</td>
+                </tr>
+                <tr>
+                    <td><strong>Year 3</strong></td>
+                    <td class="number">450</td>
+                    <td class="number">150%*</td>
+                    <td class="currency">$135,000</td>
+                    <td class="currency">$5,000</td>
+                    <td class="currency">$2,500</td>
+                    <td class="currency">$127,500</td>
+                    <td class="currency">$302,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Year 4</strong></td>
+                    <td class="number">550</td>
+                    <td class="number">183%*</td>
+                    <td class="currency">$165,000</td>
+                    <td class="currency">$6,000</td>
+                    <td class="currency">$0</td>
+                    <td class="currency">$159,000</td>
+                    <td class="currency">$461,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Year 5</strong></td>
+                    <td class="number">650</td>
+                    <td class="number">217%*</td>
+                    <td class="currency">$195,000</td>
+                    <td class="currency">$7,000</td>
+                    <td class="currency">$0</td>
+                    <td class="currency">$188,000</td>
+                    <td class="currency">$649,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>5-YEAR TOTAL</strong></td>
+                    <td class="number">2,300</td>
+                    <td class="number">-</td>
+                    <td class="currency">$690,000</td>
+                    <td class="currency">$26,500</td>
+                    <td class="currency">$14,500</td>
+                    <td class="currency">$649,000</td>
+                    <td class="currency">$649,000</td>
+                </tr>
+            </table>
+
+            <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
+                *Years 2-5 assume adding equipment (additional machines) to exceed single-machine capacity. Year 2 adds second machine ($2,500), Year 3 adds third machine ($2,500).
+            </p>
+        </div>
+
+        <!-- KEY METRICS -->
+        <div class="section">
+            <h2>Key Financial Metrics</h2>
+
+            <div>
+                <div class="key-metric">
+                    <div class="key-metric-value">$649K</div>
+                    <div class="key-metric-label">5-Year Cumulative Profit</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">465%</div>
+                    <div class="key-metric-label">ROI (5 years)</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">8-12 mo</div>
+                    <div class="key-metric-label">Payback Period</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">95.7%</div>
+                    <div class="key-metric-label">Gross Margin Year 1</div>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div>
+                    <h3 style="color: #2c5f2d; margin-bottom: 15px;">Unit Economics</h3>
+                    <table style="margin: 0;">
+                        <tr>
+                            <td><strong>Price per Ton</strong></td>
+                            <td class="currency"><strong>$300</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Raw Material Cost</td>
+                            <td class="currency">$0</td>
+                        </tr>
+                        <tr>
+                            <td>Processing/Labor</td>
+                            <td class="currency">-$13</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Gross Profit/Ton</strong></td>
+                            <td class="currency"><strong>$287</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3 style="color: #2c5f2d; margin-bottom: 15px;">Break-Even Analysis</h3>
+                    <table style="margin: 0;">
+                        <tr>
+                            <td><strong>Monthly Fixed Costs</strong></td>
+                            <td class="currency"><strong>$333</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Variable Cost/Ton</td>
+                            <td class="currency">$13</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Break-Even Tons/Month</strong></td>
+                            <td class="currency"><strong>1.2 tons</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Break-Even Tons/Year</strong></td>
+                            <td class="currency"><strong>15 tons</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- REVENUE & PROFIT CHART -->
+        <div class="section page-break">
+            <h2>Revenue & Profit Trends (5-Year)</h2>
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+
+        <!-- CUMULATIVE PROFIT CHART -->
+        <div class="section page-break">
+            <h2>Cumulative Profit Over Time</h2>
+            <div class="chart-container">
+                <canvas id="cumulativeChart"></canvas>
+            </div>
+        </div>
+
+        <!-- SENSITIVITY ANALYSIS -->
+        <div class="section page-break">
+            <h2>Sensitivity Analysis</h2>
+            <p style="margin-bottom: 20px;">How Year 1 profit changes with different selling prices and production volumes:</p>
+
+            <table>
+                <tr>
+                    <th style="text-align: center;">Price/Ton ↓<br>Production Volume →</th>
+                    <th class="number">250 tons</th>
+                    <th class="number">300 tons</th>
+                    <th class="number">350 tons</th>
+                    <th class="number">400 tons</th>
+                </tr>
+                <tr>
+                    <td><strong>$250/ton</strong></td>
+                    <td class="currency">$59,750</td>
+                    <td class="currency">$71,500</td>
+                    <td class="currency">$83,250</td>
+                    <td class="currency">$95,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$275/ton</strong></td>
+                    <td class="currency">$65,625</td>
+                    <td class="currency">$78,750</td>
+                    <td class="currency">$91,875</td>
+                    <td class="currency">$105,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$300/ton</strong></td>
+                    <td class="currency">$71,500</td>
+                    <td class="currency">$86,000</td>
+                    <td class="currency">$100,500</td>
+                    <td class="currency">$115,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$325/ton</strong></td>
+                    <td class="currency">$77,375</td>
+                    <td class="currency">$93,250</td>
+                    <td class="currency">$109,125</td>
+                    <td class="currency">$125,000</td>
+                </tr>
+                <tr>
+                    <td><strong>$350/ton</strong></td>
+                    <td class="currency">$83,250</td>
+                    <td class="currency">$100,500</td>
+                    <td class="currency">$117,750</td>
+                    <td class="currency">$135,000</td>
+                </tr>
+            </table>
+
+            <div class="note" style="margin-top: 20px;">
+                <strong>Base Case (highlighted):</strong> $300/ton × 300 tons = $86,000 Year 1 profit. Even at $250/ton (worst case), Year 1 profit is $71,500 with 300 tons. Payback still occurs within 12 months at all price points above $240/ton.
+            </div>
+        </div>
+
+        <!-- INVESTMENT BREAKDOWN -->
+        <div class="section page-break">
+            <h2>Initial Investment Breakdown</h2>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: #2c5f2d; margin-bottom: 20px;">Capital Expenditure</h3>
+                    <table style="margin: 0;">
+                        <tr>
+                            <td>Pelletizer Machine</td>
+                            <td class="currency">$2,500</td>
+                        </tr>
+                        <tr>
+                            <td>Site Preparation</td>
+                            <td class="currency">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td>Chipper/Tools</td>
+                            <td class="currency">$4,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Capital</strong></td>
+                            <td class="currency"><strong>$9,500</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3 style="color: #2c5f2d; margin-bottom: 20px;">Working Capital Reserve</h3>
+                    <table style="margin: 0;">
+                        <tr>
+                            <td>3-Month Operating Costs</td>
+                            <td class="currency">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td>Emergency Reserve</td>
+                            <td class="currency">$2,500</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Working Capital</strong></td>
+                            <td class="currency"><strong>$5,500</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div style="background: #e8f5e9; padding: 20px; border-radius: 4px; margin-top: 20px;">
+                <h3 style="color: #2c5f2d; margin-bottom: 15px;">Total Investment Required: $15,000</h3>
+                <p style="color: #555;">This covers all equipment, site preparation, and 3 months of operating costs. After this investment, the business generates positive monthly cash flow and reaches profitability within 8-12 months.</p>
+            </div>
+        </div>
+
+        <!-- COST STRUCTURE -->
+        <div class="section page-break">
+            <h2>Annual Operating Cost Breakdown</h2>
+
+            <table>
+                <tr>
+                    <th>Cost Category</th>
+                    <th class="currency">Annual Cost</th>
+                    <th class="currency">Per Ton</th>
+                    <th>% of Revenue</th>
+                </tr>
+                <tr>
+                    <td>Electricity (pelletizer)</td>
+                    <td class="currency">$1,500</td>
+                    <td class="currency">$5.00</td>
+                    <td>1.7%</td>
+                </tr>
+                <tr>
+                    <td>Maintenance & Repairs</td>
+                    <td class="currency">$1,000</td>
+                    <td class="currency">$3.33</td>
+                    <td>1.1%</td>
+                </tr>
+                <tr>
+                    <td>Fuel (transport/equipment)</td>
+                    <td class="currency">$1,000</td>
+                    <td class="currency">$3.33</td>
+                    <td>1.1%</td>
+                </tr>
+                <tr>
+                    <td>Storage/Facility</td>
+                    <td class="currency">$500</td>
+                    <td class="currency">$1.67</td>
+                    <td>0.6%</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total Annual Operating</strong></td>
+                    <td class="currency"><strong>$4,000</strong></td>
+                    <td class="currency"><strong>$13.33</strong></td>
+                    <td><strong>4.4%</strong></td>
+                </tr>
+            </table>
+
+            <div class="note" style="margin-top: 20px;">
+                <strong>Efficient Cost Structure:</strong> At $300/ton revenue and $13/ton operating cost, gross margin is 95.7%. This unusually high margin is driven by free raw material (landscaper waste). Most pellet businesses have 30-50% margins; this model's advantage is the waste feedstock.
+            </div>
+        </div>
+
+        <!-- SCENARIOS -->
+        <div class="section page-break">
+            <h2>Financial Scenarios</h2>
+
+            <h3 style="color: #2c5f2d; margin-top: 25px; margin-bottom: 15px;">Conservative Scenario (75% capacity, $275/ton)</h3>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th class="number">Tons</th>
+                    <th class="currency">Revenue</th>
+                    <th class="currency">Costs</th>
+                    <th class="currency">Profit</th>
+                </tr>
+                <tr>
+                    <td>Year 1</td>
+                    <td class="number">225</td>
+                    <td class="currency">$61,875</td>
+                    <td class="currency">$4,000</td>
+                    <td class="currency">$57,875</td>
+                </tr>
+                <tr>
+                    <td>Year 2</td>
+                    <td class="number">300</td>
+                    <td class="currency">$82,500</td>
+                    <td class="currency">$4,500</td>
+                    <td class="currency">$78,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>2-Year Total</strong></td>
+                    <td class="number">525</td>
+                    <td class="currency">$144,375</td>
+                    <td class="currency">$8,500</td>
+                    <td class="currency">$135,875</td>
+                </tr>
+            </table>
+
+            <h3 style="color: #2c5f2d; margin-top: 25px; margin-bottom: 15px;">Base Scenario (100% capacity, $300/ton)</h3>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th class="number">Tons</th>
+                    <th class="currency">Revenue</th>
+                    <th class="currency">Costs</th>
+                    <th class="currency">Profit</th>
+                </tr>
+                <tr>
+                    <td>Year 1</td>
+                    <td class="number">300</td>
+                    <td class="currency">$90,000</td>
+                    <td class="currency">$4,000</td>
+                    <td class="currency">$86,000</td>
+                </tr>
+                <tr>
+                    <td>Year 2</td>
+                    <td class="number">350</td>
+                    <td class="currency">$105,000</td>
+                    <td class="currency">$4,500</td>
+                    <td class="currency">$100,500</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>2-Year Total</strong></td>
+                    <td class="number">650</td>
+                    <td class="currency">$195,000</td>
+                    <td class="currency">$8,500</td>
+                    <td class="currency">$186,500</td>
+                </tr>
+            </table>
+
+            <h3 style="color: #2c5f2d; margin-top: 25px; margin-bottom: 15px;">Optimistic Scenario (120% capacity, $325/ton)</h3>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th class="number">Tons</th>
+                    <th class="currency">Revenue</th>
+                    <th class="currency">Costs</th>
+                    <th class="currency">Profit</th>
+                </tr>
+                <tr>
+                    <td>Year 1</td>
+                    <td class="number">360</td>
+                    <td class="currency">$117,000</td>
+                    <td class="currency">$4,000</td>
+                    <td class="currency">$113,000</td>
+                </tr>
+                <tr>
+                    <td>Year 2</td>
+                    <td class="number">420</td>
+                    <td class="currency">$136,500</td>
+                    <td class="currency">$4,500</td>
+                    <td class="currency">$132,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>2-Year Total</strong></td>
+                    <td class="number">780</td>
+                    <td class="currency">$253,500</td>
+                    <td class="currency">$8,500</td>
+                    <td class="currency">$245,000</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="section">
+            <h2>Summary & Recommendations</h2>
+
+            <div class="assumptions">
+                <h3 style="margin-top: 0;">Investment Thesis</h3>
+                <ul>
+                    <li><strong>Low Capital Barrier:</strong> $9,500 equipment + $5,500 working capital = $15,000 total. Payback in 8-12 months at base case.</li>
+                    <li><strong>Free Feedstock Advantage:</strong> Raw material costs are $0 (landscaper waste). 95.7% gross margin vs. 30-50% for traditional pellet businesses.</li>
+                    <li><strong>Year-Round Operation:</strong> South Florida climate enables 365-day waste supply (unlike northern states with seasonal waste).</li>
+                    <li><strong>Scalable Model:</strong> Additional $2,500 machines can expand capacity to 600+ tons/year. Each new machine compounds profitability.</li>
+                    <li><strong>Multiple Exit Paths:</strong> Can scale to 1000+ tons/year, sell to energy companies, or license model to other regions.</li>
+                </ul>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 4px; margin-top: 20px;">
+                <strong>Key Risks & Mitigations:</strong>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li><strong>Feedstock Supply:</strong> Establish contracts with 5+ landscaping contractors before launching.</li>
+                    <li><strong>Price Volatility:</strong> Lock in long-term buyer contracts at $300/ton or higher; diversify customer base.</li>
+                    <li><strong>Equipment Failure:</strong> Budget $1,000/year for maintenance; have backup supplier relationship.</li>
+                    <li><strong>Market Acceptance:</strong> Start with bagged product for landscapers (easy market entry); then scale to bulk buyers.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Revenue & Profit Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [
+                    {
+                        label: 'Revenue',
+                        data: [90000, 105000, 135000, 165000, 195000],
+                        backgroundColor: '#2c5f2d',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Operating Profit',
+                        data: [79000, 98000, 127500, 159000, 188000],
+                        backgroundColor: '#81c784',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Cumulative Profit Chart
+        const cumulativeCtx = document.getElementById('cumulativeChart').getContext('2d');
+        new Chart(cumulativeCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [
+                    {
+                        label: 'Cumulative Profit',
+                        data: [76500, 174500, 302000, 461000, 649000],
+                        borderColor: '#2c5f2d',
+                        backgroundColor: 'rgba(44, 95, 45, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        pointRadius: 6,
+                        pointBackgroundColor: '#2c5f2d',
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

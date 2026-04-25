@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Florida Insurance Trends — Week 17, April 2026 | Robinhood Adjusting</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #0f2d4a; --navy2: #1a3a5c; --red: #c41e3a;
+      --gold: #c9922a; --light: #f7f8fa; --white: #fff;
+      --text: #2c2c2c; --muted: #6b7280; --border: #e2e6ea;
+    }
+    body { font-family: 'Georgia', serif; color: var(--text); background: var(--light); line-height: 1.7; }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      background: var(--navy); color: white;
+      padding: 14px 40px; display: flex; justify-content: space-between; align-items: center;
+      font-family: Arial, sans-serif; font-size: 13px;
+    }
+    .topbar a { color: var(--gold); font-weight: bold; }
+
+    .masthead {
+      background: var(--navy2); color: white;
+      padding: 52px 40px 40px; text-align: center;
+      border-bottom: 5px solid var(--red);
+    }
+    .masthead .kicker {
+      font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    }
+    .masthead h1 { font-size: 38px; margin-bottom: 10px; }
+    .masthead .dateline {
+      font-family: Arial, sans-serif; font-size: 14px;
+      color: rgba(255,255,255,.65); letter-spacing: .5px;
+    }
+
+    .layout { max-width: 860px; margin: 0 auto; padding: 48px 24px; display: grid; grid-template-columns: 1fr 260px; gap: 40px; }
+
+    .main-col {}
+    .sidebar {}
+
+    /* Story cards */
+    .story {
+      background: var(--white); border-radius: 6px;
+      border-left: 4px solid var(--navy2);
+      padding: 28px 28px 24px; margin-bottom: 24px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    }
+    .story.urgent { border-left-color: var(--red); }
+    .story.opportunity { border-left-color: #1a7a3a; }
+
+    .story-tag {
+      font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 10px; font-weight: bold;
+    }
+    .tag-urgent { color: var(--red); }
+    .tag-opportunity { color: #1a7a3a; }
+    .tag-market { color: var(--navy2); }
+    .tag-legislative { color: #6b3fa0; }
+
+    .story h2 { font-size: 20px; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
+    .story p { font-size: 15px; color: #444; margin-bottom: 10px; }
+    .story p:last-child { margin-bottom: 0; }
+
+    .story .takeaway {
+      margin-top: 16px; padding: 12px 16px;
+      background: var(--light); border-left: 3px solid var(--gold);
+      font-family: Arial, sans-serif; font-size: 13px; color: var(--navy);
+    }
+    .story .takeaway strong { display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); }
+
+    /* Sidebar */
+    .sidebar-card {
+      background: var(--white); border-radius: 6px; padding: 24px;
+      margin-bottom: 20px; box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    }
+    .sidebar-card h3 {
+      font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--red); margin-bottom: 16px;
+    }
+    .sidebar-card p { font-family: Arial, sans-serif; font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .sidebar-card ul { list-style: none; padding: 0; }
+    .sidebar-card ul li {
+      font-family: Arial, sans-serif; font-size: 13px; color: #444;
+      padding: 7px 0; border-bottom: 1px solid var(--border); line-height: 1.5;
+    }
+    .sidebar-card ul li:last-child { border-bottom: none; }
+    .sidebar-card ul li strong { display: block; color: var(--navy); }
+
+    .countdown {
+      background: var(--navy); color: white; border-radius: 6px;
+      padding: 24px; text-align: center; margin-bottom: 20px;
+    }
+    .countdown .num { font-size: 56px; font-weight: bold; color: var(--gold); line-height: 1; }
+    .countdown .label { font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-top: 6px; }
+    .countdown p { font-family: Arial, sans-serif; font-size: 13px; color: rgba(255,255,255,.75); margin-top: 12px; line-height: 1.5; }
+
+    .cta-box {
+      background: var(--red); color: white; border-radius: 6px;
+      padding: 24px; text-align: center;
+    }
+    .cta-box h3 { font-size: 18px; margin-bottom: 10px; }
+    .cta-box p { font-family: Arial, sans-serif; font-size: 13px; color: rgba(255,255,255,.85); margin-bottom: 16px; line-height: 1.5; }
+    .cta-box a.btn {
+      display: inline-block; background: white; color: var(--navy);
+      padding: 10px 22px; border-radius: 4px; font-family: Arial, sans-serif;
+      font-size: 13px; font-weight: bold; letter-spacing: .3px;
+    }
+
+    .section-divider {
+      font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--muted); margin: 32px 0 16px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.5);
+      padding: 32px 40px; font-family: Arial, sans-serif; font-size: 12px;
+      text-align: center;
+    }
+    footer a { color: var(--gold); }
+
+    @media (max-width: 720px) {
+      .layout { grid-template-columns: 1fr; padding: 24px 16px; }
+      .topbar { padding: 12px 16px; }
+      .masthead { padding: 36px 20px 28px; }
+      .masthead h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Robinhood Adjusting · West Palm Beach, Florida</span>
+  <a href="../PA-WEBSITE.html">← Back to Site</a>
+</div>
+
+<div class="masthead">
+  <div class="kicker">Weekly Market Intelligence · South Florida</div>
+  <h1>Insurance Trends — Week 17</h1>
+  <div class="dateline">April 21–25, 2026 &nbsp;·&nbsp; Palm Beach · Broward · Miami-Dade · St. Lucie · Martin</div>
+</div>
+
+<div class="layout">
+  <div class="main-col">
+
+    <div class="section-divider">This Week's Top Stories</div>
+
+    <!-- STORY 1 - Urgent -->
+    <div class="story urgent">
+      <div class="story-tag tag-urgent">⚡ Time-Sensitive · Active Claims Window</div>
+      <h2>April 7 Flood Claims Entering the Acknowledgment Pipeline Now</h2>
+      <p>
+        Property owners affected by the April 7 flooding events across South Florida are now entering
+        the statutory claims pipeline. Under Florida law, carriers must acknowledge a claim within 14 days
+        of notice — meaning homeowners and business owners who filed in the days following April 7 are
+        receiving their first formal carrier communications this week.
+      </p>
+      <p>
+        This is a critical window. Carrier adjusters are being assigned, initial inspection visits are being
+        scheduled, and preliminary repair scopes are being drafted — often before the full extent of water
+        damage is visible or documented. Structural moisture, mold precursors, and secondary damage to
+        mechanical systems often don't manifest until weeks after the initial event.
+      </p>
+      <div class="takeaway">
+        <strong>What this means for you</strong>
+        If you were affected by the April 7 event and have not yet had an independent assessment of your
+        damage, now is the time — before the carrier's scope becomes the baseline for your settlement.
+      </div>
+    </div>
+
+    <!-- STORY 2 -->
+    <div class="story">
+      <div class="story-tag tag-market">📊 Market Conditions</div>
+      <h2>CSU Releases Slightly Below-Normal Hurricane Forecast — But Don't Read It That Way</h2>
+      <p>
+        Colorado State University's April 2026 hurricane season forecast calls for a slightly below-normal
+        Atlantic season, citing cooler-than-expected sea surface temperatures in key development zones.
+        "Below normal" in this context means fewer named storms than average — not zero, and not safe.
+      </p>
+      <p>
+        The most destructive seasons in recent Florida history were not the most active. A single
+        landfalling storm in a below-normal year can cause more damage to South Florida than five storms
+        that stay offshore in an active year. The CSU forecast affects global storm counts; it does not
+        forecast path, intensity at landfall, or where any individual storm makes impact.
+      </p>
+      <div class="takeaway">
+        <strong>What this means for you</strong>
+        Pre-season documentation and policy review are exactly as important this year as any other.
+        The 38-day window before June 1 is the time to photograph your property, verify your coverage
+        limits, and identify gaps before you need them.
+      </div>
+    </div>
+
+    <!-- STORY 3 -->
+    <div class="story">
+      <div class="story-tag tag-legislative">⚖️ Legislative &amp; Regulatory</div>
+      <h2>Citizens Depopulation Continues — What It Means When Your Policy Moves</h2>
+      <p>
+        Citizens Property Insurance Corporation continues its managed depopulation effort, moving
+        policies to private market carriers through its "take-out" program. Tens of thousands of
+        South Florida policyholders have received or will receive notices that their Citizens policy
+        is being assumed by a private carrier.
+      </p>
+      <p>
+        The new carrier is required to offer coverage at no more than 20% above the Citizens rate,
+        but the terms, exclusions, and claims handling practices vary significantly. Policyholders
+        who accept the offer without reviewing the new policy may find differences in wind deductibles,
+        water damage sub-limits, or loss-of-use provisions that don't become apparent until a claim.
+      </p>
+      <div class="takeaway">
+        <strong>What this means for you</strong>
+        If you've received a Citizens take-out notice, compare the declarations page of the new policy
+        side-by-side before accepting. Pay particular attention to the wind deductible (which may now
+        be a percentage of dwelling value rather than a flat dollar amount) and any exclusions added
+        for your specific property type.
+      </div>
+    </div>
+
+    <!-- STORY 4 -->
+    <div class="story opportunity">
+      <div class="story-tag tag-opportunity">📍 Regional Focus · St. Lucie County</div>
+      <h2>St. Lucie Policyholders Face 6% Rate Hike — and Older Roofs Are the Core Issue</h2>
+      <p>
+        St. Lucie County policyholders are absorbing a 6% average rate increase this cycle, the
+        largest of any county in the current OIR filing round. Carriers cite aging housing stock —
+        particularly roofs 15+ years old in Port St. Lucie and Fort Pierce — as the primary driver
+        of underwriting losses and rate pressure.
+      </p>
+      <p>
+        The practical consequence: homeowners with pre-2010 roofs are seeing both higher premiums
+        and more aggressive depreciation arguments when they file wind or water damage claims.
+        Carriers increasingly cite "functional obsolescence" to reduce actual cash value settlements
+        on older roof systems, even when the damage is clearly storm-related.
+      </p>
+      <div class="takeaway">
+        <strong>What this means for you</strong>
+        If you're a St. Lucie homeowner with a roof older than 15 years and you've experienced any
+        storm-related damage, an independent adjuster's scope and estimate is especially important.
+        The difference between replacement cost value and actual cash value on an older roof can
+        run into tens of thousands of dollars.
+      </div>
+    </div>
+
+    <!-- STORY 5 -->
+    <div class="story">
+      <div class="story-tag tag-legislative">⚖️ Enforcement</div>
+      <h2>Broward Fraud Arrest Highlights Importance of Choosing a Licensed PA</h2>
+      <p>
+        A Broward County public adjuster was arrested this month on charges related to insurance
+        fraud and unlicensed activity. The case involves allegations of inflated estimates and
+        unauthorized solicitation of homeowners in declared disaster areas, practices that
+        undermine the credibility of the profession and harm policyholders.
+      </p>
+      <p>
+        The Florida Department of Financial Services licenses public adjusters and maintains a
+        public lookup database. A licensed PA is bonded, subject to continuing education requirements,
+        and bound by the Florida Public Adjuster Code of Ethics.
+      </p>
+      <div class="takeaway">
+        <strong>What this means for you</strong>
+        Always verify your PA's license before signing a retainer. You can confirm any Florida public
+        adjuster's license status at the Florida DFS MyProfile portal. A legitimate PA will welcome
+        the question.
+      </div>
+    </div>
+
+    <!-- STORY 6 -->
+    <div class="story">
+      <div class="story-tag tag-market">📊 Market Conditions · NFIP</div>
+      <h2>NFIP Reauthorization Deadline Approaches — Flood Coverage Uncertainty Continues</h2>
+      <p>
+        The National Flood Insurance Program faces another reauthorization cliff as Congress approaches
+        the current authorization deadline. Short-term extensions have become routine, but each lapse
+        or near-lapse creates uncertainty for property owners in flood zones who require NFIP coverage
+        to satisfy mortgage requirements.
+      </p>
+      <p>
+        For South Florida property owners, this has downstream effects on closings, refinances, and
+        the availability of NFIP claims adjusters during peak storm season. Private flood market
+        alternatives are expanding but remain more expensive and less standardized for high-risk zones.
+      </p>
+      <div class="takeaway">
+        <strong>What this means for you</strong>
+        If your property is in a FEMA-designated flood zone, confirm your policy is active and
+        understand its coverage limits independent of any wind or homeowners policy. NFIP policies
+        cover structure and contents separately — limits may not reflect current replacement costs.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="countdown">
+      <div class="num">38</div>
+      <div class="label">Days to Hurricane Season</div>
+      <p>June 1 is the official start. Pre-season documentation should happen now — before the market goes reactive.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Week at a Glance</h3>
+      <ul>
+        <li><strong>April 7 Claims</strong>Acknowledgment window active. Independent review recommended.</li>
+        <li><strong>Citizens Take-Outs</strong>New policy notices being delivered. Review before accepting.</li>
+        <li><strong>St. Lucie Rate Hike</strong>+6% increase; older roofs seeing higher depreciation disputes.</li>
+        <li><strong>CSU Forecast</strong>Slightly below normal — does not reduce individual storm risk.</li>
+        <li><strong>NFIP</strong>Reauthorization approaching; policy status check recommended.</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Counties Covered</h3>
+      <ul>
+        <li><strong>Palm Beach</strong>Active market, pre-season focus</li>
+        <li><strong>Broward</strong>Fraud enforcement activity</li>
+        <li><strong>Miami-Dade</strong>Citizens depopulation volume</li>
+        <li><strong>St. Lucie</strong>Rate hike + aging stock</li>
+        <li><strong>Martin</strong>NFIP flood zone exposure</li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>Free Claim Review</h3>
+      <p>Affected by the April 7 floods, a Citizens take-out, or unsure about your current coverage? We'll review it at no charge.</p>
+      <a href="../PA-WEBSITE.html#contact" class="btn">Contact Us</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Previous Issues</h3>
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--muted);line-height:1.6;">
+        Weekly trend reports are published every Friday. Issues will be archived here as they are released.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div>Robinhood Adjusting · West Palm Beach, Florida · Licensed Public Adjuster</div>
+  <div style="margin-top:8px"><a href="../PA-WEBSITE.html">robinhoodadjusting.com</a> &nbsp;·&nbsp; <a href="mailto:duncanlittlejohn727@gmail.com">duncanlittlejohn727@gmail.com</a></div>
+  <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,.3)">This report is for informational purposes only and does not constitute legal or insurance advice.</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duncan's 100-in-100 Operations Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #1e88e5;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1e88e5;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .goal {
+            background: #e3f2fd;
+            padding: 15px 20px;
+            border-left: 4px solid #1e88e5;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .goal strong {
+            color: #1e88e5;
+        }
+
+        .recovery-system {
+            background: #c8e6c9;
+            padding: 15px 20px;
+            border-left: 4px solid #2e7d32;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .recovery-system strong {
+            color: #1b5e20;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .day {
+            background: #fafafa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .day-header {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .day-header.weekday {
+            background: #1e88e5;
+        }
+
+        .day-header.weekend {
+            background: #757575;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            height: 800px;
+            position: relative;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .hour-slot {
+            flex: 1;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .hour-label {
+            position: absolute;
+            left: 2px;
+            top: -8px;
+            font-size: 9px;
+            color: #999;
+            width: 32px;
+            text-align: center;
+        }
+
+        .task-box {
+            position: absolute;
+            left: 35px;
+            right: 3px;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 500;
+            border-left: 2px solid;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .task-box.daily {
+            background: #f1f8f6;
+            border-left-color: #4caf50;
+            color: #2e7d32;
+        }
+
+        .task-box.new {
+            background: #fff3e0;
+            border-left-color: #ff9800;
+            color: #e65100;
+        }
+
+        .task-box.weekly {
+            background: #f3e5f5;
+            border-left-color: #9c27b0;
+            color: #6a1b9a;
+        }
+
+        .task-box.monthly {
+            background: #ffebee;
+            border-left-color: #d32f2f;
+            color: #c62828;
+        }
+
+        .task-box.rest {
+            background: #e8eaf6;
+            border-left-color: #3f51b5;
+            color: #3f51b5;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            padding: 10px;
+            border-left: 4px solid #999;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .legend-item.daily {
+            border-left-color: #4caf50;
+            background: #f1f8f6;
+        }
+
+        .legend-item.new {
+            border-left-color: #ff9800;
+            background: #fff3e0;
+        }
+
+        .legend-item.weekly {
+            border-left-color: #9c27b0;
+            background: #f3e5f5;
+        }
+
+        .legend-item.monthly {
+            border-left-color: #d32f2f;
+            background: #ffebee;
+        }
+
+        .legend-label {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .workflow-overview {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f0f7ff;
+            border: 1px solid #1e88e5;
+            border-radius: 8px;
+        }
+
+        .workflow-overview h3 {
+            color: #1e88e5;
+            margin-bottom: 15px;
+        }
+
+        .workflow-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .workflow-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .workflow-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .notes {
+            margin: 40px 0;
+            padding: 20px;
+            background: #fff9c4;
+            border-left: 4px solid #fbc02d;
+            border-radius: 4px;
+        }
+
+        .notes h3 {
+            color: #f57f17;
+            margin-bottom: 10px;
+        }
+
+        .notes p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .notes ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .notes li {
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #999;
+            font-size: 12px;
+        }
+
+        h2 {
+            margin: 30px 0 20px 0;
+            color: #1e88e5;
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .container {
+                padding: 20px;
+            }
+            .calendar-grid {
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .calendar-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Duncan's 100-in-100 Operations Schedule</h1>
+            <div class="subtitle">Automated Workflows for Public Adjuster Pipeline Acceleration</div>
+        </header>
+
+        <div class="goal">
+            <strong>Goal:</strong> 100 clients in 100 days | South Florida PA outreach powered by Agent Smith automation
+        </div>
+
+        <div class="recovery-system">
+            <strong>✓ Auto-Recovery Active:</strong> Missed cron jobs are automatically caught up when Mac wakes up. LaunchAgent runs every 5 minutes to detect and trigger any jobs that were scheduled while offline. State tracking prevents duplicate runs.
+        </div>
+
+        <div class="workflow-overview">
+            <h3>Complete Workflow Stack (6 Morning Jobs + 5 Scheduled Tasks)</h3>
+            <ul class="workflow-list">
+                <li><strong>4:00am BRIEF:</strong> Daily industry research (news, regulatory, real estate, service industries)</li>
+                <li><strong>4:30am CONTENT:</strong> Facebook, Instagram, blog post drafts from today's brief</li>
+                <li><strong>5:00am INTELLIGENCE:</strong> Deep prospect research on today's outreach targets</li>
+                <li><strong>6:00am CRM OUTREACH:</strong> Outreach drafts + followup scheduling (Mon-Fri)</li>
+                <li><strong>7:00am RESPONSE:</strong> Process prospect replies, draft responses (Mon-Fri)</li>
+                <li><strong>7:30am OPS REVIEW:</strong> Daily operations review (Mon-Fri)</li>
+                <li><strong>10:00am LINKEDIN:</strong> Weekly LinkedIn sequencing (Mon only)</li>
+                <li><strong>10:00am PARTNERSHIPS:</strong> Partnership opportunity identification (Wed only)</li>
+                <li><strong>10:00am WEEKLY TRENDS:</strong> Trend analysis across last 7 days (Sat only)</li>
+                <li><strong>10:00am WEEKLY ROLLUP:</strong> Weekly review and priorities (Fri only)</li>
+                <li><strong>9:00am MONTHLY:</strong> Velocity review, pace check, course correction (1st of month)</li>
+            </ul>
+        </div>
+
+        <h2>24-Hour Daily Schedule (Time Zone: America/New_York / EDT)</h2>
+
+        <div class="calendar-grid">
+            <!-- MONDAY -->
+            <div class="day">
+                <div class="day-header weekday">MONDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">12am-5am</div>
+                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
+                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
+                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">5am-10am</div>
+                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
+                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
+                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">10am-3pm</div>
+                        <div class="task-box weekly" style="top: 10%;">🔗 10:00am LINKEDIN</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">3pm-8pm</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">8pm-12am</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TUESDAY -->
+            <div class="day">
+                <div class="day-header weekday">TUESDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">12am-5am</div>
+                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
+                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
+                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">5am-10am</div>
+                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
+                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
+                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
+                    </div>
+                    <div class="hour-slot" style="height: 60%;">
+                        <div class="hour-label">10am-8pm</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEDNESDAY -->
+            <div class="day">
+                <div class="day-header weekday">WEDNESDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">12am-5am</div>
+                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
+                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
+                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">5am-10am</div>
+                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
+                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
+                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">10am-3pm</div>
+                        <div class="task-box weekly" style="top: 10%;">🤝 10:00am PARTNERSHIPS</div>
+                    </div>
+                    <div class="hour-slot" style="height: 40%;">
+                        <div class="hour-label">3pm-8pm</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THURSDAY -->
+            <div class="day">
+                <div class="day-header weekday">THURSDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">12am-5am</div>
+                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
+                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
+                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">5am-10am</div>
+                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
+                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
+                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
+                    </div>
+                    <div class="hour-slot" style="height: 60%;">
+                        <div class="hour-label">10am-8pm</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FRIDAY -->
+            <div class="day">
+                <div class="day-header weekday">FRIDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">12am-5am</div>
+                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
+                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
+                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">5am-10am</div>
+                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
+                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
+                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
+                    </div>
+                    <div class="hour-slot" style="height: 20%;">
+                        <div class="hour-label">10am-3pm</div>
+                        <div class="task-box weekly" style="top: 10%;">📋 10:00am WEEKLY ROLLUP</div>
+                    </div>
+                    <div class="hour-slot" style="height: 40%;">
+                        <div class="hour-label">3pm-8pm</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SATURDAY -->
+            <div class="day">
+                <div class="day-header weekend">SATURDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 40%;">
+                        <div class="hour-label">12am-10am</div>
+                        <div class="task-box weekly" style="top: 50%;">📈 10:00am WEEKLY TRENDS</div>
+                    </div>
+                    <div class="hour-slot" style="height: 60%;">
+                        <div class="hour-label">10am-8pm</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUNDAY -->
+            <div class="day">
+                <div class="day-header weekend">SUNDAY</div>
+                <div class="timeline">
+                    <div class="hour-slot" style="height: 100%;">
+                        <div class="hour-label">All day</div>
+                        <div class="task-box rest" style="top: 25%; left: 45px; right: 5px;">Rest Day (No scheduled tasks)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Monthly Cadence</h2>
+
+        <div class="task-box monthly" style="max-width: 500px; margin: 20px 0; position: relative; left: 0;">
+            <span style="display: block; font-weight: bold;">📊 MONTHLY VELOCITY REVIEW</span>
+            <span style="display: block; font-size: 11px; margin-top: 4px;">1st of each month, 9:00 AM EDT — Deals closed, channel performance, pace vs 100-in-100 goal</span>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item daily">
+                <div class="legend-label">📰 Daily Workflows</div>
+                <div style="font-size: 12px; color: #666;">Mon-Fri, 4:00am-7:30am</div>
+            </div>
+            <div class="legend-item new">
+                <div class="legend-label">✨ New Workflows</div>
+                <div style="font-size: 12px; color: #666;">5am Intelligence, 7am Response, weekday outreach</div>
+            </div>
+            <div class="legend-item weekly">
+                <div class="legend-label">📈 Weekly Tasks</div>
+                <div style="font-size: 12px; color: #666;">Mon 10am, Wed 10am, Fri 10am, Sat 10am</div>
+            </div>
+            <div class="legend-item monthly">
+                <div class="legend-label">📊 Monthly Review</div>
+                <div style="font-size: 12px; color: #666;">1st of month, 9am EDT</div>
+            </div>
+        </div>
+
+        <div class="notes">
+            <h3>How It Works</h3>
+            <ul>
+                <li><strong>Morning Block (4am–7:30am EDT):</strong> All prep work complete before 8am — brief, content, intelligence, outreach, responses, review</li>
+                <li><strong>Input → Output Chain:</strong> Brief (4am) → Content (4:30am) → Intelligence (5am) → Outreach (6am) → Responses (7am) → Review (7:30am)</li>
+                <li><strong>All outputs are drafts:</strong> Nothing posts or sends automatically. Duncan reviews and approves manually</li>
+                <li><strong>Auto-Recovery:</strong> LaunchAgent detects Mac wake-up, triggers any missed jobs in correct order. State file prevents duplicate runs same day</li>
+                <li><strong>Model Routing:</strong> Brief & Content use Gemini 2.0 Flash (speed), Intelligence uses Gemini 2.0 Flash, CRM outreach uses Gemini, Response handler uses Haiku (fast), OPS review uses Haiku</li>
+                <li><strong>Weekdays only:</strong> Morning block runs Mon–Fri. Weekend is light (trends on Sat, rest on Sun)</li>
+                <li><strong>No cascading failures:</strong> Each job runs independently. If brief fails, content can still run on previous brief, or wait for manual input</li>
+            </ul>
+        </div>
+
+        <div class="notes" style="background: #e0f2f1; border-left-color: #00897b;">
+            <h3 style="color: #00695c;">Auto-Recovery / Catchup System (Active)</h3>
+            <ul>
+                <li><strong>LaunchAgent:</strong> com.openclaw.catchup runs every 5 minutes at launch/boot</li>
+                <li><strong>Catchup Script:</strong> /Users/victoria/.openclaw/catchup.sh detects time and which jobs should have run</li>
+                <li><strong>State Tracking:</strong> .catchup-state.json prevents duplicate runs same day</li>
+                <li><strong>Logging:</strong> All activity logged to .catchup-log.txt</li>
+                <li><strong>Job Order:</strong> Runs in dependency order (brief → content → intelligence → outreach)</li>
+                <li><strong>When it triggers:</strong> Mac wakes up, or next time LaunchAgent checks (every 5min) if jobs missed</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Generated April 24, 2026 | Agent Smith Operations System v2 (Auto-Recovery Active)</p>
+            <p>To print as PDF: Cmd+P (Mac) or Ctrl+P (Windows) → Save as PDF</p>
+        </div>
+    </div>
+</body>
+</html>

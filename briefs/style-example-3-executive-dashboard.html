@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Florida Business Brief - April 23, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: white;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content h1 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .header-content p {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .date-box {
+            background: #f5f5f5;
+            padding: 20px 25px;
+            border-radius: 6px;
+            text-align: right;
+        }
+
+        .date-box .day {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .date-box .month {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight {
+            background: #fffbea;
+            border-left: 4px solid #f59e0b;
+            padding: 20px 24px;
+            margin-bottom: 35px;
+            border-radius: 4px;
+        }
+
+        .highlight h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .highlight p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section h3 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .item {
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .item-text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .item-source {
+            font-size: 11px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>South Florida Business Brief</h1>
+                <p>Market intelligence for enterprise leaders</p>
+            </div>
+            <div class="date-box">
+                <div class="day">23</div>
+                <div class="month">April 2026</div>
+            </div>
+        </header>
+
+        <div class="highlight">
+            <h2>Commercial Real Estate Market Accelerates</h2>
+            <p>Strong transaction activity across office, retail, and industrial sectors. Investor confidence remains elevated with new capital entering Miami-Dade, Broward, and Palm Beach markets.</p>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-number">↑ 3.2%</div>
+                <div class="stat-label">Banking Index MoM</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">$2.8B</div>
+                <div class="stat-label">Dev Pipeline Active</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3.2%</div>
+                <div class="stat-label">Unemployment Rate</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="section">
+                <h3>Finance & Markets</h3>
+                <div class="item">
+                    <div class="item-title">Regional Banking Up 3.2% Month-Over-Month</div>
+                    <div class="item-text">Commercial lending momentum continues with mortgage originations exceeding historical averages. Favorable interest rate environment driving corporate expansion.</div>
+                    <div class="item-source">Chamber of Commerce Market Analysis</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Insurance Sector Stabilizes</div>
+                    <div class="item-text">Property and casualty rates reaching equilibrium. Institutional investors increasing South Florida exposure following regulatory clarity.</div>
+                    <div class="item-source">Florida Insurance Council</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Real Estate & Development</h3>
+                <div class="item">
+                    <div class="item-title">$2.8B Development Pipeline</div>
+                    <div class="item-text">Mixed-use projects dominating investment activity. Transit-oriented and mixed-income development taking priority in three-county region.</div>
+                    <div class="item-source">Commercial Real Estate Association</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Premium Office Rents Up 12%</div>
+                    <div class="item-text">Class-A downtown properties commanding premium rates. Suburban markets adjusting to hybrid work trends with selective demand patterns.</div>
+                    <div class="item-source">CBRE Regional Market Report</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="section">
+                <h3>Economic Indicators</h3>
+                <div class="item">
+                    <div class="item-title">Unemployment at Five-Year Low</div>
+                    <div class="item-text">3.2% rate driven by hospitality, healthcare, and professional services. Regional workforce expansion supported by ongoing migration.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Trade & Logistics</h3>
+                <div class="item">
+                    <div class="item-title">Port Activity Sets Records</div>
+                    <div class="item-text">Miami and Everglades ports handling unprecedented cargo volumes. International agreements expanding regional distribution opportunities.</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            South Florida Business Brief is published daily for enterprise clients and institutional partners. © 2026 Regional Intelligence Group.
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+interaction_id,org_id,date,type,direction,stage,summary,outcome,next_action,next_action_date
+klr-2026-04-24-001,palmbeach-klr-roofing,2026-04-24,email,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+jd-2026-04-24-001,palmbeach-jd-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+ranger-2026-04-24-001,palmbeach-ranger-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+seabreeze-2026-04-24-001,palmbeach-seabreeze-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+buckeye-2026-04-24-001,palmbeach-buckeye-plumbing,2026-04-24,phone,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+bf-2026-04-24-001,palmbeach-bf-plumbing,2026-04-24,phone,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+copperhead-2026-04-24-001,palmbeach-copperhead-plumbing,2026-04-24,phone,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+hopkins-2026-04-24-001,palmbeach-hopkins-air,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+lowen-2026-04-24-001,palmbeach-lowen-ac,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+bradley-2026-04-24-001,palmbeach-bradley-air,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+remediation-2026-04-24-001,palmbeach-remediation911,2026-04-24,phone,outbound,initial,Initial partnership outreach — water mitigation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+servpro-2026-04-24-001,palmbeach-servpro-wpb,2026-04-24,web,outbound,initial,Initial partnership outreach — water mitigation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+stanley-2026-04-24-001,palmbeach-stanley-restoration,2026-04-24,web,outbound,initial,Initial partnership outreach — water mitigation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+aplus-2026-04-24-001,palmbeach-aplus-mold,2026-04-24,phone,outbound,initial,Initial partnership outreach — mold remediation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+pure-2026-04-24-001,palmbeach-pure-maintenance,2026-04-24,phone,outbound,initial,Initial partnership outreach — mold remediation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+highland-2026-04-24-001,palmbeach-highland-contractors,2026-04-24,web,outbound,initial,Initial partnership outreach — general contractor collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+tci-2026-04-24-001,palmbeach-build-tci,2026-04-24,web,outbound,initial,Initial partnership outreach — general contractor collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+parker-2026-04-24-001,palmbeach-parker-adjusters,2026-04-24,web,outbound,initial,B2B relationship — peer adjuster network,draft_prepared,Duncan reviews and sends draft,2026-04-24
+reliant-2026-04-24-001,palmbeach-reliant-adjusters,2026-04-24,web,outbound,initial,B2B relationship — peer adjuster network,draft_prepared,Duncan reviews and sends draft,2026-04-24
+ocean-2026-04-24-001,palmbeach-oceanpoint-claims,2026-04-24,web,outbound,initial,B2B relationship — peer adjuster network,draft_prepared,Duncan reviews and sends draft,2026-04-24
+jilsa-2026-04-24-001,palmbeach-jilsa-management,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+grant-pb-2026-04-24-001,palmbeach-grant-pm,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+apm-2026-04-24-001,palmbeach-apm,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+kw-2026-04-24-001,palmbeach-kw-pmc,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+homepm-2026-04-24-001,palmbeach-home-pm2,2026-04-24,web,outbound,initial,Initial partnership outreach — property manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+kanga-pb-2026-04-24-001,palmbeach-kanga-pm,2026-04-24,web,outbound,initial,Initial partnership outreach — property manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+compass-2026-04-24-001,broward-compass-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+psi-2026-04-24-001,broward-psi-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+integrity-2026-04-24-001,broward-integrity-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+magical-2026-04-24-001,broward-magical-plumbing,2026-04-24,phone,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+probowl-2026-04-24-001,broward-probowl-plumbing,2026-04-24,phone,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+pyke-2026-04-24-001,broward-pyke-mechanical,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+abraham-2026-04-24-001,broward-abraham-ac,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+rightaway-2026-04-24-001,broward-air-rightaway,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+titan-br-2026-04-24-001,broward-titan-restoration,2026-04-24,web,outbound,initial,Initial partnership outreach — water mitigation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+pauldavis-2026-04-24-001,broward-pauldavis,2026-04-24,phone,outbound,initial,Initial partnership outreach — water mitigation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+discreet-2026-04-24-001,broward-discreet-restoration,2026-04-24,phone,outbound,initial,Initial partnership outreach — mold remediation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+grant-br-2026-04-24-001,broward-grant-pm,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+trident-2026-04-24-001,broward-trident-mgmt,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+coral-2026-04-24-001,broward-coral-condos,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+jma-2026-04-24-001,broward-jma-management,2026-04-24,web,outbound,initial,Initial partnership outreach — HOA manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+mayfair-2026-04-24-001,broward-mayfair-pm,2026-04-24,web,outbound,initial,Initial partnership outreach — property manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+kanga-br-2026-04-24-001,broward-kanga-pm,2026-04-24,web,outbound,initial,Initial partnership outreach — property manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+damelecia-2026-04-24-001,broward-damelecia,2026-04-24,web,outbound,initial,Initial partnership outreach — property manager collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+apalmer-2026-04-24-001,miamidade-apalmer-roofing,2026-04-24,phone,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+ts-2026-04-24-001,miamidade-ts-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+rhi-2026-04-24-001,miamidade-rhi-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+miw-2026-04-24-001,miamidade-miwroofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+bay-2026-04-24-001,miamidade-bay-plumbing,2026-04-24,phone,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+douglasorr-2026-04-24-001,miamidade-douglasorr,2026-04-24,web,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+allflorida-2026-04-24-001,miamidade-allflorida-plumbing,2026-04-24,web,outbound,initial,Initial partnership outreach — plumber collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+freezing-2026-04-24-001,miamidade-freezing-mechanical,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+flowtech-2026-04-24-001,miamidade-flowtech-ac,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+dade-2026-04-24-001,miamidade-dade-supercool,2026-04-24,web,outbound,initial,Initial partnership outreach — HVAC collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+titan-md-2026-04-24-001,miamidade-titan-restoration,2026-04-24,web,outbound,initial,Initial partnership outreach — water mitigation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+fdp-2026-04-24-001,miamidade-fdp-mold,2026-04-24,web,outbound,initial,Initial partnership outreach — mold remediation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+miami-mold-2026-04-24-001,miamidade-miami-mold-specialist,2026-04-24,web,outbound,initial,Initial partnership outreach — mold remediation collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+stlucie-roof-2026-04-24-001,stlucie-stlucie-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+fixd-2026-04-24-001,stlucie-fixd-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+tropical-2026-04-24-001,stlucie-tropical-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+psl-2026-04-24-001,stlucie-psl-roofers,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+martin-roof-2026-04-24-001,martin-martin-county-roofing,2026-04-24,phone,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+walsh-2026-04-24-001,martin-walsh-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+codered-2026-04-24-001,martin-code-red-roofers,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+diversified-2026-04-24-001,martin-diversified-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
+threeguys-2026-04-24-001,martin-three-guys-roofing,2026-04-24,web,outbound,initial,Initial partnership outreach — roofer collaboration,draft_prepared,Duncan reviews and sends draft,2026-04-24
