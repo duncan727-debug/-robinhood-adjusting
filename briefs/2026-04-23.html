@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Florida Insurance Brief — April 23, 2026</title>
+    <title>South Florida Property Intelligence Report — April 23, 2026</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             background: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
+
         .masthead {
             background: #1a1a1a;
             color: white;
@@ -19,23 +25,27 @@
             text-align: center;
             border-bottom: 8px solid #c41e3a;
         }
+
         .masthead h1 {
             font-size: 48px;
             font-weight: bold;
             letter-spacing: 2px;
             margin-bottom: 10px;
         }
+
         .masthead .subtitle {
             font-size: 14px;
             font-style: italic;
             letter-spacing: 1px;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: white;
             padding: 40px;
         }
+
         .date-line {
             text-align: center;
             font-size: 13px;
@@ -45,6 +55,7 @@
             border-bottom: 1px solid #ddd;
             padding-bottom: 15px;
         }
+
         .lead {
             font-size: 18px;
             line-height: 1.8;
@@ -54,6 +65,7 @@
             margin-bottom: 40px;
             color: #000;
         }
+
         h2 {
             font-size: 24px;
             font-weight: bold;
@@ -63,6 +75,7 @@
             padding-bottom: 10px;
             color: #1a1a1a;
         }
+
         h3 {
             font-size: 18px;
             font-weight: bold;
@@ -70,9 +83,21 @@
             margin-bottom: 15px;
             color: #1a1a1a;
         }
-        p { margin-bottom: 15px; text-align: justify; }
-        a { color: #c41e3a; text-decoration: underline; }
-        a:hover { color: #1a1a1a; }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        a {
+            color: #c41e3a;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #1a1a1a;
+        }
+
         .impact {
             background: #f9f9f9;
             border-left: 4px solid #ffc107;
@@ -81,59 +106,14 @@
             font-style: italic;
             font-size: 14px;
         }
-        .action-box {
-            background: #fef7e0;
-            border: 2px solid #f59e0b;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 4px;
-        }
-        .action-box h3 {
-            margin-top: 0;
-            color: #92400e;
-        }
-        .action-box ol {
-            margin-left: 20px;
-            font-size: 14px;
-        }
-        .action-box li {
-            margin-bottom: 10px;
-            padding-left: 5px;
-        }
-        .stat-row {
-            display: flex;
-            justify-content: space-around;
-            background: #1a1a1a;
-            color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .stat {
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
-        }
-        .stat-number {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffc107;
-            display: block;
-        }
-        .stat-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             font-size: 14px;
         }
+
         table th {
             background: #1a1a1a;
             color: white;
@@ -141,11 +121,16 @@
             text-align: left;
             font-weight: bold;
         }
+
         table td {
             border-bottom: 1px solid #ddd;
             padding: 12px;
         }
-        table tr:nth-child(even) { background: #f9f9f9; }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
         .summary {
             background: #e8f4f8;
             border-left: 4px solid #2196f3;
@@ -154,12 +139,18 @@
             font-size: 14px;
             line-height: 1.8;
         }
-        .summary ul { list-style: none; padding-left: 0; }
+
+        .summary ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
         .summary li {
             margin-bottom: 8px;
             padding-left: 25px;
             position: relative;
         }
+
         .summary li:before {
             content: "▪";
             position: absolute;
@@ -167,6 +158,7 @@
             color: #2196f3;
             font-weight: bold;
         }
+
         .footer {
             text-align: center;
             font-size: 12px;
@@ -175,14 +167,13 @@
             padding-top: 20px;
             border-top: 1px solid #ddd;
         }
-        .hero-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border-radius: 4px;
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; padding: 0; }
+            a { color: #333; }
         }
-        @media print { body { background: white; } .container { box-shadow: none; padding: 0; } a { color: #333; } }
+
         @media (max-width: 768px) {
             .masthead h1 { font-size: 32px; }
             .container { padding: 20px; }
@@ -195,248 +186,164 @@
 </head>
 <body>
     <div class="masthead">
-        <h1>SOUTH FLORIDA INSURANCE BRIEF</h1>
-        <div class="subtitle">Public Adjuster Intelligence &amp; Market Trends</div>
+        <h1>SOUTH FLORIDA PROPERTY INTELLIGENCE REPORT</h1>
+        <div class="subtitle">Public Adjuster Intelligence & Market Trends</div>
     </div>
 
     <div class="container">
-        <div class="date-line">Thursday, April 23, 2026 &nbsp;·&nbsp; Palm Beach · Martin · Miami-Dade · St. Lucie · Broward</div>
-
-        <img class="hero-img" src="https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=1200&amp;q=80" alt="Hurricane satellite imagery" />
+        <div class="date-line">Thursday, April 23, 2026</div>
 
         <div class="lead">
-            CSU's April hurricane forecast calls for a slightly below-normal 2026 Atlantic season — 13 named storms, 6 hurricanes, 2 majors. But "below normal" is not "benign." With 38 days until June 1, this is the industry's last proactive window. Citizens rate cuts are deploying across South Florida, 16 new carriers are in the market, and remediation capacity is already booked into summer.
+            Colorado State University projects a slightly below-normal 2026 Atlantic hurricane season (13 named storms, 6 hurricanes, 2 majors), though U.S. major hurricane landfall odds remain at 32%. Meanwhile, real estate luxury sales continue to outpace expectations, and new legislative frameworks reshape wind-loss mitigation and PA contract requirements. South Florida property owners have 38 days until June 1 hurricane season — the critical window for pre-loss documentation and contract engagement.
         </div>
 
-        <div class="stat-row">
-            <div class="stat"><span class="stat-number">38</span><span class="stat-label">Days to June 1</span></div>
-            <div class="stat"><span class="stat-number">13/6/2</span><span class="stat-label">CSU Forecast</span></div>
-            <div class="stat"><span class="stat-number">32%</span><span class="stat-label">US Major Landfall Odds</span></div>
-            <div class="stat"><span class="stat-number">−14%</span><span class="stat-label">Miami-Dade Citizens Cut</span></div>
-        </div>
+        <h2>Market Snapshot</h2>
 
-        <div class="action-box">
-            <h3>⚡ ACTION ITEMS — This Week</h3>
-            <ol>
-                <li><strong>Launch pre-season documentation campaign.</strong> Template outreach to clients + warm prospects offering pre-loss walk-throughs: photos, inventories, roof-age affidavits. Contract-signing window, not a reactive one.</li>
-                <li><strong>Flag depopulated-from-Citizens policyholders in CRM.</strong> ~1.3M FL policies moved to private carriers since 2023. First major loss = high PA engagement probability. Tag them now.</li>
-                <li><strong>Wind-mit discrepancy prep.</strong> New OIR-B1-1802 form live April 1. Build a short client-facing FAQ for renewal/claim questions on shifted credits.</li>
-            </ol>
-            <h3 style="margin-top: 20px;">📅 Next 2–4 Weeks</h3>
-            <ol start="4">
-                <li><strong>Luxury prospecting lane.</strong> $5M+ Miami-Dade sales +27% YoY. Target Miami Beach, Fort Lauderdale waterfront, Boca, Jupiter, Palm Beach Island.</li>
-                <li><strong>Remediation partnership outreach.</strong> Mold/water firms booked full into summer — PA + remediator bundle for coverage-straddle cases. Start with Mold Only.</li>
-                <li><strong>Carrier vetting list.</strong> 4 of the 16 new FL entities tie to previously insolvent/restructured insurers. Build a "carriers to watch" sheet.</li>
-            </ol>
-        </div>
-
-        <h2>Top Story: CSU Issues April Hurricane Forecast</h2>
-        <p>
-            <a href="https://tropical.colostate.edu/Forecast/2026-04.pdf">Colorado State University's Tropical Meteorology Project released its April extended-range forecast</a> calling for a slightly below-normal 2026 Atlantic hurricane season: <strong>13 named storms, 6 hurricanes, 2 major hurricanes</strong>. Tropical Storm Risk (TSR) projects 12/5/1, and The Weather Channel is at 12/6/2. The moderating driver is a forecast of robust El Niño conditions that should elevate wind shear across the Tropical Atlantic and Caribbean.
-        </p>
-        <p>
-            Landfall probability nonetheless remains non-trivial: CSU puts the odds of a major hurricane landfall somewhere on the U.S. coast at <strong>32%</strong>, and <strong>35%</strong> for the Caribbean. Season officially runs June 1 to November 30.
-        </p>
-        <div class="impact">
-            <strong>What this means for PAs:</strong> "Below-normal" is not "benign." A single landfalling storm — Ian-class or Wilma-class — produces thousands of disputed claims regardless of seasonal total. Clients and prospects should be pushed to document properties <em>now</em> (photos, inventories, roof age records, pre-loss condition) before the June 1 bell. This is also the best two months of the year for preventative conversations and contract signings before the market goes reactive.
-        </div>
-
-        <h2>Regulatory &amp; Legislative</h2>
-
-        <h3>Florida OIR — New Wind-Loss Mitigation Form Takes Effect April 1</h3>
-        <p>
-            Form <strong>OIR-B1-1802</strong> was updated via Rule 69O-170.0155 and became effective <strong>April 1, 2026</strong>. The form reflects findings from the 2024 Residential Wind-Loss Mitigation Study — the fixtures and construction techniques eligible for premium discounts have been revised, and there are new submission instructions for insurers.
-            <a href="https://flrules.elaws.us/far/notice/30104258">[Source]</a>
-        </p>
-        <div class="impact">
-            <strong>Why it matters for PAs:</strong> Wind-mit inspection reports drive premium discounts, and discrepancies between old-form and new-form inspections are already becoming an area of dispute on renewals and post-loss settlements. Expect to field questions from clients whose 2025 mitigation credits shift at renewal.
-        </div>
-
-        <h3>SB 808 — Expanded Roof Inspector Pool (Effective July 1, 2026)</h3>
-        <p>
-            <a href="https://www.roofingcontractor.com/articles/97786-what-you-should-know-about-floridas-new-property-insurance-law">Senate Bill 808 takes effect July 1</a>. Roof inspections may now be performed by home inspectors, building code inspectors, general/building/residential contractors, professional engineers, and professional architects — in addition to any other party recognized by the insurer. For roofs 15+ years old, insurers must differentiate low-slope (≤ 2" pitch) from steep-slope (> 2" pitch) in coverage offers.
-        </p>
-        <div class="impact">
-            <strong>PA angle:</strong> More eligible inspector categories = more variance in inspection quality. Plan to scrutinize who performed an insurer-accepted inspection and whether their methodology is defensible on the slope/age classification.
-        </div>
-
-        <h3>2026 OIR Insurance Summit — Tallahassee</h3>
-        <p>
-            Florida OIR is hosting the 2026 Insurance Summit in Tallahassee this month. This is the venue where carriers, reinsurers, and regulators signal direction on rate filings, reinsurance capacity, and legislative priorities. Worth monitoring press coverage for signals on reinsurance pricing into June 1 renewals. <a href="https://floir.gov/newsroom">[Source]</a>
-        </p>
-
-        <h3>NFIP — September 30 Reauthorization Cliff</h3>
-        <p>
-            The National Flood Insurance Program remains authorized through <strong>September 30, 2026</strong>. Florida holds ~1.7 million of the ~5 million NFIP policies nationwide — roughly <strong>one in three</strong> U.S. flood policies is a Florida policy. A 2025-style lapse would stall closings mid-hurricane season. No April movement on the NFIP-RE Act. Monitor into late summer.
-            <a href="https://www.nar.realtor/flood-insurance/faq-national-flood-insurance-program-expiration">[Source]</a>
-        </p>
-
-        <h2>Citizens Property Insurance — Rate Relief Deployed</h2>
-        <p>
-            Governor DeSantis's administration confirmed statewide rate relief is live. At spring renewal, Citizens policyholders will see:
-        </p>
+        <h3>Luxury Real Estate Acceleration</h3>
+        <p>Q1 2026 data shows dramatic growth in South Florida's high-end market: <strong>$5M+ Miami-Dade sales jumped 27% year-over-year</strong>, with total dollar volume up 15.59% to <strong>$2.5 billion</strong> across Miami-Dade. Luxury single-family homes led the surge with <strong>752 units at an average price of $3.17 million</strong> in Miami-Dade, and <strong>+14.3% year-over-year growth in Palm Beach</strong>.</p>
 
         <table>
             <thead>
-                <tr><th>Metric</th><th>Change</th></tr>
+                <tr>
+                    <th>County</th>
+                    <th>Median Sale Price</th>
+                    <th>YoY Change</th>
+                    <th>Key Trend</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Statewide average</td><td><strong>−8.7%</strong></td></tr>
-                <tr><td>Multiperil policies</td><td><strong>−8.8%</strong></td></tr>
-                <tr><td>Wind-only policies</td><td><strong>−5.5%</strong></td></tr>
-                <tr><td>Policyholders getting ≥10% cut</td><td>150,000+</td></tr>
-                <tr><td>Counties seeing cuts</td><td>All 67</td></tr>
+                <tr>
+                    <td><strong>Miami-Dade</strong></td>
+                    <td>$580K</td>
+                    <td>+1.8%</td>
+                    <td>Ultra-luxury ($10M+) historically active</td>
+                </tr>
+                <tr>
+                    <td><strong>Palm Beach</strong></td>
+                    <td>High median</td>
+                    <td>+14.3%</td>
+                    <td>Strongest residential market in tri-county</td>
+                </tr>
+                <tr>
+                    <td><strong>Broward</strong></td>
+                    <td>$445K</td>
+                    <td>−3.3% (condo weakness)</td>
+                    <td>Inventory growing, prices falling</td>
+                </tr>
             </tbody>
         </table>
 
-        <h3>South Florida County-Level Cuts</h3>
+        <div class="impact">
+            <strong>Impact:</strong> High-net-worth homeowners in Miami Beach, Fort Lauderdale waterfront, Jupiter, and Palm Beach Island represent concentrated client acquisition opportunity. These owners are often poorly served by carrier-side adjusters and are willing to engage PA representation on 6-figure+ losses.
+        </div>
+
+        <h2>Regulatory & Policy Shifts</h2>
+
+        <h3>New Wind-Loss Mitigation Form (OIR-B1-1802) — Effective April 1</h3>
+        <p>Form OIR-B1-1802 was updated via Rule 69O-170.0155 and reflects findings from the 2024 Residential Wind-Loss Mitigation Study. Eligible fixtures and construction techniques for premium discounts have been revised, and submission instructions to insurers have changed.</p>
+        <div class="impact">
+            <strong>Impact:</strong> Wind-mit inspection reports drive premium discounts, and discrepancies between old-form and new-form inspections are becoming dispute areas on renewals and post-loss settlements. Expect client questions about shifted credits at renewal.
+        </div>
+
+        <h3>SB 808 — Roof Inspector Pool Expansion (Effective July 1, 2026)</h3>
+        <p>Senate Bill 808 expands who can perform roof inspections to include home inspectors, building code inspectors, general/building/residential contractors, professional engineers, and professional architects — in addition to insurer-recognized inspectors. For roofs <strong>15+ years old</strong>, insurers must now differentiate <strong>low-slope (≤ 2" pitch)</strong> from <strong>steep-slope (> 2" pitch)</strong> in coverage offers.</p>
+        <div class="impact">
+            <strong>Impact:</strong> More eligible inspector categories = higher variance in inspection quality. Inspection-quality disputes will be a growing surface for claims friction.
+        </div>
+
+        <h3>Senate Bill 266 — PA Contract Protections (Effective July 1, 2026)</h3>
+        <p>SB 266 strengthens consumer protections for PA contracts: contract disclosures must appear in <strong>minimum 18-point font</strong>; enhanced cancellation rights are mandated for vulnerable adults.</p>
+        <div class="impact">
+            <strong>Impact:</strong> All PAs must review and update contract templates before July 1. Non-compliant contracts invite regulatory scrutiny.
+        </div>
+
+        <h3>Citizens Rate Relief + New Entrants</h3>
         <table>
             <thead>
-                <tr><th>County</th><th>Approx. Policies</th><th>Avg. Rate Change</th></tr>
+                <tr>
+                    <th>County</th>
+                    <th>Multiperil Change</th>
+                    <th>Wind-Only Change</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Miami-Dade</td><td>~42,000</td><td><strong>−14.0%</strong></td></tr>
-                <tr><td>Broward</td><td>~27,000</td><td><strong>−14.1%</strong></td></tr>
-                <tr><td>Palm Beach</td><td>~26,000</td><td><strong>−11.9%</strong></td></tr>
-                <tr><td>St. Lucie</td><td>—</td><td><strong>+~6% (proposed)</strong></td></tr>
-                <tr><td>Martin</td><td>—</td><td>Near flat</td></tr>
+                <tr>
+                    <td><strong>Miami-Dade</strong></td>
+                    <td>−14.0%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Broward</strong></td>
+                    <td>−14.1%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Palm Beach</strong></td>
+                    <td>−11.9%</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>St. Lucie</strong></td>
+                    <td>+~6% (proposed)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Statewide avg</strong></td>
+                    <td>−8.8%</td>
+                    <td>−5.5%</td>
+                </tr>
             </tbody>
         </table>
 
-        <p>
-            Policy count: <strong>~336,000</strong> — a 76% drop from the October 2023 peak. Since the reform package, 17 new carriers have entered the Florida market.
-            <a href="https://www.flgov.com/eog/news/press/2026/governor-ron-desantis-announces-major-insurance-rate-relief-floridas-reforms">[Source]</a>
-        </p>
+        <p>Approximately 1.3 million Citizens policies have migrated to private carriers since 2023. Depopulated policyholders often don't understand their new carriers — first major loss triggers high PA engagement probability.</p>
 
         <div class="impact">
-            <strong>PA read:</strong> Rate cuts do not automatically translate to easier claim payouts. Carriers entering at aggressive rates have incentive to underwrite strictly on claims — expect more denials citing pre-existing damage, wear-and-tear exclusions, and mitigation-form discrepancies on newly-transferred policies. The depopulated-policy population is the highest-friction claim segment right now.
+            <strong>Caution:</strong> 16 new property insurers were approved in early 2026; four have ties to previously-insolvent or restructured entities. Claim payment patterns are the truest indicator of financial discipline.
         </div>
 
-        <h2>Private Market — New Entrants &amp; Capacity</h2>
+        <h2>Loss Environment & Claims Landscape</h2>
 
-        <h3>16 New Entities Approved (Jan–Feb 2026)</h3>
-        <p>
-            <a href="https://www.louislawgroup.com/case-law-floir-new-entities-florida-insurance-market-february-2026">Florida OIR approved 16 new insurance entities in early 2026</a> — a notable signal that private capital sees Florida as investable again. Headline entrants: <strong>Retailers Insurance Company</strong> (Berkshire Hathaway / National Indemnity subsidiary), <strong>Wingsail Insurance Company</strong> (Hippo/Spinnaker-linked; AI underwriting), plus insurtech startups, cannabis liability specialists, and home-warranty platforms.
-        </p>
+        <h3>2026 Hurricane Season Forecast: Below-Normal But Not Benign</h3>
+        <p>Colorado State University's April forecast calls for <strong>13 named storms, 6 hurricanes, and 2 major hurricanes</strong> — slightly below the 30-year average. El Niño conditions are expected to elevate wind shear across the Tropical Atlantic.</p>
+        <p><strong>However:</strong> CSU puts odds of a major hurricane landfall on the U.S. coast at <strong>32%</strong> (Caribbean: 35%). Season runs June 1 to November 30.</p>
         <div class="impact">
-            <strong>Caution flag:</strong> Four of the new insurers entering since 2022 have ties to previously-insolvent or restructured entities. PAs should check carrier histories before taking on a case — claim payment patterns are the truest indicator of an insurer's financial discipline.
+            <strong>Impact:</strong> "Below-normal" ≠ benign. This is the best two months to push pre-loss documentation and contract signings <em>before</em> the market goes reactive on June 1.
         </div>
 
-        <h3>Reinsurance Pricing Debate</h3>
-        <p>
-            <a href="https://www.insurancejournal.com/news/southeast/2026/04/16/866087.htm">Insurance Journal flagged an active debate at the state level</a>: with private reinsurance prices falling, should Florida <em>reduce</em> the Cat Fund's mandated buy? Less Cat Fund reliance = higher private reinsurance consumption = potentially larger assessments if a major hurricane hits. Legislative chess piece to watch through summer.
-        </p>
-
-        <h2>Weather — South Florida</h2>
-        <p>
-            <strong>Today (April 23):</strong> Breezy, high temps in the upper 70s across Palm Beach and Treasure Coast — cooler than normal for late April. Low rain chances. Spotty showers possible Thursday afternoon/evening.
-        </p>
-        <p>
-            <strong>Climatological note:</strong> April 23 is statistically the wettest day of April in South Florida (avg. 0.23"), so any showers are near-seasonal rather than anomalous.
-        </p>
-        <p>
-            <strong>Drought context:</strong> <a href="https://www.drought.gov/drought-status-updates/drought-status-update-southeast-2026-04-16">The April 16 Southeast drought update flagged dry conditions with above-normal temps favored for the next two weeks</a> — drought conditions likely to intensify before any late-month wet pattern arrives. Dry-then-wet sequencing historically elevates plumbing/roof failure claim volume.
-        </p>
-        <p>
-            <strong>Severe recap:</strong> The most recent significant event was the April 10 squall line across Palm Beach, Broward, and Miami-Dade — heavy rain, strong winds, multiple tornado warnings. Claim cycle from that event is live.
-        </p>
-
-        <h2>Real Estate — South Florida Continues to Outperform</h2>
-        <p>
-            <a href="https://www.miamirealtors.com/2026/04/20/south-florida-real-estate-continues-to-outperform-the-nation/">MIAMI REALTORS reported (April 20)</a> that South Florida housing continues to buck national trends — driven by wealth migration and a disproportionate share of cash/upper-tier buyers insensitive to rate moves.
-        </p>
-
-        <table>
-            <thead>
-                <tr><th>County</th><th>Median Sale Price</th><th>YoY Change</th><th>Pending Sales YoY</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Miami-Dade</td><td><strong>$580K</strong></td><td>+1.8%</td><td><strong>+13.2%</strong></td></tr>
-                <tr><td>Broward</td><td><strong>$445K</strong></td><td>−3.3%</td><td><strong>+11.0%</strong></td></tr>
-            </tbody>
-        </table>
-
-        <p>
-            Miami-Dade logged <strong>2,134 home sales</strong> in March, with total dollar volume up <strong>15.59%</strong> YoY to <strong>$2.5 billion</strong>. Sales of properties priced <strong>$5M+</strong> climbed <strong>27%</strong> YoY — the luxury bracket is the strongest segment.
-        </p>
-
+        <h3>Water Damage & Mold — Capacity Strained, Pricing Rising</h3>
+        <p>More than 3× normal rainfall since April 1 across Miami-Dade, Broward, and Palm Beach has pushed remediation firms to <strong>full capacity through summer</strong>.</p>
+        <p><strong>Pricing benchmarks:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 15px;">
+            <li>Standard mold jobs: <strong>$2,500–$6,000</strong></li>
+            <li>Older single-family / small condo projects: <strong>$20,000+</strong> after insulation, cabinetry, subfloor removal</li>
+        </ul>
         <div class="impact">
-            <strong>PA angle:</strong> Luxury purchase velocity = a growing pool of high-value insured properties. High-net-worth homeowners are often poorly served by carrier-side adjusters and are more willing to engage a PA when claims exceed six figures. Prospecting opportunity concentrated in Miami Beach, Fort Lauderdale waterfront, Boca, Jupiter, Palm Beach Island.
+            <strong>Claim friction hotspot:</strong> Claims that straddle policy categories — covered water event vs. excluded long-term seepage — are leaving homeowners with partial reimbursements or steep deductibles. This is prime PA territory.
         </div>
 
-        <h2>Service Industries</h2>
+        <h2>Ecosystem Spotlight</h2>
 
-        <h3>Water Damage &amp; Mold — Remediation Capacity Strained</h3>
-        <p>
-            <a href="https://www.dailynewswork.com/blog/aprils-relentless-rains-south-florida-homes-face-water/">A persistent weather pattern earlier this month delivered more than 3x normal rainfall</a> across Miami-Dade, Broward, and Palm Beach since April 1. Remediation firms (Mold Only and peers) are booked <strong>full capacity into summer</strong>. Healthcare providers are reporting upticks in respiratory complaints tied to indoor air quality.
-        </p>
-        <p>
-            <strong>Pricing benchmarks reported for 2026:</strong> Standard mold jobs (modest infestation): $2,500–$6,000. Older single-family / small condo projects: $20,000+ after removal of compromised insulation, cabinetry, subfloor.
-        </p>
+        <h3>Mold & Water Remediation Network: Build Your Referral Bridge</h3>
+        <p>Firms booked solid through summer represent a bottleneck and opportunity. Key regional players include Mold Only, R.E. Mold, Pure Maintenance, and FP Property Restoration.</p>
         <div class="impact">
-            <strong>Claim friction:</strong> Adjusters are seeing a spike in claims that straddle policy categories — is it a covered water event or excluded long-term seepage? Homeowners are increasingly stuck with partial reimbursements or steep deductibles. This is prime PA territory.
+            <strong>Strategic angle:</strong> Water/mold claims that straddle coverage boundaries are exactly where a PA + remediator partnership adds value. Homeowners stuck between coverage and exclusion benefit from coordinated advocacy. This builds referral relationships and ecosystem trust.
         </div>
-
-        <h3>Roofing — Workers' Comp Rates Drop, Minimum Premium Up</h3>
-        <p>
-            For 2026, workers' comp rates under classification code 5551 (roofing) dropped <strong>11.04%</strong>, but carriers simultaneously increased minimum premiums to <strong>$25,000 per employer</strong>. Result: smaller roofing operations are squeezed; consolidation pressure on 1–5 employee shops. Expect more one-truck operators closing or merging — which increases the risk of clients holding warranties from defunct contractors.
-            <a href="https://acculynx.com/florida-insurance-crisis/">[Source]</a>
-        </p>
-
-        <h3>HVAC / Plumbing — Panther Service Group Launches</h3>
-        <p>
-            <a href="https://www.morningstar.com/news/pr-newswire/20260401fl25329/pearl-street-capital-partners-launches-panther-service-group-a-new-plumbing-hvac-and-electrical-services-platform-focused-in-florida">Pearl Street Capital Partners launched Panther Service Group on April 1, 2026</a>, as a Florida-focused plumbing, HVAC, and electrical services platform. This is PE roll-up activity — expect acquisitions of family-owned South Florida trades companies through 2026. For PA referral networks, watch which local shops get acquired.
-        </p>
-
-        <h2>County Roundup</h2>
-
-        <h3>Miami-Dade</h3>
-        <p>
-            Transportation cuts approved in committee: Metrobus system will eliminate one route and cut back three others. Amazon hiring enforcement: Commissioners voted unanimously to direct Mayor Daniella Levine Cava to use "all available means" to enforce the 2020 land-sale covenant requiring Amazon to employ at least <strong>325 people</strong> through 2041. <a href="https://www.miamitodaynews.com/2026/04/22/fyi-miami-april-23-2026/">[Source]</a>
-        </p>
-
-        <h3>Broward</h3>
-        <p>
-            The April 10 severe weather remains the most significant recent county-wide event; tornado warnings issued, claim cycle live. Broward County Commission and Port Everglades hurricane-prep posture unchanged from seasonal baseline.
-        </p>
-
-        <h3>Palm Beach</h3>
-        <p>
-            Weather (April 22): Upper 70s, cooler than normal. Earth Day events wrapped April 22. Criminal docket: Semmie Williams Jr. sentenced April 22 for the 2021 killing of 14-year-old Ryan Rogers in Palm Beach Gardens. Federal facility: 11th Circuit reversed District Court order to close "Alligator Alcatraz" detention facility — the facility remains open. <a href="https://wjno.iheart.com/content/2026-04-22-florida-news-that-impacts-you-april-22nd-2026/">[Source]</a>
-        </p>
-
-        <h3>Martin</h3>
-        <p>
-            Stuart 2026 operating budget shortfall projected — likely to trigger fee/millage discussion through summer budget cycle. Martin County Construction Industry Licensing Board had an April 17 application deadline for a Consumer Representative seat. <a href="https://www.hometownnewstc.com/news/martin/stuart-projects-2026-operating-budget-shortfall/article_eb6eb19f-6552-5c5d-b47a-9e2b7895b7ed.html">[Source]</a>
-        </p>
-
-        <h3>St. Lucie</h3>
-        <p>
-            Citizens rate hike proposal: ~6% — highest in Florida. Aging housing stock cited as primary driver. If OIR approves, takes effect June 2026. Tilton Road drainage project: Public meeting April 29. <strong>4.7 magnitude earthquake</strong> near Silver Springs on April 22 — 11.6 miles SE of Silver Springs (no South Florida structural impact, but worth noting in claims context). <a href="https://cbs12.com/news/local/st-lucie-citizens-customers-could-see-rate-hikes-as-other-counties-bills-will-drop">[Source]</a>
-        </p>
-
-        <h2>Enforcement Watch</h2>
-        <p>
-            No new PA-specific enforcement actions reported since the April 6 Chaparro/All Elements arrest (covered in yesterday's brief). The ACA enrollment fraud guilty plea (AP of South Florida / AssuredPartners, April 8) remains the largest current South Florida insurance-sector fraud action — <strong>$141.5M</strong> in unwarranted subsidies, <strong>$135M</strong> civil settlement.
-            <a href="https://oig.hhs.gov/fraud/enforcement/national-partnership-of-insurance-brokers-and-its-former-subsidiary-agree-to-pay-over-160-million-for-affordable-care-act-enrollment-fraud-scheme/">[Source]</a>
-        </p>
 
         <div class="summary">
-            <h2 style="border-bottom: 3px solid #2196f3; margin-top: 0;">Summary — Trends to Watch</h2>
+            <h2 style="border-bottom: 3px solid #2196f3; margin-top: 0;">Summary & Watchlist</h2>
             <ul>
-                <li><strong>Pre-season window:</strong> 38 days until June 1 — proactive prospecting angle on pre-loss inspections</li>
-                <li><strong>SB 808 roof-inspection expansion (July 1):</strong> mid-season inspector variance = growing dispute surface</li>
-                <li><strong>Depopulated policies:</strong> ~1.3M transferred from Citizens since 2023 — high PA-engagement potential</li>
-                <li><strong>Remediation capacity crunch:</strong> mold/water firms booked into summer = classic PA engagement trigger</li>
-                <li><strong>Cat Fund / private reinsurance:</strong> legislative question shapes carrier solvency into 2027</li>
-                <li><strong>Luxury real estate growth:</strong> $5M+ Miami-Dade sales +27% YoY — prospecting lane widening</li>
-                <li><strong>Drought-then-rain sequencing:</strong> intensifying before late-month wet pattern; plumbing/leak claim surge expected</li>
+                <li><strong>Market:</strong> Luxury sales accelerating (27% YoY in $5M+ segment); Palm Beach strongest residential market</li>
+                <li><strong>Regulatory:</strong> Three major effective dates in next 9 weeks (new wind-mit form, PA contract rules, roof-inspector expansion)</li>
+                <li><strong>Hurricane prep:</strong> 38 days to June 1 — critical window for pre-loss documentation campaigns and contract engagement</li>
+                <li><strong>Loss:</strong> Below-normal season forecast, but 32% major landfall probability. Water/mold capacity strained, pricing up</li>
+                <li><strong>Ecosystem:</strong> Build mold/water remediation partnerships now before peak season</li>
+                <li><strong>Next watch:</strong> OIR Insurance Summit (late April) signals on reinsurance pricing; SB 808 operational readiness (July 1)</li>
             </ul>
         </div>
 
         <div class="footer">
-            <p>South Florida Insurance &amp; Property Brief — April 23, 2026</p>
-            <p>Prepared for Duncan Littlejohn, Public Adjuster | Agent Smith Intelligence</p>
+            <p>South Florida Property Intelligence Report — April 23, 2026</p>
+            <p><strong>Published by Robinhood Insights</strong> — The research division of Robinhood Adjusting</p>
             <p><a href="../CONTENT-LIBRARY.html">← Back to Content Library</a></p>
         </div>
     </div>
