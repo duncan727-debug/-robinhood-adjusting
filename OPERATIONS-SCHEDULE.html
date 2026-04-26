@@ -103,7 +103,7 @@
         .timeline {
             display: flex;
             flex-direction: column;
-            height: 800px;
+            height: 640px;
             position: relative;
             border-top: 1px solid #e0e0e0;
         }
@@ -114,13 +114,14 @@
             position: relative;
             display: flex;
             align-items: flex-start;
+            min-height: 40px;
         }
 
         .hour-label {
             position: absolute;
             left: 2px;
             top: -8px;
-            font-size: 9px;
+            font-size: 8px;
             color: #999;
             width: 32px;
             text-align: center;
@@ -130,40 +131,46 @@
             position: absolute;
             left: 35px;
             right: 3px;
-            padding: 3px 5px;
+            padding: 4px 6px;
             border-radius: 3px;
-            font-size: 10px;
-            font-weight: 500;
-            border-left: 2px solid;
+            font-size: 9px;
+            font-weight: 600;
+            border-left: 3px solid;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            line-height: 1.2;
         }
 
-        .task-box.daily {
-            background: #f1f8f6;
-            border-left-color: #4caf50;
-            color: #2e7d32;
+        /* Newsletter Work - Teal */
+        .task-box.newsletter {
+            background: #e0f7f4;
+            border-left-color: #009688;
+            color: #004d47;
         }
 
-        .task-box.new {
-            background: #fff3e0;
-            border-left-color: #ff9800;
-            color: #e65100;
-        }
-
-        .task-box.weekly {
+        /* CRM/Prospecting - Purple */
+        .task-box.crm {
             background: #f3e5f5;
             border-left-color: #9c27b0;
             color: #6a1b9a;
         }
 
+        /* Operations/Admin - Gray */
+        .task-box.ops {
+            background: #f5f5f5;
+            border-left-color: #616161;
+            color: #424242;
+        }
+
+        /* Monthly - Red */
         .task-box.monthly {
             background: #ffebee;
             border-left-color: #d32f2f;
             color: #c62828;
         }
 
+        /* Rest - Blue */
         .task-box.rest {
             background: #e8eaf6;
             border-left-color: #3f51b5;
@@ -172,7 +179,7 @@
 
         .legend {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 15px;
             margin: 40px 0;
             padding: 20px;
@@ -187,19 +194,19 @@
             font-size: 13px;
         }
 
-        .legend-item.daily {
-            border-left-color: #4caf50;
-            background: #f1f8f6;
+        .legend-item.newsletter {
+            border-left-color: #009688;
+            background: #e0f7f4;
         }
 
-        .legend-item.new {
-            border-left-color: #ff9800;
-            background: #fff3e0;
-        }
-
-        .legend-item.weekly {
+        .legend-item.crm {
             border-left-color: #9c27b0;
             background: #f3e5f5;
+        }
+
+        .legend-item.ops {
+            border-left-color: #616161;
+            background: #f5f5f5;
         }
 
         .legend-item.monthly {
@@ -346,35 +353,29 @@
             </ul>
         </div>
 
-        <h2>24-Hour Daily Schedule (Time Zone: America/New_York / EDT)</h2>
+        <h2>24-Hour Daily Schedule (1-Hour Time Slots) — America/New_York / EDT</h2>
 
         <div class="calendar-grid">
             <!-- MONDAY -->
             <div class="day">
                 <div class="day-header weekday">MONDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">12am-5am</div>
-                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
-                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
-                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">5am-10am</div>
-                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
-                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
-                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">10am-3pm</div>
-                        <div class="task-box weekly" style="top: 10%;">🔗 10:00am LINKEDIN</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">3pm-8pm</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">8pm-12am</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📰 4:00am BRIEF</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📄 4:30am CONTENT</div><div class="task-box crm" style="top: 20px; height: 18px;">🔍 5:00am INTEL</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div><div class="task-box crm" style="top: 2px; height: 18px;">📧 6:00am OUTREACH</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div><div class="task-box crm" style="top: 2px; height: 18px;">💬 7:00am RESPONSE</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div><div class="task-box ops" style="top: 2px; height: 18px;">📊 7:30am OPS REVIEW</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div><div class="task-box crm" style="top: 2px; height: 18px;">🔗 10:00am LINKEDIN</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
 
@@ -382,21 +383,22 @@
             <div class="day">
                 <div class="day-header weekday">TUESDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">12am-5am</div>
-                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
-                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
-                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">5am-10am</div>
-                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
-                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
-                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
-                    </div>
-                    <div class="hour-slot" style="height: 60%;">
-                        <div class="hour-label">10am-8pm</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📰 4:00am BRIEF</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📄 4:30am CONTENT</div><div class="task-box crm" style="top: 20px; height: 18px;">🔍 5:00am INTEL</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div><div class="task-box crm" style="top: 2px; height: 18px;">📧 6:00am OUTREACH</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div><div class="task-box crm" style="top: 2px; height: 18px;">💬 7:00am RESPONSE</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div><div class="task-box ops" style="top: 2px; height: 18px;">📊 7:30am OPS REVIEW</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
 
@@ -404,25 +406,22 @@
             <div class="day">
                 <div class="day-header weekday">WEDNESDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">12am-5am</div>
-                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
-                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
-                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">5am-10am</div>
-                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
-                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
-                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">10am-3pm</div>
-                        <div class="task-box weekly" style="top: 10%;">🤝 10:00am PARTNERSHIPS</div>
-                    </div>
-                    <div class="hour-slot" style="height: 40%;">
-                        <div class="hour-label">3pm-8pm</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📰 4:00am BRIEF</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📄 4:30am CONTENT</div><div class="task-box crm" style="top: 20px; height: 18px;">🔍 5:00am INTEL</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div><div class="task-box crm" style="top: 2px; height: 18px;">📧 6:00am OUTREACH</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div><div class="task-box crm" style="top: 2px; height: 18px;">💬 7:00am RESPONSE</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div><div class="task-box ops" style="top: 2px; height: 18px;">📊 7:30am OPS REVIEW</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div><div class="task-box crm" style="top: 2px; height: 18px;">🤝 10:00am PARTNERSHIPS</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
 
@@ -430,21 +429,22 @@
             <div class="day">
                 <div class="day-header weekday">THURSDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">12am-5am</div>
-                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
-                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
-                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">5am-10am</div>
-                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
-                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
-                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
-                    </div>
-                    <div class="hour-slot" style="height: 60%;">
-                        <div class="hour-label">10am-8pm</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📰 4:00am BRIEF</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📄 4:30am CONTENT</div><div class="task-box crm" style="top: 20px; height: 18px;">🔍 5:00am INTEL</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div><div class="task-box crm" style="top: 2px; height: 18px;">📧 6:00am OUTREACH</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div><div class="task-box crm" style="top: 2px; height: 18px;">💬 7:00am RESPONSE</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div><div class="task-box ops" style="top: 2px; height: 18px;">📊 7:30am OPS REVIEW</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
 
@@ -452,25 +452,22 @@
             <div class="day">
                 <div class="day-header weekday">FRIDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">12am-5am</div>
-                        <div class="task-box daily" style="top: 40%;">📰 4:00am BRIEF</div>
-                        <div class="task-box daily" style="top: 52%;">📄 4:30am CONTENT</div>
-                        <div class="task-box new" style="top: 64%;">🔍 5:00am INTELLIGENCE</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">5am-10am</div>
-                        <div class="task-box daily" style="top: 20%;">📧 6:00am CRM OUTREACH</div>
-                        <div class="task-box new" style="top: 40%;">💬 7:00am RESPONSE</div>
-                        <div class="task-box daily" style="top: 60%;">📊 7:30am OPS REVIEW</div>
-                    </div>
-                    <div class="hour-slot" style="height: 20%;">
-                        <div class="hour-label">10am-3pm</div>
-                        <div class="task-box weekly" style="top: 10%;">📋 10:00am WEEKLY ROLLUP</div>
-                    </div>
-                    <div class="hour-slot" style="height: 40%;">
-                        <div class="hour-label">3pm-8pm</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📰 4:00am BRIEF</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📄 4:30am CONTENT</div><div class="task-box crm" style="top: 20px; height: 18px;">🔍 5:00am INTEL</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div><div class="task-box crm" style="top: 2px; height: 18px;">📧 6:00am OUTREACH</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div><div class="task-box crm" style="top: 2px; height: 18px;">💬 7:00am RESPONSE</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div><div class="task-box ops" style="top: 2px; height: 18px;">📊 7:30am OPS REVIEW</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📋 10:00am ROLLUP</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
 
@@ -478,13 +475,22 @@
             <div class="day">
                 <div class="day-header weekend">SATURDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 40%;">
-                        <div class="hour-label">12am-10am</div>
-                        <div class="task-box weekly" style="top: 50%;">📈 10:00am WEEKLY TRENDS</div>
-                    </div>
-                    <div class="hour-slot" style="height: 60%;">
-                        <div class="hour-label">10am-8pm</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div><div class="task-box newsletter" style="top: 2px; height: 18px;">📈 10:00am TRENDS</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
 
@@ -492,10 +498,22 @@
             <div class="day">
                 <div class="day-header weekend">SUNDAY</div>
                 <div class="timeline">
-                    <div class="hour-slot" style="height: 100%;">
-                        <div class="hour-label">All day</div>
-                        <div class="task-box rest" style="top: 25%; left: 45px; right: 5px;">Rest Day (No scheduled tasks)</div>
-                    </div>
+                    <div class="hour-slot"><div class="hour-label">3am</div></div>
+                    <div class="hour-slot"><div class="hour-label">4am</div></div>
+                    <div class="hour-slot"><div class="hour-label">5am</div></div>
+                    <div class="hour-slot"><div class="hour-label">6am</div></div>
+                    <div class="hour-slot"><div class="hour-label">7am</div></div>
+                    <div class="hour-slot"><div class="hour-label">8am</div></div>
+                    <div class="hour-slot"><div class="hour-label">9am</div></div>
+                    <div class="hour-slot"><div class="hour-label">10am</div><div class="task-box rest" style="top: 2px; height: 18px;">☀️ REST DAY</div></div>
+                    <div class="hour-slot"><div class="hour-label">11am</div></div>
+                    <div class="hour-slot"><div class="hour-label">12pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">1pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">2pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">3pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">4pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">5pm</div></div>
+                    <div class="hour-slot"><div class="hour-label">6pm</div></div>
                 </div>
             </div>
         </div>
@@ -508,21 +526,21 @@
         </div>
 
         <div class="legend">
-            <div class="legend-item daily">
-                <div class="legend-label">📰 Daily Workflows</div>
-                <div style="font-size: 12px; color: #666;">Mon-Fri, 4:00am-7:30am</div>
+            <div class="legend-item newsletter">
+                <div class="legend-label">📰 Newsletter Work (Teal)</div>
+                <div style="font-size: 12px; color: #666;">BRIEF, CONTENT, WEEKLY TRENDS, WEEKLY ROLLUP — Content creation & research</div>
             </div>
-            <div class="legend-item new">
-                <div class="legend-label">✨ New Workflows</div>
-                <div style="font-size: 12px; color: #666;">5am Intelligence, 7am Response, weekday outreach</div>
+            <div class="legend-item crm">
+                <div class="legend-label">💬 CRM/Prospecting (Purple)</div>
+                <div style="font-size: 12px; color: #666;">INTELLIGENCE, OUTREACH, RESPONSE, LINKEDIN, PARTNERSHIPS — Client acquisition & engagement</div>
             </div>
-            <div class="legend-item weekly">
-                <div class="legend-label">📈 Weekly Tasks</div>
-                <div style="font-size: 12px; color: #666;">Mon 10am, Wed 10am, Fri 10am, Sat 10am</div>
+            <div class="legend-item ops">
+                <div class="legend-label">📊 Operations (Gray)</div>
+                <div style="font-size: 12px; color: #666;">OPS REVIEW — Daily workflow review & adjustments</div>
             </div>
             <div class="legend-item monthly">
-                <div class="legend-label">📊 Monthly Review</div>
-                <div style="font-size: 12px; color: #666;">1st of month, 9am EDT</div>
+                <div class="legend-label">📊 Monthly Review (Red)</div>
+                <div style="font-size: 12px; color: #666;">1st of month, 9am EDT — Velocity & progress check</div>
             </div>
         </div>
 
@@ -533,9 +551,9 @@
                 <li><strong>Input → Output Chain:</strong> Brief (4am) → Content (4:30am) → Intelligence (5am) → Outreach (6am) → Responses (7am) → Review (7:30am)</li>
                 <li><strong>All outputs are drafts:</strong> Nothing posts or sends automatically. Duncan reviews and approves manually</li>
                 <li><strong>Auto-Recovery:</strong> LaunchAgent detects Mac wake-up, triggers any missed jobs in correct order. State file prevents duplicate runs same day</li>
-                <li><strong>Model Routing:</strong> Brief & Content use Gemini 2.0 Flash (speed), Intelligence uses Gemini 2.0 Flash, CRM outreach uses Gemini, Response handler uses Haiku (fast), OPS review uses Haiku</li>
+                <li><strong>1-Hour Time Slots:</strong> Tasks now align consistently across all days — BRIEF always at 4am position, OUTREACH always at 6am position, etc.</li>
+                <li><strong>Color Coding:</strong> Teal = Newsletter work | Purple = CRM/Prospecting | Gray = Operations | Red = Monthly reviews</li>
                 <li><strong>Weekdays only:</strong> Morning block runs Mon–Fri. Weekend is light (trends on Sat, rest on Sun)</li>
-                <li><strong>No cascading failures:</strong> Each job runs independently. If brief fails, content can still run on previous brief, or wait for manual input</li>
             </ul>
         </div>
 
@@ -552,7 +570,7 @@
         </div>
 
         <div class="footer">
-            <p>Generated April 24, 2026 | Agent Smith Operations System v2 (Auto-Recovery Active)</p>
+            <p>Generated April 26, 2026 | Agent Smith Operations System v4 (3am–6pm Compact View, Color-Coded Workflows)</p>
             <p>To print as PDF: Cmd+P (Mac) or Ctrl+P (Windows) → Save as PDF</p>
         </div>
     </div>
