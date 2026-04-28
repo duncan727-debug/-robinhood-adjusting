@@ -364,6 +364,91 @@
         .legend-hot  { color: #ff4444; }
         .legend-idle { color: #666; }
 
+        .agent-row {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 120px 150px 80px;
+            gap: 12px;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px dashed #333;
+            font-size: 12px;
+        }
+
+        .agent-row:last-child {
+            border-bottom: none;
+        }
+
+        .agent-name-cell {
+            font-weight: bold;
+            color: #00ff41;
+        }
+
+        .agent-desc-cell {
+            color: #888;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .agent-model-cell {
+            color: #ccc;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .agent-status-cell {
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .status-done {
+            background: rgba(0, 255, 65, 0.2);
+            color: #00ff41;
+        }
+
+        .status-running {
+            background: rgba(0, 255, 65, 0.2);
+            color: #00ff41;
+        }
+
+        .status-waiting {
+            background: rgba(255, 170, 0, 0.2);
+            color: #ffaa00;
+        }
+
+        .agent-action-btn {
+            background: #00ff41;
+            color: #0a0e27;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
+        .agent-action-btn:hover {
+            background: #00cc33;
+            transform: scale(1.05);
+        }
+
+        .session-id-display {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            color: #666;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 6px;
+            border-radius: 2px;
+            margin-top: 6px;
+            word-break: break-all;
+            line-height: 1.3;
+        }
+
         @media print {
             body {
                 background: white;
@@ -388,6 +473,63 @@
             <h1>🎯 MISSION CONTROL</h1>
             <div class="timestamp">Duncan's 100-in-100 Operations Center | Refresh this page each morning</div>
         </header>
+
+        <!-- AGENTS DIRECTORY -->
+        <div class="panel" style="margin-bottom: 30px;">
+            <div class="panel-title">🤖 AGENTS DIRECTORY (Talk to Any Agent Below)</div>
+
+            <div style="font-size: 11px; color: #888; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed #333;">
+                Click "TALK" to open a direct chat with any agent. Session IDs are for copying if needed.
+            </div>
+
+            <!-- CRM Agent -->
+            <div class="agent-row">
+                <div class="agent-name-cell">CRM: Prospect Outreach</div>
+                <div class="agent-desc-cell">Prospect research, outreach drafts, response handling, pipeline tracking. 67 drafts ready for send.</div>
+                <div class="agent-model-cell">Haiku</div>
+                <div class="agent-status-cell status-running">Ready</div>
+                <div>
+                    <button class="agent-action-btn" onclick="talkToAgent('agent:main:subagent:51651cea-fa7d-4e40-857e-8c080b67d44b', 'CRM Agent')">TALK</button>
+                    <div class="session-id-display" onclick="copySession(this)">51651cea-fa7d-4e40-857e-8c080b67d44b</div>
+                </div>
+            </div>
+
+            <!-- Newsletter Agent -->
+            <div class="agent-row">
+                <div class="agent-name-cell">Newsletter: Content Ops</div>
+                <div class="agent-desc-cell">Daily industry briefs (4am), social content (4:30am), weekly trends (Sat 9am). Waiting for cron setup.</div>
+                <div class="agent-model-cell">Haiku</div>
+                <div class="agent-status-cell status-waiting">Waiting</div>
+                <div>
+                    <button class="agent-action-btn" onclick="talkToAgent('agent:main:subagent:f486f075-b9e7-4237-a170-1e6c668adcf3', 'Newsletter Agent')">TALK</button>
+                    <div class="session-id-display" onclick="copySession(this)">f486f075-b9e7-4237-a170-1e6c668adcf3</div>
+                </div>
+            </div>
+
+            <!-- Analytics Agent -->
+            <div class="agent-row">
+                <div class="agent-name-cell">Analytics: Reporting</div>
+                <div class="agent-desc-cell">Daily ops reviews (7:30am), weekly rollups (Fri 12pm), velocity analysis, bottleneck detection.</div>
+                <div class="agent-model-cell">Haiku</div>
+                <div class="agent-status-cell status-running">Ready</div>
+                <div>
+                    <button class="agent-action-btn" onclick="talkToAgent('agent:main:subagent:8b2f47af-d539-402a-9b39-584030cc5d2a', 'Analytics Agent')">TALK</button>
+                    <div class="session-id-display" onclick="copySession(this)">8b2f47af-d539-402a-9b39-584030cc5d2a</div>
+                </div>
+            </div>
+
+            <!-- SBV Agent (Haiku) -->
+            <div class="agent-row">
+                <div class="agent-name-cell">SBV: Digital Asset Insurance</div>
+                <div class="agent-desc-cell">Execution partner. Takes archived research & converts to week-by-week roadmap, underwriter outreach, LatAm prospecting, licensing updates.</div>
+                <div class="agent-model-cell">Haiku</div>
+                <div class="agent-status-cell status-running">Ready</div>
+                <div>
+                    <button class="agent-action-btn" onclick="talkToAgent('agent:main:subagent:7fc771df-5f28-4e11-89bb-61e8152d8024', 'SBV Agent')">TALK</button>
+                    <div class="session-id-display" onclick="copySession(this)">7fc771df-5f28-4e11-89bb-61e8152d8024</div>
+                </div>
+            </div>
+        </div>
 
         <div class="refresh-note">
             ⚠️ Manual refresh required: Open this file each morning to see latest outputs. Or set up a monitoring script to auto-update.
@@ -696,6 +838,27 @@
     </script>
 
     <script>
+        // Agent communication function
+        function talkToAgent(sessionId, agentName) {
+            const message = `Tell Duncan Littlejohn that you're ready to communicate. Confirm the agent name and what you're prepared to do.`;
+            alert(`Ready to talk to ${agentName}!\n\nSession ID: ${sessionId}\n\nCopy this session ID and share it with Duncan, or he can reply directly.`);
+        }
+
+        // Copy session ID to clipboard
+        function copySession(element) {
+            const sessionId = element.textContent.trim();
+            const fullSessionId = 'agent:main:subagent:' + sessionId;
+            navigator.clipboard.writeText(fullSessionId).then(() => {
+                const original = element.textContent;
+                element.textContent = '✓ Copied';
+                element.style.color = '#00ff41';
+                setTimeout(() => {
+                    element.textContent = original;
+                    element.style.color = '#666';
+                }, 2000);
+            });
+        }
+
         // Auto-populate today's date
         const today = new Date();
         const year = today.getFullYear();

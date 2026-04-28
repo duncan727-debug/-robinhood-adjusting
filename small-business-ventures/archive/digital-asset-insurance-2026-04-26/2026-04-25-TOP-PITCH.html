@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Asset Insurance Marketplace - Investor Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f0f0f0;
+        }
+
+        .slide {
+            page-break-after: always;
+            width: 10in;
+            height: 7.5in;
+            padding: 60px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+            border: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .slide.title-slide {
+            background: linear-gradient(135deg, #0a2463 0%, #1b5e9e 50%, #247ba0 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.dark-bg {
+            background: #f8f9fa;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #0a2463;
+            border-bottom: 4px solid #247ba0;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide.title-slide h1 {
+            color: white;
+            font-size: 4.2em;
+            font-weight: 700;
+        }
+
+        .slide.title-slide p {
+            font-size: 1.4em;
+            color: rgba(255,255,255,0.95);
+            margin: 15px 0;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: rgba(255,255,255,0.85);
+            margin-top: 60px;
+            font-weight: 400;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .content.single {
+            grid-template-columns: 1fr;
+        }
+
+        .content.triple {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #247ba0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .box h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #0a2463;
+            font-weight: 700;
+        }
+
+        .box p {
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .box ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .box li {
+            margin: 10px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .metric {
+            background: linear-gradient(135deg, #0a2463 0%, #247ba0 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .metric .number {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .metric .label {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight strong {
+            color: #0a2463;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        th {
+            background: #0a2463;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .value-prop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .value-prop ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .value-prop li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .value-prop li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #247ba0;
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #247ba0;
+            border-radius: 4px;
+        }
+
+        .timeline-item strong {
+            color: #0a2463;
+            font-size: 1.1em;
+        }
+
+        .timeline-item .timeframe {
+            color: #247ba0;
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 40px;
+        }
+
+        .chart-placeholder {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            color: #0a2463;
+            font-weight: 600;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .gap-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+            background: #fffbeb;
+        }
+
+        .gap-item strong {
+            color: #0a2463;
+        }
+
+        .gap-item .solution {
+            font-size: 0.9em;
+            margin-top: 8px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide title-slide">
+    <h1>Digital Asset Insurance Marketplace</h1>
+    <p>Connecting Crypto Holders with Institutional Underwriters</p>
+    <div class="subtitle">A Recurring Revenue Platform for the $2B+ Global Digital Asset Insurance Market</div>
+    <p style="margin-top: 80px; font-size: 1.1em;">April 2026</p>
+</div>
+
+<!-- SLIDE 2: EXECUTIVE SUMMARY -->
+<div class="slide dark-bg">
+    <h2>Executive Summary</h2>
+    <div class="content single">
+        <div class="box">
+            <h3>The Opportunity</h3>
+            <p><strong>Build the intermediary platform</strong> connecting decentralized crypto holders, DAOs, and protocols with specialized institutional underwriters for custody insurance, smart contract insurance, and cyber coverage.</p>
+        </div>
+        <div class="box" style="margin-top: 25px;">
+            <h3>The Model</h3>
+            <p><strong>Pure brokerage marketplace:</strong> Match buyers (crypto holders) with sellers (underwriters), earning 15-20% commission on premiums written. Zero custody, zero capital requirements, zero regulatory licensing needed.</p>
+        </div>
+        <div class="box" style="margin-top: 25px;">
+            <h3>The Prize</h3>
+            <p><strong>$500K-$2M ARR within 18 months</strong> with 80%+ margins. Grows via: (1) expanding underwriter partnerships, (2) geographic reach into LatAm, (3) new insurance products (smart contract, bridge, cross-chain).</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 3: PROBLEM/OPPORTUNITY -->
+<div class="slide">
+    <h2>The Market Opportunity</h2>
+    <div class="metrics-row">
+        <div class="metric">
+            <div class="label">Global Crypto Insurance Market</div>
+            <div class="number">$1.2B</div>
+            <div class="label" style="font-size: 0.9em;">2024 premium volume</div>
+        </div>
+        <div class="metric">
+            <div class="label">Market Growth</div>
+            <div class="number">35%+</div>
+            <div class="label" style="font-size: 0.9em;">CAGR through 2027</div>
+        </div>
+        <div class="metric">
+            <div class="label">Brokerage Opportunity</div>
+            <div class="number">$180-400M</div>
+            <div class="label" style="font-size: 0.9em;">Addressable commissions</div>
+        </div>
+    </div>
+    <div class="highlight" style="margin-top: 40px;">
+        <strong>The Gap:</strong> Crypto holders can't easily find insurance. Underwriters can't reach crypto buyers. No trusted intermediary exists. Result: billions in uninsured assets and billions in uncapped underwriting potential.
+    </div>
+</div>
+
+<!-- SLIDE 4: SOLUTION -->
+<div class="slide dark-bg">
+    <h2>The Solution</h2>
+    <div class="content single">
+        <div>
+            <h3 style="color: #0a2463; margin-bottom: 30px;">A Marketplace That Works for Both Sides</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <h4 style="color: #247ba0; margin-bottom: 15px; font-size: 1.2em;">For Crypto Holders</h4>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Browse multiple policies in one place
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Instant quotes + comparison engine
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Crypto-native underwriting (no 6-month delays)
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Pay in USDC, cover in USDC terms
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #247ba0; margin-bottom: 15px; font-size: 1.2em;">For Underwriters</h4>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Instant access to buyer segment
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            No sales infrastructure needed
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Aggregated underwriting (better risk pools)
+                        </li>
+                        <li style="padding-left: 25px; position: relative; margin: 12px 0;">
+                            <span style="position: absolute; left: 0; color: #247ba0; font-weight: 700;">→</span>
+                            Access to LatAm institutional buyers
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: GO-TO-MARKET -->
+<div class="slide">
+    <h2>Go-to-Market Strategy</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <strong>Phase 1: Underwriter Partnerships</strong>
+            <p>Week 1-8: Approach Hiscox, AXA, Munich Re specialty divisions with white-label partnership proposal. Offer 15% commission (vs 0% current). Build API integrations for quote flow.</p>
+            <div class="timeframe">Timeline: 8 weeks | Revenue: $0 (setup) | Partners: 3-5</div>
+        </div>
+        <div class="timeline-item">
+            <strong>Phase 2: Buyer Acquisition</strong>
+            <p>Week 9-16: Launch marketplace. Acquire initial users via: (1) Discord communities (18K+ crypto traders), (2) partnerships with custody providers, (3) LatAm fintech networks. Target high-touch first (200 early users).</p>
+            <div class="timeframe">Timeline: 8 weeks | CAC: $500-1,000 | Users: 200+</div>
+        </div>
+        <div class="timeline-item">
+            <strong>Phase 3: Scale & Add Products</strong>
+            <p>Month 5+: Expand to 10+ underwriters. Launch smart contract insurance, cross-chain bridge coverage. Target DAOs + protocols (higher ACV). Expand into Brazil/Mexico markets.</p>
+            <div class="timeframe">Timeline: Ongoing | Target ARR: $500K+ | Geographic: 3+ countries</div>
+        </div>
+        <div class="timeline-item">
+            <strong>Phase 4: Institutional Focus</strong>
+            <p>Month 9+: Approach family offices, RIAs, institutional crypto holders. Build white-label version for insurance brokers. Potential acquisition target by Alliant, Aston Lochern, or large carrier.</p>
+            <div class="timeframe">Timeline: Month 9+ | Target: $2M+ ARR</div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 6: MARKET ANALYSIS -->
+<div class="slide dark-bg">
+    <h2>Market Analysis</h2>
+    <div class="content single">
+        <div>
+            <h3 style="color: #0a2463; margin-bottom: 20px;">Market Size & Positioning</h3>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>2024</th>
+                    <th>2027</th>
+                    <th>TAM</th>
+                </tr>
+                <tr>
+                    <td><strong>Global Crypto Insurance Volume</strong></td>
+                    <td>$1.2B</td>
+                    <td>$3.5B</td>
+                    <td>$3.5B premiums</td>
+                </tr>
+                <tr>
+                    <td><strong>Brokerage Commission Opportunity (15%)</strong></td>
+                    <td>$180M</td>
+                    <td>$525M</td>
+                    <td>$525M annually</td>
+                </tr>
+                <tr>
+                    <td><strong>LatAm Market Share Potential</strong></td>
+                    <td>8-12%</td>
+                    <td>15-25%</td>
+                    <td>$40-130M</td>
+                </tr>
+                <tr>
+                    <td><strong>Underwriters in Market</strong></td>
+                    <td>8-10</td>
+                    <td>15-20</td>
+                    <td>Expanding</td>
+                </tr>
+            </table>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <strong>Why Duncan Wins Here:</strong> He's the only player with simultaneous credibility in crypto (risk models, protocols, custody), insurance (underwriter networks), and LatAm (language, network). Competitors are either insurance-first or crypto-first, not both.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: UNIT ECONOMICS -->
+<div class="slide">
+    <h2>Unit Economics & Financials</h2>
+    <div class="metrics-row">
+        <div class="metric">
+            <div class="label">Revenue per Customer (Annual)</div>
+            <div class="number">$5-20K</div>
+            <div class="label" style="font-size: 0.9em;">Avg premium $30K, 15% commission</div>
+        </div>
+        <div class="metric">
+            <div class="label">Gross Margin</div>
+            <div class="number">80-85%</div>
+            <div class="label" style="font-size: 0.9em;">Marketplace model (no underwriting)</div>
+        </div>
+        <div class="metric">
+            <div class="label">Payback Period</div>
+            <div class="number">&lt;1 Month</div>
+            <div class="label" style="font-size: 0.9em;">After customer acquisition</div>
+        </div>
+    </div>
+
+    <div class="content single" style="margin-top: 40px;">
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px;">
+            <h3 style="color: #0a2463; margin-bottom: 25px;">18-Month Projection</h3>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Month 6</th>
+                    <th>Month 12</th>
+                    <th>Month 18</th>
+                </tr>
+                <tr>
+                    <td><strong>Paying Customers</strong></td>
+                    <td>150</td>
+                    <td>450</td>
+                    <td>1,000+</td>
+                </tr>
+                <tr>
+                    <td><strong>Avg Premium per Customer</strong></td>
+                    <td>$25K</td>
+                    <td>$32K</td>
+                    <td>$40K</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly Premium Volume</strong></td>
+                    <td>$313K</td>
+                    <td>$1.2M</td>
+                    <td>$3.3M+</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly Commission Revenue (15%)</strong></td>
+                    <td>$47K</td>
+                    <td>$180K</td>
+                    <td>$495K+</td>
+                </tr>
+                <tr>
+                    <td><strong>MRR @ Avg Margin</strong></td>
+                    <td>$38K</td>
+                    <td>$145K</td>
+                    <td>$415K+</td>
+                </tr>
+                <tr>
+                    <td><strong>Annualized Run Rate</strong></td>
+                    <td>$456K</td>
+                    <td>$1.74M</td>
+                    <td>$4.98M+</td>
+                </tr>
+            </table>
+            <div style="margin-top: 20px; color: #555; font-size: 0.9em;">
+                <strong>Key Assumptions:</strong> 50-100 customer additions per month; underwriter partners grow to 8+ by month 12; LatAm represents 25%+ of volume by month 18.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 8: COMPETITIVE ADVANTAGES -->
+<div class="slide dark-bg">
+    <h2>Why Duncan Wins</h2>
+    <div class="content triple">
+        <div class="box">
+            <h3>Crypto Fluency</h3>
+            <p>Only founder who speaks both crypto risk models AND insurance underwriting language. No learning curve on DeFi protocols, staking risks, liquidation mechanics, or fork risks.</p>
+        </div>
+        <div class="box">
+            <h3>Underwriter Network</h3>
+            <p>Existing relationships with AIG, Chubb, Hiscox, Munich Re through PA business. Can negotiate partnerships in weeks, not quarters.</p>
+        </div>
+        <div class="box">
+            <h3>LatAm Advantage</h3>
+            <p>Portuguese/Spanish fluency + network. Crypto adoption highest in Brazil, Mexico, Argentina. Can capture 25%+ of market while US-based competitors struggle with language/compliance.</p>
+        </div>
+    </div>
+    <div style="margin-top: 40px; text-align: center; font-size: 0.95em; color: #666;">
+        <strong>Bottom Line:</strong> This business is bottlenecked on distribution (underwriter partnerships + buyer reach). Duncan's network + expertise removes that bottleneck immediately. Competitors would need 12+ months to build what he has in place.
+    </div>
+</div>
+
+<!-- SLIDE 9: 18-MONTH ROADMAP -->
+<div class="slide">
+    <h2>18-Month Execution Plan</h2>
+    <div class="content single">
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px;">
+            <table style="font-size: 0.9em;">
+                <tr>
+                    <th>Phase</th>
+                    <th>Timeline</th>
+                    <th>Milestones</th>
+                    <th>Investment</th>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong></td>
+                    <td>Month 1-2</td>
+                    <td>Underwriter interviews (Hiscox, AXA, Munich Re) | Buyer surveys (100+ crypto holders) | Partnership letters</td>
+                    <td>$15K</td>
+                </tr>
+                <tr>
+                    <td><strong>MVP Build</strong></td>
+                    <td>Month 2-4</td>
+                    <td>Marketplace SaaS | Underwriter API | Quote engine | Basic compliance KYC</td>
+                    <td>$80K</td>
+                </tr>
+                <tr>
+                    <td><strong>Partner Launch</strong></td>
+                    <td>Month 5</td>
+                    <td>Integrate 3-5 underwriters | Launch with 5K community users | Build referral engine</td>
+                    <td>$20K</td>
+                </tr>
+                <tr>
+                    <td><strong>Product Expansion</strong></td>
+                    <td>Month 6-9</td>
+                    <td>Add smart contract insurance | Bridge insurance | DAO-specific products | 8+ underwriters</td>
+                    <td>$30K</td>
+                </tr>
+                <tr>
+                    <td><strong>Geographic Scale</strong></td>
+                    <td>Month 9-12</td>
+                    <td>Brazil market launch | Mexico partnerships | Spanish/Portuguese docs | Local BD</td>
+                    <td>$40K</td>
+                </tr>
+                <tr>
+                    <td><strong>Institutional Focus</strong></td>
+                    <td>Month 12-18</td>
+                    <td>Family office partnerships | Broker white-label | Institutional products (higher ACV)</td>
+                    <td>$25K</td>
+                </tr>
+            </table>
+            <div style="margin-top: 20px; color: #666; font-size: 0.85em;">
+                <strong>Total Investment Required:</strong> $210K | <strong>Projected MRR at Month 18:</strong> $415K+ | <strong>Payback Period:</strong> 3-4 months post-launch
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10: EXECUTION GAPS & MITIGATION -->
+<div class="slide dark-bg">
+    <h2>Execution Gaps & Mitigation</h2>
+    <div class="content single">
+        <h3 style="color: #0a2463; margin-bottom: 30px;">Key Risks & How to Handle Them</h3>
+
+        <div class="gap-item">
+            <strong>Gap: Underwriter Integration Complexity</strong>
+            <div class="solution">
+                <strong>Mitigation:</strong> Partner with broker tech vendor (e.g., Cowbell, Canopius API team) who has existing integrations. Use their SDKs. Start with REST APIs, move to middleware only if volume justifies.
+            </div>
+        </div>
+
+        <div class="gap-item">
+            <strong>Gap: Regulatory Uncertainty in LatAm</strong>
+            <div class="solution">
+                <strong>Mitigation:</strong> Start in Brazil (most developed fintech regulation). Hire local compliance expert ($5K/month). Partner with regulated local brokers for local operations. Marketplace = zero custody risk.
+            </div>
+        </div>
+
+        <div class="gap-item">
+            <strong>Gap: Crypto Market Volatility (Insurance Demand Swings)</strong>
+            <div class="solution">
+                <strong>Mitigation:</strong> Premium demand actually RISES in bear markets (holders protect capital). Staking insurance (yield protection) = counter-cyclical. Build product mix across bull/bear scenarios.
+            </div>
+        </div>
+
+        <div class="gap-item">
+            <strong>Gap: Talent for Development</strong>
+            <div class="solution">
+                <strong>Mitigation:</strong> Hire 1-2 senior engineers (remote, crypto-background preferred). Build MVP with no-code tools first (Zapier, Make) while hiring. Use dev shop ($30K MVP) if timeline-critical.
+            </div>
+        </div>
+
+        <div class="gap-item">
+            <strong>Gap: Customer Acquisition at Scale</strong>
+            <div class="solution">
+                <strong>Mitigation:</strong> Early customers come from underwriter referrals (white-label). Crypto communities (Reddit, Discord) provide organic growth. Affiliate model with custody providers (Kraken, Celsius rebuilds). By month 9, partnerships drive 60% of volume.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 11: WHY NOW -->
+<div class="slide">
+    <h2>Why Now?</h2>
+    <div class="metrics-row">
+        <div class="metric">
+            <div class="label">Institutional Crypto Adoption</div>
+            <div class="number">↑ 45%</div>
+            <div class="label" style="font-size: 0.9em;">YoY 2024-2025</div>
+        </div>
+        <div class="metric">
+            <div class="label">Crypto Assets Under Management</div>
+            <div class="number">$2.3T</div>
+            <div class="label" style="font-size: 0.9em;">Needing insurance coverage</div>
+        </div>
+        <div class="metric">
+            <div class="label">Insurance Market Maturity</div>
+            <div class="number">5x Growth</div>
+            <div class="label" style="font-size: 0.9em;">Since 2020, still early</div>
+        </div>
+    </div>
+
+    <div class="content single" style="margin-top: 40px;">
+        <div class="highlight">
+            <strong>Market Timing Insight:</strong> We're at the inflection point where:
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Underwriters see crypto as viable product (post-2022 washout)</li>
+                <li>Institutional buyers DEMAND insurance (compliance + risk management)</li>
+                <li>Crypto holders have buying power (BTC at $70K+)</li>
+                <li>No dominant marketplace platform yet exists</li>
+                <li>LatAm crypto market is 2-3 years behind US but growing faster</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 12: ASK & NEXT STEPS -->
+<div class="slide title-slide">
+    <h2 style="color: white; border: none; margin-bottom: 60px;">The Ask</h2>
+    <div class="content single" style="text-align: left; color: white;">
+        <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 8px; margin-bottom: 30px;">
+            <h3 style="color: white; font-size: 2em; margin-bottom: 25px;">Seeking: $200K Seed Investment</h3>
+            <ul style="list-style: none; margin-left: 0;">
+                <li style="margin: 15px 0; padding-left: 30px; position: relative; font-size: 1.1em;">
+                    <span style="position: absolute; left: 0;">✓</span>
+                    Product development & marketplace: $80K
+                </li>
+                <li style="margin: 15px 0; padding-left: 30px; position: relative; font-size: 1.1em;">
+                    <span style="position: absolute; left: 0;">✓</span>
+                    Go-to-market (partnerships, community, BD): $70K
+                </li>
+                <li style="margin: 15px 0; padding-left: 30px; position: relative; font-size: 1.1em;">
+                    <span style="position: absolute; left: 0;">✓</span>
+                    Compliance, legal, insurance: $30K
+                </li>
+                <li style="margin: 15px 0; padding-left: 30px; position: relative; font-size: 1.1em;">
+                    <span style="position: absolute; left: 0;">✓</span>
+                    Runway (salaries, operations): $20K
+                </li>
+            </ul>
+        </div>
+
+        <div style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 30px;">
+            <h4 style="font-size: 1.4em; margin-bottom: 20px;">Next Steps (4 weeks):</h4>
+            <ol style="margin-left: 20px; font-size: 1em;">
+                <li style="margin: 12px 0;">Schedule partnerships calls with Hiscox, AXA (validate demand signal)</li>
+                <li style="margin: 12px 0;">Survey 200+ crypto holders on insurance needs (refine GTM)</li>
+                <li style="margin: 12px 0;">Build functional MVP (Figma prototype → live alpha marketplace)</li>
+                <li style="margin: 12px 0;">Close first 2-3 underwriter partnerships (revenue-bearing)</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 13: APPENDIX - COMPARABLES -->
+<div class="slide dark-bg">
+    <h2>Appendix: Market Comparables</h2>
+    <div class="content single">
+        <table style="font-size: 0.85em;">
+            <tr>
+                <th>Company</th>
+                <th>Model</th>
+                <th>Valuation</th>
+                <th>Relevance</th>
+            </tr>
+            <tr>
+                <td><strong>Cowbell (Cyber Insurance)</strong></td>
+                <td>Marketplace + API</td>
+                <td>$100M+</td>
+                <td>Same marketplace model, different vertical</td>
+            </tr>
+            <tr>
+                <td><strong>Lemonade</strong></td>
+                <td>Direct + Marketplace</td>
+                <td>$2B IPO</td>
+                <td>Proves InsurTech marketplace valuations 10x+ ARR</td>
+            </tr>
+            <tr>
+                <td><strong>Hippo Insurance</strong></td>
+                <td>Direct + white-label</td>
+                <td>$750M+</td>
+                <td>Demonstrates broker channel + tech scale</td>
+            </tr>
+            <tr>
+                <td><strong>Crypto Insurance Market Leaders (Hiscox, AXA, Munich Re)</strong></td>
+                <td>Direct/Limited Partnership</td>
+                <td>Not disclosed</td>
+                <td>Actively seeking distribution; will white-label with right partner</td>
+            </tr>
+        </table>
+        <div class="highlight" style="margin-top: 30px;">
+            <strong>Exit Scenario:</strong> Likely acquirer = large broker consolidator (Alliant, Aston Lochern, BRP) or major underwriter (AXA, Munich Re) seeking digital-first crypto channel. Comparable valuations: 8-12x revenue or $150M-$600M at $50M ARR.
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 14: CONTACT -->
+<div class="slide title-slide">
+    <h1>Let's Build the Future of Crypto Insurance</h1>
+    <p style="font-size: 1.3em; margin-top: 80px;">Duncan Littlejohn</p>
+    <p style="font-size: 1.1em; margin-bottom: 60px;">duncanlittlejohnjr@gmail.com</p>
+    <div class="footer" style="color: rgba(255,255,255,0.7); margin-top: 80px;">
+        South Florida | Crypto Native | Insurance Insider | LatAm Expert
+    </div>
+</div>
+
+</body>
+</html>
