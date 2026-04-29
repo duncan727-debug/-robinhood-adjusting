@@ -138,8 +138,6 @@
       <button class="county-btn" onclick="switchCounty('st-lucie',this)">St. Lucie</button>
       <button class="county-btn" onclick="switchCounty('indian-river',this)">Indian River</button>
       <button class="county-btn" onclick="switchCounty('brevard',this)">Brevard</button>
-      <button class="county-btn" onclick="switchCounty('osceola',this)">Osceola</button>
-      <button class="county-btn" onclick="switchCounty('orange',this)">Orange (Orlando)</button>
     </div>
   </div>
 </div>
@@ -262,14 +260,12 @@
     <div id="pb-legal" class="service-section"><div class="service-header"><span class="service-icon">⚖️</span><h2>Attorneys</h2><span class="count">Palm Beach County · Insurance &amp; Property Law</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
   </div>
 
-  <!-- Remaining counties: Martin, St. Lucie, Indian River, Brevard, Osceola, Orange -->
+  <!-- Remaining counties: Martin, St. Lucie, Indian River, Brevard -->
   <!-- Each follows same structure — rendered dynamically with JS below -->
   <div id="county-martin" class="county-panel"></div>
   <div id="county-st-lucie" class="county-panel"></div>
   <div id="county-indian-river" class="county-panel"></div>
   <div id="county-brevard" class="county-panel"></div>
-  <div id="county-osceola" class="county-panel"></div>
-  <div id="county-orange" class="county-panel"></div>
 
   <div class="cta-bar">
     <p>Are you a licensed service professional in one of these counties? We evaluate providers for inclusion based on licensing, reputation, and client feedback.</p>
@@ -289,9 +285,7 @@
     martin:       'Martin',
     'st-lucie':   'St. Lucie',
     'indian-river':'Indian River',
-    brevard:      'Brevard',
-    osceola:      'Osceola',
-    orange:       'Orange (Orlando)'
+    brevard:      'Brevard'
   };
 
   const SERVICES = [
