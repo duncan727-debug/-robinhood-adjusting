@@ -15,3 +15,4 @@
 - [Operations System (100-in-100)](project_operations_system.md) — 5-workflow automation stack for PA outreach; live as of 2026-04-22
 - [Catch-up infrastructure](project_catchup_infra.md) — LaunchAgent-driven catchup.sh for missed cron jobs when Mac was off (2026-04-23)
 - [Prospect Intelligence Cron Job](intelligence_cron_setup.md) — daily deep research on followup-due orgs; live as of 2026-04-24
+- [Browser Automation & CDP](browser_automation_capability.md) — Chrome/Chromium via CDP in openclaw.json; enables Gmail & form control
