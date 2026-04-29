@@ -1045,15 +1045,13 @@
 
     <!-- PROVIDERS -->
     <div id="tab-providers" class="tab-panel">
-      <p style="font-family:'Arial',sans-serif; font-size:15px; color:var(--muted); margin-bottom:28px; max-width:620px;">
-        Vetted service professionals across South Florida — organized by county and trade.
-        Click on a county to see service providers and real estate professionals in your area.
-      </p>
-      <div id="providers-counties" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
-        <!-- Counties will be rendered here -->
-      </div>
-      <div style="margin-top:24px; padding:16px 20px; background:var(--light); border:1px solid var(--border); border-radius:6px; font-family:'Arial',sans-serif; font-size:13px; color:var(--muted);">
-        Are you a service provider in one of these counties? <a href="#contact" style="color:var(--red); font-weight:bold;">Get in touch</a> — we vet and add trusted professionals on a rolling basis.
+      <div style="text-align:center; padding:60px 40px;">
+        <p style="font-family:'Arial',sans-serif; font-size:16px; color:var(--text); margin-bottom:24px; max-width:620px; margin-left:auto; margin-right:auto;">
+          Browse vetted service providers organized by county and trade.
+        </p>
+        <a href="/providers/" style="display:inline-block; background:var(--red); color:white; padding:14px 32px; border-radius:6px; font-family:'Arial',sans-serif; font-weight:bold; font-size:15px; transition:background .2s;">
+          View Trusted Providers Directory →
+        </a>
       </div>
     </div>
 
@@ -1283,9 +1281,6 @@
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + name).classList.add('active');
     btn.classList.add('active');
-    if (name === 'providers' && document.getElementById('providers-counties').innerHTML === '') {
-      renderCounties();
-    }
   }
 
   function toggleFaq(el) {
