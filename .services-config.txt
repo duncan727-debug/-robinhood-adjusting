@@ -1,0 +1,43 @@
+ROBINHOOD ADJUSTING - SERVICES & CREDENTIALS
+============================================
+Last updated: 2026-04-29
+Status: Netlify + Beehiiv setup in progress
+
+1. EMAIL
+   - Primary: duncanlittlejohn727@gmail.com
+   - Use: Main business email, newsletter signups
+
+2. NAMECHEAP (Domain Registrar)
+   - Email: duncanlittlejohn7272@gmail.com
+   - Username: duncanlittlejohn7272
+   - Password: [STORED SECURELY]
+   - Domain: robinhoodadjusting.com
+   - DNS: Connected to Netlify
+
+3. NETLIFY (Website Hosting & Deployment)
+   - Email: duncanlittlejohn727@gmail.com
+   - Site: robinhoodadjusting.com
+   - Project: robin-hood-adjusting
+   - API Token: [STORED SECURELY]
+   - Status: Live, auto-deploying from GitHub main
+
+4. GITHUB (Code Repository & Version Control)
+   - Email: duncanlittlejohn727@gmail.com
+   - Username: duncan727-debug
+   - Repo: -robinhood-adjusting
+   - Branch: main (production)
+   - Connected to: Netlify (webhook)
+
+5. BEEHIIV (Newsletter Platform) - IN SETUP
+   - Email: duncanlittlejohn727@gmail.com
+   - Status: Ready for integration
+   - Purpose: Daily newsletter delivery
+
+6. HUBSPOT (CRM) - IN SETUP
+   - Email: duncanlittlejohn727@gmail.com
+   - Status: Ready for integration
+   - Purpose: Contact management, outreach tracking
+
+ARCHITECTURE:
+GitHub (code) → Netlify (auto-deploy) → robinhoodadjusting.com (live)
+Namecheap DNS → Points to Netlify
