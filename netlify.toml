@@ -1,0 +1,11 @@
+[build]
+  command = "echo 'No build needed - static site'"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/index"
+  to = "/PA-WEBSITE.html"
+  status = 200
