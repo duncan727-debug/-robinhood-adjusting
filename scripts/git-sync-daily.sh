@@ -38,4 +38,8 @@ Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>" 2>&1
 # Push to GitHub
 git push origin main 2>&1
 
+# Build website with latest briefs
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Building website..."
+/Users/victoria/.openclaw/workspace/scripts/build-website.sh
+
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Sync complete"
