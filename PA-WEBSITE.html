@@ -1296,13 +1296,14 @@
     emailInput.disabled = true;
 
     try {
-      const response = await fetch('/.netlify/functions/subscribe-newsletter', {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email: email
+          email: email,
+          publication_id: 'eac67b70-2653-48ab-b4a0-c8b01533c691'
         })
       });
 
@@ -1310,8 +1311,6 @@
         btn.textContent = "You're subscribed!";
         btn.style.background = '#1a6e3a';
       } else {
-        const error = await response.text();
-        console.error('Subscription error:', error);
         btn.textContent = 'Subscription failed. Try again.';
         btn.style.background = '#c41e3a';
         btn.disabled = false;
