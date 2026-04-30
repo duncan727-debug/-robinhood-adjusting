@@ -1,0 +1,30 @@
+hs_object_type,firstname,lastname,jobtitle,phone,company,name,website,industry,county
+CONTACT,Michael,Fitzpatrick,Founder & President,561-282-5393,KLR Roofing Corp.,,,
+CONTACT,James,Rivera,Operations Director,954-521-8844,All Phase Construction USA,,,
+CONTACT,Sarah,Chen,Sales Manager,786-443-2201,Quantum Roofing Solutions,,,
+CONTACT,Robert,Martinez,Founder,561-755-6633,Storm Shield Roofing,,,
+CONTACT,Lisa,Feldman,VP Business Development,954-288-1947,Coastal Property Management Group,,,
+CONTACT,David,Gutierrez,CEO,305-664-2288,Prestige Realty Management,,,
+CONTACT,Michael,Thompson,Sales Director,561-423-7109,Atlantic Water & Mold Solutions,,,
+CONTACT,Carlos,Espinoza,Project Manager,954-633-5847,Elite General Contracting,,,
+CONTACT,Jennifer,Walsh,Principal,772-226-3644,SafeHaven Property Consulting,,,
+CONTACT,Anthony,Rodriguez,Managing Partner,305-441-9876,Florida Insurance Partners LLC,,,
+CONTACT,Patricia,Alvarez,Executive Director,561-627-5523,HOA Advocates Management,,,
+COMPANY,,,,,KLR Roofing Corp.,klrroofing.com,Roofing,Palm Beach
+COMPANY,,,,,All Phase Construction USA,allphaseusa.com,Roofing,Broward
+COMPANY,,,,,Quantum Roofing Solutions,quantumroofing.com,Roofing,Miami-Dade
+COMPANY,,,,,Storm Shield Roofing,stormshieldfl.com,Roofing,Palm Beach
+COMPANY,,,,,Coastal Property Management Group,coastalproperty.com,Property Management,Broward
+COMPANY,,,,,Prestige Realty Management,prestigerealty.com,Property Management,Miami-Dade
+COMPANY,,,,,Atlantic Water & Mold Solutions,atlanticwaterfl.com,Water Mitigation,Palm Beach
+COMPANY,,,,,Elite General Contracting,elitecontractorsfl.com,General Contracting,Broward
+COMPANY,,,,,SafeHaven Property Consulting,safehavenprop.com,Property Management,St. Lucie
+COMPANY,,,,,Florida Insurance Partners LLC,floridainsurancepartners.com,Insurance Attorney,Miami-Dade
+COMPANY,,,,,HOA Advocates Management,hoaadvocatesfl.com,HOA Management,Palm Beach
+COMPANY,,,,,Mold Only,moldonly.com,Mold Remediation,Miami-Dade
+COMPANY,,,,,Pure Maintenance of South Florida,puremaintenance.com,Water Mitigation,Miami-Dade
+COMPANY,,,,,R.E. Mold,,Mold Remediation,Martin
+COMPANY,,,,,FP Property Restoration,fppropertyrestoration.com,Full Restoration,Broward
+COMPANY,,,,,Merlin Law Group,merlinlawgroup.com,Insurance Attorney,Broward
+COMPANY,,,,,State Farm Agents - South Florida Network,agents.statefarm.com,Insurance Agent,Multi-county
+COMPANY,,,,,Independent P&C Brokers - Palm Beach Luxury,,Insurance Broker,Palm Beach
