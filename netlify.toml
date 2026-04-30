@@ -1,7 +1,6 @@
 [build]
   command = "echo 'No build needed - static site'"
   publish = "."
-  functions = ".netlify/functions"
 
 [build.environment]
   NODE_VERSION = "22"
@@ -10,10 +9,3 @@
   from = "/index"
   to = "/PA-WEBSITE.html"
   status = 200
-
-[[redirects]]
-  from = "/api/subscribe"
-  to = "https://api.beehiiv.com/v1/subscriptions"
-  status = 200
-  force = true
-  headers = {Authorization = "Bearer 3Zfh39Nao3CjbTCsuzWgx1wzzUlcgizPrNb3v3e3RQCl8GeFUNJwgdug0FsYm9XI", "Content-Type" = "application/json"}

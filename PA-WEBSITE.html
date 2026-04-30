@@ -1067,10 +1067,12 @@
     <p style="font-size:18px; color:rgba(255,255,255,.85); max-width:540px; margin:0 auto 36px; font-family:'Arial',sans-serif;">
       Daily briefs, weekly trend reports, and plain-language breakdowns of what's happening in the South Florida insurance market — delivered to your inbox.
     </p>
-    <form id="newsletter-form" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap;" onsubmit="handleNewsletter(event)">
+    <form id="newsletter-form" name="newsletter-signup" method="POST" data-netlify="true" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap;" onsubmit="handleNewsletter(event)">
+      <input type="hidden" name="form-name" value="newsletter-signup">
       <input
         type="email"
         id="nl-email"
+        name="email"
         placeholder="your@email.com"
         required
         style="flex:1; min-width:220px; padding:14px 18px; border:none; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; outline:none;"
@@ -1285,44 +1287,34 @@
     el.closest('.faq-item').classList.toggle('open');
   }
 
-  async function handleNewsletter(e) {
+  function handleNewsletter(e) {
     e.preventDefault();
     const btn = document.getElementById('nl-btn');
     const emailInput = document.getElementById('nl-email');
-    const email = emailInput.value;
+    const form = document.getElementById('newsletter-form');
 
     btn.textContent = 'Subscribing...';
     btn.disabled = true;
     emailInput.disabled = true;
 
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          publication_id: 'eac67b70-2653-48ab-b4a0-c8b01533c691'
-        })
-      });
-
-      if (response.ok) {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'form-name': 'newsletter-signup',
+        'email': emailInput.value
+      })
+    })
+      .then(() => {
         btn.textContent = "You're subscribed!";
         btn.style.background = '#1a6e3a';
-      } else {
+      })
+      .catch(() => {
         btn.textContent = 'Subscription failed. Try again.';
         btn.style.background = '#c41e3a';
         btn.disabled = false;
         emailInput.disabled = false;
-      }
-    } catch (error) {
-      console.error('Newsletter subscription error:', error);
-      btn.textContent = 'Subscription failed. Try again.';
-      btn.style.background = '#c41e3a';
-      btn.disabled = false;
-      emailInput.disabled = false;
-    }
+      });
   }
 
   function handleSubmit(e) {
