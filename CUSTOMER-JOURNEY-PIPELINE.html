@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Adjusting - Customer Journey Pipeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2d4a 0%, #1a3a5c 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f2d4a 0%, #c41e3a 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.15em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        nav {
+            width: 280px;
+            background: #f8f9fa;
+            padding: 30px 0;
+            border-right: 2px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        nav a {
+            display: block;
+            padding: 14px 20px;
+            color: #333;
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            background: #e8f4ff;
+            border-left-color: #0f2d4a;
+            color: #0f2d4a;
+        }
+
+        main {
+            flex: 1;
+            padding: 50px;
+            overflow-y: auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 20px;
+        }
+
+        h2 {
+            color: #0f2d4a;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #c41e3a;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            color: #1a3a5c;
+            font-size: 1.6em;
+            margin: 30px 0 20px 0;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.15em;
+            margin: 20px 0 12px 0;
+            font-weight: 600;
+        }
+
+        .flow-diagram {
+            background: #f5f7fa;
+            border: 2px solid #0f2d4a;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.9;
+            overflow-x: auto;
+            white-space: pre;
+            color: #2c3e50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .status-box {
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .status-working {
+            background: #d4edda;
+            border-left-color: #28a745;
+            color: #155724;
+        }
+
+        .status-partial {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+            color: #856404;
+        }
+
+        .status-blocked {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+            color: #721c24;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #0f2d4a;
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f5f7fa;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f5f7fa;
+            border-left: 4px solid #0f2d4a;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            margin-right: 12px;
+            font-size: 1.3em;
+            color: #0f2d4a;
+        }
+
+        .highlight {
+            background: #fff9e6;
+            padding: 25px;
+            border-left: 5px solid #ffc107;
+            border-radius: 4px;
+            margin: 25px 0;
+        }
+
+        .highlight strong {
+            color: #856404;
+        }
+
+        .bottleneck {
+            background: #f8d7da;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 5px solid #dc3545;
+        }
+
+        .bottleneck strong {
+            color: #721c24;
+        }
+
+        .phase-box {
+            background: #e8f4f8;
+            border: 2px solid #0f2d4a;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .phase-box h4 {
+            color: #0f2d4a;
+            margin-top: 0;
+        }
+
+        .process-step {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #0f2d4a;
+            transition: all 0.3s;
+        }
+
+        .process-step:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left-color: #c41e3a;
+        }
+
+        .process-step h5 {
+            color: #0f2d4a;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .process-step p {
+            margin: 8px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            margin-left: 40px;
+            padding: 20px;
+            background: #f5f7fa;
+            border-left: 3px solid #0f2d4a;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -22px;
+            top: 25px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border: 3px solid #0f2d4a;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #f5f7fa;
+        }
+
+        .timeline-item strong {
+            color: #0f2d4a;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: #f5f7fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #0f2d4a;
+        }
+
+        .metric-card strong {
+            display: block;
+            color: #0f2d4a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .segment-card {
+            background: linear-gradient(135deg, rgba(15,45,74,0.05) 0%, rgba(196,30,58,0.05) 100%);
+            border: 2px solid #0f2d4a;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .segment-card h4 {
+            color: #0f2d4a;
+            margin-top: 0;
+        }
+
+        .success-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .success-indicator.green {
+            background: #28a745;
+        }
+
+        .success-indicator.yellow {
+            background: #ffc107;
+        }
+
+        .success-indicator.red {
+            background: #dc3545;
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 2px solid #e0e0e0;
+                display: flex;
+                overflow-x: auto;
+                padding: 15px 0;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                white-space: nowrap;
+                border-bottom: 3px solid transparent;
+                border-left: none;
+            }
+
+            nav a:hover, nav a.active {
+                border-bottom-color: #0f2d4a;
+                border-left-color: transparent;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Customer Journey Pipeline</h1>
+            <p>Robinhood Adjusting - From Visitor to Engaged Subscriber</p>
+            <p style="font-size: 0.95em; margin-top: 15px; opacity: 0.9;">Complete workflow showing what happens when a potential client visits your website and how we nurture them through the sales funnel</p>
+        </header>
+
+        <div class="content">
+            <nav>
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#current-state" class="nav-link">Current State</a>
+                <a href="#signup-flow" class="nav-link">Signup Flow</a>
+                <a href="#segmentation" class="nav-link">Segmentation</a>
+                <a href="#welcome-sequence" class="nav-link">Welcome Emails</a>
+                <a href="#nurture-content" class="nav-link">Content Routing</a>
+                <a href="#tracking" class="nav-link">Tracking</a>
+                <a href="#gaps" class="nav-link">Critical Gaps</a>
+                <a href="#implementation" class="nav-link">Roadmap</a>
+                <a href="#checklist" class="nav-link">Setup Checklist</a>
+            </nav>
+
+            <main>
+                <!-- OVERVIEW -->
+                <section id="overview">
+                    <h2>📋 Current State: Reality Check</h2>
+
+                    <div class="highlight">
+                        <strong>⚠️ The Problem:</strong> You have a fully automated content pipeline but a broken customer funnel. A prospect visits your website, subscribes to the newsletter, and then... almost nothing happens automatically. No welcome email. No audience detection. No tailored content delivery.
+                    </div>
+
+                    <div class="status-grid">
+                        <div class="status-box status-working">
+                            <strong>✅ Working (80%)</strong>
+                            Content Production
+                        </div>
+                        <div class="status-box status-partial">
+                            <strong>⚠️ Partial (40%)</strong>
+                            Subscription Capture
+                        </div>
+                        <div class="status-box status-blocked">
+                            <strong>❌ Broken (0%)</strong>
+                            Subscriber Nurture
+                        </div>
+                    </div>
+
+                    <h3>Why This Matters</h3>
+                    <p>Right now, every new subscriber is treated the same way. A homeowner in Wellington, a roofing contractor, and a real estate agent all receive the exact same email — even though their interests are completely different. You have 3 distinct audiences but no way to serve them 3 distinct experiences.</p>
+                </section>
+
+                <!-- CURRENT STATE -->
+                <section id="current-state">
+                    <h2>🔴 What's Actually Happening Today</h2>
+
+                    <h3>Step 1: Website Visitor Subscribes</h3>
+                    <div class="flow-diagram">
+VISITOR LANDS ON: robinhoodadjusting.com
+        ↓
+SEES: Newsletter signup form (red section)
+        ↓
+ENTERS: Email address + clicks "Subscribe"
+        ↓
+GOES TO: Netlify (form handling)
+        ↓
+RESULT: Email stored in Netlify logs (but nowhere accessible)
+        ↓
+🎯 TARGET: Should go to HubSpot
+        ❌ CURRENTLY: Doesn't integrate</div>
+
+                    <h3>Step 2: Email in Limbo</h3>
+                    <div class="bottleneck">
+                        <strong>🚫 Critical Issue:</strong> The email form on PA-WEBSITE.html submits to Netlify as a basic form submission. There's no webhook connecting Netlify to HubSpot. This means subscribers are being lost — they're not appearing in your CRM at all.
+                    </div>
+
+                    <h3>Step 3: No Welcome Sequence</h3>
+                    <p>Even if they made it to HubSpot, there's no welcome email workflow set up. A new subscriber receives:</p>
+                    <ul class="checklist">
+                        <li>Nothing (immediate)</li>
+                        <li>Nothing (day 1)</li>
+                        <li>Nothing (day 2)</li>
+                        <li>Maybe the next daily brief (day 3, if it's scheduled)</li>
+                    </ul>
+
+                    <h3>Step 4: No Audience Detection</h3>
+                    <p>There's no mechanism to identify whether someone is a homeowner, RE professional, or service provider. The form asks for email — that's it. No dropdowns, no qualifying questions, nothing.</p>
+
+                    <div class="bottleneck">
+                        <strong>Result:</strong> Everyone gets the same content, even though you're writing 3 distinct daily briefs (homeowner, provider, RE pro). The system is built but disconnected.
+                    </div>
+                </section>
+
+                <!-- SIGNUP FLOW -->
+                <section id="signup-flow">
+                    <h2>🔗 The Signup Integration Chain (What Needs to Happen)</h2>
+
+                    <h3>Ideal Flow: Website → HubSpot → Email Sequence</h3>
+                    <div class="flow-diagram">
+┌─ VISITOR SUBSCRIBES (robinhoodadjusting.com) ─┐
+│                                                 │
+│ Email: john@example.com                        │
+│ Segment: [homeowner / provider / re-pro]       │
+│ Signed up: 2026-05-02 08:32                    │
+│                                                 │
+└────────────────────────────────────────────────┘
+                    ↓
+┌─ NETLIFY WEBHOOK (validate + capture) ────────┐
+│                                                 │
+│ • Validate email format                        │
+│ • Extract segment from form                    │
+│ • Timestamp signup                             │
+│ • Build HubSpot contact object                 │
+│                                                 │
+└────────────────────────────────────────────────┘
+                    ↓
+┌─ POST TO HUBSPOT API ─────────────────────────┐
+│                                                 │
+│ POST /crm/v3/objects/contacts                  │
+│ Properties:                                    │
+│  - email                                       │
+│  - firstname (auto-extract)                    │
+│  - hs_lead_status: "subscriber"                │
+│  - audience_segment: "homeowner|provider|..."  │
+│  - signup_date                                 │
+│                                                 │
+└────────────────────────────────────────────────┘
+                    ↓
+┌─ HUBSPOT CREATES CONTACT ─────────────────────┐
+│                                                 │
+│ Contact record in CRM                          │
+│ Tagged with segment                            │
+│ Ready for automation                           │
+│                                                 │
+└────────────────────────────────────────────────┘
+                    ↓
+┌─ AUTOMATION WORKFLOW TRIGGERS ────────────────┐
+│                                                 │
+│ IF segment = "homeowner" THEN enroll in:       │
+│   "Welcome - Homeowner" email sequence         │
+│                                                 │
+│ IF segment = "provider" THEN enroll in:        │
+│   "Welcome - Service Provider" sequence        │
+│                                                 │
+│ IF segment = "re-pro" THEN enroll in:          │
+│   "Welcome - Real Estate Pro" sequence         │
+│                                                 │
+└────────────────────────────────────────────────┘
+                    ↓
+┌─ WELCOME EMAIL SENDS ─────────────────────────┐
+│                                                 │
+│ Day 0: "Welcome to Robinhood Adjusting"        │
+│        (audience-specific intro)               │
+│                                                 │
+│ Day 2: "Here's what we send daily" + example   │
+│                                                 │
+│ Day 5: "Quick question about you" (re-qualify) │
+│                                                 │
+└────────────────────────────────────────────────┘
+                    ↓
+┌─ ONGOING: DAILY BRIEF DELIVERY ───────────────┐
+│                                                 │
+│ Every Mon-Sat at 8:00 AM EDT, subscriber gets  │
+│ THEIR VERSION of the daily brief               │
+│ (tailored to their segment)                    │
+│                                                 │
+└────────────────────────────────────────────────┘</div>
+                </section>
+
+                <!-- SEGMENTATION -->
+                <section id="segmentation">
+                    <h2>🎯 Three-Segment Model</h2>
+
+                    <p>Your newsletter serves three distinct audiences with different pain points, interests, and next steps. Right now you're creating 3 briefs but sending the same one to everyone.</p>
+
+                    <div class="segment-card">
+                        <h4>🏠 HOMEOWNER Segment</h4>
+                        <p><strong>Who:</strong> Individual homeowners in South Florida dealing with insurance claims (storm, water, mold)</p>
+                        <p><strong>Pain Points:</strong> Underinsured, claim denials, contractors aren't returning calls, don't know their rights</p>
+                        <p><strong>Daily Brief Focus:</strong> Actionable advice (how to handle a claim, what to watch for), storm alerts, inspector tips</p>
+                        <p><strong>Next Step:</strong> Call your office to discuss their specific claim OR connect with a contractor</p>
+                        <p><strong>Email Frequency:</strong> Daily (Mon-Sat) at 8:00 AM EDT</p>
+                    </div>
+
+                    <div class="segment-card">
+                        <h4>🔧 SERVICE PROVIDER Segment</h4>
+                        <p><strong>Who:</strong> Roofing, water mitigation, mold remediation, restoration contractors</p>
+                        <p><strong>Pain Points:</strong> Finding qualified lead generation sources, competition is intense, claim approvals</p>
+                        <p><strong>Daily Brief Focus:</strong> New claims activity, insurer updates, lead opportunities, contractor directory positioning</p>
+                        <p><strong>Next Step:</strong> Get listed in your referral directory OR explore partnership programs</p>
+                        <p><strong>Email Frequency:</strong> Daily (Mon-Sat) at 8:00 AM EDT</p>
+                    </div>
+
+                    <div class="segment-card">
+                        <h4>🏢 REAL ESTATE PROFESSIONAL Segment</h4>
+                        <p><strong>Who:</strong> Real estate agents, property managers, investors, developers</p>
+                        <p><strong>Pain Points:</strong> Insurance complications killing deals, client satisfaction, property valuation impact</p>
+                        <p><strong>Daily Brief Focus:</strong> Market intelligence, property damage trends, insurance implications for deals</p>
+                        <p><strong>Next Step:</strong> Attend quarterly workshops OR refer clients for claim help</p>
+                        <p><strong>Email Frequency:</strong> Daily (Mon-Sat) at 8:00 AM EDT</p>
+                    </div>
+
+                    <h3>How to Capture Segment During Signup</h3>
+                    <div class="process-step">
+                        <h5>Option A: Dropdown During Signup (Recommended)</h5>
+                        <p>Add a dropdown to the website form: "I'm interested in:"</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Homeowner resources & claim guidance</li>
+                            <li>Service provider opportunities & leads</li>
+                            <li>Real estate market updates</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #666;"><strong>Pro:</strong> Direct, explicit segmentation. <strong>Con:</strong> Adds form friction, lower conversion.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h5>Option B: Post-Signup Survey (More Data)</h5>
+                        <p>Welcome email includes: "What best describes you?" with 3 buttons → subscriber clicks → HubSpot tags them</p>
+                        <p style="color: #666;"><strong>Pro:</strong> Lower form friction, better data collection. <strong>Con:</strong> Requires email interaction.</p>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>Recommendation:</strong> Start with Option A (dropdown on form). It adds 1 second to signup but ensures you know who you're emailing on day 1. You can always add Option B later as a re-qualification email.
+                    </div>
+                </section>
+
+                <!-- WELCOME SEQUENCE -->
+                <section id="welcome-sequence">
+                    <h2>📧 Welcome Email Sequences (By Segment)</h2>
+
+                    <h3>All Segments: Day 0 (Immediate, upon signup)</h3>
+                    <div class="process-step">
+                        <h5>Welcome Email (Auto-send, 5 minutes after signup)</h5>
+                        <p><strong>Subject:</strong> "Welcome to Robinhood Adjusting — Here's What We Send"</p>
+                        <p><strong>Content (customize by segment):</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><strong>Homeowner:</strong> "Get daily updates on claims, storm alerts, and insider tips to protect your rights"</li>
+                            <li><strong>Provider:</strong> "Access daily lead generation intel, insurer updates, and partnership opportunities"</li>
+                            <li><strong>RE Pro:</strong> "Stay informed on market impacts, insurance trends, and deal implications in South Florida"</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #666;"><strong>CTA:</strong> "Check your email tomorrow morning for your first brief"</p>
+                    </div>
+
+                    <h3>All Segments: Day 1 (Next morning, if signup was afternoon/evening)</h3>
+                    <div class="process-step">
+                        <h5>First Daily Brief (Automated content delivery)</h5>
+                        <p><strong>Subject:</strong> "Your Daily Brief — [Segment-Specific Topic]"</p>
+                        <p><strong>Content:</strong> One of your 3 daily briefs (Mon-Sat, 8:00 AM EDT)</p>
+                    </div>
+
+                    <h3>Homeowner Track: Day 2</h3>
+                    <div class="process-step">
+                        <h5>Value-Add Email: "5 Questions to Ask Your Adjuster"</h5>
+                        <p><strong>Purpose:</strong> Show expertise, build trust, educate</p>
+                        <p><strong>Content:</strong> Mini-guide specific to common claim issues in South Florida</p>
+                    </div>
+
+                    <h3>Service Provider Track: Day 2</h3>
+                    <div class="process-step">
+                        <h5>Partnership Email: "How We Connect Contractors with Leads"</h5>
+                        <p><strong>Purpose:</strong> Introduce referral directory & lead generation program</p>
+                        <p><strong>CTA:</strong> "Learn about getting listed" (links to providers page)</p>
+                    </div>
+
+                    <h3>RE Pro Track: Day 2</h3>
+                    <div class="process-step">
+                        <h5>Market Intelligence Email: "What Recent Claims Trends Mean for Your Business"</h5>
+                        <p><strong>Purpose:</strong> Position as market expert</p>
+                        <p><strong>CTA:</strong> "Schedule a conversation" or "Refer a client"</p>
+                    </div>
+
+                    <h3>All Segments: Day 5</h3>
+                    <div class="process-step">
+                        <h5>Re-Qualification Email: "Is This Useful for You?"</h5>
+                        <p><strong>Purpose:</strong> Check engagement, allow segment change</p>
+                        <p><strong>Content:</strong> "We noticed you signed up as [segment]. Still accurate? Would you like to switch?"</p>
+                        <p><strong>CTA:</strong> [Change my interests]</p>
+                        <p style="color: #666;"><strong>Why:</strong> People's needs change. Early check-in catches misaligns early.</p>
+                    </div>
+
+                    <h3>All Segments: Ongoing (Mon-Sat, 8:00 AM EDT)</h3>
+                    <div class="process-step">
+                        <h5>Daily Brief (Segment-Specific Version)</h5>
+                        <p><strong>Mon-Sat:</strong> Your 3 daily briefs, automatically delivered based on their segment tag</p>
+                        <p><strong>What changes per segment:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><strong>Homeowner version:</strong> Focuses on claim tips, property protection, storm alerts</li>
+                            <li><strong>Provider version:</strong> Focuses on lead opportunities, insurer updates, contractor partnerships</li>
+                            <li><strong>RE Pro version:</strong> Focuses on market intelligence, deal implications, client education</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #666;"><strong>Same data, three different angles.</strong></p>
+                    </div>
+                </section>
+
+                <!-- NURTURE CONTENT -->
+                <section id="nurture-content">
+                    <h2>📰 How Daily Briefs Get Routed by Segment</h2>
+
+                    <div class="highlight">
+                        <strong>Current Issue:</strong> You're writing three briefs (homeowner_brief.md, provider_brief.md, re_pro_brief.md) but they're all being sent to everyone (or not being sent at all right now).
+                    </div>
+
+                    <h3>The Daily Brief Generation Process (Today)</h3>
+                    <div class="flow-diagram">
+4:00 AM — Research → combined_brief.md (all angles in one doc)
+        ↓
+4:30 AM — AI extracts 3 versions:
+        ├─ 📄 homeowner_brief.md
+        ├─ 📄 provider_brief.md
+        └─ 📄 re_pro_brief.md
+        ↓
+5:30 AM — Git commit & Netlify deploy
+        ↓
+8:00 AM — These briefs sit in GitHub
+        ❌ They don't automatically email to subscribers</div>
+
+                    <h3>What Should Happen</h3>
+                    <div class="flow-diagram">
+4:00 AM — Research → combined_brief.md
+        ↓
+4:30 AM — AI extracts 3 versions:
+        ├─ 📄 homeowner_brief.md
+        ├─ 📄 provider_brief.md
+        └─ 📄 re_pro_brief.md
+        ↓
+5:30 AM — Git commit & Netlify deploy
+        ↓
+7:30 AM — NEW: HubSpot Import Job
+        ├─ Read homeowner_brief.md
+        ├─ Read provider_brief.md
+        ├─ Read re_pro_brief.md
+        └─ Queue 3 email sends (to 3 lists)
+        ↓
+8:00 AM EDT — HubSpot Sends:
+        ├─ homeowner_brief → All contacts tagged "segment: homeowner"
+        ├─ provider_brief → All contacts tagged "segment: provider"
+        └─ re_pro_brief → All contacts tagged "segment: re_pro"
+        ↓
+✅ DONE: Each subscriber gets their custom brief</div>
+
+                    <h3>Implementation: How It Works in HubSpot</h3>
+                    <div class="process-step">
+                        <h5>Option 1: Three Separate Contact Lists (Simplest)</h5>
+                        <p><strong>Setup:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create 3 lists in HubSpot: "Homeowners," "Service Providers," "RE Professionals"</li>
+                            <li>Contacts auto-populate based on their segment tag</li>
+                            <li>Create 3 separate email campaigns (one per list)</li>
+                            <li>Schedule to send Mon-Sat at 8:00 AM EDT</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #666;"><strong>Pro:</strong> Simple, reliable. <strong>Con:</strong> Subscriber can't be on multiple lists.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h5>Option 2: Dynamic Content Blocks (Advanced)</h5>
+                        <p><strong>Setup:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Create 1 email template with dynamic content blocks</li>
+                            <li>Block A shows IF segment = "homeowner"</li>
+                            <li>Block B shows IF segment = "provider"</li>
+                            <li>Block C shows IF segment = "re_pro"</li>
+                            <li>Same email, different content per segment</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #666;"><strong>Pro:</strong> Single email, more flexible. <strong>Con:</strong> More complex to maintain.</p>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>Recommendation:</strong> Start with Option 1 (three lists). It's easier to understand, debug, and manage. You can upgrade to Option 2 after 30 days if you need more flexibility.
+                    </div>
+                </section>
+
+                <!-- TRACKING -->
+                <section id="tracking">
+                    <h2>📊 How We Track What's Working (Metrics & Data)</h2>
+
+                    <h3>Subscription Funnel Metrics</h3>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <strong>📈 New Subscribers/Day</strong>
+                            <p>Tracked in HubSpot. Target: 5-10/day</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>📊 Segment Distribution</strong>
+                            <p>% of each segment. Track: Homeowner / Provider / RE Pro split</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>💌 Welcome Email Open Rate</strong>
+                            <p>How many open the "Welcome" email. Target: >40%</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>🔗 Welcome Email Click Rate</strong>
+                            <p>How many click the CTA. Target: >15%</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>📬 Daily Brief Open Rate</strong>
+                            <p>How many open the daily brief. Target: >35%</p>
+                        </div>
+                        <div class="metric-card">
+                            <strong>🎯 Engagement by Segment</strong>
+                            <p>Which segment opens most? Opens > 50% more likely to convert?</p>
+                        </div>
+                    </div>
+
+                    <h3>Tracking in HubSpot (What Gets Recorded Automatically)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Tracked By</th>
+                                <th>Used For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Email Opens</strong></td>
+                                <td>HubSpot email tracking pixel</td>
+                                <td>Engagement scoring, re-engagement campaigns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Link Clicks</strong></td>
+                                <td>HubSpot click tracking</td>
+                                <td>Identify active subscribers, personalize next email</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Signup Date</strong></td>
+                                <td>HubSpot contact property</td>
+                                <td>Segment new vs. old subscribers, lifecycle stage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Segment/Audience Type</strong></td>
+                                <td>Manual tag during signup</td>
+                                <td>Route to correct email list, personalize content</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email Bounce</strong></td>
+                                <td>HubSpot bounce detection</td>
+                                <td>Remove invalid emails, suppress bounce list</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Unsubscribe</strong></td>
+                                <td>HubSpot unsubscribe link</td>
+                                <td>Respect preferences, clean list</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Reporting (Weekly Dashboard)</h3>
+                    <p>Create a simple HubSpot dashboard showing:</p>
+                    <ul class="checklist">
+                        <li>Total subscribers (by segment)</li>
+                        <li>New signups this week</li>
+                        <li>Welcome email performance (opens, clicks)</li>
+                        <li>Daily brief performance (opens, clicks, segment breakdown)</li>
+                        <li>Unsubscribe rate</li>
+                        <li>Engagement score trend</li>
+                    </ul>
+                </section>
+
+                <!-- GAPS -->
+                <section id="gaps">
+                    <h2>🚫 Critical Gaps (What's Missing Right Now)</h2>
+
+                    <div class="bottleneck">
+                        <strong>Gap #1: No Netlify → HubSpot Integration</strong><br>
+                        The website form collects emails but doesn't send them to HubSpot. Subscribers are captured in Netlify logs but not in your CRM.
+                        <br><br><strong>Impact:</strong> You have no subscriber list. No way to email them. No data.
+                        <br><strong>Fix Required:</strong> Create a Netlify Function (serverless code) that POSTs form data to HubSpot API.
+                        <br><strong>Effort:</strong> 2-3 hours one-time setup.
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap #2: No Audience Segmentation Question</strong><br>
+                        The signup form only asks for email. No way to know if someone is a homeowner, provider, or RE pro.
+                        <br><br><strong>Impact:</strong> Everyone would get the same content (if they got any).
+                        <br><strong>Fix Required:</strong> Add a dropdown to the form during signup.
+                        <br><strong>Effort:</strong> 30 minutes.
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap #3: No Welcome Email Sequences</strong><br>
+                        No automated emails trigger when someone subscribes. They get nothing until the next day's brief (maybe).
+                        <br><br><strong>Impact:</strong> Cold signup experience. High unsubscribe risk.
+                        <br><strong>Fix Required:</strong> Build 3 welcome sequences in HubSpot (one per segment).
+                        <br><strong>Effort:</strong> 4-6 hours (create email templates + automation flows).
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap #4: No Content Routing Automation</strong><br>
+                        Your 3 daily briefs exist (homeowner, provider, RE pro) but aren't connected to HubSpot. They don't auto-send to the right lists.
+                        <br><br><strong>Impact:</strong> Even if someone was subscribed, they'd get the wrong content or no content.
+                        <br><strong>Fix Required:</strong> Create a cron job that reads your brief files and sends them via HubSpot API to the right lists.
+                        <br><strong>Effort:</strong> 4-5 hours (one-time), then 30 min/day to monitor.
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap #5: No Re-Engagement Strategy</strong><br>
+                        If someone opens 0 emails in 2 weeks, nothing happens. No re-engagement attempt. Just silence until they unsubscribe.
+                        <br><br><strong>Impact:</strong> Losing subscribers you could have saved.
+                        <br><strong>Fix Required:</strong> Create an automation: "If no open in 14 days → send re-engagement email."
+                        <br><strong>Effort:</strong> 1-2 hours (HubSpot workflow setup).
+                    </div>
+                </section>
+
+                <!-- IMPLEMENTATION -->
+                <section id="implementation">
+                    <h2>🛠️ Implementation Roadmap (30/60/90 Days)</h2>
+
+                    <h3>Phase 1: Foundation (Days 1-14) — Get Basic Funnel Working</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>Day 1-2: Netlify Form Integration</strong>
+                            Create a Netlify Function that captures signup form submissions and sends them to HubSpot API.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Write function code (or use template)</li>
+                                <li>Test with dummy signup</li>
+                                <li>Deploy to Netlify</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 3: Add Segment Dropdown</strong>
+                            Update PA-WEBSITE.html form to include audience selection.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Add dropdown: "I'm interested in..."</li>
+                                <li>Pass segment to HubSpot API</li>
+                                <li>Test end-to-end</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 4-5: Create HubSpot Lists</strong>
+                            Set up three lists in HubSpot for segmentation.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Create list: "Homeowners"</li>
+                                <li>Create list: "Service Providers"</li>
+                                <li>Create list: "RE Professionals"</li>
+                                <li>Set up dynamic membership rules (auto-add based on tag)</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 6-10: Welcome Email Sequences</strong>
+                            Build automation workflows in HubSpot.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Design 3 welcome email templates (one per segment)</li>
+                                <li>Create 3 automation workflows</li>
+                                <li>Test with sandbox emails</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 11-14: Testing & Launch</strong>
+                            Full end-to-end test of signup → welcome sequence.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Test signup with each segment</li>
+                                <li>Verify welcome emails arrive</li>
+                                <li>Go live (watch for issues)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Phase 2: Content Routing (Days 15-45) — Daily Brief Automation</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>Day 15-20: Brief Content Structure</strong>
+                            Ensure your daily brief generation outputs 3 separate files (one per segment).
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Verify you're generating homeowner_brief.md</li>
+                                <li>Verify you're generating provider_brief.md</li>
+                                <li>Verify you're generating re_pro_brief.md</li>
+                                <li>All by 7:30 AM EDT (before 8:00 AM send time)</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 21-30: Email Campaign Setup</strong>
+                            Create three recurring email campaigns in HubSpot.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Campaign 1: Daily Brief (Homeowner) — send Mon-Sat 8:00 AM EDT</li>
+                                <li>Campaign 2: Daily Brief (Provider) — send Mon-Sat 8:00 AM EDT</li>
+                                <li>Campaign 3: Daily Brief (RE Pro) — send Mon-Sat 8:00 AM EDT</li>
+                                <li>Link each to the corresponding list</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 31-40: Build the Content Delivery Job</strong>
+                            Create a cron job (or API connector) that feeds your briefs into HubSpot daily.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>7:45 AM EDT each day: Read brief files from GitHub</li>
+                                <li>Convert to HTML email format</li>
+                                <li>Push to HubSpot campaigns (trigger send)</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 41-45: Testing & Launch</strong>
+                            Test full automation Mon-Sat.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>First week: Monitor all sends</li>
+                                <li>Check delivery rates, open rates</li>
+                                <li>Adjust send time if needed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Phase 3: Optimization (Days 46-90) — Engagement & Growth</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>Day 46-60: Re-Engagement Automation</strong>
+                            Build workflows to win back inactive subscribers.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Create workflow: "If no open in 14 days → re-engagement email"</li>
+                                <li>Create workflow: "If unsubscribe → feedback survey"</li>
+                                <li>Monitor re-engagement rates</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 61-75: Analytics & Reporting</strong>
+                            Set up dashboards and weekly reports.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Create HubSpot dashboard: subscriber growth, open rates, segment breakdown</li>
+                                <li>Weekly email report to yourself</li>
+                                <li>Track which segment engages most</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Day 76-90: Growth & Optimization</strong>
+                            Refine based on data.
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>A/B test welcome email subject lines</li>
+                                <li>Refine segment messaging based on open rates</li>
+                                <li>Identify highest-value audiences</li>
+                                <li>Plan next content improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CHECKLIST -->
+                <section id="checklist">
+                    <h2>✅ Setup Checklist (Do This First)</h2>
+
+                    <h3>Phase 1: Build the Form Integration (Week 1)</h3>
+                    <ul class="checklist">
+                        <li><strong>[ ]</strong> Add segment dropdown to PA-WEBSITE.html form (3 options)</li>
+                        <li><strong>[ ]</strong> Create Netlify Function to capture and validate signups</li>
+                        <li><strong>[ ]</strong> Get HubSpot API key (from account settings)</li>
+                        <li><strong>[ ]</strong> Test signup → HubSpot with dummy email</li>
+                        <li><strong>[ ]</strong> Verify contact appears in HubSpot with correct segment tag</li>
+                    </ul>
+
+                    <h3>Phase 2: Set Up HubSpot Automation (Week 2)</h3>
+                    <ul class="checklist">
+                        <li><strong>[ ]</strong> Create 3 contact lists (Homeowners, Providers, RE Pros)</li>
+                        <li><strong>[ ]</strong> Create welcome email template #1 (Homeowner audience)</li>
+                        <li><strong>[ ]</strong> Create welcome email template #2 (Provider audience)</li>
+                        <li><strong>[ ]</strong> Create welcome email template #3 (RE Pro audience)</li>
+                        <li><strong>[ ]</strong> Create 3 automation workflows (one per segment)</li>
+                        <li><strong>[ ]</strong> Set trigger: "When contact added to list → send welcome email"</li>
+                        <li><strong>[ ]</strong> Test end-to-end with sandbox email</li>
+                    </ul>
+
+                    <h3>Phase 3: Daily Brief Content Routing (Week 3-4)</h3>
+                    <ul class="checklist">
+                        <li><strong>[ ]</strong> Verify your brief generation creates 3 separate files daily</li>
+                        <li><strong>[ ]</strong> Create HubSpot campaign: "Daily Brief - Homeowner"</li>
+                        <li><strong>[ ]</strong> Create HubSpot campaign: "Daily Brief - Provider"</li>
+                        <li><strong>[ ]</strong> Create HubSpot campaign: "Daily Brief - RE Pro"</li>
+                        <li><strong>[ ]</strong> Create cron job to read briefs and push to HubSpot (or use API)</li>
+                        <li><strong>[ ]</strong> Test first Mon-Sat send cycle (monitor each send)</li>
+                        <li><strong>[ ]</strong> Adjust timing if needed (aim for 8:00 AM EDT delivery)</li>
+                    </ul>
+
+                    <h3>Phase 4: Monitoring & Optimization</h3>
+                    <ul class="checklist">
+                        <li><strong>[ ]</strong> Create HubSpot dashboard with key metrics</li>
+                        <li><strong>[ ]</strong> Set up weekly reporting email</li>
+                        <li><strong>[ ]</strong> Monitor open rates by segment</li>
+                        <li><strong>[ ]</strong> Create re-engagement automation (14-day inactivity)</li>
+                        <li><strong>[ ]</strong> A/B test welcome email subject lines after 2 weeks</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>🎯 <strong>Bottom Line:</strong> You have an incredible content machine. Now you need to connect it to your customers. The next 30 days are about automation, not manual work. Once this is running, Duncan can focus on 1-on-1 conversations and partnerships instead of operational tasks.</p>
+            <p style="margin-top: 15px; opacity: 0.8;">Last updated: 2026-05-02 | Questions? Review HubSpot docs or let's schedule a walkthrough.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple active nav link tracking
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('main section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

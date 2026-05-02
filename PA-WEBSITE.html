@@ -1067,8 +1067,18 @@
     <p style="font-size:18px; color:rgba(255,255,255,.85); max-width:540px; margin:0 auto 36px; font-family:'Arial',sans-serif;">
       Daily briefs, weekly trend reports, and plain-language breakdowns of what's happening in the South Florida insurance market — delivered to your inbox.
     </p>
-    <form id="newsletter-form" name="newsletter-signup" method="POST" data-netlify="true" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap;" onsubmit="handleNewsletter(event)">
-      <input type="hidden" name="form-name" value="newsletter-signup">
+    <form id="newsletter-form" name="newsletter-signup" style="display:flex; gap:12px; max-width:640px; margin:0 auto; flex-wrap:wrap; justify-content:center;" onsubmit="handleNewsletter(event)">
+      <select
+        id="nl-segment"
+        name="segment"
+        required
+        style="padding:14px 18px; border:none; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; outline:none; background:#fff; color:#333; flex:1; min-width:180px;"
+      >
+        <option value="">I'm interested in...</option>
+        <option value="homeowner">Homeowner resources & claim guidance</option>
+        <option value="provider">Service provider opportunities & leads</option>
+        <option value="re-professional">Real estate market updates</option>
+      </select>
       <input
         type="email"
         id="nl-email"
@@ -1291,29 +1301,46 @@
     e.preventDefault();
     const btn = document.getElementById('nl-btn');
     const emailInput = document.getElementById('nl-email');
-    const form = document.getElementById('newsletter-form');
+    const segmentInput = document.getElementById('nl-segment');
 
     btn.textContent = 'Subscribing...';
     btn.disabled = true;
     emailInput.disabled = true;
+    segmentInput.disabled = true;
 
-    fetch('/', {
+    fetch('/.netlify/functions/subscribe-newsletter', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'newsletter-signup',
-        'email': emailInput.value
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: emailInput.value,
+        segment: segmentInput.value
       })
     })
-      .then(() => {
-        btn.textContent = "You're subscribed!";
-        btn.style.background = '#1a6e3a';
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          btn.textContent = "You're subscribed! Check your email.";
+          btn.style.background = '#1a6e3a';
+          emailInput.value = '';
+          segmentInput.value = '';
+          setTimeout(() => {
+            btn.disabled = false;
+            emailInput.disabled = false;
+            segmentInput.disabled = false;
+            btn.textContent = 'Subscribe Free';
+            btn.style.background = 'var(--navy)';
+          }, 5000);
+        } else {
+          throw new Error(data.error || 'Subscription failed');
+        }
       })
-      .catch(() => {
+      .catch(err => {
+        console.error('Subscription error:', err);
         btn.textContent = 'Subscription failed. Try again.';
         btn.style.background = '#c41e3a';
         btn.disabled = false;
         emailInput.disabled = false;
+        segmentInput.disabled = false;
       });
   }
 

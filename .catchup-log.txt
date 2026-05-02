@@ -4025,3 +4025,48 @@
 [2026-05-02 08:15:05 EDT] === CATCHUP START: Mac woke up ===
 [2026-05-02 08:15:05 EDT] Today is 2026-05-02, last catchup was none
 [2026-05-02 08:15:05 EDT] No jobs need to run at this time
+[2026-05-02 08:20:05 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 08:20:05 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 08:20:05 EDT] No jobs need to run at this time
+[2026-05-02 08:25:05 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 08:25:05 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 08:25:05 EDT] No jobs need to run at this time
+[2026-05-02 08:30:05 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 08:30:05 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 08:30:05 EDT] No jobs need to run at this time
+[2026-05-02 08:35:05 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 08:35:05 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 08:35:05 EDT] No jobs need to run at this time
+[2026-05-02 08:40:05 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 08:40:05 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 08:40:05 EDT] No jobs need to run at this time
+[2026-05-02 13:06:06 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 13:06:06 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 13:06:06 EDT] Triggering 1 missed job(s)
+[2026-05-02 13:06:06 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 13:06:07 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===
+[2026-05-02 13:11:07 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 13:11:07 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 13:11:07 EDT] Triggering 1 missed job(s)
+[2026-05-02 13:11:07 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 13:11:08 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===
+[2026-05-02 13:16:08 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 13:16:08 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 13:16:08 EDT] Triggering 1 missed job(s)
+[2026-05-02 13:16:08 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 13:16:09 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===
+[2026-05-02 13:21:09 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 13:21:09 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 13:21:09 EDT] Triggering 1 missed job(s)
+[2026-05-02 13:21:09 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 13:21:11 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===
+[2026-05-02 13:26:27 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 13:26:27 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 13:26:27 EDT] Triggering 1 missed job(s)
+[2026-05-02 13:26:27 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 13:26:28 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===
+[2026-05-02 13:31:28 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 13:31:28 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 13:31:28 EDT] Triggering 1 missed job(s)
+[2026-05-02 13:31:28 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 13:31:29 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===

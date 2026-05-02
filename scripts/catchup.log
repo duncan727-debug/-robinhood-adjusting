@@ -1417,3 +1417,22 @@
 [2026-05-02T12:06:24Z] === catchup start: today=2026-05-02 dow=6 dom=2 mins=486 ===
 [2026-05-02T12:06:24Z]   daily-trends: not yet scheduled (sched_min=600 now=486), skip
 [2026-05-02T12:06:24Z] === catchup end ===
+[2026-05-02T12:21:35Z] === catchup start: today=2026-05-02 dow=6 dom=2 mins=501 ===
+[2026-05-02T12:21:35Z]   daily-trends: not yet scheduled (sched_min=600 now=501), skip
+[2026-05-02T12:21:35Z] === catchup end ===
+[2026-05-02T12:36:46Z] === catchup start: today=2026-05-02 dow=6 dom=2 mins=516 ===
+[2026-05-02T12:36:46Z]   daily-trends: not yet scheduled (sched_min=600 now=516), skip
+[2026-05-02T12:36:46Z] === catchup end ===
+[2026-05-02T17:12:58Z] === catchup start: today=2026-05-02 dow=6 dom=2 mins=792 ===
+[2026-05-02T17:12:58Z]   daily-trends: MISSING output=/Users/victoria/.openclaw/workspace/trends/2026-05-02.md lastRun=1777733176749 status=error — triggering openclaw cron run 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:7c1d6347-a536-4dc6-8a1f-7991b9bf35f3:1777741983757:1"
+}
+[2026-05-02T17:13:03Z]   daily-trends: submitted; waiting up to 30m for /Users/victoria/.openclaw/workspace/trends/2026-05-02.md
+[2026-05-02T17:14:24Z]   daily-trends: OK (output present)
+[2026-05-02T17:14:24Z] === catchup end ===
+[2026-05-02T17:29:51Z] === catchup start: today=2026-05-02 dow=6 dom=2 mins=809 ===
+[2026-05-02T17:29:51Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-02.md), skip
+[2026-05-02T17:29:51Z] === catchup end ===

@@ -1,5 +1,4 @@
-const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || '3Zfh39Nao3CjbTCsuzWgx1wzzUlcgizPrNb3v3e3RQCl8GeFUNJwgdug0FsYm9XI';
-const PUBLICATION_ID = 'eac67b70-2653-48ab-b4a0-c8b01533c691';
+const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY || 'na2-6fc9-6e78-4775-9d7a-6cfbf501bbec';
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -10,8 +9,10 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { email } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    const { email, segment } = body;
 
+    // Validate email
     if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       return {
         statusCode: 400,
@@ -19,24 +20,59 @@ exports.handler = async (event) => {
       };
     }
 
-    const response = await fetch('https://api.beehiiv.com/v1/subscriptions', {
+    // Validate segment
+    const validSegments = ['homeowner', 'provider', 're-professional'];
+    const normalizedSegment = segment?.toLowerCase().replace(/\s+/g, '-');
+    if (!validSegments.includes(normalizedSegment)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid segment selection' })
+      };
+    }
+
+    // Create or update contact in HubSpot
+    const response = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${BEEHIIV_API_KEY}`
+        'Authorization': `Bearer ${HUBSPOT_API_KEY}`
       },
       body: JSON.stringify({
-        email: email,
-        publication_id: PUBLICATION_ID
+        properties: [
+          {
+            name: 'email',
+            value: email
+          },
+          {
+            name: 'audience_segment',
+            value: normalizedSegment
+          },
+          {
+            name: 'hs_lead_status',
+            value: 'subscriber'
+          },
+          {
+            name: 'lifecyclestage',
+            value: 'subscriber'
+          }
+        ]
       })
     });
 
     if (!response.ok) {
       const error = await response.text();
-      console.error('Beehiiv API error:', error);
+      console.error('HubSpot API error:', error);
+
+      // Check if it's a duplicate (contact already exists)
+      if (response.status === 409) {
+        console.log('Contact already exists, updating segment');
+        // Try to update existing contact instead
+        return await updateExistingContact(email, normalizedSegment);
+      }
+
       return {
         statusCode: response.status,
-        body: JSON.stringify({ error: 'Failed to subscribe' })
+        body: JSON.stringify({ error: 'Failed to subscribe. Please try again.' })
       };
     }
 
@@ -45,7 +81,8 @@ exports.handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        subscription_id: data.data?.id
+        contact_id: data.id,
+        message: 'Successfully subscribed!'
       })
     };
   } catch (error) {
@@ -56,3 +93,105 @@ exports.handler = async (event) => {
     };
   }
 };
+
+async function updateExistingContact(email, segment) {
+  try {
+    const response = await fetch(
+      `https://api.hubapi.com/crm/v3/objects/contacts?limit=1&after=0&properties=email`,
+      {
+        headers: {
+          'Authorization': `Bearer ${HUBSPOT_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    if (!response.ok) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Could not find contact' })
+      };
+    }
+
+    // Search for contact by email using the search API
+    const searchResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${HUBSPOT_API_KEY}`
+      },
+      body: JSON.stringify({
+        filterGroups: [
+          {
+            filters: [
+              {
+                propertyName: 'email',
+                operator: 'EQ',
+                value: email
+              }
+            ]
+          }
+        ]
+      })
+    });
+
+    if (!searchResponse.ok) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Failed to update contact' })
+      };
+    }
+
+    const searchData = await searchResponse.json();
+    if (!searchData.results || searchData.results.length === 0) {
+      return {
+        statusCode: 404,
+        body: JSON.stringify({ error: 'Contact not found' })
+      };
+    }
+
+    const contactId = searchData.results[0].id;
+
+    // Update the contact with new segment
+    const updateResponse = await fetch(
+      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${HUBSPOT_API_KEY}`
+        },
+        body: JSON.stringify({
+          properties: [
+            {
+              name: 'audience_segment',
+              value: segment
+            }
+          ]
+        })
+      }
+    );
+
+    if (!updateResponse.ok) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Failed to update contact segment' })
+      };
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        success: true,
+        contact_id: contactId,
+        message: 'Contact updated successfully!'
+      })
+    };
+  } catch (error) {
+    console.error('Update contact error:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Internal server error' })
+    };
+  }
+}

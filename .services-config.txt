@@ -33,10 +33,12 @@ Status: Netlify + Beehiiv setup in progress
    - Status: Ready for integration
    - Purpose: Daily newsletter delivery
 
-6. HUBSPOT (CRM) - IN SETUP
+6. HUBSPOT (CRM) - ACTIVE
    - Email: duncanlittlejohn727@gmail.com
-   - Status: Ready for integration
-   - Purpose: Contact management, outreach tracking
+   - Developer API Key: na2-6fc9-6e78-4775-9d7a-6cfbf501bbec
+   - Status: Integrated for newsletter signups
+   - Purpose: Contact management, outreach tracking, email automation
+   - Netlify Env Var: HUBSPOT_API_KEY
 
 ARCHITECTURE:
 GitHub (code) → Netlify (auto-deploy) → robinhoodadjusting.com (live)
