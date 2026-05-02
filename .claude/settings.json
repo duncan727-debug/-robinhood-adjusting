@@ -1,0 +1,12 @@
+{
+  "sandbox": {
+    "enabled": false
+  },
+  "env": {
+    "BROWSER_TIMEOUT_MS": "60000",
+    "BROWSER_LAUNCH_TIMEOUT": "30000"
+  },
+  "skillOverrides": {
+    "openai-whisper": "on"
+  }
+}
