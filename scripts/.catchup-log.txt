@@ -1,0 +1,5 @@
+[2026-05-02 14:17:16 EDT] === CATCHUP START: Mac woke up ===
+[2026-05-02 14:17:16 EDT] Today is 2026-05-02, last catchup was none
+[2026-05-02 14:17:16 EDT] Triggering 1 missed job(s)
+[2026-05-02 14:17:16 EDT]   → Running job: 7c1d6347-a536-4dc6-8a1f-7991b9bf35f3
+[2026-05-02 14:17:17 EDT] === CATCHUP COMPLETE: 1 job(s) triggered ===
