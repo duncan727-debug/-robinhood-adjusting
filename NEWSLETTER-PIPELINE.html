@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Operations Pipeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            display: flex;
+            min-height: calc(100vh - 200px);
+        }
+
+        nav {
+            width: 250px;
+            background: #f8f9fa;
+            padding: 30px 0;
+            border-right: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        nav a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        nav a:hover, nav a.active {
+            background: #e8e9ff;
+            border-left-color: #667eea;
+            color: #667eea;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 20px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.15em;
+            margin: 15px 0 10px 0;
+        }
+
+        .flow-diagram {
+            background: #f5f7fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.8;
+            overflow-x: auto;
+            white-space: pre;
+            color: #2c3e50;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .status-box {
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            text-align: center;
+        }
+
+        .status-working {
+            background: #d4edda;
+            border-left-color: #28a745;
+            color: #155724;
+        }
+
+        .status-partial {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+            color: #856404;
+        }
+
+        .status-blocked {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+            color: #721c24;
+        }
+
+        .status-box strong {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f5f7fa;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f5f7fa;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            margin-left: 40px;
+            padding: 15px;
+            background: #f5f7fa;
+            border-left: 2px solid #667eea;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .highlight {
+            background: #fff9e6;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .highlight strong {
+            color: #856404;
+        }
+
+        .bottleneck {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .bottleneck strong {
+            color: #721c24;
+        }
+
+        .phase-box {
+            background: #e8f4f8;
+            border: 2px solid #17a2b8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .phase-box h4 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: #f5f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #667eea;
+        }
+
+        .metric-card strong {
+            display: block;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                display: flex;
+                overflow-x: auto;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                white-space: nowrap;
+                border-bottom: 3px solid transparent;
+                border-left: none;
+            }
+
+            nav a:hover, nav a.active {
+                border-bottom-color: #667eea;
+                border-left-color: transparent;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Newsletter Operations Pipeline</h1>
+            <p>Robinhood Adjusting - Complete Workflow & Automation Strategy</p>
+        </header>
+
+        <div class="content">
+            <nav>
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#data-flows" class="nav-link">Data Flows</a>
+                <a href="#bottlenecks" class="nav-link">Bottlenecks</a>
+                <a href="#pipeline" class="nav-link">Complete Pipeline</a>
+                <a href="#roadmap" class="nav-link">Roadmap</a>
+                <a href="#checklist" class="nav-link">Daily Checklist</a>
+                <a href="#metrics" class="nav-link">Metrics</a>
+            </nav>
+
+            <main>
+                <!-- OVERVIEW -->
+                <section id="overview">
+                    <h2>📋 Overview</h2>
+                    <p>Robinhood Adjusting runs a sophisticated daily research + content automation system with 10+ OpenClaw cron jobs running Mon-Sat. The pipeline is 80% complete but has key disconnects between content production and execution (outreach sending, social posting).</p>
+
+                    <div class="status-grid">
+                        <div class="status-box status-working">
+                            <strong>✅ Working</strong>
+                            Research → Content → Website
+                        </div>
+                        <div class="status-box status-partial">
+                            <strong>⚠️ Partial</strong>
+                            Subscribers → Drafts
+                        </div>
+                        <div class="status-box status-blocked">
+                            <strong>❌ Blocked</strong>
+                            Email Migration (Gmail flagged)
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ARCHITECTURE -->
+                <section id="architecture">
+                    <h2>🏗️ Current Pipeline Architecture</h2>
+
+                    <h3>Tier 1: Research & Content (4-5 AM Daily)</h3>
+                    <div class="flow-diagram">4:00 AM — Daily Research Brief
+├─ Input: News APIs, FL OIR, NOAA, county sources
+├─ Deduplication: Against last 4 days
+└─ Output: /briefs/YYYY-MM-DD.md + .html (7K words)
+
+4:30 AM — Content Creation (depends on brief)
+├─ Extracts: 1-2 key angles from brief
+├─ Generates:
+│  ├─ /content/YYYY-MM-DD/facebook.md
+│  ├─ /content/YYYY-MM-DD/instagram.md
+│  └─ /content/YYYY-MM-DD/blog.md
+└─ Output: Drafts (NOT auto-posted)
+
+5:00 AM — Prospect Intelligence
+├─ Input: /crm/organizations.csv
+├─ Research: Decision makers, pain points
+└─ Output: /crm/intelligence/YYYY-MM-DD/
+
+6:00 AM — CRM Outreach (Mon-Fri)
+├─ Input: Intel + /crm/templates.md (6 categories)
+├─ Personalize: Email draft
+└─ Output: /crm/drafts/ (NOT auto-sent)</div>
+
+                    <h3>Tier 2: Website Deployment</h3>
+                    <div class="flow-diagram">5:30 AM — Git Sync + Build
+├─ Commit: All briefs, content, intelligence, drafts to GitHub
+├─ Trigger: Netlify webhook
+└─ Deploy: /PA-WEBSITE.html with latest 5 briefs (live in 2-5 min)</div>
+
+                    <h3>Tier 3: Newsletter Subscription</h3>
+                    <div class="flow-diagram">Website Form → Netlify Function → Beehiiv API
+├─ Email validation (regex)
+├─ POST /subscriptions
+└─ Result: Subscriber added to publication</div>
+
+                    <h3>Tier 4: Operations Monitoring</h3>
+                    <div class="flow-diagram">7:30 AM — Daily Ops Review (Mon-Fri)
+├─ Assess: Brief quality, content volume, prospect extraction
+├─ Identify: Bottlenecks & system health issues
+└─ Output: /ops-review/YYYY-MM-DD.md (auto-generated)</div>
+                </section>
+
+                <!-- DATA FLOWS -->
+                <section id="data-flows">
+                    <h2>🔄 Data Flows & Integration Status</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Flow</th>
+                                <th>Source</th>
+                                <th>Destination</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Research → Website</strong></td>
+                                <td>/briefs/YYYY-MM-DD.md</td>
+                                <td>robinhoodadjusting.com</td>
+                                <td>✅ Working</td>
+                                <td>Auto-deployed via Netlify</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Signup → Beehiiv</strong></td>
+                                <td>Website form</td>
+                                <td>Beehiiv publication</td>
+                                <td>✅ Working</td>
+                                <td>API integrated, live</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Brief → Social</strong></td>
+                                <td>/briefs/</td>
+                                <td>/content/facebook.md, instagram.md</td>
+                                <td>⚠️ Partial</td>
+                                <td>Drafts created; manual post</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prospect Research</strong></td>
+                                <td>/crm/organizations.csv</td>
+                                <td>/crm/intelligence/</td>
+                                <td>✅ Working</td>
+                                <td>5 AM daily generation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Outreach Drafts</strong></td>
+                                <td>/crm/intelligence/ + templates</td>
+                                <td>/crm/drafts/</td>
+                                <td>✅ Working</td>
+                                <td>6 AM daily generation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Outreach Sending</strong></td>
+                                <td>/crm/drafts/</td>
+                                <td>Email (Gmail)</td>
+                                <td>❌ Not Automated</td>
+                                <td>Duncan manually sends</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Social Posting</strong></td>
+                                <td>/content/</td>
+                                <td>Facebook/Instagram</td>
+                                <td>❌ Not Automated</td>
+                                <td>Duncan manually posts</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Subscriber → HubSpot</strong></td>
+                                <td>Beehiiv</td>
+                                <td>HubSpot CRM</td>
+                                <td>⏳ Pending</td>
+                                <td>CSV ready; Zapier configured; awaiting email migration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Newsletter Email</strong></td>
+                                <td>/briefs/YYYY-MM-DD.md</td>
+                                <td>Beehiiv subscribers</td>
+                                <td>❌ Not Implemented</td>
+                                <td>Subscribers not receiving daily email</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- BOTTLENECKS -->
+                <section id="bottlenecks">
+                    <h2>⚠️ Bottlenecks & Gaps</h2>
+
+                    <div class="bottleneck">
+                        <strong>Gap 1: Brief → Prospect Extraction (High Priority)</strong>
+                        <p>Research is thorough but prospect naming/discovery is manual. Output: 5-7 qualified prospects per day identified but not extracted into action items.</p>
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap 2: Outreach Automation (High Priority)</strong>
+                        <p>Email drafts generated daily (6 AM) but never sent. Current: 5-7 emails waiting for manual send each day. Impact: Lost follow-up opportunities.</p>
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap 3: Social Media Integration (Medium Priority)</strong>
+                        <p>Facebook/Instagram drafts created but manually posted. Time tax on Duncan; inconsistent publishing schedule. No API automation.</p>
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap 4: Newsletter Distribution (Medium Priority)</strong>
+                        <p>Beehiiv form works; subscribers added. BUT briefs aren't sent as daily emails. Subscribers see website updates but don't receive email delivery.</p>
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap 5: HubSpot Sync (Medium Priority)</strong>
+                        <p>CSV export ready; Beehiiv integration configured (Zapier). But email migration blocked by Gmail flagging. No prospect lifecycle tracking yet.</p>
+                    </div>
+
+                    <div class="bottleneck">
+                        <strong>Gap 6: Response Tracking Loop (Low Priority)</strong>
+                        <p>Response handler logs interactions but doesn't feed back into next day's intelligence. Personalization doesn't evolve with conversation history.</p>
+                    </div>
+                </section>
+
+                <!-- COMPLETE PIPELINE -->
+                <section id="pipeline">
+                    <h2>🎯 Complete Pipeline Vision</h2>
+
+                    <h3>Phase 1: Content Production (✅ WORKING)</h3>
+                    <div class="phase-box">
+                        <h4>Status: Fully Automated</h4>
+                        <ul class="checklist">
+                            <li>Daily research brief generation (4 AM)</li>
+                            <li>Content drafting: Facebook, Instagram, blog (4:30 AM)</li>
+                            <li>Website deployment via Netlify (5:30 AM)</li>
+                            <li>Ops review & health check (7:30 AM)</li>
+                        </ul>
+                        <p><strong>Action:</strong> Keep as-is; monitor quality via daily ops-review.md</p>
+                    </div>
+
+                    <h3>Phase 2: Subscriber Management (⚠️ PARTIAL)</h3>
+                    <div class="phase-box">
+                        <h4>Status: Form Works → Distribution Not Live</h4>
+                        <ul class="checklist">
+                            <li>Website form → Beehiiv subscription ✅</li>
+                            <li>Beehiiv publication configured ✅</li>
+                            <li>HubSpot integration ready (awaiting email migration) ⏳</li>
+                            <li>Daily newsletter email distribution ❌</li>
+                        </ul>
+                        <p><strong>Next Steps:</strong></p>
+                        <ol>
+                            <li>Complete email migration (once Gmail resolved)</li>
+                            <li>Activate Beehiiv → HubSpot sync via Zapier</li>
+                            <li>Set up daily newsletter delivery from Beehiiv</li>
+                        </ol>
+                    </div>
+
+                    <h3>Phase 3: Prospect Intelligence & Outreach (⚠️ 80% BUILT)</h3>
+                    <div class="phase-box">
+                        <h4>Status: Drafts Generated → Sending Not Automated</h4>
+                        <ul class="checklist">
+                            <li>Intelligence generation (5 AM) ✅</li>
+                            <li>Email draft creation (6 AM) ✅</li>
+                            <li>Drafts in /crm/drafts/ ready for review ✅</li>
+                            <li>Manual send required ❌</li>
+                        </ul>
+                        <p><strong>Next Steps:</strong></p>
+                        <ol>
+                            <li><strong>Short-term (1 week):</strong> Add send button/automation to reviewed drafts
+                                <ul>
+                                    <li>Option A: Duncan manually approves; system sends via Gmail API</li>
+                                    <li>Option B: Cron job auto-sends after 30-min review window</li>
+                                </ul>
+                            </li>
+                            <li><strong>Medium-term (2 weeks):</strong> Integrate response tracking
+                                <ul>
+                                    <li>Log replies to /crm/interactions.csv automatically</li>
+                                    <li>Feed conversation history into next day's intelligence</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h3>Phase 4: Social Media Distribution (❌ NOT AUTOMATED)</h3>
+                    <div class="phase-box">
+                        <h4>Status: Drafts Only → No Integration</h4>
+                        <ul class="checklist">
+                            <li>Facebook draft available ✅</li>
+                            <li>Instagram draft available ✅</li>
+                            <li>No API integration ❌</li>
+                        </ul>
+                        <p><strong>Recommendation:</strong> Use Zapier (already integrated) to auto-post approved drafts to Facebook. Instagram can follow once Zapier integrates IG's API.</p>
+                    </div>
+
+                    <h3>Phase 5: Newsletter as Content Distribution (FUTURE)</h3>
+                    <div class="phase-box">
+                        <h4>Status: Not Yet Implemented</h4>
+                        <ul class="checklist">
+                            <li>Brief published to website ✅</li>
+                            <li>Brief NOT emailed to subscribers ❌</li>
+                        </ul>
+                        <p><strong>Option:</strong> Add Beehiiv email step at 8 AM to send daily brief to subscribers via email.</p>
+                    </div>
+                </section>
+
+                <!-- ROADMAP -->
+                <section id="roadmap">
+                    <h2>📅 Implementation Roadmap</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>Week 1 (Immediate - Post Gmail Resolution)</strong>
+                            <ul>
+                                <li>Complete email migration for HubSpot, GitHub, Zapier, Namecheap</li>
+                                <li>Activate HubSpot ↔ Beehiiv sync (Zapier Zap ready)</li>
+                                <li>Keep content pipeline running (no changes)</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Week 2</strong>
+                            <ul>
+                                <li>Implement review + send workflow for outreach drafts</li>
+                                <li>Duncan reviews /crm/drafts/ each morning</li>
+                                <li>Wire up Zapier to post /content/ to Facebook</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Week 3</strong>
+                            <ul>
+                                <li>Set up response tracking integration</li>
+                                <li>Capture email replies → log to /crm/interactions.csv</li>
+                                <li>Feed into next day's prospect intelligence</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <strong>Week 4</strong>
+                            <ul>
+                                <li>Implement daily brief email distribution (Beehiiv campaign)</li>
+                                <li>Set up weekly rollup automation (Friday synthesis)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DAILY CHECKLIST -->
+                <section id="checklist">
+                    <h2>✓ Daily Execution Checklist</h2>
+
+                    <h3>Daily Routine (Duncan's Involvement)</h3>
+                    <ul class="checklist">
+                        <li><strong>7:45 AM</strong> — Review /ops-review/YYYY-MM-DD.md (2 min)</li>
+                        <li><strong>8:00 AM</strong> — Review /crm/drafts/ outreach emails (5 min); approve for sending</li>
+                        <li><strong>8:05 AM</strong> — Review /content/ social posts; approve for posting</li>
+                        <li><strong>12:00 PM</strong> — Check /crm/intelligence/ if doing mid-day prospect outreach</li>
+                        <li><strong>End of Day</strong> — Monitor Beehiiv subscriber count; check interaction log</li>
+                    </ul>
+
+                    <h3>Weekly (Friday)</h3>
+                    <ul class="checklist">
+                        <li><strong>5:00 PM</strong> — Review /weekly/ rollup (auto-generated)</li>
+                        <li><strong>Next Monday</strong> — Adjust prospect list based on responses & conversions</li>
+                    </ul>
+
+                    <h3>Monthly</h3>
+                    <ul class="checklist">
+                        <li><strong>1st of Month, 9 AM</strong> — Review /ops-review/ trends; system velocity check (auto-generated)</li>
+                    </ul>
+                </section>
+
+                <!-- METRICS -->
+                <section id="metrics">
+                    <h2>📊 Success Metrics</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Current</th>
+                                <th>Target</th>
+                                <th>Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Daily briefs published</td>
+                                <td>100% (12/12 days)</td>
+                                <td>100%</td>
+                                <td>Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td>Outreach emails drafted</td>
+                                <td>100% (5-7/day)</td>
+                                <td>100%</td>
+                                <td>Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td>Outreach emails sent</td>
+                                <td>0% (manual only)</td>
+                                <td>100%</td>
+                                <td>Week 2</td>
+                            </tr>
+                            <tr>
+                                <td>Social posts published</td>
+                                <td>~40% (manual)</td>
+                                <td>100% (auto)</td>
+                                <td>Week 2</td>
+                            </tr>
+                            <tr>
+                                <td>Newsletter subscribers</td>
+                                <td>~5 (form testing)</td>
+                                <td>50+</td>
+                                <td>Month 2</td>
+                            </tr>
+                            <tr>
+                                <td>Response rate to outreach</td>
+                                <td>~20% (initial)</td>
+                                <td>30%+</td>
+                                <td>Month 3</td>
+                            </tr>
+                            <tr>
+                                <td>Prospect conversion</td>
+                                <td>TBD</td>
+                                <td>10%+</td>
+                                <td>Month 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Key Performance Indicators</h3>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <strong>Content Quality</strong>
+                            Brief completeness, research accuracy, dedup effectiveness
+                        </div>
+                        <div class="metric-card">
+                            <strong>Outreach Volume</strong>
+                            # of emails drafted & sent daily (target: 5-10)
+                        </div>
+                        <div class="metric-card">
+                            <strong>Subscriber Growth</strong>
+                            Monthly growth rate of Beehiiv subscribers
+                        </div>
+                        <div class="metric-card">
+                            <strong>Engagement Rate</strong>
+                            % of recipients responding to outreach
+                        </div>
+                        <div class="metric-card">
+                            <strong>System Uptime</strong>
+                            % of daily cron jobs completing on schedule
+                        </div>
+                        <div class="metric-card">
+                            <strong>Automation %</strong>
+                            % of workflow steps auto-executed (target: 90%+)
+                        </div>
+                    </div>
+                </section>
+
+                <div class="highlight">
+                    <strong>🎯 Key Takeaway:</strong> You have 80% of the pipeline built. The main gaps are automating outreach email sending (1-2 weeks) and wiring up social posting (1 week). Both can be completed once the Gmail situation is resolved.
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <p>Newsletter Operations Pipeline | Robinhood Adjusting | Last Updated: Apr 30, 2026</p>
+            <p>Status: Ready for implementation. Awaiting Gmail account resolution.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Navigation highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href');
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
