@@ -16,3 +16,4 @@
 - [Catch-up infrastructure](project_catchup_infra.md) — LaunchAgent-driven catchup.sh for missed cron jobs when Mac was off (2026-04-23)
 - [Prospect Intelligence Cron Job](intelligence_cron_setup.md) — daily deep research on followup-due orgs; live as of 2026-04-24
 - [Browser Automation & CDP](browser_automation_capability.md) — Chrome/Chromium via CDP in openclaw.json; enables Gmail & form control
+- [Newsletter Send Schedule](newsletter_send_schedule.md) — daily 8am, weekly trends Sat 9am; single daily website push to minimize tokens
