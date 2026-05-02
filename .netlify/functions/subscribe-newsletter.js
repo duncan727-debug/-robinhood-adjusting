@@ -1,4 +1,4 @@
-const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY || 'na2-6fc9-6e78-4775-9d7a-6cfbf501bbec';
+const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY;
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {

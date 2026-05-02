@@ -35,7 +35,7 @@ Status: Netlify + Beehiiv setup in progress
 
 6. HUBSPOT (CRM) - ACTIVE
    - Email: duncanlittlejohn727@gmail.com
-   - Developer API Key: na2-6fc9-6e78-4775-9d7a-6cfbf501bbec
+   - Developer API Key: [STORED SECURELY in Netlify env]
    - Status: Integrated for newsletter signups
    - Purpose: Contact management, outreach tracking, email automation
    - Netlify Env Var: HUBSPOT_API_KEY
