@@ -12,7 +12,6 @@ exports.handler = async (event) => {
     const body = JSON.parse(event.body);
     const { email, segment } = body;
 
-    // Validate email
     if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       return {
         statusCode: 400,
@@ -20,8 +19,7 @@ exports.handler = async (event) => {
       };
     }
 
-    // Validate segment
-    const validSegments = ['homeowner', 'provider', 're-professional'];
+    const validSegments = ['homeowner', 'service-provider', 'real-estate'];
     const normalizedSegment = segment?.toLowerCase().replace(/\s+/g, '-');
     if (!validSegments.includes(normalizedSegment)) {
       return {
@@ -30,61 +28,56 @@ exports.handler = async (event) => {
       };
     }
 
-    // Create or update contact in HubSpot
-    const response = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+    const segmentListMap = {
+      'homeowner': process.env.HUBSPOT_LIST_HOMEOWNERS,
+      'service-provider': process.env.HUBSPOT_LIST_SERVICE_PROVIDERS,
+      'real-estate': process.env.HUBSPOT_LIST_RE_PROFESSIONALS
+    };
+    const listId = segmentListMap[normalizedSegment];
+
+    // Create contact (v3 API uses properties as object, not array)
+    const createResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${HUBSPOT_API_KEY}`
       },
       body: JSON.stringify({
-        properties: [
-          {
-            name: 'email',
-            value: email
-          },
-          {
-            name: 'audience_segment',
-            value: normalizedSegment
-          },
-          {
-            name: 'hs_lead_status',
-            value: 'subscriber'
-          },
-          {
-            name: 'lifecyclestage',
-            value: 'subscriber'
-          }
-        ]
+        properties: {
+          email,
+          lifecyclestage: 'subscriber'
+        }
       })
     });
 
-    if (!response.ok) {
-      const error = await response.text();
-      console.error('HubSpot API error:', error);
+    let contactId;
 
-      // Check if it's a duplicate (contact already exists)
-      if (response.status === 409) {
-        console.log('Contact already exists, updating segment');
-        // Try to update existing contact instead
-        return await updateExistingContact(email, normalizedSegment);
+    if (!createResponse.ok) {
+      if (createResponse.status === 409) {
+        // Contact already exists — look them up and update segment
+        const result = await updateExistingContact(email, normalizedSegment, listId);
+        return result;
       }
-
+      const error = await createResponse.text();
+      console.error('HubSpot create error:', error);
       return {
-        statusCode: response.status,
+        statusCode: createResponse.status,
         body: JSON.stringify({ error: 'Failed to subscribe. Please try again.' })
       };
     }
 
-    const data = await response.json();
+    const data = await createResponse.json();
+    contactId = data.id;
+
+    if (listId) {
+      await addContactToList(contactId, listId);
+    }
+
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        contact_id: data.id,
-        message: 'Successfully subscribed!'
-      })
+      body: JSON.stringify({ success: true, contact_id: contactId, message: 'Successfully subscribed!' })
     };
+
   } catch (error) {
     console.error('Newsletter subscription error:', error);
     return {
@@ -94,26 +87,8 @@ exports.handler = async (event) => {
   }
 };
 
-async function updateExistingContact(email, segment) {
+async function updateExistingContact(email, segment, listId) {
   try {
-    const response = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts?limit=1&after=0&properties=email`,
-      {
-        headers: {
-          'Authorization': `Bearer ${HUBSPOT_API_KEY}`,
-          'Content-Type': 'application/json'
-        }
-      }
-    );
-
-    if (!response.ok) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Could not find contact' })
-      };
-    }
-
-    // Search for contact by email using the search API
     const searchResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/search', {
       method: 'POST',
       headers: {
@@ -121,77 +96,68 @@ async function updateExistingContact(email, segment) {
         'Authorization': `Bearer ${HUBSPOT_API_KEY}`
       },
       body: JSON.stringify({
-        filterGroups: [
-          {
-            filters: [
-              {
-                propertyName: 'email',
-                operator: 'EQ',
-                value: email
-              }
-            ]
-          }
-        ]
+        filterGroups: [{
+          filters: [{ propertyName: 'email', operator: 'EQ', value: email }]
+        }]
       })
     });
 
     if (!searchResponse.ok) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to update contact' })
-      };
+      return { statusCode: 500, body: JSON.stringify({ error: 'Failed to locate contact' }) };
     }
 
     const searchData = await searchResponse.json();
-    if (!searchData.results || searchData.results.length === 0) {
-      return {
-        statusCode: 404,
-        body: JSON.stringify({ error: 'Contact not found' })
-      };
+    if (!searchData.results?.length) {
+      return { statusCode: 404, body: JSON.stringify({ error: 'Contact not found' }) };
     }
 
     const contactId = searchData.results[0].id;
 
-    // Update the contact with new segment
-    const updateResponse = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
-      {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${HUBSPOT_API_KEY}`
-        },
-        body: JSON.stringify({
-          properties: [
-            {
-              name: 'audience_segment',
-              value: segment
-            }
-          ]
-        })
-      }
-    );
+    const updateResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${HUBSPOT_API_KEY}`
+      },
+      body: JSON.stringify({ properties: {} })
+    });
 
     if (!updateResponse.ok) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to update contact segment' })
-      };
+      return { statusCode: 500, body: JSON.stringify({ error: 'Failed to update contact segment' }) };
+    }
+
+    if (listId) {
+      await addContactToList(contactId, listId);
     }
 
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        contact_id: contactId,
-        message: 'Contact updated successfully!'
-      })
+      body: JSON.stringify({ success: true, contact_id: contactId, message: 'Contact updated successfully!' })
     };
+
   } catch (error) {
     console.error('Update contact error:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Internal server error' })
-    };
+    return { statusCode: 500, body: JSON.stringify({ error: 'Internal server error' }) };
+  }
+}
+
+async function addContactToList(contactId, listId) {
+  try {
+    const response = await fetch(`https://api.hubapi.com/crm/v3/lists/${listId}/memberships/add`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${HUBSPOT_API_KEY}`
+      },
+      body: JSON.stringify([String(contactId)])
+    });
+
+    if (!response.ok) {
+      console.error('Failed to add contact to list:', response.status, await response.text());
+    }
+    return response.ok;
+  } catch (error) {
+    console.error('Add to list error:', error);
+    return false;
   }
 }
