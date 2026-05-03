@@ -1111,23 +1111,36 @@
     <p style="font-size:18px; color:rgba(255,255,255,.85); max-width:540px; margin:0 auto 36px; font-family:'Arial',sans-serif;">
       Daily briefs, weekly trend reports, and plain-language breakdowns of what's happening in the South Florida insurance market — delivered to your inbox.
     </p>
-    <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap;" onsubmit="handleNewsletter(event)">
+    <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px; max-width:480px; margin:0 auto;" onsubmit="handleNewsletter(event)">
       <input type="hidden" name="form-name" value="newsletter">
       <p style="display:none"><input name="bot-field"></p>
-      <input
-        type="email"
-        id="nl-email"
-        placeholder="your@email.com"
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <input
+          type="email"
+          id="nl-email"
+          placeholder="your@email.com"
+          required
+          style="flex:1; min-width:220px; padding:14px 18px; border:none; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; outline:none;"
+        >
+        <button
+          type="submit"
+          id="nl-btn"
+          style="background:var(--navy); color:#fff; border:none; padding:14px 28px; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; font-weight:bold; cursor:pointer; white-space:nowrap; transition:background .2s;"
+          onmouseover="this.style.background='#0a1e30'"
+          onmouseout="this.style.background='var(--navy)'"
+        >Subscribe Free</button>
+      </div>
+      <select
+        id="nl-category"
+        name="category"
         required
-        style="flex:1; min-width:220px; padding:14px 18px; border:none; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; outline:none;"
+        style="padding:12px 14px; border:1px solid rgba(255,255,255,.2); border-radius:4px; background:rgba(255,255,255,.1); color:#fff; font-family:'Arial',sans-serif; font-size:14px; outline:none; cursor:pointer;"
       >
-      <button
-        type="submit"
-        id="nl-btn"
-        style="background:var(--navy); color:#fff; border:none; padding:14px 28px; border-radius:4px; font-family:'Arial',sans-serif; font-size:15px; font-weight:bold; cursor:pointer; white-space:nowrap; transition:background .2s;"
-        onmouseover="this.style.background='#0a1e30'"
-        onmouseout="this.style.background='var(--navy)'"
-      >Subscribe Free</button>
+        <option value="" style="background:var(--navy);">Select your interest...</option>
+        <option value="homeowner" style="background:var(--navy);">Homeowner / Property Owner</option>
+        <option value="service-provider" style="background:var(--navy);">Service Provider / Contractor</option>
+        <option value="real-estate" style="background:var(--navy);">Real Estate Professional</option>
+      </select>
     </form>
     <p style="margin-top:16px; font-family:'Arial',sans-serif; font-size:12px; color:rgba(255,255,255,.5);">No spam. Unsubscribe anytime.</p>
   </div>
