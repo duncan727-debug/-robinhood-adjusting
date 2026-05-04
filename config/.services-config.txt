@@ -1,7 +1,7 @@
 ROBINHOOD ADJUSTING - SERVICES & CREDENTIALS
 ============================================
-Last updated: 2026-04-29
-Status: Netlify + Beehiiv setup in progress
+Last updated: 2026-05-03
+Status: HubSpot native email active, Beehiiv discontinued
 
 1. EMAIL
    - Primary: duncanlittlejohn727@gmail.com
@@ -28,17 +28,19 @@ Status: Netlify + Beehiiv setup in progress
    - Branch: main (production)
    - Connected to: Netlify (webhook)
 
-5. BEEHIIV (Newsletter Platform) - IN SETUP
-   - Email: duncanlittlejohn727@gmail.com
-   - Status: Ready for integration
-   - Purpose: Daily newsletter delivery
+5. BEEHIIV (Newsletter Platform) - DISCONTINUED 2026-05-02
+   - Replaced by HubSpot native email
 
-6. HUBSPOT (CRM) - ACTIVE
+6. HUBSPOT (CRM + EMAIL) - ACTIVE
    - Email: duncanlittlejohn727@gmail.com
-   - Developer API Key: [STORED SECURELY in Netlify env]
-   - Status: Integrated for newsletter signups
-   - Purpose: Contact management, outreach tracking, email automation
-   - Netlify Env Var: HUBSPOT_API_KEY
+   - Private App Access Token: [STORED SECURELY]
+   - Status: Active — CRM + newsletter distribution
+   - Purpose: Contact management, outreach tracking, email automation, newsletter sends
+   - Subscriber Lists (HubSpot List IDs):
+     HUBSPOT_LIST_HOMEOWNERS=18
+     HUBSPOT_LIST_SERVICE_PROVIDERS=19
+     HUBSPOT_LIST_RE_PROFESSIONALS=20
+   - Netlify Env Vars needed: HUBSPOT_API_KEY, HUBSPOT_LIST_HOMEOWNERS, HUBSPOT_LIST_SERVICE_PROVIDERS, HUBSPOT_LIST_RE_PROFESSIONALS
 
 ARCHITECTURE:
 GitHub (code) → Netlify (auto-deploy) → robinhoodadjusting.com (live)
