@@ -1,69 +1,78 @@
 #!/bin/bash
 
-# Build and update PA-WEBSITE.html with the latest briefs
+# Build and update site HTML with the latest briefs
 # Runs after daily content generation to refresh the website
 
+set -euo pipefail
 cd /Users/victoria/.openclaw/workspace
 
-# Find 5 most recent brief files (*.html) by date in filename
-# Briefs are named like: briefs/2026-04-29.html
-LATEST_BRIEFS=($(find briefs -maxdepth 1 -name "*.html" -not -name "template-*" -not -name "style-*" | \
-  sed 's|briefs/||; s|\.html||' | \
+# Sync brief HTML files into site/briefs/ for Netlify deployment
+mkdir -p site/briefs
+cp content/briefs/2026-*.html site/briefs/ 2>/dev/null || true
+
+# Find 5 most recent brief dates
+LATEST_BRIEFS=($(find content/briefs -maxdepth 1 -name "*.html" \
+  -not -name "template-*" -not -name "style-*" -not -name "NEWSLETTER-*" | \
+  sed 's|content/briefs/||; s|\.html||' | \
   grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | \
-  sort -r | \
-  head -5))
+  sort -r | head -5))
 
 if [[ ${#LATEST_BRIEFS[@]} -lt 5 ]]; then
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: Not enough briefs found (found ${#LATEST_BRIEFS[@]}, need 5)"
   exit 1
 fi
 
-# Convert dates to human-readable format (e.g., 2026-04-29 -> April 29, 2026)
-format_date() {
-  local date=$1
-  local year="${date:0:4}"
-  local month="${date:5:2}"
-  local day="${date:8:2}"
+# Use Python to inject the briefs block — avoids shell escaping issues with sed
+python3 - "${LATEST_BRIEFS[@]}" << 'PYEOF'
+import sys, re
 
-  # Remove leading zero from day for display
-  day=$((10#$day))
+dates = sys.argv[1:]
 
-  local months=("January" "February" "March" "April" "May" "June"
-                "July" "August" "September" "October" "November" "December")
-  local month_idx=$((10#$month - 1))
+months = ["January","February","March","April","May","June",
+          "July","August","September","October","November","December"]
 
-  echo "${months[$month_idx]} $day, $year"
-}
+def fmt(d):
+    y, m, day = d.split("-")
+    return f"{months[int(m)-1]} {int(day)}, {y}"
 
-# Generate briefs HTML
-BRIEFS_HTML='    <!-- BRIEFS -->\n      <div class="briefs-list">'
+links = "\n".join(
+    f'        <a href="briefs/{d}.html" class="brief-item">\n'
+    f'          <div>\n'
+    f'            <div class="brief-date">{fmt(d)}</div>\n'
+    f'            <h4>South Florida Insurance Brief</h4>\n'
+    f'            <p>Market updates, regulatory news, carrier developments, and claim environment across South Florida.</p>\n'
+    f'          </div>\n'
+    f'          <div class="brief-arrow">→</div>\n'
+    f'        </a>'
+    for d in dates
+)
 
-for i in "${!LATEST_BRIEFS[@]}"; do
-  DATE="${LATEST_BRIEFS[$i]}"
-  DISPLAY_DATE=$(format_date "$DATE")
+NEW_BLOCK = (
+    "    <!-- BRIEFS -->\n"
+    '      <div class="briefs-list">\n'
+    + links + "\n"
+    "      </div>\n\n"
+    "    <!-- WEEKLY -->"
+)
 
-  BRIEFS_HTML+="\\n        <a href=\"briefs/${DATE}.html\" class=\"brief-item\">\\n"
-  BRIEFS_HTML+="          <div>\\n"
-  BRIEFS_HTML+="            <div class=\"brief-date\">$DISPLAY_DATE</div>\\n"
-  BRIEFS_HTML+="            <h4>South Florida Insurance Brief</h4>\\n"
-  BRIEFS_HTML+="            <p>Market updates, regulatory news, carrier developments, and claim environment across South Florida.</p>\\n"
-  BRIEFS_HTML+="          </div>\\n"
-  BRIEFS_HTML+="          <div class=\"brief-arrow\">→</div>\\n"
-  BRIEFS_HTML+="        </a>"
-done
+for path in ["site/index.html", "site/PA-WEBSITE.html"]:
+    try:
+        with open(path) as f:
+            content = f.read()
+        updated = re.sub(
+            r'[ \t]*<!-- BRIEFS -->.*?<!-- WEEKLY -->',
+            NEW_BLOCK,
+            content,
+            flags=re.DOTALL
+        )
+        if updated != content:
+            with open(path, "w") as f:
+                f.write(updated)
+            print(f"[OK] Updated {path}")
+        else:
+            print(f"[SKIP] No BRIEFS block found in {path}")
+    except FileNotFoundError:
+        print(f"[SKIP] {path} not found")
+PYEOF
 
-BRIEFS_HTML+="\\n      </div>\\n\\n    <!-- WEEKLY -->"
-
-# Update PA-WEBSITE.html with new briefs section
-sed -i "" "
-  /<!-- BRIEFS -->/,/<!-- WEEKLY -->/c\\
-$BRIEFS_HTML
-" PA-WEBSITE.html
-
-if [[ $? -eq 0 ]]; then
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Website updated with 5 latest briefs: ${LATEST_BRIEFS[0]}, ${LATEST_BRIEFS[1]}, ${LATEST_BRIEFS[2]}, ${LATEST_BRIEFS[3]}, ${LATEST_BRIEFS[4]}"
-  exit 0
-else
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: Failed to update website"
-  exit 1
-fi
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Done: ${LATEST_BRIEFS[0]}, ${LATEST_BRIEFS[1]}, ${LATEST_BRIEFS[2]}, ${LATEST_BRIEFS[3]}, ${LATEST_BRIEFS[4]}"
