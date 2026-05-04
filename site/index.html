@@ -1109,8 +1109,7 @@
     <p style="font-size:18px; color:rgba(255,255,255,.85); max-width:540px; margin:0 auto 36px; font-family:'Arial',sans-serif;">
       Daily briefs, weekly trend reports, and plain-language breakdowns of what's happening in the South Florida insurance market — delivered to your inbox.
     </p>
-    <form id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px; max-width:480px; margin:0 auto;" onsubmit="handleNewsletter(event)">
-      <input type="hidden" name="form-name" value="newsletter">
+    <form id="newsletter-form" name="newsletter" method="POST" style="display:flex; flex-direction:column; gap:12px; max-width:480px; margin:0 auto;" onsubmit="handleNewsletter(event)">
       <p style="display:none"><input name="bot-field"></p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <input
@@ -1275,18 +1274,22 @@
 
   function handleNewsletter(e) {
     e.preventDefault();
-    const form = e.target;
     const btn = document.getElementById('nl-btn');
+    const email = document.getElementById('nl-email').value.trim();
+    const category = document.getElementById('nl-category').value;
+    if (!category) { alert('Please select your interest.'); return; }
     btn.textContent = 'Subscribing…';
     btn.disabled = true;
-    fetch('/', {
+    fetch('/.netlify/functions/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    }).then(() => {
+      body: new URLSearchParams({ email, category }).toString()
+    }).then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(() => {
       btn.textContent = "You're subscribed!";
       btn.style.background = '#1a6e3a';
       document.getElementById('nl-email').disabled = true;
+      document.getElementById('nl-category').disabled = true;
     }).catch(() => {
       btn.textContent = 'Try again';
       btn.disabled = false;
