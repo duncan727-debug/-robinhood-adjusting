@@ -155,4 +155,15 @@ shutil.copy(output_file, main_output)
 print(f"Also updated: {main_output}")
 
 print(f"\n✓ Daily HubSpot consolidation complete")
-print(f"Ready for upload. Total records: {total_records}")
+print(f"Uploading {total_records} records to HubSpot...")
+
+import subprocess, sys
+result = subprocess.run(
+    [sys.executable, str(Path(__file__).parent / "hubspot_upload.py")],
+    capture_output=True, text=True
+)
+print(result.stdout)
+if result.returncode != 0:
+    print(f"Upload error: {result.stderr}", file=sys.stderr)
+else:
+    print("✓ HubSpot upload complete")
