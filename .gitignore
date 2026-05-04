@@ -1,0 +1,7 @@
+config/.services-config.txt
+scripts/setup-hubspot-lists.py
+.env
+*.env
+.catchup-log.txt
+.catchup-state.json
+scripts/catchup.lock
