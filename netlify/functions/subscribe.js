@@ -22,20 +22,15 @@ async function hs(method, path, body) {
   return { status: res.status, data };
 }
 
-async function upsertContact(email, category) {
-  // Try to create contact
+async function upsertContact(email) {
+  // Try to create contact with only standard HubSpot properties
   let { status, data } = await hs("POST", "/crm/v3/objects/contacts", {
-    properties: {
-      email,
-      lifecyclestage: "subscriber",
-      hs_lead_status: "NEW",
-      newsletter_category: category,
-    },
+    properties: { email, lifecyclestage: "subscriber" },
   });
 
   if (status === 201 || status === 200) return data.id;
 
-  // 409 = contact already exists — search for their ID
+  // 409 = contact already exists — find their ID by email
   if (status === 409) {
     const search = await hs("POST", "/crm/v3/objects/contacts/search", {
       filterGroups: [{ filters: [{ propertyName: "email", operator: "EQ", value: email }] }],
@@ -43,11 +38,7 @@ async function upsertContact(email, category) {
       limit: 1,
     });
     if (search.data.results && search.data.results.length) {
-      const id = search.data.results[0].id;
-      await hs("PATCH", `/crm/v3/objects/contacts/${id}`, {
-        properties: { newsletter_category: category },
-      });
-      return id;
+      return search.data.results[0].id;
     }
   }
 
@@ -80,7 +71,7 @@ exports.handler = async function (event) {
   }
 
   try {
-    const contactId = await upsertContact(email, category);
+    const contactId = await upsertContact(email);
     if (!contactId) {
       return { statusCode: 500, body: JSON.stringify({ error: "Failed to create or find contact" }) };
     }
