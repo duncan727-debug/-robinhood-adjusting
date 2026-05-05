@@ -1,4 +1,4 @@
-// Netlify function: newsletter signup → HubSpot contact creation + list enrollment
+// Netlify function: newsletter signup → HubSpot contact creation + list enrollment (v2)
 
 const HUBSPOT_TOKEN = process.env.HUBSPOT_API_KEY;
 
