@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 68" width="320" height="68">
+  <!-- Shield mark -->
+  <g transform="translate(0, 4)">
+    <path d="M30 2 L56 11 L56 32 C56 46 44 56 30 60 C16 56 4 46 4 32 L4 11 Z"
+          fill="#1a3a5c" stroke="#c9922a" stroke-width="2"/>
+    <path d="M30 9 L49 17 L49 32 C49 43 41 51 30 54 C19 51 11 43 11 32 L11 17 Z"
+          fill="#0f2d4a"/>
+    <!-- Arrow shaft -->
+    <line x1="30" y1="42" x2="30" y2="22" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Arrow head -->
+    <polyline points="23,29 30,21 37,29" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Fletching -->
+    <line x1="26" y1="40" x2="30" y2="42" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="34" y1="40" x2="30" y2="42" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="74" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" letter-spacing="2" fill="#ffffff">ROBINHOOD</text>
+  <text x="74" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" letter-spacing="2" fill="#c9922a">ADJUSTING</text>
+  <!-- Tagline -->
+  <text x="75" y="70" font-family="Arial, sans-serif" font-size="8.5" letter-spacing="2.5" fill="rgba(255,255,255,0.45)">LICENSED PUBLIC ADJUSTER  ·  SOUTH FLORIDA</text>
+</svg>

@@ -156,9 +156,8 @@ def wrap_email(body_html, subject):
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:20px 0;">
   <tr><td align="center">
     <table width="620" cellpadding="0" cellspacing="0" style="background:#fff;max-width:620px;width:100%;">
-      <tr><td style="background:#0d1b2e;padding:28px 24px;text-align:center;border-bottom:5px solid #c41e3a;">
-        <div style="color:#fff;font-size:22px;font-weight:bold;letter-spacing:2px;">ROBINHOOD ADJUSTING</div>
-        <div style="color:#aaa;font-size:12px;font-style:italic;margin-top:6px;">South Florida Public Adjuster</div>
+      <tr><td style="background:#0f2d4a;padding:28px 24px;text-align:center;border-bottom:5px solid #c9922a;">
+        <img src="https://robinhoodadjusting.com/logo-dark.svg" alt="Robinhood Adjusting" width="280" height="60" style="display:inline-block;max-width:100%;height:auto;">
       </td></tr>
       <tr><td style="padding:32px 28px;font-size:16px;line-height:1.75;color:#222;">
         {body_html}

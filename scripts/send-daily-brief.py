@@ -104,9 +104,9 @@ def build_email_html(body_content, date_str, subject):
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:20px 0;">
   <tr><td align="center">
     <table width="680" cellpadding="0" cellspacing="0" style="background:#ffffff;max-width:680px;width:100%;">
-      <tr><td style="background:#1a1a1a;padding:30px 20px;text-align:center;border-bottom:6px solid #c41e3a;">
-        <div style="color:white;font-size:36px;font-weight:bold;letter-spacing:2px;">ROBINHOOD ADJUSTING</div>
-        <div style="color:#ccc;font-size:13px;font-style:italic;margin-top:8px;">South Florida Property Intelligence — {date_fmt}</div>
+      <tr><td style="background:#0f2d4a;padding:28px 20px;text-align:center;border-bottom:5px solid #c9922a;">
+        <img src="https://robinhoodadjusting.com/logo-dark.svg" alt="Robinhood Adjusting" width="280" height="60" style="display:inline-block;max-width:100%;height:auto;">
+        <div style="color:rgba(255,255,255,0.5);font-family:Arial,sans-serif;font-size:12px;letter-spacing:1px;margin-top:12px;">{date_fmt}</div>
       </td></tr>
       <tr><td style="padding:30px 24px;">
         {body_content}
