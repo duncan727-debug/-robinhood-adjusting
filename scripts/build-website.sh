@@ -6,23 +6,25 @@
 set -euo pipefail
 cd /Users/victoria/.openclaw/workspace
 
-# Sync brief HTML files into site/briefs/ for Netlify deployment
+# Sync any new brief HTML files from content/briefs/ into site/briefs/
 mkdir -p site/briefs
 cp content/briefs/2026-*.html site/briefs/ 2>/dev/null || true
 
-# Find 5 most recent brief dates
-LATEST_BRIEFS=($(find content/briefs -maxdepth 1 -name "*.html" \
-  -not -name "template-*" -not -name "style-*" -not -name "NEWSLETTER-*" | \
-  sed 's|content/briefs/||; s|\.html||' | \
+# Find 5 most recent brief dates from site/briefs/ (authoritative source)
+LATEST_BRIEFS=($(find site/briefs -maxdepth 1 -name "*.html" \
+  -not -name "template-*" -not -name "style-*" -not -name "NEWSLETTER-*" -not -name "*WEEKLY*" | \
+  sed 's|site/briefs/||; s|\.html||' | \
   grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | \
   sort -r | head -5))
 
-if [[ ${#LATEST_BRIEFS[@]} -lt 5 ]]; then
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: Not enough briefs found (found ${#LATEST_BRIEFS[@]}, need 5)"
+if [[ ${#LATEST_BRIEFS[@]} -lt 1 ]]; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: No briefs found in site/briefs/"
   exit 1
 fi
 
-# Use Python to inject the briefs block — avoids shell escaping issues with sed
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Found ${#LATEST_BRIEFS[@]} briefs: ${LATEST_BRIEFS[*]}"
+
+# Use Python to inject the briefs block — preserves tab structure
 python3 - "${LATEST_BRIEFS[@]}" << 'PYEOF'
 import sys, re
 
@@ -47,11 +49,14 @@ links = "\n".join(
     for d in dates
 )
 
+# Preserves the tab-briefs panel wrapper so the tab system stays intact
 NEW_BLOCK = (
     "    <!-- BRIEFS -->\n"
+    '    <div id="tab-briefs" class="tab-panel active">\n'
     '      <div class="briefs-list">\n'
     + links + "\n"
-    "      </div>\n\n"
+    "      </div>\n"
+    "    </div>\n\n"
     "    <!-- WEEKLY -->"
 )
 
@@ -75,4 +80,4 @@ for path in ["site/index.html", "site/PA-WEBSITE.html"]:
         print(f"[SKIP] {path} not found")
 PYEOF
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Done: ${LATEST_BRIEFS[0]}, ${LATEST_BRIEFS[1]}, ${LATEST_BRIEFS[2]}, ${LATEST_BRIEFS[3]}, ${LATEST_BRIEFS[4]}"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Done."
