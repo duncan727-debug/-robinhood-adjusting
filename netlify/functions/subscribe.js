@@ -43,7 +43,7 @@ async function upsertContact(email) {
   }
 
   console.error("upsertContact failed:", status, JSON.stringify(data));
-  return null;
+  throw new Error(`HubSpot ${status}: ${JSON.stringify(data)}`);
 }
 
 async function addToList(listId, contactId) {
