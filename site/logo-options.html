@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robinhood Adjusting — Logo Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #eef0f3; font-family: Arial, sans-serif; padding: 48px 32px; }
+
+  h1 { font-family: Arial, sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #888; text-align: center; margin-bottom: 8px; }
+  .page-sub { text-align: center; font-size: 14px; color: #aaa; margin-bottom: 56px; }
+
+  .option-block { max-width: 860px; margin: 0 auto 64px; }
+  .option-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #aaa; margin-bottom: 16px; }
+  .option-title { font-size: 20px; font-weight: bold; color: #222; margin-bottom: 6px; }
+  .option-desc { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 28px; max-width: 620px; }
+
+  .preview-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+
+  /* ─── shared shell for each preview ─── */
+  .preview {
+    flex: 1; min-width: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.13);
+  }
+  .preview-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #aaa; margin-bottom: 8px; }
+
+  /* usage pill */
+  .usage-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .pill { font-size: 12px; font-family: Arial, sans-serif; padding: 5px 14px; border-radius: 20px; background: #fff; border: 1px solid #ddd; color: #555; }
+  .pill.yes { background: #eaf6ee; border-color: #86efac; color: #166534; }
+
+  hr.divider { border: none; border-top: 1px solid #d8dbe0; margin: 72px 0; max-width: 860px; margin-left: auto; margin-right: auto; }
+
+
+  /* ════════════════════════════════════════
+     OPTION 1 — THE SHIELD MARK
+     Classic, authoritative, insurance-industry credibility
+  ════════════════════════════════════════ */
+
+  .o1-dark {
+    background: #0f2d4a;
+    padding: 32px 36px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .o1-shield {
+    width: 52px; height: 60px; flex-shrink: 0;
+    position: relative;
+  }
+  .o1-shield svg { width: 100%; height: 100%; }
+  .o1-wordmark { display: flex; flex-direction: column; gap: 2px; }
+  .o1-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .o1-name span { color: #c9922a; }
+  .o1-tagline {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    margin-top: 5px;
+  }
+
+  .o1-light {
+    background: #ffffff;
+    padding: 32px 36px;
+    display: flex; align-items: center; gap: 18px;
+    border: 1px solid #e5e7eb;
+  }
+  .o1-light .o1-name { color: #0f2d4a; }
+  .o1-light .o1-tagline { color: #999; }
+
+  .o1-email {
+    background: #0f2d4a;
+    padding: 24px 28px;
+    text-align: center;
+    border-bottom: 4px solid #c41e3a;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+  }
+  .o1-email .o1-name { font-size: 18px; letter-spacing: 2px; }
+  .o1-email .o1-tagline { letter-spacing: 2.5px; }
+
+
+  /* ════════════════════════════════════════
+     OPTION 2 — THE WORDMARK + RULE
+     Minimal, modern, editorial — like a law firm or financial brand
+  ════════════════════════════════════════ */
+
+  .o2-dark {
+    background: #0f2d4a;
+    padding: 32px 40px;
+  }
+  .o2-top {
+    display: flex; align-items: center; gap: 0;
+  }
+  .o2-r {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #c41e3a;
+    line-height: 1;
+    margin-right: 2px;
+  }
+  .o2-rest {
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .o2-robinhood {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .o2-adjusting {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9922a;
+    margin-top: 3px;
+  }
+  .o2-rule {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, #c41e3a 0%, #c9922a 40%, transparent 100%);
+    margin-top: 14px;
+  }
+  .o2-sub {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-top: 8px;
+  }
+
+  .o2-light {
+    background: #ffffff;
+    padding: 32px 40px;
+    border: 1px solid #e5e7eb;
+  }
+  .o2-light .o2-robinhood { color: #0f2d4a; }
+  .o2-light .o2-sub { color: #bbb; }
+  .o2-light .o2-rule {
+    background: linear-gradient(90deg, #c41e3a 0%, #c9922a 40%, transparent 100%);
+  }
+
+  .o2-email {
+    background: #0f2d4a;
+    padding: 22px 28px;
+    text-align: center;
+    border-bottom: 4px solid #c41e3a;
+  }
+  .o2-email-inner {
+    display: inline-flex; align-items: center; gap: 0;
+  }
+  .o2-email .o2-r { font-size: 38px; }
+  .o2-email .o2-robinhood { font-size: 18px; }
+  .o2-email .o2-adjusting { font-size: 9px; letter-spacing: 4px; }
+
+
+  /* ════════════════════════════════════════
+     OPTION 3 — THE SEAL
+     Trust, authority, South Florida identity — like an insurance seal
+  ════════════════════════════════════════ */
+
+  .o3-dark {
+    background: #0f2d4a;
+    padding: 32px 36px;
+    display: flex; align-items: center; gap: 22px;
+  }
+  .o3-seal { flex-shrink: 0; }
+  .o3-seal svg { width: 64px; height: 64px; }
+  .o3-text { display: flex; flex-direction: column; gap: 1px; }
+  .o3-robinhood {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: .5px;
+    line-height: 1;
+  }
+  .o3-adjusting {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9922a;
+    margin-top: 4px;
+  }
+  .o3-location {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    margin-top: 6px;
+  }
+
+  .o3-light {
+    background: #ffffff;
+    padding: 32px 36px;
+    display: flex; align-items: center; gap: 22px;
+    border: 1px solid #e5e7eb;
+  }
+  .o3-light .o3-robinhood { color: #0f2d4a; }
+  .o3-light .o3-location { color: #ccc; }
+
+  .o3-email {
+    background: #0f2d4a;
+    padding: 22px 28px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    border-bottom: 4px solid #c41e3a;
+  }
+  .o3-email .o3-seal svg { width: 44px; height: 44px; }
+  .o3-email .o3-robinhood { font-size: 20px; }
+  .o3-email .o3-adjusting { font-size: 9px; }
+  .o3-email .o3-location { font-size: 8px; }
+
+</style>
+</head>
+<body>
+
+<h1>Robinhood Adjusting</h1>
+<p class="page-sub">Logo concept options — review and choose one to implement across email, website, and letterhead</p>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     OPTION 1
+═══════════════════════════════════════════════════════ -->
+<div class="option-block">
+  <div class="option-label">Option 01 of 03</div>
+  <div class="option-title">The Shield Mark</div>
+  <div class="option-desc">
+    A classic heraldic shield — the universal symbol of protection and advocacy — in navy with a gold arrow motif referencing the "Robin Hood" origin. The wordmark uses Cinzel, a Roman-inscribed serif that signals authority and permanence. Best for clients who want to feel immediately protected and taken seriously.
+  </div>
+
+  <div class="preview-row">
+    <div>
+      <div class="preview-label">On dark / email header / website nav</div>
+      <div class="preview o1-dark">
+        <div class="o1-shield">
+          <svg viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shield shape -->
+            <path d="M26 2 L50 12 L50 32 C50 46 38 56 26 59 C14 56 2 46 2 32 L2 12 Z"
+                  fill="#c41e3a" stroke="#c9922a" stroke-width="1.5"/>
+            <!-- Inner shield -->
+            <path d="M26 8 L44 16 L44 32 C44 43 36 51 26 54 C16 51 8 43 8 32 L8 16 Z"
+                  fill="#0f2d4a"/>
+            <!-- Arrow up — gold -->
+            <line x1="26" y1="38" x2="26" y2="18" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="19,25 26,17 33,25" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- Arrow fletching -->
+            <line x1="22" y1="36" x2="26" y2="38" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30" y1="36" x2="26" y2="38" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="o1-wordmark">
+          <div class="o1-name">ROBINHOOD <span>ADJUSTING</span></div>
+          <div class="o1-tagline">Licensed Public Adjuster &nbsp;·&nbsp; South Florida</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-row">
+    <div style="flex:1; min-width:260px;">
+      <div class="preview-label">On light / letterhead / proposals</div>
+      <div class="preview o1-light">
+        <div class="o1-shield">
+          <svg viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 2 L50 12 L50 32 C50 46 38 56 26 59 C14 56 2 46 2 32 L2 12 Z"
+                  fill="#c41e3a" stroke="#c9922a" stroke-width="1.5"/>
+            <path d="M26 8 L44 16 L44 32 C44 43 36 51 26 54 C16 51 8 43 8 32 L8 16 Z"
+                  fill="#f8f6f2"/>
+            <line x1="26" y1="38" x2="26" y2="18" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="19,25 26,17 33,25" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <line x1="22" y1="36" x2="26" y2="38" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="30" y1="36" x2="26" y2="38" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="o1-wordmark">
+          <div class="o1-name">ROBINHOOD <span>ADJUSTING</span></div>
+          <div class="o1-tagline">Licensed Public Adjuster &nbsp;·&nbsp; South Florida</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1; min-width:260px;">
+      <div class="preview-label">In email header</div>
+      <div class="preview">
+        <div class="o1-email">
+          <div class="o1-shield" style="width:38px;height:44px;">
+            <svg viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 2 L50 12 L50 32 C50 46 38 56 26 59 C14 56 2 46 2 32 L2 12 Z"
+                    fill="#c41e3a" stroke="#c9922a" stroke-width="1.5"/>
+              <path d="M26 8 L44 16 L44 32 C44 43 36 51 26 54 C16 51 8 43 8 32 L8 16 Z"
+                    fill="#0f2d4a"/>
+              <line x1="26" y1="38" x2="26" y2="18" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"/>
+              <polyline points="19,25 26,17 33,25" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <line x1="22" y1="36" x2="26" y2="38" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="30" y1="36" x2="26" y2="38" stroke="#c9922a" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="o1-wordmark">
+            <div class="o1-name" style="font-size:17px;">ROBINHOOD <span>ADJUSTING</span></div>
+            <div class="o1-tagline">Licensed Public Adjuster &nbsp;·&nbsp; South Florida</div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:20px 28px;font-family:Georgia,serif;font-size:14px;color:#555;line-height:1.7;border-bottom:1px solid #eee;">
+          Hi Sarah,<br><br>
+          You're in. Starting tomorrow you'll get daily South Florida insurance intelligence in your inbox…
+        </div>
+        <div style="background:#0f2d4a;padding:14px 20px;text-align:center;">
+          <div style="font-family:Arial,sans-serif;font-size:11px;color:#666;">Robinhood Adjusting · Wellington, FL · <span style="color:#c41e3a;">robinhoodadjusting.com</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="usage-row">
+    <span class="pill yes">Email header</span>
+    <span class="pill yes">Website nav</span>
+    <span class="pill yes">Business cards</span>
+    <span class="pill yes">Letterhead</span>
+    <span class="pill yes">Proposals</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+
+<!-- ═══════════════════════════════════════════════════════
+     OPTION 2
+═══════════════════════════════════════════════════════ -->
+<div class="option-block">
+  <div class="option-label">Option 02 of 03</div>
+  <div class="option-title">The Oversized Initial + Gradient Rule</div>
+  <div class="option-desc">
+    A large editorial "R" in crimson anchors the mark — bold, modern, and instantly recognizable at any size. The gradient rule below (red → gold) echoes South Florida sunrise and ties the two brand colors together. Feels more like a premium financial or law brand than a traditional trade business. Great for standing out to RE professionals and sophisticated homeowners.
+  </div>
+
+  <div class="preview-row">
+    <div>
+      <div class="preview-label">On dark / email header / website nav</div>
+      <div class="preview o2-dark">
+        <div class="o2-top">
+          <div class="o2-r">R</div>
+          <div class="o2-rest">
+            <div class="o2-robinhood">OBINHOOD</div>
+            <div class="o2-adjusting">Adjusting</div>
+          </div>
+        </div>
+        <div class="o2-rule"></div>
+        <div class="o2-sub">Licensed Public Adjuster &nbsp;·&nbsp; South Florida</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-row">
+    <div style="flex:1; min-width:260px;">
+      <div class="preview-label">On light / letterhead / proposals</div>
+      <div class="preview o2-light">
+        <div class="o2-top">
+          <div class="o2-r">R</div>
+          <div class="o2-rest">
+            <div class="o2-robinhood">OBINHOOD</div>
+            <div class="o2-adjusting">Adjusting</div>
+          </div>
+        </div>
+        <div class="o2-rule"></div>
+        <div class="o2-sub">Licensed Public Adjuster &nbsp;·&nbsp; South Florida</div>
+      </div>
+    </div>
+    <div style="flex:1; min-width:260px;">
+      <div class="preview-label">In email header</div>
+      <div class="preview">
+        <div class="o2-email" style="border-bottom:4px solid #c41e3a;">
+          <div class="o2-email-inner">
+            <div class="o2-r" style="font-size:38px;line-height:1;">R</div>
+            <div class="o2-rest">
+              <div class="o2-robinhood" style="font-size:19px;">OBINHOOD</div>
+              <div class="o2-adjusting" style="font-size:9px;letter-spacing:4px;">Adjusting</div>
+            </div>
+          </div>
+          <div class="o2-rule" style="margin-top:10px;"></div>
+          <div class="o2-sub" style="margin-top:6px;font-size:8px;letter-spacing:2px;">Licensed Public Adjuster · South Florida</div>
+        </div>
+        <div style="background:#fff;padding:20px 28px;font-family:Georgia,serif;font-size:14px;color:#555;line-height:1.7;border-bottom:1px solid #eee;">
+          Hi Marcus,<br><br>
+          Welcome aboard. You'll now get daily South Florida insurance intelligence in your inbox…
+        </div>
+        <div style="background:#0f2d4a;padding:14px 20px;text-align:center;">
+          <div style="font-family:Arial,sans-serif;font-size:11px;color:#666;">Robinhood Adjusting · Wellington, FL · <span style="color:#c41e3a;">robinhoodadjusting.com</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="usage-row">
+    <span class="pill yes">Email header</span>
+    <span class="pill yes">Website nav</span>
+    <span class="pill yes">Business cards</span>
+    <span class="pill yes">Letterhead</span>
+    <span class="pill yes">Digital / social</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+
+<!-- ═══════════════════════════════════════════════════════
+     OPTION 3
+═══════════════════════════════════════════════════════ -->
+<div class="option-block">
+  <div class="option-label">Option 03 of 03</div>
+  <div class="option-title">The Compass Seal</div>
+  <div class="option-desc">
+    A circular compass rose mark — referencing navigation, direction, and South Florida's coastal identity. The wordmark uses Playfair Display for a premium editorial feel. The "Wellington, FL" location tag reinforces local authority. This option communicates: <em>we know this market, we know these counties, we're embedded here</em>. Strongest for building trust with homeowners and local service providers.
+  </div>
+
+  <div class="preview-row">
+    <div>
+      <div class="preview-label">On dark / email header / website nav</div>
+      <div class="preview o3-dark">
+        <div class="o3-seal">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer ring -->
+            <circle cx="32" cy="32" r="30" stroke="#c9922a" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="26" stroke="rgba(201,146,42,0.3)" stroke-width="0.5"/>
+            <!-- Compass points -->
+            <!-- North (gold) -->
+            <polygon points="32,6 29,24 32,22 35,24" fill="#c9922a"/>
+            <!-- South -->
+            <polygon points="32,58 29,40 32,42 35,40" fill="rgba(255,255,255,0.25)"/>
+            <!-- East -->
+            <polygon points="58,32 40,29 42,32 40,35" fill="rgba(255,255,255,0.25)"/>
+            <!-- West -->
+            <polygon points="6,32 24,29 22,32 24,35" fill="rgba(255,255,255,0.25)"/>
+            <!-- Center dot -->
+            <circle cx="32" cy="32" r="3.5" fill="#c41e3a"/>
+            <circle cx="32" cy="32" r="1.5" fill="#c9922a"/>
+            <!-- Tick marks -->
+            <line x1="32" y1="3" x2="32" y2="7" stroke="#c9922a" stroke-width="1"/>
+            <line x1="61" y1="32" x2="57" y2="32" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            <line x1="3" y1="32" x2="7" y2="32" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            <line x1="32" y1="61" x2="32" y2="57" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            <!-- Diagonal ticks -->
+            <line x1="53" y1="11" x2="50.5" y2="13.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+            <line x1="11" y1="11" x2="13.5" y2="13.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+            <line x1="53" y1="53" x2="50.5" y2="50.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+            <line x1="11" y1="53" x2="13.5" y2="50.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="o3-text">
+          <div class="o3-robinhood">Robinhood Adjusting</div>
+          <div class="o3-adjusting">Licensed Public Adjuster</div>
+          <div class="o3-location">Wellington · South Florida</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-row">
+    <div style="flex:1; min-width:260px;">
+      <div class="preview-label">On light / letterhead / proposals</div>
+      <div class="preview o3-light">
+        <div class="o3-seal">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" stroke="#c9922a" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="26" stroke="rgba(201,146,42,0.3)" stroke-width="0.5"/>
+            <polygon points="32,6 29,24 32,22 35,24" fill="#c9922a"/>
+            <polygon points="32,58 29,40 32,42 35,40" fill="#ddd"/>
+            <polygon points="58,32 40,29 42,32 40,35" fill="#ddd"/>
+            <polygon points="6,32 24,29 22,32 24,35" fill="#ddd"/>
+            <circle cx="32" cy="32" r="3.5" fill="#c41e3a"/>
+            <circle cx="32" cy="32" r="1.5" fill="#c9922a"/>
+            <line x1="32" y1="3" x2="32" y2="7" stroke="#c9922a" stroke-width="1"/>
+            <line x1="61" y1="32" x2="57" y2="32" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            <line x1="3" y1="32" x2="7" y2="32" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            <line x1="32" y1="61" x2="32" y2="57" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            <line x1="53" y1="11" x2="50.5" y2="13.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+            <line x1="11" y1="11" x2="13.5" y2="13.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+            <line x1="53" y1="53" x2="50.5" y2="50.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+            <line x1="11" y1="53" x2="13.5" y2="50.5" stroke="rgba(201,146,42,0.3)" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="o3-text">
+          <div class="o3-robinhood" style="color:#0f2d4a;">Robinhood Adjusting</div>
+          <div class="o3-adjusting">Licensed Public Adjuster</div>
+          <div class="o3-location" style="color:#ccc;">Wellington · South Florida</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1; min-width:260px;">
+      <div class="preview-label">In email header</div>
+      <div class="preview">
+        <div class="o3-email">
+          <div class="o3-seal">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="30" stroke="#c9922a" stroke-width="1.5"/>
+              <circle cx="32" cy="32" r="26" stroke="rgba(201,146,42,0.3)" stroke-width="0.5"/>
+              <polygon points="32,6 29,24 32,22 35,24" fill="#c9922a"/>
+              <polygon points="32,58 29,40 32,42 35,40" fill="rgba(255,255,255,0.2)"/>
+              <polygon points="58,32 40,29 42,32 40,35" fill="rgba(255,255,255,0.2)"/>
+              <polygon points="6,32 24,29 22,32 24,35" fill="rgba(255,255,255,0.2)"/>
+              <circle cx="32" cy="32" r="3.5" fill="#c41e3a"/>
+              <circle cx="32" cy="32" r="1.5" fill="#c9922a"/>
+              <line x1="32" y1="3" x2="32" y2="7" stroke="#c9922a" stroke-width="1"/>
+              <line x1="61" y1="32" x2="57" y2="32" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+              <line x1="3" y1="32" x2="7" y2="32" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+              <line x1="32" y1="61" x2="32" y2="57" stroke="rgba(201,146,42,0.4)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="o3-text">
+            <div class="o3-robinhood" style="font-size:20px;">Robinhood Adjusting</div>
+            <div class="o3-adjusting" style="font-size:9px;">Licensed Public Adjuster</div>
+            <div class="o3-location" style="font-size:8px;">Wellington · South Florida</div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:20px 28px;font-family:Georgia,serif;font-size:14px;color:#555;line-height:1.7;border-bottom:1px solid #eee;">
+          Hi Jennifer,<br><br>
+          Welcome. You'll now get daily South Florida property and insurance intelligence…
+        </div>
+        <div style="background:#0f2d4a;padding:14px 20px;text-align:center;">
+          <div style="font-family:Arial,sans-serif;font-size:11px;color:#666;">Robinhood Adjusting · Wellington, FL · <span style="color:#c41e3a;">robinhoodadjusting.com</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="usage-row">
+    <span class="pill yes">Email header</span>
+    <span class="pill yes">Website nav</span>
+    <span class="pill yes">Business cards</span>
+    <span class="pill yes">Letterhead</span>
+    <span class="pill yes">Branded documents</span>
+  </div>
+</div>
+
+
+<div style="max-width:860px;margin:0 auto;padding:40px 0 20px;text-align:center;">
+  <p style="font-size:12px;color:#aaa;font-family:Arial,sans-serif;">
+    All logos render as inline SVG — no image files needed. Works in all email clients and browsers.<br>
+    Tell Agent Smith which option to implement and it goes live across email + website in one push.
+  </p>
+</div>
+
+</body>
+</html>
