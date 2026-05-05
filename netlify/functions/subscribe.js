@@ -1,78 +1,74 @@
-// Netlify function: handles newsletter signup form → HubSpot contact creation + list enrollment
-// Triggered by form POST to /.netlify/functions/subscribe
+// Netlify function: newsletter signup → HubSpot contact creation + list enrollment
 
-const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY;
+const HUBSPOT_TOKEN = process.env.HUBSPOT_API_KEY;
 
 const LIST_IDS = {
-  homeowner:        process.env.HUBSPOT_LIST_HOMEOWNERS       || "18",
-  "service-provider": process.env.HUBSPOT_LIST_SERVICE_PROVIDERS || "19",
-  "real-estate":    process.env.HUBSPOT_LIST_RE_PROFESSIONALS  || "20",
+  "homeowner":        process.env.HUBSPOT_LIST_HOMEOWNERS        || "18",
+  "service-provider": process.env.HUBSPOT_LIST_SERVICE_PROVIDERS  || "19",
+  "real-estate":      process.env.HUBSPOT_LIST_RE_PROFESSIONALS   || "20",
 };
 
-async function hubspot(method, path, body) {
+async function hs(method, path, body) {
   const res = await fetch(`https://api.hubapi.com${path}`, {
     method,
     headers: {
-      Authorization: `Bearer ${HUBSPOT_API_KEY}`,
+      "Authorization": `Bearer ${HUBSPOT_TOKEN}`,
       "Content-Type": "application/json",
     },
     body: body ? JSON.stringify(body) : undefined,
   });
-  return { status: res.status, data: await res.json().catch(() => ({})) };
+  let data = {};
+  try { data = await res.json(); } catch (_) {}
+  return { status: res.status, data };
 }
 
 async function upsertContact(email, category) {
-  // Try to create; if 409 conflict the contact already exists — fetch their ID
-  let { status, data } = await hubspot("POST", "/crm/v3/objects/contacts", {
+  // Try to create contact
+  let { status, data } = await hs("POST", "/crm/v3/objects/contacts", {
     properties: {
       email,
-      hs_lead_status: "NEW",
       lifecyclestage: "subscriber",
+      hs_lead_status: "NEW",
       newsletter_category: category,
     },
   });
 
+  if (status === 201 || status === 200) return data.id;
+
+  // 409 = contact already exists — search for their ID
   if (status === 409) {
-    // Existing contact — get ID by email, then write category so drip.py can read it
-    const search = await hubspot("POST", "/crm/v3/objects/contacts/search", {
+    const search = await hs("POST", "/crm/v3/objects/contacts/search", {
       filterGroups: [{ filters: [{ propertyName: "email", operator: "EQ", value: email }] }],
       properties: ["email"],
       limit: 1,
     });
-    if (search.data.results?.length) {
+    if (search.data.results && search.data.results.length) {
       const id = search.data.results[0].id;
-      await hubspot("PATCH", `/crm/v3/objects/contacts/${id}`, {
+      await hs("PATCH", `/crm/v3/objects/contacts/${id}`, {
         properties: { newsletter_category: category },
       });
       return id;
     }
-    return null;
   }
 
-  if (status === 200 || status === 201) return data.id;
+  console.error("upsertContact failed:", status, JSON.stringify(data));
   return null;
 }
 
 async function addToList(listId, contactId) {
-  return hubspot("PUT", `/crm/v3/lists/${listId}/memberships/add`, {
+  return hs("PUT", `/crm/v3/lists/${listId}/memberships/add`, {
     recordIdsToAdd: [contactId],
   });
 }
 
-export async function handler(event) {
+exports.handler = async function (event) {
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method not allowed" };
   }
 
-  if (!HUBSPOT_API_KEY) {
-    console.error("HUBSPOT_API_KEY not set");
-    return { statusCode: 500, body: "Server configuration error" };
-  }
-
-  // Parse form body (URL-encoded from Netlify Forms or direct fetch)
-  const params = new URLSearchParams(event.body);
-  const email    = params.get("email")?.trim().toLowerCase();
-  const category = params.get("category")?.trim();
+  const params = new URLSearchParams(event.body || "");
+  const email    = (params.get("email")    || "").trim().toLowerCase();
+  const category = (params.get("category") || "").trim();
 
   if (!email || !category) {
     return { statusCode: 400, body: JSON.stringify({ error: "Missing email or category" }) };
@@ -86,11 +82,9 @@ export async function handler(event) {
   try {
     const contactId = await upsertContact(email, category);
     if (!contactId) {
-      return { statusCode: 500, body: JSON.stringify({ error: "Failed to create contact" }) };
+      return { statusCode: 500, body: JSON.stringify({ error: "Failed to create or find contact" }) };
     }
-
     await addToList(listId, contactId);
-
     return {
       statusCode: 200,
       headers: { "Content-Type": "application/json" },
@@ -100,4 +94,4 @@ export async function handler(event) {
     console.error("Subscribe error:", err);
     return { statusCode: 500, body: JSON.stringify({ error: "Internal error" }) };
   }
-}
+};
