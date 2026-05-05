@@ -40,10 +40,11 @@ async function upsertContact(email) {
     if (search.data.results && search.data.results.length) {
       return search.data.results[0].id;
     }
+    throw new Error(`409 but no results found for ${email}`);
   }
 
-  console.error("upsertContact failed:", status, JSON.stringify(data));
-  throw new Error(`HubSpot ${status}: ${JSON.stringify(data)}`);
+  const errorMsg = data.message || data.errors?.[0]?.message || JSON.stringify(data);
+  throw new Error(`HubSpot ${status}: ${errorMsg}`);
 }
 
 async function addToList(listId, contactId) {
@@ -55,6 +56,10 @@ async function addToList(listId, contactId) {
 exports.handler = async function (event) {
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method not allowed" };
+  }
+
+  if (!HUBSPOT_TOKEN) {
+    return { statusCode: 500, body: JSON.stringify({ error: "HUBSPOT_API_KEY not configured" }) };
   }
 
   const params = new URLSearchParams(event.body || "");
@@ -83,6 +88,6 @@ exports.handler = async function (event) {
     };
   } catch (err) {
     console.error("Subscribe error:", err);
-    return { statusCode: 500, body: JSON.stringify({ error: "Internal error" }) };
+    return { statusCode: 500, body: JSON.stringify({ error: err.message || "Internal error" }) };
   }
 };
