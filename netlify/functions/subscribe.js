@@ -28,17 +28,24 @@ async function upsertContact(email, category) {
       email,
       hs_lead_status: "NEW",
       lifecyclestage: "subscriber",
+      newsletter_category: category,
     },
   });
 
   if (status === 409) {
-    // Existing contact — get ID by email
+    // Existing contact — get ID by email, then write category so drip.py can read it
     const search = await hubspot("POST", "/crm/v3/objects/contacts/search", {
       filterGroups: [{ filters: [{ propertyName: "email", operator: "EQ", value: email }] }],
       properties: ["email"],
       limit: 1,
     });
-    if (search.data.results?.length) return search.data.results[0].id;
+    if (search.data.results?.length) {
+      const id = search.data.results[0].id;
+      await hubspot("PATCH", `/crm/v3/objects/contacts/${id}`, {
+        properties: { newsletter_category: category },
+      });
+      return id;
+    }
     return null;
   }
 
