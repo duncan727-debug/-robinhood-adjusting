@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
-Daily newsletter send: fetches subscriber list from HubSpot, sends today's
-brief to each subscriber via Gmail SMTP.
+Daily newsletter send: routes segment-specific briefs to the correct HubSpot lists.
+
+Brief files expected at: content/briefs/YYYY-MM-DD-{segment}.html
+  Segments: homeowner, service-provider, real-estate
+
+Falls back to a single content/briefs/YYYY-MM-DD.html if segment files don't exist
+(backward compat with older briefs).
 """
 
 import json
@@ -25,17 +30,19 @@ LOG_PATH = WORKSPACE / "scripts" / "newsletter-send.log"
 GMAIL_USER = "duncanlittlejohn727@gmail.com"
 FROM_NAME = "Robinhood Adjusting"
 
-LIST_IDS = ["18", "19", "20"]
+SEGMENTS = [
+    {"list_id": "18", "key": "homeowner",       "label": "South Florida Property Intelligence"},
+    {"list_id": "19", "key": "service-provider", "label": "South Florida Trade Professional Brief"},
+    {"list_id": "20", "key": "real-estate",      "label": "South Florida Real Estate & Insurance Brief"},
+]
 
 
 def load_credentials():
     content = CONFIG_FILE.read_text()
-    # Gmail App Password
     m = re.search(r"Gmail App Password.*?:\s*([a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4})", content)
     gmail_pw = m.group(1) if m else None
     if not gmail_pw:
         sys.exit("ERROR: Gmail App Password not found in config.")
-    # HubSpot token — env var takes precedence
     hs_token = os.environ.get("HUBSPOT_API_KEY", "")
     if not hs_token:
         m2 = re.search(r'TOKEN\s*=\s*"([^"]+)"',
@@ -46,49 +53,63 @@ def load_credentials():
     return gmail_pw, hs_token
 
 
-def hubspot_get(path, token):
+def hubspot_get(path, token, retries=3):
     url = f"https://api.hubapi.com{path}"
     req = urllib.request.Request(url)
     req.add_header("Authorization", f"Bearer {token}")
-    try:
-        with urllib.request.urlopen(req) as r:
-            return json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        log(f"HubSpot error {e.code} on {path}")
-        return {}
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                time.sleep(2 ** attempt)
+                continue
+            log(f"HubSpot error {e.code} on {path}")
+            return {}
+    return {}
 
 
-def get_subscribers(token):
-    """Fetch all contact emails from the 3 subscriber lists, deduplicated."""
-    emails = set()
-    for list_id in LIST_IDS:
-        after = None
-        while True:
-            url = f"/crm/v3/lists/{list_id}/memberships?limit=100"
-            if after:
-                url += f"&after={after}"
-            data = hubspot_get(url, token)
-            for member in data.get("results", []):
-                contact_id = member.get("recordId")
-                if contact_id:
-                    contact = hubspot_get(f"/crm/v3/objects/contacts/{contact_id}?properties=email", token)
-                    email = contact.get("properties", {}).get("email", "")
-                    if email:
-                        emails.add(email.lower())
-            paging = data.get("paging", {}).get("next", {})
-            after = paging.get("after") if paging else None
-            if not after:
-                break
-    return list(emails)
+def get_list_emails(list_id, token):
+    """Fetch all contact emails from a single HubSpot list."""
+    emails = []
+    after = None
+    while True:
+        url = f"/crm/v3/lists/{list_id}/memberships?limit=100"
+        if after:
+            url += f"&after={after}"
+        data = hubspot_get(url, token)
+        for member in data.get("results", []):
+            contact_id = member.get("recordId")
+            if contact_id:
+                contact = hubspot_get(f"/crm/v3/objects/contacts/{contact_id}?properties=email", token)
+                email = contact.get("properties", {}).get("email", "")
+                if email:
+                    emails.append(email.lower())
+                time.sleep(0.05)
+        paging = data.get("paging", {}).get("next", {})
+        after = paging.get("after") if paging else None
+        if not after:
+            break
+    return emails
 
 
-def get_brief_html(date_str):
+def get_brief_html(date_str, segment_key=None):
+    """Load segment-specific brief, falling back to generic brief."""
+    if segment_key:
+        path = BRIEFS_DIR / f"{date_str}-{segment_key}.html"
+        if path.exists():
+            html = path.read_text()
+            m = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
+            return m.group(1).strip() if m else html
+
+    # Fallback: single brief for all segments
     path = BRIEFS_DIR / f"{date_str}.html"
     if not path.exists():
         return None
     html = path.read_text()
-    body_match = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
-    return body_match.group(1).strip() if body_match else html
+    m = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
+    return m.group(1).strip() if m else html
 
 
 def build_email_html(body_content, date_str, subject):
@@ -128,13 +149,13 @@ def build_email_html(body_content, date_str, subject):
 </html>"""
 
 
-def send_via_smtp(to_emails, subject, html, password):
+def send_segment(emails, subject, html, password):
     sent = 0
     failed = []
     with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
         smtp.starttls()
         smtp.login(GMAIL_USER, password)
-        for to_email in to_emails:
+        for to_email in emails:
             msg = MIMEMultipart("alternative")
             msg["Subject"] = subject
             msg["From"] = f"{FROM_NAME} <{GMAIL_USER}>"
@@ -145,7 +166,7 @@ def send_via_smtp(to_emails, subject, html, password):
                 sent += 1
             except Exception as e:
                 failed.append((to_email, str(e)))
-            time.sleep(0.3)  # stay well under Gmail's rate limit
+            time.sleep(0.3)
     return sent, failed
 
 
@@ -161,31 +182,44 @@ def main():
     log(f"=== Daily brief send start: {date_str} ===")
 
     password, hs_token = load_credentials()
-
-    brief_body = get_brief_html(date_str)
-    if not brief_body:
-        log(f"ERROR: No brief found for {date_str}")
-        sys.exit(1)
-    log(f"Loaded brief for {date_str}")
-
-    subscribers = get_subscribers(hs_token)
-    log(f"Fetched {len(subscribers)} subscribers from HubSpot lists")
-
-    if not subscribers:
-        log("No subscribers yet — skipping send. Will retry tomorrow.")
-        sys.exit(0)
-
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
-    subject = f"South Florida Property Intelligence — {date_fmt}"
-    html = build_email_html(brief_body, date_str, subject)
 
-    log(f"Sending to {len(subscribers)} subscribers via Gmail SMTP...")
-    sent, failed = send_via_smtp(subscribers, subject, html, password)
+    total_sent = 0
+    total_failed = 0
 
-    log(f"Sent: {sent} | Failed: {len(failed)}")
-    for email, err in failed:
-        log(f"  FAILED {email}: {err}")
-    log("=== Done ===")
+    for segment in SEGMENTS:
+        list_id = segment["list_id"]
+        key = segment["key"]
+        label = segment["label"]
+
+        brief_body = get_brief_html(date_str, key)
+        if not brief_body:
+            log(f"  [{key}] No brief found for {date_str} — skipping segment")
+            continue
+
+        using_generic = not (BRIEFS_DIR / f"{date_str}-{key}.html").exists()
+        if using_generic:
+            log(f"  [{key}] Using fallback generic brief")
+
+        emails = get_list_emails(list_id, hs_token)
+        log(f"  [{key}] {len(emails)} subscribers in list {list_id}")
+
+        if not emails:
+            log(f"  [{key}] No subscribers — skipping")
+            continue
+
+        subject = f"{label} — {date_fmt}"
+        html = build_email_html(brief_body, date_str, subject)
+
+        sent, failed = send_segment(emails, subject, html, password)
+        log(f"  [{key}] Sent: {sent} | Failed: {len(failed)}")
+        for email, err in failed:
+            log(f"    FAILED {email}: {err}")
+
+        total_sent += sent
+        total_failed += len(failed)
+
+    log(f"=== Done — total sent: {total_sent} | total failed: {total_failed} ===")
 
 
 if __name__ == "__main__":

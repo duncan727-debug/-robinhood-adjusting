@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-Email drip sequence: 3-touch welcome series for new newsletter subscribers.
-  Day 0  (0-48h after signup): Welcome + qualifying question
-  Day 3  (3-5 days after signup): Value content + resource links
-  Day 7  (7-9 days after signup): Personal touch from Duncan
+Email drip sequence: 4-touch welcome series for new newsletter subscribers.
+  confirm  (0-24h after signup):  Confirmation + "first brief tomorrow"
+  day3     (3-5 days):            Value content + multiple-choice qualifying question
+  day7     (7-9 days):            Personal touch from Duncan
+  day10    (10-12 days):          Final nurture / call to action
 
 Tracks state in HubSpot contact property 'drip_step'.
+Qualifying answers stored in 'qualifying_answer' via the qualify Netlify function.
 Sends via Gmail SMTP. Run daily at 9am Mon-Sat.
 """
 
@@ -30,6 +32,7 @@ GMAIL_USER = "duncanlittlejohn727@gmail.com"
 FROM_NAME = "Duncan Littlejohn | Robinhood Adjusting"
 SITE_URL = "https://robinhoodadjusting.com"
 PHONE = "561-772-7528"
+QUALIFY_URL = f"{SITE_URL}/.netlify/functions/qualify"
 
 LIST_MAP = {"18": "homeowner", "19": "service-provider", "20": "real-estate"}
 
@@ -86,6 +89,7 @@ def ensure_properties():
     for prop in [
         {"name": "drip_step",           "label": "Drip Step"},
         {"name": "newsletter_category", "label": "Newsletter Category"},
+        {"name": "qualifying_answer",   "label": "Qualifying Answer"},
     ]:
         status, _ = hs("GET", f"/crm/v3/properties/contacts/{prop['name']}")
         if status == 404:
@@ -142,7 +146,7 @@ def days_since_signup(createdate_str):
         return None
 
 
-# ─── email templates ──────────────────────────────────────────────────────────
+# ─── email helpers ────────────────────────────────────────────────────────────
 
 def wrap_email(body_html, subject):
     return f"""<!DOCTYPE html>
@@ -189,47 +193,77 @@ def link(url, label):
     return f'<a href="{url}" style="color:#c41e3a;">{label}</a>'
 
 
-TEMPLATES = {
-    # ── HOMEOWNERS ───────────────────────────────────────────────────────────
-    ("homeowner", "day0"): {
-        "subject": "Welcome to Robinhood Adjusting — one quick question",
-        "body": lambda name: f"""
+def mc_buttons(email, choices):
+    """Render multiple-choice answer buttons for qualifying question."""
+    import urllib.parse
+    rows = ""
+    for code, label in choices:
+        encoded_email = urllib.parse.quote(email, safe="")
+        encoded_answer = urllib.parse.quote(code, safe="")
+        url = f"{QUALIFY_URL}?email={encoded_email}&answer={encoded_answer}"
+        rows += (
+            f'<tr><td style="padding:6px 0;">'
+            f'<a href="{url}" style="display:block;background:#f0f4f8;border:1px solid #c41e3a;'
+            f'color:#0f2d4a;padding:12px 18px;text-decoration:none;border-radius:4px;'
+            f'font-family:Arial,sans-serif;font-size:14px;font-weight:bold;">'
+            f'&#10003; {label}</a></td></tr>'
+        )
+    return f'<table cellpadding="0" cellspacing="0" style="width:100%;margin:16px 0;">{rows}</table>'
+
+
+# ─── email templates ──────────────────────────────────────────────────────────
+
+def TEMPLATES(email):
+    """Return template dict keyed by (category, step). email is needed for MC button links."""
+
+    return {
+        # ── HOMEOWNERS ──────────────────────────────────────────────────────────
+
+        ("homeowner", "confirm"): {
+            "subject": "You're subscribed — South Florida Property Intelligence",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
-<p>You're in. Starting tomorrow you'll get daily South Florida insurance intelligence in your inbox — market shifts, carrier news, and plain-language breakdowns of what it all means for property owners like you.</p>
-<p>Before you go, I have one quick question:</p>
-<p style="background:#f8f4ee;border-left:4px solid #c41e3a;padding:14px 18px;font-style:italic;margin:20px 0;">
-  <strong>Are you dealing with an open claim, a denied claim, or are you preparing for this storm season?</strong>
-</p>
-<p>Just reply to this email — I read every response personally.</p>
-<p>In the meantime, here are two resources worth bookmarking:</p>
+<p>You're confirmed. Starting tomorrow morning you'll receive the <strong>South Florida Property Intelligence Brief</strong> — daily market updates, carrier news, and plain-language breakdowns of what's affecting homeowners in our area.</p>
+<p>Each brief is built for property owners who want to stay ahead of the market and understand what's happening with their insurance before they need it.</p>
+<p>A few things worth bookmarking:</p>
 <ul>
   <li>{link(SITE_URL+'/resources/first-48-hours.html','First 48 Hours After Storm Damage — What to Do')}</li>
   <li>{link(SITE_URL+'/providers/index.html','Trusted Provider Directory — Vetted contractors across South Florida')}</li>
 </ul>
 {btn(SITE_URL, 'Visit Robinhood Adjusting')}
-<p>— Duncan Littlejohn<br>
+<p>Talk soon,<br>
+— Duncan Littlejohn<br>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL · {PHONE}</p>
 """,
-    },
-    ("homeowner", "day3"): {
-        "subject": "The move most homeowners miss after a storm",
-        "body": lambda name: f"""
+        },
+
+        ("homeowner", "day3"): {
+            "subject": "The move most homeowners miss after a storm",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
-<p>Most homeowners wait too long to document damage — and it costs them.</p>
-<p>Insurance carriers send their adjuster within days of a claim. If you haven't documented the damage independently before that visit, you're already behind.</p>
+<p>Most homeowners wait too long to document damage — and it costs them. Insurance carriers send their adjuster within days of a claim. If you haven't documented independently before that visit, you're already behind.</p>
 <p>I put together a free guide on exactly what to do in the first 48 hours:</p>
 {btn(SITE_URL+'/resources/first-48-hours.html', 'Read: First 48 Hours After Storm Damage')}
-<p>And our provider directory lists vetted contractors by county — useful if you need emergency work or a second opinion on a scope of repair:</p>
-{btn(SITE_URL+'/providers/index.html', 'Browse the Provider Directory')}
-<p>If you have a live or denied claim and you're not sure where things stand, I'm happy to take a look at no cost and no obligation.</p>
+<p>One quick question — it helps me send you information that's actually relevant:</p>
+<p style="background:#f8f4ee;border-left:4px solid #c41e3a;padding:14px 18px;margin:20px 0;">
+  <strong>What best describes your current situation?</strong><br>
+  <span style="font-size:14px;color:#555;">Click to answer — takes one second, updates your profile automatically.</span>
+</p>
+{mc_buttons(email, [
+    ("open-claim",    "I have an open claim right now"),
+    ("denied-claim",  "My claim was denied or underpaid"),
+    ("filing-claim",  "I'm about to file a claim"),
+    ("preparing",     "No active claim — just staying informed"),
+])}
 <p>— Duncan<br>
 {PHONE} · <a href="{SITE_URL}" style="color:#c41e3a;">{SITE_URL.replace('https://','')}</a></p>
 """,
-    },
-    ("homeowner", "day7"): {
-        "subject": "Checking in — Duncan Littlejohn, Robinhood Adjusting",
-        "body": lambda name: f"""
+        },
+
+        ("homeowner", "day7"): {
+            "subject": "Checking in — Duncan Littlejohn, Robinhood Adjusting",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
 <p>I wanted to reach out personally.</p>
 <p>I work with homeowners across South Florida who feel like they didn't get a fair shake from their insurance company. Some have open claims. Some have had claims denied. Some just want to understand their policy before storm season gets here.</p>
@@ -240,102 +274,159 @@ Or reply right here and we'll go from there.</p>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL</p>
 """,
-    },
+        },
 
-    # ── SERVICE PROVIDERS ────────────────────────────────────────────────────
-    ("service-provider", "day0"): {
-        "subject": "Welcome — one quick question about your work",
-        "body": lambda name: f"""
+        ("homeowner", "day10"): {
+            "subject": "Storm season is here — where do you stand?",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
-<p>Welcome aboard. You'll now get daily South Florida insurance and property intelligence — the kind of information that helps trade professionals stay ahead of the market and serve their clients better.</p>
-<p>One quick question before I go:</p>
-<p style="background:#f8f4ee;border-left:4px solid #c41e3a;padding:14px 18px;font-style:italic;margin:20px 0;">
-  <strong>What's your primary trade, and are you looking for homeowner referrals, PA partnerships, or both?</strong>
-</p>
-<p>Just hit reply — I read every one personally.</p>
-<p>Our trusted provider directory is live on the site. Vetted professionals listed by county and trade. If you'd like to be listed, that's something we can discuss.</p>
-{btn(SITE_URL+'/providers/index.html', 'View the Provider Directory')}
+<p>Peak season is approaching, and I want to make sure you're not caught flat-footed.</p>
+<p>The most common mistake I see: homeowners find out their policy has gaps <em>after</em> a storm hits. By then, it's too late to fix it — and the insurance company knows it.</p>
+<p>If you haven't done a policy review recently, I'm happy to walk through it with you. No cost, no obligation. I'll tell you exactly what you have, what you're missing, and what carriers are likely to push back on in your area.</p>
+{btn(SITE_URL, 'Learn How We Can Help')}
+<p>Or just call me directly: <strong>{PHONE}</strong></p>
 <p>— Duncan Littlejohn<br>
+Public Adjuster, Robinhood Adjusting<br>
+Wellington, FL</p>
+""",
+        },
+
+        # ── SERVICE PROVIDERS ──────────────────────────────────────────────────
+
+        ("service-provider", "confirm"): {
+            "subject": "You're subscribed — South Florida Property & Insurance Intelligence",
+            "body": lambda name: f"""
+<p>Hi {name},</p>
+<p>You're confirmed. Starting tomorrow morning you'll receive the <strong>South Florida Trade Professional Brief</strong> — daily updates on carrier behavior, storm activity, contractor demand, and the insurance-adjacent news that keeps your business ahead of the market.</p>
+<p>Our provider directory is live on the site. Vetted professionals listed by county and trade. If you'd like to be listed, reply and let me know your trade and service area.</p>
+{btn(SITE_URL+'/providers/index.html', 'View the Provider Directory')}
+<p>Talk soon,<br>
+— Duncan Littlejohn<br>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL · {PHONE}</p>
 """,
-    },
-    ("service-provider", "day3"): {
-        "subject": "How our referral relationship works (no paperwork)",
-        "body": lambda name: f"""
+        },
+
+        ("service-provider", "day3"): {
+            "subject": "How our referral relationship works (no paperwork)",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
 <p>Quick note on how we work with trade professionals:</p>
-<p>When your customer has insurance-covered damage, you refer them to me. I handle everything from there — the inspection, the documentation, the negotiation with the carrier. If I recover more than the carrier's initial offer, I take a percentage of the difference. If I don't recover more, your client owes nothing.</p>
+<p>When your customer has insurance-covered damage, you refer them to me. I handle everything — the inspection, documentation, and carrier negotiation. If I recover more than the initial offer, I take a percentage of the difference. If I don't, your client owes nothing.</p>
 <p><strong>Your customer gets a better outcome. You're the person who made it happen.</strong></p>
-<p>No formal agreement, no exclusivity, no paperwork. Just a relationship built on good referrals in both directions.</p>
-<p>Two things worth knowing:</p>
-<ul>
-  <li>If you'd like to send me a client situation, reply here with a brief description and I'll follow up same day.</li>
-  <li>If you want to be listed in our trusted provider directory, let me know your trade and county and I'll get you added.</li>
-</ul>
-{btn(SITE_URL+'/providers/index.html', 'View the Provider Directory')}
+<p>No formal agreement, no exclusivity, no paperwork. Just good referrals in both directions.</p>
+<p>One quick question — helps me match you with the right opportunities:</p>
+<p style="background:#f8f4ee;border-left:4px solid #c41e3a;padding:14px 18px;margin:20px 0;">
+  <strong>What are you primarily looking for?</strong><br>
+  <span style="font-size:14px;color:#555;">Click to answer — one second, updates your profile automatically.</span>
+</p>
+{mc_buttons(email, [
+    ("homeowner-referrals", "Homeowner referrals from the PA network"),
+    ("pa-partnership",      "PA partnership — I'll refer clients with claims"),
+    ("both",                "Both referrals and partnerships"),
+    ("directory-listing",   "Directory listing and market intelligence only"),
+])}
 <p>— Duncan<br>
 {PHONE} · <a href="{SITE_URL}" style="color:#c41e3a;">{SITE_URL.replace('https://','')}</a></p>
 """,
-    },
-    ("service-provider", "day7"): {
-        "subject": "Let's connect — Duncan Littlejohn, Robinhood Adjusting",
-        "body": lambda name: f"""
+        },
+
+        ("service-provider", "day7"): {
+            "subject": "Let's connect — Duncan Littlejohn, Robinhood Adjusting",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
 <p>I'd love to know more about your business and see where there's a natural fit.</p>
-<p>Trade professionals who work in insurance-adjacent situations are exactly the kind of partners I want long-term relationships with. When my clients need your services, I want to send them to people I trust. And when your clients have a claim situation, I want to be the person you think of first.</p>
+<p>Trade professionals who work in insurance-adjacent situations are exactly the partners I want long-term relationships with. When my clients need your services, I want to send them to people I trust. When your clients have a claim situation, I want to be the person you think of first.</p>
 <p>If that sounds like a conversation worth having, reply here or call me directly.</p>
 <p><strong>{PHONE}</strong></p>
 <p>— Duncan Littlejohn<br>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL</p>
 """,
-    },
+        },
 
-    # ── REAL ESTATE PROFESSIONALS ────────────────────────────────────────────
-    ("real-estate", "day0"): {
-        "subject": "Welcome — quick question about your clients",
-        "body": lambda name: f"""
+        ("service-provider", "day10"): {
+            "subject": "Busy season is starting — are you positioned for it?",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
-<p>Welcome. You'll now get daily South Florida property and insurance intelligence — market shifts, carrier behavior, and regulatory news that directly affects transactions, property values, and your clients.</p>
-<p>One quick question before I go:</p>
-<p style="background:#f8f4ee;border-left:4px solid #c41e3a;padding:14px 18px;font-style:italic;margin:20px 0;">
-  <strong>How often do your clients run into insurance issues during or after a transaction?</strong>
-</p>
-<p>Whether it's mid-inspection discoveries, post-closing claims, or clients struggling with an underpaid settlement — reply and tell me what you're seeing. I want to understand what you're dealing with out there.</p>
-{btn(SITE_URL, 'Visit Robinhood Adjusting')}
+<p>Storm season drives more insurance-related work than any other period in South Florida. Roofing, mitigation, restoration, general contracting — demand spikes fast and the insurance process gets complicated.</p>
+<p>Contractors who have a PA relationship in their back pocket move faster: they can guide clients through the claim, get scopes approved faster, and close more jobs that would otherwise stall on "the insurance company said no."</p>
+<p>If you want to build that relationship before the season hits, let's talk now.</p>
+<p><strong>{PHONE}</strong> or just reply here.</p>
+{btn(SITE_URL+'/providers/index.html', 'View the Provider Directory')}
 <p>— Duncan Littlejohn<br>
+Public Adjuster, Robinhood Adjusting<br>
+Wellington, FL</p>
+""",
+        },
+
+        # ── REAL ESTATE PROFESSIONALS ──────────────────────────────────────────
+
+        ("real-estate", "confirm"): {
+            "subject": "You're subscribed — South Florida Property Intelligence",
+            "body": lambda name: f"""
+<p>Hi {name},</p>
+<p>You're confirmed. Starting tomorrow morning you'll receive the <strong>South Florida Real Estate & Insurance Brief</strong> — daily coverage of market shifts, carrier behavior, regulatory changes, and property-level intelligence that affects transactions and your clients.</p>
+<p>I work with agents and brokers across South Florida who want a PA they can refer clients to when insurance issues surface — before closing, after closing, or during active claims.</p>
+{btn(SITE_URL, 'Visit Robinhood Adjusting')}
+<p>Talk soon,<br>
+— Duncan Littlejohn<br>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL · {PHONE}</p>
 """,
-    },
-    ("real-estate", "day3"): {
-        "subject": "When a client's insurance claim affects the deal",
-        "body": lambda name: f"""
+        },
+
+        ("real-estate", "day3"): {
+            "subject": "When a client's insurance claim affects the deal",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
 <p>Something I hear from agents regularly: a deal stalls or falls apart because of an open claim, an unresolved denial, or damage that surfaces during inspection.</p>
 <p>A public adjuster can often move that needle faster than anyone else in the transaction. Whether your buyer is inheriting a poorly documented loss or your seller needs a claim resolved before closing, I can assess the situation quickly and tell you what's realistic.</p>
-<p>I work across South Florida and I understand how claims intersect with timelines. If you have a client situation — active or potential — I'm happy to take a look at no cost.</p>
-<p>Also: our trusted provider directory is useful for clients who need vetted contractors in specific counties, fast.</p>
-{btn(SITE_URL+'/providers/index.html', 'Browse the Provider Directory')}
+<p>One quick question — helps me understand what you're dealing with out there:</p>
+<p style="background:#f8f4ee;border-left:4px solid #c41e3a;padding:14px 18px;margin:20px 0;">
+  <strong>How often do insurance issues come up with your clients?</strong><br>
+  <span style="font-size:14px;color:#555;">Click to answer — one second, updates your profile automatically.</span>
+</p>
+{mc_buttons(email, [
+    ("frequent",          "Frequently — multiple times per month"),
+    ("occasional",        "Occasionally — a few times per year"),
+    ("active-situation",  "I have an active client situation right now"),
+    ("rare",              "Rarely or never"),
+])}
 <p>— Duncan<br>
 {PHONE} · <a href="{SITE_URL}" style="color:#c41e3a;">{SITE_URL.replace('https://','')}</a></p>
 """,
-    },
-    ("real-estate", "day7"): {
-        "subject": "A PA you can actually refer your clients to",
-        "body": lambda name: f"""
+        },
+
+        ("real-estate", "day7"): {
+            "subject": "A PA you can actually refer your clients to",
+            "body": lambda name: f"""
 <p>Hi {name},</p>
 <p>I work with RE professionals across South Florida who refer their clients to me when insurance issues come up — before closing, after closing, or during active claims.</p>
-<p>I make it simple: one call, I assess the situation, I tell your client exactly what I can do and what it costs. No pressure, no obligation for them or for you. If I can help, great. If I can't, I'll tell you that too.</p>
+<p>I make it simple: one call, I assess the situation, I tell your client exactly what I can do and what it costs. No pressure, no obligation. If I can help, great. If I can't, I'll tell you that too.</p>
 <p>If this sounds like something useful to have in your back pocket, reply here and let's connect.</p>
 <p><strong>{PHONE}</strong></p>
 <p>— Duncan Littlejohn<br>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL</p>
 """,
-    },
-}
+        },
+
+        ("real-estate", "day10"): {
+            "subject": "Storm season and your listings — a heads up",
+            "body": lambda name: f"""
+<p>Hi {name},</p>
+<p>As storm season ramps up, insurance issues are going to hit transactions harder and faster. Buyers getting cold feet over carrier options. Sellers with undisclosed claims that surface during inspection. Post-closing disputes that circle back to you.</p>
+<p>Having a PA in your corner before those situations hit is a lot easier than scrambling after. I can move quickly when a deal is on the line — I understand timelines and I know how to get answers fast from carriers.</p>
+<p>If you want to set up a quick call and see if there's a fit, I'm easy to reach.</p>
+<p><strong>{PHONE}</strong> or reply here.</p>
+{btn(SITE_URL, 'Learn About Our Work')}
+<p>— Duncan Littlejohn<br>
+Public Adjuster, Robinhood Adjusting<br>
+Wellington, FL</p>
+""",
+        },
+    }
 
 
 # ─── sending ──────────────────────────────────────────────────────────────────
@@ -400,18 +491,24 @@ def main():
 
         # Determine which touch to send
         send_step = None
-        if drip_step == "" and age_days <= 2:
-            send_step = "day0"
-        elif drip_step == "day0" and 3 <= age_days <= 5:
+        if drip_step == "" and age_days < 1:
+            # Fresh signup — send confirmation
+            send_step = "confirm"
+        elif drip_step in ("", "confirm") and 3 <= age_days <= 5:
+            # Contacts that signed up before confirm step existed skip straight to day3
             send_step = "day3"
         elif drip_step == "day3" and 7 <= age_days <= 9:
             send_step = "day7"
+        elif drip_step == "day7" and 10 <= age_days <= 12:
+            send_step = "day10"
 
         if not send_step:
             skipped += 1
             continue
 
-        template = TEMPLATES.get((category, send_step))
+        # Build templates with this contact's email baked in for MC links
+        templates = TEMPLATES(email)
+        template = templates.get((category, send_step))
         if not template:
             log(f"  No template for ({category}, {send_step}) — skipping {email}")
             skipped += 1
