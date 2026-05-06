@@ -31,6 +31,10 @@ exports.handler = async function (event) {
   if (!token) {
     return { statusCode: 500, body: JSON.stringify({ error: "HUBSPOT_API_KEY not configured" }) };
   }
+  // temporary diagnostic — remove once confirmed working
+  if (event.queryStringParameters && event.queryStringParameters.debug === "1") {
+    return { statusCode: 200, body: JSON.stringify({ tokenLen: token.length, prefix: token.substring(0, 8) }) };
+  }
 
   const hs = makeHs(token);
 
