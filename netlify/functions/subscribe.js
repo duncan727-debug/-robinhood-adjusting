@@ -53,7 +53,7 @@ exports.handler = async function (event) {
   }
 
   async function addToList(listId, contactId) {
-    return hs("PUT", `/crm/v3/lists/${listId}/memberships/add`, { recordIdsToAdd: [contactId] });
+    return hs("PUT", `/crm/v3/lists/${listId}/memberships/add`, [contactId]);
   }
 
   const params = new URLSearchParams(event.body || "");

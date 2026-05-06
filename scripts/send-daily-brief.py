@@ -32,7 +32,7 @@ def load_credentials():
     content = CONFIG_FILE.read_text()
     # Gmail App Password
     m = re.search(r"Gmail App Password.*?:\s*([a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4})", content)
-    gmail_pw = m.group(1).replace(" ", "") if m else None
+    gmail_pw = m.group(1) if m else None
     if not gmail_pw:
         sys.exit("ERROR: Gmail App Password not found in config.")
     # HubSpot token — env var takes precedence
