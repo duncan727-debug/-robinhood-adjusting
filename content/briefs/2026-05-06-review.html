@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Brief Review — May 6, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0; background: #1a1a2e; font-family: Arial, sans-serif; }
+
+  /* Nav */
+  .nav { position: sticky; top: 0; z-index: 100; background: #0d1b2e; border-bottom: 3px solid #c9922a; padding: 0; display: flex; align-items: stretch; }
+  .nav-title { color: #c9922a; font-size: 13px; font-weight: bold; letter-spacing: 1px; padding: 12px 20px; border-right: 1px solid #1e3a5f; white-space: nowrap; }
+  .nav-links { display: flex; }
+  .nav-link { color: rgba(255,255,255,0.6); font-size: 13px; padding: 12px 18px; text-decoration: none; border-right: 1px solid #1e3a5f; transition: color 0.15s, background 0.15s; cursor: pointer; }
+  .nav-link:hover, .nav-link.active { color: #fff; background: rgba(201,146,42,0.15); }
+  .nav-badge { display: inline-block; background: #c41e3a; color: #fff; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+
+  /* Sections */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* Email preview wrapper */
+  .preview-outer { background: #f5f5f5; padding: 30px 16px; min-height: 100vh; }
+  .preview-label { max-width: 700px; margin: 0 auto 12px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+  .preview-label .segment-tag { font-weight: bold; letter-spacing: 1px; color: #888; text-transform: uppercase; }
+  .preview-label .filename { color: #aaa; font-family: monospace; }
+
+  .email-shell { max-width: 700px; margin: 0 auto; background: #fff; }
+  .email-header { background: #0f2d4a; padding: 28px 20px; text-align: center; border-bottom: 5px solid #c9922a; }
+  .email-header img { display: inline-block; max-width: 100%; height: auto; }
+  .email-date { color: rgba(255,255,255,0.5); font-family: Arial,sans-serif; font-size: 12px; letter-spacing: 1px; margin-top: 12px; }
+  .email-subject { color: rgba(255,255,255,0.85); font-family: Georgia, serif; font-size: 14px; margin-top: 8px; font-style: italic; }
+  .email-body { padding: 30px 28px; font-size: 15px; line-height: 1.75; color: #222; font-family: Georgia, 'Times New Roman', serif; }
+  .email-body h2 { color: #0f2d4a; font-size: 20px; margin: 16px 0 12px; }
+  .email-body h3 { color: #c41e3a; font-size: 11px; font-family: Arial,sans-serif; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 24px 0 8px; }
+  .email-body p { margin: 0 0 16px; }
+  .email-body strong { color: #0f2d4a; }
+  .email-body ul { padding-left: 20px; line-height: 2; margin: 12px 0; }
+  .email-body hr { border: none; border-top: 2px solid #eee; margin: 36px 0 24px; }
+  .email-body table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 20px 0; }
+  .email-body th { background: #0f2d4a; color: #fff; padding: 10px 12px; text-align: left; font-weight: bold; }
+  .email-body td { padding: 9px 12px; border-bottom: 1px solid #eee; }
+  .email-body tr:nth-child(even) { background: #f9f9f9; }
+  .email-body .callout { background: #f8f4ee; border-left: 4px solid #c41e3a; padding: 16px 20px; margin: 24px 0; }
+  .email-body .callout p { margin: 0; font-size: 15px; }
+  .email-body .callout strong { color: #0f2d4a; }
+  .email-body .sources { font-size: 12px; font-family: Arial,sans-serif; color: #888; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 10px; }
+  .email-body .sources-list { font-size: 12px; font-family: Arial,sans-serif; color: #666; padding-left: 18px; line-height: 2; }
+  .email-body .sources-list a { color: #c41e3a; }
+  .email-body .sources-list li { margin: 0; }
+  .email-footer { background: #1a1a1a; padding: 20px; text-align: center; border-top: 4px solid #c41e3a; }
+  .email-footer p { color: #999; font-size: 12px; margin: 0; }
+  .email-footer a { color: #c41e3a; }
+  .email-footer .unsub { color: #666; font-size: 11px; margin: 8px 0 0; }
+
+  @media (max-width: 900px) {
+    .preview-label { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-title">BRIEF REVIEW · MAY 6, 2026</div>
+  <div class="nav-links">
+    <a class="nav-link active" onclick="show('homeowner',this)">Homeowner <span class="nav-badge">HO</span></a>
+    <a class="nav-link" onclick="show('provider',this)">Service Provider <span class="nav-badge">SP</span></a>
+    <a class="nav-link" onclick="show('realestate',this)">Real Estate <span class="nav-badge">RE</span></a>
+  </div>
+</div>
+
+<!-- ── HOMEOWNER ─────────────────────────────────────────────────────────── -->
+<div class="section active" id="section-homeowner">
+<div class="preview-outer">
+  <div class="preview-label">
+    <span class="segment-tag">Homeowner / Renter</span>
+    <span class="filename">2026-05-06-homeowner.html → List 18 (1,092 words)</span>
+  </div>
+  <div class="email-shell">
+    <div class="email-header">
+      <img src="https://robinhoodadjusting.com/logo-dark.svg" alt="Robinhood Adjusting" width="280" height="60">
+      <div class="email-date">May 6, 2026</div>
+    </div>
+    <div class="email-body">
+      <h2 style="color:#0f2d4a;font-size:22px;margin:0 0 4px;font-family:Georgia,serif;">South Florida Property Intelligence</h2>
+      <p style="color:#c9922a;font-size:12px;font-family:Arial,sans-serif;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px;">Homeowner Edition</p>
+      <p style="color:#999;font-size:13px;font-family:Arial,sans-serif;margin:0 0 32px;border-bottom:1px solid #eee;padding-bottom:16px;">Wednesday, May 6, 2026 · Robinhood Adjusting · Wellington, FL</p>
+
+      <h3>Lead Story</h3>
+      <h2>26 Days Until Hurricane Season — Your Action Window Is Closing</h2>
+      <p>Atlantic Hurricane Season opens <strong>June 1</strong>. That's 26 days. Insurance companies pay attention to what's documented before a storm, not after — and the time to get that documentation done is now, while it's dry, while contractors are available, and while no one is rushing.</p>
+      <p>South Florida is in the middle of its best pre-season inspection window of the year. Highs are in the mid-to-upper 90s with no meaningful rain expected through mid-May. Roof inspections, impact shutter tests, gutter clearance, and exterior repairs can all be scheduled and completed before June 1 with minimal friction. That changes once the season opens and a single tropical system puts every mitigation contractor on backorder.</p>
+      <p>This year's Colorado State University forecast calls for a below-average season — <strong>13 named storms vs. the 19-storm average</strong>, and 2 major hurricanes vs. the historical average of 3. Below-average is not the same as no risk. Florida-specific modeling shows a <strong>74% probability that a named storm passes within 50 miles of the state</strong> this season, and a <strong>15% chance of a major hurricane making East Coast landfall</strong>. "Below average" means fewer storms, not zero storms.</p>
+
+      <div style="margin:24px 0;text-align:center;">
+        <img src="https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png" alt="NHC 5-Day Atlantic Tropical Weather Outlook — May 6, 2026" width="100%" style="max-width:560px;border:1px solid #e0e0e0;display:inline-block;">
+        <p style="color:#888;font-size:11px;font-family:Arial,sans-serif;margin:6px 0 0;">Source: NOAA National Hurricane Center · 5-Day Atlantic Tropical Weather Outlook · Updated daily</p>
+      </div>
+
+      <h3>Insurance Carriers & Rates</h3>
+      <h2>Rate Relief Is Real — But Read the Fine Print</h2>
+      <p>Multiple carriers have filed for homeowner rate decreases in spring 2026, and the relief is spreading to auto insurance as well. The headline numbers look good. What often gets buried: rate adjustments frequently come with quiet changes to exclusions, sublimits, and wind deductible structures in the same renewal documents. Before you celebrate the lower premium, read what changed.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Carrier</th>
+            <th style="text-align:center;">Rate Change</th>
+            <th>Coverage Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f9f9f9;">
+            <td>Citizens Property Insurance</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">−8.7%</td>
+            <td>Homeowner</td>
+            <td>Approved · Spring 2026</td>
+          </tr>
+          <tr>
+            <td>Florida Peninsula Insurance</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">−8.2%</td>
+            <td>Homeowner</td>
+            <td>Filed · Pending OIR approval</td>
+          </tr>
+          <tr style="background:#f9f9f9;">
+            <td>USAA</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">−7.0%</td>
+            <td>Auto</td>
+            <td>Effective May 2026 · $125M+ FL savings</td>
+          </tr>
+          <tr>
+            <td>State Farm</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">−10.0%</td>
+            <td>Auto</td>
+            <td>OIR approved</td>
+          </tr>
+          <tr style="background:#f9f9f9;">
+            <td>AAA</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">−15.0%</td>
+            <td>Auto (cumulative)</td>
+            <td>Three separate decreases, past 12 months</td>
+          </tr>
+          <tr>
+            <td>GEICO</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">Decrease</td>
+            <td>Auto</td>
+            <td>700K+ FL customers · Effective April 2026</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:13px;color:#666;font-family:Arial,sans-serif;">Source: Florida Office of Insurance Regulation (OIR) · Individual carrier filings · Spring 2026</p>
+      <p>If you're receiving multiple renewal notifications this season, that's the market working in your favor. Use the window to review what each policy actually covers — wind vs. water damage, debris removal limits, ALE (additional living expenses) in case your home is uninhabitable after a storm. Those line items matter more than the premium when a claim gets filed.</p>
+
+      <h3>Regulatory Update</h3>
+      <h2>HB 815: New Protections If Your Insurer Cites Your Roof</h2>
+      <p>A bill advancing through the Florida Legislature — <strong>House Bill 815</strong> — would prohibit insurance carriers from refusing to renew your homeowner's policy solely because of your roof's age, without first conducting an actual physical inspection. It also establishes your right as a homeowner to initiate an independent inspection before a carrier-mandated replacement is required.</p>
+      <p>Why this matters now: carriers that are aware of pending legislation sometimes accelerate non-renewal decisions before new consumer protections take effect. If you've received a non-renewal notice or a conditional renewal citing roof age, don't treat it as final. An independent inspection — often ordered through a licensed public adjuster or a licensed roofing contractor — frequently changes the carrier's position.</p>
+
+      <div class="callout">
+        <p><strong>If your insurer cited roof age on your last renewal:</strong> Request the specific inspection criteria they used. You are entitled to know. If no physical inspection was conducted, that's relevant to a dispute. Reply to this email or call 561-772-7528 — this is a conversation worth having before June 1.</p>
+      </div>
+
+      <h3>Action Item</h3>
+      <h2>Contractor Window Is Closing — Book Pre-Season Work This Month</h2>
+      <p>Ninety percent of Florida roofing contractors report that finding skilled labor is their single biggest business constraint in 2026. Crews that will be completely booked in June are still accepting May appointments. The math is straightforward: pre-season scheduling is easier, faster, and less expensive than post-storm emergency scheduling under a declared disaster.</p>
+      <p>If you need roof repairs, impact window installation, gutter work, or mitigation improvements, the week of May 6–13 is the optimal window. Dry weather, available crews, and no storm urgency creating price pressure. After June 1, all of those conditions change simultaneously.</p>
+
+      <hr>
+      <p class="sources">Sources & Further Reading</p>
+      <ul class="sources-list">
+        <li><a href="https://tropical.colostate.edu/Forecast/2026-04.pdf">Colorado State University 2026 Atlantic Hurricane Forecast (April Update)</a></li>
+        <li><a href="https://www.nhc.noaa.gov">NOAA National Hurricane Center — Tropical Weather Outlook</a></li>
+        <li><a href="https://floir.gov/">Florida OIR — Commissioner Yaworsky on Auto Rate Decreases (March 2026)</a></li>
+        <li><a href="https://www.nbcmiami.com/weather/">South Florida Weather Forecast — NBC 6 (May 6, 2026)</a></li>
+        <li><a href="https://www.floridaroof.com/">Florida Roof Association — Addressing the Workforce Shortage</a></li>
+      </ul>
+
+      <hr>
+      <p style="font-size:14px;color:#555;">Questions about your coverage, a renewal notice, or an open claim? Duncan is available directly — <strong>561-772-7528</strong> or reply here. No forms, no commitment.</p>
+    </div>
+    <div class="email-footer">
+      <p>Robinhood Adjusting · Wellington, FL · <a href="https://robinhoodadjusting.com">robinhoodadjusting.com</a></p>
+      <p class="unsub">You're receiving this because you subscribed at robinhoodadjusting.com. To unsubscribe, reply with "unsubscribe" in the subject line.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── SERVICE PROVIDER ──────────────────────────────────────────────────── -->
+<div class="section" id="section-provider">
+<div class="preview-outer">
+  <div class="preview-label">
+    <span class="segment-tag">Service Provider / Contractor</span>
+    <span class="filename">2026-05-06-service-provider.html → List 19 (1,119 words)</span>
+  </div>
+  <div class="email-shell">
+    <div class="email-header">
+      <img src="https://robinhoodadjusting.com/logo-dark.svg" alt="Robinhood Adjusting" width="280" height="60">
+      <div class="email-date">May 6, 2026</div>
+    </div>
+    <div class="email-body">
+      <h2 style="color:#0f2d4a;font-size:22px;margin:0 0 4px;font-family:Georgia,serif;">South Florida Trade Professional Brief</h2>
+      <p style="color:#c9922a;font-size:12px;font-family:Arial,sans-serif;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px;">Service Provider Edition</p>
+      <p style="color:#999;font-size:13px;font-family:Arial,sans-serif;margin:0 0 32px;border-bottom:1px solid #eee;padding-bottom:16px;">Wednesday, May 6, 2026 · Robinhood Adjusting · Wellington, FL</p>
+
+      <h3>Lead Story</h3>
+      <h2>26 Days to Fill Your Pre-Season Pipeline — The Most Efficient Window of the Year</h2>
+      <p>Hurricane Season opens <strong>June 1</strong>. The stretch between now and May 31 is historically the most productive period for insurance-adjacent mitigation work: homeowners are motivated, inspection contingencies from spring real estate transactions are closing, and carrier scrutiny on repair scopes hasn't spiked yet. This is the window where the most work gets scheduled, started, and completed before demand turns reactive.</p>
+      <p>Current conditions favor scheduling. Highs are in the mid-to-upper 90s with minimal rain forecast through mid-May — ideal for roofing, exterior work, impact window installation, and any other outdoor scope. If your crews aren't booked through late May, you're leaving the easiest part of the year unaddressed.</p>
+
+      <div style="margin:24px 0;text-align:center;">
+        <img src="https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png" alt="NHC 5-Day Atlantic Tropical Weather Outlook" width="100%" style="max-width:560px;border:1px solid #e0e0e0;display:inline-block;">
+        <p style="color:#888;font-size:11px;font-family:Arial,sans-serif;margin:6px 0 0;">NOAA National Hurricane Center · 5-Day Atlantic Tropical Weather Outlook · Updated daily</p>
+      </div>
+
+      <h3>Workforce</h3>
+      <h2>90% of Roofers Cite Labor as #1 Constraint — and It's Not Getting Better Before June</h2>
+      <p>Industry data from the Florida Roof Association and Roofing Contractor Magazine confirms what most shop owners already know: <strong>nine out of ten Florida roofing contractors identify finding skilled labor as their single biggest business problem</strong> heading into the 2026 season.</p>
+      <p>The firms pulling ahead aren't solving this with more job postings. They're treating it as a systems problem:</p>
+      <ul>
+        <li><strong>Structured training paths</strong> that retain crew members rather than cycling through new hires</li>
+        <li><strong>AI-assisted scheduling tools</strong> that prevent crew overbooking and surface fatigue-risk alerts</li>
+        <li><strong>Wage competitiveness built into every contract</strong> — not offered reactively when workers threaten to leave</li>
+        <li><strong>Apprenticeship pipeline investment</strong> to build 12–18 month lead time on skilled capacity</li>
+      </ul>
+      <p>The offseason — right now, before June 1 — is the last low-pressure window to make structural changes. If you're still running on reactive hiring when the first named storm activates, you'll be watching jobs go to whoever has crews.</p>
+
+      <h3>Market Intelligence</h3>
+      <h2>Martin County: 35% Sales Surge Creates Contractor Pipeline — With an Insurance Catch</h2>
+      <p>Martin County's real estate market is running hot. Single-family pending sales jumped <strong>35.3% year-over-year in March 2026</strong>. That transaction volume creates a direct, near-term demand signal for contractors: inspection contingencies, pre-closing repair negotiations, and mitigation work tied to purchase agreements are peaking right now.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th style="text-align:center;">Value</th>
+            <th>Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f9f9f9;">
+            <td>Single-Family Pending Sales (YoY)</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">+35.3%</td>
+            <td>March 2026 vs. March 2025</td>
+          </tr>
+          <tr>
+            <td>Condo/Townhome Pending Sales (YoY)</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">+8.4%</td>
+            <td>March 2026 vs. March 2025</td>
+          </tr>
+          <tr style="background:#f9f9f9;">
+            <td>2026 Insurance Premium Outlook</td>
+            <td style="text-align:center;color:#c41e3a;font-weight:bold;">Highest in FL</td>
+            <td>Counter to statewide rate relief trend</td>
+          </tr>
+          <tr>
+            <td>Contractor Opportunity</td>
+            <td style="text-align:center;font-weight:bold;">High</td>
+            <td>Mitigation tied to premium reduction = strong pitch</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Martin County is projected to see the <strong>highest premium increases in Florida for 2026</strong>, running against the statewide relief trend. Contractors who understand the connection between documented mitigation work and carrier premium calculations have a concrete value proposition that extends well beyond the job itself.</p>
+
+      <h3>Opportunity Segment</h3>
+      <h2>$242M in Palm Beach Luxury Contracts Last Week — High-Margin Mitigation Work Available</h2>
+      <p>Palm Beach County saw <strong>25 luxury contracts (April 27–May 3)</strong> totaling $242.3M in asking volume — up from 20 contracts the prior week. Properties in this range require documented mitigation, code-compliant installations, and carrier-ready photo documentation. These clients don't shop on price — they shop on reliability and referrals from professionals in the transaction chain.</p>
+
+      <div class="callout">
+        <p><strong>Referral arrangement or directory listing:</strong> If you work in roofing, restoration, mitigation, or general contracting in South Florida and want to discuss a referral relationship or get listed in the trusted provider directory, reply here. No paperwork, no exclusivity.</p>
+      </div>
+
+      <hr>
+      <p class="sources">Sources & Further Reading</p>
+      <ul class="sources-list">
+        <li><a href="https://www.floridaroof.com/">Florida Roof Association — Addressing the Workforce Shortage</a></li>
+        <li><a href="https://www.roofingcontractor.com/">Roofing Contractor Magazine — Labor Shortages Intensify (2026)</a></li>
+        <li><a href="https://www.adamsandreese.com/">Adams & Reese — Roofing Industry Outlook 2026: Key Challenges</a></li>
+        <li><a href="https://therealdeal.com/miami/">The Real Deal Miami — Boca Raton $80M Spec Mansion Leads Contracts (May 5, 2026)</a></li>
+        <li><a href="https://tropical.colostate.edu/Forecast/2026-04.pdf">Colorado State University 2026 Atlantic Hurricane Forecast</a></li>
+        <li><a href="https://www.pamartinfl.gov/">Martin County Property Appraiser — Market Data</a></li>
+      </ul>
+
+      <hr>
+      <p style="font-size:14px;color:#555;">Want to talk referrals, directory listing, or have a client situation to discuss? Reply here or call Duncan directly — <strong>561-772-7528</strong>.</p>
+    </div>
+    <div class="email-footer">
+      <p>Robinhood Adjusting · Wellington, FL · <a href="https://robinhoodadjusting.com">robinhoodadjusting.com</a></p>
+      <p class="unsub">You're receiving this because you subscribed at robinhoodadjusting.com. To unsubscribe, reply with "unsubscribe" in the subject line.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── REAL ESTATE ────────────────────────────────────────────────────────── -->
+<div class="section" id="section-realestate">
+<div class="preview-outer">
+  <div class="preview-label">
+    <span class="segment-tag">Real Estate Professional</span>
+    <span class="filename">2026-05-06-real-estate.html → List 20 (1,220 words)</span>
+  </div>
+  <div class="email-shell">
+    <div class="email-header">
+      <img src="https://robinhoodadjusting.com/logo-dark.svg" alt="Robinhood Adjusting" width="280" height="60">
+      <div class="email-date">May 6, 2026</div>
+    </div>
+    <div class="email-body">
+      <h2 style="color:#0f2d4a;font-size:22px;margin:0 0 4px;font-family:Georgia,serif;">South Florida Real Estate &amp; Insurance Brief</h2>
+      <p style="color:#c9922a;font-size:12px;font-family:Arial,sans-serif;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px;">Real Estate Professional Edition</p>
+      <p style="color:#999;font-size:13px;font-family:Arial,sans-serif;margin:0 0 32px;border-bottom:1px solid #eee;padding-bottom:16px;">Wednesday, May 6, 2026 · Robinhood Adjusting · Wellington, FL</p>
+
+      <h3>Lead Story</h3>
+      <h2>Miami + Broward Realtor Merger Takes Effect May 11 — What Changes for Agents</h2>
+      <p>In five days, the Miami Association of Realtors and Broward, Palm Beaches &amp; St. Lucie Realtors officially merge into <strong>Miami and South Florida REALTORS®</strong> — the largest local Realtor association in the world with <strong>93,000 members</strong>. MLS systems, transaction reporting, marketing infrastructure consolidate across four counties into a single operating platform.</p>
+      <p>The practical implications for your business: cross-county listing data becomes unified, which simplifies pricing comparables. Transaction reporting standardizes, which should reduce administrative friction on deals crossing county lines. For market intelligence purposes — particularly when analyzing insurance-sensitive inventory — consolidated data produces cleaner signals on pricing trends and days on market.</p>
+
+      <h3>Market Alert</h3>
+      <h2>Martin County: Strong Demand + Volatile Insurance = Deals at Risk</h2>
+      <p>Martin County's transaction volume is surging. Single-family pending sales jumped <strong>35.3% year-over-year in March 2026</strong>. But the insurance picture contradicts statewide trends — Martin County is projected to see <strong>the highest homeowner premium increases in Florida for 2026</strong>.</p>
+      <p>This creates a specific risk in Martin County transactions: buyers arriving with assumptions about Florida's improving insurance market may get a county-specific surprise. If premium affordability is baked into their qualification math, a Martin County insurance quote significantly higher than expected can stall a deal that looked clean on paper.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Martin County Snapshot</th>
+            <th style="text-align:center;">Data</th>
+            <th>Implication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f9f9f9;">
+            <td>SF Pending Sales YoY Change</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">+35.3%</td>
+            <td>Strong demand; deals in pipeline now</td>
+          </tr>
+          <tr>
+            <td>Condo/Townhome Pending Sales YoY</td>
+            <td style="text-align:center;color:#1a7a1a;font-weight:bold;">+8.4%</td>
+            <td>Broader demand across property types</td>
+          </tr>
+          <tr style="background:#f9f9f9;">
+            <td>2026 Homeowner Premium Outlook</td>
+            <td style="text-align:center;color:#c41e3a;font-weight:bold;">Highest in FL</td>
+            <td>Counters statewide narrative; buyer risk</td>
+          </tr>
+          <tr>
+            <td>Best Practice for Agents</td>
+            <td style="text-align:center;font-weight:bold;">Pre-contract</td>
+            <td>Get insurance estimate before offer stage</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The practical fix: bring insurance into the conversation before the offer, not at closing. A pre-contract insurance estimate for Martin County properties takes 30 minutes and can prevent a closing-table surprise that unwinds weeks of work.</p>
+
+      <h3>Transaction Intelligence</h3>
+      <h2>$242M in Palm Beach Luxury Volume Last Week — The HNW Insurance Opportunity</h2>
+      <p>Palm Beach County's luxury segment continues to accelerate. <strong>25 contracts (April 27–May 3)</strong> totaling $242.3M — up from 20 contracts the prior week.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th style="text-align:right;">Price</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f9f9f9;">
+            <td>6465 Pine Tree Dr Circle, Miami Beach</td>
+            <td style="text-align:right;font-weight:bold;">$12.2M</td>
+            <td>Waterfront; highest recent SF sale</td>
+          </tr>
+          <tr>
+            <td>13791 Baycliff Drive, North Palm Beach</td>
+            <td style="text-align:right;font-weight:bold;">$10.0M</td>
+            <td>Purchased at $4.9M in 2017 — 104% appreciation</td>
+          </tr>
+          <tr style="background:#f9f9f9;">
+            <td>The Prestige at Palm Aire, Pompano Beach</td>
+            <td style="text-align:right;font-weight:bold;">$25.9M</td>
+            <td>39-unit rental community</td>
+          </tr>
+          <tr>
+            <td>2500 East Maya Palm Dr, Boca Raton (18,300 SF)</td>
+            <td style="text-align:right;font-weight:bold;">$80.0M ask</td>
+            <td>Listed; would shatter Boca price record</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Buyers in the $1M–$3M+ range — particularly out-of-state relocators — are the highest-value insurance referral segment. They're closing on complex risk profiles, zero tolerance for claims surprises. A PA introduction at closing takes two minutes and creates a long-term referral relationship.</p>
+
+      <h3>Regulatory</h3>
+      <h2>Legislature Pausing Major Insurance Reform — Use This as a Buyer Confidence Signal</h2>
+      <p>Florida Senate President Ben Albritton has confirmed: <strong>no major property insurance overhaul expected in the 2026 legislative session</strong>. The 2022–2023 reform package is producing measurable results — litigation down 35% since 2021, reinsurance costs normalizing, carriers returning.</p>
+      <p>For transactions: buyers who remain hesitant based on 2022–2024 headlines are working from outdated data. The rate relief is real, the legislative environment is stable, carriers are adding capacity. This is a concrete counter-narrative you can deploy with confidence.</p>
+
+      <div class="callout">
+        <p><strong>Hurricane Season in 26 Days — The Closing Timeline Conversation</strong></p>
+        <p>Any transaction closing in June or July should have the insurance conversation now. Carrier binding windows tighten when named storms are active. Colorado State projects 74% probability that a named storm passes within 50 miles of Florida. Start the conversation early.</p>
+      </div>
+
+      <hr>
+      <p class="sources">Sources & Further Reading</p>
+      <ul class="sources-list">
+        <li><a href="https://www.wlrn.org/">WLRN — Florida Realtor Associations Merge (April 30, 2026)</a></li>
+        <li><a href="https://therealdeal.com/miami/">The Real Deal Miami — Boca Raton $80M Spec Mansion Leads Contracts (May 5, 2026)</a></li>
+        <li><a href="https://www.miamirealtors.com/">Miami REALTORS® — Market Data (May 2026)</a></li>
+        <li><a href="https://www.hklaw.com/">Holland & Knight — 2026 Florida Legislative Session Insurance Outlook</a></li>
+        <li><a href="https://www.floridarealtors.org/">Florida Realtors — Property Insurance Reform Summary</a></li>
+        <li><a href="https://tropical.colostate.edu/Forecast/2026-04.pdf">Colorado State University 2026 Atlantic Hurricane Forecast</a></li>
+        <li><a href="https://www.wptv.com/">WPTV — Martin County / St. Lucie Real Estate Market (2026)</a></li>
+      </ul>
+
+      <hr>
+      <p style="font-size:14px;color:#555;">Have a client with an open claim or insurance issue affecting a deal? Duncan can assess same-day — <strong>561-772-7528</strong> or reply here.</p>
+    </div>
+    <div class="email-footer">
+      <p>Robinhood Adjusting · Wellington, FL · <a href="https://robinhoodadjusting.com">robinhoodadjusting.com</a></p>
+      <p class="unsub">You're receiving this because you subscribed at robinhoodadjusting.com. To unsubscribe, reply with "unsubscribe" in the subject line.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
