@@ -6,6 +6,7 @@ Status: HubSpot native email active, Beehiiv discontinued
 1. EMAIL
    - Primary: duncanlittlejohn727@gmail.com
    - Use: Main business email, newsletter signups
+   - Gmail App Password (newsletter SMTP): kjzt psqo obev cabc
 
 2. NAMECHEAP (Domain Registrar)
    - Email: duncanlittlejohn7272@gmail.com

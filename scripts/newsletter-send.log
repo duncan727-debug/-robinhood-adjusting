@@ -1,0 +1,32 @@
+[2026-05-04 17:38] === Daily brief send start: 2026-05-04 ===
+[2026-05-04 17:38] ERROR: No HubSpot list IDs found in config. Run setup-hubspot-lists.py first.
+[2026-05-04 17:38] === Daily brief send start: 2026-05-04 ===
+[2026-05-04 17:38] Loaded 3 subscriber lists: HUBSPOT_LIST_HOMEOWNERS, HUBSPOT_LIST_SERVICE_PROVIDERS, HUBSPOT_LIST_RE_PROFESSIONALS
+[2026-05-04 17:38] Loaded brief HTML for 2026-05-04
+[2026-05-04 17:38] Creating HubSpot marketing email...
+[2026-05-04 17:38] Email created: ID 341088492220
+[2026-05-04 17:38] Sending email to subscriber lists...
+[2026-05-04 17:38] ERROR: Failed to send email: 404 {"raw": "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n<title>Error 404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Resource not found</p>\n</body>\n</html>\n"}
+[2026-05-04 17:39] === Daily brief send start: 2026-05-04 ===
+[2026-05-04 17:39] Loaded 3 subscriber lists: HUBSPOT_LIST_HOMEOWNERS, HUBSPOT_LIST_SERVICE_PROVIDERS, HUBSPOT_LIST_RE_PROFESSIONALS
+[2026-05-04 17:39] Loaded brief HTML for 2026-05-04
+[2026-05-04 17:39] Creating HubSpot marketing email...
+[2026-05-04 17:39] ERROR: Failed to create email: 400 {"correlationId": "019df4ee-d04f-7ea6-830e-e0d2e9338783", "message": "Invalid input JSON on line 1, column 12070: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)", "status": "error"}
+[2026-05-04 17:39] === Daily brief send start: 2026-05-04 ===
+[2026-05-04 17:39] Loaded 3 subscriber lists: HUBSPOT_LIST_HOMEOWNERS, HUBSPOT_LIST_SERVICE_PROVIDERS, HUBSPOT_LIST_RE_PROFESSIONALS
+[2026-05-04 17:39] Loaded brief HTML for 2026-05-04
+[2026-05-04 17:39] Creating HubSpot marketing email...
+[2026-05-04 17:39] ERROR: Failed to create email: 400 {"correlationId": "019df4ee-fe02-75dd-b060-eb9c2aff8785", "message": "Invalid input JSON on line 1, column 12068: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)", "status": "error"}
+[2026-05-04 18:00] === Daily brief send start: 2026-05-04 ===
+[2026-05-04 18:00] Loaded brief for 2026-05-04
+[2026-05-04 18:00] Fetched 0 subscribers from HubSpot lists
+[2026-05-04 18:00] No subscribers yet — skipping send. Will retry tomorrow.
+[2026-05-04 18:01] === Daily brief send start: 2026-05-04 ===
+[2026-05-04 18:01] Loaded brief for 2026-05-04
+[2026-05-04 18:01] Fetched 0 subscribers from HubSpot lists
+[2026-05-04 18:01] No subscribers yet — skipping send. Will retry tomorrow.
+[2026-05-05 09:00] === Daily brief send start: 2026-05-05 ===
+[2026-05-05 09:00] Loaded brief for 2026-05-05
+[2026-05-05 09:00] Fetched 0 subscribers from HubSpot lists
+[2026-05-05 09:00] No subscribers yet — skipping send. Will retry tomorrow.
+[2026-05-05 09:00] SUCCESS: Daily brief send executed. 0 subscribers — send skipped (waiting for subscriber list population).
