@@ -19,7 +19,50 @@ All templates include CAN-SPAM opt-out language. Personalization uses placeholde
 
 ---
 
-## ROOFER — Initial
+---
+
+## LISTING-FIRST INITIAL — All Trades (USE THIS FOR COLD OUTREACH)
+
+**Subject:** Free listing for {{org_name}} — South Florida provider directory
+
+Hi {{contact_name}},
+
+I'm Duncan Littlejohn, a licensed public adjuster based in Wellington, FL. I run a free resource for South Florida homeowners called the Robinhood Adjusting Provider Directory — a vetted list of tradespeople I recommend to clients after property claims.
+
+I came across {{org_name}} and would like to feature your business in the Palm Beach County section under {{category}}. It's completely free — no pitch, no strings. You'd get exposure to homeowners in the area who specifically need {{category}} work after a claim situation.
+
+All I need is to confirm a few details:
+- Business name and service area
+- Best contact number
+- Website (if you have one)
+
+If you'd like to be listed, just reply with those details and I'll add you. Takes 30 seconds on your end.
+
+Best,
+Duncan Littlejohn
+Public Adjuster · Robinhood Adjusting · Wellington, FL
+561-772-7528 · robinhoodadjusting.com/providers
+
+If you'd prefer not to hear from me, just say the word.
+
+---
+
+## LISTING-FIRST FOLLOWUP — No response after 5 days
+
+**Subject:** Still happy to list {{org_name}} — just need 30 seconds
+
+Hi {{contact_name}},
+
+Following up on my note from last week. I wanted to feature {{org_name}} in our Palm Beach County provider directory — it's free and takes 30 seconds to confirm.
+
+If it's not a fit, no problem at all — just let me know.
+
+Best,
+Duncan · 561-772-7528
+
+---
+
+## ROOFER — Initial (LEGACY — use Listing-First above instead)
 
 **Subject:** Collaboration Opportunity — {{contact_name}} at {{org_name}}
 

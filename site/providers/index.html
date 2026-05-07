@@ -104,6 +104,38 @@
     footer { background:var(--navy); color:rgba(255,255,255,.5); padding:28px 40px; font-family:Arial,sans-serif; font-size:12px; text-align:center; margin-top:60px; }
     footer a { color:var(--gold); }
 
+    /* ── GET LISTED MODAL ── */
+    .modal-overlay {
+      display:none; position:fixed; inset:0; background:rgba(0,0,0,.55);
+      z-index:1000; align-items:center; justify-content:center; padding:20px;
+    }
+    .modal-overlay.open { display:flex; }
+    .modal {
+      background:var(--white); border-radius:10px; max-width:520px; width:100%;
+      padding:36px 32px; position:relative; max-height:90vh; overflow-y:auto;
+    }
+    .modal h2 { font-size:22px; color:var(--navy); margin-bottom:6px; }
+    .modal .modal-sub { font-family:Arial,sans-serif; font-size:14px; color:var(--muted); margin-bottom:24px; }
+    .modal-close { position:absolute; top:16px; right:20px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--muted); line-height:1; }
+    .modal-close:hover { color:var(--text); }
+    .form-row { margin-bottom:16px; }
+    .form-row label { display:block; font-family:Arial,sans-serif; font-size:12px; font-weight:bold; color:var(--navy); letter-spacing:.5px; text-transform:uppercase; margin-bottom:5px; }
+    .form-row input, .form-row select {
+      width:100%; padding:10px 13px; border:1px solid var(--border); border-radius:4px;
+      font-family:Arial,sans-serif; font-size:14px; color:var(--text);
+      background:var(--white); outline:none; transition:border-color .15s;
+    }
+    .form-row input:focus, .form-row select:focus { border-color:var(--navy2); }
+    .form-row.half { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .form-row.half .form-field label { display:block; font-family:Arial,sans-serif; font-size:12px; font-weight:bold; color:var(--navy); letter-spacing:.5px; text-transform:uppercase; margin-bottom:5px; }
+    .modal-submit {
+      width:100%; background:var(--red); color:white; border:none; padding:13px;
+      border-radius:4px; font-family:Arial,sans-serif; font-size:15px; font-weight:bold;
+      cursor:pointer; margin-top:6px; transition:background .15s;
+    }
+    .modal-submit:hover { background:#a8182f; }
+    .modal-note { font-family:Arial,sans-serif; font-size:12px; color:var(--muted); text-align:center; margin-top:12px; }
+
     @media(max-width:800px) {
       .provider-grid { grid-template-columns:1fr 1fr; }
       .topbar { padding:12px 16px; }
@@ -721,7 +753,7 @@
         </div>
         <div class="empty-slot">
           <p>Know a great provider in this category?</p>
-          <a href="/PA-WEBSITE.html#contact">Refer them for listing →</a>
+          <a href="#" onclick="openListingModal(); return false;">Get your business listed →</a>
         </div>
       </div>
     </div>
@@ -790,11 +822,11 @@
         </div>
         <div class="empty-slot">
           <p>Know a great provider in this category?</p>
-          <a href="/PA-WEBSITE.html#contact">Refer them for listing →</a>
+          <a href="#" onclick="openListingModal(); return false;">Get your business listed →</a>
         </div>
         <div class="empty-slot">
           <p>Know a great provider in this category?</p>
-          <a href="/PA-WEBSITE.html#contact">Refer them for listing →</a>
+          <a href="#" onclick="openListingModal(); return false;">Get your business listed →</a>
         </div>
       </div>
     </div>
@@ -846,10 +878,63 @@
   </div>
 
   <div class="cta-bar">
-    <p>Are you a licensed service professional in Palm Beach County or surrounding areas? We evaluate providers for inclusion based on licensing, reputation, and client feedback.</p>
-    <a href="../PA-WEBSITE.html#contact">Request Listing Review</a>
+    <p>Are you a licensed service professional in Palm Beach County? Getting listed is free — we review every submission and add qualifying businesses within 1–2 days.</p>
+    <a href="#" onclick="openListingModal(); return false;">Get Listed Free →</a>
   </div>
 
+</div>
+
+<!-- GET LISTED MODAL -->
+<div class="modal-overlay" id="listingModal" onclick="if(event.target===this)closeListingModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeListingModal()">×</button>
+    <h2>Get Listed — It's Free</h2>
+    <p class="modal-sub">We review every submission personally. Qualifying businesses are added to the directory within 1–2 business days.</p>
+    <form action="/.netlify/functions/get-listed" method="POST">
+      <div class="form-row">
+        <label for="business_name">Business Name *</label>
+        <input type="text" id="business_name" name="business_name" required placeholder="Your company name">
+      </div>
+      <div class="form-row">
+        <label for="contact_name">Your Name *</label>
+        <input type="text" id="contact_name" name="contact_name" required placeholder="First and last name">
+      </div>
+      <div class="form-row">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="you@company.com">
+      </div>
+      <div class="form-row half">
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(561) 000-0000">
+        </div>
+        <div class="form-field">
+          <label for="city">City / Area</label>
+          <input type="text" id="city" name="city" placeholder="e.g. Boca Raton">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="trade">Trade / Category *</label>
+        <select id="trade" name="trade" required>
+          <option value="">Select your trade…</option>
+          <option value="Roofing">Roofing Contractor</option>
+          <option value="Restoration">Restoration / Remediation</option>
+          <option value="HVAC">AC / HVAC</option>
+          <option value="Plumbing">Plumbing</option>
+          <option value="General Contractor">General Contractor</option>
+          <option value="Property Management">Property Management</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="website">Website (optional)</label>
+        <input type="text" id="website" name="website" placeholder="yourcompany.com">
+      </div>
+      <button type="submit" class="modal-submit">Submit for Review</button>
+      <p class="modal-note">Free listing — no fees, no commitment. We'll contact you if we have questions.</p>
+    </form>
+  </div>
 </div>
 
 <footer>
@@ -866,6 +951,21 @@
     btn.classList.add('active');
     window.scrollTo({ top: document.querySelector('.hero').offsetHeight + 64, behavior: 'smooth' });
   }
+
+  function openListingModal() {
+    document.getElementById('listingModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeListingModal() {
+    document.getElementById('listingModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeListingModal(); });
+
+  // Also wire any "Get Listed" links in empty slots
+  document.querySelectorAll('a[href*="get-listed"], a[href*="Request Listing"]').forEach(a => {
+    a.addEventListener('click', e => { e.preventDefault(); openListingModal(); });
+  });
 
   document.querySelectorAll('.service-pill').forEach(pill => {
     pill.addEventListener('click', e => {
