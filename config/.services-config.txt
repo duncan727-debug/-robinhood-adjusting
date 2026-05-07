@@ -1,7 +1,7 @@
 ROBINHOOD ADJUSTING - SERVICES & CREDENTIALS
 ============================================
-Last updated: 2026-05-03
-Status: HubSpot native email active, Beehiiv discontinued
+Last updated: 2026-05-07
+Status: HubSpot native email active, Calendly booking integration active
 
 1. EMAIL
    - Primary: duncanlittlejohn727@gmail.com
@@ -43,6 +43,15 @@ Status: HubSpot native email active, Beehiiv discontinued
      HUBSPOT_LIST_RE_PROFESSIONALS=20
    - Netlify Env Vars needed: HUBSPOT_API_KEY, HUBSPOT_LIST_HOMEOWNERS, HUBSPOT_LIST_SERVICE_PROVIDERS, HUBSPOT_LIST_RE_PROFESSIONALS
 
+7. CALENDLY (Meeting Scheduling) - ACTIVE
+   - Email: duncanlittlejohn727@gmail.com
+   - Public Booking Link: https://calendly.com/duncanlittlejohn727/30min
+   - Duration: 30 minutes
+   - Integrated in: Day3 and Day7 drip emails
+   - Purpose: Low-friction alternative to "call me" CTAs
+
 ARCHITECTURE:
 GitHub (code) → Netlify (auto-deploy) → robinhoodadjusting.com (live)
 Namecheap DNS → Points to Netlify
+Email Flow: HubSpot CRM → Gmail SMTP (drip.py) → Subscriber inboxes
+Qualifying Link: Netlify function (qualify) → HubSpot contact property update
