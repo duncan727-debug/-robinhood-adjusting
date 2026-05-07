@@ -1,0 +1,26 @@
+[2026-05-06 09:00] === Drip sequence run start ===
+[2026-05-06 09:00] Found 3 subscriber contacts across all lists
+[2026-05-06 09:00] === Drip sequence run start ===
+[2026-05-06 09:00] Found 3 subscriber contacts across all lists
+Traceback (most recent call last):
+  File "/Users/victoria/.openclaw/workspace/scripts/drip.py", line 440, in <module>
+    sys.exit(0 if main() else 1)
+  File "/Users/victoria/.openclaw/workspace/scripts/drip.py", line 391, in main
+    first_name = props.get("firstname", "").strip() or "there"
+AttributeError: 'NoneType' object has no attribute 'strip'
+[2026-05-06 13:09] === Drip sequence run start ===
+[2026-05-06 13:09] Found 4 subscriber contacts across all lists
+[2026-05-06 13:09] === Drip sequence run start ===
+[2026-05-06 13:09] Found 4 subscriber contacts across all lists
+[2026-05-06 13:09] Done — sent: 0 | skipped: 4 | errors: 0
+[2026-05-06 13:09] === Drip run complete ===
+[2026-05-06 17:59] === Drip sequence run start ===
+[2026-05-06 17:59] Found 4 subscriber contacts across all lists
+[2026-05-06 17:59] === Drip sequence run start ===
+[2026-05-06 17:59] Found 4 subscriber contacts across all lists
+[2026-05-06 17:59] Done — sent: 0 | skipped: 4 | errors: 0
+[2026-05-06 17:59] === Drip run complete ===
+[2026-05-06 19:01] === Drip sequence run start ===
+[2026-05-06 19:01] Found 4 subscriber contacts across all lists
+[2026-05-06 19:01] Done — sent: 0 | skipped: 4 | errors: 0
+[2026-05-06 19:01] === Drip run complete ===

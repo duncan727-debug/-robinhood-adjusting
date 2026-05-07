@@ -30,3 +30,28 @@
 [2026-05-05 09:00] Fetched 0 subscribers from HubSpot lists
 [2026-05-05 09:00] No subscribers yet — skipping send. Will retry tomorrow.
 [2026-05-05 09:00] SUCCESS: Daily brief send executed. 0 subscribers — send skipped (waiting for subscriber list population).
+[2026-05-06 08:36] === Daily brief send start: 2026-05-06 ===
+[2026-05-06 08:36] Loaded brief for 2026-05-06
+[2026-05-06 08:36] Fetched 0 subscribers from HubSpot lists
+[2026-05-06 08:36] No subscribers yet — skipping send. Will retry tomorrow.
+[2026-05-06 08:42] === Daily brief send start: 2026-05-06 ===
+[2026-05-06 08:42] Loaded brief for 2026-05-06
+[2026-05-06 08:42] Fetched 3 subscribers from HubSpot lists
+[2026-05-06 08:42] Sending to 3 subscribers via Gmail SMTP...
+[2026-05-06 08:42] Sent: 3 | Failed: 0
+[2026-05-06 08:42] === Done ===
+[2026-05-06 09:00] === Daily brief send start: 2026-05-06 ===
+[2026-05-06 09:00] Loaded brief for 2026-05-06
+[2026-05-06 09:00] Fetched 3 subscribers from HubSpot lists
+[2026-05-06 09:00] Sending to 3 subscribers via Gmail SMTP...
+[2026-05-06 09:00] Sent: 3 | Failed: 0
+[2026-05-06 09:00] === Done ===
+[2026-05-06 09:00] ✓ Newsletter sent to 3 subscribers | Failed: 0
+[2026-05-06 13:05] === Daily brief send start: 2026-05-06 ===
+[2026-05-06 13:05]   [homeowner] 3 subscribers in list 18
+[2026-05-06 13:05]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-06 13:05]   [service-provider] 1 subscribers in list 19
+[2026-05-06 13:05]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-06 13:05]   [real-estate] 0 subscribers in list 20
+[2026-05-06 13:05]   [real-estate] No subscribers — skipping
+[2026-05-06 13:05] === Done — total sent: 4 | total failed: 0 ===
