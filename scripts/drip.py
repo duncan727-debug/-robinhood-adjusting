@@ -326,6 +326,7 @@ Wellington, FL · {PHONE}</p>
     ("both",                "Both referrals and partnerships"),
     ("directory-listing",   "Directory listing and market intelligence only"),
 ])}
+<p>Want to discuss this further before you decide? <a href="https://calendly.com/duncanlittlejohn727/30min" style="color:#c41e3a;">Pick a time to connect.</a></p>
 <p>— Duncan<br>
 {PHONE} · <a href="{SITE_URL}" style="color:#c41e3a;">{SITE_URL.replace('https://','')}</a></p>
 """,
@@ -337,8 +338,9 @@ Wellington, FL · {PHONE}</p>
 <p>Hi {name},</p>
 <p>I'd love to know more about your business and see where there's a natural fit.</p>
 <p>Trade professionals who work in insurance-adjacent situations are exactly the partners I want long-term relationships with. When my clients need your services, I want to send them to people I trust. When your clients have a claim situation, I want to be the person you think of first.</p>
-<p>If that sounds like a conversation worth having, reply here or call me directly.</p>
-<p><strong>{PHONE}</strong></p>
+<p>If that sounds like a conversation worth having, pick a time that works for you:</p>
+<p><a href="https://calendly.com/duncanlittlejohn727/30min" style="display:inline-block;background:#c41e3a;color:#fff;padding:12px 28px;text-decoration:none;border-radius:4px;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;">Book a time to talk</a></p>
+<p>Or reach out directly: <strong>{PHONE}</strong></p>
 <p>— Duncan Littlejohn<br>
 Public Adjuster, Robinhood Adjusting<br>
 Wellington, FL</p>
@@ -474,15 +476,15 @@ def main():
             errors += 1
             continue
 
-        email = props.get("email", "").strip().lower()
+        email = (props.get("email") or "").strip().lower()
         if not email:
             skipped += 1
             continue
 
-        first_name = props.get("firstname", "").strip() or "there"
-        category = props.get("newsletter_category", "").strip() or list_category
-        drip_step = props.get("drip_step", "").strip()
-        createdate = props.get("createdate", "")
+        first_name = ((props.get("firstname") or "").strip()) or "there"
+        category = ((props.get("newsletter_category") or "").strip()) or list_category
+        drip_step = (props.get("drip_step") or "").strip()
+        createdate = props.get("createdate") or ""
 
         age_days = days_since_signup(createdate)
         if age_days is None:
