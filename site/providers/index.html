@@ -13,19 +13,20 @@
     body { font-family: 'Georgia', serif; color: var(--text); background: var(--light); line-height: 1.7; }
     a { color: var(--red); text-decoration: none; }
 
-    /* ── TOPBAR ── */
     .topbar { background:var(--navy); color:white; padding:14px 40px; display:flex; justify-content:space-between; align-items:center; font-family:Arial,sans-serif; font-size:13px; }
     .topbar a { color:var(--gold); font-weight:bold; }
 
-    /* ── HERO ── */
     .hero { background:var(--navy2); color:white; padding:52px 40px 40px; border-bottom:5px solid var(--red); }
     .hero-inner { max-width:1100px; margin:0 auto; }
     .hero .kicker { font-family:Arial,sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
     .hero h1 { font-size:36px; margin-bottom:10px; }
-    .hero p { font-family:Arial,sans-serif; font-size:15px; color:rgba(255,255,255,.7); max-width:580px; margin-bottom:28px; }
+    .hero p { font-family:Arial,sans-serif; font-size:15px; color:rgba(255,255,255,.7); max-width:620px; margin-bottom:28px; }
+    .hero-stats { display:flex; gap:32px; flex-wrap:wrap; }
+    .stat { font-family:Arial,sans-serif; }
+    .stat strong { display:block; font-size:28px; color:var(--gold); line-height:1; }
+    .stat span { font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.5px; }
 
-    /* ── COUNTY TABS ── */
-    .county-scroll { display:flex; gap:0; overflow-x:auto; border-bottom:2px solid rgba(255,255,255,.15); }
+    .county-scroll { display:flex; gap:0; overflow-x:auto; border-bottom:2px solid rgba(255,255,255,.15); margin-top:32px; }
     .county-btn {
       padding:10px 22px; background:none; border:none; color:rgba(255,255,255,.6);
       font-family:Arial,sans-serif; font-size:13px; font-weight:bold; cursor:pointer;
@@ -34,11 +35,11 @@
     }
     .county-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
     .county-btn:hover { color:white; }
+    .county-btn.coming-soon { opacity:.45; cursor:default; }
+    .county-btn.coming-soon::after { content:" (soon)"; font-size:10px; font-weight:normal; }
 
-    /* ── LAYOUT ── */
     .page-inner { max-width:1100px; margin:0 auto; padding:40px 24px; }
 
-    /* ── SERVICE TYPE NAV ── */
     .service-nav { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
     .service-pill {
       padding:7px 16px; border-radius:100px; border:1px solid var(--border);
@@ -47,12 +48,17 @@
       text-decoration:none; display:inline-flex; align-items:center; gap:6px;
     }
     .service-pill:hover, .service-pill.active { background:var(--navy); color:white; border-color:var(--navy); }
+    .pill-count { background:var(--red); color:white; border-radius:100px; padding:1px 7px; font-size:11px; font-weight:bold; }
+    .service-pill:hover .pill-count, .service-pill.active .pill-count { background:var(--gold); color:var(--navy); }
 
-    /* ── COUNTY PANEL ── */
     .county-panel { display:none; }
     .county-panel.active { display:block; }
 
-    /* ── SERVICE SECTION ── */
+    .coming-soon-panel { text-align:center; padding:80px 24px; }
+    .coming-soon-panel h2 { font-size:22px; color:var(--navy); margin-bottom:12px; }
+    .coming-soon-panel p { font-family:Arial,sans-serif; font-size:15px; color:var(--muted); max-width:460px; margin:0 auto 20px; }
+    .coming-soon-panel a { font-family:Arial,sans-serif; font-size:14px; background:var(--red); color:white; padding:10px 22px; border-radius:4px; font-weight:bold; }
+
     .service-section { margin-bottom:48px; }
     .service-header {
       display:flex; align-items:center; gap:14px;
@@ -62,7 +68,6 @@
     .service-header h2 { font-size:22px; color:var(--navy); }
     .service-header .count { font-family:Arial,sans-serif; font-size:12px; color:var(--muted); margin-left:auto; }
 
-    /* ── PROVIDER GRID ── */
     .provider-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 
     .provider-card {
@@ -70,24 +75,17 @@
       padding:22px; transition:box-shadow .2s, border-color .2s;
     }
     .provider-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.08); border-color:var(--navy2); }
-
-    .provider-card.placeholder { border-style:dashed; opacity:.7; }
-
     .provider-name { font-size:16px; font-weight:bold; color:var(--navy); margin-bottom:4px; }
     .provider-area { font-family:Arial,sans-serif; font-size:12px; color:var(--muted); margin-bottom:12px; }
-    .provider-meta { font-family:Arial,sans-serif; font-size:13px; color:#444; line-height:1.8; }
+    .provider-meta { font-family:Arial,sans-serif; font-size:13px; color:#444; line-height:1.9; }
     .provider-meta span { display:block; }
     .provider-meta .label { color:var(--muted); font-size:11px; letter-spacing:.5px; text-transform:uppercase; }
-
     .provider-badge {
       display:inline-block; margin-top:10px; padding:3px 10px; border-radius:100px;
       font-family:Arial,sans-serif; font-size:11px; font-weight:bold; letter-spacing:.5px;
     }
     .badge-trusted { background:#e8f5e9; color:#1a6e3a; }
-    .badge-pending { background:#fff8e6; color:#7a5800; }
-    .badge-coming { background:var(--light); color:var(--muted); border:1px dashed var(--border); }
 
-    /* ── EMPTY STATE ── */
     .empty-slot {
       background:var(--white); border:1px dashed var(--border); border-radius:8px;
       padding:22px; text-align:center;
@@ -95,7 +93,6 @@
     .empty-slot p { font-family:Arial,sans-serif; font-size:13px; color:var(--muted); margin-bottom:10px; }
     .empty-slot a { font-family:Arial,sans-serif; font-size:13px; color:var(--red); font-weight:bold; }
 
-    /* ── CTA BAR ── */
     .cta-bar {
       background:var(--navy); color:white; border-radius:8px; padding:28px 32px;
       display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
@@ -112,6 +109,7 @@
       .topbar { padding:12px 16px; }
       .hero { padding:36px 20px 28px; }
       .hero h1 { font-size:26px; }
+      .hero-stats { gap:20px; }
     }
     @media(max-width:500px) {
       .provider-grid { grid-template-columns:1fr; }
@@ -129,146 +127,726 @@
   <div class="hero-inner">
     <div class="kicker">Resources</div>
     <h1>Trusted Service Providers</h1>
-    <p>Vetted professionals across South Florida — organized by county and trade. We refer these providers to our clients because we know their work.</p>
+    <p>Vetted professionals across South Florida — organized by county and trade. When our clients need reliable work done, these are the people we call.</p>
+    <div class="hero-stats">
+      <div class="stat"><strong>62</strong><span>Listed Providers</span></div>
+      <div class="stat"><strong>7</strong><span>Trade Categories</span></div>
+      <div class="stat"><strong>Palm Beach</strong><span>County · More Coming</span></div>
+    </div>
     <div class="county-scroll" id="county-tabs">
-      <button class="county-btn active" onclick="switchCounty('miami-dade',this)">Miami-Dade</button>
-      <button class="county-btn" onclick="switchCounty('broward',this)">Broward</button>
-      <button class="county-btn" onclick="switchCounty('palm-beach',this)">Palm Beach</button>
-      <button class="county-btn" onclick="switchCounty('martin',this)">Martin</button>
-      <button class="county-btn" onclick="switchCounty('st-lucie',this)">St. Lucie</button>
-      <button class="county-btn" onclick="switchCounty('indian-river',this)">Indian River</button>
-      <button class="county-btn" onclick="switchCounty('brevard',this)">Brevard</button>
+      <button class="county-btn active" onclick="switchCounty('palm-beach',this)">Palm Beach</button>
+      <button class="county-btn coming-soon" onclick="return false">Miami-Dade</button>
+      <button class="county-btn coming-soon" onclick="return false">Broward</button>
+      <button class="county-btn coming-soon" onclick="return false">Martin</button>
+      <button class="county-btn coming-soon" onclick="return false">St. Lucie</button>
+      <button class="county-btn coming-soon" onclick="return false">Indian River</button>
+      <button class="county-btn coming-soon" onclick="return false">Brevard</button>
     </div>
   </div>
 </div>
 
 <div class="page-inner">
 
-  <!-- ═══════════════ MIAMI-DADE ═══════════════ -->
-  <div id="county-miami-dade" class="county-panel active">
+  <!-- PALM BEACH COUNTY -->
+  <div id="county-palm-beach" class="county-panel active">
     <div class="service-nav">
-      <a href="#md-plumbing" class="service-pill">🔧 Plumbers</a>
-      <a href="#md-hvac" class="service-pill">❄️ AC / HVAC</a>
-      <a href="#md-gc" class="service-pill">🏗️ General Contractors</a>
-      <a href="#md-appliance" class="service-pill">🛠️ Appliance Repair</a>
-      <a href="#md-cleaning" class="service-pill">🧹 Cleaning Services</a>
-      <a href="#md-realestate" class="service-pill">🏠 Real Estate Agents</a>
-      <a href="#md-legal" class="service-pill">⚖️ Attorneys</a>
+      <a href="#pb-roofing" class="service-pill">🏠 Roofing Contractors <span class="pill-count">20</span></a>
+      <a href="#pb-restoration" class="service-pill">💧 Restoration & Remediation <span class="pill-count">6</span></a>
+      <a href="#pb-hvac" class="service-pill">❄️ AC / HVAC <span class="pill-count">18</span></a>
+      <a href="#pb-plumbing" class="service-pill">🔧 Plumbers <span class="pill-count">11</span></a>
+      <a href="#pb-gc" class="service-pill">🏗️ General Contractors <span class="pill-count">2</span></a>
+      <a href="#pb-propmgmt" class="service-pill">🏢 Property Management <span class="pill-count">4</span></a>
+      <a href="#pb-realestate" class="service-pill">🏡 Real Estate <span class="pill-count">1</span></a>
     </div>
 
-    <div id="md-plumbing" class="service-section">
-      <div class="service-header"><span class="service-icon">🔧</span><h2>Plumbers</h2><span class="count">Miami-Dade County</span></div>
+  <div id="pb-roofing" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">🏠</span>
+        <h2>Roofing Contractors</h2>
+        <span class="count">20 providers · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">TXB Roofing</div>
+          <div class="provider-area">Boca Raton, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 895-6009">(561) 895-6009</a></span>
+            <span><span class="label">Website</span> <a href="https://txbroof.com" target="_blank" rel="noopener">txbroof.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Coastal Roofing of South Florida</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 783-4185">(561) 783-4185</a></span>
+            <span><span class="label">Website</span> <a href="https://www.coastalroofingofsouthflorida.com" target="_blank" rel="noopener">www.coastalroofingofsouthflorida.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Neal Roofing & Waterproofing</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 872-3630">(561) 872-3630</a></span>
+            <span><span class="label">Website</span> <a href="https://nealrfg.com" target="_blank" rel="noopener">nealrfg.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Altec Roofing</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 559-8117">(561) 559-8117</a></span>
+            <span><span class="label">Website</span> <a href="https://www.altecroofing.com" target="_blank" rel="noopener">www.altecroofing.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Complete Roofing Solutions Inc.</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 848-7663">(561) 848-7663</a></span>
+            <span><span class="label">Website</span> <a href="https://www.my-roofer.com" target="_blank" rel="noopener">www.my-roofer.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Elite Roofing Inc</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 840-7663">(561) 840-7663</a></span>
+            <span><span class="label">Website</span> <a href="https://www.eliteroofs.com" target="_blank" rel="noopener">www.eliteroofs.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Ace Pro Roofing</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 203-3979">(561) 203-3979</a></span>
+            <span><span class="label">Website</span> <a href="https://www.aceproroof.com" target="_blank" rel="noopener">www.aceproroof.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Evans Roofing of the Palm Beaches</div>
+          <div class="provider-area">Boynton Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 663-1411">(561) 663-1411</a></span>
+            <span><span class="label">Website</span> <a href="https://www.evansroof.com" target="_blank" rel="noopener">www.evansroof.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Rainbow Roofing LLC</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 575-1898">(561) 575-1898</a></span>
+            <span><span class="label">Website</span> <a href="https://www.rainbowroofingexperts.com" target="_blank" rel="noopener">www.rainbowroofingexperts.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Roofer West Palm Beach</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 652-5876">(561) 652-5876</a></span>
+            
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">South Florida Roofing</div>
+          <div class="provider-area">Lake Park, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 863-9596">(561) 863-9596</a></span>
+            <span><span class="label">Website</span> <a href="https://www.southfloridaroofingfl.com" target="_blank" rel="noopener">www.southfloridaroofingfl.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">CLS Roofing</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 207-7693">(561) 207-7693</a></span>
+            <span><span class="label">Website</span> <a href="https://clsroofingllc.com" target="_blank" rel="noopener">clsroofingllc.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Superior Roofing of Florida, Inc.</div>
+          <div class="provider-area">Greenacres, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 788-7900">(561) 788-7900</a></span>
+            <span><span class="label">Website</span> <a href="https://superiorrooffl.com" target="_blank" rel="noopener">superiorrooffl.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Nik's Roofing LLC</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 888-4875">(561) 888-4875</a></span>
+            <span><span class="label">Website</span> <a href="https://niksroofing.com" target="_blank" rel="noopener">niksroofing.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Premier Roofer West Palm Beach</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 726-7804">(561) 726-7804</a></span>
+            <span><span class="label">Website</span> <a href="https://premierrooferwestpalmbeach.com" target="_blank" rel="noopener">premierrooferwestpalmbeach.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Florida Coast Contracting & Roofing</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 260-3126">(561) 260-3126</a></span>
+            <span><span class="label">Website</span> <a href="https://floridacoastcontracting.com" target="_blank" rel="noopener">floridacoastcontracting.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Top Roofer West Palm Beach</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 786-0802">(561) 786-0802</a></span>
+            <span><span class="label">Website</span> <a href="https://toprooferwestpalmbeach.com" target="_blank" rel="noopener">toprooferwestpalmbeach.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Leon Roofing Contractor</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 215-4293">(561) 215-4293</a></span>
+            <span><span class="label">Website</span> <a href="https://leonroofingpro.com" target="_blank" rel="noopener">leonroofingpro.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">A1 Pro Roofing, LLC</div>
+          <div class="provider-area">Greenacres, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(888) 332-7776">(888) 332-7776</a></span>
+            <span><span class="label">Website</span> <a href="https://www.a1proroofingllc.com" target="_blank" rel="noopener">www.a1proroofingllc.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Roofing Systems Of Florida, INC</div>
+          <div class="provider-area">Royal Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 795-5566">(561) 795-5566</a></span>
+            <span><span class="label">Website</span> <a href="https://www.myroofsystem.com" target="_blank" rel="noopener">www.myroofsystem.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
       </div>
     </div>
 
-    <div id="md-hvac" class="service-section">
-      <div class="service-header"><span class="service-icon">❄️</span><h2>AC / HVAC Repair</h2><span class="count">Miami-Dade County</span></div>
+  <div id="pb-restoration" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">💧</span>
+        <h2>Restoration & Remediation</h2>
+        <span class="count">6 providers · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">SuperClean Restoration Of The Palm Beaches LLC</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(844) 888-0837">(844) 888-0837</a></span>
+            <span><span class="label">Website</span> <a href="https://supercleanrestorationpb.com" target="_blank" rel="noopener">supercleanrestorationpb.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Thunder Restoration</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(866) 420-6653">(866) 420-6653</a></span>
+            <span><span class="label">Website</span> <a href="https://www.thunder-restoration.com" target="_blank" rel="noopener">www.thunder-restoration.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Paul Davis Restoration of Palm Beach County</div>
+          <div class="provider-area">Boynton Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 478-7272">(561) 478-7272</a></span>
+            <span><span class="label">Website</span> <a href="https://palm-beach-county-north.pauldavis.com" target="_blank" rel="noopener">palm-beach-county-north.pauldavis.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Titan Restoration Construction</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 924-1827">(561) 924-1827</a></span>
+            <span><span class="label">Website</span> <a href="https://titanrebuild.com" target="_blank" rel="noopener">titanrebuild.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Coastal Restoration Specialists</div>
+          <div class="provider-area">Lake Worth Corridor, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(772) 266-9818">(772) 266-9818</a></span>
+            <span><span class="label">Website</span> <a href="https://homerestorationflorida.com" target="_blank" rel="noopener">homerestorationflorida.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in West Palm Beach</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 425-6700">(561) 425-6700</a></span>
+            <span><span class="label">Website</span> <a href="https://rescueclean911.com" target="_blank" rel="noopener">rescueclean911.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
       </div>
     </div>
 
-    <div id="md-gc" class="service-section">
-      <div class="service-header"><span class="service-icon">🏗️</span><h2>General Contractors</h2><span class="count">Miami-Dade County</span></div>
+  <div id="pb-hvac" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">❄️</span>
+        <h2>AC / HVAC</h2>
+        <span class="count">18 providers · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">EDS Air Conditioning & Plumbing</div>
+          <div class="provider-area">Lake Worth Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 586-7090">(561) 586-7090</a></span>
+            <span><span class="label">Website</span> <a href="https://www.edsairconditioning.com" target="_blank" rel="noopener">www.edsairconditioning.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Ewing & Ewing Air Conditioning</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 220-6484">(561) 220-6484</a></span>
+            <span><span class="label">Website</span> <a href="https://www.ewingair.com" target="_blank" rel="noopener">www.ewingair.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Hopkins Air Conditioning</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 656-4870">(561) 656-4870</a></span>
+            <span><span class="label">Website</span> <a href="https://hopkinsair.com" target="_blank" rel="noopener">hopkinsair.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">First Degree Air Conditioning, Inc.</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 461-7411">(561) 461-7411</a></span>
+            <span><span class="label">Website</span> <a href="https://firstdegreeairconditioning.com" target="_blank" rel="noopener">firstdegreeairconditioning.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Shoreline Air Conditioning</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 202-9191">(561) 202-9191</a></span>
+            <span><span class="label">Website</span> <a href="https://shorelineac.com" target="_blank" rel="noopener">shorelineac.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Hilling Air Conditioning Inc</div>
+          <div class="provider-area">Greenacres, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 586-7003">(561) 586-7003</a></span>
+            <span><span class="label">Website</span> <a href="https://hillingairconditioning.com" target="_blank" rel="noopener">hillingairconditioning.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Swift Air Conditioning</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 685-8408">(561) 685-8408</a></span>
+            <span><span class="label">Website</span> <a href="https://swiftacfl.com" target="_blank" rel="noopener">swiftacfl.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">A.R. Williams Air Conditioning</div>
+          <div class="provider-area">Lake Worth Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 332-4576">(561) 332-4576</a></span>
+            <span><span class="label">Website</span> <a href="https://arwilliamsac.com" target="_blank" rel="noopener">arwilliamsac.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Gulfstream Cooling</div>
+          <div class="provider-area">Royal Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 531-3665">(561) 531-3665</a></span>
+            <span><span class="label">Website</span> <a href="https://gulfstreamcooling.com" target="_blank" rel="noopener">gulfstreamcooling.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Kyzar Air Conditioning</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 320-4572">(561) 320-4572</a></span>
+            <span><span class="label">Website</span> <a href="https://kyzarairconditioning.com" target="_blank" rel="noopener">kyzarairconditioning.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Pro-Tech Corp</div>
+          <div class="provider-area">Royal Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 793-0504">(561) 793-0504</a></span>
+            <span><span class="label">Website</span> <a href="https://protechair.com" target="_blank" rel="noopener">protechair.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Airworx Air Conditioning & Refrigeration, Inc.</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 249-7459">(561) 249-7459</a></span>
+            <span><span class="label">Website</span> <a href="https://www.airworxacr.com" target="_blank" rel="noopener">www.airworxacr.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Preferred Air Conditioning & Mechanical, LLC</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 202-1422">(561) 202-1422</a></span>
+            <span><span class="label">Website</span> <a href="https://getcold.com" target="_blank" rel="noopener">getcold.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">CountrySide Loxahatchee HVAC Repair</div>
+          <div class="provider-area">Loxahatchee, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 839-8734">(561) 839-8734</a></span>
+            <span><span class="label">Website</span> <a href="https://loxahatcheecountrysidehvac.com" target="_blank" rel="noopener">loxahatcheecountrysidehvac.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">HVAC and Plumbing West Palm Beach | Premier Comfort Services, Inc.</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 444-3670">(561) 444-3670</a></span>
+            <span><span class="label">Website</span> <a href="https://www.premiercomfortac.com" target="_blank" rel="noopener">www.premiercomfortac.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">A & H Services, Inc.</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 689-5353">(561) 689-5353</a></span>
+            <span><span class="label">Website</span> <a href="https://coolairspecialists.com" target="_blank" rel="noopener">coolairspecialists.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Lindstrom Air Conditioning & Plumbing</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 264-7402">(561) 264-7402</a></span>
+            <span><span class="label">Website</span> <a href="https://www.lindstromair.com" target="_blank" rel="noopener">www.lindstromair.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Cee Dee Air Conditioning, Inc</div>
+          <div class="provider-area">Royal Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 433-0550">(561) 433-0550</a></span>
+            <span><span class="label">Website</span> <a href="https://www.ceedeeac.com" target="_blank" rel="noopener">www.ceedeeac.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
       </div>
     </div>
 
-    <div id="md-appliance" class="service-section">
-      <div class="service-header"><span class="service-icon">🛠️</span><h2>Appliance Repair</h2><span class="count">Miami-Dade County</span></div>
+  <div id="pb-plumbing" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">🔧</span>
+        <h2>Plumbers</h2>
+        <span class="count">11 providers · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">Plumbtastic Plumbing</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 203-5549">(561) 203-5549</a></span>
+            <span><span class="label">Website</span> <a href="https://www.plumbtasticplumbing.com" target="_blank" rel="noopener">www.plumbtasticplumbing.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Palm Beach Plumbing & Rooter</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 363-2991">(561) 363-2991</a></span>
+            
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Next Era Plumbing</div>
+          <div class="provider-area">Loxahatchee, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 839-7569">(561) 839-7569</a></span>
+            
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">North County Plumbing, Inc.</div>
+          <div class="provider-area">Riviera Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 625-9414">(561) 625-9414</a></span>
+            <span><span class="label">Website</span> <a href="https://northcountyplumbing.org" target="_blank" rel="noopener">northcountyplumbing.org</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Copperhead Plumbing LLC</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 292-0232">(561) 292-0232</a></span>
+            <span><span class="label">Website</span> <a href="https://copperhead-plumbing.com" target="_blank" rel="noopener">copperhead-plumbing.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Fernandez Plumbing LLC</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 800-7381">(561) 800-7381</a></span>
+            <span><span class="label">Website</span> <a href="https://www.fernandezplumbingfl.com" target="_blank" rel="noopener">www.fernandezplumbingfl.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Flamingo Plumbing & Backflow</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 448-3200">(561) 448-3200</a></span>
+            <span><span class="label">Website</span> <a href="https://www.flamingoplumbing.com" target="_blank" rel="noopener">www.flamingoplumbing.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Mike The Plumber Inc</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 460-5017">(561) 460-5017</a></span>
+            <span><span class="label">Website</span> <a href="https://miketheplumberinc.com" target="_blank" rel="noopener">miketheplumberinc.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">All Star Plumbing & Air</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 667-2900">(561) 667-2900</a></span>
+            <span><span class="label">Website</span> <a href="https://www.247allstar.com" target="_blank" rel="noopener">www.247allstar.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Buckeye Plumbing Inc</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 282-5393">(561) 282-5393</a></span>
+            <span><span class="label">Website</span> <a href="https://www.buckeyeplmg.com" target="_blank" rel="noopener">www.buckeyeplmg.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Leading Plumbing Services LLC</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 506-6159">(561) 506-6159</a></span>
+            <span><span class="label">Website</span> <a href="https://www.leadingplumbingservices.com" target="_blank" rel="noopener">www.leadingplumbingservices.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
       </div>
     </div>
 
-    <div id="md-cleaning" class="service-section">
-      <div class="service-header"><span class="service-icon">🧹</span><h2>Cleaning Services</h2><span class="count">Miami-Dade County</span></div>
+  <div id="pb-gc" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">🏗️</span>
+        <h2>General Contractors</h2>
+        <span class="count">2 providers · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">Island Construction & Design</div>
+          <div class="provider-area">Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 863-2933">(561) 863-2933</a></span>
+            <span><span class="label">Website</span> <a href="https://www.islandconstructionpb.com" target="_blank" rel="noopener">www.islandconstructionpb.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">House Call Construction - Remodeling Custom Kitchens and Baths</div>
+          <div class="provider-area">Greenacres, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 596-3664">(561) 596-3664</a></span>
+            <span><span class="label">Website</span> <a href="https://www.housecallllc.com" target="_blank" rel="noopener">www.housecallllc.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="empty-slot">
+          <p>Know a great provider in this category?</p>
+          <a href="/PA-WEBSITE.html#contact">Refer them for listing →</a>
+        </div>
       </div>
     </div>
 
-    <div id="md-realestate" class="service-section">
-      <div class="service-header"><span class="service-icon">🏠</span><h2>Real Estate Agents</h2><span class="count">Miami-Dade County</span></div>
+  <div id="pb-propmgmt" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">🏢</span>
+        <h2>Property Management</h2>
+        <span class="count">4 providers · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">Top Notch Property Watch</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 781-0555">(561) 781-0555</a></span>
+            <span><span class="label">Website</span> <a href="https://topnotchpropertywatch.com" target="_blank" rel="noopener">topnotchpropertywatch.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">GRS Community Management</div>
+          <div class="provider-area">Lake Worth Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(561) 641-8554">(561) 641-8554</a></span>
+            <span><span class="label">Website</span> <a href="https://www.grsmgt.com" target="_blank" rel="noopener">www.grsmgt.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Palm Beach Estate Management</div>
+          <div class="provider-area">Delray Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(301) 343-0168">(301) 343-0168</a></span>
+            <span><span class="label">Website</span> <a href="https://www.pbestatemgmt.com" target="_blank" rel="noopener">www.pbestatemgmt.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Castle Group</div>
+          <div class="provider-area">West Palm Beach, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(800) 337-5850">(800) 337-5850</a></span>
+            <span><span class="label">Website</span> <a href="https://www.castlegroup.com" target="_blank" rel="noopener">www.castlegroup.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
       </div>
     </div>
 
-    <div id="md-legal" class="service-section">
-      <div class="service-header"><span class="service-icon">⚖️</span><h2>Attorneys</h2><span class="count">Miami-Dade County · Insurance &amp; Property Law</span></div>
+  <div id="pb-realestate" class="service-section">
+      <div class="service-header">
+        <span class="service-icon">🏡</span>
+        <h2>Real Estate</h2>
+        <span class="count">1 provider · Palm Beach County</span>
+      </div>
       <div class="provider-grid">
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-        <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
+        <div class="provider-card">
+          <div class="provider-name">Craft Realty</div>
+          <div class="provider-area">Wellington, Palm Beach County FL</div>
+          <div class="provider-meta">
+            <span><span class="label">Phone</span> <a href="tel:(410) 504-9053">(410) 504-9053</a></span>
+            <span><span class="label">Website</span> <a href="https://craftrealtyhomes.com" target="_blank" rel="noopener">craftrealtyhomes.com</a></span>
+          </div>
+          <span class="provider-badge badge-trusted">Listed</span>
+        </div>
+        <div class="empty-slot">
+          <p>Know a great provider in this category?</p>
+          <a href="/PA-WEBSITE.html#contact">Refer them for listing →</a>
+        </div>
+        <div class="empty-slot">
+          <p>Know a great provider in this category?</p>
+          <a href="/PA-WEBSITE.html#contact">Refer them for listing →</a>
+        </div>
       </div>
     </div>
+
   </div>
 
-  <!-- ═══════════════ BROWARD ═══════════════ -->
+  <!-- OTHER COUNTIES — coming soon -->
+  <div id="county-miami-dade" class="county-panel">
+    <div class="coming-soon-panel">
+      <h2>Miami-Dade County — Coming Soon</h2>
+      <p>We're actively vetting providers in Miami-Dade. Know a trusted contractor or professional? Refer them and we'll fast-track their review.</p>
+      <a href="../PA-WEBSITE.html#contact">Refer a Provider</a>
+    </div>
+  </div>
   <div id="county-broward" class="county-panel">
-    <div class="service-nav">
-      <a href="#bro-plumbing" class="service-pill">🔧 Plumbers</a>
-      <a href="#bro-hvac" class="service-pill">❄️ AC / HVAC</a>
-      <a href="#bro-gc" class="service-pill">🏗️ General Contractors</a>
-      <a href="#bro-appliance" class="service-pill">🛠️ Appliance Repair</a>
-      <a href="#bro-cleaning" class="service-pill">🧹 Cleaning Services</a>
-      <a href="#bro-realestate" class="service-pill">🏠 Real Estate Agents</a>
-      <a href="#bro-legal" class="service-pill">⚖️ Attorneys</a>
+    <div class="coming-soon-panel">
+      <h2>Broward County — Coming Soon</h2>
+      <p>Broward County listings are being added. Know a great provider? Help us grow the directory.</p>
+      <a href="../PA-WEBSITE.html#contact">Refer a Provider</a>
     </div>
-    <div id="bro-plumbing" class="service-section"><div class="service-header"><span class="service-icon">🔧</span><h2>Plumbers</h2><span class="count">Broward County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="bro-hvac" class="service-section"><div class="service-header"><span class="service-icon">❄️</span><h2>AC / HVAC Repair</h2><span class="count">Broward County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="bro-gc" class="service-section"><div class="service-header"><span class="service-icon">🏗️</span><h2>General Contractors</h2><span class="count">Broward County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="bro-appliance" class="service-section"><div class="service-header"><span class="service-icon">🛠️</span><h2>Appliance Repair</h2><span class="count">Broward County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="bro-cleaning" class="service-section"><div class="service-header"><span class="service-icon">🧹</span><h2>Cleaning Services</h2><span class="count">Broward County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="bro-realestate" class="service-section"><div class="service-header"><span class="service-icon">🏠</span><h2>Real Estate Agents</h2><span class="count">Broward County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="bro-legal" class="service-section"><div class="service-header"><span class="service-icon">⚖️</span><h2>Attorneys</h2><span class="count">Broward County · Insurance &amp; Property Law</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
   </div>
-
-  <!-- ═══════════════ PALM BEACH ═══════════════ -->
-  <div id="county-palm-beach" class="county-panel">
-    <div class="service-nav">
-      <a href="#pb-plumbing" class="service-pill">🔧 Plumbers</a>
-      <a href="#pb-hvac" class="service-pill">❄️ AC / HVAC</a>
-      <a href="#pb-gc" class="service-pill">🏗️ General Contractors</a>
-      <a href="#pb-appliance" class="service-pill">🛠️ Appliance Repair</a>
-      <a href="#pb-cleaning" class="service-pill">🧹 Cleaning Services</a>
-      <a href="#pb-realestate" class="service-pill">🏠 Real Estate Agents</a>
-      <a href="#pb-legal" class="service-pill">⚖️ Attorneys</a>
+  <div id="county-martin" class="county-panel">
+    <div class="coming-soon-panel">
+      <h2>Martin County — Coming Soon</h2>
+      <p>Listings being added. Know a great provider? Help us grow the directory.</p>
+      <a href="../PA-WEBSITE.html#contact">Refer a Provider</a>
     </div>
-    <div id="pb-plumbing" class="service-section"><div class="service-header"><span class="service-icon">🔧</span><h2>Plumbers</h2><span class="count">Palm Beach County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="pb-hvac" class="service-section"><div class="service-header"><span class="service-icon">❄️</span><h2>AC / HVAC Repair</h2><span class="count">Palm Beach County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="pb-gc" class="service-section"><div class="service-header"><span class="service-icon">🏗️</span><h2>General Contractors</h2><span class="count">Palm Beach County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="pb-appliance" class="service-section"><div class="service-header"><span class="service-icon">🛠️</span><h2>Appliance Repair</h2><span class="count">Palm Beach County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="pb-cleaning" class="service-section"><div class="service-header"><span class="service-icon">🧹</span><h2>Cleaning Services</h2><span class="count">Palm Beach County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="pb-realestate" class="service-section"><div class="service-header"><span class="service-icon">🏠</span><h2>Real Estate Agents</h2><span class="count">Palm Beach County</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
-    <div id="pb-legal" class="service-section"><div class="service-header"><span class="service-icon">⚖️</span><h2>Attorneys</h2><span class="count">Palm Beach County · Insurance &amp; Property Law</span></div><div class="provider-grid"><div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div><div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div></div></div>
   </div>
-
-  <!-- Remaining counties: Martin, St. Lucie, Indian River, Brevard -->
-  <!-- Each follows same structure — rendered dynamically with JS below -->
-  <div id="county-martin" class="county-panel"></div>
-  <div id="county-st-lucie" class="county-panel"></div>
-  <div id="county-indian-river" class="county-panel"></div>
-  <div id="county-brevard" class="county-panel"></div>
+  <div id="county-st-lucie" class="county-panel">
+    <div class="coming-soon-panel">
+      <h2>St. Lucie County — Coming Soon</h2>
+      <p>Listings being added. Know a great provider? Help us grow the directory.</p>
+      <a href="../PA-WEBSITE.html#contact">Refer a Provider</a>
+    </div>
+  </div>
+  <div id="county-indian-river" class="county-panel">
+    <div class="coming-soon-panel">
+      <h2>Indian River County — Coming Soon</h2>
+      <p>Listings being added. Know a great provider? Help us grow the directory.</p>
+      <a href="../PA-WEBSITE.html#contact">Refer a Provider</a>
+    </div>
+  </div>
+  <div id="county-brevard" class="county-panel">
+    <div class="coming-soon-panel">
+      <h2>Brevard County — Coming Soon</h2>
+      <p>Listings being added. Know a great provider? Help us grow the directory.</p>
+      <a href="../PA-WEBSITE.html#contact">Refer a Provider</a>
+    </div>
+  </div>
 
   <div class="cta-bar">
-    <p>Are you a licensed service professional in one of these counties? We evaluate providers for inclusion based on licensing, reputation, and client feedback.</p>
+    <p>Are you a licensed service professional in Palm Beach County or surrounding areas? We evaluate providers for inclusion based on licensing, reputation, and client feedback.</p>
     <a href="../PA-WEBSITE.html#contact">Request Listing Review</a>
   </div>
 
@@ -281,73 +859,14 @@
 </footer>
 
 <script>
-  const COUNTIES = {
-    martin:       'Martin',
-    'st-lucie':   'St. Lucie',
-    'indian-river':'Indian River',
-    brevard:      'Brevard'
-  };
-
-  const SERVICES = [
-    { id:'plumbing',   icon:'🔧', label:'Plumbers' },
-    { id:'hvac',       icon:'❄️', label:'AC / HVAC Repair' },
-    { id:'gc',         icon:'🏗️', label:'General Contractors' },
-    { id:'appliance',  icon:'🛠️', label:'Appliance Repair' },
-    { id:'cleaning',   icon:'🧹', label:'Cleaning Services' },
-    { id:'realestate', icon:'🏠', label:'Real Estate Agents' },
-    { id:'legal',      icon:'⚖️', label:'Attorneys' }
-  ];
-
-  // Build remaining county panels
-  Object.entries(COUNTIES).forEach(([slug, name]) => {
-    const panel = document.getElementById('county-' + slug);
-    const prefix = slug.replace(/-/g,'').slice(0,3);
-
-    const nav = SERVICES.map(s =>
-      `<a href="#${prefix}-${s.id}" class="service-pill">${s.icon} ${s.label}</a>`
-    ).join('');
-
-    const sections = SERVICES.map(s => {
-      const countLabel = s.id === 'legal'
-        ? `${name} County · Insurance &amp; Property Law`
-        : `${name} County`;
-      return `
-        <div id="${prefix}-${s.id}" class="service-section">
-          <div class="service-header">
-            <span class="service-icon">${s.icon}</span>
-            <h2>${s.label}</h2>
-            <span class="count">${countLabel}</span>
-          </div>
-          <div class="provider-grid">
-            <div class="empty-slot"><p>Entries being added from CRM intelligence.</p><a href="../PA-WEBSITE.html#contact">Know a trusted provider? Refer them →</a></div>
-            <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-            <div class="empty-slot"><p>Entries being added from CRM intelligence.</p></div>
-          </div>
-        </div>`;
-    }).join('');
-
-    panel.innerHTML = `<div class="service-nav">${nav}</div>${sections}`;
-  });
-
-  // County switching
   function switchCounty(slug, btn) {
     document.querySelectorAll('.county-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.county-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.county-btn:not(.coming-soon)').forEach(b => b.classList.remove('active'));
     document.getElementById('county-' + slug).classList.add('active');
     btn.classList.add('active');
     window.scrollTo({ top: document.querySelector('.hero').offsetHeight + 64, behavior: 'smooth' });
   }
 
-  // Read ?county= param on load
-  const params = new URLSearchParams(window.location.search);
-  const preselect = params.get('county');
-  if (preselect) {
-    const btn = [...document.querySelectorAll('.county-btn')]
-      .find(b => b.getAttribute('onclick').includes("'" + preselect + "'"));
-    if (btn) switchCounty(preselect, btn);
-  }
-
-  // Smooth scroll pill anchors
   document.querySelectorAll('.service-pill').forEach(pill => {
     pill.addEventListener('click', e => {
       e.preventDefault();
