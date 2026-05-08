@@ -52,7 +52,7 @@ Status: HubSpot native email active, Calendly booking integration active
 
 8. GOOGLE PLACES API - ACTIVE
    - Email: duncanlittlejohn727@gmail.com
-   - API Key: REDACTED_GOOGLE_API_KEY
+   - API Key: [REVOKED 2026-05-08 — store new key in env var GOOGLE_PLACES_API_KEY only, never in this file]
    - Purpose: Palm Beach County prospect research (25 contacts/day automation)
    - Free tier: $200/month credit — covers all usage at our scale
 
