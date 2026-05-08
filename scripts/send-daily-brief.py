@@ -9,6 +9,7 @@ Falls back to a single content/briefs/YYYY-MM-DD.html if segment files don't exi
 (backward compat with older briefs).
 """
 
+import html as html_lib
 import json
 import os
 import re
@@ -24,6 +25,7 @@ from pathlib import Path
 
 WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
 BRIEFS_DIR = WORKSPACE / "content" / "briefs"
+MD_BRIEFS_DIR = WORKSPACE / "briefs"
 CONFIG_FILE = WORKSPACE / "config" / ".services-config.txt"
 LOG_PATH = WORKSPACE / "scripts" / "newsletter-send.log"
 
@@ -92,6 +94,152 @@ def get_list_emails(list_id, token):
         if not after:
             break
     return emails
+
+
+def md_to_html_body(md_text):
+    """Convert markdown brief to a styled HTML body for email."""
+    lines = md_text.splitlines()
+    out = ['<div style="font-family:Georgia,\'Times New Roman\',serif;color:#333;line-height:1.7;max-width:640px;">']
+    in_table = False
+    in_list = False
+    table_rows = []
+
+    def flush_table():
+        nonlocal table_rows
+        if not table_rows:
+            return ""
+        h = ['<table style="width:100%;border-collapse:collapse;font-size:13px;margin:0 0 24px;">']
+        for i, row in enumerate(table_rows):
+            cells = [c.strip() for c in row.strip("|").split("|")]
+            if i == 0:
+                h.append('<thead><tr style="background:#0f2d4a;color:#fff;">')
+                for c in cells:
+                    h.append(f'<th style="padding:8px 12px;text-align:left;font-family:Arial,sans-serif;">{c}</th>')
+                h.append("</tr></thead><tbody>")
+            elif i == 1:
+                continue  # separator row
+            else:
+                bg = ' style="background:#fafafa;"' if i % 2 == 0 else ""
+                h.append(f"<tr{bg}>")
+                for c in cells:
+                    h.append(f'<td style="padding:8px 12px;border-bottom:1px solid #e0e0e0;">{c}</td>')
+                h.append("</tr>")
+        h.append("</tbody></table>")
+        table_rows = []
+        return "\n".join(h)
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        # Table detection
+        if "|" in line and line.strip().startswith("|"):
+            if in_list:
+                out.append("</ul>")
+                in_list = False
+            table_rows.append(line)
+            i += 1
+            continue
+        elif table_rows:
+            out.append(flush_table())
+            in_table = False
+
+        stripped = line.strip()
+
+        if not stripped:
+            if in_list:
+                out.append("</ul>")
+                in_list = False
+            out.append("")
+            i += 1
+            continue
+
+        # Headings
+        if stripped.startswith("### "):
+            if in_list:
+                out.append("</ul>"); in_list = False
+            text = _inline(stripped[4:])
+            out.append(f'<h3 style="font-size:16px;color:#0f2d4a;margin:16px 0 8px;">{text}</h3>')
+        elif stripped.startswith("## "):
+            if in_list:
+                out.append("</ul>"); in_list = False
+            text = _inline(stripped[3:])
+            out.append(f'<h2 style="font-size:19px;color:#0f2d4a;margin:24px 0 12px;padding-bottom:6px;border-bottom:3px solid #c41e3a;">{text}</h2>')
+        elif stripped.startswith("# "):
+            if in_list:
+                out.append("</ul>"); in_list = False
+            text = _inline(stripped[2:])
+            out.append(f'<h1 style="font-size:22px;color:#0f2d4a;margin:0 0 16px;">{text}</h1>')
+        elif stripped.startswith("---"):
+            if in_list:
+                out.append("</ul>"); in_list = False
+            out.append('<hr style="border:none;border-top:1px solid #e0e0e0;margin:20px 0;">')
+        elif stripped.startswith("- ") or stripped.startswith("* "):
+            if not in_list:
+                out.append('<ul style="margin:0 0 12px;padding-left:20px;">')
+                in_list = True
+            text = _inline(stripped[2:])
+            out.append(f'<li style="margin-bottom:6px;">{text}</li>')
+        elif re.match(r"^\*\*Why it matters", stripped):
+            if in_list:
+                out.append("</ul>"); in_list = False
+            text = _inline(stripped)
+            out.append(f'<div style="background:#f8f4ee;border-left:4px solid #c9922a;padding:12px 16px;margin:12px 0 20px;font-size:14px;">{text}</div>')
+        else:
+            if in_list:
+                out.append("</ul>"); in_list = False
+            text = _inline(stripped)
+            out.append(f'<p style="margin:0 0 12px;">{text}</p>')
+        i += 1
+
+    if in_list:
+        out.append("</ul>")
+    if table_rows:
+        out.append(flush_table())
+
+    out.append("</div>")
+    return "\n".join(out)
+
+
+def _inline(text):
+    """Convert inline markdown (bold, italic, links) to HTML."""
+    # Bold+italic ***text***
+    text = re.sub(r'\*\*\*(.+?)\*\*\*', r'<strong><em>\1</em></strong>', text)
+    # Bold **text**
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # Italic *text*
+    text = re.sub(r'\*([^*]+?)\*', r'<em>\1</em>', text)
+    # Links [text](url)
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" style="color:#c41e3a;">\1</a>', text)
+    # Inline code `code`
+    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
+    return text
+
+
+def ensure_html_brief(date_str):
+    """Convert markdown brief to HTML if HTML doesn't exist yet."""
+    html_path = BRIEFS_DIR / f"{date_str}.html"
+    if html_path.exists():
+        return
+    md_path = MD_BRIEFS_DIR / f"{date_str}.md"
+    if not md_path.exists():
+        return
+    md_text = md_path.read_text()
+    body_html = md_to_html_body(md_text)
+    date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
+    full_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Florida Property Intelligence — {date_fmt}</title>
+</head>
+<body>
+{body_html}
+</body>
+</html>"""
+    BRIEFS_DIR.mkdir(parents=True, exist_ok=True)
+    html_path.write_text(full_html)
 
 
 def get_brief_html(date_str, segment_key=None):
@@ -180,6 +328,7 @@ def log(message):
 def main():
     date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
     log(f"=== Daily brief send start: {date_str} ===")
+    ensure_html_brief(date_str)
 
     password, hs_token = load_credentials()
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")

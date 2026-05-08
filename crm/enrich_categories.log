@@ -1,0 +1,91 @@
+=== enrich_company_categories start ===
+Total companies fetched: 149
+Companies missing description: 84
+  ✓  Green Planet Construction Services            → General Contractor
+  ✓  Sloan Construction Group                      → General Contractor
+  ✓  Skyden Contractors                            → General Contractor
+  ✓  Celtic Home Improvement LLC                   → General Contractor
+  ✓  Certified General Contractors Inc             → General Contractor
+  ✓  Mike Willis Roofing & Construction            → Roofing
+  ✓  PSI Roofing                                   → Roofing
+  ✓  Martin County Roofing LLC                     → Roofing
+  ✓  Buckeye Plumbing                              → Plumbing
+  ✓  All Florida Plumbing Corporation              → Plumbing
+  ✓  Miami Mold Specialist                         → Restoration
+  ✓  Highland Contractors Inc.                     → General Contractor
+  ✓  Discreet Restoration                          → Restoration
+  ✓  MIW Roofing                                   → Roofing
+  ✓  Lowen Air Conditioning                        → HVAC
+  ✓  PSL Roofers                                   → Roofing
+  ✓  A. Palmer Roofing Inc.                        → Roofing
+  ✓  Bay Plumbing Company                          → Plumbing
+  ✓  Copperhead Plumbing                           → Plumbing
+  ✓  Flow-Tech Air Conditioning                    → HVAC
+  ✓  Integrity Roofing & Gutters                   → Roofing
+  ✓  Tropical Roofing Systems Inc.                 → Roofing
+  ✓  Diversified Roofing Solutions                 → Roofing
+  ✓  Douglas Orr Plumbing                          → Plumbing
+  ✓  Ranger Roofing                                → Roofing
+  ✓  Paul Davis Restoration                        → Restoration
+  ✓  Three Guys Roofing Inc.                       → Roofing
+  ✓  Abraham AC                                    → HVAC
+  ✓  T&S Roofing Systems                           → Roofing
+  ✓  RHI Roofing                                   → Roofing
+  ✓  A Plus Mold Remediation                       → Restoration
+  ✓  Dade Super Cool Air Conditioning              → HVAC
+  ✓  KLR Roofing Corp.                             → Roofing
+  ✓  Coastal Property Management Group             → Property Management
+  ✓  Compass Roofing                               → Roofing
+  ✓  Freezing Mechanical                           → HVAC
+  ✓  Prestige Realty Management                    → Real Estate
+  ✓  Atlantic Water & Mold Solutions               → Restoration
+  ✓  Thomasevich Construction Inc. (Build With TCI) → General Contractor
+  ✓  Bradley Heating & Air Conditioning Inc.       → HVAC
+  ✓  St Lucie Roofing                              → Roofing
+  ✓  Benjamin Franklin Plumbing                    → Plumbing
+  ✓  Pro Bowl Plumbing                             → Plumbing
+  ✓  FIXD Roofing                                  → Roofing
+  ✓  JD Roofing                                    → Roofing
+  ✓  Quantum Roofing Solutions                     → Roofing
+  ✓  Magical Plumbing                              → Plumbing
+  ✓  Pure Maintenance Mold Remediation             → Restoration
+  ✓  FDP Mold Remediation                          → Restoration
+  ✓  Code Red Roofers                              → Roofing
+  ✓  SeaBreeze Roofing                             → Roofing
+  ✓  Titan Restoration Inc.                        → Restoration
+  ✓  All Phase Construction USA                    → General Contractor
+  ✓  Stanley Restoration Services                  → Restoration
+  ✓  Storm Shield Roofing                          → Roofing
+  ✓  Pyke Mechanical                               → HVAC
+  ✓  Remediation 911                               → Restoration
+  ✓  Walsh Roofing                                 → Roofing
+  ✓  Home Property Management II Inc.              → Property Management
+  ✓  Grant Property Management                     → Property Management
+  ✓  Kanga Property Management                     → Property Management
+  ✓  Mayfair Property Management                   → Property Management
+  ✓  Associated Property Management                → Property Management
+  ✓  KW Property Management                        → Property Management
+  ✓  Test Roofing LLC Debug                        → Roofing
+
+=== Done — updated: 65 | needs manual review: 19 ===
+
+Needs manual review (name didn't match any pattern):
+  - HubSpot
+  - Air Rightaway Inc.
+  - SERVPRO of West Palm Beach
+  - HOA Advocates Management
+  - SafeHaven Property Consulting
+  - Florida Insurance Partners LLC
+  - Hopkins Air
+  - Elite General Contracting
+  - Robinhood Adjusting
+  - 
+  - Jilsa Management
+  - Parker Public Adjusters
+  - Coral Condos
+  - Damelecia Inc.
+  - JMA Community Management
+  - Trident Management
+  - Ocean Point Claims
+  - Reliant Adjusters Group
+  - 

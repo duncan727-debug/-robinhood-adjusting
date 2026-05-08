@@ -50,6 +50,12 @@ Status: HubSpot native email active, Calendly booking integration active
    - Integrated in: Day3 and Day7 drip emails
    - Purpose: Low-friction alternative to "call me" CTAs
 
+8. GOOGLE PLACES API - ACTIVE
+   - Email: duncanlittlejohn727@gmail.com
+   - API Key: REDACTED_GOOGLE_API_KEY
+   - Purpose: Palm Beach County prospect research (25 contacts/day automation)
+   - Free tier: $200/month credit — covers all usage at our scale
+
 ARCHITECTURE:
 GitHub (code) → Netlify (auto-deploy) → robinhoodadjusting.com (live)
 Namecheap DNS → Points to Netlify

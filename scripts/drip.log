@@ -24,3 +24,11 @@ AttributeError: 'NoneType' object has no attribute 'strip'
 [2026-05-06 19:01] Found 4 subscriber contacts across all lists
 [2026-05-06 19:01] Done — sent: 0 | skipped: 4 | errors: 0
 [2026-05-06 19:01] === Drip run complete ===
+[2026-05-07 09:00] === Drip sequence run start ===
+[2026-05-07 09:00] Found 4 subscriber contacts across all lists
+[2026-05-07 09:00] Done — sent: 0 | skipped: 4 | errors: 0
+[2026-05-07 09:00] === Drip run complete ===
+[2026-05-07 09:00] === Drip sequence run start ===
+[2026-05-07 09:00] Found 4 subscriber contacts across all lists
+[2026-05-07 09:00] Done — sent: 0 | skipped: 4 | errors: 0
+[2026-05-07 09:00] === Drip run complete ===

@@ -23,42 +23,48 @@ All templates include CAN-SPAM opt-out language. Personalization uses placeholde
 
 ## LISTING-FIRST INITIAL — All Trades (USE THIS FOR COLD OUTREACH)
 
-**Subject:** Free listing for {{org_name}} — South Florida provider directory
+**Subject:** Homeowners are asking me for {{category}} referrals in Palm Beach County — can I list you?
 
 Hi {{contact_name}},
 
-I'm Duncan Littlejohn, a licensed public adjuster based in Wellington, FL. I run a free resource for South Florida homeowners called the Robinhood Adjusting Provider Directory — a vetted list of tradespeople I recommend to clients after property claims.
+I'm Duncan Littlejohn, a licensed public adjuster based in Wellington. I run a daily newsletter for South Florida homeowners, contractors, and real estate professionals — currently covering Palm Beach, Broward, and Miami-Dade counties.
 
-I came across {{org_name}} and would like to feature your business in the Palm Beach County section under {{category}}. It's completely free — no pitch, no strings. You'd get exposure to homeowners in the area who specifically need {{category}} work after a claim situation.
+Through that newsletter I regularly hear from homeowners specifically looking for trusted {{category}} companies in Palm Beach County, and right now I don't have enough vetted providers to send their way. A lot of these folks are coming out of a claim situation, so they're ready to move.
 
-All I need is to confirm a few details:
-- Business name and service area
+I'd like to add {{org_name}} to our free provider directory at robinhoodadjusting.com/providers so I can start referring that business to you. No fee, no pitch — just a free listing visible to our homeowner subscriber base.
+
+All I need to get you listed:
+- Your service area (cities/zip codes)
 - Best contact number
-- Website (if you have one)
+- Website, if you have one
 
-If you'd like to be listed, just reply with those details and I'll add you. Takes 30 seconds on your end.
+As a bonus, I'll add you to our trade professional brief — a free daily update on insurance market trends, PBC property activity, and roofing/restoration news that most contractors in the area find worth having.
+
+Just reply with those three things and I'll get you added. Hurricane season starts June 1 — this is the window when homeowners start making calls.
 
 Best,
 Duncan Littlejohn
-Public Adjuster · Robinhood Adjusting · Wellington, FL
+Licensed Public Adjuster · Robinhood Adjusting · Wellington, FL
 561-772-7528 · robinhoodadjusting.com/providers
 
-If you'd prefer not to hear from me, just say the word.
+To opt out, reply "unsubscribe" and I'll remove you immediately.
 
 ---
 
 ## LISTING-FIRST FOLLOWUP — No response after 5 days
 
-**Subject:** Still happy to list {{org_name}} — just need 30 seconds
+**Subject:** Re: {{org_name}} — Palm Beach County provider directory
 
 Hi {{contact_name}},
 
-Following up on my note from last week. I wanted to feature {{org_name}} in our Palm Beach County provider directory — it's free and takes 30 seconds to confirm.
+Just circling back on my note from last week. I still have homeowners asking me for {{category}} referrals in the area and no one to send them to.
 
-If it's not a fit, no problem at all — just let me know.
+Getting {{org_name}} listed takes one reply. I'll handle everything else.
 
 Best,
-Duncan · 561-772-7528
+Duncan · 561-772-7528 · robinhoodadjusting.com/providers
+
+To opt out, reply "unsubscribe."
 
 ---
 

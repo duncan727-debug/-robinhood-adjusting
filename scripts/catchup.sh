@@ -149,6 +149,20 @@ if [ "$DOW" -le 5 ]; then
 
   # 7:30am ops-review
   check_and_run "$ID_OPS"      "weekday-ops-review"        450 "$WORKSPACE/ops-review/$TODAY.md"          15
+
+  # 5:45am newsletter send — after brief is ready
+  SEND_MARKER="$WORKSPACE/scripts/.newsletter-sent-$TODAY"
+  if [ "$MINS" -ge 345 ] && [ ! -f "$SEND_MARKER" ] && [ -e "$WORKSPACE/briefs/$TODAY.md" ]; then
+    log "  newsletter-send: sending brief for $TODAY"
+    if /usr/bin/python3 "$WORKSPACE/scripts/send-daily-brief.py" "$TODAY" >>"$WORKSPACE/scripts/newsletter-send.log" 2>&1; then
+      touch "$SEND_MARKER"
+      log "  newsletter-send: done"
+    else
+      log "  newsletter-send: ERROR (see newsletter-send.log)"
+    fi
+  elif [ -f "$SEND_MARKER" ]; then
+    log "  newsletter-send: already sent today, skip"
+  fi
 fi
 
 # Mon 11am linkedin-sequencing

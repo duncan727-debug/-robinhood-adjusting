@@ -380,17 +380,36 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="time">8:00 AM</td>
+                    <td class="time">5:45 AM</td>
                     <td class="job-name">📧 Daily Brief Email</td>
                     <td><span class="frequency mon-sat">Mon-Sat</span></td>
                     <td><span class="category email">Email</span></td>
                     <td>
                         <div class="description">
-                            Sends today's brief to all HubSpot newsletter subscribers:
+                            Sends today's brief to all HubSpot newsletter subscribers via <code>send-daily-brief.py</code>:
                             <ul style="margin-top: 8px; margin-left: 20px;">
-                                <li>3 audiences: Homeowners, Service Providers, RE Professionals</li>
-                                <li>Content: Today's industry brief (generated at 4am)</li>
-                                <li>Delivery: HubSpot API native email</li>
+                                <li>3 audiences: Homeowners (list 18), Service Providers (list 19), RE Pros (list 20)</li>
+                                <li>Auto-converts <code>briefs/YYYY-MM-DD.md</code> to HTML if not already present</li>
+                                <li>Triggered by catchup.sh once brief file exists + it's past 5:45am</li>
+                                <li>Send marker: <code>scripts/.newsletter-sent-YYYY-MM-DD</code></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">9:17 AM</td>
+                    <td class="job-name">🔍 PBC Prospecting</td>
+                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Google Places scraper adds 25 new Palm Beach County contacts to HubSpot via <code>prospect_palm_beach.py</code>:
+                            <ul style="margin-top: 8px; margin-left: 20px;">
+                                <li>Sectors: Roofing, Restoration, HVAC, Plumbing, Property Mgmt, RE, GC</li>
+                                <li>Skips national chains; deduplicates against existing HubSpot companies</li>
+                                <li>Creates company + contact + review task for Duncan</li>
+                                <li>API usage logged to <code>crm/api_usage.log</code> + daily ops-review</li>
+                                <li>Cost: ~$0.034/day (~$6/month) — well within free credit</li>
                             </ul>
                         </div>
                     </td>
@@ -436,12 +455,15 @@
         <h2>Daily Morning Workflow</h2>
 
         <div class="daily-flow">
-<code>4:00 AM</code> → Brief generation starts<br>
-<code>5:28 AM</code> → Intelligence research begins (runs in parallel with brief)<br>
-<code>6:00 AM</code> → Brief + intelligence complete; ready for 8am send<br>
-<code>8:00 AM</code> → Daily brief email sent to subscribers ✓<br>
+<code>4:00 AM</code> → Brief generation starts (openclaw agent)<br>
+<code>5:00 AM</code> → Intelligence research runs in parallel<br>
+<code>5:45 AM</code> → Brief email sent automatically once brief file exists (catchup.sh triggers send-daily-brief.py) ✓<br>
+<code>6:00 AM</code> → CRM outreach drafts generated<br>
+<code>7:00 AM</code> → Response handler runs<br>
+<code>7:30 AM</code> → Ops-review generated<br>
+<code>8:30 AM</code> → HubSpot daily consolidation; master import CSV ready<br>
 <code>9:00 AM</code> → Subscriber drip sequence runs (Day 0/3/7 welcome series) ✓<br>
-<code>8:30 AM</code> → HubSpot consolidation; import file ready<br>
+<code>9:17 AM</code> → PBC prospecting (25 contacts via Google Places) ✓<br>
 <code>EOD</code> → Single website update (briefs + trends article if Saturday)
         </div>
 

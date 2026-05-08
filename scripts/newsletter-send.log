@@ -55,3 +55,42 @@
 [2026-05-06 13:05]   [real-estate] 0 subscribers in list 20
 [2026-05-06 13:05]   [real-estate] No subscribers — skipping
 [2026-05-06 13:05] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-07 09:00] === Daily brief send start: 2026-05-07 ===
+[2026-05-07 09:00]   [homeowner] No brief found for 2026-05-07 — skipping segment
+[2026-05-07 09:00]   [service-provider] No brief found for 2026-05-07 — skipping segment
+[2026-05-07 09:00]   [real-estate] No brief found for 2026-05-07 — skipping segment
+[2026-05-07 09:00] === Done — total sent: 0 | total failed: 0 ===
+[2026-05-07 09:00] ✓ SUCCESS — Script executed without errors. No briefs available for 2026-05-07; send skipped.
+[2026-05-07 15:20] === Daily brief send start: 2026-05-07 ===
+[2026-05-07 15:20]   [homeowner] Using fallback generic brief
+[2026-05-07 15:20]   [homeowner] 3 subscribers in list 18
+[2026-05-07 15:20]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-07 15:20]   [service-provider] Using fallback generic brief
+[2026-05-07 15:20]   [service-provider] 1 subscribers in list 19
+[2026-05-07 15:20]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-07 15:20]   [real-estate] Using fallback generic brief
+[2026-05-07 15:20]   [real-estate] 0 subscribers in list 20
+[2026-05-07 15:20]   [real-estate] No subscribers — skipping
+[2026-05-07 15:20] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-07 15:23] === Daily brief send start: 2026-05-07 ===
+[2026-05-07 15:23]   [homeowner] Using fallback generic brief
+[2026-05-07 15:23]   [homeowner] 3 subscribers in list 18
+[2026-05-07 15:23]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-07 15:23]   [service-provider] Using fallback generic brief
+[2026-05-07 15:23]   [service-provider] 1 subscribers in list 19
+[2026-05-07 15:24]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-07 15:24]   [real-estate] Using fallback generic brief
+[2026-05-07 15:24]   [real-estate] 0 subscribers in list 20
+[2026-05-07 15:24]   [real-estate] No subscribers — skipping
+[2026-05-07 15:24] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-07 15:23] === Daily brief send start: 2026-05-07 ===
+[2026-05-07 15:23]   [homeowner] Using fallback generic brief
+[2026-05-07 15:23]   [homeowner] 3 subscribers in list 18
+[2026-05-07 15:23]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-07 15:23]   [service-provider] Using fallback generic brief
+[2026-05-07 15:23]   [service-provider] 1 subscribers in list 19
+[2026-05-07 15:24]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-07 15:24]   [real-estate] Using fallback generic brief
+[2026-05-07 15:24]   [real-estate] 0 subscribers in list 20
+[2026-05-07 15:24]   [real-estate] No subscribers — skipping
+[2026-05-07 15:24] === Done — total sent: 4 | total failed: 0 ===

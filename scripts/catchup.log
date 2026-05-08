@@ -2243,3 +2243,154 @@
 [2026-05-07T11:27:56Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
 [2026-05-07T11:27:56Z]   weekday-ops-review: not yet scheduled (sched_min=450 now=447), skip
 [2026-05-07T11:27:56Z] === catchup end ===
+[2026-05-07T12:10:15Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=490 ===
+[2026-05-07T12:10:15Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T12:10:15Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T12:10:15Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T12:10:15Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T12:10:15Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T12:10:15Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T12:10:15Z] === catchup end ===
+[2026-05-07T12:25:27Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=505 ===
+[2026-05-07T12:25:27Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T12:25:27Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T12:25:27Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T12:25:27Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T12:25:27Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T12:25:27Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T12:25:27Z] === catchup end ===
+[2026-05-07T12:40:39Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=520 ===
+[2026-05-07T12:40:39Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T12:40:39Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T12:40:39Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T12:40:39Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T12:40:39Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T12:40:39Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T12:40:39Z] === catchup end ===
+[2026-05-07T12:55:50Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=535 ===
+[2026-05-07T12:55:50Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T12:55:50Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T12:55:50Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T12:55:50Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T12:55:50Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T12:55:50Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T12:55:50Z] === catchup end ===
+[2026-05-07T13:11:46Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=551 ===
+[2026-05-07T13:11:46Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T13:11:46Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T13:11:46Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T13:11:46Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T13:11:46Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T13:11:46Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T13:11:46Z] === catchup end ===
+[2026-05-07T13:26:57Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=566 ===
+[2026-05-07T13:26:57Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T13:26:57Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T13:26:57Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T13:26:57Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T13:26:57Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T13:26:57Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T13:26:57Z] === catchup end ===
+[2026-05-07T15:59:39Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=719 ===
+[2026-05-07T15:59:39Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T15:59:39Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T15:59:39Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T15:59:39Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T15:59:39Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T15:59:39Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T15:59:39Z] === catchup end ===
+[2026-05-07T16:15:36Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=735 ===
+[2026-05-07T16:15:36Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T16:15:36Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T16:15:36Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T16:15:36Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T16:15:36Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T16:15:36Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T16:15:36Z] === catchup end ===
+[2026-05-07T16:54:49Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=774 ===
+[2026-05-07T16:54:49Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T16:54:49Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T16:54:49Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T16:54:49Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T16:54:49Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T16:54:49Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T16:54:49Z] === catchup end ===
+[2026-05-07T19:08:11Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=908 ===
+[2026-05-07T19:08:11Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T19:08:11Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T19:08:11Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T19:08:11Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T19:08:11Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T19:08:11Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T19:08:11Z] === catchup end ===
+[2026-05-07T19:23:45Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=923 ===
+[2026-05-07T19:23:45Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T19:23:45Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T19:23:45Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T19:23:45Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T19:23:45Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T19:23:45Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T19:23:45Z]   newsletter-send: sending brief for 2026-05-07
+[2026-05-07T19:24:03Z]   newsletter-send: done
+[2026-05-07T19:24:03Z] === catchup end ===
+[2026-05-07T19:42:10Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=942 ===
+[2026-05-07T19:42:10Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T19:42:10Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T19:42:10Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T19:42:10Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T19:42:10Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T19:42:10Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T19:42:10Z]   newsletter-send: already sent today, skip
+[2026-05-07T19:42:10Z] === catchup end ===
+[2026-05-07T21:42:33Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=1062 ===
+[2026-05-07T21:42:33Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T21:42:33Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T21:42:33Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T21:42:33Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T21:42:33Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T21:42:33Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T21:42:33Z]   newsletter-send: already sent today, skip
+[2026-05-07T21:42:33Z] === catchup end ===
+[2026-05-07T22:13:18Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=1093 ===
+[2026-05-07T22:13:18Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T22:13:18Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T22:13:18Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T22:13:18Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T22:13:18Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T22:13:18Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T22:13:18Z]   newsletter-send: already sent today, skip
+[2026-05-07T22:13:18Z] === catchup end ===
+[2026-05-07T22:28:30Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=1108 ===
+[2026-05-07T22:28:30Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-07T22:28:30Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-07T22:28:30Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-07T22:28:30Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-07T22:28:30Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-07T22:28:30Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-07T22:28:30Z]   newsletter-send: already sent today, skip
+[2026-05-07T22:28:30Z] === catchup end ===
+[2026-05-08T01:03:33Z] === catchup start: today=2026-05-07 dow=4 dom=7 mins=1263 ===
+[2026-05-08T01:03:33Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-07.md), skip
+[2026-05-08T01:03:33Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-07/blog.md), skip
+[2026-05-08T01:03:33Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-07), skip
+[2026-05-08T01:03:33Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-07), skip
+[2026-05-08T01:03:33Z]   response-handler: already ran today at 1778152344870ms (status=ok), skip
+[2026-05-08T01:03:33Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-07.md), skip
+[2026-05-08T01:03:33Z]   newsletter-send: already sent today, skip
+[2026-05-08T01:03:33Z] === catchup end ===
+[2026-05-08T11:57:48Z] === catchup start: today=2026-05-08 dow=5 dom=8 mins=477 ===
+[2026-05-08T11:57:49Z]   daily-research-brief: MISSING output=/Users/victoria/.openclaw/workspace/briefs/2026-05-08.md lastRun=1778229372525 status=error — triggering openclaw cron run 8a47ce9a-b505-4247-a0cb-84ac817f588c
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:8a47ce9a-b505-4247-a0cb-84ac817f588c:1778241474269:4"
+}
+[2026-05-08T11:57:54Z]   daily-research-brief: submitted; waiting up to 45m for /Users/victoria/.openclaw/workspace/briefs/2026-05-08.md
+[2026-05-08T12:00:14Z]   daily-research-brief: OK (output present)
+[2026-05-08T12:00:14Z]   daily-content: MISSING output=/Users/victoria/.openclaw/workspace/content/2026-05-08/blog.md lastRun=1778236578270 status=error — triggering openclaw cron run 0abcf54e-9628-4e0c-b6ff-3ddc3aac1a02
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0abcf54e-9628-4e0c-b6ff-3ddc3aac1a02:1778241621592:5"
+}
+[2026-05-08T12:00:21Z]   daily-content: submitted; waiting up to 20m for /Users/victoria/.openclaw/workspace/content/2026-05-08/blog.md
