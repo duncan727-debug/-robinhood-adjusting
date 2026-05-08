@@ -6,7 +6,7 @@ Status: HubSpot native email active, Calendly booking integration active
 1. EMAIL
    - Primary: duncanlittlejohn727@gmail.com
    - Use: Main business email, newsletter signups
-   - Gmail App Password (newsletter SMTP): kjzt psqo obev cabc
+   - Gmail App Password (newsletter SMTP): [STORED SECURELY]
 
 2. NAMECHEAP (Domain Registrar)
    - Email: duncanlittlejohn7272@gmail.com
