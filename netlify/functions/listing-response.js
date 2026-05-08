@@ -5,9 +5,10 @@
  *
  * YES flow:
  *   1. Update HubSpot contact hs_lead_status → CONNECTED
- *   2. Update HubSpot company custom property listing_status → confirmed
- *   3. Update crm/directory_companies.json in GitHub: verified=true
- *   4. Patch site/providers/index.html badge for this company
+ *   2. Enroll contact in Newsletter - Service Providers list (list ID 6)
+ *   3. Update HubSpot company listing_status → confirmed
+ *   4. Update crm/directory_companies.json in GitHub: verified=true
+ *   5. Patch site/providers/index.html badge for this company
  *   → Returns "You're listed" success page
  *
  * NO flow:
@@ -259,10 +260,12 @@ export async function handler(event) {
     companyName = data?.properties?.name || "";
   }
 
-  // 2. Update HubSpot contact status
+  // 2. Update HubSpot contact status + enroll in service-provider newsletter list
   if (contactId) {
     await hs("PATCH", `/crm/v3/objects/contacts/${contactId}`,
              { properties: { hs_lead_status: "CONNECTED" } }, hsToken);
+    await hs("POST", `/contacts/v1/lists/6/add`,
+             { vids: [parseInt(contactId)] }, hsToken);
   }
 
   // 3. Update HubSpot company + move deal to Listed in Directory
