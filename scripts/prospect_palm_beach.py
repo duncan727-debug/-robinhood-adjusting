@@ -18,9 +18,10 @@ import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 
-WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
-STATE_FILE = WORKSPACE / "crm" / ".prospect_state.json"
-LOG_PATH = WORKSPACE / "crm" / "prospect_palm_beach.log"
+WORKSPACE    = Path("/Users/victoria/.openclaw/workspace")
+STATE_FILE   = WORKSPACE / "crm" / ".prospect_state.json"
+PENDING_FILE = WORKSPACE / "crm" / ".prospect_pending.json"
+LOG_PATH     = WORKSPACE / "crm" / "prospect_palm_beach.log"
 DAILY_TARGET = 25
 
 # API key loaded from config file — not hardcoded here
@@ -352,19 +353,24 @@ def main():
             website = place.get("websiteUri", "")
             rating = place.get("rating", "")
 
-            company_id = create_company(name, city, phone, website, sector)
-            if not company_id:
-                errors += 1
-                seen_set.add(norm)
-                continue
-
-            # Create a placeholder contact (owner name TBD — task prompts Duncan to confirm)
-            contact_id = create_contact("Owner", name, phone, company_id, city)
-            create_task(contact_id, name, city, sector, phone, website, rating, owner_id)
+            # Write to pending queue — enrich_before_upload.py handles
+            # email enrichment, gating, and HubSpot creation
+            pending = []
+            if PENDING_FILE.exists():
+                try:
+                    pending = json.loads(PENDING_FILE.read_text())
+                except Exception:
+                    pass
+            pending.append({
+                "name": name, "city": city, "phone": phone,
+                "website": website, "sector": sector, "rating": str(rating),
+                "discovered": datetime.now().strftime("%Y-%m-%d"),
+            })
+            PENDING_FILE.write_text(json.dumps(pending, indent=2))
 
             seen_set.add(norm)
             added += 1
-            log(f"    ADDED ({added}/{DAILY_TARGET}): {name} [{city}] — {phone or 'no phone'}", log_lines)
+            log(f"    QUEUED ({added}/{DAILY_TARGET}): {name} [{city}] — {phone or 'no phone'}", log_lines)
             time.sleep(0.15)
 
         time.sleep(0.5)
@@ -414,7 +420,7 @@ def main():
         f"- Calls today: {_api_call_count} (${daily_cost:.4f})\n"
         f"- Month-to-date: ${mtd_cost:.4f} of ${MONTHLY_FREE_CREDIT:.0f} free credit "
         f"({pct_used}% used, {pct_remaining}% remaining)\n"
-        f"- Prospecting: {added} new contacts added to HubSpot\n"
+        f"- Prospecting: {added} new contacts queued for enrichment\n"
     )
     with open(ops_review, "a") as f:
         f.write(usage_note)
