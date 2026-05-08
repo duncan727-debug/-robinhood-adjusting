@@ -20,3 +20,4 @@
 - [Newsletter Send Schedule](newsletter_send_schedule.md) — daily 8am, weekly trends Sat 9am; single daily website push to minimize tokens
 - [CRM HubSpot Auto-Upload Workflow](feedback_crm_hubspot_workflow.md) — all new CRM drafts must be uploaded to HubSpot (note + task) for Duncan's manual review before sending; LinkedIn paused
 - [Daily Research Brief Workflow](daily_research_workflow_2026_05_07.md) — 4am EDT research + writing, deduplication system, 8 effective news queries, sources by category
+- [Directory listing verification badge](project_directory_verification.md) — confirmed responders get a verification mark on robinhoodadjusting.com/providers; trigger on CRM status update

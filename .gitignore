@@ -1,7 +1,10 @@
 config/.services-config.txt
+config/.secrets
 scripts/setup-hubspot-lists.py
 .env
 *.env
 .catchup-log.txt
 .catchup-state.json
 scripts/catchup.lock
+crm/.uploaded_drafts.json
+crm/.outreach_state.json

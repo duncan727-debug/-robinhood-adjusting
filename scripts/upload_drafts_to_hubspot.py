@@ -23,6 +23,7 @@ from pathlib import Path
 WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
 DRAFTS_ROOT = WORKSPACE / "crm" / "drafts"
 LOG_PATH = WORKSPACE / "scripts" / "hubspot_draft_upload.log"
+UPLOADED_PATH = WORKSPACE / "crm" / ".uploaded_drafts.json"
 
 DRAFT_DATES = [
     "2026-04-23",
@@ -39,6 +40,18 @@ DRAFT_DATES = [
 ]
 
 DRY_RUN = "--dry-run" in sys.argv
+
+
+def load_uploaded() -> set:
+    if UPLOADED_PATH.exists():
+        return set(json.loads(UPLOADED_PATH.read_text()))
+    return set()
+
+
+def mark_uploaded(source_file: str, uploaded: set):
+    uploaded.add(source_file)
+    if not DRY_RUN:
+        UPLOADED_PATH.write_text(json.dumps(sorted(uploaded), indent=2))
 
 _TOKEN = None
 
@@ -315,9 +328,15 @@ def create_task(contact_id: str, company_id: str, draft: dict) -> bool:
     return status in (200, 201)
 
 
-def process_draft(draft: dict):
+def process_draft(draft: dict, uploaded: set):
     name = draft["contact_name"]
     company = draft["company_name"]
+    source = draft["source_file"]
+
+    if source in uploaded:
+        log(f"  Skipping (already uploaded): {Path(source).name}")
+        return True
+
     log(f"  Processing: {name} @ {company}")
 
     if DRY_RUN:
@@ -358,6 +377,7 @@ def process_draft(draft: dict):
     else:
         log(f"    ✗ Task failed")
 
+    mark_uploaded(source, uploaded)
     time.sleep(0.3)
     return True
 
@@ -366,6 +386,9 @@ def main():
     load_token()
     mode = "DRY RUN" if DRY_RUN else "LIVE"
     log(f"=== Draft upload start ({mode}) ===")
+
+    uploaded = load_uploaded()
+    log(f"Already uploaded: {len(uploaded)} drafts")
 
     drafts = []
     for date_str in DRAFT_DATES:
@@ -378,14 +401,14 @@ def main():
             if d:
                 drafts.append(d)
 
-    log(f"Found {len(drafts)} drafts to upload")
+    log(f"Found {len(drafts)} drafts total")
 
     success = 0
     for draft in drafts:
-        if process_draft(draft):
+        if process_draft(draft, uploaded):
             success += 1
 
-    log(f"=== Done — {success}/{len(drafts)} uploaded ===")
+    log(f"=== Done — {success}/{len(drafts)} processed ===")
 
 
 if __name__ == "__main__":
