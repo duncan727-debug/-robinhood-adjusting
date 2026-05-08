@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Florida Hurricane Season 2026 — Property Protection Checklist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0f2d4a;
+    --red: #c41e3a;
+    --gold: #c9922a;
+    --light: #f8f4ee;
+    --muted: #64748b;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    color: #1a1a2e;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: var(--navy);
+    padding: 36px 48px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--red), var(--gold));
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .brand { font-family: 'Open Sans', sans-serif; }
+  .brand-name { font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+  .brand-tagline { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .season-badge {
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .header h1 span { color: var(--gold); }
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+  }
+  .urgency-bar {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 10px 48px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Body ── */
+  .body { padding: 32px 48px; }
+
+  .intro {
+    background: var(--light);
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.7;
+  }
+  .intro strong { color: var(--navy); }
+
+  /* ── Section ── */
+  .section { margin-bottom: 26px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .section-icon { font-size: 18px; }
+  .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .section-count { margin-left: auto; font-size: 11px; color: rgba(255,255,255,0.6); }
+
+  /* ── Checklist ── */
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li:nth-child(even) { background: #fafafa; }
+  .checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--navy);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .item-text { flex: 1; line-height: 1.5; }
+  .item-text strong { color: var(--navy); display: block; }
+  .item-text span { color: var(--muted); font-size: 12px; }
+
+  /* ── Alert box ── */
+  .alert {
+    background: #fff5f5;
+    border: 2px solid var(--red);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+  .alert-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .alert p { font-size: 13px; line-height: 1.6; color: #333; }
+  .alert ul { margin-left: 18px; margin-top: 6px; }
+  .alert ul li { font-size: 13px; padding: 3px 0; color: #333; }
+
+  /* ── Gold tip ── */
+  .tip {
+    background: #fffbf0;
+    border-left: 4px solid var(--gold);
+    padding: 12px 16px;
+    margin: 8px 0 12px;
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .tip strong { color: var(--gold); }
+
+  /* ── Two column ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 26px; }
+
+  /* ── CTA Footer ── */
+  .cta {
+    background: var(--navy);
+    color: white;
+    padding: 28px 48px;
+    text-align: center;
+  }
+  .cta h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .cta p { font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .cta-url {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+  .cta-contact { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 10px; }
+  .cta-contact strong { color: var(--gold); }
+
+  .print-note {
+    text-align: center;
+    font-size: 11px;
+    color: #aaa;
+    padding: 10px;
+    border-top: 1px solid #eee;
+  }
+
+  @media print {
+    .urgency-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .print-note { display: none; }
+    body { font-size: 12px; }
+    .header { padding: 24px 36px 20px; }
+    .body { padding: 24px 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-top">
+      <div class="brand">
+        <div class="brand-name">Robinhood Adjusting</div>
+        <div class="brand-tagline">Licensed Public Adjusters — South Florida</div>
+      </div>
+      <div class="season-badge">🌀 2026 Hurricane Season</div>
+    </div>
+    <h1>South Florida Property<br><span>Hurricane Preparedness</span><br>Checklist</h1>
+    <div class="header-sub">Everything a property owner needs to do before June 1 — from insurance review to storm shutters to knowing your rights after a claim.</div>
+  </div>
+  <div class="urgency-bar">⚠️ Hurricane Season Begins June 1, 2026 — You Have Less Than 30 Days</div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <div class="intro">
+      <strong>How to use this checklist:</strong> Print it out or work through it on your phone. Check each box as you go. The items marked with ⚡ are highest priority — if you only do 10 things before hurricane season, do those. If you sustain damage, <strong>call a licensed public adjuster before you call a contractor</strong> — it can mean tens of thousands of dollars in your favor.
+    </div>
+
+    <!-- SECTION 1: Insurance -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">📋</span>
+        <span class="section-title">Section 1 — Insurance Review</span>
+        <span class="section-count">8 items</span>
+      </div>
+      <ul class="checklist">
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Locate your current insurance policy documents</strong><span>Know your carrier, policy number, and agent contact. Store a copy digitally (email to yourself).</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Know your hurricane deductible — it's different from your regular deductible</strong><span>Florida hurricane deductibles are typically 2–5% of your home's insured value, not a flat dollar amount. A $400k home = $8k–$20k out of pocket before coverage kicks in.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Understand what's covered vs. excluded</strong><span>Flood damage is almost never covered by homeowner's insurance. If you're in a flood zone, confirm you have a separate NFIP or private flood policy.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Check your coverage limits against current replacement cost</strong><span>Construction costs in South Florida have risen 30–40% since 2020. Your 2019 coverage limit may leave you significantly underinsured.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Review your loss of use / additional living expense coverage</strong><span>If your home is uninhabitable after a storm, this pays for hotel and meals. Know the daily and total limit.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Confirm your Citizens policy is current (if applicable)</strong><span>Citizens requires annual renewal and has strict requirements. Confirm active status before storm season.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Photograph and video document your entire property</strong><span>Walk every room. Open every closet. Document appliances, electronics, furniture. Store in the cloud. This is your baseline if you need to file a claim.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Save a public adjuster's number in your phone now</strong><span>Don't look for one after a storm when everyone's scrambling. Robinhood Adjusting: <strong>(561) 555-0100</strong></span></div></li>
+      </ul>
+    </div>
+
+    <div class="alert">
+      <div class="alert-title">⚠️ Know Your Rights Before You Need Them</div>
+      <p>Florida law gives you the right to hire a licensed public adjuster to represent you during any property insurance claim. A PA works for <em>you</em> — not the insurance company. Studies show PA-represented claims settle for significantly more than unrepresented claims. Key rights:</p>
+      <ul>
+        <li>You do NOT have to accept the insurance company's first offer</li>
+        <li>You do NOT have to give a recorded statement without preparation</li>
+        <li>You have the right to an independent appraisal if you dispute the settlement</li>
+        <li>You must file within your policy's claim window — typically 1–3 years</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 2: Exterior -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏠</span>
+        <span class="section-title">Section 2 — Exterior & Structural</span>
+        <span class="section-count">9 items</span>
+      </div>
+      <ul class="checklist">
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Inspect your roof — look for missing shingles, soft spots, or lifted flashing</strong><span>A compromised roof is your #1 vulnerability. If it's 15+ years old, get a professional inspection now. Pre-storm documentation protects your claim.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Trim trees and palms within 10 feet of the structure</strong><span>Overhanging branches and palms with dead fronds are projectiles in hurricane-force winds. Hire a licensed tree service — not a storm-chaser who shows up after.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Confirm your storm shutters or impact windows are operational</strong><span>Test every shutter. Replace missing bolts. Confirm impact glass is free of cracks. This is your first line of defense and affects your insurance discount.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Inspect your garage door — is it hurricane-rated?</strong><span>Garage doors are the most common failure point. If yours isn't rated for 130+ mph winds, add a bracing kit. An unbraced door can fail catastrophically and allow wind to pressurize your home.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Check gutters, downspouts, and drains — clear of debris</strong><span>Blocked gutters during a storm cause water intrusion and roof damage. Clean them now. Confirm downspouts direct water away from the foundation.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Inspect soffits and fascia for damage or loose sections</strong><span>Compromised soffits allow wind-driven water into your attic. Walk the perimeter and look for gaps, sagging, or paint peeling — signs of past water intrusion.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Secure or remove patio furniture, planters, and outdoor décor</strong><span>In a hurricane, a patio umbrella becomes a missile. Plan ahead for what goes inside vs. what gets tied down.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Check fence integrity — loose sections become dangerous projectiles</strong><span>Inspect posts for rot and concrete anchors for cracks. Remove fence sections you can't reinforce.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Inspect HVAC unit strapping and anchor bolts</strong><span>Your A/C condenser must be hurricane-strapped per Florida building code. Confirm the straps are intact and not corroded. A flying condenser causes major damage.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="tip"><strong>Gold tip:</strong> Take date-stamped photos of every completed exterior item. If you file a claim after the storm, these photos prove the pre-storm condition of your property and counter any carrier attempt to deny based on "pre-existing damage."</div>
+
+    <!-- SECTION 3: Interior & Emergency -->
+    <div class="two-col">
+      <div class="section">
+        <div class="section-header">
+          <span class="section-icon">🏡</span>
+          <span class="section-title">Section 3 — Interior</span>
+          <span class="section-count">5 items</span>
+        </div>
+        <ul class="checklist">
+          <li><div class="checkbox"></div><div class="item-text"><strong>Store important documents in a waterproof container</strong><span>Policy, deed, IDs, birth certificates, passports, financial records.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Know how to shut off water, gas, and electricity</strong><span>Label your breakers. Know the main shutoff valve location.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Test smoke and CO detectors</strong><span>Replace batteries. After a storm, generator CO poisoning is a leading cause of death.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Inspect attic for existing water stains or mold</strong><span>Existing damage complicates future claims. Document it now.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Check sump pump if applicable</strong><span>Test operation. Have a battery backup for power outages.</span></div></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-icon">🎒</span>
+          <span class="section-title">Section 4 — Emergency Kit</span>
+          <span class="section-count">7 items</span>
+        </div>
+        <ul class="checklist">
+          <li><div class="checkbox"></div><div class="item-text"><strong>⚡ 7-day water supply</strong><span>1 gallon/person/day. Fill bathtubs as backup.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Non-perishable food — 7 days</strong><span>Manual can opener. No cooking required options.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Medications — 30-day supply minimum</strong><span>Pharmacies close after major storms.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Generator — fuel, oil, and cord</strong><span>NEVER run indoors. Run outside 20+ feet from windows.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Cash — ATMs fail after storms</strong><span>Small bills. $200–$500 minimum.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Portable phone charger — fully charged</strong><span>Solar or battery bank. Keep charged all season.</span></div></li>
+          <li><div class="checkbox"></div><div class="item-text"><strong>Know your evacuation zone (A through F)</strong><span>Check Palm Beach County Emergency Management: pbcgov.org/emergency</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION 5: After the Storm -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">📞</span>
+        <span class="section-title">Section 5 — After a Storm: Protect Your Claim</span>
+        <span class="section-count">Critical</span>
+      </div>
+      <ul class="checklist">
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Document ALL damage before any cleanup or repairs</strong><span>Photos and video everything — roof, interior, belongings. The carrier will try to minimize scope without documentation.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Do NOT sign an Assignment of Benefits (AOB) with any contractor</strong><span>AOBs transfer your insurance rights to the contractor. You lose control of your own claim. Florida law has limited AOBs — any contractor asking you to sign one is a red flag.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>⚡ Call a public adjuster BEFORE you call your insurance company</strong><span>Your carrier's adjuster works for the insurance company. A PA works for you. Having representation from the first call sets the right tone for your entire claim.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Make only emergency temporary repairs to prevent further damage</strong><span>Tarps on the roof. Board broken windows. Keep ALL receipts. These are reimbursable. Don't do permanent repairs until the claim is settled.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>File your claim promptly — document the date you filed</strong><span>Florida policies have claim deadlines. Don't wait. Keep a written record of every conversation with your carrier including date, time, and representative name.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Do NOT give a recorded statement without preparation</strong><span>You have the right to review your policy and consult with a PA before making any recorded statement. Anything you say can be used to limit your claim.</span></div></li>
+        <li><div class="checkbox"></div><div class="item-text"><strong>Request a complete copy of your policy and claim file</strong><span>You're entitled to it. Review the estimate line by line. Carriers frequently omit covered items.</span></div></li>
+      </ul>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- CTA -->
+  <div class="cta">
+    <h3>Get Daily South Florida Property Intelligence</h3>
+    <p>Our free newsletter tracks insurance market changes, storm forecasts, regulatory updates, and contractor market conditions — delivered before 7am, Monday through Saturday.</p>
+    <a class="cta-url" href="https://robinhoodadjusting.com/hurricane-checklist">Subscribe Free at robinhoodadjusting.com</a>
+    <div class="cta-contact">
+      Questions about a current or upcoming claim? &nbsp;<strong>Robinhood Adjusting — Licensed Public Adjusters</strong>&nbsp; | duncanlittlejohnjr@gmail.com
+    </div>
+  </div>
+
+  <div class="print-note">
+    Print this checklist: File → Print → Save as PDF &nbsp;|&nbsp; robinhoodadjusting.com &nbsp;|&nbsp; © 2026 Robinhood Adjusting
+  </div>
+
+</div>
+</body>
+</html>

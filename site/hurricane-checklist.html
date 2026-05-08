@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Hurricane Season Checklist 2026 — South Florida Property Owners</title>
+<meta name="description" content="Get our free 2026 Hurricane Season Property Protection Checklist + daily South Florida insurance intelligence delivered to your inbox. Hurricane season starts June 1.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --navy:#0f2d4a; --red:#c41e3a; --gold:#c9922a; --light:#f8f4ee; }
+  body { font-family:'Open Sans',sans-serif; background:#fff; color:#1a1a2e; }
+
+  /* ── Countdown bar ── */
+  .top-bar {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .top-bar span { opacity: 0.8; font-weight: 400; margin-left: 8px; }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--navy);
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '🌀';
+    position: absolute;
+    font-size: 320px;
+    opacity: 0.04;
+    top: -60px;
+    right: -60px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-label {
+    display: inline-block;
+    background: rgba(201,146,42,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    color: #fff;
+    line-height: 1.2;
+    max-width: 720px;
+    margin: 0 auto 18px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  /* ── Form card ── */
+  .form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 32px 36px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .form-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .form-sub {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display:block; font-size:12px; font-weight:700; color:#555; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.5px; }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #1a1a2e;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus { border-color: var(--navy); }
+  .submit-btn {
+    width: 100%;
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 6px;
+    letter-spacing: 0.3px;
+  }
+  .submit-btn:hover { background: #a31830; }
+  .form-fine {
+    font-size: 11px;
+    color: #bbb;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── What you get ── */
+  .what-you-get {
+    background: var(--light);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .wg-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  .what-you-get h2 { font-family:'Merriweather',serif; font-size:28px; color:var(--navy); margin-bottom:12px; }
+  .what-you-get p { font-size:15px; color:#555; max-width:540px; margin:0 auto 40px; line-height:1.7; }
+  .benefits { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto; }
+  .benefit { background:white; border-radius:8px; padding:24px 20px; border-top:3px solid var(--navy); text-align:left; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+  .benefit-icon { font-size:28px; margin-bottom:12px; display:block; }
+  .benefit h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+  .benefit p { font-size:13px; color:#666; line-height:1.6; }
+
+  /* ── Checklist preview ── */
+  .preview { padding:64px 24px; max-width:900px; margin:0 auto; }
+  .preview h2 { font-family:'Merriweather',serif; font-size:26px; color:var(--navy); margin-bottom:8px; }
+  .preview-sub { font-size:14px; color:#666; margin-bottom:28px; }
+  .preview-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .preview-section { }
+  .preview-section h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:white; background:var(--navy); padding:8px 14px; border-radius:4px; margin-bottom:10px; }
+  .preview-list { list-style:none; }
+  .preview-list li { display:flex; gap:8px; align-items:flex-start; font-size:13px; color:#444; padding:5px 0; border-bottom:1px solid #f0f0f0; }
+  .preview-list li::before { content:'☐'; color:var(--navy); font-size:14px; flex-shrink:0; margin-top:1px; }
+  .preview-list li.highlight { font-weight:600; color:var(--navy); }
+
+  /* ── Social proof ── */
+  .trust { background:var(--navy); padding:48px 24px; text-align:center; }
+  .trust h3 { font-family:'Merriweather',serif; font-size:22px; color:var(--gold); margin-bottom:28px; }
+  .trust-items { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+  .trust-item { color:rgba(255,255,255,0.8); text-align:center; }
+  .trust-item .t-num { font-size:32px; font-weight:800; color:white; display:block; }
+  .trust-item .t-label { font-size:12px; color:rgba(255,255,255,0.6); margin-top:4px; }
+
+  /* ── Bottom CTA ── */
+  .bottom-cta { background:var(--red); padding:48px 24px; text-align:center; }
+  .bottom-cta h2 { font-family:'Merriweather',serif; font-size:26px; color:white; margin-bottom:14px; }
+  .bottom-cta p { font-size:15px; color:rgba(255,255,255,0.85); margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto; }
+  .bottom-cta a { background:white; color:var(--red); padding:14px 32px; border-radius:6px; font-weight:700; text-decoration:none; font-size:15px; display:inline-block; }
+  .bottom-cta a:hover { background:var(--light); }
+
+  /* ── Footer ── */
+  footer { padding:24px; text-align:center; font-size:12px; color:#aaa; border-top:1px solid #f0f0f0; }
+  footer a { color:#aaa; }
+
+  /* ── Thank you screen ── */
+  #thank-you {
+    display:none;
+    background:white;
+    border-radius:10px;
+    padding:32px 36px;
+    max-width:500px;
+    margin:0 auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    text-align:center;
+  }
+  #thank-you .ty-icon { font-size:48px; margin-bottom:16px; display:block; }
+  #thank-you h3 { font-family:'Merriweather',serif; font-size:22px; color:var(--navy); margin-bottom:10px; }
+  #thank-you p { font-size:14px; color:#555; margin-bottom:20px; line-height:1.7; }
+  #thank-you a { display:inline-block; background:var(--navy); color:white; padding:12px 24px; border-radius:6px; font-weight:700; text-decoration:none; font-size:14px; }
+
+  @media(max-width:600px) {
+    .preview-grid { grid-template-columns:1fr; }
+    .form-card { padding:24px 20px; }
+    .trust-items { gap:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  🌀 Hurricane Season Starts June 1, 2026 <span>— Less than 30 days to prepare</span>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-label">Free Download — 2026 Edition</div>
+  <h1>The South Florida Property Owner's<br><em>Hurricane Season Checklist</em></h1>
+  <div class="hero-sub">39 things every South Florida homeowner needs to do before June 1 — plus daily insurance market intelligence delivered free to your inbox.</div>
+
+  <!-- Signup Form -->
+  <div class="form-card" id="signup-form">
+    <div class="form-title">Get Your Free Checklist</div>
+    <div class="form-sub">Instant access + daily briefings. No spam, ever.</div>
+    <form name="hurricane-checklist" method="POST" onsubmit="handleSignup(event)">
+      <p style="display:none"><input name="bot-field"></p>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="firstname" placeholder="Your first name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>I am a...</label>
+        <select name="category" required>
+          <option value="">Select your role</option>
+          <option value="homeowner">Homeowner / Property Owner</option>
+          <option value="service-provider">Contractor / Service Provider</option>
+          <option value="real-estate">Real Estate Professional</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Get My Free Checklist →</button>
+      <div class="form-fine">No spam. Unsubscribe anytime. We respect your inbox.</div>
+    </form>
+  </div>
+
+  <!-- Thank You -->
+  <div id="thank-you">
+    <span class="ty-icon">✅</span>
+    <h3>You're in! Check your email.</h3>
+    <p>Your checklist is on its way. You'll also start receiving our free daily South Florida property intelligence brief each weekday morning.</p>
+    <a href="resources/hurricane-checklist-2026.html" target="_blank">View &amp; Print Checklist Now →</a>
+  </div>
+</section>
+
+<!-- What You Get -->
+<section class="what-you-get">
+  <div class="wg-label">What's Included</div>
+  <h2>More Than a Checklist</h2>
+  <p>Subscribe and get our complete hurricane preparedness guide plus ongoing intelligence that keeps you ahead of the market — all season long.</p>
+  <div class="benefits">
+    <div class="benefit">
+      <span class="benefit-icon">📋</span>
+      <h3>39-Item Property Checklist</h3>
+      <p>Organized by category — insurance review, exterior, emergency kit, and what to do after a storm to protect your claim.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">📰</span>
+      <h3>Daily Intelligence Brief</h3>
+      <p>Market news, storm forecasts, regulatory changes, and contractor market conditions — before 7am, Mon–Sat.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">⚖️</span>
+      <h3>Know Your Rights</h3>
+      <p>Plain-language guidance on claim rights, what to do if your insurer underpays, and when to call a public adjuster.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🌀</span>
+      <h3>Storm Season Tracking</h3>
+      <p>NHC forecasts, heat events, and South Florida weather intelligence contextualized for property owners and contractors.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Checklist Preview -->
+<section class="preview">
+  <h2>What's In the Checklist</h2>
+  <div class="preview-sub">A preview of the 39 items — organized into 5 sections covering every angle of hurricane preparedness.</div>
+  <div class="preview-grid">
+    <div class="preview-section">
+      <h4>📋 Insurance Review</h4>
+      <ul class="preview-list">
+        <li class="highlight">Know your hurricane deductible (it's not what you think)</li>
+        <li>Locate and digitize your policy documents</li>
+        <li class="highlight">Check coverage limits vs. current replacement cost</li>
+        <li>Understand flood coverage gaps</li>
+        <li class="highlight">Save a public adjuster's number now, not after the storm</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>🏠 Exterior & Structural</h4>
+      <ul class="preview-list">
+        <li class="highlight">Roof inspection — the #1 vulnerability</li>
+        <li>Storm shutter / impact glass operational check</li>
+        <li class="highlight">Garage door wind rating — the most common failure point</li>
+        <li>Tree trimming within 10 feet</li>
+        <li>HVAC strapping and anchor bolts</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>🎒 Emergency Preparedness</h4>
+      <ul class="preview-list">
+        <li class="highlight">7-day water and food supply</li>
+        <li>Generator safety (CO poisoning kills every season)</li>
+        <li>30-day medication supply</li>
+        <li class="highlight">Know your evacuation zone (A–F)</li>
+        <li>Cash — ATMs fail after storms</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>📞 After the Storm — Protect Your Claim</h4>
+      <ul class="preview-list">
+        <li class="highlight">Document damage BEFORE any cleanup</li>
+        <li class="highlight">Do NOT sign an AOB with any contractor</li>
+        <li>Make only emergency temporary repairs</li>
+        <li class="highlight">Call a PA before your insurance company</li>
+        <li>How to request your full claim file</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="trust">
+  <h3>South Florida Property Intelligence, Every Morning</h3>
+  <div class="trust-items">
+    <div class="trust-item"><span class="t-num">3</span><div class="t-label">Audience editions<br>(Homeowner, Provider, RE Pro)</div></div>
+    <div class="trust-item"><span class="t-num">6×</span><div class="t-label">Per week<br>Mon – Sat before 7am</div></div>
+    <div class="trust-item"><span class="t-num">$0</span><div class="t-label">Always free<br>No credit card needed</div></div>
+    <div class="trust-item"><span class="t-num">24</span><div class="t-label">Days until<br>hurricane season</div></div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="bottom-cta">
+  <h2>Don't Start Hurricane Season Unprepared</h2>
+  <p>Get your free checklist now and join the South Florida property owners and professionals who start every morning with our intelligence brief.</p>
+  <a href="#signup-form" onclick="document.getElementById('signup-form').scrollIntoView({behavior:'smooth'}); return false;">Get the Free Checklist →</a>
+</section>
+
+<footer>
+  <p>© 2026 Robinhood Adjusting — Licensed Public Adjusters, South Florida</p>
+  <p style="margin-top:6px;"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="resources/hurricane-checklist-2026.html">View Checklist</a> &nbsp;·&nbsp; <a href="mailto:duncanlittlejohnjr@gmail.com">Contact</a></p>
+</footer>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  // Submit to Netlify
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).catch(() => {}); // fail silently — still show thank you
+
+  document.getElementById('signup-form').style.display = 'none';
+  document.getElementById('thank-you').style.display = 'block';
+}
+
+// Countdown timer
+(function() {
+  const june1 = new Date('2026-06-01T00:00:00');
+  const bar = document.querySelector('.top-bar');
+  function update() {
+    const diff = june1 - new Date();
+    if (diff <= 0) return;
+    const days = Math.floor(diff / 86400000);
+    bar.innerHTML = `🌀 Hurricane Season Starts June 1, 2026 <span>— ${days} days to prepare</span>`;
+  }
+  update();
+  setInterval(update, 60000);
+})();
+</script>
+</body>
+</html>
