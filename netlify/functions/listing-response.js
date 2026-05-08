@@ -26,6 +26,17 @@ const GITHUB_REF  = "main";
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
+async function moveDealStage(companyId, stageId, token) {
+  if (!companyId) return;
+  const assoc = await hs("GET",
+    `/crm/v3/objects/companies/${companyId}/associations/deals`, undefined, token);
+  const dealIds = (assoc.data?.results || []).map(r => r.id);
+  for (const dealId of dealIds) {
+    await hs("PATCH", `/crm/v3/objects/deals/${dealId}`,
+      { properties: { dealstage: stageId } }, token);
+  }
+}
+
 async function hs(method, path, body, token) {
   const res = await fetch(`https://api.hubapi.com${path}`, {
     method,
@@ -234,6 +245,7 @@ export async function handler(event) {
       await hs("PATCH", `/crm/v3/objects/contacts/${contactId}`,
                { properties: { hs_lead_status: "UNQUALIFIED" } }, hsToken);
     }
+    await moveDealStage(companyId, "closedlost", hsToken);   // → Declined
     return { statusCode: 200, headers: { "Content-Type": "text/html" }, body: noPage() };
   }
 
@@ -253,10 +265,11 @@ export async function handler(event) {
              { properties: { hs_lead_status: "CONNECTED" } }, hsToken);
   }
 
-  // 3. Update HubSpot company
+  // 3. Update HubSpot company + move deal to Listed in Directory
   if (companyId) {
     await hs("PATCH", `/crm/v3/objects/companies/${companyId}`,
              { properties: { description: "listing_confirmed" } }, hsToken);
+    await moveDealStage(companyId, "decisionmakerboughtin", hsToken);  // → Listed in Directory
   }
 
   // 4. Update GitHub directory JSON + HTML (best-effort — don't fail the response)

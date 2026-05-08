@@ -164,6 +164,14 @@ def update_contact_status(contact_id, status, token):
     hs("PATCH", f"/crm/v3/objects/contacts/{contact_id}",
        {"properties": {"hs_lead_status": status}}, token)
 
+def move_deal_stage(contact_id, stage_id, token):
+    """Find the deal associated with this contact and move it to stage_id."""
+    _, data = hs("GET", f"/crm/v3/objects/contacts/{contact_id}/associations/deals", token=token)
+    deal_ids = [r["id"] for r in data.get("results", [])]
+    for deal_id in deal_ids:
+        hs("PATCH", f"/crm/v3/objects/deals/{deal_id}",
+           {"properties": {"dealstage": stage_id}}, token)
+
 # ── local category lookup ────────────────────────────────────────────────────
 
 def load_category_map():
@@ -401,6 +409,7 @@ def main():
             send_email(gmail_pw, email, subject, body)
             log_email_to_hubspot(cid, company_id, email, subject, body, token)
             update_contact_status(cid, "IN_PROGRESS", token)
+            move_deal_stage(cid, "qualifiedtobuy", token)  # → Outreach Sent
             state["all_sent"].append(cid)
             log(f"  ✓ Sent: {first} @ {company_name} <{email}>")
             sent += 1
