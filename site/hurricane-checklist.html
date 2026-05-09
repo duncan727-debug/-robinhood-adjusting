@@ -356,17 +356,27 @@
 function handleSignup(e) {
   e.preventDefault();
   const form = e.target;
-  const data = new FormData(form);
+  const email    = form.querySelector('[name="email"]').value.trim();
+  const category = form.querySelector('[name="category"]').value;
+  const btn      = form.querySelector('.submit-btn');
 
-  // Submit to Netlify
-  fetch('/', {
+  const segment = (category === 'homeowner' || category === 'service-provider' || category === 'real-estate')
+    ? category : 'homeowner';
+
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+
+  fetch('/.netlify/functions/subscribe-newsletter', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(data).toString()
-  }).catch(() => {}); // fail silently — still show thank you
-
-  document.getElementById('signup-form').style.display = 'none';
-  document.getElementById('thank-you').style.display = 'block';
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, segment })
+  })
+    .then(r => r.json())
+    .catch(() => ({ success: true }))
+    .finally(() => {
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('thank-you').style.display = 'block';
+    });
 }
 
 // Countdown timer
