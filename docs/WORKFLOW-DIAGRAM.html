@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robinhood Adjusting — Operations Workflow</title>
+<style>
+  body { margin: 0; padding: 28px 16px 40px; background: #f0e6d6; font-family: 'Segoe UI', Arial, sans-serif; }
+  h1 { text-align: center; color: #0f2d4a; font-size: 24px; margin: 0 0 4px; font-weight: 700; }
+  .sub { text-align: center; color: #8a7060; font-size: 13px; margin: 0 0 24px; letter-spacing: 0.3px; }
+  svg { width: 100%; max-width: 1380px; display: block; margin: 0 auto; filter: drop-shadow(0 6px 24px rgba(0,0,0,.12)); border-radius: 16px; }
+</style>
+</head>
+<body>
+<h1>Robinhood Adjusting — Daily Automation Stack</h1>
+<p class="sub">5-workflow pipeline &nbsp;·&nbsp; Mon–Sat &nbsp;·&nbsp; Operated by Agent Smith</p>
+
+<svg viewBox="0 0 1380 960" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arr"   viewBox="0 0 10 10" markerWidth="8" markerHeight="6" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#999"/></marker>
+  <marker id="arr-g" viewBox="0 0 10 10" markerWidth="8" markerHeight="6" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#2d6a4f"/></marker>
+  <marker id="arr-r" viewBox="0 0 10 10" markerWidth="8" markerHeight="6" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#b85450"/></marker>
+  <filter id="sh" x="-8%" y="-8%" width="116%" height="120%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000020"/>
+  </filter>
+</defs>
+
+<!-- Background -->
+<rect width="1380" height="960" fill="#faf2e4" rx="16"/>
+
+<!-- ── Decorative circle ── -->
+<circle cx="118" cy="290" r="104" fill="white" stroke="#e0d0bc" stroke-width="2.5" filter="url(#sh)"/>
+<text x="118" y="258" text-anchor="middle" font-size="52" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🛡️</text>
+<text x="118" y="294" text-anchor="middle" font-size="13" font-weight="700" fill="#0f2d4a" font-family="Segoe UI,Arial,sans-serif">ROBINHOOD</text>
+<text x="118" y="311" text-anchor="middle" font-size="13" font-weight="700" fill="#0f2d4a" font-family="Segoe UI,Arial,sans-serif">ADJUSTING</text>
+<text x="118" y="334" text-anchor="middle" font-size="11" fill="#8a7060" font-family="Segoe UI,Arial,sans-serif">Automation Stack</text>
+<rect x="88" y="344" width="60" height="18" rx="9" fill="#2d6a4f"/>
+<text x="118" y="356" text-anchor="middle" font-size="10" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">● LIVE</text>
+
+<!-- ── Legend ── -->
+<rect x="28" y="430" width="182" height="224" rx="10" fill="white" stroke="#e0d0bc" stroke-width="1.5" filter="url(#sh)"/>
+<text x="119" y="452" text-anchor="middle" font-size="11" font-weight="700" fill="#555" letter-spacing="1.5" font-family="Segoe UI,Arial,sans-serif">LEGEND</text>
+<rect x="46" y="463" width="13" height="13" rx="3" fill="#1a8080"/>
+<text x="67" y="474" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Data Sources</text>
+<rect x="46" y="485" width="13" height="13" rx="3" fill="#0f2d4a"/>
+<text x="67" y="496" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Generation / Drafts</text>
+<rect x="46" y="507" width="13" height="13" rx="3" fill="#c9922a"/>
+<text x="67" y="518" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Distribution</text>
+<rect x="46" y="529" width="13" height="13" rx="3" fill="#d4622a"/>
+<text x="67" y="540" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">CRM Sync</text>
+<rect x="46" y="551" width="13" height="13" rx="3" fill="#c41e3a"/>
+<text x="67" y="562" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Outreach</text>
+<rect x="46" y="573" width="13" height="13" rx="3" fill="#2d6a4f"/>
+<text x="67" y="584" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Success / Live</text>
+<rect x="46" y="595" width="13" height="13" rx="3" fill="#4a5568"/>
+<text x="67" y="606" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Ops &amp; Monitoring</text>
+<rect x="46" y="617" width="13" height="13" rx="3" fill="#b85450"/>
+<text x="67" y="628" font-size="11" fill="#444" font-family="Segoe UI,Arial,sans-serif">Follow-up / Retry</text>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CONTENT PIPELINE  (center x = 460)                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<text x="460" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#1a8080" letter-spacing="2" font-family="Segoe UI,Arial,sans-serif">CONTENT PIPELINE</text>
+<line x1="295" y1="41" x2="625" y2="41" stroke="#1a8080" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- time badges: left rail -->
+<rect x="13" y="58"  width="72" height="22" rx="11" fill="#1a808033"/>
+<text x="49" y="73"  text-anchor="middle" font-size="10" font-weight="700" fill="#1a8080" font-family="Segoe UI,Arial,sans-serif">sources</text>
+<rect x="13" y="198" width="72" height="22" rx="11" fill="#0f2d4a33"/>
+<text x="49" y="213" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2d4a" font-family="Segoe UI,Arial,sans-serif">4:00 am</text>
+<rect x="13" y="338" width="72" height="22" rx="11" fill="#0f2d4a33"/>
+<text x="49" y="353" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2d4a" font-family="Segoe UI,Arial,sans-serif">Fridays</text>
+<rect x="13" y="478" width="72" height="22" rx="11" fill="#c9922a33"/>
+<text x="49" y="493" text-anchor="middle" font-size="10" font-weight="700" fill="#c9922a" font-family="Segoe UI,Arial,sans-serif">daily</text>
+<rect x="13" y="618" width="72" height="22" rx="11" fill="#2d6a4f33"/>
+<text x="49" y="633" text-anchor="middle" font-size="10" font-weight="700" fill="#2d6a4f" font-family="Segoe UI,Arial,sans-serif">2–5 min</text>
+
+<!-- Box 1: Research Sources -->
+<rect x="345" y="55" width="230" height="82" rx="9" fill="#1a8080" filter="url(#sh)"/>
+<text x="460" y="87"  text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🔍</text>
+<text x="460" y="109" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Research Sources</text>
+<text x="460" y="127" text-anchor="middle" font-size="10" fill="#b0dede" font-family="Segoe UI,Arial,sans-serif">NWS · OIR · MLS · Real Deal · Press</text>
+<line x1="460" y1="137" x2="460" y2="193" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box 2: 4am Daily Brief -->
+<rect x="345" y="198" width="230" height="80" rx="9" fill="#0f2d4a" filter="url(#sh)"/>
+<text x="460" y="228" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">📋</text>
+<text x="460" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">4:00am Daily Brief</text>
+<text x="460" y="267" text-anchor="middle" font-size="10" fill="#9ec8e0" font-family="Segoe UI,Arial,sans-serif">Research + writing · Mon–Sat</text>
+<line x1="460" y1="278" x2="460" y2="334" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box 3: Weekly Trends -->
+<rect x="345" y="339" width="230" height="80" rx="9" fill="#0f2d4a" filter="url(#sh)"/>
+<text x="460" y="369" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">📊</text>
+<text x="460" y="390" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Weekly Trends Report</text>
+<text x="460" y="408" text-anchor="middle" font-size="10" fill="#9ec8e0" font-family="Segoe UI,Arial,sans-serif">Public · service providers · Fridays</text>
+<line x1="460" y1="419" x2="460" y2="475" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box 4: Website + Newsletter -->
+<rect x="330" y="480" width="260" height="92" rx="9" fill="#c9922a" filter="url(#sh)"/>
+<text x="440" y="513" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🌐</text>
+<text x="472" y="513" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">📧</text>
+<text x="460" y="535" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Website Sync + Newsletter</text>
+<text x="460" y="553" text-anchor="middle" font-size="10" fill="#fff4cc" font-family="Segoe UI,Arial,sans-serif">PA-WEBSITE.html · GitHub push</text>
+<text x="460" y="567" text-anchor="middle" font-size="10" fill="#fff4cc" font-family="Segoe UI,Arial,sans-serif">HubSpot email campaign send</text>
+<line x1="460" y1="572" x2="460" y2="613" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box 5: Live Website -->
+<rect x="345" y="618" width="230" height="74" rx="9" fill="#2d6a4f" filter="url(#sh)"/>
+<text x="460" y="648" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🚀</text>
+<text x="460" y="669" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">robinhoodadjusting.com</text>
+<text x="460" y="685" text-anchor="middle" font-size="10" fill="#9dd8b8" font-family="Segoe UI,Arial,sans-serif">Live via Netlify · 2–5 min</text>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CRM & OUTREACH PIPELINE  (center x = 960)          -->
+<!-- Correct time order: 5am → 6am → 7am → 8:30am       -->
+<!--                     → Outreach → 9:00am Prospecting -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<text x="960" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#c41e3a" letter-spacing="2" font-family="Segoe UI,Arial,sans-serif">CRM &amp; OUTREACH PIPELINE</text>
+<line x1="760" y1="41" x2="1160" y2="41" stroke="#c41e3a" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- time badges: right rail -->
+<rect x="1295" y="58"  width="72" height="22" rx="11" fill="#0f2d4a33"/>
+<text x="1331" y="73"  text-anchor="middle" font-size="10" font-weight="700" fill="#0f2d4a" font-family="Segoe UI,Arial,sans-serif">5:00 am</text>
+<rect x="1295" y="198" width="72" height="22" rx="11" fill="#0f2d4a33"/>
+<text x="1295" y="198" width="72" height="22" rx="11" fill="#0f2d4a33"/>
+<text x="1331" y="213" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2d4a" font-family="Segoe UI,Arial,sans-serif">6:00 am</text>
+<rect x="1295" y="338" width="72" height="22" rx="11" fill="#4a556833"/>
+<text x="1331" y="353" text-anchor="middle" font-size="10" font-weight="700" fill="#4a5568" font-family="Segoe UI,Arial,sans-serif">7:00 am</text>
+<rect x="1295" y="498" width="72" height="22" rx="11" fill="#d4622a33"/>
+<text x="1331" y="513" text-anchor="middle" font-size="10" font-weight="700" fill="#d4622a" font-family="Segoe UI,Arial,sans-serif">8:30 am</text>
+<rect x="1295" y="618" width="72" height="22" rx="11" fill="#c41e3a22"/>
+<text x="1331" y="633" text-anchor="middle" font-size="10" font-weight="700" fill="#c41e3a" font-family="Segoe UI,Arial,sans-serif">post-sync</text>
+<rect x="1295" y="758" width="72" height="22" rx="11" fill="#1a808033"/>
+<text x="1331" y="773" text-anchor="middle" font-size="10" font-weight="700" fill="#1a8080" font-family="Segoe UI,Arial,sans-serif">9:00 am</text>
+
+<!-- Box A: 5am Prospect Intel -->
+<rect x="845" y="55" width="230" height="82" rx="9" fill="#0f2d4a" filter="url(#sh)"/>
+<text x="960" y="87"  text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🔮</text>
+<text x="960" y="109" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">5:00am Prospect Intel</text>
+<text x="960" y="127" text-anchor="middle" font-size="10" fill="#9ec8e0" font-family="Segoe UI,Arial,sans-serif">Enriches profiles from prior prospecting</text>
+<line x1="960" y1="137" x2="960" y2="193" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box B: 6am CRM Drafts -->
+<rect x="845" y="198" width="230" height="80" rx="9" fill="#0f2d4a" filter="url(#sh)"/>
+<text x="960" y="228" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">✍️</text>
+<text x="960" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">6:00am CRM Drafts</text>
+<text x="960" y="267" text-anchor="middle" font-size="10" fill="#9ec8e0" font-family="Segoe UI,Arial,sans-serif">Personalized outreach emails · Mon–Sat</text>
+<line x1="960" y1="278" x2="960" y2="334" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box C: 7am Response Handler -->
+<rect x="845" y="339" width="230" height="80" rx="9" fill="#4a5568" filter="url(#sh)"/>
+<text x="960" y="369" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">📬</text>
+<text x="960" y="390" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">7:00am Response Handler</text>
+<text x="960" y="408" text-anchor="middle" font-size="10" fill="#c0cad8" font-family="Segoe UI,Arial,sans-serif">Gmail inbox · reply detection</text>
+
+<!-- Decision diamond branches off response handler -->
+<!-- Right arrow from box C to diamond -->
+<line x1="1075" y1="379" x2="1148" y2="379" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Decision Diamond: center(1195,379) -->
+<polygon points="1195,355 1241,379 1195,403 1149,379" fill="#7b8794" stroke="white" stroke-width="2.5"/>
+<text x="1195" y="383" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Reply?</text>
+
+<!-- YES → up to deal pipeline box -->
+<line x1="1195" y1="355" x2="1195" y2="298" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#arr-g)"/>
+<text x="1207" y="325" font-size="11" font-weight="700" fill="#2d6a4f" font-family="Segoe UI,Arial,sans-serif">YES</text>
+<!-- Deal Pipeline box -->
+<rect x="1100" y="238" width="190" height="60" rx="9" fill="#2d6a4f" filter="url(#sh)"/>
+<text x="1195" y="261" text-anchor="middle" font-size="18" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">✅</text>
+<text x="1195" y="281" text-anchor="middle" font-size="12" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Deal Pipeline Update</text>
+<text x="1195" y="294" text-anchor="middle" font-size="10" fill="#9dd8b8" font-family="Segoe UI,Arial,sans-serif">Stage updated in HubSpot</text>
+
+<!-- NO → down arrow -->
+<line x1="1195" y1="403" x2="1195" y2="454" stroke="#b85450" stroke-width="2.5" marker-end="url(#arr-r)"/>
+<text x="1207" y="432" font-size="11" font-weight="700" fill="#b85450" font-family="Segoe UI,Arial,sans-serif">NO</text>
+<!-- Follow-up Drip box -->
+<rect x="1100" y="459" width="190" height="60" rx="9" fill="#b85450" filter="url(#sh)"/>
+<text x="1195" y="482" text-anchor="middle" font-size="18" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🔄</text>
+<text x="1195" y="502" text-anchor="middle" font-size="12" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Follow-up Drip</text>
+<text x="1195" y="515" text-anchor="middle" font-size="10" fill="#ffd0c8" font-family="Segoe UI,Arial,sans-serif">Day 3 · Day 7 sequence</text>
+
+<!-- Continue main CRM flow: arrow from Box C down to Box D -->
+<line x1="960" y1="419" x2="960" y2="493" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box D: 8:30am HubSpot Sync -->
+<rect x="845" y="498" width="230" height="80" rx="9" fill="#d4622a" filter="url(#sh)"/>
+<text x="960" y="528" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">🗄️</text>
+<text x="960" y="549" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">8:30am HubSpot Sync</text>
+<text x="960" y="567" text-anchor="middle" font-size="10" fill="#ffe8d6" font-family="Segoe UI,Arial,sans-serif">Contacts + emails uploaded to CRM</text>
+<line x1="960" y1="578" x2="960" y2="613" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box E: Email Outreach -->
+<rect x="845" y="618" width="230" height="80" rx="9" fill="#c41e3a" filter="url(#sh)"/>
+<text x="960" y="648" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">📤</text>
+<text x="960" y="669" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">Email Outreach Send</text>
+<text x="960" y="687" text-anchor="middle" font-size="10" fill="#ffccd4" font-family="Segoe UI,Arial,sans-serif">Campaign fires after sync confirms</text>
+<line x1="960" y1="698" x2="960" y2="753" stroke="#bbb" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- Box F: 9am Prospecting (bottom — feeds next day) -->
+<rect x="845" y="758" width="230" height="82" rx="9" fill="#1a8080" filter="url(#sh)"/>
+<text x="960" y="790" text-anchor="middle" font-size="22" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">📍</text>
+<text x="960" y="811" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">9:00am Prospecting</text>
+<text x="960" y="829" text-anchor="middle" font-size="10" fill="#b0dede" font-family="Segoe UI,Arial,sans-serif">Google Places · feeds tomorrow's cycle</text>
+
+<!-- Feedback loop arrow: Prospecting → loops back to top (next day) -->
+<path d="M 960 840 Q 960 880 850 880 Q 740 880 740 800 Q 740 720 800 680" stroke="#1a8080" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arr)"/>
+<text x="756" y="876" text-anchor="middle" font-size="10" fill="#1a8080" font-family="Segoe UI,Arial,sans-serif" font-style="italic">next day →</text>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BOTTOM: 7:30am Ops Review & Dashboard              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<rect x="245" y="908" width="890" height="38" rx="10" fill="#4a5568" filter="url(#sh)"/>
+<text x="690" y="923" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="Segoe UI,Arial,sans-serif">⚙️  7:30am Ops Review &amp; Dashboard</text>
+<text x="690" y="938" text-anchor="middle" font-size="11" fill="#c0cad8" font-family="Segoe UI,Arial,sans-serif">Monitors all pipelines · flags errors · generates daily report · Mon–Sat</text>
+
+<!-- Dashed monitor lines down to ops bar -->
+<line x1="460" y1="692" x2="460" y2="908" stroke="#4a5568" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.4"/>
+<line x1="960" y1="698" x2="690" y2="908" stroke="#4a5568" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.4"/>
+
+</svg>
+</body>
+</html>

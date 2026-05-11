@@ -168,7 +168,7 @@ const DASHBOARD_DATA = {
     { time:"7:00am",  name:"Response Handler",   detail:$(printf '"%s"' "$responses_detail"), status:"$responses_status" },
     { time:"7:30am",  name:"Ops Review",         detail:$(printf '"%s"' "$opsreview_detail"), status:"$opsreview_status" },
     { time:"8:30am",  name:"HubSpot Sync",       detail:$(printf '"%s"' "$hubspot_detail"),   status:"$hubspot_status" },
-    { time:"9:17am",  name:"Prospecting",        detail:$(printf '"%s"' "$prospect_detail"),  status:"$prospect_status" },
+    { time:"9:00am",  name:"Prospecting",        detail:$(printf '"%s"' "$prospect_detail"),  status:"$prospect_status" },
     { time:"Daily",   name:"Trends",             detail:$(printf '"%s"' "${trends_detail:-Not generated}"), status:"$trends_status" },
     { time:"5:00pm",  name:"Weekly Rollup",      detail:$(printf '"%s"' "$rollup_detail"),    status:"$rollup_status" }
   ],
