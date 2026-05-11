@@ -249,3 +249,179 @@
   Google Places API: 2026-05-07 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
 [2026-05-07 11:55:04] Run complete
 
+[2026-05-08 09:17:00] Palm Beach prospect run started
+  Searching: property management Palm Beach County FL
+    → 0 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 0 results
+  Searching: general contractor Palm Beach County FL
+    → 0 results
+  Searching: water damage restoration Palm Beach County FL
+    → 0 results
+  Searching: roofing company Boca Raton FL
+    → 0 results
+  Searching: roofing company Wellington FL
+    → 0 results
+  Searching: roofing company West Palm Beach FL
+    → 0 results
+  Searching: HVAC service Boca Raton FL
+    → 0 results
+  Searching: property manager West Palm Beach FL
+    → 0 results
+  Searching: insurance restoration contractor FL
+    → 0 results
+  Searching: roofing contractor Palm Beach County FL
+    → 0 results
+  Searching: restoration company Palm Beach County FL
+    → 0 results
+  Searching: HVAC company Palm Beach County FL
+    → 0 results
+  Searching: plumbing company Palm Beach County FL
+    → 0 results
+  Done: 0 added, 0 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-08 | calls: 0 | $0.0000 today | $0.0000 MTD | 0.0% used | 100.0% remaining
+[2026-05-08 09:17:12] Run complete
+
+  Searching: property management Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: real estate brokerage Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: general contractor Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: water damage restoration Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: roofing company Boca Raton FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: roofing company Wellington FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: roofing company West Palm Beach FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: HVAC service Boca Raton FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: property manager West Palm Beach FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: insurance restoration contractor FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: roofing contractor Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: restoration company Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: HVAC company Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Searching: plumbing company Palm Beach County FL
+    Places API error 403: Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    → 0 results
+  Done: 0 added, 0 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-08 | calls: 0 | $0.0000 today | $0.0000 MTD | 0.0% used | 100.0% remaining
+[2026-05-09 08:24:40] Palm Beach prospect run started
+  Searching: property management Palm Beach County FL
+    → 20 results
+    QUEUED (1/25): Mayfair Property Management of Palm Beach County [West Palm Beach] — (954) 779-6053
+    QUEUED (2/25): My Area Realty West Palm Beach Property Management [Wellington] — (561) 516-5283
+    QUEUED (3/25): Keyrenter Property Management South Florida [Palm Beach Gardens] — (561) 331-6000
+    QUEUED (4/25): HG Property Management [West Palm Beach] — (561) 686-8668
+    QUEUED (5/25): Home Property Management [West Palm Beach] — (561) 624-4663
+    QUEUED (6/25): Mangrove Property Management & Sales [North Palm Beach] — (561) 510-8666
+    QUEUED (7/25): Real Property Management Sunstate [West Palm Beach] — (561) 252-7363
+    QUEUED (8/25): Davenport Professional Property Management [Greenacres] — (561) 642-5080
+    QUEUED (9/25): Atlis Property Management [Palm Beach Gardens] — (561) 473-3664
+    QUEUED (10/25): MH Management Solutions Corp [Greenacres] — (561) 227-1552
+    QUEUED (11/25): TPG Property Management [Royal Palm Beach] — (561) 875-5110
+    QUEUED (12/25): Campbell Property Management - Lake Worth [Wellington] — (561) 432-2703
+    QUEUED (13/25): Associated Property Management of the Palm Beaches Inc. [Wellington] — (561) 588-7210
+    QUEUED (14/25): Palm Beach County Property Management [Palm Beach Gardens] — (561) 785-9585
+    QUEUED (15/25): Palm Beach Property Management [Delray Beach] — (561) 394-6921
+    QUEUED (16/25): Kanga Property Management [West Palm Beach] — (877) 589-3591
+    QUEUED (17/25): Orchid Property Management [Boynton Beach] — (561) 288-1719
+    QUEUED (18/25): Home Sales and Property Management [Palm Beach Gardens] — (561) 624-4663
+    QUEUED (19/25): Florida Property Management Services LLC [Boca Raton] — (888) 896-8646
+    QUEUED (20/25): All County Elite Property Management [West Palm Beach] — (561) 506-4646
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (21/25): Donohue Real Estate [Palm Beach] — (561) 838-9555
+    QUEUED (22/25): Palm Beach International Realty [Wellington] — (561) 543-5711
+    QUEUED (23/25): Cheerful Agents Real Estate LLC. [Wellington] — (561) 615-1303
+    QUEUED (24/25): Wilder Real Estate Group [Wellington] — (561) 201-4717
+    QUEUED (25/25): Chaimae Yaagoubi, PA | Real Estate Agency | Palm Beach Florida [Wellington] — (561) 574-0854
+  Done: 25 added, 0 duplicate/existing, 2 large firms skipped, 0 errors
+  Google Places API: 2026-05-09 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-05-09 08:24:52] Run complete
+
+[2026-05-09 09:17:00] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 15 results
+    QUEUED (1/25): NCCS CONSTRUCTION LLC [Wellington] — (561) 502-0095
+    QUEUED (2/25): Kimsto Construction LLC [Lake Worth Beach] — (561) 889-5811
+    QUEUED (3/25): Matos Contracting Inc [Greenacres] — (561) 248-4964
+    QUEUED (4/25): Island Construction & Design [Palm Beach] — (561) 863-2933
+    QUEUED (5/25): Palm Beach Residential Remodeling [West Palm Beach] — (561) 570-0764
+    QUEUED (6/25): Oak Construction LLC [Boynton Beach] — (561) 572-7006
+    QUEUED (7/25): SERAC Construction INC [Wellington] — (561) 907-7171
+    QUEUED (8/25): House Call Construction - Remodeling Custom Kitchens and Baths [Greenacres] — (561) 596-3664
+    QUEUED (9/25): ELITE CONTRACTORS PRO-General Construction & Remodeling Company-Home Improvement Company [Boynton Beach] — (561) 232-2727
+    QUEUED (10/25): Circle Homes ⭕️ [Wellington] — (561) 541-7141
+    QUEUED (11/25): Atlantic View Builders & Remodeling [Boynton Beach] — (561) 560-7556
+    QUEUED (12/25): Steve Cury Construction [West Palm Beach] — (561) 207-6190
+    QUEUED (13/25): RENOVA - Renovation & Remodeling General Contractors [Delray Beach] — (561) 759-6300
+    QUEUED (14/25): West Palm Contracting [Royal Palm Beach] — (561) 983-0634
+    QUEUED (15/25): Belmonte Building Company [West Palm Beach] — (561) 220-7866
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+    QUEUED (16/25): West Palm Beach Water Damage [Royal Palm Beach] — (561) 979-0726
+    QUEUED (17/25): The Phoenix Restoration Water Damage, Mold Remediation, Emergency Water Repair In Lake Worth [Lake Worth Beach] — (954) 866-8408
+    QUEUED (18/25): Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Wellington [Wellington] — (561) 425-6700
+    QUEUED (19/25): Rapid Water Damage Restoration Wellington FL [Wellington] — (561) 905-3099
+    QUEUED (20/25): Water Cleanup of Florida [Delray Beach] — (561) 408-7835
+    QUEUED (21/25): ADU Water Fire Mold Storm [Lake Worth Beach] — (888) 998-2379
+    QUEUED (22/25): Orchid City Restoration [West Palm Beach] — (561) 769-2245
+    QUEUED (23/25): Shield Water Damage Restoration West Palm Beach FL [West Palm Beach] — (645) 218-8680
+    QUEUED (24/25): Damage Services- Mold Remediation & Smoke Cleanup [Greenacres] — no phone
+    QUEUED (25/25): Mold and Water Florida [Palm Beach Gardens] — (561) 221-2335
+  Done: 25 added, 5 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-09 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-05-09 09:17:12] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 15 results
+    QUEUED (1/25): NCCS CONSTRUCTION LLC [Wellington] — (561) 502-0095
+    QUEUED (2/25): Kimsto Construction LLC [Lake Worth Beach] — (561) 889-5811
+    QUEUED (3/25): Matos Contracting Inc [Greenacres] — (561) 248-4964
+    QUEUED (4/25): Island Construction & Design [Palm Beach] — (561) 863-2933
+    QUEUED (5/25): Palm Beach Residential Remodeling [West Palm Beach] — (561) 570-0764
+    QUEUED (6/25): Oak Construction LLC [Boynton Beach] — (561) 572-7006
+    QUEUED (7/25): SERAC Construction INC [Wellington] — (561) 907-7171
+    QUEUED (8/25): House Call Construction - Remodeling Custom Kitchens and Baths [Greenacres] — (561) 596-3664
+    QUEUED (9/25): ELITE CONTRACTORS PRO-General Construction & Remodeling Company-Home Improvement Company [Boynton Beach] — (561) 232-2727
+    QUEUED (10/25): Circle Homes ⭕️ [Wellington] — (561) 541-7141
+    QUEUED (11/25): Atlantic View Builders & Remodeling [Boynton Beach] — (561) 560-7556
+    QUEUED (12/25): Steve Cury Construction [West Palm Beach] — (561) 207-6190
+    QUEUED (13/25): RENOVA - Renovation & Remodeling General Contractors [Delray Beach] — (561) 759-6300
+    QUEUED (14/25): West Palm Contracting [Royal Palm Beach] — (561) 983-0634
+    QUEUED (15/25): Belmonte Building Company [West Palm Beach] — (561) 220-7866
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+    QUEUED (16/25): West Palm Beach Water Damage [Royal Palm Beach] — (561) 979-0726
+    QUEUED (17/25): The Phoenix Restoration Water Damage, Mold Remediation, Emergency Water Repair In Lake Worth [Lake Worth Beach] — (954) 866-8408
+    QUEUED (18/25): Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Wellington [Wellington] — (561) 425-6700
+    QUEUED (19/25): Rapid Water Damage Restoration Wellington FL [Wellington] — (561) 905-3099
+    QUEUED (20/25): Water Cleanup of Florida [Delray Beach] — (561) 408-7835
+    QUEUED (21/25): ADU Water Fire Mold Storm [Lake Worth Beach] — (888) 998-2379
+    QUEUED (22/25): Orchid City Restoration [West Palm Beach] — (561) 769-2245
+    QUEUED (23/25): Shield Water Damage Restoration West Palm Beach FL [West Palm Beach] — (645) 218-8680
+    QUEUED (24/25): Damage Services- Mold Remediation & Smoke Cleanup [Greenacres] — no phone
+    QUEUED (25/25): Mold and Water Florida [Palm Beach Gardens] — (561) 221-2335
+  Done: 25 added, 5 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-09 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Schedule — Duncan's 100-in-100</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1, h2 {
+            color: #1a1a1a;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        .schedule-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .daily-schedule {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .time-slot {
+            font-weight: 600;
+            color: #0066cc;
+            background: #f0f4ff;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: right;
+        }
+        .activity {
+            padding: 10px;
+            border-left: 3px solid #0066cc;
+        }
+        .activity-name {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .activity-detail {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .priority-high {
+            background-color: #ffe6e6;
+            border-left-color: #cc0000;
+        }
+        .priority-medium {
+            background-color: #fff3e6;
+            border-left-color: #ff9900;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+            border-left-color: #0066cc;
+        }
+        .status-ok { color: #00aa00; }
+        .status-blocked { color: #cc0000; }
+        .status-pending { color: #ff9900; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f4ff;
+            font-weight: 600;
+            color: #0066cc;
+        }
+        .note {
+            background: #f0f4ff;
+            padding: 15px;
+            border-left: 4px solid #0066cc;
+            margin: 15px 0;
+        }
+        .updated {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operations Schedule — Duncan's 100-in-100 Push</h1>
+    <p><strong>Last updated:</strong> May 8, 2026 | <strong>Next review:</strong> May 15 (weekly rollup)</p>
+
+    <!-- DAILY SCHEDULE -->
+    <div class="schedule-section">
+        <h2>Daily Rhythm (Mon–Sat)</h2>
+
+        <div class="daily-schedule">
+            <div class="time-slot">4:00 AM EDT</div>
+            <div class="activity priority-high">
+                <div class="activity-name">📰 Brief Generation (Cron)</div>
+                <div class="activity-detail">Research + write daily brief (140–180 lines). Topics: market activity, rate relief, contractor trends, regulatory, weather/risk. Ready for 7:15am check.</div>
+            </div>
+
+            <div class="time-slot">7:15 AM EDT</div>
+            <div class="activity priority-high">
+                <div class="activity-name">🔍 Infrastructure Checkpoint</div>
+                <div class="activity-detail">
+                    <strong>Pre-flight check (5 min):</strong>
+                    <ul style="margin: 5px 0; padding-left: 20px;">
+                        <li>✓ Brief file exists: <code>/briefs/YYYY-MM-DD.md</code> (>500 words)</li>
+                        <li>✓ Trends file exists: <code>/trends/YYYY-MM-DD.md</code> (>500 words) <span class="status-blocked">BROKEN (5+ days)</span></li>
+                        <li>✓ HubSpot consolidation: <code>/crm/hubspot_master_import.csv</code> timestamp today 8:30am <span class="status-blocked">BROKEN (last run May 5)</span></li>
+                        <li>✓ Newsletter: Confirm brief delivery to HubSpot lists <span class="status-blocked">UNCONFIRMED</span></li>
+                    </ul>
+                    <strong>If any fail:</strong> Trigger manual regeneration or flag immediately.
+                </div>
+            </div>
+
+            <div class="time-slot">8:00 AM EDT</div>
+            <div class="activity priority-low">
+                <div class="activity-name">📧 CRM Draft Generation (Cron)</div>
+                <div class="activity-detail">Auto-generate outreach drafts for daily targets (1–9 orgs). All drafts staged for Duncan's review.</div>
+            </div>
+
+            <div class="time-slot">8:30 AM EDT</div>
+            <div class="activity priority-medium">
+                <div class="activity-name">🏦 HubSpot Daily Consolidation (Cron)</div>
+                <div class="activity-detail">Consolidate CRM research into <code>hubspot_master_import.csv</code>, ready for API upload. <span class="status-blocked">CURRENTLY BROKEN</span></div>
+            </div>
+
+            <div class="time-slot">9:15 AM EDT</div>
+            <div class="activity priority-low">
+                <div class="activity-name">🔎 Prospecting (Cron)</div>
+                <div class="activity-detail">Pull ~25 new contacts via Google Places API. Cost: ~$0.034/day. Contacts queued to HubSpot. <span class="status-ok">Running smoothly</span></div>
+            </div>
+
+            <div class="time-slot">9:30 AM–5:00 PM EDT</div>
+            <div class="activity priority-high">
+                <div class="activity-name">📝 Duncan's Active Work Block</div>
+                <div class="activity-detail">Content refinement, CRM draft review, calls, strategy. <strong>Critical gap:</strong> Outreach send time not allocated. Current pattern: 0 sends/day (102 drafts queued, 14 days backlog).</div>
+            </div>
+
+            <div class="time-slot">End of Day</div>
+            <div class="activity priority-medium">
+                <div class="activity-name">📊 Ops Review</div>
+                <div class="activity-detail">Log send data, track responses, document blockers. Update interactions.csv with sent_date + response tracking.</div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ Current Bottleneck:</strong> No explicit send time scheduled. Automated generation (brief, CRM drafts, prospecting) is on schedule; manual send step is stuck at 0/day. Recommend blocking 30 min (9:00–9:30 AM or 4:00–4:30 PM) for batch sends + tracking.
+        </div>
+    </div>
+
+    <!-- WEEKLY RHYTHM -->
+    <div class="schedule-section">
+        <h2>Weekly Rhythm</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Key Activities</th>
+                    <th>Deliverables</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday–Friday</td>
+                    <td>Brief (4am) + Social content + Blog + CRM drafts (8am) + Prospecting (9:15am)</td>
+                    <td>1 brief, 1–3 content pieces, 1–9 CRM drafts</td>
+                    <td><span class="status-ok">✓ On schedule</span></td>
+                </tr>
+                <tr>
+                    <td>Friday, ~12:00 PM EDT</td>
+                    <td>Weekly rollup cron fires</td>
+                    <td>Weekly analysis: 2026-WXX.md (patterns, priorities, 100-in-100 progress)</td>
+                    <td><span class="status-ok">✓ Just started</span></td>
+                </tr>
+                <tr>
+                    <td>Friday (manual)</td>
+                    <td>Review weekly rollup + plan next week</td>
+                    <td>Decision: automate sends? Fix infrastructure? Adjust pace?</td>
+                    <td><span class="status-pending">⏳ Needs Duncan input</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- INFRASTRUCTURE BLOCKERS -->
+    <div class="schedule-section">
+        <h2>🔴 Infrastructure Blockers (As of May 8)</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>System</th>
+                    <th>Issue</th>
+                    <th>Last Confirmed</th>
+                    <th>Business Impact</th>
+                    <th>Action Needed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Trends Generation</strong></td>
+                    <td>No <code>/trends/YYYY-MM-DD.md</code> files since May 2</td>
+                    <td>May 2, 2026</td>
+                    <td>Blocks public-facing analytics; breaks research-to-content pipeline</td>
+                    <td>Investigate cron automation or deprioritize public trends</td>
+                </tr>
+                <tr>
+                    <td><strong>HubSpot Consolidation</strong></td>
+                    <td>Last update May 5 at 08:30am; May 6–8 runs not visible</td>
+                    <td>May 5, 2026</td>
+                    <td>Prospect updates not syncing to CRM; blocks API upload pipeline</td>
+                    <td>Check cron logs, restart job, backfill May 6–8</td>
+                </tr>
+                <tr>
+                    <td><strong>Newsletter Distribution</strong></td>
+                    <td>Post-Beehiiv migration (May 2); no proof briefs reaching subscriber lists</td>
+                    <td>Unconfirmed since May 2</td>
+                    <td>Briefs not reaching 3 audience segments; front-end reach unknown</td>
+                    <td>Confirm HubSpot delivery; check campaign logs; validate list migration</td>
+                </tr>
+                <tr>
+                    <td><strong>Email Validation</strong></td>
+                    <td>Missing <code>contact_email</code> on org files blocks drafts at send time (May 7: KLR, Atlantic)</td>
+                    <td>May 7–8, 2026</td>
+                    <td>Prevents clean sends; creates friction for Duncan at send time</td>
+                    <td>Add pre-check to draft workflow; validate all org emails before "draft_prepared"</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- OUTREACH EXECUTION PLAN -->
+    <div class="schedule-section">
+        <h2>🚨 Critical: Outreach Send Plan (Week of May 9)</h2>
+
+        <div class="note">
+            <strong>Current state:</strong> 102 interactions drafted, 0 sent, 14 days backlog (Apr 24 batch). Manual send is the bottleneck preventing 100-in-100 velocity.
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Batch</th>
+                    <th>Volume</th>
+                    <th>Target Send Window</th>
+                    <th>Priority Orgs</th>
+                    <th>Success Metric</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>April 24 Backlog</strong></td>
+                    <td>~50 orgs</td>
+                    <td>May 9–12 (batch top 20 first)</td>
+                    <td>Roofers > Water Mitigation > Property Managers</td>
+                    <td>20 sent by May 12; track open rate + response rate</td>
+                </tr>
+                <tr>
+                    <td><strong>May 8 Staged Batch</strong></td>
+                    <td>9 orgs</td>
+                    <td>May 9–10 (heat event urgency window)</td>
+                    <td>Quantum, Prestige, Coastal, HOA Advocates</td>
+                    <td>9 sent by May 10; validate email addresses first</td>
+                </tr>
+                <tr>
+                    <td><strong>Ongoing</strong></td>
+                    <td>1–9/day</td>
+                    <td>Within 24h of "draft_prepared" status</td>
+                    <td>All new drafts</td>
+                    <td>0% block rate on missing emails; 100% send within 24h</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Recommended approach:</strong> Block 30 minutes daily (9:00–9:30 AM EDT) for batch sends + tracking. Log all sends in interactions.csv with sent_date, open_tracking_date, response_date.</p>
+    </div>
+
+    <!-- PACING FOR 100-IN-100 -->
+    <div class="schedule-section">
+        <h2>📈 100-in-100 Pacing Check</h2>
+
+        <p><strong>Goal:</strong> 100 closures in 100 days (Apr 24 → Aug 2, 2026).</p>
+        <p><strong>Required velocity:</strong> ~1 closure/day → need ~5–10 outreach contacts/day (rough 10:1 ratio pending conversion data).</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Week 2 (May 4–10)</th>
+                    <th>Required for 100-in-100</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Drafts Created</strong></td>
+                    <td>102 in 14 days (7.3/day)</td>
+                    <td>5–10/day</td>
+                    <td><span class="status-ok">✓ On pace</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Drafts Sent</strong></td>
+                    <td>0 in 14 days (0/day)</td>
+                    <td>5–10/day</td>
+                    <td><span class="status-blocked">✗ Critical gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Response Data</strong></td>
+                    <td>None yet (too early)</td>
+                    <td>Need 50+ sends to measure</td>
+                    <td><span class="status-blocked">✗ Blocked on send</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Closures</strong></td>
+                    <td>0 in 14 days</td>
+                    <td>~1–2 by end of week 3</td>
+                    <td><span class="status-pending">⏳ Too early to assess</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Honest assessment:</strong> Drafting is on pace. Sending is broken. Without send velocity this week, we won't have conversion data to assess whether 100-in-100 is realistic. Priority: unblock sends, measure responses, then adjust forecast.</p>
+    </div>
+
+    <!-- NEXT WEEK PREVIEW -->
+    <div class="schedule-section">
+        <h2>🔮 Next Week Preview (May 12–18)</h2>
+
+        <ul>
+            <li><strong>May 11:</strong> MIAMI Realtors / RWorld merger effective (93k member network) — partnership opportunities</li>
+            <li><strong>May 12–15:</strong> Assess April + May batch send results; measure open + response rates</li>
+            <li><strong>May 15:</strong> Next weekly rollup (Week 20) — review infrastructure fixes + send/response data</li>
+            <li><strong>June 1:</strong> Official hurricane season begins (23 days from May 9) — peak demand for inspections, mitigation, claims prep</li>
+        </ul>
+    </div>
+
+    <div class="updated">
+        <p><strong>Created:</strong> May 8, 2026 (based on Week 19 ops reviews and weekly rollup)</p>
+        <p><strong>Next update:</strong> May 15, 2026 (after Week 20 rollup + infrastructure fixes)</p>
+    </div>
+</body>
+</html>

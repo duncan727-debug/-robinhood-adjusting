@@ -94,3 +94,35 @@
 [2026-05-07 15:24]   [real-estate] 0 subscribers in list 20
 [2026-05-07 15:24]   [real-estate] No subscribers — skipping
 [2026-05-07 15:24] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-08 09:00] === Daily brief send start: 2026-05-08 ===
+[2026-05-08 09:00]   [homeowner] Using fallback generic brief
+[2026-05-08 09:00]   [homeowner] 3 subscribers in list 18
+[2026-05-08 09:00]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-08 09:00]   [service-provider] Using fallback generic brief
+[2026-05-08 09:00]   [service-provider] 1 subscribers in list 19
+[2026-05-08 09:00]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-08 09:00]   [real-estate] Using fallback generic brief
+[2026-05-08 09:00]   [real-estate] 0 subscribers in list 20
+[2026-05-08 09:00]   [real-estate] No subscribers — skipping
+[2026-05-08 09:00] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-08 09:00] ✓ Daily newsletter sent successfully — 4 total (homeowner:3, provider:1, re:0)
+[2026-05-09 09:02] === Daily brief send start: 2026-05-09 ===
+[2026-05-09 09:02] FAILED - Gmail App Password not found in config. Newsletter send did not complete.
+[2026-05-11 06:32] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 06:32] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 06:47] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 06:47] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 07:03] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 07:03] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 07:18] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 07:18] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 07:34] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 07:34] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 07:49] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 07:49] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.

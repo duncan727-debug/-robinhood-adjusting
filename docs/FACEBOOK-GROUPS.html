@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Groups Strategy | Robinhood Adjusting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            padding: 48px 80px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header .sub {
+            font-size: 18px;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Rule box */
+        .rule-box {
+            background: #eff6ff;
+            border-left: 4px solid #1e40af;
+            padding: 20px 24px;
+            border-radius: 6px;
+            margin-bottom: 52px;
+            font-size: 16px;
+            color: #1e3a8a;
+        }
+
+        .rule-box strong {
+            font-weight: 700;
+        }
+
+        /* Tier section */
+        .tier {
+            margin-bottom: 56px;
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .tier-badge {
+            background: #1e40af;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .tier-badge.t1 { background: #dc2626; }
+        .tier-badge.t2 { background: #1e40af; }
+        .tier-badge.t3 { background: #16a34a; }
+        .tier-badge.t4 { background: #b45309; }
+        .tier-badge.t5 { background: #7c3aed; }
+
+        .tier h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .tier .description {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* Table */
+        .group-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .group-table th {
+            background: #f1f5f9;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .group-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+        }
+
+        .group-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .group-table a {
+            color: #1e40af;
+            text-decoration: none;
+        }
+
+        .group-table a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search box */
+        .search-box {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+
+        .search-box h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .search-terms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .search-term {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #334155;
+            font-family: monospace;
+        }
+
+        /* Angle box */
+        .angle-box {
+            background: #f0fdf4;
+            border-left: 3px solid #16a34a;
+            padding: 14px 18px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #166534;
+            margin-bottom: 24px;
+        }
+
+        .angle-box strong {
+            font-weight: 700;
+        }
+
+        /* Strategy cards */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .strategy-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 22px;
+        }
+
+        .strategy-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .strategy-card ul {
+            list-style: none;
+        }
+
+        .strategy-card li {
+            font-size: 14px;
+            color: #334155;
+            padding: 3px 0 3px 20px;
+            position: relative;
+        }
+
+        .strategy-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+            font-weight: 700;
+        }
+
+        /* Morning checklist */
+        .morning-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+        }
+
+        .morning-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            font-size: 15px;
+            color: #334155;
+            padding: 6px 0 6px 30px;
+            position: relative;
+            border-bottom: 1px solid #f8fafc;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 17px;
+            color: #94a3b8;
+        }
+
+        hr.divider {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 48px 0;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Facebook Groups Strategy</h1>
+    <div class="sub">Robinhood Adjusting — May 2026 · Palm Beach County</div>
+</header>
+
+<div class="container">
+
+    <div class="rule-box">
+        <strong>Golden Rule:</strong> Never post a link without adding value first. Answer a question, contribute context, then reference the resource. Get known before you get leads.
+    </div>
+
+    <!-- Tier 1 -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t1">Tier 1</span>
+            <h2>Join First — Local Community Groups</h2>
+        </div>
+        <p class="description">Hyperlocal homeowner groups. Highest trust, lowest competition. This is where the referrals live.</p>
+
+        <table class="group-table">
+            <thead>
+                <tr>
+                    <th>Group</th>
+                    <th>URL</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Village of Wellington Florida</td>
+                    <td><a href="https://facebook.com/VillageofWellington" target="_blank">facebook.com/VillageofWellington</a></td>
+                    <td>Official page</td>
+                    <td>20k+ followers — comment on property-related posts</td>
+                </tr>
+                <tr>
+                    <td>Wellington Neighborhood</td>
+                    <td><a href="https://facebook.com/Wellingtonfriends" target="_blank">facebook.com/Wellingtonfriends</a></td>
+                    <td>Community</td>
+                    <td>Residential, general community discussion</td>
+                </tr>
+                <tr>
+                    <td>Village of Wellington FL Community</td>
+                    <td><a href="https://facebook.com/villageofwellingtonfl" target="_blank">facebook.com/villageofwellingtonfl</a></td>
+                    <td>Community page</td>
+                    <td>966 followers — engaged local residents</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="search-box">
+            <h4>Manual Searches to Do on Facebook (filter: Groups)</h4>
+            <div class="search-terms">
+                <span class="search-term">"Wellington Florida homeowners"</span>
+                <span class="search-term">"Palm Beach County homeowners"</span>
+                <span class="search-term">"Loxahatchee residents"</span>
+                <span class="search-term">"Royal Palm Beach community"</span>
+                <span class="search-term">"Boynton Beach homeowners"</span>
+                <span class="search-term">"Boca Raton neighbors"</span>
+                <span class="search-term">"Delray Beach community"</span>
+                <span class="search-term">"Greenacres homeowners"</span>
+                <span class="search-term">"Lake Worth homeowners"</span>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Tier 2 -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t2">Tier 2</span>
+            <h2>Real Estate & Investor Groups</h2>
+        </div>
+        <p class="description">Contractors, RE investors, and property managers actively discussing claims, repairs, and damage. High-value partner sourcing.</p>
+
+        <table class="group-table">
+            <thead>
+                <tr>
+                    <th>Group</th>
+                    <th>URL</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Palm Beach Real Estate Investors Club</td>
+                    <td><a href="https://facebook.com/PalmBeachREIA" target="_blank">facebook.com/PalmBeachREIA</a></td>
+                    <td>RE Investors</td>
+                    <td>Active, West Palm Beach — monthly meetings</td>
+                </tr>
+                <tr>
+                    <td>South Florida Real Estate Investors</td>
+                    <td><a href="https://facebook.com/groups/117204431658948/" target="_blank">facebook.com/groups/117204431658948</a></td>
+                    <td>RE Investors</td>
+                    <td>Active Facebook group</td>
+                </tr>
+                <tr>
+                    <td>FLREIA (Florida Real Estate Investors)</td>
+                    <td><a href="https://facebook.com/groups/FLREIA" target="_blank">facebook.com/groups/FLREIA</a></td>
+                    <td>RE Investors</td>
+                    <td>Meets 3rd Thursday, WPB</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="angle-box">
+            <strong>Key engagement angle:</strong> Distressed properties with open claims. Respond to posts about properties with storm damage, title issues, insurance disputes. Offer free PA consultation.
+        </div>
+
+        <div class="search-box">
+            <h4>Manual Searches</h4>
+            <div class="search-terms">
+                <span class="search-term">"Palm Beach County real estate investors"</span>
+                <span class="search-term">"South Florida REI"</span>
+                <span class="search-term">"Boca Raton real estate professionals"</span>
+                <span class="search-term">"West Palm Beach real estate networking"</span>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Tier 3 -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t3">Tier 3</span>
+            <h2>Contractor & Service Provider Groups</h2>
+        </div>
+        <p class="description">The referral network. Goal isn't homeowners — it's building relationships with roofers, HVAC techs, and restoration companies who see damage first.</p>
+
+        <table class="group-table">
+            <thead>
+                <tr>
+                    <th>Group / Page</th>
+                    <th>URL</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Roofing Contractors Assoc. of South Florida</td>
+                    <td><a href="https://facebook.com/RCASF" target="_blank">facebook.com/RCASF</a></td>
+                    <td>Trade Association</td>
+                    <td>Active page — engage, offer resources</td>
+                </tr>
+                <tr>
+                    <td>South Florida Construction Group</td>
+                    <td><a href="https://facebook.com/southfloridaconstructiongroup" target="_blank">facebook.com/southfloridaconstructiongroup</a></td>
+                    <td>Contractor community</td>
+                    <td>Pompano Beach, active</td>
+                </tr>
+                <tr>
+                    <td>South Florida Construction Services</td>
+                    <td><a href="https://facebook.com/sfcsGC" target="_blank">facebook.com/sfcsGC</a></td>
+                    <td>Business page</td>
+                    <td>Commercial/residential GC</td>
+                </tr>
+                <tr>
+                    <td>South Florida Contractor Services Inc.</td>
+                    <td><a href="https://facebook.com/southFLcontractorservices" target="_blank">facebook.com/southFLcontractorservices</a></td>
+                    <td>Business page</td>
+                    <td>Sunrise, FL</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="angle-box">
+            <strong>Key engagement angle:</strong> Our contractor vetting guide. Share it as a resource homeowners can use to verify contractors — builds trust with legitimate contractors, positions us as an ally.
+        </div>
+
+        <div class="search-box">
+            <h4>Manual Searches</h4>
+            <div class="search-terms">
+                <span class="search-term">"South Florida roofers"</span>
+                <span class="search-term">"Palm Beach County contractors"</span>
+                <span class="search-term">"HVAC South Florida"</span>
+                <span class="search-term">"Florida restoration contractors"</span>
+                <span class="search-term">"Mold remediation South Florida"</span>
+                <span class="search-term">"Water damage restoration Florida"</span>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Tier 4 -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t4">Tier 4</span>
+            <h2>Hurricane & Disaster Prep Groups</h2>
+        </div>
+        <p class="description">Seasonal, but highly relevant May–November. Membership spikes when storm watches are issued.</p>
+
+        <div class="search-box">
+            <h4>Manual Searches (These exist but are private and change year to year)</h4>
+            <div class="search-terms">
+                <span class="search-term">"Florida hurricane prep 2026"</span>
+                <span class="search-term">"South Florida storm prep"</span>
+                <span class="search-term">"Hurricane season Florida homeowners"</span>
+                <span class="search-term">"Palm Beach County emergency prep"</span>
+            </div>
+        </div>
+
+        <div class="angle-box">
+            <strong>Engagement angle:</strong> Share the hurricane checklist as a resource, not an ad. Post during storm watches when people are actively seeking information.
+        </div>
+
+        <table class="group-table">
+            <thead>
+                <tr>
+                    <th>Official Pages to Follow</th>
+                    <th>URL</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Florida Division of Emergency Management</td>
+                    <td><a href="https://floridadisaster.org" target="_blank">floridadisaster.org</a></td>
+                    <td>Follow + engage on storm posts</td>
+                </tr>
+                <tr>
+                    <td>National Hurricane Center</td>
+                    <td><a href="https://facebook.com/NHC_Atlantic" target="_blank">facebook.com/NHC_Atlantic</a></td>
+                    <td>Seasonal storm tracking</td>
+                </tr>
+                <tr>
+                    <td>Palm Beach County Emergency Management</td>
+                    <td>Search in Facebook</td>
+                    <td>Local official page — high visibility during watches</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Tier 5 -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t5">Tier 5</span>
+            <h2>HOA & Property Management Groups</h2>
+        </div>
+        <p class="description">Property managers and HOA boards deal with multiple claims per year. One relationship here = multiple referrals.</p>
+
+        <table class="group-table">
+            <thead>
+                <tr>
+                    <th>Organization</th>
+                    <th>URL</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>South Florida Property Management Assoc.</td>
+                    <td><a href="https://sfpma.com" target="_blank">sfpma.com</a></td>
+                    <td>Has Facebook presence — engage with members</td>
+                </tr>
+                <tr>
+                    <td>Campbell Property Management</td>
+                    <td><a href="https://campbellpropertymanagement.com" target="_blank">campbellpropertymanagement.com</a></td>
+                    <td>South Florida HOA specialist</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="angle-box">
+            <strong>Engagement angle:</strong> Free resources (contractor vetting guide, insurance policy review) are directly useful for HOA managers. Free value before any ask.
+        </div>
+
+        <div class="search-box">
+            <h4>Manual Searches</h4>
+            <div class="search-terms">
+                <span class="search-term">"HOA managers Florida"</span>
+                <span class="search-term">"Florida condo association managers"</span>
+                <span class="search-term">"Property managers Palm Beach"</span>
+                <span class="search-term">"South Florida HOA community"</span>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Posting Strategy -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t2">Strategy</span>
+            <h2>Posting Strategy by Group Type</h2>
+        </div>
+
+        <div class="strategy-grid">
+            <div class="strategy-card">
+                <h4>Community Groups (Tier 1)</h4>
+                <ul>
+                    <li>Week 1: Join + comment on 3–5 threads. Don't post yet.</li>
+                    <li>Week 2: Share hurricane checklist as resource (not an ad)</li>
+                    <li>Week 3: Answer a question; reference the free guide</li>
+                    <li>Ongoing: Max once per week</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h4>Real Estate & Investor (Tier 2)</h4>
+                <ul>
+                    <li>Observe for 3–5 days first</li>
+                    <li>First post: market data from the daily brief</li>
+                    <li>Build credibility before pitching PA services</li>
+                    <li>Target: distressed property discussions, claims history questions</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h4>Contractor Groups (Tier 3)</h4>
+                <ul>
+                    <li>Direct approach: "We work with contractors on claim documentation."</li>
+                    <li>Share the contractor vetting guide as a homeowner resource</li>
+                    <li>Message: "If you pass all 12 checks, you'll love this document."</li>
+                </ul>
+            </div>
+            <div class="strategy-card">
+                <h4>HOA / Property Managers (Tier 5)</h4>
+                <ul>
+                    <li>Position as industry resource, not a vendor</li>
+                    <li>Offer to speak at HOA meetings or write a Q&A column</li>
+                    <li>Leave-behind: insurance policy review checklist</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Morning Checklist -->
+    <div class="tier">
+        <div class="tier-header">
+            <span class="tier-badge t1">Today</span>
+            <h2>Morning Execution Checklist</h2>
+        </div>
+
+        <div class="morning-card">
+            <ul class="checklist">
+                <li>Log into Facebook, search and join 10–15 local homeowner/community groups</li>
+                <li>Follow/like the Roofing Contractors Association of South Florida page</li>
+                <li>Join Palm Beach Real Estate Investors Club and South Florida Real Estate Investors group</li>
+                <li>Search and join 3–5 hurricane prep groups</li>
+                <li>Set up Facebook Business Suite with the 30-day posting calendar</li>
+                <li>Upload the first week of posts with scheduling</li>
+                <li>Save this document for ongoing group management</li>
+            </ul>
+        </div>
+
+        <p style="font-size:14px; color:#64748b; margin-top:12px;">
+            Note: Facebook group search is most effective from within the Facebook app. In-app manual search will uncover dozens more hyperlocal groups not indexed publicly.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    Prepared by Agent Smith · Robinhood Adjusting · May 2026
+</footer>
+
+</body>
+</html>

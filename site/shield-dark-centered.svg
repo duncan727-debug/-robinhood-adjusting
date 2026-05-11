@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 135" width="120" height="135">
+  <g transform="translate(5, 5) scale(2.3)">
+    <!-- Outer shield -->
+    <path d="M28 2 L54 11 L54 32 C54 46 42 56 28 60 C14 56 2 46 2 32 L2 11 Z"
+          fill="#1a3a5c" stroke="#c9922a" stroke-width="2.2"/>
+    <!-- Inner shield -->
+    <path d="M28 9 L47 17 L47 32 C47 43 39 51 28 54 C17 51 9 43 9 32 L9 17 Z"
+          fill="#0f2d4a"/>
+    <!-- Arrow shaft -->
+    <line x1="28" y1="43" x2="28" y2="20" stroke="#c9922a" stroke-width="2.8" stroke-linecap="round"/>
+    <!-- Arrow head (up) -->
+    <polyline points="21,28 28,20 35,28" fill="none" stroke="#c9922a" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Fletching (down) -->
+    <line x1="23" y1="40" x2="28" y2="43" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="33" y1="40" x2="28" y2="43" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>

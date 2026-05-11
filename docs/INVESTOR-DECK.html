@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Adjusting — Investor Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .deck {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .deck.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Slide Layouts */
+        .slide {
+            width: 100%;
+            height: 100%;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Title Slide */
+        .slide.title {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+        }
+
+        .slide.title h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .slide.title .subtitle {
+            font-size: 28px;
+            color: #cbd5e1;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .slide.title .meta {
+            font-size: 16px;
+            color: #94a3b8;
+        }
+
+        /* Content Slides */
+        .slide.content {
+            background: white;
+        }
+
+        .slide.content h2 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .slide.content h3 {
+            font-size: 24px;
+            color: #1e40af;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .slide.content p {
+            font-size: 18px;
+            color: #334155;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .slide.content ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .slide.content li {
+            font-size: 18px;
+            color: #334155;
+            margin-bottom: 16px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .slide.content li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+            font-weight: bold;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .two-col h3 {
+            margin-top: 0;
+        }
+
+        /* Metrics Grid */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .metric {
+            background: #f0f9ff;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #1e40af;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 16px;
+            color: #475569;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: #fef2f2;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            margin: 30px 0;
+        }
+
+        .highlight strong {
+            color: #991b1b;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .nav button:hover {
+            background: #1e3a8a;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* End Slide */
+        .slide.end {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.end h2 {
+            color: white;
+            font-size: 52px;
+            margin-bottom: 30px;
+        }
+
+        .slide.end p {
+            color: #cbd5e1;
+            font-size: 20px;
+        }
+
+        /* Accent */
+        .accent {
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .accent-gold {
+            color: #b45309;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="deck active">
+        <div class="slide title">
+            <h1>Robinhood Adjusting</h1>
+            <div class="subtitle">Technology-Enabled Public Adjusting for South Florida</div>
+            <div class="meta">May 2026 | Wellington, FL</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>The Problem</h2>
+            <div class="two-col">
+                <div>
+                    <h3>For Homeowners</h3>
+                    <p>When storm damage hits, insurance companies assign an adjuster paid to minimize payouts. Homeowners recover only 60–75% of legitimate claim value on average.</p>
+                    <p>The gap? <span class="accent">$25,000–$100,000+ per claim.</span></p>
+                </div>
+                <div>
+                    <h3>For Service Providers</h3>
+                    <p>Contractors, property managers, and real estate pros spend time sourcing market intelligence manually. They miss opportunities and react instead of anticipate.</p>
+                </div>
+            </div>
+            <div class="highlight">
+                <strong>Core insight:</strong> The market has fragmented information and fragmented operators. There's no central intelligence layer or coordinated ecosystem.
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Solution -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Our Solution</h2>
+            <h3>A Tech-Enabled PA Practice Built for Scale</h3>
+            <p>We combine three capabilities most PA firms don't have:</p>
+            <ul>
+                <li><strong>Daily Market Intelligence:</strong> Proprietary research delivered to 3 audiences (homeowners, contractors, RE pros) before the market moves</li>
+                <li><strong>Automated Prospecting:</strong> API-driven contact discovery + CRM automation handles outreach at scale</li>
+                <li><strong>Ecosystem Positioning:</strong> Provider directory + referral network turns newsletter audiences into revenue sources</li>
+            </ul>
+            <div class="highlight">
+                <strong>Result:</strong> We don't just handle individual PA claims—we coordinate the entire market segment for efficiency and revenue capture.
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Revenue Model -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Revenue Model</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">Primary</div>
+                    <div class="metric-label">PA Contingency Fees (25–30% of recovered amount)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">Secondary</div>
+                    <div class="metric-label">Newsletter + Referral Ecosystem</div>
+                </div>
+            </div>
+            <h3 style="margin-top: 50px;">Revenue Streams</h3>
+            <ul>
+                <li><strong>PA Claims:</strong> Contingency-based recovery for homeowners. Higher case volume through systematic referral sourcing.</li>
+                <li><strong>Referral Network:</strong> Contractors, property managers, RE pros pay for verified referrals + lead positioning.</li>
+                <li><strong>Media + Intelligence:</strong> Premium content subscriptions + corporate partnerships with service providers.</li>
+                <li><strong>Directory Listings:</strong> Vetted provider directory becomes sticky resource with monetization potential.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Market Opportunity -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Market Opportunity</h2>
+            <h3>South Florida Property Insurance Market</h3>
+            <ul>
+                <li>1.2M+ residential properties in Palm Beach, Broward, Miami-Dade counties</li>
+                <li>Hurricane season (June–November) = predictable claim spike every year</li>
+                <li>Average homeowner underrecovery per claim: $25k–$100k+</li>
+                <li>Service provider ecosystem: 5,000+ contractors, property managers, and RE pros</li>
+            </ul>
+            <div class="highlight">
+                <strong>Addressable market:</strong> Even at 0.5% penetration of homeowners with claims, that's 6,000 potential cases/year. At $35k average recovery and 25% contingency fee, that's $52.5M in annual PA market in our region alone.
+            </div>
+            <p><span class="accent">Our goal:</span> Capture 1–2% of this market by 2027 ($15–30M in settled claims).</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: Traction to Date -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Traction to Date</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">62</div>
+                    <div class="metric-label">Vetted providers in directory</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Newsletter subscribers (3 editions)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">25</div>
+                    <div class="metric-label">New prospects per day via API</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Months operational (Feb–May 2026)</div>
+                </div>
+            </div>
+            <h3 style="margin-top: 50px;">What's Working</h3>
+            <ul>
+                <li>Daily brief is the foundation—service providers read it and recognize value immediately</li>
+                <li>Automated prospecting identifies 25 high-quality leads/day without manual research</li>
+                <li>CRM automation handles follow-up sequences—Duncan focuses on relationships, not admin</li>
+                <li>Provider directory is sticky—contractors want to be listed, RE pros bookmark it</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: The Tech Stack -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Technology & Operations</h2>
+            <h3>Why This Matters</h3>
+            <p>Most PA firms are sole practitioners or small partnerships. They don't scale because they're bottlenecked by founder time.</p>
+            <p><span class="accent">We built the infrastructure to scale.</span></p>
+
+            <h3 style="margin-top: 40px;">Our Stack</h3>
+            <ul>
+                <li><strong>Daily Research Automation:</strong> Sourced, written, and published daily briefs (4am EDT, Mon–Sat)</li>
+                <li><strong>CRM Automation:</strong> HubSpot integrated with outreach sequences, email tracking, deal pipeline</li>
+                <li><strong>Prospecting at Scale:</strong> Google Places API identifies 25+ new contacts/day by geography + business type</li>
+                <li><strong>Web Presence:</strong> robinhoodadjusting.com with lead magnets, provider directory, integrated signup</li>
+                <li><strong>Data Pipeline:</strong> All interactions logged; conversion tracking built in from day one</li>
+            </ul>
+            <div class="highlight">
+                <strong>Result:</strong> One operator (Duncan) systematically manages what would require a 4–5 person team at a traditional firm. Higher margins. Better execution.
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Financial Projections -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Financial Projections</h2>
+            <h3>Year 1 (2026)</h3>
+            <ul>
+                <li><strong>Cases closed:</strong> 8–12 PA claims</li>
+                <li><strong>Average recovery:</strong> $40,000 per case</li>
+                <li><strong>Contingency rate:</strong> 25%</li>
+                <li><strong>Revenue:</strong> $80,000–$120,000</li>
+                <li><strong>Operating costs:</strong> ~$15,000 (tech stack + contractor support)</li>
+                <li><strong>Net margin:</strong> 75–80%</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">Year 2 (2027)</h3>
+            <ul>
+                <li><strong>Cases closed:</strong> 25–35 PA claims (network effects + referrals)</li>
+                <li><strong>Average recovery:</strong> $45,000 per case (larger claims as reputation grows)</li>
+                <li><strong>Revenue:</strong> $280,000–$400,000</li>
+                <li><strong>Secondary revenue:</strong> $30,000–$50,000 (referrals + media)</li>
+                <li><strong>Total revenue:</strong> $310,000–$450,000</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Key assumption:</strong> Automation stack scales without proportional cost increase. One operator can handle 3–4x the caseload with better systems.
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: The Team -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>The Team</h2>
+            <h3>Duncan Littlejohn — Founder & Principal PA</h3>
+            <ul>
+                <li>Licensed public adjuster (Florida) — 2+ years in insurance claims</li>
+                <li>Prior experience: Real estate investment banking, asset management, business operations</li>
+                <li>Track record: Transitioned from claims processing to self-sourced claims—built own book of business</li>
+                <li>Strength: Relationship-building and negotiation. Weak on administrative follow-up (solved by automation).</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">Why Duncan Wins</h3>
+            <ul>
+                <li>Deep domain knowledge across real estate, finance, and operations</li>
+                <li>Disciplined about systems—built and maintains daily intelligence infrastructure before operational maturity</li>
+                <li>Risk-aware—comfortable making decisions under uncertainty (banking, trading, startups background)</li>
+                <li>Localized—embedded in South Florida market; knows the people, the seasons, the pain points</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 10: 30-60-90 Day Plan -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>30-60-90 Day Plan</h2>
+            <h3>Next 30 Days (May–June)</h3>
+            <ul>
+                <li>Launch social media strategy (FB + IG): 200+ followers by June 1</li>
+                <li>Close 2–3 PA cases from current pipeline</li>
+                <li>Build provider referral network: 100+ directory listings</li>
+                <li>Grow newsletter: 1,000+ subscribers across 3 editions</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">60 Days (July)</h3>
+            <ul>
+                <li>Hurricane season operational: captured early-summer claims (June–July surge)</li>
+                <li>5–7 cases closed; revenue entering pipeline</li>
+                <li>First referral partnerships live (contractors → PA for claims)</li>
+                <li>Newsletter driving 50+ lead magnet signups/week</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">90 Days (August)</h3>
+            <ul>
+                <li>Peak claim season: 8–12 active cases in portfolio</li>
+                <li>$50k–$75k revenue recognized from early closures</li>
+                <li>Provider directory actively generating referral leads</li>
+                <li>Decision point: scale to additional operator or expand secondary revenue streams</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 11: Use of Funds -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Use of Funds (If Raising)</h2>
+            <h3>Proposed Raise: $150,000</h3>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">$60k</div>
+                    <div class="metric-label">Working capital & operating costs (6 months)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">$40k</div>
+                    <div class="metric-label">Sales & marketing (social, content, events)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">$30k</div>
+                    <div class="metric-label">Technology & infrastructure scaling</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">$20k</div>
+                    <div class="metric-label">First additional hire (operations/partnership)</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 50px;">Expected Return</h3>
+            <ul>
+                <li><strong>Year 1 exit revenue:</strong> $100k–$150k (PA cases + secondary streams)</li>
+                <li><strong>Year 2 exit revenue:</strong> $350k–$500k (established referral ecosystem)</li>
+                <li><strong>Path to acquisition:</strong> Regional law firms, insurance services platforms, or financial services roll-ups interested in claims intelligence data</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 12: Why Now -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>Why This Works. Why Now.</h2>
+            <h3>Market Conditions</h3>
+            <ul>
+                <li>2026 hurricane season underway—homeowner anxiety about claims peaks June–September</li>
+                <li>Service provider ecosystem fragmented—no central intelligence or coordination</li>
+                <li>Insurance companies overpaying adjusters to close claims fast—PA market opportunity is massive</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">Competitive Advantage</h3>
+            <ul>
+                <li>Most PA firms are 1–2 people. We have infrastructure most competitors can't match.</li>
+                <li>Daily intelligence gives us market timing advantage—we see patterns before they're obvious</li>
+                <li>Automation means we scale caseload without scaling headcount or cost</li>
+                <li>Provider ecosystem creates moat—contractors, RE pros, property managers come back because the directory and brief become essential</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>The pitch:</strong> We're not just handling claims better. We're building the intelligence layer and coordination system for an entire market segment. Everything else flows from that.
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: The Ask -->
+    <div class="deck">
+        <div class="slide content">
+            <h2>The Ask</h2>
+            <h3>What We're Looking For</h3>
+            <ul>
+                <li><strong>Capital:</strong> $150k to accelerate marketing, hire operations support, and fund working capital for 6 months</li>
+                <li><strong>Expertise:</strong> Advisory board with experience in insurance, fintech, or business scaling</li>
+                <li><strong>Network:</strong> Introductions to property management companies, real estate platforms, or regional law firms (potential acquisition partners)</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">What You Get</h3>
+            <ul>
+                <li>Revenue share (5–10%) of PA fees for first 2 years</li>
+                <li>Board seat (optional)</li>
+                <li>Equity stake negotiable based on value-add</li>
+                <li>First access to intelligence and data as we build market database</li>
+            </ul>
+
+            <p style="margin-top: 40px; font-size: 20px;"><strong>Bottom line:</strong> This is a capital-light, high-margin business that scales systematically. We're not asking you to bet on Duncan—we're asking you to bet on market timing and operational discipline.</p>
+        </div>
+    </div>
+
+    <!-- Slide 14: End -->
+    <div class="deck">
+        <div class="slide end">
+            <h2>Let's Build Something Simple That Scales</h2>
+            <p style="margin-top: 40px; margin-bottom: 60px; font-size: 22px;">robinhoodadjusting.com</p>
+            <p>Duncan Littlejohn | duncanlittlejohnjr@gmail.com | (561) XXX-XXXX</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <button onclick="previousSlide()">← Previous</button>
+        <button onclick="nextSlide()">Next →</button>
+    </div>
+    <div class="slide-counter"><span id="current">1</span> / <span id="total">14</span></div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.deck');
+        const totalSlides = slides.length;
+
+        document.getElementById('total').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+            document.getElementById('current').textContent = n + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>

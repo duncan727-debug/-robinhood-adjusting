@@ -55,3 +55,33 @@ Processing 59 records...
   40/59 processed...
   50/59 processed...
   Done: 0 created, 59 updated, 0 errors, 0 skipped
+[2026-05-08 08:30:05] HubSpot upload started
+  Records to process: 59
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
+[2026-05-08 08:39:21] Upload complete
+
+Loaded 11 organizations from CSV
+Loaded 76 interaction records
+
+Found 113 unique prospect records from markdown drafts
+
+Wrote 11 existing + 48 new = 59 total records
+Master import file saved to: /Users/victoria/.openclaw/workspace/crm/hubspot_master_import_2026-05-08.csv
+Also updated: /Users/victoria/.openclaw/workspace/crm/hubspot_master_import.csv
+
+✓ Daily HubSpot consolidation complete
+Uploading 59 records to HubSpot...
+Processing 59 records...
+  10/59 processed...
+  20/59 processed...
+  30/59 processed...
+  40/59 processed...
+  50/59 processed...
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
+
+✓ HubSpot upload complete
+[2026-05-09 08:44:43] HubSpot upload started
+  Records to process: 59
+  Done: 0 created, 0 updated, 59 errors, 0 skipped
+[2026-05-09 08:45:19] Upload complete
+

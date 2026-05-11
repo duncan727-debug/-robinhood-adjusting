@@ -212,3 +212,22 @@ Contacts missing email: 12
   Scraped real email : 2
   Best-guess (review): 7  — these have hs_lead_status=OPEN in HubSpot
   No website / error : 3
+=== email enrichment from websites start ===
+Contacts missing email: 12
+  ~  HOA Advocates Management                      | info@hoaadvocatesfl.com  (best-guess — needs review)
+  ~  KLR Roofing Corp.                             | info@klrroofing.com  (best-guess — needs review)
+  ~  Quantum Roofing Solutions                     | info@quantumroofing.com  (best-guess — needs review)
+  ~  All Phase Construction USA                    | info@allphaseusa.com  (best-guess — needs review)
+  ~  Prestige Realty Management                    | info@prestigerealty.com  (best-guess — needs review)
+  ✓  Elite General Contracting                     | info@elitecontractorsfl.com  (scraped)
+  ~  Coastal Property Management Group             | info@coastalproperty.com  (best-guess — needs review)
+  ~  Atlantic Water & Mold Solutions               | info@atlanticwaterfl.com  (best-guess — needs review)
+  ~  Storm Shield Roofing                          | info@stormshieldfl.com  (best-guess — needs review)
+  —  Palm Beach Plumbing & Rooter                  | no website on file
+  —  Next Era Plumbing                             | no website on file
+  —  Roofer West Palm Beach                        | no website on file
+
+=== Done ===
+  Scraped real email : 1
+  Best-guess (review): 8  — these have hs_lead_status=OPEN in HubSpot
+  No website / error : 3

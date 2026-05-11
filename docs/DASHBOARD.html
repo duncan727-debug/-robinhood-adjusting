@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robinhood Adjusting — Ops Dashboard</title>
+<script src="dashboard-data.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: #0f172a; color: #f1f5f9; padding: 28px; }
+.container { max-width: 1280px; margin: 0 auto; }
+header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; }
+.header-left h1 { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header-left .sub { font-size: 13px; color: #64748b; margin-top: 4px; }
+.header-right { text-align: right; }
+.date-large { font-size: 15px; font-weight: 700; color: #f1f5f9; }
+.cycle-display { font-size: 12px; color: #64748b; margin-top: 3px; }
+.score-ring { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); padding: 4px 12px; border-radius: 20px; }
+.score-val { font-size: 14px; font-weight: 700; color: #818cf8; }
+.score-label { font-size: 11px; color: #64748b; }
+.data-note { font-size: 11px; color: #334155; text-align: right; margin-top: 4px; }
+
+.streams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.stream { border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(255,255,255,0.06); position: relative; overflow: hidden; background: #1e293b; }
+.stream::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.stream-crm::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.stream-newsletter::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+.stream-prospecting::before { background: linear-gradient(90deg, #10b981, #34d399); }
+.stream-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.stream-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8; }
+.stream-health { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+.health-good { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+.health-warn { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+.health-bad  { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+.stream-metric { font-size: 38px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
+.stream-metric span { font-size: 15px; font-weight: 400; color: #64748b; }
+.stream-desc { font-size: 12px; color: #64748b; line-height: 1.5; margin-bottom: 14px; }
+.mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mini-stat { background: rgba(15,23,42,0.6); border-radius: 7px; padding: 8px 10px; }
+.ms-label { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.ms-val { font-size: 14px; font-weight: 700; margin-top: 2px; }
+.ms-ok   { color: #34d399; } .ms-warn { color: #fbbf24; } .ms-err  { color: #f87171; } .ms-muted { color: #94a3b8; } .ms-idle { color: #475569; }
+
+.content-area { display: grid; grid-template-columns: 1fr 380px; gap: 18px; margin-bottom: 18px; }
+.section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #475569; margin-bottom: 12px; font-weight: 700; }
+.timeline-card { background: #1e293b; border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(255,255,255,0.06); }
+.tl-item { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.tl-item:last-child { border-bottom: none; }
+.tl-time { font-size: 11px; color: #475569; font-family: monospace; }
+.tl-name { font-size: 13px; font-weight: 600; color: #f1f5f9; }
+.tl-detail { font-size: 11px; color: #64748b; margin-top: 2px; }
+.tl-status { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.dot-ok   { width:7px; height:7px; border-radius:50%; background:#34d399; box-shadow:0 0 6px rgba(52,211,153,0.6); flex-shrink:0; }
+.dot-warn { width:7px; height:7px; border-radius:50%; background:#fbbf24; box-shadow:0 0 6px rgba(251,191,36,0.6);  flex-shrink:0; }
+.dot-err  { width:7px; height:7px; border-radius:50%; background:#f87171; box-shadow:0 0 6px rgba(248,113,113,0.6); flex-shrink:0; }
+.dot-idle { width:7px; height:7px; border-radius:50%; background:#334155; flex-shrink:0; }
+.tl-ok   { color: #34d399; } .tl-warn { color: #fbbf24; } .tl-err  { color: #f87171; } .tl-idle { color: #475569; }
+
+.sidebar { display: flex; flex-direction: column; gap: 14px; }
+.side-card { background: #1e293b; border-radius: 12px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.06); }
+.al-item { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: flex-start; }
+.al-item:last-child { border-bottom: none; }
+.al-bullet { width:6px; height:6px; border-radius:50%; flex-shrink:0; margin-top:5px; }
+.al-red { background:#f87171; } .al-amber { background:#fbbf24; } .al-blue { background:#60a5fa; }
+.al-text { font-size: 12px; color: #cbd5e1; line-height: 1.5; }
+.al-sub { font-size: 10px; color: #475569; margin-top: 2px; font-family: monospace; }
+.link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lnk { display: block; background: rgba(15,23,42,0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 10px 12px; text-decoration: none; transition: all 0.15s; }
+.lnk:hover { border-color: #60a5fa; background: rgba(96,165,250,0.08); }
+.lnk-label { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 3px; }
+.lnk-text { font-size: 12px; color: #60a5fa; font-weight: 600; }
+
+.bottom-metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.bm { background: #1e293b; border-radius: 10px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.06); text-align: center; }
+.bm-label { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; }
+.bm-val { font-size: 22px; font-weight: 800; }
+.bm-sub { font-size: 10px; color: #475569; margin-top: 3px; }
+footer { text-align: center; font-size: 11px; color: #334155; margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.04); }
+
+.no-data { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); border-radius: 10px; padding: 20px; text-align: center; color: #f87171; font-size: 13px; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container" id="root">
+  <div class="no-data" id="load-error" style="display:none">
+    ⚠️ Could not load dashboard-data.js — run <code>scripts/update-dashboard.sh</code> to generate it.
+  </div>
+</div>
+
+<script>
+(function() {
+  const root = document.getElementById('root');
+
+  if (typeof DASHBOARD_DATA === 'undefined') {
+    document.getElementById('load-error').style.display = 'block';
+    return;
+  }
+
+  const D = DASHBOARD_DATA;
+  const now = new Date();
+
+  const statusDot = s => `<div class="dot-${s === 'ok' ? 'ok' : s === 'warn' ? 'warn' : s === 'idle' ? 'idle' : 'err'}"></div>`;
+  const statusLabel = s => `<span class="tl-${s === 'ok' ? 'ok' : s === 'warn' ? 'warn' : s === 'idle' ? 'idle' : 'err'}">${s === 'ok' ? 'Done' : s === 'warn' ? 'Warning' : s === 'idle' ? 'Pending' : 'Failed'}</span>`;
+  const msVal = (val, style) => `<div class="ms-val ms-${style || 'muted'}">${val}</div>`;
+  const healthClass = h => h === 'good' ? 'health-good' : h === 'warn' ? 'health-warn' : 'health-bad';
+  const healthLabel = h => h === 'good' ? '✓ Healthy' : h === 'warn' ? 'Attention' : 'Broken';
+
+  // Actions derived from cron statuses
+  const actions = [];
+  const cronMap = {};
+  (D.crons || []).forEach(c => cronMap[c.name] = c);
+
+  if ((D.kpis.draftsReady || 0) > 0) {
+    actions.push({ cls:'al-red', text:`Send today's ${D.kpis.draftsReady} drafts`, sub: D.links.drafts });
+  }
+  if ((D.kpis.backlog || 0) > 10) {
+    actions.push({ cls:'al-amber', text:`Backlog: ${D.kpis.backlog} unsent drafts — batch-send top 10–20`, sub: '../crm/drafts/' });
+  }
+  if (cronMap['HubSpot Sync'] && cronMap['HubSpot Sync'].status !== 'ok') {
+    actions.push({ cls:'al-amber', text:'HubSpot sync issue — trigger manually or check logs', sub: null });
+  }
+  if (cronMap['Prospecting'] && cronMap['Prospecting'].status !== 'ok') {
+    actions.push({ cls:'al-amber', text:'Prospecting error — check Google Places API key & billing', sub: null });
+  }
+  if (D.streams.newsletter.health !== 'good') {
+    actions.push({ cls:'al-blue', text:'Newsletter delivery unconfirmed — check HubSpot campaign logs', sub: null });
+  }
+  if (cronMap['Trends'] && cronMap['Trends'].status !== 'ok') {
+    actions.push({ cls:'al-blue', text:'Trends automation broken — investigate or deprioritize', sub: null });
+  }
+  actions.push({ cls:'al-blue', text:'Review today\'s ops summary', sub: D.links.opsReview });
+
+  // Build stream card
+  const streamCard = (key, cls, label) => {
+    const s = D.streams[key];
+    return `
+    <div class="stream stream-${cls}">
+      <div class="stream-header">
+        <div class="stream-name">${label}</div>
+        <div class="stream-health ${healthClass(s.health)}">${healthLabel(s.health)}</div>
+      </div>
+      <div class="stream-metric">${s.metric} <span>${s.metricLabel}</span></div>
+      <div class="stream-desc">${s.desc}</div>
+      <div class="mini-stats">
+        ${(s.stats || []).map(st => `<div class="mini-stat"><div class="ms-label">${st.label}</div>${msVal(st.val, st.style)}</div>`).join('')}
+      </div>
+    </div>`;
+  };
+
+  root.innerHTML = `
+  <header>
+    <div class="header-left">
+      <h1>Robinhood Adjusting</h1>
+      <div class="sub">PA Outreach Operations — 100-in-100 Sprint</div>
+    </div>
+    <div class="header-right">
+      <div class="date-large">${now.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' })}</div>
+      <div class="cycle-display">Day ${D.cycleDay} of 100</div>
+      <div class="score-ring"><span class="score-val">${D.healthPct}%</span><span class="score-label">system health</span></div>
+      <div class="data-note">Data as of ${D.generated}</div>
+    </div>
+  </header>
+
+  <div class="streams">
+    ${streamCard('crm', 'crm', 'CRM Outreach')}
+    ${streamCard('newsletter', 'newsletter', 'Newsletter')}
+    ${streamCard('prospecting', 'prospecting', 'Prospecting')}
+  </div>
+
+  <div class="content-area">
+    <div class="timeline-card">
+      <div class="section-title">Today's Automation Timeline</div>
+      ${(D.crons || []).map(c => `
+      <div class="tl-item">
+        <span class="tl-time">${c.time}</span>
+        <div><div class="tl-name">${c.name}</div><div class="tl-detail">${c.detail}</div></div>
+        <div class="tl-status">${statusDot(c.status)}${statusLabel(c.status)}</div>
+      </div>`).join('')}
+    </div>
+
+    <div class="sidebar">
+      <div class="side-card">
+        <div class="section-title">Your Actions Today</div>
+        ${actions.map(a => `
+        <div class="al-item">
+          <div class="al-bullet ${a.cls}"></div>
+          <div>
+            <div class="al-text">${a.text}</div>
+            ${a.sub ? `<div class="al-sub">${a.sub}</div>` : ''}
+          </div>
+        </div>`).join('')}
+      </div>
+
+      <div class="side-card">
+        <div class="section-title">Quick Links</div>
+        <div class="link-grid">
+          <a class="lnk" href="${D.links.brief}"><div class="lnk-label">Today's Brief</div><div class="lnk-text">${D.today} →</div></a>
+          <a class="lnk" href="${D.links.drafts}"><div class="lnk-label">CRM Drafts</div><div class="lnk-text">${D.kpis.draftsReady} ready →</div></a>
+          <a class="lnk" href="${D.links.opsReview}"><div class="lnk-label">Ops Review</div><div class="lnk-text">${D.today} →</div></a>
+          <a class="lnk" href="${D.links.hubspot}" target="_blank"><div class="lnk-label">HubSpot</div><div class="lnk-text">Open CRM →</div></a>
+          <a class="lnk" href="${D.links.website}" target="_blank"><div class="lnk-label">Website</div><div class="lnk-text">Live site →</div></a>
+          <a class="lnk" href="${D.links.schedule}"><div class="lnk-label">Schedule</div><div class="lnk-text">All crons →</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-metrics">
+    <div class="bm"><div class="bm-label">Provider Listings</div><div class="bm-val" style="color:#a78bfa">${D.kpis.providerListings}</div><div class="bm-sub">PBC directory live</div></div>
+    <div class="bm"><div class="bm-label">Drafts Today</div><div class="bm-val" style="color:#60a5fa">${D.kpis.draftsReady}</div><div class="bm-sub">Ready to send</div></div>
+    <div class="bm"><div class="bm-label">Prospects Sourced</div><div class="bm-val" style="color:#34d399">${D.kpis.prospectsTotal}</div><div class="bm-sub">Total in pipeline</div></div>
+    <div class="bm"><div class="bm-label">Brief Audiences</div><div class="bm-val" style="color:#a78bfa">3</div><div class="bm-sub">HO / Provider / RE</div></div>
+    <div class="bm"><div class="bm-label">Cycle Day</div><div class="bm-val" style="color:#fbbf24">${D.cycleDay}</div><div class="bm-sub">of 100</div></div>
+  </div>
+
+  <footer>Robinhood Adjusting — Executive Scorecard &nbsp;|&nbsp; Data refreshed daily after ops review &nbsp;|&nbsp; <a href="javascript:location.reload()" style="color:#334155">Reload</a></footer>
+  `;
+})();
+</script>
+</body>
+</html>
