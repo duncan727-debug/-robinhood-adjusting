@@ -110,7 +110,7 @@ content_status="err"; content_detail="Not found"
 
 # 6:30am website sync (git commit with today's brief)
 websync_status="err"; websync_detail="Not synced"
-git -C "$WORKSPACE" log --since="$TODAY 00:00" --oneline 2>/dev/null | grep -q "site: daily brief sync" && {
+git -C "$WORKSPACE" log --since="$TODAY 00:00" --oneline 2>/dev/null | grep -qE "site: daily brief sync|Daily content sync|build-website" && {
   websync_status="ok"; websync_detail="Pushed today"
 }
 
