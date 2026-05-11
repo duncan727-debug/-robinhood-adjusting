@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contractor Vetting Guide — Storm Repair Edition — Robinhood Adjusting</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0f2d4a;
+    --gold: #c9922a;
+    --red: #c41e3a;
+    --light: #f8f4ee;
+    --muted: #64748b;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    color: #1a1a2e;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+
+  .print-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 24px;
+    text-decoration: none;
+  }
+
+  .header {
+    border-bottom: 4px solid var(--red);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+
+  .header-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .header p {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .section {
+    margin-bottom: 24px;
+    break-inside: avoid;
+  }
+
+  .section-title {
+    font-family: 'Merriweather', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    background: var(--navy);
+    padding: 7px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ece6;
+  }
+
+  .item:last-child { border-bottom: none; }
+
+  .checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--navy);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .item-text { flex: 1; }
+  .item-text strong { color: var(--navy); display: block; margin-bottom: 2px; }
+  .item-text span { color: var(--muted); font-size: 11px; }
+
+  .warning {
+    background: #fff5f5;
+    border-left: 4px solid var(--red);
+    padding: 12px 14px;
+    border-radius: 0 6px 6px 0;
+    margin: 16px 0;
+    font-size: 12px;
+  }
+
+  .warning strong { color: var(--red); }
+
+  .callout {
+    background: var(--light);
+    border-left: 4px solid var(--gold);
+    padding: 12px 14px;
+    border-radius: 0 6px 6px 0;
+    margin: 16px 0;
+    font-size: 12px;
+  }
+
+  .callout strong { color: var(--navy); }
+
+  .red-flags {
+    background: #fff5f5;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin: 16px 0;
+  }
+
+  .red-flags h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .red-flags ul { list-style: none; padding: 0; }
+  .red-flags li {
+    font-size: 12px;
+    padding: 4px 0;
+    padding-left: 18px;
+    position: relative;
+    color: #444;
+  }
+  .red-flags li::before {
+    content: "⚠";
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+    color: var(--red);
+  }
+
+  .footer {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 2px solid var(--gold);
+    font-size: 10px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media print {
+    .print-btn { display: none; }
+    body { font-size: 11px; }
+    .page { padding: 16px; }
+    .header h1 { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <button class="print-btn" onclick="window.print()">⬇ Print / Save as PDF</button>
+
+  <div class="header">
+    <div class="header-label">Free Resource — Robinhood Adjusting</div>
+    <h1>Contractor Vetting Guide — Storm Repair Edition</h1>
+    <p>12 checks before signing anything. Storm-chasing contractors cost Florida homeowners millions each year. Use this guide before hiring anyone after wind, water, or hurricane damage.</p>
+  </div>
+
+  <div class="warning">
+    <strong>After a storm, unlicensed contractors flood South Florida.</strong> They take deposits, do shoddy work, or disappear entirely. Your insurance claim may be denied if work is performed without proper permits. Verify everything before you sign.
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section">
+    <div class="section-title">1. License &amp; Insurance Verification</div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Florida State Contractor License — Verified Online</strong>
+        <span>Look up any contractor at myfloridalicense.com/DBPR. General contractors need a CGC or CBC license. Roofing contractors need a CCC. An expired or suspended license is a dealbreaker.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Certificate of General Liability Insurance</strong>
+        <span>Request a certificate naming you as certificate holder. Call the insurer to verify it's active. Minimum $1M per occurrence for any structural work.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Workers' Compensation Coverage</strong>
+        <span>If a worker is injured on your property without workers' comp, you may be liable. Verify via the Florida Division of Workers' Compensation at myfloridacfo.com/wc.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Local Business Address (Not Just a P.O. Box)</strong>
+        <span>Fly-by-night contractors often have no verifiable physical location. Google the address. Check how long they've been operating in South Florida specifically.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-title">2. Contract &amp; Scope of Work</div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Detailed Written Scope of Work</strong>
+        <span>Every line item should be spelled out: materials, brand/grade, square footage, labor. Vague contracts ("repair roof as needed") protect the contractor, not you.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Payment Schedule Tied to Milestones</strong>
+        <span>Never pay more than 10–15% upfront (Florida law limits deposits for jobs over $2,500). Tie remaining payments to completion milestones — not dates.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Start Date and Completion Date in Writing</strong>
+        <span>Get a realistic timeline. Vague "subject to material availability" language can leave your home exposed for months.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Warranty on Labor and Materials</strong>
+        <span>Minimum 1 year on labor; manufacturer warranty pass-through on materials. Get it in writing — verbal warranties are unenforceable.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-title">3. Permits &amp; Inspections</div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Contractor Pulls All Required Permits</strong>
+        <span>In Florida, the licensed contractor must pull permits — not the homeowner. If they ask you to pull your own permit, walk away. Unpermitted repairs can invalidate your insurance coverage and create problems at resale.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Final Inspection by County/City Inspector</strong>
+        <span>Do not make final payment until the permit is closed with a passing inspection. Verify at your county's permit portal.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <div class="section-title">4. References &amp; AOB Warning</div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Three Recent References — Same Type of Work</strong>
+        <span>Call them. Ask: Did they finish on time? Was the price what was quoted? Any issues getting the final inspection closed?</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="checkbox"></div>
+      <div class="item-text">
+        <strong>Do NOT Sign an Assignment of Benefits (AOB)</strong>
+        <span>An AOB transfers your insurance claim rights to the contractor. They can then negotiate directly with your insurer — and sue them if disputed. Florida has restricted AOBs, but some contractors still push them. Refuse any AOB agreement.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="red-flags">
+    <h4>Immediate Red Flags — Walk Away</h4>
+    <ul>
+      <li>Door-to-door solicitation immediately after a storm</li>
+      <li>"I'll waive your deductible" — this is insurance fraud in Florida</li>
+      <li>Demands large cash deposit before starting</li>
+      <li>Pressure to sign today or "the deal expires"</li>
+      <li>Claims to be an "insurance specialist" or "works directly with adjusters"</li>
+      <li>Asks you to sign an AOB or "direction to pay" form</li>
+      <li>Cannot provide license number on the spot</li>
+      <li>No workers' comp — "my guys are subcontractors"</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <strong>Need a vetted contractor?</strong> Robinhood Adjusting maintains a directory of licensed, insured South Florida contractors. We work with them — not for them — so you get an honest referral. Visit robinhoodadjusting.com/providers or call <strong>(561) XXX-XXXX</strong>.
+  </div>
+
+  <div class="footer">
+    Print this guide: File → Print → Save as PDF &nbsp;|&nbsp; robinhoodadjusting.com &nbsp;|&nbsp; © 2026 Robinhood Adjusting &nbsp;|&nbsp; For informational purposes only. Not legal advice.
+  </div>
+
+</div>
+</body>
+</html>

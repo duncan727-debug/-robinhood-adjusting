@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Insurance Policy Review Checklist — South Florida Homeowners</title>
+<meta name="description" content="Get our free 12-point homeowner's insurance policy review checklist — know your coverage gaps before storm season. Free with newsletter signup.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --navy:#0f2d4a; --red:#c41e3a; --gold:#c9922a; --light:#f8f4ee; }
+  body { font-family:'Open Sans',sans-serif; background:#fff; color:#1a1a2e; }
+
+  .top-bar {
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .top-bar span { opacity: 0.7; font-weight: 400; margin-left: 8px; }
+
+  .hero {
+    background: var(--navy);
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '📋';
+    position: absolute;
+    font-size: 320px;
+    opacity: 0.04;
+    top: -60px;
+    right: -60px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-label {
+    display: inline-block;
+    background: rgba(201,146,42,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(26px, 5vw, 44px);
+    color: #fff;
+    line-height: 1.2;
+    max-width: 720px;
+    margin: 0 auto 18px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 32px 36px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .form-title { font-size:17px; font-weight:700; color:var(--navy); text-align:center; margin-bottom:6px; }
+  .form-sub { font-size:12px; color:#888; text-align:center; margin-bottom:20px; }
+  .form-group { margin-bottom:14px; }
+  .form-group label { display:block; font-size:12px; font-weight:700; color:#555; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.5px; }
+  .form-group input, .form-group select {
+    width:100%; padding:13px 16px; border:1.5px solid #e0e0e0; border-radius:6px;
+    font-family:'Open Sans',sans-serif; font-size:14px; color:#1a1a2e; outline:none; transition:border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus { border-color:var(--navy); }
+  .submit-btn {
+    width:100%; background:var(--gold); color:var(--navy); border:none; padding:16px; border-radius:6px;
+    font-family:'Open Sans',sans-serif; font-size:15px; font-weight:700; cursor:pointer;
+    transition:background 0.2s; margin-top:6px; letter-spacing:0.3px;
+  }
+  .submit-btn:hover { background:#b5821f; color:white; }
+  .form-fine { font-size:11px; color:#bbb; text-align:center; margin-top:12px; line-height:1.6; }
+
+  #thank-you {
+    display:none; background:white; border-radius:10px; padding:32px 36px;
+    max-width:500px; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.3); text-align:center;
+  }
+  #thank-you .ty-icon { font-size:48px; margin-bottom:16px; display:block; }
+  #thank-you h3 { font-family:'Merriweather',serif; font-size:22px; color:var(--navy); margin-bottom:10px; }
+  #thank-you p { font-size:14px; color:#555; margin-bottom:20px; line-height:1.7; }
+  #thank-you a { display:inline-block; background:var(--navy); color:white; padding:12px 24px; border-radius:6px; font-weight:700; text-decoration:none; font-size:14px; }
+
+  .what-you-get { background:var(--light); padding:64px 24px; text-align:center; }
+  .wg-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  .what-you-get h2 { font-family:'Merriweather',serif; font-size:28px; color:var(--navy); margin-bottom:12px; }
+  .what-you-get p { font-size:15px; color:#555; max-width:540px; margin:0 auto 40px; line-height:1.7; }
+  .benefits { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto; }
+  .benefit { background:white; border-radius:8px; padding:24px 20px; border-top:3px solid var(--gold); text-align:left; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+  .benefit-icon { font-size:28px; margin-bottom:12px; display:block; }
+  .benefit h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+  .benefit p { font-size:13px; color:#666; line-height:1.6; }
+
+  .preview { padding:64px 24px; max-width:900px; margin:0 auto; }
+  .preview h2 { font-family:'Merriweather',serif; font-size:26px; color:var(--navy); margin-bottom:8px; }
+  .preview-sub { font-size:14px; color:#666; margin-bottom:28px; }
+  .preview-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .preview-section h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:white; background:var(--navy); padding:8px 14px; border-radius:4px; margin-bottom:10px; }
+  .preview-list { list-style:none; }
+  .preview-list li { display:flex; gap:8px; align-items:flex-start; font-size:13px; color:#444; padding:5px 0; border-bottom:1px solid #f0f0f0; }
+  .preview-list li::before { content:'☐'; color:var(--gold); font-size:14px; flex-shrink:0; margin-top:1px; }
+  .preview-list li.highlight { font-weight:600; color:var(--navy); }
+
+  .trust { background:var(--navy); padding:48px 24px; text-align:center; }
+  .trust h3 { font-family:'Merriweather',serif; font-size:22px; color:var(--gold); margin-bottom:28px; }
+  .trust-items { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+  .trust-item { color:rgba(255,255,255,0.8); text-align:center; }
+  .trust-item .t-num { font-size:32px; font-weight:800; color:white; display:block; }
+  .trust-item .t-label { font-size:12px; color:rgba(255,255,255,0.6); margin-top:4px; }
+
+  .bottom-cta { background:var(--gold); padding:48px 24px; text-align:center; }
+  .bottom-cta h2 { font-family:'Merriweather',serif; font-size:26px; color:var(--navy); margin-bottom:14px; }
+  .bottom-cta p { font-size:15px; color:rgba(15,45,74,0.8); margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto; }
+  .bottom-cta a { background:var(--navy); color:white; padding:14px 32px; border-radius:6px; font-weight:700; text-decoration:none; font-size:15px; display:inline-block; }
+  .bottom-cta a:hover { background:#0a1f35; }
+
+  footer { padding:24px; text-align:center; font-size:12px; color:#aaa; border-top:1px solid #f0f0f0; }
+  footer a { color:#aaa; }
+
+  @media(max-width:600px) {
+    .preview-grid { grid-template-columns:1fr; }
+    .form-card { padding:24px 20px; }
+    .trust-items { gap:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  🛡 Hurricane Season Starts June 1, 2026 <span>— Is your coverage adequate?</span>
+</div>
+
+<section class="hero">
+  <div class="hero-label">Free with Signup — 2026 Edition</div>
+  <h1>Does Your Policy Actually<br><em>Cover What You Think It Does?</em></h1>
+  <div class="hero-sub">Our 12-point checklist walks you through the coverage gaps most South Florida homeowners don't discover until they file a claim — and it's too late.</div>
+
+  <div class="form-card" id="signup-form">
+    <div class="form-title">Get the Free Checklist</div>
+    <div class="form-sub">Instant access + daily property intelligence. No spam, ever.</div>
+    <form name="insurance-policy-review" method="POST" onsubmit="handleSignup(event)">
+      <p style="display:none"><input name="bot-field"></p>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="firstname" placeholder="Your first name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>I am a...</label>
+        <select name="category" required>
+          <option value="">Select your role</option>
+          <option value="homeowner">Homeowner / Property Owner</option>
+          <option value="service-provider">Contractor / Service Provider</option>
+          <option value="real-estate">Real Estate Professional</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Get My Free Policy Checklist →</button>
+      <div class="form-fine">No spam. Unsubscribe anytime. We respect your inbox.</div>
+    </form>
+  </div>
+
+  <div id="thank-you">
+    <span class="ty-icon">✅</span>
+    <h3>You're in! Check your email.</h3>
+    <p>Your policy review checklist is ready. You'll also start receiving our free daily South Florida property intelligence brief each weekday morning.</p>
+    <a href="resources/insurance-policy-review.html" target="_blank">View &amp; Print Checklist Now →</a>
+  </div>
+</section>
+
+<section class="what-you-get">
+  <div class="wg-label">What's Included</div>
+  <h2>Know Your Coverage Before You Need It</h2>
+  <p>Most homeowners only read their policy after a claim is denied. This checklist gives you the 12 questions a public adjuster asks when reviewing a policy — before storm season.</p>
+  <div class="benefits">
+    <div class="benefit">
+      <span class="benefit-icon">📋</span>
+      <h3>12-Point Policy Review</h3>
+      <p>Coverage limits, hurricane deductibles, flood gaps, ordinance coverage, and replacement cost — all explained in plain language.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">📰</span>
+      <h3>Daily Intelligence Brief</h3>
+      <p>Market news, storm forecasts, regulatory changes, and contractor market conditions — before 7am, Mon–Sat.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">💡</span>
+      <h3>Actionable Findings</h3>
+      <p>Each checklist item tells you what to look for and what to do if you find a gap — including when to call your agent.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">⚖️</span>
+      <h3>Expert Perspective</h3>
+      <p>Written by a licensed Florida public adjuster — the person who advocates for you after a loss, not the insurance company.</p>
+    </div>
+  </div>
+</section>
+
+<section class="preview">
+  <h2>What's in the Checklist</h2>
+  <div class="preview-sub">A snapshot of the 12 items — covering the coverage gaps that cost South Florida homeowners the most.</div>
+  <div class="preview-grid">
+    <div class="preview-section">
+      <h4>💰 Coverage Limits</h4>
+      <ul class="preview-list">
+        <li class="highlight">Is your dwelling coverage keeping up with rebuild costs?</li>
+        <li>Replacement cost vs. actual cash value — the difference is thousands</li>
+        <li class="highlight">Extended replacement cost endorsement — do you have it?</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>🌀 Hurricane Deductibles</h4>
+      <ul class="preview-list">
+        <li class="highlight">Your hurricane deductible may be 2–5% of your home's value</li>
+        <li>Named storm vs. hurricane trigger — which activates your higher deductible?</li>
+        <li class="highlight">Wind mitigation discounts — are they applied to your policy?</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>🌊 Flood &amp; Water</h4>
+      <ul class="preview-list">
+        <li class="highlight">Standard policies do NOT cover flood damage</li>
+        <li>Water backup / sewer endorsement — often excluded by default</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>🏗 Code &amp; Liability</h4>
+      <ul class="preview-list">
+        <li class="highlight">Ordinance & Law coverage — critical for pre-2002 homes</li>
+        <li>Personal property sub-limits on jewelry and electronics</li>
+        <li class="highlight">Liability limits — do you have a pool, dog, or significant assets?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <h3>South Florida Property Intelligence, Every Morning</h3>
+  <div class="trust-items">
+    <div class="trust-item"><span class="t-num">3</span><div class="t-label">Audience editions<br>(Homeowner, Provider, RE Pro)</div></div>
+    <div class="trust-item"><span class="t-num">6×</span><div class="t-label">Per week<br>Mon – Sat before 7am</div></div>
+    <div class="trust-item"><span class="t-num">$0</span><div class="t-label">Always free<br>No credit card needed</div></div>
+    <div class="trust-item"><span class="t-num">12</span><div class="t-label">Coverage checks<br>in one checklist</div></div>
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2>Don't Find Out the Hard Way</h2>
+  <p>Get your free policy review checklist now — and join the South Florida property owners who start every morning prepared.</p>
+  <a href="#signup-form" onclick="document.getElementById('signup-form').scrollIntoView({behavior:'smooth'}); return false;">Get the Free Checklist →</a>
+</section>
+
+<footer>
+  <p>© 2026 Robinhood Adjusting — Licensed Public Adjusters, South Florida</p>
+  <p style="margin-top:6px;"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="resources/insurance-policy-review.html">View Checklist</a> &nbsp;·&nbsp; <a href="mailto:duncanlittlejohnjr@gmail.com">Contact</a></p>
+</footer>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email    = form.querySelector('[name="email"]').value.trim();
+  const category = form.querySelector('[name="category"]').value;
+  const btn      = form.querySelector('.submit-btn');
+
+  const segment = (category === 'homeowner' || category === 'service-provider' || category === 'real-estate')
+    ? category : 'homeowner';
+
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+
+  fetch('/.netlify/functions/subscribe-newsletter', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, segment })
+  })
+    .then(r => r.json())
+    .catch(() => ({ success: true }))
+    .finally(() => {
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('thank-you').style.display = 'block';
+    });
+}
+</script>
+</body>
+</html>

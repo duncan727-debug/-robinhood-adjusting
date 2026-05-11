@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Contractor Vetting Guide — Storm Repair Edition — South Florida</title>
+<meta name="description" content="Don't get ripped off after storm damage. Our free 12-check contractor vetting guide protects South Florida homeowners from unlicensed and predatory contractors.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --navy:#0f2d4a; --red:#c41e3a; --gold:#c9922a; --light:#f8f4ee; }
+  body { font-family:'Open Sans',sans-serif; background:#fff; color:#1a1a2e; }
+
+  .top-bar {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .top-bar span { opacity: 0.8; font-weight: 400; margin-left: 8px; }
+
+  .hero {
+    background: var(--navy);
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '🔨';
+    position: absolute;
+    font-size: 320px;
+    opacity: 0.04;
+    top: -60px;
+    right: -60px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-label {
+    display: inline-block;
+    background: rgba(196,30,58,0.25);
+    border: 1px solid var(--red);
+    color: #ff8a95;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(26px, 5vw, 44px);
+    color: #fff;
+    line-height: 1.2;
+    max-width: 720px;
+    margin: 0 auto 18px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 32px 36px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .form-title { font-size:17px; font-weight:700; color:var(--navy); text-align:center; margin-bottom:6px; }
+  .form-sub { font-size:12px; color:#888; text-align:center; margin-bottom:20px; }
+  .form-group { margin-bottom:14px; }
+  .form-group label { display:block; font-size:12px; font-weight:700; color:#555; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.5px; }
+  .form-group input, .form-group select {
+    width:100%; padding:13px 16px; border:1.5px solid #e0e0e0; border-radius:6px;
+    font-family:'Open Sans',sans-serif; font-size:14px; color:#1a1a2e; outline:none; transition:border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus { border-color:var(--navy); }
+  .submit-btn {
+    width:100%; background:var(--red); color:white; border:none; padding:16px; border-radius:6px;
+    font-family:'Open Sans',sans-serif; font-size:15px; font-weight:700; cursor:pointer;
+    transition:background 0.2s; margin-top:6px; letter-spacing:0.3px;
+  }
+  .submit-btn:hover { background:#a31830; }
+  .form-fine { font-size:11px; color:#bbb; text-align:center; margin-top:12px; line-height:1.6; }
+
+  #thank-you {
+    display:none; background:white; border-radius:10px; padding:32px 36px;
+    max-width:500px; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.3); text-align:center;
+  }
+  #thank-you .ty-icon { font-size:48px; margin-bottom:16px; display:block; }
+  #thank-you h3 { font-family:'Merriweather',serif; font-size:22px; color:var(--navy); margin-bottom:10px; }
+  #thank-you p { font-size:14px; color:#555; margin-bottom:20px; line-height:1.7; }
+  #thank-you a { display:inline-block; background:var(--navy); color:white; padding:12px 24px; border-radius:6px; font-weight:700; text-decoration:none; font-size:14px; }
+
+  .what-you-get { background:var(--light); padding:64px 24px; text-align:center; }
+  .wg-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  .what-you-get h2 { font-family:'Merriweather',serif; font-size:28px; color:var(--navy); margin-bottom:12px; }
+  .what-you-get p { font-size:15px; color:#555; max-width:540px; margin:0 auto 40px; line-height:1.7; }
+  .benefits { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto; }
+  .benefit { background:white; border-radius:8px; padding:24px 20px; border-top:3px solid var(--red); text-align:left; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+  .benefit-icon { font-size:28px; margin-bottom:12px; display:block; }
+  .benefit h3 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+  .benefit p { font-size:13px; color:#666; line-height:1.6; }
+
+  .preview { padding:64px 24px; max-width:900px; margin:0 auto; }
+  .preview h2 { font-family:'Merriweather',serif; font-size:26px; color:var(--navy); margin-bottom:8px; }
+  .preview-sub { font-size:14px; color:#666; margin-bottom:28px; }
+  .preview-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .preview-section h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:white; background:var(--navy); padding:8px 14px; border-radius:4px; margin-bottom:10px; }
+  .preview-list { list-style:none; }
+  .preview-list li { display:flex; gap:8px; align-items:flex-start; font-size:13px; color:#444; padding:5px 0; border-bottom:1px solid #f0f0f0; }
+  .preview-list li::before { content:'☐'; color:var(--red); font-size:14px; flex-shrink:0; margin-top:1px; }
+  .preview-list li.highlight { font-weight:600; color:var(--navy); }
+
+  .trust { background:var(--navy); padding:48px 24px; text-align:center; }
+  .trust h3 { font-family:'Merriweather',serif; font-size:22px; color:var(--gold); margin-bottom:28px; }
+  .trust-items { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+  .trust-item { color:rgba(255,255,255,0.8); text-align:center; }
+  .trust-item .t-num { font-size:32px; font-weight:800; color:white; display:block; }
+  .trust-item .t-label { font-size:12px; color:rgba(255,255,255,0.6); margin-top:4px; }
+
+  .bottom-cta { background:var(--red); padding:48px 24px; text-align:center; }
+  .bottom-cta h2 { font-family:'Merriweather',serif; font-size:26px; color:white; margin-bottom:14px; }
+  .bottom-cta p { font-size:15px; color:rgba(255,255,255,0.85); margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto; }
+  .bottom-cta a { background:white; color:var(--red); padding:14px 32px; border-radius:6px; font-weight:700; text-decoration:none; font-size:15px; display:inline-block; }
+  .bottom-cta a:hover { background:var(--light); }
+
+  footer { padding:24px; text-align:center; font-size:12px; color:#aaa; border-top:1px solid #f0f0f0; }
+  footer a { color:#aaa; }
+
+  @media(max-width:600px) {
+    .preview-grid { grid-template-columns:1fr; }
+    .form-card { padding:24px 20px; }
+    .trust-items { gap:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  ⚠ Storm-chasing contractors flood South Florida after every hurricane <span>— know how to protect yourself</span>
+</div>
+
+<section class="hero">
+  <div class="hero-label">Free with Signup — Storm Repair Edition</div>
+  <h1>Hire the Right Contractor.<br><em>Don't Get Burned After a Storm.</em></h1>
+  <div class="hero-sub">Unlicensed and predatory contractors cost Florida homeowners millions each year. Our 12-check vetting guide helps you verify anyone before you sign — or pay — anything.</div>
+
+  <div class="form-card" id="signup-form">
+    <div class="form-title">Get the Free Guide</div>
+    <div class="form-sub">Instant access + daily property intelligence. No spam, ever.</div>
+    <form name="contractor-vetting-guide" method="POST" onsubmit="handleSignup(event)">
+      <p style="display:none"><input name="bot-field"></p>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="firstname" placeholder="Your first name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>I am a...</label>
+        <select name="category" required>
+          <option value="">Select your role</option>
+          <option value="homeowner">Homeowner / Property Owner</option>
+          <option value="service-provider">Contractor / Service Provider</option>
+          <option value="real-estate">Real Estate Professional</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Get My Free Vetting Guide →</button>
+      <div class="form-fine">No spam. Unsubscribe anytime. We respect your inbox.</div>
+    </form>
+  </div>
+
+  <div id="thank-you">
+    <span class="ty-icon">✅</span>
+    <h3>You're in! Check your email.</h3>
+    <p>Your contractor vetting guide is ready. You'll also start receiving our free daily South Florida property intelligence brief each weekday morning.</p>
+    <a href="resources/contractor-vetting-guide.html" target="_blank">View &amp; Print Guide Now →</a>
+  </div>
+</section>
+
+<section class="what-you-get">
+  <div class="wg-label">What's Included</div>
+  <h2>Protect Yourself Before You Sign Anything</h2>
+  <p>After a storm, the wrong contractor can take your deposit, do substandard work, or invalidate your insurance claim. This guide gives you 12 checks to run before any storm repair hire.</p>
+  <div class="benefits">
+    <div class="benefit">
+      <span class="benefit-icon">🔍</span>
+      <h3>License Verification Steps</h3>
+      <p>Exact websites to verify Florida contractor licenses, insurance certificates, and workers' comp in under 10 minutes.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">📰</span>
+      <h3>Daily Intelligence Brief</h3>
+      <p>Market news, storm forecasts, contractor market conditions, and regulatory changes — before 7am, Mon–Sat.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">📋</span>
+      <h3>Contract Checklist</h3>
+      <p>Every line item a solid storm repair contract must include — scope, payment schedule, permits, timeline, and warranty.</p>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🚨</span>
+      <h3>8 Red Flags to Walk Away From</h3>
+      <p>The exact warning signs that identify storm chasers, unlicensed operators, and AOB scammers — before you're committed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="preview">
+  <h2>What's in the Guide</h2>
+  <div class="preview-sub">A preview of the 12 checks — organized to protect you from hire to final inspection.</div>
+  <div class="preview-grid">
+    <div class="preview-section">
+      <h4>🔒 License &amp; Insurance</h4>
+      <ul class="preview-list">
+        <li class="highlight">Florida license verification — the exact site to use</li>
+        <li>Certificate of liability — how to confirm it's active</li>
+        <li class="highlight">Workers' comp — why this protects YOU, not just the workers</li>
+        <li>Physical business address check</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>📄 Contract Terms</h4>
+      <ul class="preview-list">
+        <li class="highlight">Detailed scope of work — why vague contracts hurt you</li>
+        <li>Payment schedule tied to milestones, not dates</li>
+        <li class="highlight">Florida law on deposit limits — know your rights</li>
+        <li>Written warranty requirements</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>🏗 Permits</h4>
+      <ul class="preview-list">
+        <li class="highlight">Who must pull permits — and why it matters for your claim</li>
+        <li>How to verify final inspection was passed</li>
+      </ul>
+    </div>
+    <div class="preview-section">
+      <h4>⚠ Red Flags</h4>
+      <ul class="preview-list">
+        <li class="highlight">Door-knockers after storms — why they're never legitimate</li>
+        <li>"I'll waive your deductible" — this is insurance fraud</li>
+        <li class="highlight">AOB agreements — never sign one</li>
+        <li>Pressure tactics and one-day offers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <h3>South Florida Property Intelligence, Every Morning</h3>
+  <div class="trust-items">
+    <div class="trust-item"><span class="t-num">3</span><div class="t-label">Audience editions<br>(Homeowner, Provider, RE Pro)</div></div>
+    <div class="trust-item"><span class="t-num">6×</span><div class="t-label">Per week<br>Mon – Sat before 7am</div></div>
+    <div class="trust-item"><span class="t-num">$0</span><div class="t-label">Always free<br>No credit card needed</div></div>
+    <div class="trust-item"><span class="t-num">12</span><div class="t-label">Checks before<br>hiring any contractor</div></div>
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2>Know Who You're Hiring Before You Pay a Dime</h2>
+  <p>Get your free contractor vetting guide now — and join South Florida property owners who start every morning with our intelligence brief.</p>
+  <a href="#signup-form" onclick="document.getElementById('signup-form').scrollIntoView({behavior:'smooth'}); return false;">Get the Free Guide →</a>
+</section>
+
+<footer>
+  <p>© 2026 Robinhood Adjusting — Licensed Public Adjusters, South Florida</p>
+  <p style="margin-top:6px;"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="resources/contractor-vetting-guide.html">View Guide</a> &nbsp;·&nbsp; <a href="mailto:duncanlittlejohnjr@gmail.com">Contact</a></p>
+</footer>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email    = form.querySelector('[name="email"]').value.trim();
+  const category = form.querySelector('[name="category"]').value;
+  const btn      = form.querySelector('.submit-btn');
+
+  const segment = (category === 'homeowner' || category === 'service-provider' || category === 'real-estate')
+    ? category : 'homeowner';
+
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+
+  fetch('/.netlify/functions/subscribe-newsletter', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, segment })
+  })
+    .then(r => r.json())
+    .catch(() => ({ success: true }))
+    .finally(() => {
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('thank-you').style.display = 'block';
+    });
+}
+</script>
+</body>
+</html>
