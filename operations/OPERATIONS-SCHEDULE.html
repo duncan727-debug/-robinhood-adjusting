@@ -79,6 +79,7 @@
         .cron-table td {
             padding: 12px 15px;
             border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
         }
 
         .cron-table tr:hover {
@@ -89,17 +90,29 @@
             font-weight: bold;
             color: #1e88e5;
             font-family: 'Courier New', monospace;
-            width: 80px;
+            white-space: nowrap;
+            width: 90px;
         }
 
         .job-name {
             font-weight: bold;
             color: #333;
+            white-space: nowrap;
         }
 
         .description {
             color: #666;
             font-size: 14px;
+        }
+
+        .description ul {
+            margin-top: 6px;
+            margin-left: 18px;
+        }
+
+        .description li {
+            margin-bottom: 3px;
+            line-height: 1.5;
         }
 
         .frequency {
@@ -110,23 +123,34 @@
             color: #2e7d32;
             font-weight: bold;
             display: inline-block;
-            min-width: 100px;
+            min-width: 90px;
             text-align: center;
+            white-space: nowrap;
+        }
+
+        .frequency.monday-saturday {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .frequency.wednesday {
+            background: #fce4ec;
+            color: #880e4f;
+        }
+
+        .frequency.friday {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .frequency.saturday {
+            background: #f3e5f5;
+            color: #6a1b9a;
         }
 
         .frequency.daily {
             background: #e8f5e9;
             color: #2e7d32;
-        }
-
-        .frequency.saturday {
-            background: #fff3e0;
-            color: #f57f17;
-        }
-
-        .frequency.mon-sat {
-            background: #e3f2fd;
-            color: #1565c0;
         }
 
         .category {
@@ -135,7 +159,7 @@
             border-radius: 3px;
             font-size: 11px;
             font-weight: bold;
-            margin-right: 5px;
+            white-space: nowrap;
         }
 
         .category.research {
@@ -158,9 +182,14 @@
             color: #616161;
         }
 
+        .category.content {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
         .legend {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin: 30px 0;
             padding: 20px;
@@ -175,25 +204,11 @@
             font-size: 13px;
         }
 
-        .legend-item.research {
-            border-left-color: #009688;
-            background: #e0f7f4;
-        }
-
-        .legend-item.email {
-            border-left-color: #7b1fa2;
-            background: #ede7f6;
-        }
-
-        .legend-item.crm {
-            border-left-color: #6a1b9a;
-            background: #f3e5f5;
-        }
-
-        .legend-item.admin {
-            border-left-color: #616161;
-            background: #f5f5f5;
-        }
+        .legend-item.research { border-left-color: #009688; background: #e0f7f4; }
+        .legend-item.email    { border-left-color: #7b1fa2; background: #ede7f6; }
+        .legend-item.crm      { border-left-color: #6a1b9a; background: #f3e5f5; }
+        .legend-item.admin    { border-left-color: #616161; background: #f5f5f5; }
+        .legend-item.content  { border-left-color: #2e7d32; background: #e8f5e9; }
 
         .legend-label {
             font-weight: bold;
@@ -254,12 +269,17 @@
             margin: 20px 0;
             font-family: 'Courier New', monospace;
             font-size: 13px;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         .daily-flow code {
             color: #1e88e5;
             font-weight: bold;
+        }
+
+        .daily-flow .note {
+            color: #888;
+            font-size: 11px;
         }
 
         .footer {
@@ -271,15 +291,20 @@
             font-size: 12px;
         }
 
+        tr.section-divider td {
+            background: #f0f4ff;
+            color: #1565c0;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 15px;
+            border-top: 2px solid #1e88e5;
+        }
+
         @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; max-width: 100%; }
         }
     </style>
 </head>
@@ -287,8 +312,8 @@
     <div class="container">
         <header>
             <h1>🎯 Duncan's Operations Schedule</h1>
-            <div class="subtitle">Automated Cron Jobs & Newsletter Delivery</div>
-            <div class="updated">Last Updated: Sunday, May 4, 2026 at 11:08 AM EDT</div>
+            <div class="subtitle">Full Automation Stack — Content, CRM &amp; Outreach</div>
+            <div class="updated">Last Updated: Monday, May 11, 2026</div>
         </header>
 
         <div class="recovery-system">
@@ -296,156 +321,320 @@
         </div>
 
         <div class="summary">
-            <strong>Current Stack:</strong> 6 automated daily cron jobs (4am–8:30am Mon-Sat) + daily brief emails (8am) + weekly trends article (Saturdays 9am)
+            <strong>Current Stack:</strong> 20 automated daily operations (4:00am–5:00pm Mon-Sat) spanning content generation, CRM prospecting, 4-batch email outreach, LinkedIn sequencing, enrichment, and HubSpot sync. Wednesday adds Partnership Builder; Friday adds Weekly Rollup.
         </div>
 
-        <h2>Daily Cron Jobs (Timezone: America/New_York / EDT)</h2>
+        <h2>Complete Daily Operations (Timezone: America/New_York / EDT)</h2>
 
         <table class="cron-table">
             <thead>
                 <tr>
                     <th>Time</th>
-                    <th>Job</th>
+                    <th>Operation</th>
                     <th>Frequency</th>
                     <th>Category</th>
-                    <th>Description & Output</th>
+                    <th>Description &amp; Output</th>
                 </tr>
             </thead>
             <tbody>
+                <!-- ── CONTENT PIPELINE ── -->
+                <tr class="section-divider">
+                    <td colspan="5">Content Pipeline</td>
+                </tr>
                 <tr>
                     <td class="time">4:00 AM</td>
-                    <td class="job-name">📰 Daily Brief Generation</td>
-                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
+                    <td class="job-name">📰 Daily Brief</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
                     <td><span class="category research">Research</span></td>
                     <td>
                         <div class="description">
-                            Generates `briefs/YYYY-MM-DD.md` with South Florida industry intelligence:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
-                                <li>Lead story + industry trends</li>
-                                <li>Insurance market updates</li>
-                                <li>Real estate & economic data</li>
-                                <li>Weather & regulatory calendar</li>
-                                <li>County-by-county status</li>
+                            South Florida industry intelligence brief via openclaw agent:
+                            <ul>
+                                <li>Lead story + insurance market + real estate + weather + regulatory calendar</li>
+                                <li>Output: <code>briefs/YYYY-MM-DD.md</code> + <code>.html</code></li>
+                                <li>Deduplicates against last 4 days to avoid repeated topics</li>
                             </ul>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="time">5:28 AM</td>
-                    <td class="job-name">🔍 Prospect Intelligence Research</td>
-                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
-                    <td><span class="category crm">CRM</span></td>
+                    <td class="time">4:30 AM</td>
+                    <td class="job-name">✍️ Content Generation</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category content">Content</span></td>
                     <td>
                         <div class="description">
-                            Deep research on organizations due for followup:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
-                                <li>Web research + company background</li>
-                                <li>Decision maker identification</li>
-                                <li>Pain points & personalization angles</li>
-                                <li>Generates `crm/intelligence/YYYY-MM-DD/[org]-intel.md`</li>
+                            Daily blog post and social copy from the brief:
+                            <ul>
+                                <li>Output: <code>content/YYYY-MM-DD/blog.md</code></li>
+                                <li>Repurposes brief angles for LinkedIn and social</li>
                             </ul>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td class="time">8:30 AM</td>
-                    <td class="job-name">🔄 HubSpot CRM Consolidation</td>
-                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
-                    <td><span class="category admin">Admin</span></td>
-                    <td>
-                        <div class="description">
-                            Daily consolidation of CRM research into import-ready format:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
-                                <li>Consolidates CRM intelligence into `crm/hubspot_master_import.csv`</li>
-                                <li>Ready for API upload to HubSpot</li>
-                                <li>Fully automated (no manual import steps)</li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Newsletter Email Sends</h2>
-
-        <table class="cron-table">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Content</th>
-                    <th>Frequency</th>
-                    <th>Category</th>
-                    <th>Audience & Details</th>
-                </tr>
-            </thead>
-            <tbody>
                 <tr>
                     <td class="time">5:45 AM</td>
-                    <td class="job-name">📧 Daily Brief Email</td>
-                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
+                    <td class="job-name">📧 Newsletter Send</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
                     <td><span class="category email">Email</span></td>
                     <td>
                         <div class="description">
-                            Sends today's brief to all HubSpot newsletter subscribers via <code>send-daily-brief.py</code>:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
+                            Daily brief emailed to all HubSpot newsletter subscribers via <code>send-daily-brief.py</code>:
+                            <ul>
                                 <li>3 audiences: Homeowners (list 18), Service Providers (list 19), RE Pros (list 20)</li>
-                                <li>Auto-converts <code>briefs/YYYY-MM-DD.md</code> to HTML if not already present</li>
-                                <li>Triggered by catchup.sh once brief file exists + it's past 5:45am</li>
+                                <li>Auto-converts brief MD to HTML if not present</li>
                                 <li>Send marker: <code>scripts/.newsletter-sent-YYYY-MM-DD</code></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="time">9:00 AM</td>
-                    <td class="job-name">🔍 PBC Prospecting</td>
-                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
+                    <td class="time">6:30 AM</td>
+                    <td class="job-name">🌐 Website Sync</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category admin">Admin</span></td>
+                    <td>
+                        <div class="description">
+                            Pushes today's brief to robinhoodadjusting.com:
+                            <ul>
+                                <li>Updates <code>site/PA-WEBSITE.html</code> with latest brief + trends</li>
+                                <li>Git commit tagged <code>site: daily brief sync</code> → Netlify auto-deploy (2–5 min)</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">Daily</td>
+                    <td class="job-name">📊 Weekly Trends Article</td>
+                    <td><span class="frequency saturday">Saturdays</span></td>
+                    <td><span class="category research">Research</span></td>
+                    <td>
+                        <div class="description">
+                            Saturday synthesis of week's market intelligence:
+                            <ul>
+                                <li>Seven-day trend analysis across Mon-Sat briefs</li>
+                                <li>Carrier behavior, legislative updates, market shifts</li>
+                                <li>Sent to all newsletter subscribers; posted to website</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- ── CRM PIPELINE ── -->
+                <tr class="section-divider">
+                    <td colspan="5">CRM Pipeline</td>
+                </tr>
+                <tr>
+                    <td class="time">5:00 AM</td>
+                    <td class="job-name">🔍 Prospect Intelligence</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
                     <td><span class="category crm">CRM</span></td>
                     <td>
                         <div class="description">
-                            Google Places scraper adds 25 new Palm Beach County contacts to HubSpot via <code>prospect_palm_beach.py</code>:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
+                            Deep research on orgs prospected the prior day (LaunchAgent catchup job):
+                            <ul>
+                                <li>Web research, decision-maker ID, pain points, personalization angles</li>
+                                <li>Output: <code>crm/intelligence/YYYY-MM-DD/[org]-intel.md</code></li>
+                                <li>Feeds 6am draft generation (two-day cycle: prospect Day 1 → intel/draft Day 2)</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">6:00 AM</td>
+                    <td class="job-name">📝 CRM Drafts</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Personalized outreach drafts using yesterday's intel profiles:
+                            <ul>
+                                <li>Soft first-touch tone; intent escalates on follow-ups</li>
+                                <li>Output: <code>crm/drafts/YYYY-MM-DD/[org].md</code></li>
+                                <li>Staged for 4-batch send starting 8am</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">7:00 AM</td>
+                    <td class="job-name">📥 Response Handler</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Processes inbound replies from prior outreach:
+                            <ul>
+                                <li>Positive responses → HubSpot Deal Pipeline</li>
+                                <li>No response / soft decline → Drip Queue for nurture sequence</li>
+                                <li>Output: <code>crm/responses/YYYY-MM-DD/</code></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">7:30 AM</td>
+                    <td class="job-name">📋 Ops Review</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category admin">Admin</span></td>
+                    <td>
+                        <div class="description">
+                            Daily system health summary for Duncan's morning review:
+                            <ul>
+                                <li>Checks all pipeline stages, API usage, send counts, errors</li>
+                                <li>Output: <code>ops-review/YYYY-MM-DD.md</code></li>
+                                <li>Dashboard updated in parallel via <code>update-dashboard.sh</code></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">8:00 AM</td>
+                    <td class="job-name">📤 Outreach Batch 1</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            First batch of personalized outreach emails via <code>send_outreach.py</code>:
+                            <ul>
+                                <li>Sends from today's staged drafts folder</li>
+                                <li>Rate-limited across 4 batches to avoid spam signals</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">8:30 AM</td>
+                    <td class="job-name">🔄 HubSpot Sync</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category admin">Admin</span></td>
+                    <td>
+                        <div class="description">
+                            Consolidates CRM research into HubSpot via API:
+                            <ul>
+                                <li>Builds <code>crm/hubspot_master_import_YYYY-MM-DD.csv</code></li>
+                                <li>Uploads contacts + companies directly (no manual steps)</li>
+                                <li>Upload logged to <code>crm/hubspot_upload.log</code></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">9:00 AM</td>
+                    <td class="job-name">🗺️ PBC Prospecting</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Google Places API scrapes 25 new Palm Beach County contacts via <code>prospect_palm_beach.py</code>:
+                            <ul>
                                 <li>Sectors: Roofing, Restoration, HVAC, Plumbing, Property Mgmt, RE, GC</li>
                                 <li>Skips national chains; deduplicates against existing HubSpot companies</li>
-                                <li>Creates company + contact + review task for Duncan</li>
-                                <li>API usage logged to <code>crm/api_usage.log</code> + daily ops-review</li>
-                                <li>Cost: ~$0.034/day (~$6/month) — well within free credit</li>
+                                <li>Creates company + contact + review task; logged to <code>crm/api_usage.log</code></li>
+                                <li>Cost: ~$0.034/day (~$6/month)</li>
                             </ul>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td class="time">9:00 AM</td>
-                    <td class="job-name">💌 Subscriber Drip Sequence</td>
-                    <td><span class="frequency mon-sat">Mon-Sat</span></td>
+                    <td class="job-name">💌 Drip Sequence</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
                     <td><span class="category email">Email</span></td>
                     <td>
                         <div class="description">
-                            3-touch personalized welcome series for new subscribers:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
-                                <li>Day 0 (0-48h): Welcome + qualifying question (intent, urgency, trade)</li>
+                            3-touch personalized welcome series for new subscribers via <code>drip.py</code>:
+                            <ul>
+                                <li>Day 0 (0–48h): Welcome + qualifying question (intent, urgency, trade)</li>
                                 <li>Day 3: Value content + resource links (48-hour guide, provider directory)</li>
                                 <li>Day 7: Personal touch from Duncan with direct line</li>
-                                <li>Segment-specific copy for Homeowners, Service Providers, RE Pros</li>
-                                <li>State tracked in HubSpot property <code>drip_step</code></li>
+                                <li>Segment-specific copy; state tracked in HubSpot <code>drip_step</code> property</li>
                             </ul>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="time">9:00 AM</td>
-                    <td class="job-name">📈 Weekly Trends Article</td>
-                    <td><span class="frequency saturday">Saturday Only</span></td>
-                    <td><span class="category email">Email</span></td>
+                    <td class="time">10:00 AM</td>
+                    <td class="job-name">🔎 Enrichment Gate</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
                     <td>
                         <div class="description">
-                            Saturday morning synthesis of week's market intelligence:
-                            <ul style="margin-top: 8px; margin-left: 20px;">
-                                <li>Seven-day trend analysis (Mon-Sat briefs)</li>
-                                <li>Market shifts, carrier behavior, legislative updates</li>
-                                <li>Tactical recommendations for PAs, contractors, property owners</li>
-                                <li>Sent to all newsletter subscribers</li>
+                            Finds real emails for today's prospected companies via <code>enrich_before_upload.py</code>:
+                            <ul>
+                                <li>Web-scrapes contact pages; routes confirmed emails to HubSpot as <code>hs_lead_status=NEW</code></li>
+                                <li>Best-guess emails → <code>OPEN</code>; failures → recycle queue</li>
+                                <li>Logged to <code>crm/email_enrichment.log</code></li>
                             </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">10:30 AM</td>
+                    <td class="job-name">📤 Outreach Batch 2</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">Second outreach batch from today's staged drafts.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">11:00 AM</td>
+                    <td class="job-name">🔗 LinkedIn Sequencing</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Queues LinkedIn connection + message sequences for CRM prospects:
+                            <ul>
+                                <li>Output: <code>crm/linkedin-queue/YYYY-MM-DD/</code></li>
+                                <li>Mirrors email outreach with LinkedIn touchpoints</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">12:30 PM</td>
+                    <td class="job-name">📤 Outreach Batch 3</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">Third outreach batch from today's staged drafts.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">1:00 PM</td>
+                    <td class="job-name">🤝 Partnership Builder</td>
+                    <td><span class="frequency wednesday">Wednesdays</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Weekly partnership network outreach (Wednesdays only):
+                            <ul>
+                                <li>Targets RE brokerages, HOA mgmt firms, GC networks for referral partnerships</li>
+                                <li>Output: <code>crm/partnerships/YYYY-WNN/</code></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">3:00 PM</td>
+                    <td class="job-name">📤 Outreach Batch 4</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">Fourth and final outreach batch from today's staged drafts.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">5:00 PM</td>
+                    <td class="job-name">📈 Weekly Rollup</td>
+                    <td><span class="frequency friday">Fridays</span></td>
+                    <td><span class="category admin">Admin</span></td>
+                    <td>
+                        <div class="description">
+                            End-of-week summary: outreach totals, pipeline movement, response rates, prospecting stats.
+                            Output: <code>weekly/YYYY-WNN.md</code>
                         </div>
                     </td>
                 </tr>
@@ -455,80 +644,63 @@
         <h2>Daily Morning Workflow</h2>
 
         <div class="daily-flow">
-<code>4:00 AM</code> → Brief generation starts (openclaw agent)<br>
-<code>5:00 AM</code> → Intelligence research runs in parallel<br>
-<code>5:45 AM</code> → Brief email sent automatically once brief file exists (catchup.sh triggers send-daily-brief.py) ✓<br>
-<code>6:00 AM</code> → CRM outreach drafts generated<br>
-<code>7:00 AM</code> → Response handler runs<br>
-<code>7:30 AM</code> → Ops-review generated<br>
-<code>8:30 AM</code> → HubSpot daily consolidation; master import CSV ready<br>
-<code>9:00 AM</code> → Subscriber drip sequence runs (Day 0/3/7 welcome series) ✓<br>
-<code>9:00 AM</code> → PBC prospecting (25 contacts via Google Places) ✓<br>
-<code>EOD</code> → Single website update (briefs + trends article if Saturday)
+<code>4:00 AM</code> → Daily brief generated (research + writing)<br>
+<code>4:30 AM</code> → Blog post + social content drafted<br>
+<code>5:00 AM</code> → Prospect intel profiles generated (yesterday's new contacts)<br>
+<code>5:45 AM</code> → Newsletter emailed to all 3 HubSpot subscriber lists<br>
+<code>6:00 AM</code> → Personalized CRM drafts built from intel profiles<br>
+<code>6:30 AM</code> → Website synced with today's brief → Netlify auto-deploys<br>
+<code>7:00 AM</code> → Inbound responses processed → Deal Pipeline or Drip Queue<br>
+<code>7:30 AM</code> → Ops review generated → dashboard updated <span class="note">← Duncan reviews here</span><br>
+<code>8:00 AM</code> → Outreach Batch 1 sent<br>
+<code>8:30 AM</code> → HubSpot sync (contacts + companies uploaded via API)<br>
+<code>9:00 AM</code> → PBC Prospecting (25 new contacts) + Drip Sequence (parallel)<br>
+<code>10:00 AM</code> → Enrichment Gate (email scraping for today's prospects)<br>
+<code>10:30 AM</code> → Outreach Batch 2 sent<br>
+<code>11:00 AM</code> → LinkedIn sequences queued<br>
+<code>12:30 PM</code> → Outreach Batch 3 sent<br>
+<code>1:00 PM</code> → Partnership Builder (Wednesdays only)<br>
+<code>3:00 PM</code> → Outreach Batch 4 sent<br>
+<code>5:00 PM</code> → Weekly Rollup (Fridays only)
         </div>
-
-        <h2>Saturday Special</h2>
-
-        <table class="cron-table">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Job</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="time">4:00 AM</td>
-                    <td class="job-name">📰 Daily Brief (Sat)</td>
-                    <td>Regular daily brief generation (see above)</td>
-                </tr>
-                <tr>
-                    <td class="time">8:00 AM</td>
-                    <td class="job-name">📧 Daily Brief Email</td>
-                    <td>Sent to all subscribers with today's brief</td>
-                </tr>
-                <tr>
-                    <td class="time">9:00 AM</td>
-                    <td class="job-name">📈 Weekly Trends Article</td>
-                    <td>Synthesis of week's briefs (Mon-Sat); sent to all subscribers</td>
-                </tr>
-            </tbody>
-        </table>
 
         <div class="legend">
             <div class="legend-item research">
                 <div class="legend-label">🔍 Research</div>
-                <div>Web research, intelligence gathering, brief generation</div>
+                <div>Web research, intelligence gathering, trend synthesis</div>
+            </div>
+            <div class="legend-item content">
+                <div class="legend-label">✍️ Content</div>
+                <div>Blog, social, and newsletter content generation</div>
             </div>
             <div class="legend-item email">
                 <div class="legend-label">📧 Email</div>
-                <div>Newsletter subscriber outreach via HubSpot</div>
+                <div>Newsletter + drip sequences via HubSpot</div>
             </div>
             <div class="legend-item crm">
                 <div class="legend-label">💬 CRM</div>
-                <div>Prospect research, outreach, sales pipeline</div>
+                <div>Prospecting, drafts, outreach batches, LinkedIn, enrichment</div>
             </div>
             <div class="legend-item admin">
                 <div class="legend-label">📊 Admin</div>
-                <div>Data consolidation, system maintenance</div>
+                <div>HubSpot sync, ops review, dashboard, weekly rollup</div>
             </div>
         </div>
 
         <div class="notes">
             <h3>Key Notes</h3>
             <ul>
-                <li><strong>Single Daily Website Update:</strong> All content (briefs + trends if Saturday) are deployed to PA-WEBSITE.html in one push at end of morning to minimize token usage</li>
-                <li><strong>HubSpot Integration:</strong> Daily brief emails are sent via HubSpot API using pre-built templates. Trends articles are sent Saturdays at 9am.</li>
-                <li><strong>Monday-Saturday Schedule:</strong> All cron jobs except weekly trends run Mon-Sat (no jobs on Sunday)</li>
-                <li><strong>Email Delivery:</strong> Daily briefs at 8am EDT (subscriber timezone), weekly trends Saturdays at 9am EDT</li>
-                <li><strong>Auto-Recovery:</strong> LaunchAgent monitors and catches up any missed jobs when Mac wakes. State tracking prevents duplicate runs.</li>
-                <li><strong>Manual Approval:</strong> All CRM outreach is drafted and awaiting Duncan's approval before sending. Newsletter emails are automated.</li>
+                <li><strong>Two-Day Prospecting Cycle:</strong> Contacts scraped Day 1 (9am) → enriched (10am) → intel profiles Day 2 (5am) → personalized drafts Day 2 (6am) → outreach Day 2 (8am–3pm).</li>
+                <li><strong>4-Batch Outreach:</strong> Drafts are spread across 8am, 10:30am, 12:30pm, and 3pm to avoid spam signals and spread engagement windows.</li>
+                <li><strong>Mon-Sat Schedule:</strong> All jobs except Partnership Builder (Wed) and Weekly Rollup (Fri) run Mon-Sat. No automated jobs on Sundays.</li>
+                <li><strong>Auto-Recovery:</strong> LaunchAgent catches any missed jobs when the Mac wakes. State tracking via lock files and log entries prevents duplicate runs.</li>
+                <li><strong>HubSpot Fully Automated:</strong> CRM uploads via API — no manual import steps required. Daily master CSV generated + uploaded at 8:30am.</li>
+                <li><strong>Drip vs. Deal Pipeline:</strong> Response Handler routes warm replies to the HubSpot Deal Pipeline; non-responders and soft declines enter the 3-touch Drip Queue (runs daily at 9am).</li>
             </ul>
         </div>
 
         <div class="footer">
-            <p>Operations Schedule v2 — 2026-05-05 (brief generation complete)</p>
+            <p>Operations Schedule v3 — 2026-05-11 (20 operations, full pipeline)</p>
             <p>Timezone: America/New_York (EDT) | Auto-updated when cron jobs change</p>
         </div>
     </div>

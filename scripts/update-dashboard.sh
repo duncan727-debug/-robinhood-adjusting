@@ -96,11 +96,77 @@ else
 fi
 
 rollup_status="idle"; rollup_detail="Fridays only"
-if [[ "$DOW" -eq 5 ]]; then  # Friday
+if [[ "$DOW" -eq 5 ]]; then
   [[ -f "$WORKSPACE/weekly/$(date +%Y-W%V).md" ]] && {
     rollup_status="ok"; rollup_detail="Generated"
   } || { rollup_status="idle"; rollup_detail="Scheduled 5pm"; }
 fi
+
+# 4:30am daily content (blog + social)
+content_status="err"; content_detail="Not found"
+[[ -f "$WORKSPACE/content/$TODAY/blog.md" ]] && {
+  content_status="ok"; content_detail="Generated"
+}
+
+# 6:30am website sync (git commit with today's brief)
+websync_status="err"; websync_detail="Not synced"
+git -C "$WORKSPACE" log --since="$TODAY 00:00" --oneline 2>/dev/null | grep -q "site: daily brief sync" && {
+  websync_status="ok"; websync_detail="Pushed today"
+}
+
+# 8:00am outreach batch 1
+batch1_status="idle"; batch1_detail="Not run"
+grep -q "^\[$TODAY.*[Bb]atch 1" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null && {
+  sent=$(grep "^\[$TODAY.*[Bb]atch 1 done" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null | grep -o "sent: [0-9]*" | tail -1 | awk '{print $2}')
+  batch1_status="ok"; batch1_detail="${sent:-?} sent"
+}
+
+# 9:00am drip sequence
+drip_status="idle"; drip_detail="Not run"
+grep -q "^\[$TODAY" "$WORKSPACE/scripts/drip.log" 2>/dev/null && {
+  drip_status="ok"; drip_detail="Run today"
+}
+
+# 10:00am enrichment gate
+enrich_status="err"; enrich_detail="Not run"
+grep -q "$TODAY" "$WORKSPACE/crm/email_enrichment.log" 2>/dev/null && {
+  scraped=$(grep -A5 "=== Done ===" "$WORKSPACE/crm/email_enrichment.log" 2>/dev/null | grep "Scraped real email" | tail -1 | grep -o "[0-9]*" || echo "?")
+  enrich_status="ok"; enrich_detail="${scraped} emails found"
+}
+
+# 10:30am outreach batch 2
+batch2_status="idle"; batch2_detail="Not run"
+grep -q "^\[$TODAY.*[Bb]atch 2" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null && {
+  batch2_status="ok"; batch2_detail="Done"
+}
+
+# 11:00am linkedin sequencing
+linkedin_status="idle"; linkedin_detail="Not run"
+[[ -d "$WORKSPACE/crm/linkedin-queue/$TODAY" ]] && {
+  lcount=$(ls "$WORKSPACE/crm/linkedin-queue/$TODAY" 2>/dev/null | wc -l | tr -d ' ')
+  linkedin_status="ok"; linkedin_detail="${lcount} queued"
+}
+
+# 12:30pm outreach batch 3
+batch3_status="idle"; batch3_detail="Not run"
+grep -q "^\[$TODAY.*[Bb]atch 3" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null && {
+  batch3_status="ok"; batch3_detail="Done"
+}
+
+# 1:00pm partnership network builder (Wednesdays)
+ISOWEEK=$(date +%Y-W%V)
+partner_status="idle"; partner_detail="Wednesdays only"
+if [[ "$DOW" -eq 3 ]]; then
+  [[ -d "$WORKSPACE/crm/partnerships/$ISOWEEK" ]] && {
+    partner_status="ok"; partner_detail="Run today"
+  } || { partner_status="warn"; partner_detail="Scheduled 1pm"; }
+fi
+
+# 3:00pm outreach batch 4
+batch4_status="idle"; batch4_detail="Not run"
+grep -q "^\[$TODAY.*[Bb]atch 4" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null && {
+  batch4_status="ok"; batch4_detail="Done"
+}
 
 # ── Backlog count ────────────────────────────────────────────────────────────
 backlog_count=0
@@ -122,9 +188,9 @@ provider_count=0
 }
 [[ "$provider_count" -eq 0 ]] && provider_count=62
 
-# ── Health score ─────────────────────────────────────────────────────────────
-ok_count=0; total_count=8
-for s in "$brief_status" "$intel_status" "$drafts_status" "$opsreview_status" "$hubspot_status" "$prospect_status" "$newsletter_status" "$trends_status"; do
+# ── Health score (core operations only) ──────────────────────────────────────
+ok_count=0; total_count=9
+for s in "$brief_status" "$intel_status" "$drafts_status" "$opsreview_status" "$hubspot_status" "$prospect_status" "$newsletter_status" "$trends_status" "$websync_status"; do
   [[ "$s" == "ok" ]] && ok_count=$((ok_count + 1))
 done
 health_pct=$(( ok_count * 100 / total_count ))
@@ -162,15 +228,26 @@ const DASHBOARD_DATA = {
   },
 
   crons: [
-    { time:"4:00am",  name:"Daily Brief",       detail:$(printf '"%s"' "$brief_detail"),     status:"$brief_status" },
-    { time:"5:00am",  name:"Prospect Intel",     detail:$(printf '"%s"' "$intel_detail"),     status:"$intel_status" },
-    { time:"6:00am",  name:"CRM Drafts",         detail:$(printf '"%s"' "$drafts_detail"),    status:"$drafts_status" },
-    { time:"7:00am",  name:"Response Handler",   detail:$(printf '"%s"' "$responses_detail"), status:"$responses_status" },
-    { time:"7:30am",  name:"Ops Review",         detail:$(printf '"%s"' "$opsreview_detail"), status:"$opsreview_status" },
-    { time:"8:30am",  name:"HubSpot Sync",       detail:$(printf '"%s"' "$hubspot_detail"),   status:"$hubspot_status" },
-    { time:"9:00am",  name:"Prospecting",        detail:$(printf '"%s"' "$prospect_detail"),  status:"$prospect_status" },
-    { time:"Daily",   name:"Trends",             detail:$(printf '"%s"' "${trends_detail:-Not generated}"), status:"$trends_status" },
-    { time:"5:00pm",  name:"Weekly Rollup",      detail:$(printf '"%s"' "$rollup_detail"),    status:"$rollup_status" }
+    { time:"4:00am",  name:"Daily Brief",         detail:$(printf '"%s"' "$brief_detail"),       status:"$brief_status" },
+    { time:"4:30am",  name:"Content Generation",  detail:$(printf '"%s"' "$content_detail"),     status:"$content_status" },
+    { time:"5:00am",  name:"Prospect Intel",       detail:$(printf '"%s"' "$intel_detail"),       status:"$intel_status" },
+    { time:"5:45am",  name:"Newsletter",           detail:"Scheduled",                            status:"idle" },
+    { time:"6:00am",  name:"CRM Drafts",           detail:$(printf '"%s"' "$drafts_detail"),      status:"$drafts_status" },
+    { time:"6:30am",  name:"Website Sync",         detail:$(printf '"%s"' "$websync_detail"),     status:"$websync_status" },
+    { time:"7:00am",  name:"Response Handler",     detail:$(printf '"%s"' "$responses_detail"),   status:"$responses_status" },
+    { time:"7:30am",  name:"Ops Review",           detail:$(printf '"%s"' "$opsreview_detail"),   status:"$opsreview_status" },
+    { time:"8:00am",  name:"Outreach Batch 1",     detail:$(printf '"%s"' "$batch1_detail"),      status:"$batch1_status" },
+    { time:"8:30am",  name:"HubSpot Sync",         detail:$(printf '"%s"' "$hubspot_detail"),     status:"$hubspot_status" },
+    { time:"9:00am",  name:"Prospecting",          detail:$(printf '"%s"' "$prospect_detail"),    status:"$prospect_status" },
+    { time:"9:00am",  name:"Drip Sequence",        detail:$(printf '"%s"' "$drip_detail"),        status:"$drip_status" },
+    { time:"10:00am", name:"Enrichment Gate",      detail:$(printf '"%s"' "$enrich_detail"),      status:"$enrich_status" },
+    { time:"10:30am", name:"Outreach Batch 2",     detail:$(printf '"%s"' "$batch2_detail"),      status:"$batch2_status" },
+    { time:"11:00am", name:"LinkedIn Sequencing",  detail:$(printf '"%s"' "$linkedin_detail"),    status:"$linkedin_status" },
+    { time:"12:30pm", name:"Outreach Batch 3",     detail:$(printf '"%s"' "$batch3_detail"),      status:"$batch3_status" },
+    { time:"1:00pm",  name:"Partnership Builder",  detail:$(printf '"%s"' "$partner_detail"),     status:"$partner_status" },
+    { time:"3:00pm",  name:"Outreach Batch 4",     detail:$(printf '"%s"' "$batch4_detail"),      status:"$batch4_status" },
+    { time:"Daily",   name:"Trends",               detail:$(printf '"%s"' "${trends_detail:-Not generated}"), status:"$trends_status" },
+    { time:"5:00pm",  name:"Weekly Rollup",        detail:$(printf '"%s"' "$rollup_detail"),      status:"$rollup_status" }
   ],
 
   streams: {
