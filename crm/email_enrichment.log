@@ -231,3 +231,84 @@ Contacts missing email: 12
   Scraped real email : 1
   Best-guess (review): 8  — these have hs_lead_status=OPEN in HubSpot
   No website / error : 3
+[2026-05-11 19:00] === enrich_before_upload start ===
+[2026-05-11 19:01]   ✓ OPEN → HubSpot: Mayfair Property Management of Palm Beach County | info@mayfairpropertymanagement.com 
+[2026-05-11 19:01]   ✓ OPEN → HubSpot: My Area Realty West Palm Beach Property Management | info@www.floridaspropertymanagement.com 
+[2026-05-11 19:01]   ✓ OPEN → HubSpot: Keyrenter Property Management South Florida | info@www.keyrentersouthflorida.com 
+[2026-05-11 19:01]   ✓ OPEN → HubSpot: HG Property Management | info@hgpropertymanagement.net 
+[2026-05-11 19:01]   ✓ OPEN → HubSpot: Home Property Management | info@www.homepropertymanagement.com 
+[2026-05-11 19:01]   ✓ OPEN → HubSpot: Mangrove Property Management & Sales | info@www.mangrovepm.com 
+[2026-05-11 19:02]   ✓ OPEN → HubSpot: Real Property Management Sunstate | info@www.rpmsunstate.com 
+[2026-05-11 19:02]   ✓ OPEN → HubSpot: Davenport Professional Property Management | info@www.davenportpro.net 
+[2026-05-11 19:02]   ✓ OPEN → HubSpot: Atlis Property Management | info@www.atlispm.com 
+[2026-05-11 19:02]   ✓ OPEN → HubSpot: MH Management Solutions Corp | info@www.mhmanage.com 
+[2026-05-11 19:03]   ✓ OPEN → HubSpot: TPG Property Management | info@tpgpropertymanagement.com 
+[2026-05-11 19:03]   ✓ OPEN → HubSpot: Campbell Property Management - Lake Worth | info@www.campbellpropertymanagement.com 
+[2026-05-11 19:03]   ✓ OPEN → HubSpot: Associated Property Management of the Palm Beaches Inc. | info@www.apm247.net 
+[2026-05-11 19:03]   ✓ OPEN → HubSpot: Palm Beach County Property Management | info@palmbeachcountypropertymanagement.com 
+[2026-05-11 19:03]   ✓ NEW  → HubSpot: Palm Beach Property Management | service@pbpmflorida.com 
+[2026-05-11 19:03]   SKIP (already in HubSpot): Kanga Property Management
+[2026-05-11 19:03]   ✓ OPEN → HubSpot: Orchid Property Management | info@www.orchidpm.com 
+[2026-05-11 19:03]   ✓ OPEN → HubSpot: Home Sales and Property Management | info@www.homepropertymanagement.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: Florida Property Management Services LLC | info@www.properties.rent 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: All County Elite Property Management | info@www.allcountyelite.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: Donohue Real Estate | info@www.donohuerealestate.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: Palm Beach International Realty | info@www.pbirealty.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: Cheerful Agents Real Estate LLC. | info@cheerfulagents.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: Wilder Real Estate Group | info@wilderrealestategroup.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: Chaimae Yaagoubi, PA | Real Estate Agency | Palm Beach Florida | info@chaimaerealty.com 
+[2026-05-11 19:04]   ✓ OPEN → HubSpot: NCCS CONSTRUCTION LLC | info@nccsconstruction.com 
+[2026-05-11 19:05]   ✓ OPEN → HubSpot: Kimsto Construction LLC | info@www.kimstoconstruction.com 
+[2026-05-11 19:05]   ✓ OPEN → HubSpot: Matos Contracting Inc | info@matoscontractinginc.com 
+[2026-05-11 19:05]   SKIP (already in HubSpot): Island Construction & Design
+[2026-05-11 19:05]   ✓ OPEN → HubSpot: Palm Beach Residential Remodeling | info@www.pbremodel.com 
+[2026-05-11 19:05]   ✓ OPEN → HubSpot: Oak Construction LLC | info@www.oakremodelings.com 
+[2026-05-11 19:05]   ✓ NEW  → HubSpot: SERAC Construction INC | info@seracconstruction.com 
+[2026-05-11 19:05]   SKIP (already in HubSpot): House Call Construction - Remodeling Custom Kitchens and Baths
+[2026-05-11 19:05]   ✓ OPEN → HubSpot: ELITE CONTRACTORS PRO-General Construction & Remodeling Company-Home Improvement Company | info@www.elitecontractorspro.com 
+[2026-05-11 19:05]   ✓ NEW  → HubSpot: Circle Homes ⭕️ | info@circlehomespb.com 
+[2026-05-11 19:06]   ✓ OPEN → HubSpot: Atlantic View Builders & Remodeling | info@atlanticviewbuilders.com 
+[2026-05-11 19:06]   ✓ NEW  → HubSpot: Steve Cury Construction | steve@stevecuryconstruction.com 
+[2026-05-11 19:06]   ✓ OPEN → HubSpot: RENOVA - Renovation & Remodeling General Contractors | info@www.letrenova.com 
+[2026-05-11 19:06]   ✓ OPEN → HubSpot: West Palm Contracting | info@www.westpalmcontracting.com 
+[2026-05-11 19:06]   ✓ OPEN → HubSpot: Belmonte Building Company | info@belmontebuildingcompany.com 
+[2026-05-11 19:06]   ✓ OPEN → HubSpot: West Palm Beach Water Damage | info@restoflex.co 
+[2026-05-11 19:06]   ✓ NEW  → HubSpot: The Phoenix Restoration Water Damage, Mold Remediation, Emergency Water Repair In Lake Worth | info@thephoenixrestoration.com 
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Wellington | info@www.rescueclean911.com 
+[2026-05-11 19:07]   RECYCLE (attempt 1): Rapid Water Damage Restoration Wellington FL — no email found
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: Water Cleanup of Florida | info@www.wcufl.com 
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: ADU Water Fire Mold Storm | info@www.alldryus.com 
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: Orchid City Restoration | info@orchidcityrestoration.com 
+[2026-05-11 19:07]   RECYCLE (attempt 1): Shield Water Damage Restoration West Palm Beach FL — no email found
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: Damage Services- Mold Remediation & Smoke Cleanup | info@www.damageservices.com 
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: Mold and Water Florida | info@www.moldandwaterflorida.com 
+[2026-05-11 19:07]   RECYCLE (attempt 1): Roofing Company Boca Raton — no email found
+[2026-05-11 19:07]   ✓ NEW  → HubSpot: Whale Roofing & Construction | info@whaleroofing.com 
+[2026-05-11 19:07]   ✓ OPEN → HubSpot: Blues Brothers Roofing | info@www.bluesbrothersroofing.com 
+[2026-05-11 19:08]   ✓ OPEN → HubSpot: Aastro Roofing Company | info@aastroroofing.com 
+[2026-05-11 19:08]   ✓ OPEN → HubSpot: Build Masters | Roof Masters | info@www.roofmasters.us 
+[2026-05-11 19:08]   ✓ OPEN → HubSpot: Forte Roofing | info@www.forteroofingfl.com 
+[2026-05-11 19:08]   ✓ OPEN → HubSpot: Greene’s Professional Roofing Services Boca Raton | info@greenesprs.com 
+[2026-05-11 19:08]   ✓ OPEN → HubSpot: Statewide Roofing Partners LLC | info@choosestatewide.com 
+[2026-05-11 19:08]   ✓ OPEN → HubSpot: CLS Roofing Contractor of Boca Raton | info@clsroofingllc.com 
+[2026-05-11 19:09]   ✓ OPEN → HubSpot: Caldwell Roofing | info@caldwellroofing.com 
+[2026-05-11 19:09]   ✓ OPEN → HubSpot: DBS Roofing | info@www.dbsroofingcontractors.com 
+[2026-05-11 19:09]   ✓ NEW  → HubSpot: Proper Roofing Boca Raton | appointment@properoofing.com 
+[2026-05-11 19:09]   ✓ OPEN → HubSpot: Matthews Roofing LLC | info@www.matthewsroofs.com 
+[2026-05-11 19:09]   RECYCLE (attempt 1): ROOFING RECOVERY OF FLORIDA INC — no email found
+[2026-05-11 19:09]   ✓ NEW  → HubSpot: Security Roofing Systems, Inc. | sales@securityroofing.com 
+[2026-05-11 19:09]   ✓ OPEN → HubSpot: Metal Roofing Contractors | info@www.metalroofingcontractorsfl.com 
+[2026-05-11 19:09]   ✓ OPEN → HubSpot: SK Quality Roofing | info@www.skqualityroofing.com 
+[2026-05-11 19:09]   ✓ OPEN → HubSpot: Builders of America | info@www.buildersofamerica.org 
+[2026-05-11 19:10]   ✓ OPEN → HubSpot: Elite Seal Roofing Inc | info@elitesealroofing.com 
+[2026-05-11 19:10]   ✓ NEW  → HubSpot: Maze Roofing Boca Raton | info@maze-roofing.com 
+[2026-05-11 19:10]   ✓ OPEN → HubSpot: All Roofers Wellington | info@allroofingllcfl.com 
+[2026-05-11 19:10]   ✓ OPEN → HubSpot: Roof Repairs Wellington by ApexRoof | info@wellington.apexroof.pro 
+[2026-05-11 19:11]   ✓ OPEN → HubSpot: Native Roofing | info@www.nativeroofing.com 
+[2026-05-11 19:11]   ✓ OPEN → HubSpot: Rogan Roofing | info@www.roganroofing.com 
+[2026-05-11 19:11]   ✓ OPEN → HubSpot: Mendieta Roofing West Palm | info@mendietaroofingcorp.com 
+[2026-05-11 19:11] === Done ===
+[2026-05-11 19:11]   Uploaded to HubSpot : 68
+[2026-05-11 19:11]   Recycled (retry tmrw): 4
+[2026-05-11 19:11]   Skipped (duplicates) : 3
+[2026-05-11 19:11]   Flagged manual lookup: 0

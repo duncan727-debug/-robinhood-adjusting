@@ -43,3 +43,7 @@ AttributeError: 'NoneType' object has no attribute 'strip'
 [2026-05-09 09:00] === Drip sequence run start ===
 [2026-05-09 09:00] === Drip sequence run start ===
 ERROR: Gmail App Password not found in config.
+[2026-05-11 18:57] === Drip sequence run start ===
+[2026-05-11 18:57] Found 4 subscriber contacts across all lists
+[2026-05-11 18:57] Done — sent: 0 | skipped: 4 | errors: 0
+[2026-05-11 18:57] === Drip run complete ===

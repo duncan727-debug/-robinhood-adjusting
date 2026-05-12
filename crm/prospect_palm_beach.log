@@ -425,3 +425,70 @@
     QUEUED (25/25): Mold and Water Florida [Palm Beach Gardens] — (561) 221-2335
   Done: 25 added, 5 duplicate/existing, 0 large firms skipped, 0 errors
   Google Places API: 2026-05-09 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-05-11 18:58:26] Palm Beach prospect run started
+  Searching: roofing company Boca Raton FL
+    → 0 results
+  Searching: roofing company Wellington FL
+    → 0 results
+  Searching: roofing company West Palm Beach FL
+    → 0 results
+  Searching: HVAC service Boca Raton FL
+    → 0 results
+  Searching: property manager West Palm Beach FL
+    → 0 results
+  Searching: insurance restoration contractor FL
+    → 0 results
+  Searching: roofing contractor Palm Beach County FL
+    → 0 results
+  Searching: restoration company Palm Beach County FL
+    → 0 results
+  Searching: HVAC company Palm Beach County FL
+    → 0 results
+  Searching: plumbing company Palm Beach County FL
+    → 0 results
+  Searching: property management Palm Beach County FL
+    → 0 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 0 results
+  Searching: general contractor Palm Beach County FL
+    → 0 results
+  Searching: water damage restoration Palm Beach County FL
+    → 0 results
+  Done: 0 added, 0 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-11 | calls: 0 | $0.0000 today | $0.0000 MTD | 0.0% used | 100.0% remaining
+[2026-05-11 18:58:39] Run complete
+
+[2026-05-11 18:59:48] Palm Beach prospect run started
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Roofing Company Boca Raton [Boca Raton] — (561) 717-1265
+    QUEUED (2/25): Whale Roofing & Construction [Boca Raton] — (561) 467-7946
+    QUEUED (3/25): Blues Brothers Roofing [Boca Raton] — (561) 361-6378
+    QUEUED (4/25): Aastro Roofing Company [Deerfield Beach] — (561) 409-3280
+    QUEUED (5/25): Build Masters | Roof Masters [Boca Raton] — (561) 757-6587
+    QUEUED (6/25): Forte Roofing [Boca Raton] — (561) 668-9843
+    QUEUED (7/25): Greene’s Professional Roofing Services Boca Raton [Boca Raton] — (561) 556-0201
+    QUEUED (8/25): Statewide Roofing Partners LLC [Boca Raton] — (561) 468-3466
+    QUEUED (9/25): CLS Roofing Contractor of Boca Raton [Boca Raton] — (561) 918-2477
+    QUEUED (10/25): Caldwell Roofing [Boca Raton] — (561) 475-5279
+    QUEUED (11/25): DBS Roofing [Boca Raton] — (954) 947-7439
+    QUEUED (12/25): Proper Roofing Boca Raton [Boca Raton] — (561) 589-6386
+    QUEUED (13/25): Matthews Roofing LLC [Boca Raton] — (561) 716-1488
+    QUEUED (14/25): ROOFING RECOVERY OF FLORIDA INC [Boca Raton] — (305) 280-5959
+    QUEUED (15/25): Security Roofing Systems, Inc. [Boca Raton] — (954) 252-9010
+    QUEUED (16/25): Metal Roofing Contractors [Boca Raton] — (561) 449-1599
+    QUEUED (17/25): SK Quality Roofing [Delray Beach] — (561) 783-5248
+    QUEUED (18/25): Builders of America [Boca Raton] — (561) 701-9897
+    QUEUED (19/25): Elite Seal Roofing Inc [Boca Raton] — (561) 273-5666
+    QUEUED (20/25): Maze Roofing Boca Raton [Boca Raton] — (561) 609-0948
+  Searching: roofing company Wellington FL
+    → 20 results
+    QUEUED (21/25): All Roofers Wellington [Wellington] — (561) 486-8310
+    QUEUED (22/25): Roof Repairs Wellington by ApexRoof [Wellington] — (561) 823-5029
+    QUEUED (23/25): Native Roofing [Wellington] — (561) 469-7930
+    QUEUED (24/25): Rogan Roofing [Wellington] — (561) 308-4961
+    QUEUED (25/25): Mendieta Roofing West Palm [West Palm Beach] — (561) 797-5457
+  Done: 25 added, 3 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-11 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-05-11 19:00:05] Run complete
+

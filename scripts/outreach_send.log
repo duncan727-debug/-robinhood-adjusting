@@ -24,3 +24,65 @@
 [2026-05-08 15:01] === Batch 4 complete ===
 ERROR: Gmail App Password not found in config.
 ERROR: Gmail App Password not found in config.
+ERROR: Gmail App Password not found in config.
+[2026-05-11 18:52] === Outreach batch 1 start (2026-05-11) ===
+[2026-05-11 18:52] Building today's send queue...
+[2026-05-11 18:52] Queue built: 25 contacts for today
+[2026-05-11 18:52] Sending 6 emails (batch 1, slots 0–5)...
+[2026-05-11 18:53]   ✓ Sent: Lisa @ Coastal Property Management Group <info@coastalproperty.com>
+[2026-05-11 18:53]   ✓ Sent: Patricia @ HOA Advocates Management <info@hoaadvocatesfl.com>
+[2026-05-11 18:53]   ✓ Sent: Carlos @ Elite General Contracting <info@elitecontractorsfl.com>
+[2026-05-11 18:53]   ✓ Sent: Michael @ Atlantic Water & Mold Solutions <info@atlanticwaterfl.com>
+[2026-05-11 18:53]   ✓ Sent: Michael @ KLR Roofing Corp. <michael@klrroofing.com>
+[2026-05-11 18:53]   ✓ Sent: David @ Prestige Realty Management <info@prestigerealty.com>
+[2026-05-11 18:53] Batch 1 done — sent: 6, errors: 0
+[2026-05-11 18:54]   ✓ Confirmation sent: Owner @  <info@txbroof.com>
+[2026-05-11 18:54] Confirmation pass: 1 sent
+[2026-05-11 18:54] === Batch 1 complete ===
+[2026-05-11 18:54] === Outreach batch 2 start (2026-05-11) ===
+[2026-05-11 18:54] Sending 6 emails (batch 2, slots 6–11)...
+[2026-05-11 18:54]   ✓ Sent: Sarah @ Quantum Roofing Solutions <info@quantumroofing.com>
+[2026-05-11 18:54]   ✓ Sent: James @ All Phase Construction USA <info@allphaseusa.com>
+[2026-05-11 18:54]   ✓ Sent: Robert @ Storm Shield Roofing <info@stormshieldfl.com>
+[2026-05-11 18:54]   ✓ Sent: there @ KLR Roofing Corp. <info@klrroofing.com>
+[2026-05-11 18:55]   ✓ Sent: there @  <duncanlittlejohnjr@gmail.com>
+[2026-05-11 18:55]   ✓ Sent: Owner @ EDS Air Conditioning & Plumbing <info@www.edsairconditioning.com>
+[2026-05-11 18:55] Batch 2 done — sent: 6, errors: 0
+[2026-05-11 18:55] === Batch 2 complete ===
+[2026-05-11 18:55] === Outreach batch 3 start (2026-05-11) ===
+[2026-05-11 18:55] Sending 7 emails (batch 3, slots 12–18)...
+[2026-05-11 18:55]   ✓ Sent: Owner @ Plumbtastic Plumbing <info@plumbtasticplumbing.com>
+[2026-05-11 18:55]   ✓ Sent: Owner @ North County Plumbing, Inc. <info@northcountyplumbing.org>
+[2026-05-11 18:55]   ✓ Sent: Owner @ Top Notch Property Watch <info@topnotchpropertywatch.com>
+[2026-05-11 18:55]   ✓ Sent: Owner @ GRS Community Management <info@www.grsmgt.com>
+[2026-05-11 18:56]   ✓ Sent: Owner @ Palm Beach Estate Management <info@pbestatemgmt.com>
+[2026-05-11 18:56]   ✓ Sent: Owner @ Craft Realty <info@craftrealtyhomes.com>
+[2026-05-11 18:56]   ✓ Sent: Owner @ Island Construction & Design <admin@islandconstruction1.com>
+[2026-05-11 18:56] Batch 3 done — sent: 7, errors: 0
+[2026-05-11 18:56] === Batch 3 complete ===
+[2026-05-11 18:56] === Outreach batch 4 start (2026-05-11) ===
+[2026-05-11 18:56] Sending 6 emails (batch 4, slots 19–24)...
+[2026-05-11 18:56]   ✓ Sent: Owner @ Altec Roofing <info@www.altecroofing.com>
+[2026-05-11 18:56]   ✓ Sent: Owner @ Complete Roofing Solutions Inc. <info@www.my-roofer.com>
+[2026-05-11 18:57]   ✓ Sent: Owner @ Elite Roofing Inc <info@eliteroofs.com>
+[2026-05-11 18:57]   ✓ Sent: Owner @ Ace Pro Roofing <info@aceproroof.com>
+[2026-05-11 18:57] === Outreach batch 3 start (2026-05-11) ===
+[2026-05-11 18:57] === Outreach batch 2 start (2026-05-11) ===
+[2026-05-11 18:57] Batch 3 already sent today — skipping.
+[2026-05-11 18:57] Batch 2 already sent today — skipping.
+[2026-05-11 18:57] === Outreach batch 4 start (2026-05-11) ===
+[2026-05-11 18:57] Sending 6 emails (batch 4, slots 19–24)...
+[2026-05-11 18:57] Confirmation pass: 0 sent
+[2026-05-11 18:57] Confirmation pass: 0 sent
+[2026-05-11 18:57]   ✓ Sent: Owner @ Evans Roofing of the Palm Beaches <info@www.evansroof.com>
+[2026-05-11 18:57]   ✓ Sent: Owner @ Altec Roofing <info@www.altecroofing.com>
+[2026-05-11 18:57]   ✓ Sent: Owner @ Rainbow Roofing LLC <info@www.rainbowroofingexperts.com>
+[2026-05-11 18:57] Batch 4 done — sent: 6, errors: 0
+[2026-05-11 18:57] === Batch 4 complete ===
+[2026-05-11 18:57]   ✓ Sent: Owner @ Complete Roofing Solutions Inc. <info@www.my-roofer.com>
+[2026-05-11 18:57]   ✓ Sent: Owner @ Elite Roofing Inc <info@eliteroofs.com>
+[2026-05-11 18:57]   ✓ Sent: Owner @ Ace Pro Roofing <info@aceproroof.com>
+[2026-05-11 18:58]   ✓ Sent: Owner @ Evans Roofing of the Palm Beaches <info@www.evansroof.com>
+[2026-05-11 18:58]   ✓ Sent: Owner @ Rainbow Roofing LLC <info@www.rainbowroofingexperts.com>
+[2026-05-11 18:58] Batch 4 done — sent: 6, errors: 0
+[2026-05-11 18:58] === Batch 4 complete ===

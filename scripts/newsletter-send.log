@@ -126,3 +126,56 @@ ERROR: Gmail App Password not found in config.
 [2026-05-11 07:49] === Daily brief send start: 2026-05-11 ===
 [2026-05-11 07:49] === Daily brief send start: 2026-05-11 ===
 ERROR: Gmail App Password not found in config.
+[2026-05-11 08:04] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 08:04] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 08:20] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 08:20] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 11:03] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 11:03] FAILED: Gmail App Password not found in config — script cannot authenticate with Gmail.
+[2026-05-11 11:43] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 11:43] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 11:58] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 11:58] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 12:26] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 12:26] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 12:42] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 12:42] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 13:24] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 13:24] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 15:40] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 15:40] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 18:19] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 18:19] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 18:35] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 18:35] === Daily brief send start: 2026-05-11 ===
+ERROR: Gmail App Password not found in config.
+[2026-05-11 18:49] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 18:50] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 18:50] === Daily brief send start: 2026-05-11 ===
+ERROR: HUBSPOT_API_KEY not set and fallback not found.
+[2026-05-11 18:52] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 18:52]   [homeowner] Using fallback generic brief
+[2026-05-11 18:52]   [homeowner] 3 subscribers in list 18
+[2026-05-11 18:52]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-11 18:52]   [service-provider] Using fallback generic brief
+[2026-05-11 18:52]   [service-provider] 1 subscribers in list 19
+[2026-05-11 18:52]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-11 18:52]   [real-estate] Using fallback generic brief
+[2026-05-11 18:52]   [real-estate] 0 subscribers in list 20
+[2026-05-11 18:52]   [real-estate] No subscribers — skipping
+[2026-05-11 18:52] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-11 19:05] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 19:05] === Daily brief send start: 2026-05-11 ===
+ERROR: HUBSPOT_API_KEY not set and fallback not found.
+[2026-05-11 20:07] === Daily brief send start: 2026-05-11 ===
+[2026-05-11 20:07] === Daily brief send start: 2026-05-11 ===
+ERROR: HUBSPOT_API_KEY not set and fallback not found.
