@@ -26,12 +26,16 @@ DAILY_TARGET = 25
 
 # API key loaded from config file — not hardcoded here
 def get_google_key():
-    cfg = WORKSPACE / "config" / ".services-config.txt"
-    if cfg.exists():
-        for line in cfg.read_text().splitlines():
-            if "API Key:" in line and "AIza" in line:
-                return line.split("API Key:")[-1].strip()
-    return os.environ.get("GOOGLE_PLACES_API_KEY", "")
+    key = os.environ.get("GOOGLE_PLACES_API_KEY", "")
+    if key:
+        return key
+    secrets = WORKSPACE / "config" / ".secrets"
+    if secrets.exists():
+        import re
+        m = re.search(r'GOOGLE_PLACES_API_KEY="([^"]+)"', secrets.read_text())
+        if m:
+            return m.group(1)
+    return ""
 
 GOOGLE_API_KEY = get_google_key()
 

@@ -150,6 +150,19 @@ if [ "$DOW" -le 5 ]; then
   # 7:30am ops-review
   check_and_run "$ID_OPS"      "weekday-ops-review"        450 "$WORKSPACE/ops-review/$TODAY.md"          15
 
+  # 9:17am prospecting — Google Places API pulls 25 PBC contacts
+  PROSPECT_MARKER_LINE=$(grep "^\[$TODAY.*Run complete" "$WORKSPACE/crm/prospect_palm_beach.log" 2>/dev/null | tail -1)
+  if [ "$MINS" -ge 557 ] && [ -z "$PROSPECT_MARKER_LINE" ]; then
+    log "  prospect_palm_beach: running"
+    if /usr/bin/python3 "$WORKSPACE/scripts/prospect_palm_beach.py" >>"$WORKSPACE/crm/prospect_palm_beach.log" 2>&1; then
+      log "  prospect_palm_beach: done"
+    else
+      log "  prospect_palm_beach: ERROR (see prospect_palm_beach.log)"
+    fi
+  elif [ -n "$PROSPECT_MARKER_LINE" ]; then
+    log "  prospect_palm_beach: already ran today, skip"
+  fi
+
   # 5:45am newsletter send — after brief is ready
   SEND_MARKER="$WORKSPACE/scripts/.newsletter-sent-$TODAY"
   if [ "$MINS" -ge 345 ] && [ ! -f "$SEND_MARKER" ] && [ -e "$WORKSPACE/briefs/$TODAY.md" ]; then

@@ -108,11 +108,13 @@ content_status="err"; content_detail="Not found"
   content_status="ok"; content_detail="Generated"
 }
 
-# 6:30am website sync (git commit with today's brief)
+# 6:30am website sync — any commit today that touches site/, briefs/, content/, or scripts/
 websync_status="err"; websync_detail="Not synced"
-git -C "$WORKSPACE" log --since="$TODAY 00:00" --oneline 2>/dev/null | grep -qE "site: daily brief sync|Daily content sync|build-website" && {
-  websync_status="ok"; websync_detail="Pushed today"
-}
+today_commits=$(git -C "$WORKSPACE" log --since="$TODAY 00:00" --oneline --name-only 2>/dev/null)
+if echo "$today_commits" | grep -qE "^(site/|briefs/|content/|scripts/)"; then
+  commit_count=$(git -C "$WORKSPACE" log --since="$TODAY 00:00" --oneline 2>/dev/null | wc -l | tr -d ' ')
+  websync_status="ok"; websync_detail="${commit_count} commits today"
+fi
 
 # 8:00am outreach batch 1
 batch1_status="idle"; batch1_detail="Not run"
