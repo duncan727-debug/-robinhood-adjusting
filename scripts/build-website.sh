@@ -7,6 +7,27 @@
 set -euo pipefail
 cd /Users/victoria/.openclaw/workspace
 
+# ── Convert any brief .md files that don't yet have a matching HTML ──────────
+python3 - << 'PYEOF'
+import importlib.util, pathlib
+
+spec = importlib.util.spec_from_file_location(
+    "send_daily_brief",
+    "/Users/victoria/.openclaw/workspace/scripts/send-daily-brief.py"
+)
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+
+briefs_dir = pathlib.Path("/Users/victoria/.openclaw/workspace/briefs")
+html_dir   = pathlib.Path("/Users/victoria/.openclaw/workspace/content/briefs")
+
+for md in sorted(briefs_dir.glob("[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md")):
+    date_str = md.stem
+    if not (html_dir / f"{date_str}.html").exists():
+        mod.ensure_html_brief(date_str)
+        print(f"[OK] Generated HTML brief for {date_str}")
+PYEOF
+
 # ── Sync brief HTML files ────────────────────────────────────────────────────
 mkdir -p site/briefs
 cp content/briefs/2026-*.html site/briefs/ 2>/dev/null || true
