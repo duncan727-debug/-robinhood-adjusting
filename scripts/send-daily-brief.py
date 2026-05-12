@@ -27,7 +27,8 @@ WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
 BRIEFS_DIR = WORKSPACE / "content" / "briefs"
 MD_BRIEFS_DIR = WORKSPACE / "briefs"
 CONFIG_FILE = WORKSPACE / "config" / ".services-config.txt"
-LOG_PATH = WORKSPACE / "scripts" / "newsletter-send.log"
+LOG_PATH    = WORKSPACE / "scripts" / "newsletter-send.log"
+MARKER_DIR  = WORKSPACE / "scripts"
 
 GMAIL_USER = "duncanlittlejohn727@gmail.com"
 FROM_NAME = "Robinhood Adjusting"
@@ -47,9 +48,10 @@ def load_credentials():
         sys.exit("ERROR: Gmail App Password not found in config.")
     hs_token = os.environ.get("HUBSPOT_API_KEY", "")
     if not hs_token:
-        m2 = re.search(r'TOKEN\s*=\s*"([^"]+)"',
-                       (WORKSPACE / "scripts" / "setup-hubspot-lists.py").read_text())
-        hs_token = m2.group(1) if m2 else ""
+        secrets_path = WORKSPACE / "config" / ".secrets"
+        if secrets_path.exists():
+            m2 = re.search(r'HUBSPOT_API_KEY="([^"]+)"', secrets_path.read_text())
+            hs_token = m2.group(1) if m2 else ""
     if not hs_token:
         sys.exit("ERROR: HUBSPOT_API_KEY not set and fallback not found.")
     return gmail_pw, hs_token
@@ -327,9 +329,15 @@ def log(message):
 
 def main():
     date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
-    log(f"=== Daily brief send start: {date_str} ===")
-    ensure_html_brief(date_str)
+    marker = MARKER_DIR / f".newsletter-sent-{date_str}"
 
+    log(f"=== Daily brief send start: {date_str} ===")
+
+    if marker.exists():
+        log(f"Already sent for {date_str} — skipping (delete {marker.name} to force resend)")
+        return
+
+    ensure_html_brief(date_str)
     password, hs_token = load_credentials()
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
 
@@ -369,6 +377,7 @@ def main():
         total_failed += len(failed)
 
     log(f"=== Done — total sent: {total_sent} | total failed: {total_failed} ===")
+    marker.touch()
 
 
 if __name__ == "__main__":
