@@ -106,7 +106,7 @@ NEW_WEEKLY = (
     "    <!-- GUIDES -->"
 )
 
-for path in ["site/PA-WEBSITE.html"]:
+for path in ["site/PA-WEBSITE.html", "site/index.html"]:
     try:
         with open(path) as f:
             content = f.read()
