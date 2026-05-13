@@ -84,13 +84,19 @@ exports.handler = async function (event) {
   if (token) {
     const hs = makeHs(token);
     try {
+      const messageWithMeta = [
+        message,
+        message ? "" : null,
+        `— Source: claim-review-form`,
+        role ? `— Role: ${role}` : null,
+        sourceUrl ? `— Page: ${sourceUrl}` : null,
+      ].filter((l) => l !== null).join("\n").trim();
+
       const props = {
         email, firstname: first_name, lastname: last_name, phone,
         lifecyclestage: "lead",
         hs_lead_status: "NEW",
-        message,
-        hs_analytics_source: "OFFLINE",
-        hs_analytics_source_data_1: "claim-review-form",
+        message: messageWithMeta,
       };
       Object.keys(props).forEach((k) => { if (!props[k]) delete props[k]; });
 
