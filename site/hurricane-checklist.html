@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Hurricane Season Checklist 2026 — South Florida Property Owners</title>
 <meta name="description" content="Get our free 2026 Hurricane Season Property Protection Checklist + daily South Florida insurance intelligence delivered to your inbox. Hurricane season starts June 1.">
+<script>window.META_PIXEL_ID = '__META_PIXEL_ID__';</script>
+<script src="/meta-pixel.js" defer></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=__META_PIXEL_ID__&ev=PageView&noscript=1" alt=""/></noscript>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -363,13 +366,25 @@ function handleSignup(e) {
   const segment = (category === 'homeowner' || category === 'service-provider' || category === 'real-estate')
     ? category : 'homeowner';
 
+  // Shared event ID so the browser Pixel "Lead" event and the server-side
+  // Conversions API "Lead" event dedupe to a single conversion.
+  const eventID = (crypto && crypto.randomUUID) ? crypto.randomUUID()
+    : 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+
   btn.textContent = 'Subscribing...';
   btn.disabled = true;
+
+  if (typeof window.trackLead === 'function') {
+    window.trackLead(eventID, {
+      content_name: 'Hurricane Checklist 2026',
+      content_category: segment,
+    });
+  }
 
   fetch('/.netlify/functions/subscribe-newsletter', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, segment })
+    body: JSON.stringify({ email, segment, eventID, sourceUrl: location.href })
   })
     .then(r => r.json())
     .catch(() => ({ success: true }))

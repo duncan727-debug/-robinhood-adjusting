@@ -6,10 +6,10 @@ Use this doc when creating the Facebook Page and Instagram account. Everything b
 
 ## 1. Account names & handles
 
-| Platform | Display Name | Handle (try in order) | URL after creation |
-|---|---|---|---|
-| Facebook Page | **Robinhood Adjusting** | `RobinhoodAdjusting` → `RobinhoodAdjustingFL` | facebook.com/RobinhoodAdjusting |
-| Instagram | **Robinhood Adjusting** | `@robinhoodadjusting` → `@robinhood.adjusting` → `@robinhoodadjustingfl` | instagram.com/robinhoodadjusting |
+| Platform | Display Name | Handle | Final URL | Status |
+|---|---|---|---|---|
+| Facebook Page | **Robinhood Adjusting** | `RobinhoodAdjusting` | facebook.com/RobinhoodAdjusting | **LIVE** 2026-05-12 |
+| Instagram | **Robinhood Adjusting** | `@robinhoodadjusting` | instagram.com/robinhoodadjusting | **LIVE** 2026-05-13 · Category: Financial Service · Cadence: 1/day |
 
 > If the primary handle is taken, take the next one and we'll keep them in sync across both platforms.
 

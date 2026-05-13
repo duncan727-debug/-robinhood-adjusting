@@ -291,6 +291,8 @@ def build_email_html(body_content, date_str, subject):
         <p style="color:#bbb;font-size:12px;margin:10px 0 0;">
           Follow us:
           <a href="https://www.facebook.com/RobinhoodAdjusting/" style="color:#c9922a;text-decoration:none;font-weight:bold;">Facebook</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.instagram.com/robinhoodadjusting/" style="color:#c9922a;text-decoration:none;font-weight:bold;">Instagram</a>
         </p>
         <p style="color:#666;font-size:11px;margin:8px 0 0;">
           You're receiving this because you subscribed at robinhoodadjusting.com.
