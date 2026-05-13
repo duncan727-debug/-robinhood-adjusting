@@ -1347,28 +1347,28 @@
       </div>
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
         <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><input name="bot-field"></p>
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Maria" required>
+            <label for="cf-first-name">First Name</label>
+            <input id="cf-first-name" name="first_name" type="text" placeholder="Maria" required>
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Rodriguez" required>
+            <label for="cf-last-name">Last Name</label>
+            <input id="cf-last-name" name="last_name" type="text" placeholder="Rodriguez" required>
           </div>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="maria@example.com" required>
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" placeholder="maria@example.com" required>
         </div>
         <div class="form-group">
-          <label>Phone</label>
-          <input type="tel" placeholder="(305) 555-0100">
+          <label for="cf-phone">Phone</label>
+          <input id="cf-phone" name="phone" type="tel" placeholder="(305) 555-0100">
         </div>
         <div class="form-group">
-          <label>I am a...</label>
-          <select>
+          <label for="cf-role">I am a...</label>
+          <select id="cf-role" name="role">
             <option value="">Select one</option>
             <option>Residential property owner</option>
             <option>Commercial property owner</option>
@@ -1380,8 +1380,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Tell us about your situation</label>
-          <textarea placeholder="Brief description of the damage or claim situation..."></textarea>
+          <label for="cf-message">Tell us about your situation</label>
+          <textarea id="cf-message" name="message" placeholder="Brief description of the damage or claim situation..."></textarea>
         </div>
         <button type="submit" class="btn-primary" style="width:100%; cursor:pointer; border:none; font-family:Arial,sans-serif;">
           Send Message
@@ -1452,16 +1452,35 @@
     const btn = form.querySelector('button[type=submit]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    fetch('/', {
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+    const netlifyPost = fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    }).then(() => {
-      btn.textContent = "Message Sent — We'll Be in Touch";
-      btn.style.background = '#1a6e3a';
-    }).catch(() => {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
+      body: new URLSearchParams(formData).toString()
+    });
+    const hubspotPost = fetch('/.netlify/functions/contact-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        first_name: payload.first_name || '',
+        last_name: payload.last_name || '',
+        email: payload.email || '',
+        phone: payload.phone || '',
+        role: payload.role || '',
+        message: payload.message || '',
+        sourceUrl: window.location.href
+      })
+    });
+    Promise.allSettled([netlifyPost, hubspotPost]).then(([nlf, hs]) => {
+      const ok = nlf.status === 'fulfilled' || hs.status === 'fulfilled';
+      if (ok) {
+        btn.textContent = "Message Sent — We'll Be in Touch";
+        btn.style.background = '#1a6e3a';
+      } else {
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
     });
   }
 </script>
