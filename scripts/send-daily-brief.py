@@ -32,6 +32,7 @@ MARKER_DIR  = WORKSPACE / "scripts"
 
 GMAIL_USER = "duncanlittlejohn727@gmail.com"
 FROM_NAME = "Robinhood Adjusting"
+HUBSPOT_BCC = "246055074@bcc.hubspot.com"  # portal 246055074 — auto-logs sends + creates contacts
 
 SEGMENTS = [
     {"list_id": "18", "key": "homeowner",       "label": "South Florida Property Intelligence"},
@@ -287,6 +288,10 @@ def build_email_html(body_content, date_str, subject):
           Robinhood Adjusting · Wellington, FL ·
           <a href="https://robinhoodadjusting.com" style="color:#c41e3a;">robinhoodadjusting.com</a>
         </p>
+        <p style="color:#bbb;font-size:12px;margin:10px 0 0;">
+          Follow us:
+          <a href="https://www.facebook.com/RobinhoodAdjusting/" style="color:#c9922a;text-decoration:none;font-weight:bold;">Facebook</a>
+        </p>
         <p style="color:#666;font-size:11px;margin:8px 0 0;">
           You're receiving this because you subscribed at robinhoodadjusting.com.
           To unsubscribe, reply with "unsubscribe" in the subject line.
@@ -310,9 +315,10 @@ def send_segment(emails, subject, html, password):
             msg["Subject"] = subject
             msg["From"] = f"{FROM_NAME} <{GMAIL_USER}>"
             msg["To"] = to_email
+            msg["Bcc"] = HUBSPOT_BCC
             msg.attach(MIMEText(html, "html"))
             try:
-                smtp.sendmail(GMAIL_USER, to_email, msg.as_string())
+                smtp.sendmail(GMAIL_USER, [to_email, HUBSPOT_BCC], msg.as_string())
                 sent += 1
             except Exception as e:
                 failed.append((to_email, str(e)))

@@ -109,6 +109,7 @@ def create_company(prospect):
     domain = ""
     if prospect.get("website"):
         domain = re.sub(r"^https?://", "", prospect["website"]).rstrip("/").split("/")[0]
+        domain = re.sub(r"^www\.", "", domain, flags=re.IGNORECASE)
         if "google" in domain:
             domain = ""
     props = {
@@ -203,6 +204,7 @@ def scrape_email(raw_url):
     if not raw_url:
         return None, None
     domain = re.sub(r"^https?://", "", raw_url).split("/")[0].strip()
+    domain = re.sub(r"^www\.", "", domain, flags=re.IGNORECASE)
     if not domain or "." not in domain or "google" in domain:
         return None, None
     base = f"https://{domain}"

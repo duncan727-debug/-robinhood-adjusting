@@ -23,13 +23,15 @@ def get_token():
     token = os.environ.get("HUBSPOT_API_KEY", "").strip()
     if token:
         return token
-    # Fallback: read from local setup script (not committed to git)
-    setup = WORKSPACE / "scripts" / "setup-hubspot-lists.py"
-    if setup.exists():
-        for line in setup.read_text().splitlines():
-            if line.strip().startswith("TOKEN ="):
-                return line.split('"')[1]
-    sys.exit("ERROR: HUBSPOT_API_KEY not set and fallback not found.")
+    # Fallback: read from config/.secrets (the actual stored secret)
+    secrets = WORKSPACE / "config" / ".secrets"
+    if secrets.exists():
+        for line in secrets.read_text().splitlines():
+            if "HUBSPOT_API_KEY=" in line and not line.strip().startswith("#"):
+                val = line.split("HUBSPOT_API_KEY=", 1)[1].strip().strip('"').strip("'")
+                if val.startswith("pat-"):
+                    return val
+    sys.exit("ERROR: HUBSPOT_API_KEY not set in env and not found in config/.secrets.")
 
 TOKEN = get_token()
 

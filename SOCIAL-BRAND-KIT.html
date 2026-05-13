@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Brand Kit — Robinhood Adjusting</title>
+<style>
+  :root {
+    --navy:   #0f2d4a;
+    --navy2:  #1a3a5c;
+    --gold:   #c9922a;
+    --gold-light: #e0a93a;
+    --white:  #ffffff;
+    --cream:  #faf7f1;
+    --gray:   #5a6772;
+    --line:   #e3e6ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: #1a2532;
+    line-height: 1.6;
+    padding: 0 20px 80px;
+  }
+  .container { max-width: 920px; margin: 0 auto; }
+
+  /* Header */
+  header {
+    background: var(--navy);
+    color: var(--white);
+    margin: 0 -20px 48px;
+    padding: 60px 24px 50px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .eyebrow {
+    color: var(--gold);
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-size: 38px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  header h1 em { color: var(--gold); font-style: normal; }
+  header .sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,.75);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* Sections */
+  section {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(15,45,74,.04);
+  }
+  section h2 {
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  section h2 .num {
+    color: var(--gold);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  section h3 {
+    font-size: 17px;
+    color: var(--navy2);
+    margin: 22px 0 10px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  section p, section li { font-size: 16px; }
+  section ul, section ol { padding-left: 22px; margin: 10px 0; }
+  section li { margin-bottom: 6px; }
+  section a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  tr:nth-child(even) td { background: var(--cream); }
+  code, .mono {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    background: #f1ede4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--navy);
+  }
+
+  /* Callouts */
+  blockquote {
+    border-left: 4px solid var(--gold);
+    background: var(--cream);
+    padding: 18px 22px;
+    margin: 14px 0;
+    font-style: italic;
+    color: var(--navy);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Post cards */
+  .post-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 16px 0;
+    position: relative;
+  }
+  .post-card .post-num {
+    position: absolute;
+    top: -10px;
+    left: 22px;
+    background: var(--gold);
+    color: var(--white);
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .post-card .post-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 6px 0 12px;
+  }
+  .post-card .post-body {
+    background: var(--white);
+    padding: 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+  }
+
+  /* Hashtag pills */
+  .tag-group { margin: 12px 0; }
+  .tag-label {
+    display: block;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    padding: 5px 11px;
+    border-radius: 14px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    margin: 3px 4px 3px 0;
+  }
+  .tag.gold { background: var(--gold); }
+
+  /* Checklist */
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 18px;
+    top: -2px;
+  }
+
+  /* Open questions */
+  .questions {
+    background: var(--navy);
+    color: var(--white);
+    padding: 36px 40px;
+    border-radius: 8px;
+    margin-top: 32px;
+  }
+  .questions h2 { color: var(--white); }
+  .questions h2 .num { color: var(--gold-light); }
+  .questions ol { padding-left: 24px; }
+  .questions li { margin-bottom: 12px; color: rgba(255,255,255,.92); }
+  .questions strong { color: var(--gold-light); }
+
+  /* Mobile */
+  @media (max-width: 720px) {
+    header { padding: 44px 20px 36px; margin: 0 -20px 32px; }
+    header h1 { font-size: 28px; }
+    section, .questions { padding: 26px 22px; }
+    section h2 { font-size: 20px; flex-direction: column; gap: 4px; align-items: flex-start; }
+    table, thead, tbody, th, td, tr { display: block; }
+    th { display: none; }
+    td { border-bottom: none; padding: 4px 0; }
+    tr { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Internal Brand Kit</div>
+  <h1>Social Media <em>Brand Kit</em></h1>
+  <div class="sub">Everything you need to paste in when creating the Facebook Page and Instagram account for Robinhood Adjusting.</div>
+</header>
+
+<div class="container">
+
+<section>
+  <h2><span class="num">01</span> Account Names & Handles</h2>
+  <table>
+    <thead>
+      <tr><th>Platform</th><th>Display Name</th><th>Handle (try in order)</th><th>Final URL</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Facebook Page</strong> <span style="background:#2e7d4f;color:#fff;font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:1px;font-family:Arial,sans-serif;font-weight:700;margin-left:4px;">LIVE</span></td>
+        <td>Robinhood Adjusting</td>
+        <td><code>RobinhoodAdjusting</code> ✓ secured</td>
+        <td><a href="https://www.facebook.com/RobinhoodAdjusting/" target="_blank" style="color:var(--navy);font-weight:700;">facebook.com/RobinhoodAdjusting</a><br><span style="font-size:11px;color:var(--gray);font-family:Arial,sans-serif;">Launched 2026-05-12 · Numeric ID: 61589565994643</span></td>
+      </tr>
+      <tr>
+        <td><strong>Instagram</strong></td>
+        <td>Robinhood Adjusting</td>
+        <td><code>@robinhoodadjusting</code> → <code>@robinhood.adjusting</code> → <code>@robinhoodadjustingfl</code></td>
+        <td>instagram.com/robinhoodadjusting</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:14px;color:var(--gray);margin-top:10px;"><em>If the primary handle is taken, take the next available and we'll keep them in sync across both platforms.</em></p>
+</section>
+
+<section>
+  <h2><span class="num">02</span> Facebook Page Setup</h2>
+
+  <h3>Categories (pick 1–3 when prompted)</h3>
+  <ol>
+    <li>Insurance Agency</li>
+    <li>Financial Service</li>
+    <li>Business Service</li>
+  </ol>
+
+  <h3>Page Username (vanity URL)</h3>
+  <p><code>RobinhoodAdjusting</code></p>
+
+  <h3>Short Description (155 char max — used in search)</h3>
+  <blockquote>Public adjusters for South Florida property owners. We represent you, not the insurance company, so your claim pays what your policy promises.</blockquote>
+
+  <h3>About / Long Description</h3>
+  <blockquote>
+    Robinhood Adjusting is a licensed public adjusting firm serving Miami-Dade, Broward, Palm Beach, Martin, St. Lucie, Indian River, and Brevard counties.<br><br>
+    We represent property owners — not insurance companies — through the claims process. Built on a simple premise: the money your insurance policy promises you should actually reach you.<br><br>
+    Most public adjusters come from contracting. We approach claims as financial analysts. That means a documented file, a defensible valuation, and a settlement that reflects what your policy actually covers — not the carrier's first offer.<br><br>
+    No upfront cost. No obligation until you decide to move forward.
+  </blockquote>
+
+  <h3>Services Tab</h3>
+  <ul>
+    <li>Free Claim Review</li>
+    <li>Damage Assessment & Documentation</li>
+    <li>Policy Coverage Analysis</li>
+    <li>Insurance Claim Negotiation</li>
+    <li>Denied Claim Appeals</li>
+    <li>Underpaid Claim Re-Openings</li>
+    <li>Storm & Hurricane Damage Claims</li>
+    <li>Water Damage Claims</li>
+    <li>Roof & Wind Damage Claims</li>
+  </ul>
+
+  <h3>Page Info → Contact</h3>
+  <ul>
+    <li><strong>Website:</strong> https://robinhoodadjusting.com</li>
+    <li><strong>Phone:</strong> (561) 316-6455</li>
+    <li><strong>Email:</strong> duncanlittlejohn727@gmail.com</li>
+    <li><strong>Location:</strong> Wellington, FL — Serving All of South Florida <em>(no street address — see decision below)</em></li>
+    <li><strong>Service area:</strong> Miami-Dade · Broward · Palm Beach · Martin · St. Lucie · Indian River · Brevard</li>
+    <li><strong>Hours:</strong> Monday–Friday 8am–6pm ET; Saturday by appointment</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">03</span> Instagram Bio</h2>
+  <p>150 character max:</p>
+  <blockquote style="font-family: 'Arial', sans-serif; font-style:normal; font-size:15px; line-height:1.5;">
+    Public adjusters for South Florida property owners.<br>
+    We work for you — not your insurance company.<br>
+    📍 Wellington, FL · Serving All of South FL<br>
+    🔗 robinhoodadjusting.com
+  </blockquote>
+  <ul style="margin-top:14px;">
+    <li><strong>Category:</strong> Insurance Company</li>
+    <li><strong>Contact options to enable:</strong> Email, Call, Get Directions (if you set an address)</li>
+    <li><strong>Link in bio:</strong> https://robinhoodadjusting.com <em>(later: swap to Linktree if you want multiple CTAs)</em></li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">04</span> Profile & Cover Images</h2>
+  <p>Both assets generated and ready to upload — just drag-and-drop when prompted by FB/IG.</p>
+
+  <h3 style="margin-top:24px;">Facebook Cover Photo (1640×624, retina-ready)</h3>
+  <p style="font-size:14px;color:var(--gray);margin-bottom:10px;">File: <code>site/fb-cover.png</code> — FB will downsize to 820×312 for display.</p>
+  <img src="site/fb-cover.png" alt="FB cover" style="width:100%;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(15,45,74,.12);">
+
+  <h3 style="margin-top:32px;">Profile Picture (1000×1000, works for both FB & IG)</h3>
+  <p style="font-size:14px;color:var(--gray);margin-bottom:10px;">File: <code>site/profile-picture.png</code> — FB crops to circle at 170×170, IG to 320×320.</p>
+  <img src="site/profile-picture.png" alt="Profile picture" style="width:280px;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(15,45,74,.12);display:block;">
+
+  <p style="margin-top:18px;"><em>Don't love a detail? Tell me what to change and I'll regenerate.</em></p>
+</section>
+
+<section>
+  <h2><span class="num">05</span> First 10 Posts</h2>
+  <p style="margin-bottom:8px;">Publish 1/day or 3× per week. Order matters: introduction → education → social proof → CTA.</p>
+
+  <div class="post-card">
+    <span class="post-num">Post 01</span>
+    <div class="post-title">Welcome / Introduction</div>
+    <div class="post-body">Most homeowners don't know this: your insurance company has its OWN adjuster working the claim. Their job is to settle for the carrier's number — not yours.
+
+Now you can have one too. We're Robinhood Adjusting, public adjusters for South Florida property owners.
+
+No upfront cost. We work for you, not the insurance company.
+
+robinhoodadjusting.com</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 02</span>
+    <div class="post-title">Educational — What is a PA</div>
+    <div class="post-body">What's the difference between an insurance adjuster and a public adjuster?
+
+🏢 Insurance adjuster: works for the carrier. Their job is to settle claims for the company's preferred number.
+
+🛡️ Public adjuster: works for YOU. Licensed by Florida, paid only from your settlement, no upfront cost.
+
+If you've ever felt like your claim came back too low, this is why.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 03</span>
+    <div class="post-title">Social Proof (after first client win)</div>
+    <div class="post-body">Just closed a claim for a homeowner in [city]. Initial carrier offer: $X. Final settlement after our review: $Y.
+
+Their policy was written to cover this. They just needed someone reading it the way the carrier reads it.
+
+If your claim feels low, get a second pair of eyes on it. Free review. (561) 316-6455.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 04</span>
+    <div class="post-title">Hurricane Prep Teaser</div>
+    <div class="post-body">Storm season is 6 months long in Florida. The 60 minutes you spend documenting your home BEFORE a storm can be worth thousands AFTER one.
+
+We made a free hurricane checklist. Link in bio.
+
+#FloridaHomeowners #HurricaneSeason</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 05</span>
+    <div class="post-title">Common Claim Pitfall</div>
+    <div class="post-body">If your insurance company says "your policy doesn't cover that" — get it in writing.
+
+Half the denials we see don't survive a careful re-read of the policy. The words actually matter.
+
+Free policy review at robinhoodadjusting.com.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 06</span>
+    <div class="post-title">Service Provider Partnership</div>
+    <div class="post-body">Roofers, plumbers, restoration crews — when your customer has an insurance claim, you can hand them a card that costs them nothing.
+
+We work with trade partners across South Florida to help your customers get the full settlement they're owed (so they can pay you what your work is worth).
+
+Reach out to set up a referral relationship. (561) 316-6455.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 07</span>
+    <div class="post-title">Educational — Deadlines</div>
+    <div class="post-body">Florida has a 1-year deadline to file a hurricane claim and a 60-day deadline to dispute the carrier's decision.
+
+Most homeowners miss the second one without realizing it exists.
+
+If your claim was denied or underpaid in the last 60 days, talk to us before the window closes.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 08</span>
+    <div class="post-title">Newsletter Promo</div>
+    <div class="post-body">We publish a free daily brief on the South Florida insurance market — carrier updates, regulatory news, claim trends.
+
+Written for homeowners, service pros, and real estate professionals.
+
+Subscribe at robinhoodadjusting.com.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 09</span>
+    <div class="post-title">Trust / Credentials</div>
+    <div class="post-body">Licensed Florida public adjuster.
+Background in financial analysis, not contracting.
+Serving all of South Florida from Wellington.
+
+When your claim deserves more than a first offer, you want someone who reads the policy like a balance sheet.</div>
+  </div>
+
+  <div class="post-card">
+    <span class="post-num">Post 10</span>
+    <div class="post-title">Call to Action</div>
+    <div class="post-body">Storm damage. Water damage. Roof damage. Fire damage.
+
+If your carrier's first offer doesn't add up — or if they denied the claim entirely — get a free review before you sign anything.
+
+(561) 316-6455 · robinhoodadjusting.com</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span> Hashtags</h2>
+  <p>Use 5–10 per post on Instagram; 0–3 on Facebook.</p>
+
+  <div class="tag-group">
+    <span class="tag-label">Core (every post)</span>
+    <span class="tag gold">#RobinhoodAdjusting</span>
+    <span class="tag gold">#PublicAdjuster</span>
+    <span class="tag gold">#SouthFlorida</span>
+    <span class="tag gold">#FloridaInsurance</span>
+  </div>
+
+  <div class="tag-group">
+    <span class="tag-label">Storms</span>
+    <span class="tag">#HurricaneSeason</span>
+    <span class="tag">#FloridaWeather</span>
+    <span class="tag">#StormDamage</span>
+  </div>
+
+  <div class="tag-group">
+    <span class="tag-label">Homeowner Education</span>
+    <span class="tag">#FloridaHomeowners</span>
+    <span class="tag">#InsuranceClaim</span>
+    <span class="tag">#HomeownerTips</span>
+  </div>
+
+  <div class="tag-group">
+    <span class="tag-label">Trade Partners</span>
+    <span class="tag">#FLContractors</span>
+    <span class="tag">#RoofingFL</span>
+    <span class="tag">#RestorationContractor</span>
+  </div>
+
+  <div class="tag-group">
+    <span class="tag-label">Geo</span>
+    <span class="tag">#WellingtonFL</span>
+    <span class="tag">#PalmBeachCounty</span>
+    <span class="tag">#BocaRaton</span>
+    <span class="tag">#WestPalmBeach</span>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span> Cross-Posting Setup (Meta Business Suite)</h2>
+  <p>Once both accounts exist:</p>
+  <ol>
+    <li>Log into <strong>business.facebook.com</strong> → Business Settings</li>
+    <li>Create a Business Portfolio: <strong>Robinhood Adjusting</strong></li>
+    <li>Add the FB Page → add the IG account → link them</li>
+    <li>In Instagram on phone: Settings → Account → Branded content → connect FB page</li>
+    <li>Enable "Crosspost to Instagram" in FB Business Suite Composer</li>
+  </ol>
+  <blockquote>Result: write a post once in Business Suite → it publishes to both.</blockquote>
+</section>
+
+<section>
+  <h2><span class="num">08</span> Post-Setup Verification</h2>
+  <ul class="checklist">
+    <li>FB Page is <code>Published</code> (default is Unpublished)</li>
+    <li>Page username matches <code>RobinhoodAdjusting</code></li>
+    <li>CTA button on Page is "Contact Us" or "Call Now"</li>
+    <li>IG profile is set to <code>Professional Account</code> → <code>Business</code> → Category: <code>Insurance Company</code></li>
+    <li>FB Page reviews CTA enabled (off by default)</li>
+    <li>Send me the URLs and I'll add FB/IG icons to the website footer</li>
+  </ul>
+</section>
+
+<div class="questions">
+  <h2><span class="num">★</span> Decisions Confirmed</h2>
+  <ol>
+    <li><strong>Cover photo:</strong> ✓ Generated. See Section 4 above.</li>
+    <li><strong>Location text:</strong> ✓ "Wellington, FL — Serving All of South Florida" (no street address). Signals locality for Google's "near me" search without alienating leads farther away.</li>
+    <li><strong>Meta Verified:</strong> ✓ Waiting. Will reconsider once the business has live clients and ad spend justifies the $14.99/mo cost.</li>
+  </ol>
+  <p style="margin-top:18px;color:rgba(255,255,255,.7);"><em>Next step: log into Facebook and Instagram as yourself and create the accounts using everything in this kit. Send me the final URLs and I'll add FB/IG icons to the website footer.</em></p>
+</div>
+
+</div>
+
+</body>
+</html>

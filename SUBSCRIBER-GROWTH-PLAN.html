@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscriber Growth Plan — Robinhood Adjusting</title>
+<style>
+  :root {
+    --navy:   #0f2d4a;
+    --navy2:  #1a3a5c;
+    --gold:   #c9922a;
+    --gold-light: #e0a93a;
+    --white:  #ffffff;
+    --cream:  #faf7f1;
+    --gray:   #5a6772;
+    --line:   #e3e6ea;
+    --green:  #2e7d4f;
+    --red:    #b34747;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: #1a2532;
+    line-height: 1.6;
+    padding: 0 20px 80px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  /* Header */
+  header {
+    background: var(--navy);
+    color: var(--white);
+    margin: 0 -20px 36px;
+    padding: 60px 24px 50px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .eyebrow {
+    color: var(--gold);
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  header h1 em { color: var(--gold); font-style: normal; }
+  header .sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,.75);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* Key metrics bar */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .metric {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 18px;
+    text-align: center;
+  }
+  .metric .label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .metric .value {
+    font-size: 28px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .metric .value .small { font-size: 14px; color: var(--gray); font-weight: 400; }
+
+  /* Sections */
+  section {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(15,45,74,.04);
+  }
+  section h2 {
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  section h2 .num {
+    color: var(--gold);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  section h3 {
+    font-size: 16px;
+    color: var(--navy2);
+    margin: 24px 0 10px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  section p, section li { font-size: 15px; }
+  section ul, section ol { padding-left: 22px; margin: 10px 0; }
+  section li { margin-bottom: 6px; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  tr:nth-child(even) td { background: var(--cream); }
+  td.right { text-align: right; }
+  td.center { text-align: center; }
+  .week-num {
+    background: var(--gold);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .target {
+    font-weight: 700;
+    color: var(--navy);
+  }
+  code, .mono {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    background: #f1ede4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--navy);
+  }
+
+  /* Pre-launch task cards */
+  .day-block {
+    margin: 18px 0;
+    padding: 18px 22px;
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+  }
+  .day-block .day-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .day-block .day-title {
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .day-block .owner-you { color: var(--red); font-weight: 700; }
+  .day-block .owner-me { color: var(--navy2); font-weight: 700; }
+
+  /* Trajectory chart */
+  .traj {
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px 32px;
+    border-radius: 8px;
+    margin: 18px 0;
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 14px;
+    line-height: 2;
+  }
+  .traj .bar {
+    display: inline-block;
+    background: var(--gold);
+    height: 16px;
+    vertical-align: middle;
+    border-radius: 2px;
+    margin: 0 10px;
+  }
+  .traj .week-label { display: inline-block; width: 70px; color: var(--gold-light); }
+  .traj .count { display: inline-block; min-width: 80px; color: var(--white); }
+  .traj .label-500 {
+    border-top: 1px dashed rgba(255,255,255,.3);
+    margin-top: 12px;
+    padding-top: 8px;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: var(--gold-light);
+  }
+
+  /* Status pills */
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .pill.good { background: #d6f0e0; color: var(--green); }
+  .pill.warn { background: #fdf0d6; color: #8a6a1a; }
+  .pill.risk { background: #fadcdc; color: var(--red); }
+  .pill.skip { background: #e8eaed; color: var(--gray); }
+  .pill.gold { background: var(--gold); color: var(--white); }
+
+  /* Risks section */
+  .risks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .risk-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .risk-card .risk-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .risk-card .risk-body { font-size: 13px; line-height: 1.5; }
+
+  /* Footer / CTA */
+  .footer-cta {
+    background: var(--navy);
+    color: var(--white);
+    padding: 36px 40px;
+    border-radius: 8px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .footer-cta h2 { color: var(--white); justify-content: center; }
+  .footer-cta p { color: rgba(255,255,255,.85); font-size: 16px; max-width: 600px; margin: 12px auto; }
+
+  /* Mobile */
+  @media (max-width: 720px) {
+    header { padding: 44px 20px 36px; margin: 0 -20px 28px; }
+    header h1 { font-size: 28px; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 26px 22px; }
+    section h2 { font-size: 20px; flex-direction: column; gap: 4px; align-items: flex-start; }
+    table, thead, tbody, th, td, tr { display: block; }
+    th { display: none; }
+    td { border-bottom: none; padding: 4px 0; }
+    tr { border-bottom: 1px solid var(--line); padding: 12px 0; }
+    .risks-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Strategic Plan — Internal</div>
+  <h1>Subscriber Growth Plan <em>4 → 500+</em></h1>
+  <div class="sub">A 12-week formalized plan to scale the daily newsletter audience to a level that unlocks partnerships, B2B referrals, and meaningful ad revenue. Highest-ROI mix on a tight budget.</div>
+</header>
+
+<div class="container">
+
+<div class="metrics">
+  <div class="metric">
+    <div class="label">Start Date</div>
+    <div class="value">May 15 <span class="small">2026</span></div>
+  </div>
+  <div class="metric">
+    <div class="label">Duration</div>
+    <div class="value">12 <span class="small">weeks</span></div>
+  </div>
+  <div class="metric">
+    <div class="label">Total Budget</div>
+    <div class="value">$1,500 <span class="small">@ $500/mo</span></div>
+  </div>
+  <div class="metric">
+    <div class="label">Target by Aug 7</div>
+    <div class="value">500+ <span class="small">subs</span></div>
+  </div>
+</div>
+
+<section>
+  <h2><span class="num">01</span> Budget Allocation Per Month</h2>
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Spend</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Meta Ads</strong> (FB/IG) → free Hurricane Checklist opt-in</td>
+        <td class="right"><strong>$400</strong></td>
+        <td>Highest-ROI paid channel for hyperlocal lead magnets. Target CPL: <code>$2.50–4.00</code></td>
+      </tr>
+      <tr>
+        <td><strong>Boost organic posts</strong> that hit the algorithm</td>
+        <td class="right"><strong>$100</strong></td>
+        <td>Reserve for amplification — 3–5× cheaper than cold ads. Deploy only when organic content earns it.</td>
+      </tr>
+      <tr>
+        <td><strong>Free channels</strong> (trade-partner blast, FB Groups, site CRO)</td>
+        <td class="right"><strong>$0</strong></td>
+        <td>Highest conversion rate; pure labor. Reach the audience you already touch through other workflows.</td>
+      </tr>
+      <tr style="background: var(--navy); color: var(--white);">
+        <td style="background: var(--navy); color: var(--white);"><strong>Total / month</strong></td>
+        <td class="right" style="background: var(--navy); color: var(--white);"><strong>$500</strong></td>
+        <td style="background: var(--navy); color: var(--white);"></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">02</span> Pre-Launch Sprint <span style="font-size:13px;font-weight:400;color:var(--gray);">(Wed May 13 – Thu May 14)</span></h2>
+  <p><strong>Dependency:</strong> FB Page + IG must exist before any ad can run. That's why setup happens Wednesday morning.</p>
+
+  <div class="day-block">
+    <div class="day-label">Wednesday May 13 · Morning</div>
+    <div class="day-title"><span class="owner-you">YOU →</span> Create FB Page + IG account using the brand kit</div>
+    <div>~30 min. Use <code>SOCIAL-BRAND-KIT.html</code> as the paste-in reference.</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Wednesday May 13 · Afternoon</div>
+    <div class="day-title"><span class="owner-me">ME →</span> Install Meta Pixel + Conversions API on the site</div>
+    <div>Tracks who clicks the ad, who lands on the page, who actually opts in. Without this we can't optimize ad spend.</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Wednesday May 13 · Afternoon</div>
+    <div class="day-title"><span class="owner-me">ME →</span> Build dedicated landing page: <code>robinhoodadjusting.com/hurricane-checklist</code></div>
+    <div>No nav, no distractions. Single goal: email capture for the free PDF.</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Thursday May 14 · Morning</div>
+    <div class="day-title"><span class="owner-me">ME →</span> Design 3 ad creative variants</div>
+    <div>1 static image + 1 short video using shield brand assets + 1 carousel. Test which format converts.</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Thursday May 14 · Morning</div>
+    <div class="day-title"><span class="owner-me">ME →</span> Write 3 ad copy variants</div>
+    <div>(a) Storm-fear angle · (b) Financial-loss angle · (c) Educational angle. We let CPL pick the winner.</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Thursday May 14 · Afternoon</div>
+    <div class="day-title"><span class="owner-you">YOU + ME →</span> Set up Meta Ads Manager</div>
+    <div>Budget, payment method, audience targeting (South FL homeowners 30–70, interests: home insurance, homeowner, property maintenance).</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Thursday May 14 · Afternoon</div>
+    <div class="day-title"><span class="owner-me">ME →</span> Draft trade-partner email to 127 CRM contacts</div>
+    <div>Asks them to share the signup link with their own customers — one-time blast, scheduled for Saturday.</div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Thursday May 14 · End of day</div>
+    <div class="day-title"><span class="owner-you">YOU →</span> Final review + approval</div>
+    <div>Ads scheduled for Friday 8am EDT launch. Once approved, we don't touch anything until Monday's first check-in.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">03</span> 12-Week Execution Plan</h2>
+  <table>
+    <thead>
+      <tr><th>Week</th><th>Dates</th><th>Focus</th><th>Key Actions</th><th>Realistic Add</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="week-num">W1</span></td>
+        <td>May 15–21</td>
+        <td>Launch + audience burst</td>
+        <td>Ads live Fri 8am · Trade-partner email Sat AM · Newsletter mentions new CTA</td>
+        <td class="target">30–50</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W2</span></td>
+        <td>May 22–28</td>
+        <td>Optimize + FB Groups start</td>
+        <td>Kill worst ad variant · Begin posting in 3 mapped FB Groups · A/B test landing headline</td>
+        <td class="target">35–55</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W3</span></td>
+        <td>May 29–Jun 4</td>
+        <td>Hurricane season starts Jun 1</td>
+        <td>Refresh ad creative: "Hurricane Season Starts Sunday" · Expand to 5 FB Groups</td>
+        <td class="target">40–60</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W4</span></td>
+        <td>Jun 5–11</td>
+        <td>Mid-campaign review</td>
+        <td>Pause ads &gt;$5 CPL · First "forward this to a neighbor" newsletter ask</td>
+        <td class="target">35–55</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W5</span></td>
+        <td>Jun 12–18</td>
+        <td>Launch lead magnet #2</td>
+        <td>"Florida Policy Review Checklist" goes live as second opt-in (different audience: active claimants)</td>
+        <td class="target">40–60</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W6</span></td>
+        <td>Jun 19–25</td>
+        <td>Realtor outreach push</td>
+        <td>Personal outreach to 30 SoFla realtor offices · Free resource pitch for closing packets</td>
+        <td class="target">45–65</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W7</span></td>
+        <td>Jun 26–Jul 2</td>
+        <td>Provider directory CRO</td>
+        <td>Add subscribe gate · Exit-intent popup · Site signup form on every page</td>
+        <td class="target">40–55</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W8</span></td>
+        <td>Jul 3–9</td>
+        <td>First storm-prep cycle</td>
+        <td>Push hurricane-prep content hard · Ad creative leans on "active monitoring"</td>
+        <td class="target">50–70</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W9</span></td>
+        <td>Jul 10–16</td>
+        <td>Referral incentive test</td>
+        <td>Test "share with a neighbor, both get the guide" mechanic on 50 most-engaged subs</td>
+        <td class="target">45–65</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W10</span></td>
+        <td>Jul 17–23</td>
+        <td>Co-promotion w/ trade partners</td>
+        <td>Trade-partner blast #2: ask CAT 1 + 5 providers to share signup link with their customers</td>
+        <td class="target">50–70</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W11</span></td>
+        <td>Jul 24–30</td>
+        <td>Compound + scale winners</td>
+        <td>Double down on top-3 ads · Compounding referrals begin · Reset ad fatigue</td>
+        <td class="target">55–75</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">W12</span></td>
+        <td>Jul 31–Aug 7</td>
+        <td>Hit 500, prep next phase</td>
+        <td>Final push · End-of-cycle review · Begin Seth's partnership prep (if ≥500)</td>
+        <td class="target">55–75</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">04</span> Cumulative Subscriber Trajectory</h2>
+  <p>Conservative scenario assuming midpoint of weekly ranges. Optimistic upside: 700+ by W12 if any storm event hits during the cycle.</p>
+
+  <div class="traj">
+    <div><span class="week-label">Today</span><span class="bar" style="width: 2px;"></span> <span class="count">4 subs</span></div>
+    <div><span class="week-label">W1</span><span class="bar" style="width: 20px;"></span> <span class="count">~44 subs</span></div>
+    <div><span class="week-label">W2</span><span class="bar" style="width: 40px;"></span> <span class="count">~89 subs</span></div>
+    <div><span class="week-label">W3</span><span class="bar" style="width: 62px;"></span> <span class="count">~139 subs</span></div>
+    <div><span class="week-label">W4</span><span class="bar" style="width: 82px;"></span> <span class="count">~184 subs</span></div>
+    <div><span class="week-label">W6</span><span class="bar" style="width: 124px;"></span> <span class="count">~279 subs</span></div>
+    <div><span class="week-label">W8</span><span class="bar" style="width: 168px;"></span> <span class="count">~379 subs</span></div>
+    <div><span class="week-label">W10</span><span class="bar" style="width: 212px;"></span> <span class="count">~484 subs</span></div>
+    <div class="label-500"><span class="week-label">W11</span><span class="bar" style="width: 244px;"></span> <span class="count">~549 subs ← target hit</span></div>
+    <div><span class="week-label">W12</span><span class="bar" style="width: 274px;"></span> <span class="count">~614 subs (end)</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span> ROI Rationale — Why This Mix</h2>
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Yield per $100</th><th>Effort</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Meta Ads</strong> (lead magnet)</td>
+        <td>25–40 subs</td>
+        <td><span class="pill good">Low</span></td>
+        <td>⭐ Highest paid ROI for niche local. Set, monitor, optimize weekly.</td>
+      </tr>
+      <tr>
+        <td><strong>Trade-partner blast</strong></td>
+        <td>15–30 subs (one-time)</td>
+        <td><span class="pill good">Low</span></td>
+        <td>Reuses CRM you already have. Run again at W10 with refined ask.</td>
+      </tr>
+      <tr>
+        <td><strong>FB Groups</strong> (organic)</td>
+        <td>10–15/week ongoing</td>
+        <td><span class="pill warn">Medium</span></td>
+        <td>Need to be active member — helpful content, never spam. Long tail value.</td>
+      </tr>
+      <tr>
+        <td><strong>Realtor partnerships</strong></td>
+        <td>20–80/office</td>
+        <td><span class="pill warn">Medium</span></td>
+        <td>Highest lifetime value subs (homeowner-buyers actively setting up policies).</td>
+      </tr>
+      <tr>
+        <td><strong>Storm-event opportunism</strong></td>
+        <td>50–200/event</td>
+        <td><span class="pill good">Low</span></td>
+        <td>Unpredictable. Just maintain campaign-ready creative for when it happens.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">06</span> Channels Deliberately NOT in This Plan</h2>
+  <ul style="list-style:none; padding-left:0;">
+    <li style="margin-bottom:14px;"><span class="pill skip">Skip</span> &nbsp;<strong>Google Ads</strong> — CPC for relevant terms ($30–80) makes $500/mo too thin to be meaningful. Revisit at $2K+/mo budget.</li>
+    <li style="margin-bottom:14px;"><span class="pill skip">Skip</span> &nbsp;<strong>Newsletter sponsorship/swap</strong> — Our list is too small to be valuable for a swap partner today. Revisit at 1,000+ subs.</li>
+    <li style="margin-bottom:14px;"><span class="pill skip">Skip</span> &nbsp;<strong>Local press / podcast outreach</strong> — Slow, unpredictable yield. Park until month 4 when we have growth narrative to pitch.</li>
+    <li style="margin-bottom:14px;"><span class="pill skip">Skip</span> &nbsp;<strong>Seth's Restoration partnership</strong> — Parked. Activate at 500 subs (per memory).</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">07</span> Weekly Check-In Cadence</h2>
+  <p>Every <strong>Monday at 8:00am EDT</strong>, I deliver this to your morning brief:</p>
+  <ol>
+    <li>Subscribers added last week — by channel</li>
+    <li>Current CPL on active ads</li>
+    <li>Top-performing ad creative (so we can clone what's working)</li>
+    <li>Recommended budget shifts for the week</li>
+    <li>Variance from target — am I behind, on, or ahead?</li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">08</span> KPIs by Milestone</h2>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>W1 target</th><th>W6 target</th><th>W12 target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Total subscribers</strong></td><td>44</td><td>245</td><td class="target">500+</td></tr>
+      <tr><td><strong>Cost per lead (Meta)</strong></td><td>&lt;$5.00</td><td>&lt;$3.50</td><td class="target">&lt;$2.75</td></tr>
+      <tr><td><strong>Landing page conv. rate</strong></td><td>&gt;12%</td><td>&gt;18%</td><td class="target">&gt;22%</td></tr>
+      <tr><td><strong>Email open rate</strong> (existing list)</td><td>n/a</td><td>&gt;35%</td><td class="target">&gt;40%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="num">09</span> What Kills the Plan — Risks Watched Weekly</h2>
+  <div class="risks-grid">
+    <div class="risk-card">
+      <div class="risk-title">Meta Account Flag</div>
+      <div class="risk-body">New ad accounts get scrutiny on day 1. <strong>Mitigation:</strong> keep copy compliant, no carrier-bashing language, no fear-mongering claims.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-title">CPL stays above $5</div>
+      <div class="risk-body">Would yield ~300 subs not 500. <strong>Mitigation:</strong> kill ads at W4, reallocate to FB Groups + realtor outreach.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-title">No FB Page by Friday</div>
+      <div class="risk-body">Entire plan delays. <strong>Mitigation:</strong> FB/IG creation scheduled Wed May 13 morning, not Thu.</div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-cta">
+  <h2><span class="num" style="color: var(--gold-light);">★</span> Approved &amp; Active</h2>
+  <p>Plan locked. Prep begins Wed May 13 at 7am EDT. Campaign goes live Fri May 15 at 8am EDT. First check-in Mon May 18.</p>
+  <p style="font-style:italic; font-size:14px; color: rgba(255,255,255,.6); margin-top: 18px;">Reference doc — keep open during weekly check-ins to track variance from target.</p>
+</div>
+
+</div>
+
+</body>
+</html>

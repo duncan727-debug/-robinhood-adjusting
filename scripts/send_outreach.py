@@ -34,6 +34,7 @@ MASTER_CSV  = WORKSPACE / "crm" / "hubspot_master_import.csv"
 
 GMAIL_USER  = "duncanlittlejohn727@gmail.com"
 FROM_NAME   = "Duncan Littlejohn"
+HUBSPOT_BCC = "246055074@bcc.hubspot.com"  # portal 246055074 — auto-logs outbound + threads replies
 SITE_URL    = "https://robinhoodadjusting.com"
 
 BATCH_SLICES = {
@@ -273,10 +274,11 @@ def send_email(gmail_pw, to_addr, subject, body):
     msg["Subject"] = subject
     msg["From"]    = f"{FROM_NAME} <{GMAIL_USER}>"
     msg["To"]      = to_addr
+    msg["Bcc"]     = HUBSPOT_BCC
     msg.attach(MIMEText(body, "plain"))
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(GMAIL_USER, gmail_pw)
-        server.sendmail(GMAIL_USER, to_addr, msg.as_string())
+        server.sendmail(GMAIL_USER, [to_addr, HUBSPOT_BCC], msg.as_string())
 
 def log(msg):
     ts   = datetime.now().strftime("%Y-%m-%d %H:%M")

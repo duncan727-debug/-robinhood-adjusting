@@ -127,3 +127,18 @@ Processing 59 records...
   50/59 processed...
   Done: 0 created, 0 updated, 59 errors, 0 skipped
 
+[2026-05-12 17:46:27] HubSpot upload started
+  Records to process: 59
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
+[2026-05-12 17:47:32] Upload complete
+
+[2026-05-12 17:50:56] HubSpot upload started
+  Records to process: 59
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
+[2026-05-12 17:52:01] Upload complete
+
+[2026-05-13 09:07:42] HubSpot upload started
+  Records to process: 59
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
+[2026-05-13 09:08:58] Upload complete
+

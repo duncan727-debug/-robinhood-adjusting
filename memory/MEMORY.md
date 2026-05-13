@@ -10,7 +10,7 @@
 - [Morning workflow](feedback_morning_workflow.md) — morning person, schedules tasks early, reviews by ~8am EDT
 - [How to handle disagreement](feedback_disagreement.md) — flag concerns once, then proceed his way
 - [Consent-first default](feedback_consent_first.md) — starting posture: don't act without agreement; loosen as trust builds
-- [Model routing by task complexity](feedback_model_routing.md) — Haiku/Sonnet/Opus per task; don't default everything to Opus
+- [Always use Sonnet 4.6](feedback_model_routing.md) — default to Sonnet 4.6 across all tasks (decided 2026-05-12)
 - [Auto-save actions to memory](feedback_memory_persistence.md) — save completed items persistently; Duncan wants continuity across sessions
 - [Operations System (100-in-100)](project_operations_system.md) — 5-workflow automation stack for PA outreach; live as of 2026-04-22
 - [Catch-up infrastructure](project_catchup_infra.md) — LaunchAgent-driven catchup.sh for missed cron jobs when Mac was off (2026-04-23)

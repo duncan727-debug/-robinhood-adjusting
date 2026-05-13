@@ -1,0 +1,53 @@
+[2026-05-12T18:07:51] === IMAP bridge run (last_uid=0) ===
+[2026-05-12T18:07:51] Fetching HubSpot contacts…
+[2026-05-12T18:07:52]   Loaded 152 contacts
+[2026-05-12T18:07:52] Connecting to Gmail IMAP…
+[2026-05-12T18:07:53]   135 messages to inspect
+[2026-05-12T18:08:20]   ✓ REPLY   → dlittlej54@gmail.com (contact 482126397154)  subject: =?big5?B?UmU6IFNvdXRoIEZsb3JpZGEgUHJvcGVydHkgSW50ZWxsaWdlbmN
+[2026-05-12T18:08:29]   ✗ BOUNCE  → info@hoaadvocatesfl.com failed (400)
+[2026-05-12T18:08:30]   ✗ BOUNCE  → info@atlanticwaterfl.com failed (400)
+[2026-05-12T18:08:31]   ✗ BOUNCE  → info@prestigerealty.com failed (400)
+[2026-05-12T18:08:32]   ✗ BOUNCE  → info@quantumroofing.com failed (400)
+[2026-05-12T18:08:33]   ✗ BOUNCE  → info@stormshieldfl.com failed (400)
+[2026-05-12T18:08:33]   ✗ BOUNCE  → info@klrroofing.com failed (400)
+[2026-05-12T18:08:34]   ✗ BOUNCE  → info@northcountyplumbing.org failed (400)
+[2026-05-12T18:08:36]   ✗ BOUNCE  → info@craftrealtyhomes.com failed (400)
+[2026-05-12T18:08:37]   ✗ BOUNCE  → info@toprooferwestpalmbeach.com failed (400)
+[2026-05-12T18:08:38]   ✗ BOUNCE  → info@leonroofingpro.com failed (400)
+[2026-05-12T18:08:40]   ✓ REPLY   → dlittlej54@gmail.com (contact 482126397154)  subject: =?big5?B?UmU6IFNvdXRoIEZsb3JpZGEgUHJvcGVydHkgSW50ZWxsaWdlbmN
+[2026-05-12T18:08:42]   ✓ REPLY   → dlittlej54@gmail.com (contact 482126397154)  subject: =?UTF-8?Q?Accepted=3A_Insurance_Claim_Consultation_=E2=80=94
+[2026-05-12T18:08:42]   ✗ BOUNCE  → info@firstdegreeairconditioning.com failed (400)
+[2026-05-12T18:08:43] === Done. Bounces logged: 0  Replies logged: 3  Max UID: 135 ===
+[2026-05-12T18:08:43] 
+[2026-05-12T18:09:05] === IMAP bridge run (last_uid=0) ===
+[2026-05-12T18:09:05] Fetching HubSpot contacts…
+[2026-05-12T18:09:05]   Loaded 152 contacts
+[2026-05-12T18:09:05] Connecting to Gmail IMAP…
+[2026-05-12T18:09:06]   135 messages to inspect
+[2026-05-12T18:09:16]   ✓ BOUNCE  → info@hoaadvocatesfl.com (contact 479600738030)  reason: Unspecified bounce
+[2026-05-12T18:09:17]   ✓ BOUNCE  → info@atlanticwaterfl.com (contact 479601273566)  reason: Unspecified bounce
+[2026-05-12T18:09:18]   ✓ BOUNCE  → info@prestigerealty.com (contact 479601995471)  reason: 550 5.1.1 The email account that you tried to reach does not exist. Please try d
+[2026-05-12T18:09:20]   ✓ BOUNCE  → info@quantumroofing.com (contact 479602591468)  reason: Unspecified bounce
+[2026-05-12T18:09:21]   ✓ BOUNCE  → info@stormshieldfl.com (contact 479624308459)  reason: Unspecified bounce
+[2026-05-12T18:09:22]   ✓ BOUNCE  → info@klrroofing.com (contact 480312992475)  reason: 550 5.1.1 The email account that you tried to reach does not exist. Please try d
+[2026-05-12T18:09:23]   ✓ BOUNCE  → info@northcountyplumbing.org (contact 482670198459)  reason: 550 No Such User Here"
+[2026-05-12T18:09:24]   ✓ BOUNCE  → info@craftrealtyhomes.com (contact 482680182489)  reason: 550 No Such User Here"
+[2026-05-12T18:09:26]   ✓ BOUNCE  → info@toprooferwestpalmbeach.com (contact 482671026916)  reason: Unspecified bounce
+[2026-05-12T18:09:27]   ✓ BOUNCE  → info@leonroofingpro.com (contact 482670908148)  reason: 554 5.7.1 <info@leonroofingpro.com>: Relay access denied
+[2026-05-12T18:09:28]   ✓ BOUNCE  → info@firstdegreeairconditioning.com (contact 482723403513)  reason: 550 5.1.1 <info@firstdegreeairconditioning.com>: Recipient address rejected: Use
+[2026-05-12T18:09:28] === Done. Bounces logged: 11  Replies logged: 0  Max UID: 135 ===
+[2026-05-12T18:09:28] 
+[2026-05-13T09:05:00] === IMAP bridge run (last_uid=135) ===
+[2026-05-13T09:05:00] Fetching HubSpot contacts…
+[2026-05-13T09:05:01]   Loaded 152 contacts
+[2026-05-13T09:05:01] Connecting to Gmail IMAP…
+[2026-05-13T09:05:02]   12 messages to inspect
+[2026-05-13T09:05:06] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 147 ===
+[2026-05-13T09:05:06] 
+[2026-05-13T09:05:00] === IMAP bridge run (last_uid=135) ===
+[2026-05-13T09:05:00] Fetching HubSpot contacts…
+[2026-05-13T09:05:01]   Loaded 152 contacts
+[2026-05-13T09:05:01] Connecting to Gmail IMAP…
+[2026-05-13T09:05:02]   12 messages to inspect
+[2026-05-13T09:05:06] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 147 ===
+[2026-05-13T09:05:06] 

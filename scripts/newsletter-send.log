@@ -179,3 +179,63 @@ ERROR: HUBSPOT_API_KEY not set and fallback not found.
 [2026-05-11 20:07] === Daily brief send start: 2026-05-11 ===
 [2026-05-11 20:07] === Daily brief send start: 2026-05-11 ===
 ERROR: HUBSPOT_API_KEY not set and fallback not found.
+[2026-05-12 09:51] === Daily brief send start: 2026-05-12 ===
+2026-05-12 09:51 FAILED: HUBSPOT_API_KEY not set and fallback not found. Newsletter send aborted.
+[2026-05-12 10:18] === Daily brief send start: 2026-05-12 ===
+[2026-05-12 10:18] === Daily brief send start: 2026-05-12 ===
+ERROR: HUBSPOT_API_KEY not set and fallback not found.
+[2026-05-12 10:22] === Daily brief send start: 2026-05-12 ===
+[2026-05-12 10:22]   [homeowner] Using fallback generic brief
+[2026-05-12 10:22]   [homeowner] 3 subscribers in list 18
+[2026-05-12 10:22]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-12 10:22]   [service-provider] Using fallback generic brief
+[2026-05-12 10:22]   [service-provider] 1 subscribers in list 19
+[2026-05-12 10:22]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-12 10:22]   [real-estate] Using fallback generic brief
+[2026-05-12 10:22]   [real-estate] 0 subscribers in list 20
+[2026-05-12 10:22]   [real-estate] No subscribers — skipping
+[2026-05-12 10:22] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-12 10:33] === Daily brief send start: 2026-05-12 ===
+[2026-05-12 10:33]   [homeowner] Using fallback generic brief
+[2026-05-12 10:33]   [homeowner] 3 subscribers in list 18
+[2026-05-12 10:34]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-12 10:34]   [service-provider] Using fallback generic brief
+[2026-05-12 10:34]   [service-provider] 1 subscribers in list 19
+[2026-05-12 10:34]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-12 10:34]   [real-estate] Using fallback generic brief
+[2026-05-12 10:34]   [real-estate] 0 subscribers in list 20
+[2026-05-12 10:34]   [real-estate] No subscribers — skipping
+[2026-05-12 10:34] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-12 10:33] === Daily brief send start: 2026-05-12 ===
+[2026-05-12 10:33]   [homeowner] Using fallback generic brief
+[2026-05-12 10:33]   [homeowner] 3 subscribers in list 18
+[2026-05-12 10:34]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-12 10:34]   [service-provider] Using fallback generic brief
+[2026-05-12 10:34]   [service-provider] 1 subscribers in list 19
+[2026-05-12 10:34]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-12 10:34]   [real-estate] Using fallback generic brief
+[2026-05-12 10:34]   [real-estate] 0 subscribers in list 20
+[2026-05-12 10:34]   [real-estate] No subscribers — skipping
+[2026-05-12 10:34] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-13 09:04] === Daily brief send start: 2026-05-13 ===
+[2026-05-13 09:04]   [homeowner] Using fallback generic brief
+[2026-05-13 09:04]   [homeowner] 3 subscribers in list 18
+[2026-05-13 09:04]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-13 09:04]   [service-provider] Using fallback generic brief
+[2026-05-13 09:04]   [service-provider] 1 subscribers in list 19
+[2026-05-13 09:04]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-13 09:04]   [real-estate] Using fallback generic brief
+[2026-05-13 09:04]   [real-estate] 0 subscribers in list 20
+[2026-05-13 09:04]   [real-estate] No subscribers — skipping
+[2026-05-13 09:04] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-13 09:04] === Daily brief send start: 2026-05-13 ===
+[2026-05-13 09:04]   [homeowner] Using fallback generic brief
+[2026-05-13 09:04]   [homeowner] 3 subscribers in list 18
+[2026-05-13 09:04]   [homeowner] Sent: 3 | Failed: 0
+[2026-05-13 09:04]   [service-provider] Using fallback generic brief
+[2026-05-13 09:04]   [service-provider] 1 subscribers in list 19
+[2026-05-13 09:04]   [service-provider] Sent: 1 | Failed: 0
+[2026-05-13 09:04]   [real-estate] Using fallback generic brief
+[2026-05-13 09:04]   [real-estate] 0 subscribers in list 20
+[2026-05-13 09:04]   [real-estate] No subscribers — skipping
+[2026-05-13 09:04] === Done — total sent: 4 | total failed: 0 ===

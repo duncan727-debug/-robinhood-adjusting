@@ -492,3 +492,149 @@
   Google Places API: 2026-05-11 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
 [2026-05-11 19:00:05] Run complete
 
+[2026-05-12 10:52:22] Palm Beach prospect run started
+  Searching: roofing company West Palm Beach FL
+    → 0 results
+  Searching: HVAC service Boca Raton FL
+    → 0 results
+  Searching: property manager West Palm Beach FL
+    → 0 results
+  Searching: insurance restoration contractor FL
+    → 0 results
+  Searching: roofing contractor Palm Beach County FL
+    → 0 results
+  Searching: restoration company Palm Beach County FL
+    → 0 results
+  Searching: HVAC company Palm Beach County FL
+    → 0 results
+  Searching: plumbing company Palm Beach County FL
+    → 0 results
+  Searching: property management Palm Beach County FL
+    → 0 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 0 results
+  Searching: general contractor Palm Beach County FL
+    → 0 results
+  Searching: water damage restoration Palm Beach County FL
+    → 0 results
+  Searching: roofing company Boca Raton FL
+    → 0 results
+  Searching: roofing company Wellington FL
+    → 0 results
+  Done: 0 added, 0 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-12 | calls: 0 | $0.0000 today | $0.0000 MTD | 0.0% used | 100.0% remaining
+[2026-05-12 10:52:33] Run complete
+
+[2026-05-12 10:53:08] Palm Beach prospect run started
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+    QUEUED (1/25): Bravo's Roofing, Inc. [West Palm Beach] — (561) 335-3869
+    QUEUED (2/25): AR1 Roofing Company West Palm Beach [West Palm Beach] — (561) 486-7406
+    QUEUED (3/25): Storm Roofing Inc [West Palm Beach] — (561) 689-0268
+    QUEUED (4/25): Roofing Services W Palm Beach [West Palm Beach] — (561) 820-6619
+    QUEUED (5/25): Marzo Roofing West Palm Beach [Lake Worth Beach] — (561) 821-3616
+    QUEUED (6/25): Boss Roofing Inc. [West Palm Beach] — (561) 766-3883
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    QUEUED (7/25): American Air Conditioning of Boca [Boca Raton] — (561) 865-8923
+    QUEUED (8/25): M & R Air Conditioning Services [Boca Raton] — (561) 395-3724
+    QUEUED (9/25): Palm Air Air Conditioning, Inc. [Boca Raton] — (561) 223-8382
+    QUEUED (10/25): America HVAC Services Boca Raton [Boca Raton] — (561) 839-9721
+    QUEUED (11/25): Friendly A/C [Boca Raton] — (561) 305-4832
+    QUEUED (12/25): South Florida Air Conditioning Inc [Boca Raton] — (561) 392-2662
+    QUEUED (13/25): East Coast Services, Inc [Boca Raton] — (954) 941-7822
+    QUEUED (14/25): Southern Coast Air Conditioning, Plumbing & Electric Repair [Boca Raton] — (561) 270-5531
+    QUEUED (15/25): AC Xperts of Florida, Inc. [Boca Raton] — (561) 671-0005
+    QUEUED (16/25): Aire Serv of Boca Raton [Boca Raton] — (561) 418-7720
+    QUEUED (17/25): Florida Cooling Group LLC [Delray Beach] — (561) 400-2205
+    QUEUED (18/25): Boca Raton HVAC Services [Boca Raton] — (561) 925-7377
+    QUEUED (19/25): AC Cool Air [Boca Raton] — (561) 990-2026
+    QUEUED (20/25): Florida Cool [Boynton Beach] — (561) 556-8161
+    QUEUED (21/25): Air Light AC Service Inc [Boca Raton] — (754) 777-2377
+    QUEUED (22/25): JVAC LLC [Boca Raton] — (561) 410-8189
+    QUEUED (23/25): 4Seasons HVAC Repair [Boca Raton] — (561) 786-1500
+    QUEUED (24/25): Prime Air [Boca Raton] — (561) 855-0659
+    QUEUED (25/25): Comfort Masters HVAC Repair [Boca Raton] — (561) 250-7775
+  Done: 25 added, 15 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-12 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-05-12 10:53:21] Run complete
+
+[2026-05-13 09:00:00] Palm Beach prospect run started
+  Searching: property manager West Palm Beach FL
+    → 20 results
+    QUEUED (1/25): Seacrest Services [West Palm Beach] — (561) 697-4990
+    SKIP (exists): Jilsa Management
+    QUEUED (2/25): Benco Property Management [West Palm Beach] — (561) 692-4011
+    QUEUED (3/25): IBERO PROPERTY MANAGEMENT & REAL ESTATE SERVICES [West Palm Beach] — (561) 420-0640
+    QUEUED (4/25): FPB Investment Properties [West Palm Beach] — (561) 566-6651
+    QUEUED (5/25): Eden Property Management Group [West Palm Beach] — (561) 693-2885
+    QUEUED (6/25): The Rental Authority [West Palm Beach] — (561) 433-5600
+    SKIP (exists): Castle Group
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (7/25): Insurance Damage Repair [Lake Park] — (561) 762-0921
+    QUEUED (8/25): Insurance Reconstruction Services, LLC [Lakewood Ranch] — (941) 225-8529
+    QUEUED (9/25): All Claims Repairs [Deerfield Beach] — (954) 994-2543
+    QUEUED (10/25): Insurance General Contractors [Mt Dora] — (407) 326-2372
+    QUEUED (11/25): Restore Remodel Renew LLC [Lantana] — (561) 379-7620
+    QUEUED (12/25): CR Restoration | Mold & Water Damage Experts [Lake Worth Beach] — (516) 610-2283
+    QUEUED (13/25): Cohen’s Restoration Experts LLC [Lake Worth Beach] — (561) 234-4000
+    QUEUED (14/25): Shamrock Restoration [Delray Beach] — (561) 275-5040
+    QUEUED (15/25): J & R Restoration Services [Boca Raton] — (561) 674-2332
+    QUEUED (16/25): Entrusted [Riviera Beach] — (561) 966-0765
+    QUEUED (17/25): Joe Taylor Restoration - Southeast Florida [Delray Beach] — (888) 814-1455
+    SKIP (exists): All Insurance Restoration
+    QUEUED (18/25): Ares Restoration [West Palm Beach] — (561) 896-7534
+    QUEUED (19/25): Orca Restoration LLC [Delray Beach] — (561) 501-3438
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+    QUEUED (20/25): South Star Roofing [Greenacres] — (561) 537-5544
+    QUEUED (21/25): Zavala's Pro Roofing [Greenacres] — (561) 629-7937
+    QUEUED (22/25): Best American Roofing LLC [Greenacres] — (561) 381-1280
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+    QUEUED (23/25): Water Damage Restoration & Mold Removal [West Palm Beach] — (818) 453-3494
+    QUEUED (24/25): Clean Restoration & Recovery, Inc. [Boca Raton] — (772) 812-6000
+    QUEUED (25/25): Fides Restoration [Jupiter] — (561) 203-6083
+  Done: 25 added, 46 duplicate/existing, 1 large firms skipped, 0 errors
+  Google Places API: 2026-05-13 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-05-13 09:00:23] Run complete
+
+  Searching: property manager West Palm Beach FL
+    → 20 results
+    QUEUED (1/25): Seacrest Services [West Palm Beach] — (561) 697-4990
+    SKIP (exists): Jilsa Management
+    QUEUED (2/25): Benco Property Management [West Palm Beach] — (561) 692-4011
+    QUEUED (3/25): IBERO PROPERTY MANAGEMENT & REAL ESTATE SERVICES [West Palm Beach] — (561) 420-0640
+    QUEUED (4/25): FPB Investment Properties [West Palm Beach] — (561) 566-6651
+    QUEUED (5/25): Eden Property Management Group [West Palm Beach] — (561) 693-2885
+    QUEUED (6/25): The Rental Authority [West Palm Beach] — (561) 433-5600
+    SKIP (exists): Castle Group
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (7/25): Insurance Damage Repair [Lake Park] — (561) 762-0921
+    QUEUED (8/25): Insurance Reconstruction Services, LLC [Lakewood Ranch] — (941) 225-8529
+    QUEUED (9/25): All Claims Repairs [Deerfield Beach] — (954) 994-2543
+    QUEUED (10/25): Insurance General Contractors [Mt Dora] — (407) 326-2372
+    QUEUED (11/25): Restore Remodel Renew LLC [Lantana] — (561) 379-7620
+    QUEUED (12/25): CR Restoration | Mold & Water Damage Experts [Lake Worth Beach] — (516) 610-2283
+    QUEUED (13/25): Cohen’s Restoration Experts LLC [Lake Worth Beach] — (561) 234-4000
+    QUEUED (14/25): Shamrock Restoration [Delray Beach] — (561) 275-5040
+    QUEUED (15/25): J & R Restoration Services [Boca Raton] — (561) 674-2332
+    QUEUED (16/25): Entrusted [Riviera Beach] — (561) 966-0765
+    QUEUED (17/25): Joe Taylor Restoration - Southeast Florida [Delray Beach] — (888) 814-1455
+    SKIP (exists): All Insurance Restoration
+    QUEUED (18/25): Ares Restoration [West Palm Beach] — (561) 896-7534
+    QUEUED (19/25): Orca Restoration LLC [Delray Beach] — (561) 501-3438
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+    QUEUED (20/25): South Star Roofing [Greenacres] — (561) 537-5544
+    QUEUED (21/25): Zavala's Pro Roofing [Greenacres] — (561) 629-7937
+    QUEUED (22/25): Best American Roofing LLC [Greenacres] — (561) 381-1280
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+    QUEUED (23/25): Water Damage Restoration & Mold Removal [West Palm Beach] — (818) 453-3494
+    QUEUED (24/25): Clean Restoration & Recovery, Inc. [Boca Raton] — (772) 812-6000
+    QUEUED (25/25): Fides Restoration [Jupiter] — (561) 203-6083
+  Done: 25 added, 46 duplicate/existing, 1 large firms skipped, 0 errors
+  Google Places API: 2026-05-13 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
