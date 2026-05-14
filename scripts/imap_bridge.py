@@ -65,6 +65,11 @@ FAILED_RECIPIENT_RE = re.compile(
     r"(?:Final-Recipient|X-Failed-Recipients|original_address|to=<)[^\n]*?([\w.\-+]+@[\w.\-]+\.[a-z]{2,})",
     re.I,
 )
+# Gmail soft-bounce notifications use prose, not DSN headers: "delivering your message to <email>"
+FAILED_RECIPIENT_PROSE_RE = re.compile(
+    r"delivering your message to\s+([\w.\-+]+@[\w.\-]+\.[a-z]{2,})",
+    re.I,
+)
 
 
 def log(msg):
@@ -166,7 +171,41 @@ def extract_failed_recipient(msg):
     m = FAILED_RECIPIENT_RE.search(body_text)
     if m:
         return m.group(1).strip().lower()
+    m2 = FAILED_RECIPIENT_PROSE_RE.search(body_text)
+    if m2:
+        return m2.group(1).strip().lower()
     return None
+
+
+def is_soft_bounce(msg):
+    """Detect transient delivery failures (Gmail "(Delay)" notifications).
+
+    Hard bounces have subject "(Failure)" or body containing 5xx SMTP codes.
+    Soft bounces have "(Delay)" subject or body text like "Gmail will retry".
+    """
+    subj = (msg.get("Subject") or "").lower()
+    if "(delay)" in subj or "incomplete" in subj:
+        return True
+    body_text = ""
+    if msg.is_multipart():
+        for part in msg.walk():
+            if part.get_content_type() == "text/plain":
+                try:
+                    payload = part.get_payload(decode=True)
+                    if payload:
+                        body_text = payload.decode("utf-8", errors="replace")
+                        break
+                except Exception:
+                    pass
+    else:
+        try:
+            body_text = (msg.get_payload(decode=True) or b"").decode("utf-8", errors="replace")
+        except Exception:
+            body_text = ""
+    body_l = body_text.lower()
+    if "gmail will retry" in body_l or "temporary problem" in body_l or "delivery incomplete" in body_l:
+        return True
+    return False
 
 
 def extract_bounce_reason(msg):
@@ -190,7 +229,11 @@ def extract_bounce_reason(msg):
         line = line.strip()
         if not line or line.startswith(">"):
             continue
-        if any(t in line.lower() for t in ("smtp error", "550", "554", "5.1.", "5.2.", "5.7.", "domain not", "no such user", "mailbox unavailable", "user unknown")):
+        if any(t in line.lower() for t in (
+            "smtp error", "550", "554", "5.1.", "5.2.", "5.7.",
+            "domain not", "no such user", "mailbox unavailable", "user unknown",
+            "did not accept", "timed out", "temporary problem", "could not be delivered",
+        )):
             return line[:200]
     return "Unspecified bounce"
 
@@ -227,6 +270,35 @@ def mark_bounced(contact_id, recipient, reason):
     }
     hs_request("POST", "/crm/v3/objects/notes", note_payload)
     log(f"  ✓ BOUNCE  → {recipient} (contact {contact_id})  reason: {reason[:80]}")
+    return True
+
+
+def mark_soft_bounce(contact_id, recipient, reason):
+    """Attach a note about a transient delivery hiccup. Does NOT change lead status —
+    Gmail is still retrying, and the contact may yet receive the message."""
+    note_body = (
+        f"<p><strong>Soft bounce detected via Gmail bridge</strong></p>"
+        f"<p><em>Recipient:</em> {recipient}</p>"
+        f"<p><em>Reason:</em> {reason}</p>"
+        f"<p>Gmail is retrying delivery. Contact NOT marked unqualified — watch for a follow-up hard bounce if delivery ultimately fails.</p>"
+    )
+    note_payload = {
+        "properties": {
+            "hs_note_body": note_body,
+            "hs_timestamp": int(time.time() * 1000),
+        },
+        "associations": [
+            {
+                "to": {"id": contact_id},
+                "types": [{"associationCategory": "HUBSPOT_DEFINED", "associationTypeId": 202}],
+            }
+        ],
+    }
+    status, _ = hs_request("POST", "/crm/v3/objects/notes", note_payload)
+    if status not in (200, 201):
+        log(f"  ✗ SOFT BOUNCE note failed for {recipient} ({status})")
+        return False
+    log(f"  ⚠ SOFT BOUNCE → {recipient} (contact {contact_id})  reason: {reason[:80]}")
     return True
 
 
@@ -447,6 +519,7 @@ def main():
     log(f"  {len(uids)} messages to inspect")
 
     bounces = 0
+    soft_bounces = 0
     replies = 0
     calendly_deals = 0
     max_uid = state["last_uid"]
@@ -458,7 +531,8 @@ def main():
         if uid > max_uid:
             max_uid = uid
 
-        typ, msg_data = M.uid("fetch", uid_b, "(RFC822)")
+        # BODY.PEEK[] preserves the \Seen flag — RFC822 would mark every scanned email as read
+        typ, msg_data = M.uid("fetch", uid_b, "(BODY.PEEK[])")
         if typ != "OK" or not msg_data or not msg_data[0]:
             continue
         raw = msg_data[0][1]
@@ -486,9 +560,14 @@ def main():
                 cid = contacts_by_email[failed]
                 if uid not in state["processed_bounces"]:
                     reason = extract_bounce_reason(msg)
-                    if mark_bounced(cid, failed, reason):
-                        bounces += 1
-                        state["processed_bounces"].append(uid)
+                    if is_soft_bounce(msg):
+                        if mark_soft_bounce(cid, failed, reason):
+                            soft_bounces += 1
+                            state["processed_bounces"].append(uid)
+                    else:
+                        if mark_bounced(cid, failed, reason):
+                            bounces += 1
+                            state["processed_bounces"].append(uid)
             continue
 
         # Reply path — sender's email matches a known contact
@@ -504,7 +583,7 @@ def main():
     save_state(state)
     M.logout()
 
-    log(f"=== Done. Bounces: {bounces}  Replies: {replies}  Calendly deals: {calendly_deals}  Max UID: {max_uid} ===")
+    log(f"=== Done. Hard bounces: {bounces}  Soft bounces: {soft_bounces}  Replies: {replies}  Calendly deals: {calendly_deals}  Max UID: {max_uid} ===")
     log("")
 
 
