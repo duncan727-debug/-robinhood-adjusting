@@ -44,12 +44,22 @@ CALENDLY_SENDERS = (
 )
 
 CALENDLY_PIPELINE = "default"
-CALENDLY_STAGE_BOOKED = "3671479994"  # Virtual Review Booked
+CALENDLY_STAGE_BOOKED = "3671479994"  # Virtual Review Booked (used for all Calendly bookings until split stages exist)
 CALENDLY_INVITEE_EMAIL_RE = re.compile(
     r"(?:Invitee\s*Email|Invitee:|<a[^>]*href=\"mailto:)([\w.\-+@]+@[\w.\-]+\.[a-z]{2,})",
     re.I,
 )
 CALENDLY_INVITEE_NAME_RE = re.compile(r"Invitee:\s*([^\n<]+)", re.I)
+# Map Calendly event slug → (deal-name prefix, medium label)
+CALENDLY_EVENT_MAP = {
+    "virtual-review": ("Virtual Review", "Google Meet (video)"),
+    "30min":          ("Phone Consult",  "Phone call (15 min)"),
+}
+# Only match URLs under Duncan's Calendly handle so we don't pick up reschedule/cancel link slugs
+CALENDLY_EVENT_URL_RE = re.compile(
+    r"https?://calendly\.com/duncanlittlejohn727/([\w\-]+)(?:[/?][^\s\"<>]*)?",
+    re.I,
+)
 
 FAILED_RECIPIENT_RE = re.compile(
     r"(?:Final-Recipient|X-Failed-Recipients|original_address|to=<)[^\n]*?([\w.\-+]+@[\w.\-]+\.[a-z]{2,})",
@@ -249,7 +259,7 @@ def log_reply_note(contact_id, sender, subject, snippet):
 
 
 def parse_calendly_booking(msg):
-    """Extract (invitee_email, invitee_name, event_label) from a Calendly host notification.
+    """Extract (invitee_email, invitee_name, event_label, event_slug, medium) from a Calendly host notification.
 
     Returns None if the message doesn't look like a Calendly *booking confirmation*
     (we explicitly skip cancellations and reschedules — those need different handling).
@@ -290,7 +300,13 @@ def parse_calendly_booking(msg):
 
     # Event label is usually after "New Event:" in the subject
     event_label = subject.replace("New Event:", "").strip().split(" - ")[0].strip() or "Calendly Booking"
-    return invitee_email, invitee_name, event_label
+
+    # Identify which event was booked via slug in the body URL
+    slug_match = CALENDLY_EVENT_URL_RE.search(body_text)
+    event_slug = slug_match.group(1).lower() if slug_match else ""
+    medium = CALENDLY_EVENT_MAP.get(event_slug, ("", "Unknown medium"))[1]
+
+    return invitee_email, invitee_name, event_label, event_slug, medium
 
 
 def upsert_contact_for_calendly(email_addr, name):
@@ -320,9 +336,11 @@ def upsert_contact_for_calendly(email_addr, name):
     return None
 
 
-def create_virtual_review_deal(contact_id, invitee_email, invitee_name, event_label):
+def create_calendly_deal(contact_id, invitee_email, invitee_name, event_label, event_slug, medium):
     """Create a deal in Partner Outreach → Virtual Review Booked, associated with the contact.
 
+    Deal name reflects the actual event (e.g. "Virtual Review — Joe" vs "Phone Consult — Joe").
+    A note is attached recording the medium so phone bookings aren't confused with video.
     Idempotent on (contact_id, today): if a deal already exists for this contact
     in this stage today, skip.
     """
@@ -343,9 +361,10 @@ def create_virtual_review_deal(contact_id, invitee_email, invitee_name, event_la
                 log(f"  · CALENDLY skip — deal {d['id']} already booked today for contact {contact_id}")
                 return d["id"]
 
+    prefix = CALENDLY_EVENT_MAP.get(event_slug, (event_label or "Calendly Booking", ""))[0]
     deal_payload = {
         "properties": {
-            "dealname": f"Virtual Review — {invitee_name}",
+            "dealname": f"{prefix} — {invitee_name}",
             "pipeline": CALENDLY_PIPELINE,
             "dealstage": CALENDLY_STAGE_BOOKED,
             "amount": "0",
@@ -356,11 +375,29 @@ def create_virtual_review_deal(contact_id, invitee_email, invitee_name, event_la
         }],
     }
     status, data = hs_request("POST", "/crm/v3/objects/deals", deal_payload)
-    if status in (200, 201):
-        log(f"  ✓ CALENDLY → {invitee_email} → deal {data['id']} (Virtual Review Booked)")
-        return data["id"]
-    log(f"  ✗ CALENDLY deal create failed for {invitee_email} ({status}): {json.dumps(data)[:200]}")
-    return None
+    if status not in (200, 201):
+        log(f"  ✗ CALENDLY deal create failed for {invitee_email} ({status}): {json.dumps(data)[:200]}")
+        return None
+
+    deal_id = data["id"]
+    # Attach a note recording the medium + slug so the deal carries context
+    note_body = (
+        f"<p><strong>Calendly booking detected</strong></p>"
+        f"<p><em>Invitee:</em> {invitee_name} &lt;{invitee_email}&gt;</p>"
+        f"<p><em>Event:</em> {event_label or '(unknown)'}</p>"
+        f"<p><em>Slug:</em> /{event_slug or '(unknown)'}</p>"
+        f"<p><em>Medium:</em> {medium}</p>"
+    )
+    note_payload = {
+        "properties": {"hs_note_body": note_body, "hs_timestamp": int(time.time() * 1000)},
+        "associations": [{
+            "to": {"id": deal_id},
+            "types": [{"associationCategory": "HUBSPOT_DEFINED", "associationTypeId": 214}],
+        }],
+    }
+    hs_request("POST", "/crm/v3/objects/notes", note_payload)
+    log(f"  ✓ CALENDLY → {invitee_email} → deal {deal_id} ({prefix}, {medium})")
+    return deal_id
 
 
 def extract_snippet(msg):
@@ -435,9 +472,9 @@ def main():
             if uid not in state["processed_calendly"]:
                 parsed = parse_calendly_booking(msg)
                 if parsed:
-                    invitee_email, invitee_name, event_label = parsed
+                    invitee_email, invitee_name, event_label, event_slug, medium = parsed
                     cid = upsert_contact_for_calendly(invitee_email, invitee_name)
-                    if cid and create_virtual_review_deal(cid, invitee_email, invitee_name, event_label):
+                    if cid and create_calendly_deal(cid, invitee_email, invitee_name, event_label, event_slug, medium):
                         calendly_deals += 1
                 state["processed_calendly"].append(uid)
             continue
