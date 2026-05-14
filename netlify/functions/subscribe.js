@@ -75,6 +75,24 @@ exports.handler = async function (event) {
       return { statusCode: 500, body: JSON.stringify({ error: "Failed to create or find contact" }) };
     }
     await addToList(listId, contactId);
+
+    // Relay to Netlify Forms so the existing submission_created hook fires
+    // (emails Duncan + Zapier). Form `newsletter-signup` is already registered.
+    try {
+      const formBody = new URLSearchParams({
+        "form-name": "newsletter-signup",
+        email,
+        segment: category,
+      }).toString();
+      await fetch("https://robinhoodadjusting.com/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody,
+      });
+    } catch (relayErr) {
+      console.warn("Netlify Forms relay failed (non-fatal):", relayErr && relayErr.message);
+    }
+
     return {
       statusCode: 200,
       headers: { "Content-Type": "application/json" },

@@ -38,6 +38,19 @@ BOUNCE_SENDERS = (
 
 SELF_SKIP = {"duncanlittlejohn727@gmail.com"}
 
+CALENDLY_SENDERS = (
+    "no-reply@calendly.com",
+    "notifications@calendly.com",
+)
+
+CALENDLY_PIPELINE = "default"
+CALENDLY_STAGE_BOOKED = "3671479994"  # Virtual Review Booked
+CALENDLY_INVITEE_EMAIL_RE = re.compile(
+    r"(?:Invitee\s*Email|Invitee:|<a[^>]*href=\"mailto:)([\w.\-+@]+@[\w.\-]+\.[a-z]{2,})",
+    re.I,
+)
+CALENDLY_INVITEE_NAME_RE = re.compile(r"Invitee:\s*([^\n<]+)", re.I)
+
 FAILED_RECIPIENT_RE = re.compile(
     r"(?:Final-Recipient|X-Failed-Recipients|original_address|to=<)[^\n]*?([\w.\-+]+@[\w.\-]+\.[a-z]{2,})",
     re.I,
@@ -74,8 +87,10 @@ HUBSPOT_TOKEN = load_secret("HUBSPOT_API_KEY")
 
 def load_state():
     if STATE_PATH.exists():
-        return json.loads(STATE_PATH.read_text())
-    return {"last_uid": 0, "processed_bounces": [], "processed_replies": []}
+        state = json.loads(STATE_PATH.read_text())
+        state.setdefault("processed_calendly", [])
+        return state
+    return {"last_uid": 0, "processed_bounces": [], "processed_replies": [], "processed_calendly": []}
 
 
 def save_state(state):
@@ -233,6 +248,121 @@ def log_reply_note(contact_id, sender, subject, snippet):
     return True
 
 
+def parse_calendly_booking(msg):
+    """Extract (invitee_email, invitee_name, event_label) from a Calendly host notification.
+
+    Returns None if the message doesn't look like a Calendly *booking confirmation*
+    (we explicitly skip cancellations and reschedules — those need different handling).
+    """
+    subject = (msg.get("Subject") or "").strip()
+    subj_l = subject.lower()
+    if "new event" not in subj_l:
+        return None
+    # Skip cancellations/reschedules — only react to fresh bookings
+    if any(x in subj_l for x in ("canceled", "cancelled", "rescheduled")):
+        return None
+
+    body_text = ""
+    if msg.is_multipart():
+        for part in msg.walk():
+            if part.get_content_type() in ("text/plain", "text/html"):
+                try:
+                    payload = part.get_payload(decode=True)
+                    if payload:
+                        body_text += "\n" + payload.decode("utf-8", errors="replace")
+                except Exception:
+                    pass
+    else:
+        try:
+            body_text = (msg.get_payload(decode=True) or b"").decode("utf-8", errors="replace")
+        except Exception:
+            return None
+
+    em = CALENDLY_INVITEE_EMAIL_RE.search(body_text)
+    if not em:
+        return None
+    invitee_email = em.group(1).strip().lower()
+    if invitee_email == GMAIL_USER.lower():
+        return None  # That's Duncan, not the invitee
+
+    nm = CALENDLY_INVITEE_NAME_RE.search(body_text)
+    invitee_name = nm.group(1).strip() if nm else invitee_email.split("@")[0]
+
+    # Event label is usually after "New Event:" in the subject
+    event_label = subject.replace("New Event:", "").strip().split(" - ")[0].strip() or "Calendly Booking"
+    return invitee_email, invitee_name, event_label
+
+
+def upsert_contact_for_calendly(email_addr, name):
+    """Find contact by email; create with NEW status if missing. Returns contact_id."""
+    search_payload = {
+        "filterGroups": [{"filters": [{"propertyName": "email", "operator": "EQ", "value": email_addr}]}],
+        "properties": ["email"],
+        "limit": 1,
+    }
+    status, data = hs_request("POST", "/crm/v3/objects/contacts/search", search_payload)
+    if status == 200 and data.get("results"):
+        return data["results"][0]["id"]
+
+    first = name.split()[0] if name else ""
+    last = " ".join(name.split()[1:]) if len(name.split()) > 1 else ""
+    create_payload = {"properties": {
+        "email": email_addr,
+        "firstname": first,
+        "lastname": last,
+        "lifecyclestage": "lead",
+        "hs_lead_status": "NEW",
+    }}
+    status, data = hs_request("POST", "/crm/v3/objects/contacts", create_payload)
+    if status in (200, 201):
+        return data.get("id")
+    log(f"  ✗ CALENDLY contact upsert failed for {email_addr} ({status})")
+    return None
+
+
+def create_virtual_review_deal(contact_id, invitee_email, invitee_name, event_label):
+    """Create a deal in Partner Outreach → Virtual Review Booked, associated with the contact.
+
+    Idempotent on (contact_id, today): if a deal already exists for this contact
+    in this stage today, skip.
+    """
+    today = datetime.now().strftime("%Y-%m-%d")
+    dedupe_payload = {
+        "filterGroups": [{"filters": [
+            {"propertyName": "dealstage", "operator": "EQ", "value": CALENDLY_STAGE_BOOKED},
+            {"propertyName": "associations.contact", "operator": "EQ", "value": contact_id},
+        ]}],
+        "properties": ["dealname", "createdate"],
+        "limit": 5,
+    }
+    status, data = hs_request("POST", "/crm/v3/objects/deals/search", dedupe_payload)
+    if status == 200:
+        for d in data.get("results", []):
+            created = (d.get("properties", {}).get("createdate") or "")[:10]
+            if created == today:
+                log(f"  · CALENDLY skip — deal {d['id']} already booked today for contact {contact_id}")
+                return d["id"]
+
+    deal_payload = {
+        "properties": {
+            "dealname": f"Virtual Review — {invitee_name}",
+            "pipeline": CALENDLY_PIPELINE,
+            "dealstage": CALENDLY_STAGE_BOOKED,
+            "amount": "0",
+        },
+        "associations": [{
+            "to": {"id": contact_id},
+            "types": [{"associationCategory": "HUBSPOT_DEFINED", "associationTypeId": 3}],
+        }],
+    }
+    status, data = hs_request("POST", "/crm/v3/objects/deals", deal_payload)
+    if status in (200, 201):
+        log(f"  ✓ CALENDLY → {invitee_email} → deal {data['id']} (Virtual Review Booked)")
+        return data["id"]
+    log(f"  ✗ CALENDLY deal create failed for {invitee_email} ({status}): {json.dumps(data)[:200]}")
+    return None
+
+
 def extract_snippet(msg):
     text = ""
     if msg.is_multipart():
@@ -281,6 +411,7 @@ def main():
 
     bounces = 0
     replies = 0
+    calendly_deals = 0
     max_uid = state["last_uid"]
 
     for uid_b in uids:
@@ -298,6 +429,18 @@ def main():
 
         from_addr = parseaddr(msg.get("From", ""))[1].lower()
         subject = (msg.get("Subject") or "").strip()
+
+        # Calendly booking path — runs before bounce/reply since sender domain is distinct
+        if any(from_addr.endswith(s) or from_addr == s for s in CALENDLY_SENDERS):
+            if uid not in state["processed_calendly"]:
+                parsed = parse_calendly_booking(msg)
+                if parsed:
+                    invitee_email, invitee_name, event_label = parsed
+                    cid = upsert_contact_for_calendly(invitee_email, invitee_name)
+                    if cid and create_virtual_review_deal(cid, invitee_email, invitee_name, event_label):
+                        calendly_deals += 1
+                state["processed_calendly"].append(uid)
+            continue
 
         # Bounce path
         if any(from_addr.startswith(prefix) for prefix in BOUNCE_SENDERS) or "delivery" in subject.lower() and "fail" in subject.lower():
@@ -324,7 +467,7 @@ def main():
     save_state(state)
     M.logout()
 
-    log(f"=== Done. Bounces logged: {bounces}  Replies logged: {replies}  Max UID: {max_uid} ===")
+    log(f"=== Done. Bounces: {bounces}  Replies: {replies}  Calendly deals: {calendly_deals}  Max UID: {max_uid} ===")
     log("")
 
 

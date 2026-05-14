@@ -123,6 +123,24 @@ exports.handler = async function (event) {
     }
     await addToList(listId, contactId);
 
+    // Relay to Netlify Forms so the existing submission_created hook fires
+    // (emails Duncan + Zapier). Form `newsletter-signup` is already registered.
+    try {
+      const formBody = new URLSearchParams({
+        "form-name": "newsletter-signup",
+        email,
+        segment,
+        sourceUrl: sourceUrl || "",
+      }).toString();
+      await fetch("https://robinhoodadjusting.com/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody,
+      });
+    } catch (relayErr) {
+      console.warn("Netlify Forms relay failed (non-fatal):", relayErr && relayErr.message);
+    }
+
     // Fire Meta Conversions API "Lead" event (fail-soft — never break the subscribe response on this).
     try {
       const pixelId     = (process.env.META_PIXEL_ID   || "").trim();
