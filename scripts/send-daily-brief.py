@@ -283,6 +283,11 @@ def build_email_html(body_content, date_str, subject):
       <tr><td style="padding:30px 24px;">
         {body_content}
       </td></tr>
+      <tr><td style="background:#fff8ea;padding:20px;text-align:center;border-top:1px solid #eee;border-bottom:1px solid #eee;">
+        <p style="color:#0f2d4a;font-size:13px;font-weight:bold;margin:0 0 6px;">🎥 Got damage or a denial letter? Show us on video.</p>
+        <p style="color:#555;font-size:12px;margin:0 0 10px;line-height:1.55;">A free 15-min video call with a licensed Florida public adjuster — straight read on whether your loss is likely a covered insurable event. No contracts on the call.</p>
+        <a href="https://robinhoodadjusting.com/free-review.html" style="display:inline-block;background:#c9922a;color:#0f2d4a;padding:10px 22px;text-decoration:none;border-radius:4px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;">Book a Free Virtual Review →</a>
+      </td></tr>
       <tr><td style="background:#1a1a1a;padding:20px;text-align:center;border-top:4px solid #c41e3a;">
         <p style="color:#999;font-size:12px;margin:0;">
           Robinhood Adjusting · Wellington, FL ·

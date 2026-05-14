@@ -264,6 +264,29 @@ if [ "$DOW" -le 5 ]; then
   elif [ -f "$SEND_MARKER" ]; then
     log "  newsletter-send: already sent today, skip"
   fi
+
+  # 6:30am build-website — regenerate site HTML, commit, push to Netlify.
+  # Skip if today's brief HTML is already on site/. Re-run if it's missing
+  # (happens when the daily brief was generated late and 6:30 build missed it).
+  if [ "$MINS" -ge 390 ] && [ ! -e "$WORKSPACE/site/briefs/$TODAY.html" ] && [ -e "$WORKSPACE/content/briefs/$TODAY.html" ]; then
+    log "  build-website: running (site/briefs/$TODAY.html missing)"
+    if bash "$WORKSPACE/scripts/build-website.sh" >>"$LOG" 2>&1; then
+      log "  build-website: build OK, committing + pushing"
+      git -C "$WORKSPACE" add site/ >>"$LOG" 2>&1 || true
+      if ! git -C "$WORKSPACE" diff --cached --quiet; then
+        git -C "$WORKSPACE" commit -m "site: catchup sync $TODAY (build-website rerun)" >>"$LOG" 2>&1 \
+          && git -C "$WORKSPACE" push origin main >>"$LOG" 2>&1 \
+          && log "  build-website: pushed" \
+          || log "  build-website: commit/push ERROR"
+      else
+        log "  build-website: nothing to commit"
+      fi
+    else
+      log "  build-website: ERROR (see catchup.log)"
+    fi
+  elif [ -e "$WORKSPACE/site/briefs/$TODAY.html" ]; then
+    log "  build-website: site/briefs/$TODAY.html exists, skip"
+  fi
 fi
 
 # Mon 11am linkedin-sequencing
