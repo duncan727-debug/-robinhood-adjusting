@@ -152,3 +152,59 @@ ERROR: Gmail App Password not found in config.
 [2026-05-12 15:01]   ✓ Sent: Owner @ Gulfstream Cooling <followup@gulfstreamcooling.com>
 [2026-05-12 15:01] Batch 4 done — sent: 6, errors: 0
 [2026-05-12 15:01] === Batch 4 complete ===
+[2026-05-14 14:35] === Outreach batch 1 start (2026-05-14) ===
+[2026-05-14 14:35] Building today's send queue...
+[2026-05-14 14:35] Queue built: 25 contacts for today
+[2026-05-14 14:35] Sending 6 emails (batch 1, slots 0–5)...
+[2026-05-14 14:35]   ✓ Sent: Owner @ Superior Roofing of Florida, Inc. <info@superiorrooffl.com>
+[2026-05-14 14:35]   ✓ Sent: Owner @ Nik's Roofing LLC <besnik@niksroofing.com>
+[2026-05-14 14:35]   ✓ Sent: Owner @ Florida Coast Contracting & Roofing <info@floridacoastcontracting.com>
+[2026-05-14 14:35]   ✓ Sent: Owner @ Pro-Tech Corp <edweiner@protechair.com>
+[2026-05-14 14:36]   ✓ Sent: Owner @ CountrySide Loxahatchee HVAC Repair <info@loxahatcheecountrysidehvac.com>
+[2026-05-14 14:36]   ✓ Sent: Owner @ Flamingo Plumbing & Backflow <info@flamingoplumbing.com>
+[2026-05-14 14:36] Batch 1 done — sent: 6, errors: 0
+[2026-05-14 14:36]   ✓ Confirmation sent: there @  <duncanlittlejohn727@gmail.com>
+[2026-05-14 14:36]   ✓ Confirmation sent: R. @  <dlittlej54@gmail.com>
+[2026-05-14 14:36] Confirmation pass: 2 sent
+[2026-05-14 14:36] === Batch 1 complete ===
+[2026-05-14 14:36] === Outreach batch 2 start (2026-05-14) ===
+[2026-05-14 14:36] Sending 6 emails (batch 2, slots 6–11)...
+[2026-05-14 14:36]   ✓ Sent: Owner @ Palm Beach Property Management <service@pbpmflorida.com>
+[2026-05-14 14:37]   ✓ Sent: Owner @ SERAC Construction INC <info@seracconstruction.com>
+[2026-05-14 14:37]   ✓ Sent: Owner @ Circle Homes ⭕️ <info@circlehomespb.com>
+[2026-05-14 14:37]   ✓ Sent: Owner @ Steve Cury Construction <steve@stevecuryconstruction.com>
+[2026-05-14 14:37]   ✓ Sent: Owner @ The Phoenix Restoration Water Damage, Mold Remediation, Emergency Water Repair In Lake Worth <info@thephoenixrestoration.com>
+[2026-05-14 14:37]   ✓ Sent: Owner @ Whale Roofing & Construction <info@whaleroofing.com>
+[2026-05-14 14:37] Batch 2 done — sent: 6, errors: 0
+[2026-05-14 14:37] === Batch 2 complete ===
+[2026-05-14 14:37] === Outreach batch 3 start (2026-05-14) ===
+[2026-05-14 14:37] Sending 7 emails (batch 3, slots 12–18)...
+[2026-05-14 14:37]   ✓ Sent: Owner @ Proper Roofing Boca Raton <appointment@properoofing.com>
+[2026-05-14 14:38]   ✓ Sent: Owner @ Security Roofing Systems, Inc. <sales@securityroofing.com>
+[2026-05-14 14:38]   ✓ Sent: Owner @ Maze Roofing Boca Raton <info@maze-roofing.com>
+[2026-05-14 14:38]   ✓ Sent: Owner @ Bravo's Roofing, Inc. <info@bravosroof.com>
+[2026-05-14 14:38]   ✓ Sent: Owner @ Storm Roofing Inc <office@stormroofing3g.com>
+[2026-05-14 14:38]   ✓ Sent: Owner @ Palm Air Air Conditioning, Inc. <info@palmairac.com>
+[2026-05-14 14:38]   ✓ Sent: Owner @ AC Cool Air <info@accoolair.com>
+[2026-05-14 14:39] Batch 3 done — sent: 7, errors: 0
+[2026-05-14 14:39] === Batch 3 complete ===
+[2026-05-14 15:00] === Outreach batch 4 start (2026-05-14) ===
+[2026-05-14 15:00] Sending 6 emails (batch 4, slots 19–24)...
+[2026-05-14 15:00]   ✓ Sent: Owner @ Florida Cool <info@floridacool.com>
+[2026-05-14 15:00]   ✓ Sent: Owner @ JVAC LLC <jeremiah@jvac.me>
+[2026-05-14 15:00]   ✓ Sent: Owner @ Prime Air <info@primeairfl.com>
+[2026-05-14 15:00]   ✓ Sent: Owner @ IBERO PROPERTY MANAGEMENT & REAL ESTATE SERVICES <info@iberopropertymgmt.com>
+[2026-05-14 15:00]   ✓ Sent: Owner @ The Rental Authority <tk@therentalauthority.com>
+[2026-05-14 15:01]   ✓ Sent: Owner @ Shamrock Restoration <johnny@shamrockrestorationfl.com>
+[2026-05-14 15:01] Batch 4 done — sent: 6, errors: 0
+[2026-05-14 15:01] === Batch 4 complete ===
+[2026-05-14 15:00] === Outreach batch 4 start (2026-05-14) ===
+[2026-05-14 15:00] Sending 6 emails (batch 4, slots 19–24)...
+[2026-05-14 15:00]   ✓ Sent: Owner @ Florida Cool <info@floridacool.com>
+[2026-05-14 15:00]   ✓ Sent: Owner @ JVAC LLC <jeremiah@jvac.me>
+[2026-05-14 15:00]   ✓ Sent: Owner @ Prime Air <info@primeairfl.com>
+[2026-05-14 15:00]   ✓ Sent: Owner @ IBERO PROPERTY MANAGEMENT & REAL ESTATE SERVICES <info@iberopropertymgmt.com>
+[2026-05-14 15:00]   ✓ Sent: Owner @ The Rental Authority <tk@therentalauthority.com>
+[2026-05-14 15:01]   ✓ Sent: Owner @ Shamrock Restoration <johnny@shamrockrestorationfl.com>
+[2026-05-14 15:01] Batch 4 done — sent: 6, errors: 0
+[2026-05-14 15:01] === Batch 4 complete ===

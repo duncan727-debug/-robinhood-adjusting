@@ -107,3 +107,43 @@
 [2026-05-13T19:05:02]   1 messages to inspect
 [2026-05-13T19:05:02] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
 [2026-05-13T19:05:02] 
+[2026-05-14T14:14:19] === IMAP bridge run (last_uid=158) ===
+[2026-05-14T14:14:19] Fetching HubSpot contacts…
+[2026-05-14T14:14:20]   Loaded 185 contacts
+[2026-05-14T14:14:20] Connecting to Gmail IMAP…
+[2026-05-14T14:14:21]   14 messages to inspect
+[2026-05-14T14:14:28]   ✓ REPLY   → duncanlittlejohn727@gmail.com (contact 479251913405)  subject: =?utf-8?q?South_Florida_Property_Intelligence_=E2=80=94_May_
+[2026-05-14T14:14:28] === Done. Bounces logged: 0  Replies logged: 1  Max UID: 172 ===
+[2026-05-14T14:14:28] 
+[2026-05-14T14:14:19] === IMAP bridge run (last_uid=158) ===
+[2026-05-14T14:14:19] Fetching HubSpot contacts…
+[2026-05-14T14:14:20]   Loaded 185 contacts
+[2026-05-14T14:14:20] Connecting to Gmail IMAP…
+[2026-05-14T14:14:21]   14 messages to inspect
+[2026-05-14T14:14:28]   ✓ REPLY   → duncanlittlejohn727@gmail.com (contact 479251913405)  subject: =?utf-8?q?South_Florida_Property_Intelligence_=E2=80=94_May_
+[2026-05-14T14:14:28] === Done. Bounces logged: 0  Replies logged: 1  Max UID: 172 ===
+[2026-05-14T14:14:28] 
+[2026-05-14T14:56:33] === IMAP bridge run (last_uid=172) ===
+[2026-05-14T14:56:33] Fetching HubSpot contacts…
+[2026-05-14T14:56:34]   Loaded 188 contacts
+[2026-05-14T14:56:34] Connecting to Gmail IMAP…
+[2026-05-14T14:56:35]   5 messages to inspect
+[2026-05-14T14:56:37]   ✓ BOUNCE  → info@loxahatcheecountrysidehvac.com (contact 482718061252)  reason: 554 5.1.1 <info@loxahatcheecountrysidehvac.com>: Recipient address rejected: und
+[2026-05-14T14:56:38] === Done. Bounces logged: 1  Replies logged: 0  Max UID: 177 ===
+[2026-05-14T14:56:38] 
+[2026-05-14T15:05:01] === IMAP bridge run (last_uid=177) ===
+[2026-05-14T15:05:01] Fetching HubSpot contacts…
+[2026-05-14T15:05:02]   Loaded 188 contacts
+[2026-05-14T15:05:02] Connecting to Gmail IMAP…
+[2026-05-14T15:05:02]   1 messages to inspect
+[2026-05-14T15:05:04]   ✓ REPLY   → dlittlej54@gmail.com (contact 482126397154)  subject: =?Windows-1252?Q?Re:_South_Florida_Property_Intelligence_=97
+[2026-05-14T15:05:04] === Done. Bounces logged: 0  Replies logged: 1  Max UID: 178 ===
+[2026-05-14T15:05:04] 
+[2026-05-14T15:05:01] === IMAP bridge run (last_uid=177) ===
+[2026-05-14T15:05:01] Fetching HubSpot contacts…
+[2026-05-14T15:05:02]   Loaded 188 contacts
+[2026-05-14T15:05:02] Connecting to Gmail IMAP…
+[2026-05-14T15:05:02]   1 messages to inspect
+[2026-05-14T15:05:04]   ✓ REPLY   → dlittlej54@gmail.com (contact 482126397154)  subject: =?Windows-1252?Q?Re:_South_Florida_Property_Intelligence_=97
+[2026-05-14T15:05:04] === Done. Bounces logged: 0  Replies logged: 1  Max UID: 178 ===
+[2026-05-14T15:05:04] 

@@ -6,13 +6,18 @@ Reads crm/.prospect_pending.json, tries to find a real email for each company,
 then routes to one of three outcomes:
 
   Real email scraped  → HubSpot (company + contact, hs_lead_status=NEW)
-  Best-guess only     → HubSpot (company + contact, hs_lead_status=OPEN)
+  Best-guess only     → crm/review_queue/best_guess_YYYY-MM-DD.csv (Duncan reviews weekly)
   No website / failed → crm/.prospect_recycle.json (retry up to 3 days, then manual flag)
+
+Rationale: ~85% bounce rate on best-guess info@domain emails was tanking sender
+reputation. Per 2026-05-14 decision, OPEN/best-guess contacts are NOT auto-uploaded
+to HubSpot; they go to a CSV review queue for manual triage.
 
 State files (all gitignored):
   crm/.prospect_pending.json   — discovered today, awaiting enrichment
   crm/.prospect_recycle.json   — failed enrichment, queued for retry
   crm/.prospect_uploaded.json  — all-time list of names uploaded (dedup guard)
+  crm/review_queue/            — weekly CSV files of best-guesses for manual review
 
 Cron: runs at 10:00am Mon–Sat, 43 min after prospecting (9:17am).
 Outreach batch 2 at 10:30am picks up newly uploaded contacts.
@@ -34,6 +39,7 @@ PENDING_FILE    = WORKSPACE / "crm" / ".prospect_pending.json"
 RECYCLE_FILE    = WORKSPACE / "crm" / ".prospect_recycle.json"
 UPLOADED_FILE   = WORKSPACE / "crm" / ".prospect_uploaded.json"
 LOG_PATH        = WORKSPACE / "crm" / "email_enrichment.log"
+REVIEW_DIR      = WORKSPACE / "crm" / "review_queue"
 
 MAX_RECYCLE_ATTEMPTS = 3
 
@@ -256,7 +262,8 @@ def main():
     uploaded = set(load_json(UPLOADED_FILE))
     owner_id = get_owner_id()
 
-    ready_count = recycle_count = skip_count = manual_flag = 0
+    ready_count = best_guess_count = recycle_count = skip_count = manual_flag = 0
+    review_rows = []  # collect best-guess rows for CSV review queue
 
     # Process today's pending queue
     remaining_pending = []
@@ -273,16 +280,37 @@ def main():
         if email_status == "scraped":
             lead_status = "NEW"
         elif email_status == "best-guess":
-            lead_status = "OPEN"
+            # Don't upload best-guess to HubSpot — route to review queue.
+            log(f"  REVIEW (best-guess email): {name} | {email}")
+            review_rows.append({
+                "name":     name,
+                "sector":   prospect.get("sector", ""),
+                "city":     prospect.get("city", ""),
+                "phone":    prospect.get("phone", ""),
+                "website":  prospect.get("website", ""),
+                "rating":   prospect.get("rating", ""),
+                "guess_email": email,
+            })
+            uploaded.add(name)  # dedup so we don't re-process tomorrow
+            best_guess_count += 1
+            continue
         else:
             # No website or scrape failed — send to recycle
             prospect["attempts"] = prospect.get("attempts", 0) + 1
             if prospect["attempts"] >= MAX_RECYCLE_ATTEMPTS:
-                log(f"  FLAG (manual lookup needed): {name} — {MAX_RECYCLE_ATTEMPTS} attempts exhausted")
+                log(f"  FLAG (manual lookup needed, no website): {name}")
                 manual_flag += 1
-                # Still add to HubSpot but mark for review
-                lead_status = "OPEN"
-                email = None
+                review_rows.append({
+                    "name":     name,
+                    "sector":   prospect.get("sector", ""),
+                    "city":     prospect.get("city", ""),
+                    "phone":    prospect.get("phone", ""),
+                    "website":  prospect.get("website", ""),
+                    "rating":   prospect.get("rating", ""),
+                    "guess_email": "(no website — manual lookup needed)",
+                })
+                uploaded.add(name)
+                continue
             else:
                 log(f"  RECYCLE (attempt {prospect['attempts']}): {name} — no email found")
                 recycle.append(prospect)
@@ -299,8 +327,7 @@ def main():
         create_task(contact_id, prospect, email, lead_status, owner_id)
         uploaded.add(name)
         ready_count += 1
-        flag = "⚑ MANUAL" if manual_flag and email is None else ""
-        log(f"  ✓ {lead_status:4s} → HubSpot: {name} | {email or 'no email'} {flag}")
+        log(f"  ✓ NEW → HubSpot: {name} | {email}")
         time.sleep(0.2)
 
     # Process recycle queue (retry previous failures)
@@ -312,30 +339,39 @@ def main():
 
         email, email_status = scrape_email(prospect.get("website", ""))
 
-        if email_status in ("scraped", "best-guess"):
-            lead_status = "NEW" if email_status == "scraped" else "OPEN"
-            company_id  = create_company(prospect)
+        if email_status == "scraped":
+            company_id = create_company(prospect)
             if company_id:
-                contact_id = create_contact(prospect, company_id, email, lead_status)
-                create_task(contact_id, prospect, email, lead_status, owner_id)
+                contact_id = create_contact(prospect, company_id, email, "NEW")
+                create_task(contact_id, prospect, email, "NEW", owner_id)
                 uploaded.add(name)
                 ready_count += 1
                 log(f"  ✓ RECYCLED → HubSpot: {name} | {email}")
                 time.sleep(0.2)
             else:
                 still_recycling.append(prospect)
+        elif email_status == "best-guess":
+            log(f"  REVIEW (recycled, still best-guess): {name} | {email}")
+            review_rows.append({
+                "name": name, "sector": prospect.get("sector",""),
+                "city": prospect.get("city",""), "phone": prospect.get("phone",""),
+                "website": prospect.get("website",""), "rating": prospect.get("rating",""),
+                "guess_email": email,
+            })
+            uploaded.add(name)
+            best_guess_count += 1
         else:
             prospect["attempts"] = prospect.get("attempts", 0) + 1
             if prospect["attempts"] >= MAX_RECYCLE_ATTEMPTS:
                 log(f"  FLAG (manual lookup needed): {name}")
                 manual_flag += 1
-                # Upload anyway with no email so Duncan can see it
-                company_id = create_company(prospect)
-                if company_id:
-                    create_contact(prospect, company_id, None, "OPEN")
-                    create_task(contact_id=None, prospect=prospect, email=None,
-                                lead_status="OPEN", owner_id=owner_id)
-                    uploaded.add(name)
+                review_rows.append({
+                    "name": name, "sector": prospect.get("sector",""),
+                    "city": prospect.get("city",""), "phone": prospect.get("phone",""),
+                    "website": prospect.get("website",""), "rating": prospect.get("rating",""),
+                    "guess_email": "(no website — manual lookup needed)",
+                })
+                uploaded.add(name)
             else:
                 still_recycling.append(prospect)
 
@@ -344,22 +380,36 @@ def main():
     save_json(RECYCLE_FILE, still_recycling)
     save_json(UPLOADED_FILE, sorted(uploaded))
 
+    # Write review queue CSV (best-guess + manual-lookup-needed)
+    today = datetime.now().strftime("%Y-%m-%d")
+    if review_rows:
+        import csv as _csv
+        REVIEW_DIR.mkdir(parents=True, exist_ok=True)
+        out_path = REVIEW_DIR / f"best_guess_{today}.csv"
+        with out_path.open("w", newline="") as f:
+            w = _csv.DictWriter(f, fieldnames=["name","sector","city","phone","website","rating","guess_email"])
+            w.writeheader()
+            w.writerows(review_rows)
+        log(f"  Review queue: wrote {len(review_rows)} rows → {out_path}")
+
     log(f"=== Done ===")
-    log(f"  Uploaded to HubSpot : {ready_count}")
-    log(f"  Recycled (retry tmrw): {recycle_count}")
-    log(f"  Skipped (duplicates) : {skip_count}")
+    log(f"  Uploaded to HubSpot (NEW only): {ready_count}")
+    log(f"  Routed to review queue (best-guess): {best_guess_count}")
+    log(f"  Recycled (retry tomorrow): {recycle_count}")
+    log(f"  Skipped (duplicates): {skip_count}")
     log(f"  Flagged manual lookup: {manual_flag}")
 
     # Append summary to today's ops-review
-    today    = datetime.now().strftime("%Y-%m-%d")
     ops_file = WORKSPACE / "ops-review" / f"{today}.md"
-    with open(ops_file, "a") as f:
-        f.write(
-            f"\n## Email Enrichment Gate — {today}\n"
-            f"- Uploaded to HubSpot: {ready_count} (ready to email)\n"
-            f"- Recycled for retry: {recycle_count}\n"
-            f"- Manual lookup needed: {manual_flag}\n"
-        )
+    if ops_file.exists():
+        with open(ops_file, "a") as f:
+            f.write(
+                f"\n## Email Enrichment Gate — {today}\n"
+                f"- Uploaded to HubSpot (real email): {ready_count}\n"
+                f"- Best-guess routed to review queue: {best_guess_count}\n"
+                f"- Recycled for retry: {recycle_count}\n"
+                f"- Manual lookup needed: {manual_flag}\n"
+            )
 
 
 if __name__ == "__main__":

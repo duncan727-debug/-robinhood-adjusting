@@ -638,3 +638,76 @@
     QUEUED (25/25): Fides Restoration [Jupiter] — (561) 203-6083
   Done: 25 added, 46 duplicate/existing, 1 large firms skipped, 0 errors
   Google Places API: 2026-05-13 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-05-14 13:50:33] Palm Beach prospect run started
+  Searching: HVAC company Palm Beach County FL
+    → 18 results
+    QUEUED (1/25): EDS Air Conditioning & Plumbing [Lake Worth Beach] — (561) 586-7090
+    QUEUED (2/25): Premier Comfort Services, Inc. [West Palm Beach] — (561) 444-3670
+    QUEUED (3/25): Kelvin Comfort Air Conditioning - West Palm Beach [West Palm Beach] — (561) 584-3624
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+    QUEUED (4/25): Davies Plumbing Services [Wellington] — (561) 707-6884
+    QUEUED (5/25): Integrity Plumbing and Drain, Inc. [West Palm Beach] — (561) 310-6435
+    QUEUED (6/25): Hi-Tech Plumbing, Air & Electrical [West Palm Beach] — (561) 708-4989
+    QUEUED (7/25): General Plumbing [Lake Worth Beach] — (561) 328-0003
+    QUEUED (8/25): Emerson Plumbing, LLC. [Lake Worth Beach] — (561) 339-9360
+    QUEUED (9/25): Cleary Plumbing & Air [Lake Worth Beach] — (561) 954-3369
+    QUEUED (10/25): DiMartino Plumbing LLC [West Palm Beach] — (561) 652-2203
+    QUEUED (11/25): Palm Beach Plumbing & Rooter [West Palm Beach] — (561) 363-2991
+    QUEUED (12/25): Plumbtastic Plumbing [Wellington] — (561) 726-6430
+    QUEUED (13/25): Palm Beach Plumbing & Heater [Royal Palm Beach] — (561) 225-2101
+    QUEUED (14/25): Next Era Plumbing [Loxahatchee] — (561) 839-7569
+    QUEUED (15/25): North County Plumbing, Inc. [Riviera Beach] — (561) 625-9414
+  Searching: property management Palm Beach County FL
+    → 20 results
+    QUEUED (16/25): Palm Beach Managers [Boynton Beach] — (561) 877-6285
+    QUEUED (17/25): Top Notch Property Watch [Wellington] — (561) 781-0555
+    QUEUED (18/25): Florida Management Pro's Inc [Lake Worth Beach] — (561) 721-3511
+    QUEUED (19/25): Palm Beach Estate Management [Delray Beach] — (301) 343-0168
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (20/25): The Mastropieri Group, West Palm Beach Realtors [West Palm Beach] — (561) 556-9853
+    QUEUED (21/25): Pavon Realty Group, LLC - The Pavon Team [West Palm Beach] — (561) 693-3361
+    QUEUED (22/25): Modern Living Group [West Palm Beach] — (561) 228-8420
+    QUEUED (23/25): Florida Coastal Premier Realty [Wellington] — (561) 312-1050
+    QUEUED (24/25): Reliant Realty ERA Powered - Royal Palm Beach, FL [Royal Palm Beach] — (561) 810-8379
+    QUEUED (25/25): Palm Beach Realty Group [West Palm Beach] — (561) 594-4000
+  Done: 25 added, 44 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-14 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-05-14 13:50:49] Run complete
+
+  Searching: HVAC company Palm Beach County FL
+    → 18 results
+    QUEUED (1/25): EDS Air Conditioning & Plumbing [Lake Worth Beach] — (561) 586-7090
+    QUEUED (2/25): Premier Comfort Services, Inc. [West Palm Beach] — (561) 444-3670
+    QUEUED (3/25): Kelvin Comfort Air Conditioning - West Palm Beach [West Palm Beach] — (561) 584-3624
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+    QUEUED (4/25): Davies Plumbing Services [Wellington] — (561) 707-6884
+    QUEUED (5/25): Integrity Plumbing and Drain, Inc. [West Palm Beach] — (561) 310-6435
+    QUEUED (6/25): Hi-Tech Plumbing, Air & Electrical [West Palm Beach] — (561) 708-4989
+    QUEUED (7/25): General Plumbing [Lake Worth Beach] — (561) 328-0003
+    QUEUED (8/25): Emerson Plumbing, LLC. [Lake Worth Beach] — (561) 339-9360
+    QUEUED (9/25): Cleary Plumbing & Air [Lake Worth Beach] — (561) 954-3369
+    QUEUED (10/25): DiMartino Plumbing LLC [West Palm Beach] — (561) 652-2203
+    QUEUED (11/25): Palm Beach Plumbing & Rooter [West Palm Beach] — (561) 363-2991
+    QUEUED (12/25): Plumbtastic Plumbing [Wellington] — (561) 726-6430
+    QUEUED (13/25): Palm Beach Plumbing & Heater [Royal Palm Beach] — (561) 225-2101
+    QUEUED (14/25): Next Era Plumbing [Loxahatchee] — (561) 839-7569
+    QUEUED (15/25): North County Plumbing, Inc. [Riviera Beach] — (561) 625-9414
+  Searching: property management Palm Beach County FL
+    → 20 results
+    QUEUED (16/25): Palm Beach Managers [Boynton Beach] — (561) 877-6285
+    QUEUED (17/25): Top Notch Property Watch [Wellington] — (561) 781-0555
+    QUEUED (18/25): Florida Management Pro's Inc [Lake Worth Beach] — (561) 721-3511
+    QUEUED (19/25): Palm Beach Estate Management [Delray Beach] — (301) 343-0168
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (20/25): The Mastropieri Group, West Palm Beach Realtors [West Palm Beach] — (561) 556-9853
+    QUEUED (21/25): Pavon Realty Group, LLC - The Pavon Team [West Palm Beach] — (561) 693-3361
+    QUEUED (22/25): Modern Living Group [West Palm Beach] — (561) 228-8420
+    QUEUED (23/25): Florida Coastal Premier Realty [Wellington] — (561) 312-1050
+    QUEUED (24/25): Reliant Realty ERA Powered - Royal Palm Beach, FL [Royal Palm Beach] — (561) 810-8379
+    QUEUED (25/25): Palm Beach Realty Group [West Palm Beach] — (561) 594-4000
+  Done: 25 added, 44 duplicate/existing, 0 large firms skipped, 0 errors
+  Google Places API: 2026-05-14 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining

@@ -55,3 +55,14 @@ ERROR: Gmail App Password not found in config.
 [2026-05-13 09:00] Found 4 subscriber contacts across all lists
 [2026-05-13 09:00] Done — sent: 0 | skipped: 4 | errors: 0
 [2026-05-13 09:00] === Drip run complete ===
+[2026-05-14 14:41] === Drip sequence run start ===
+[2026-05-14 14:41] === Drip sequence run start ===
+ERROR: HUBSPOT_API_KEY not set.
+[2026-05-14 14:42] === Drip sequence run start ===
+[2026-05-14 14:42] Found 6 subscriber contacts across all lists
+[2026-05-14 14:42] Done — sent: 0 | skipped: 6 | errors: 0
+[2026-05-14 14:42] === Drip run complete ===
+[2026-05-14 14:42] === Drip sequence run start ===
+[2026-05-14 14:42] Found 6 subscriber contacts across all lists
+[2026-05-14 14:42] Done — sent: 0 | skipped: 6 | errors: 0
+[2026-05-14 14:42] === Drip run complete ===

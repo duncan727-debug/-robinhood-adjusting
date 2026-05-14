@@ -36,6 +36,8 @@ BOUNCE_SENDERS = (
     "noreply@bounce",
 )
 
+SELF_SKIP = {"duncanlittlejohn727@gmail.com"}
+
 FAILED_RECIPIENT_RE = re.compile(
     r"(?:Final-Recipient|X-Failed-Recipients|original_address|to=<)[^\n]*?([\w.\-+]+@[\w.\-]+\.[a-z]{2,})",
     re.I,
@@ -310,7 +312,7 @@ def main():
             continue
 
         # Reply path — sender's email matches a known contact
-        if from_addr in contacts_by_email:
+        if from_addr in contacts_by_email and from_addr not in SELF_SKIP:
             cid = contacts_by_email[from_addr]
             if uid not in state["processed_replies"]:
                 snippet = extract_snippet(msg)

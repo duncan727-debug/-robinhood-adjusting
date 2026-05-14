@@ -13,6 +13,16 @@ LOCK="$SCRIPTDIR/catchup.lock"
 
 mkdir -p "$SCRIPTDIR"
 
+# Source workspace secrets so child scripts inherit HUBSPOT_API_KEY,
+# GOOGLE_PLACES_API_KEY, GMAIL_APP_PASSWORD, etc. This matches what cron
+# gets via its inline env vars but covers LaunchAgent and manual invocations.
+if [ -f "$WORKSPACE/config/.secrets" ]; then
+  set -a
+  # shellcheck disable=SC1091
+  . "$WORKSPACE/config/.secrets"
+  set +a
+fi
+
 log() { echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] $*" >>"$LOG"; }
 
 # Single-instance guard via pidfile
@@ -150,9 +160,9 @@ if [ "$DOW" -le 5 ]; then
   # 7:30am ops-review
   check_and_run "$ID_OPS"      "weekday-ops-review"        450 "$WORKSPACE/ops-review/$TODAY.md"          15
 
-  # 9:17am prospecting — Google Places API pulls 25 PBC contacts
+  # 9:00am prospecting — Google Places API pulls 25 PBC contacts
   PROSPECT_MARKER_LINE=$(grep "^\[$TODAY.*Run complete" "$WORKSPACE/crm/prospect_palm_beach.log" 2>/dev/null | tail -1)
-  if [ "$MINS" -ge 557 ] && [ -z "$PROSPECT_MARKER_LINE" ]; then
+  if [ "$MINS" -ge 540 ] && [ -z "$PROSPECT_MARKER_LINE" ]; then
     log "  prospect_palm_beach: running"
     if /usr/bin/python3 "$WORKSPACE/scripts/prospect_palm_beach.py" >>"$WORKSPACE/crm/prospect_palm_beach.log" 2>&1; then
       log "  prospect_palm_beach: done"
@@ -163,6 +173,84 @@ if [ "$DOW" -le 5 ]; then
     log "  prospect_palm_beach: already ran today, skip"
   fi
 
+  # 9:00am drip — follow-up sequence on warm contacts
+  DRIP_MARKER_LINE=$(grep "^\[$TODAY.*=== Drip run complete ===" "$WORKSPACE/scripts/drip.log" 2>/dev/null | tail -1)
+  if [ "$MINS" -ge 540 ] && [ -z "$DRIP_MARKER_LINE" ]; then
+    log "  drip: running"
+    if /usr/bin/python3 "$WORKSPACE/scripts/drip.py" >>"$WORKSPACE/scripts/drip.log" 2>&1; then
+      log "  drip: done"
+    else
+      log "  drip: ERROR (see drip.log)"
+    fi
+  elif [ -n "$DRIP_MARKER_LINE" ]; then
+    log "  drip: already ran today, skip"
+  fi
+
+  # 10:00am enrichment gate — scrape emails, upload NEW to HubSpot, route guesses to review
+  ENRICH_MARKER_LINE=$(grep "^\[$TODAY.*=== Done ===" "$WORKSPACE/crm/email_enrichment.log" 2>/dev/null | tail -1)
+  if [ "$MINS" -ge 600 ] && [ -z "$ENRICH_MARKER_LINE" ]; then
+    log "  enrich_before_upload: running"
+    if /usr/bin/python3 "$WORKSPACE/scripts/enrich_before_upload.py" >>"$WORKSPACE/crm/email_enrichment.log" 2>&1; then
+      log "  enrich_before_upload: done"
+    else
+      log "  enrich_before_upload: ERROR (see email_enrichment.log)"
+    fi
+  elif [ -n "$ENRICH_MARKER_LINE" ]; then
+    log "  enrich_before_upload: already ran today, skip"
+  fi
+
+  # Outreach send batches — 8am, 10:30am, 12:30pm, 3pm
+  # Marker pattern: "[YYYY-MM-DD HH:MM] === Batch N complete ==="
+  run_outreach_batch() {
+    local batch="$1"
+    local sched_min="$2"
+    local label="batch $batch"
+    if [ "$MINS" -lt "$sched_min" ]; then
+      return 0
+    fi
+    local marker
+    marker=$(grep "^\[$TODAY.*=== Batch $batch complete ===" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null | tail -1)
+    if [ -n "$marker" ]; then
+      log "  outreach $label: already ran today, skip"
+      return 0
+    fi
+    log "  outreach $label: running"
+    if OUTREACH_BATCH="$batch" /usr/bin/python3 "$WORKSPACE/scripts/send_outreach.py" >>"$WORKSPACE/scripts/outreach_send.log" 2>&1; then
+      log "  outreach $label: done"
+    else
+      log "  outreach $label: ERROR (see outreach_send.log)"
+    fi
+  }
+  run_outreach_batch 1 480   #  8:00 AM
+  run_outreach_batch 2 630   # 10:30 AM
+  run_outreach_batch 3 750   # 12:30 PM
+  run_outreach_batch 4 900   #  3:00 PM
+fi
+
+# IMAP bridge — hourly at :05. Catch up if the most recent run is > 75 min old.
+# Log timestamp format: [YYYY-MM-DDTHH:MM:SS] (ISO). Runs every day.
+IMAP_LAST_LINE=$(grep -E "^\[[0-9-]+T[0-9:]+\]" "$WORKSPACE/scripts/imap_bridge.log" 2>/dev/null | tail -1)
+if [ -n "$IMAP_LAST_LINE" ]; then
+  IMAP_LAST_TS=$(echo "$IMAP_LAST_LINE" | sed -E 's/^\[([0-9-]+)T([0-9:]+)\].*/\1 \2/')
+  IMAP_LAST_EPOCH=$(TZ=America/New_York date -j -f "%Y-%m-%d %H:%M:%S" "$IMAP_LAST_TS" +%s 2>/dev/null || echo 0)
+  IMAP_NOW_EPOCH=$(date +%s)
+  IMAP_AGE_MIN=$(( (IMAP_NOW_EPOCH - IMAP_LAST_EPOCH) / 60 ))
+else
+  IMAP_AGE_MIN=9999
+fi
+if [ "$IMAP_AGE_MIN" -gt 75 ]; then
+  log "  imap_bridge: last run was ${IMAP_AGE_MIN}m ago, running"
+  if /usr/bin/python3 "$WORKSPACE/scripts/imap_bridge.py" >>"$WORKSPACE/scripts/imap_bridge.log" 2>&1; then
+    log "  imap_bridge: done"
+  else
+    log "  imap_bridge: ERROR (see imap_bridge.log)"
+  fi
+else
+  log "  imap_bridge: ran ${IMAP_AGE_MIN}m ago, skip"
+fi
+
+# Weekday-only jobs that run after the daily IMAP check.
+if [ "$DOW" -le 5 ]; then
   # 5:45am newsletter send — after brief is ready
   SEND_MARKER="$WORKSPACE/scripts/.newsletter-sent-$TODAY"
   if [ "$MINS" -ge 345 ] && [ ! -f "$SEND_MARKER" ] && [ -e "$WORKSPACE/briefs/$TODAY.md" ]; then

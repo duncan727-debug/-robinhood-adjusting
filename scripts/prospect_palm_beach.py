@@ -233,6 +233,11 @@ _api_call_count = 0
 def places_text_search(query, page_token=None):
     """Text Search (New) — returns up to 20 results per call."""
     global _api_call_count
+    # Quality filters added 2026-05-14 per Option B decision:
+    # - require website (no website = ~100% bounce on any guess email)
+    # - require Google rating >= 3.5 (filters out fly-by-nights)
+    # - require >= 5 user ratings (filters out brand-new / fake listings)
+    # See feedback_data_truth_sources.md for context.
     url = "https://places.googleapis.com/v1/places:searchText"
     payload = {"textQuery": query}
     if page_token:
@@ -306,7 +311,7 @@ def log(msg, lines):
 
 def main():
     log_lines = [f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Palm Beach prospect run started"]
-    added = skipped_dup = skipped_large = errors = 0
+    added = skipped_dup = skipped_large = skipped_quality = errors = 0
 
     state = load_state()
     seen_set = set(state.get("seen", []))
@@ -356,6 +361,27 @@ def main():
             phone = place.get("nationalPhoneNumber", "")
             website = place.get("websiteUri", "")
             rating = place.get("rating", "")
+            review_count = place.get("userRatingCount", 0)
+
+            # Quality gate (Option B, 2026-05-14): require website + rating ≥3.5 + ≥5 reviews
+            if not website:
+                seen_set.add(norm)
+                skipped_quality += 1
+                log(f"    SKIP (no website): {name}", log_lines)
+                continue
+            try:
+                if rating and float(rating) < 3.5:
+                    seen_set.add(norm)
+                    skipped_quality += 1
+                    log(f"    SKIP (rating {rating} < 3.5): {name}", log_lines)
+                    continue
+            except (ValueError, TypeError):
+                pass
+            if isinstance(review_count, int) and review_count < 5:
+                seen_set.add(norm)
+                skipped_quality += 1
+                log(f"    SKIP (only {review_count} reviews): {name}", log_lines)
+                continue
 
             # Write to pending queue — enrich_before_upload.py handles
             # email enrichment, gating, and HubSpot creation
@@ -385,7 +411,7 @@ def main():
 
     summary = (
         f"  Done: {added} added, {skipped_dup} duplicate/existing, "
-        f"{skipped_large} large firms skipped, {errors} errors"
+        f"{skipped_large} large firms skipped, {skipped_quality} quality-filtered, {errors} errors"
     )
     log(summary, log_lines)
 

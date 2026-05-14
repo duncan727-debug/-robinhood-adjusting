@@ -97,7 +97,8 @@ def hs(method, path, body=None, token=""):
     return 0, {}
 
 def get_eligible_contacts(token):
-    """Return contacts with email whose hs_lead_status is NEW or OPEN."""
+    """Return contacts with email whose hs_lead_status is NEW (verified scraped email only).
+    OPEN status (best-guess info@) is excluded to protect sender reputation from bounces."""
     contacts = []
     after = None
     while True:
@@ -106,10 +107,6 @@ def get_eligible_contacts(token):
                 {"filters": [
                     {"propertyName": "email", "operator": "HAS_PROPERTY"},
                     {"propertyName": "hs_lead_status", "operator": "EQ", "value": "NEW"},
-                ]},
-                {"filters": [
-                    {"propertyName": "email", "operator": "HAS_PROPERTY"},
-                    {"propertyName": "hs_lead_status", "operator": "EQ", "value": "OPEN"},
                 ]},
             ],
             "properties": ["firstname", "lastname", "email", "phone", "company", "hs_lead_status"],

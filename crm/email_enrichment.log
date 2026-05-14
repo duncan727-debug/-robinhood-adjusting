@@ -432,3 +432,43 @@ Contacts missing email: 12
 [2026-05-13 10:39]   Recycled (retry tmrw): 7
 [2026-05-13 10:39]   Skipped (duplicates) : 0
 [2026-05-13 10:39]   Flagged manual lookup: 4
+[2026-05-14 14:31] === enrich_before_upload start ===
+[2026-05-14 14:31]   SKIP (already in HubSpot): EDS Air Conditioning & Plumbing
+[2026-05-14 14:31]   REVIEW (best-guess email): Premier Comfort Services, Inc. | info@premiercomfortac.com
+[2026-05-14 14:31]   REVIEW (best-guess email): Kelvin Comfort Air Conditioning - West Palm Beach | info@kelvincomfortac.com
+[2026-05-14 14:31]   REVIEW (best-guess email): Davies Plumbing Services | info@desllc.co
+[2026-05-14 14:32]   REVIEW (best-guess email): Integrity Plumbing and Drain, Inc. | info@integrityplumber.com
+[2026-05-14 14:32]   REVIEW (best-guess email): Hi-Tech Plumbing, Air & Electrical | info@hi-techplumbingandair.com
+[2026-05-14 14:32]   REVIEW (best-guess email): General Plumbing | info@generalplumbing.com
+[2026-05-14 14:32]   RECYCLE (attempt 1): Emerson Plumbing, LLC. — no email found
+[2026-05-14 14:32]   REVIEW (best-guess email): Cleary Plumbing & Air | info@clearyplumbing.com
+[2026-05-14 14:32]   REVIEW (best-guess email): DiMartino Plumbing LLC | info@dimartinoplumbing.com
+[2026-05-14 14:32]   SKIP (already in HubSpot): Palm Beach Plumbing & Rooter
+[2026-05-14 14:32]   SKIP (already in HubSpot): Plumbtastic Plumbing
+[2026-05-14 14:32]   RECYCLE (attempt 1): Palm Beach Plumbing & Heater — no email found
+[2026-05-14 14:32]   SKIP (already in HubSpot): Next Era Plumbing
+[2026-05-14 14:32]   SKIP (already in HubSpot): North County Plumbing, Inc.
+[2026-05-14 14:32]   REVIEW (best-guess email): Palm Beach Managers | info@palmbeach4rent.com
+[2026-05-14 14:32]   SKIP (already in HubSpot): Top Notch Property Watch
+[2026-05-14 14:32]   ✓ NEW → HubSpot: Florida Management Pro's Inc | cara@callfmp.com
+[2026-05-14 14:32]   SKIP (already in HubSpot): Palm Beach Estate Management
+[2026-05-14 14:32]   ✓ NEW → HubSpot: The Mastropieri Group, West Palm Beach Realtors | larry@discoversouthflorida.com
+[2026-05-14 14:33]   ✓ NEW → HubSpot: Pavon Realty Group, LLC - The Pavon Team | info@pavonrealtygroup.com
+[2026-05-14 14:33]   REVIEW (best-guess email): Modern Living Group | info@modernlivingre.com
+[2026-05-14 14:33]   REVIEW (best-guess email): Florida Coastal Premier Realty | info@floridacoastalpremierrealty.com
+[2026-05-14 14:33]   REVIEW (best-guess email): Reliant Realty ERA Powered - Royal Palm Beach, FL | info@reliantrealty.com
+[2026-05-14 14:33]   REVIEW (best-guess email): Palm Beach Realty Group | info@pbrealtygroup.com
+[2026-05-14 14:33]   FLAG (manual lookup needed): Roofing Services W Palm Beach
+[2026-05-14 14:33]   FLAG (manual lookup needed): America HVAC Services Boca Raton
+[2026-05-14 14:33]   FLAG (manual lookup needed): AC Xperts of Florida, Inc.
+[2026-05-14 14:33]   FLAG (manual lookup needed): Boca Raton HVAC Services
+[2026-05-14 14:33]   FLAG (manual lookup needed): Insurance Damage Repair
+[2026-05-14 14:33]   FLAG (manual lookup needed): Ares Restoration
+[2026-05-14 14:33]   FLAG (manual lookup needed): Water Damage Restoration & Mold Removal
+[2026-05-14 14:33]   Review queue: wrote 20 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-14.csv
+[2026-05-14 14:33] === Done ===
+[2026-05-14 14:33]   Uploaded to HubSpot (NEW only): 3
+[2026-05-14 14:33]   Routed to review queue (best-guess): 13
+[2026-05-14 14:33]   Recycled (retry tomorrow): 2
+[2026-05-14 14:33]   Skipped (duplicates): 7
+[2026-05-14 14:33]   Flagged manual lookup: 7
