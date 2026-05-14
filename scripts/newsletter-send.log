@@ -239,3 +239,6 @@ ERROR: HUBSPOT_API_KEY not set and fallback not found.
 [2026-05-13 09:04]   [real-estate] 0 subscribers in list 20
 [2026-05-13 09:04]   [real-estate] No subscribers — skipping
 [2026-05-13 09:04] === Done — total sent: 4 | total failed: 0 ===
+[2026-05-13 09:09] === Daily brief send start: 2026-05-13 ===
+[2026-05-13 09:09] Already sent for 2026-05-13 — skipping (delete .newsletter-sent-2026-05-13 to force resend)
+[2026-05-13 09:09] SUCCESS: Newsletter already sent for 2026-05-13 (idempotent check)

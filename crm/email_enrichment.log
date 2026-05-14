@@ -312,3 +312,123 @@ Contacts missing email: 12
 [2026-05-11 19:11]   Recycled (retry tmrw): 4
 [2026-05-11 19:11]   Skipped (duplicates) : 3
 [2026-05-11 19:11]   Flagged manual lookup: 0
+[2026-05-13 10:00] === enrich_before_upload start ===
+[2026-05-13 10:00]   ✓ NEW  → HubSpot: Bravo's Roofing, Inc. | info@bravosroof.com 
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: AR1 Roofing Company West Palm Beach | info@ar1roofing.com 
+[2026-05-13 10:00]   ✓ NEW  → HubSpot: Storm Roofing Inc | office@stormroofing3g.com 
+[2026-05-13 10:00]   RECYCLE (attempt 1): Roofing Services W Palm Beach — no email found
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: Marzo Roofing West Palm Beach | info@marzoroofing.com 
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: Boss Roofing Inc. | info@boss-roofing.com 
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: American Air Conditioning of Boca | info@americanacco.com 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: M & R Air Conditioning Services | info@mrac.services 
+[2026-05-13 10:01]   ✓ NEW  → HubSpot: Palm Air Air Conditioning, Inc. | info@palmairac.com 
+[2026-05-13 10:01]   RECYCLE (attempt 1): America HVAC Services Boca Raton — no email found
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: Friendly A/C | info@friendlyac.com 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: South Florida Air Conditioning Inc | info@southfloridaair.com 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: East Coast Services, Inc | info@eastcoastservicesinc.net 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: Southern Coast Air Conditioning, Plumbing & Electric Repair | info@southerncoastservices.com 
+[2026-05-13 10:01]   RECYCLE (attempt 1): AC Xperts of Florida, Inc. — no email found
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: Aire Serv of Boca Raton | info@aireserv.com 
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: Florida Cooling Group LLC | info@floridacoolinggroup.com 
+[2026-05-13 10:02]   RECYCLE (attempt 1): Boca Raton HVAC Services — no email found
+[2026-05-13 10:02]   ✓ NEW  → HubSpot: AC Cool Air | info@accoolair.com 
+[2026-05-13 10:02]   ✓ NEW  → HubSpot: Florida Cool | info@floridacool.com 
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: Air Light AC Service Inc | info@airlightac.com 
+[2026-05-13 10:02]   ✓ NEW  → HubSpot: JVAC LLC | jeremiah@jvac.me 
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: 4Seasons HVAC Repair | info@seasonshvacrepair.homes 
+[2026-05-13 10:03]   ✓ NEW  → HubSpot: Prime Air | info@primeairfl.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: Comfort Masters HVAC Repair | info@comfortmastershvacrepair.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: Seacrest Services | info@seacrestservices.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: Benco Property Management | info@bencopm.com 
+[2026-05-13 10:03]   ✓ NEW  → HubSpot: IBERO PROPERTY MANAGEMENT & REAL ESTATE SERVICES | info@iberopropertymgmt.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: FPB Investment Properties | info@fpbinvestor.com 
+[2026-05-13 10:04]   ✓ OPEN → HubSpot: Eden Property Management Group | info@edenpmg.com 
+[2026-05-13 10:04]   ✓ NEW  → HubSpot: The Rental Authority | tk@therentalauthority.com 
+[2026-05-13 10:04]   RECYCLE (attempt 1): Insurance Damage Repair — no email found
+[2026-05-13 10:04]   ✓ OPEN → HubSpot: Insurance Reconstruction Services, LLC | info@insurancereconstructionservices.com 
+[2026-05-13 10:04]   ✓ OPEN → HubSpot: All Claims Repairs | info@allclaimsrepairs.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: Insurance General Contractors | info@igcflorida.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: Restore Remodel Renew LLC | info@restoreremodelrenew.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: CR Restoration | Mold & Water Damage Experts | info@cohenrestoration.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: Cohen’s Restoration Experts LLC | info@cohenrestoration.com 
+[2026-05-13 10:20]   ✓ NEW  → HubSpot: Shamrock Restoration | johnny@shamrockrestorationfl.com 
+[2026-05-13 10:37]   ✓ OPEN → HubSpot: J & R Restoration Services | info@jnrrestoration.com 
+[2026-05-13 10:37]   ✓ OPEN → HubSpot: Entrusted | info@entrusted.com 
+[2026-05-13 10:37]   ✓ OPEN → HubSpot: Joe Taylor Restoration - Southeast Florida | info@jtrestoration.com 
+[2026-05-13 10:37]   RECYCLE (attempt 1): Ares Restoration — no email found
+[2026-05-13 10:38]   ✓ OPEN → HubSpot: Orca Restoration LLC | info@orcapropertyrestoration.com 
+[2026-05-13 10:38]   ✓ OPEN → HubSpot: South Star Roofing | info@southstarroofing.com 
+[2026-05-13 10:38]   ✓ OPEN → HubSpot: Zavala's Pro Roofing | info@zavalasproroofing.com 
+[2026-05-13 10:39]   ✓ OPEN → HubSpot: Best American Roofing LLC | info@bestamericanroofing1.com 
+[2026-05-13 10:39]   RECYCLE (attempt 1): Water Damage Restoration & Mold Removal — no email found
+[2026-05-13 10:39]   ✓ OPEN → HubSpot: Clean Restoration & Recovery, Inc. | info@clean-restoration.com 
+[2026-05-13 10:39]   ✓ OPEN → HubSpot: Fides Restoration | info@fidesrestoration.com 
+[2026-05-13 10:39]   FLAG (manual lookup needed): Rapid Water Damage Restoration Wellington FL
+[2026-05-13 10:39]   FLAG (manual lookup needed): Shield Water Damage Restoration West Palm Beach FL
+[2026-05-13 10:39]   FLAG (manual lookup needed): Roofing Company Boca Raton
+[2026-05-13 10:39]   FLAG (manual lookup needed): ROOFING RECOVERY OF FLORIDA INC
+[2026-05-13 10:39] === Done ===
+[2026-05-13 10:39]   Uploaded to HubSpot : 43
+[2026-05-13 10:39]   Recycled (retry tmrw): 7
+[2026-05-13 10:39]   Skipped (duplicates) : 0
+[2026-05-13 10:39]   Flagged manual lookup: 4
+[2026-05-13 10:00] === enrich_before_upload start ===
+[2026-05-13 10:00]   ✓ NEW  → HubSpot: Bravo's Roofing, Inc. | info@bravosroof.com 
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: AR1 Roofing Company West Palm Beach | info@ar1roofing.com 
+[2026-05-13 10:00]   ✓ NEW  → HubSpot: Storm Roofing Inc | office@stormroofing3g.com 
+[2026-05-13 10:00]   RECYCLE (attempt 1): Roofing Services W Palm Beach — no email found
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: Marzo Roofing West Palm Beach | info@marzoroofing.com 
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: Boss Roofing Inc. | info@boss-roofing.com 
+[2026-05-13 10:00]   ✓ OPEN → HubSpot: American Air Conditioning of Boca | info@americanacco.com 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: M & R Air Conditioning Services | info@mrac.services 
+[2026-05-13 10:01]   ✓ NEW  → HubSpot: Palm Air Air Conditioning, Inc. | info@palmairac.com 
+[2026-05-13 10:01]   RECYCLE (attempt 1): America HVAC Services Boca Raton — no email found
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: Friendly A/C | info@friendlyac.com 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: South Florida Air Conditioning Inc | info@southfloridaair.com 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: East Coast Services, Inc | info@eastcoastservicesinc.net 
+[2026-05-13 10:01]   ✓ OPEN → HubSpot: Southern Coast Air Conditioning, Plumbing & Electric Repair | info@southerncoastservices.com 
+[2026-05-13 10:01]   RECYCLE (attempt 1): AC Xperts of Florida, Inc. — no email found
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: Aire Serv of Boca Raton | info@aireserv.com 
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: Florida Cooling Group LLC | info@floridacoolinggroup.com 
+[2026-05-13 10:02]   RECYCLE (attempt 1): Boca Raton HVAC Services — no email found
+[2026-05-13 10:02]   ✓ NEW  → HubSpot: AC Cool Air | info@accoolair.com 
+[2026-05-13 10:02]   ✓ NEW  → HubSpot: Florida Cool | info@floridacool.com 
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: Air Light AC Service Inc | info@airlightac.com 
+[2026-05-13 10:02]   ✓ NEW  → HubSpot: JVAC LLC | jeremiah@jvac.me 
+[2026-05-13 10:02]   ✓ OPEN → HubSpot: 4Seasons HVAC Repair | info@seasonshvacrepair.homes 
+[2026-05-13 10:03]   ✓ NEW  → HubSpot: Prime Air | info@primeairfl.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: Comfort Masters HVAC Repair | info@comfortmastershvacrepair.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: Seacrest Services | info@seacrestservices.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: Benco Property Management | info@bencopm.com 
+[2026-05-13 10:03]   ✓ NEW  → HubSpot: IBERO PROPERTY MANAGEMENT & REAL ESTATE SERVICES | info@iberopropertymgmt.com 
+[2026-05-13 10:03]   ✓ OPEN → HubSpot: FPB Investment Properties | info@fpbinvestor.com 
+[2026-05-13 10:04]   ✓ OPEN → HubSpot: Eden Property Management Group | info@edenpmg.com 
+[2026-05-13 10:04]   ✓ NEW  → HubSpot: The Rental Authority | tk@therentalauthority.com 
+[2026-05-13 10:04]   RECYCLE (attempt 1): Insurance Damage Repair — no email found
+[2026-05-13 10:04]   ✓ OPEN → HubSpot: Insurance Reconstruction Services, LLC | info@insurancereconstructionservices.com 
+[2026-05-13 10:04]   ✓ OPEN → HubSpot: All Claims Repairs | info@allclaimsrepairs.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: Insurance General Contractors | info@igcflorida.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: Restore Remodel Renew LLC | info@restoreremodelrenew.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: CR Restoration | Mold & Water Damage Experts | info@cohenrestoration.com 
+[2026-05-13 10:20]   ✓ OPEN → HubSpot: Cohen’s Restoration Experts LLC | info@cohenrestoration.com 
+[2026-05-13 10:20]   ✓ NEW  → HubSpot: Shamrock Restoration | johnny@shamrockrestorationfl.com 
+[2026-05-13 10:37]   ✓ OPEN → HubSpot: J & R Restoration Services | info@jnrrestoration.com 
+[2026-05-13 10:37]   ✓ OPEN → HubSpot: Entrusted | info@entrusted.com 
+[2026-05-13 10:37]   ✓ OPEN → HubSpot: Joe Taylor Restoration - Southeast Florida | info@jtrestoration.com 
+[2026-05-13 10:37]   RECYCLE (attempt 1): Ares Restoration — no email found
+[2026-05-13 10:38]   ✓ OPEN → HubSpot: Orca Restoration LLC | info@orcapropertyrestoration.com 
+[2026-05-13 10:38]   ✓ OPEN → HubSpot: South Star Roofing | info@southstarroofing.com 
+[2026-05-13 10:38]   ✓ OPEN → HubSpot: Zavala's Pro Roofing | info@zavalasproroofing.com 
+[2026-05-13 10:39]   ✓ OPEN → HubSpot: Best American Roofing LLC | info@bestamericanroofing1.com 
+[2026-05-13 10:39]   RECYCLE (attempt 1): Water Damage Restoration & Mold Removal — no email found
+[2026-05-13 10:39]   ✓ OPEN → HubSpot: Clean Restoration & Recovery, Inc. | info@clean-restoration.com 
+[2026-05-13 10:39]   ✓ OPEN → HubSpot: Fides Restoration | info@fidesrestoration.com 
+[2026-05-13 10:39]   FLAG (manual lookup needed): Rapid Water Damage Restoration Wellington FL
+[2026-05-13 10:39]   FLAG (manual lookup needed): Shield Water Damage Restoration West Palm Beach FL
+[2026-05-13 10:39]   FLAG (manual lookup needed): Roofing Company Boca Raton
+[2026-05-13 10:39]   FLAG (manual lookup needed): ROOFING RECOVERY OF FLORIDA INC
+[2026-05-13 10:39] === Done ===
+[2026-05-13 10:39]   Uploaded to HubSpot : 43
+[2026-05-13 10:39]   Recycled (retry tmrw): 7
+[2026-05-13 10:39]   Skipped (duplicates) : 0
+[2026-05-13 10:39]   Flagged manual lookup: 4

@@ -51,3 +51,59 @@
 [2026-05-13T09:05:02]   12 messages to inspect
 [2026-05-13T09:05:06] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 147 ===
 [2026-05-13T09:05:06] 
+[2026-05-13T14:05:00] === IMAP bridge run (last_uid=147) ===
+[2026-05-13T14:05:00] Fetching HubSpot contacts…
+[2026-05-13T14:05:01]   Loaded 194 contacts
+[2026-05-13T14:05:01] Connecting to Gmail IMAP…
+[2026-05-13T14:05:02]   7 messages to inspect
+[2026-05-13T14:05:04] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 154 ===
+[2026-05-13T14:05:04] 
+[2026-05-13T14:05:00] === IMAP bridge run (last_uid=147) ===
+[2026-05-13T14:05:00] Fetching HubSpot contacts…
+[2026-05-13T14:05:01]   Loaded 194 contacts
+[2026-05-13T14:05:01] Connecting to Gmail IMAP…
+[2026-05-13T14:05:02]   7 messages to inspect
+[2026-05-13T14:05:04] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 154 ===
+[2026-05-13T14:05:04] 
+[2026-05-13T17:05:01] === IMAP bridge run (last_uid=154) ===
+[2026-05-13T17:05:01] Fetching HubSpot contacts…
+[2026-05-13T17:05:02]   Loaded 194 contacts
+[2026-05-13T17:05:02] Connecting to Gmail IMAP…
+[2026-05-13T17:05:03]   4 messages to inspect
+[2026-05-13T17:05:04] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
+[2026-05-13T17:05:04] 
+[2026-05-13T17:05:01] === IMAP bridge run (last_uid=154) ===
+[2026-05-13T17:05:01] Fetching HubSpot contacts…
+[2026-05-13T17:05:02]   Loaded 194 contacts
+[2026-05-13T17:05:02] Connecting to Gmail IMAP…
+[2026-05-13T17:05:03]   4 messages to inspect
+[2026-05-13T17:05:04] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
+[2026-05-13T17:05:04] 
+[2026-05-13T18:05:01] === IMAP bridge run (last_uid=158) ===
+[2026-05-13T18:05:01] Fetching HubSpot contacts…
+[2026-05-13T18:05:02]   Loaded 194 contacts
+[2026-05-13T18:05:02] Connecting to Gmail IMAP…
+[2026-05-13T18:05:03]   1 messages to inspect
+[2026-05-13T18:05:03] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
+[2026-05-13T18:05:03] 
+[2026-05-13T18:05:01] === IMAP bridge run (last_uid=158) ===
+[2026-05-13T18:05:01] Fetching HubSpot contacts…
+[2026-05-13T18:05:02]   Loaded 194 contacts
+[2026-05-13T18:05:02] Connecting to Gmail IMAP…
+[2026-05-13T18:05:03]   1 messages to inspect
+[2026-05-13T18:05:03] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
+[2026-05-13T18:05:03] 
+[2026-05-13T19:05:00] === IMAP bridge run (last_uid=158) ===
+[2026-05-13T19:05:00] Fetching HubSpot contacts…
+[2026-05-13T19:05:02]   Loaded 189 contacts
+[2026-05-13T19:05:02] Connecting to Gmail IMAP…
+[2026-05-13T19:05:02]   1 messages to inspect
+[2026-05-13T19:05:02] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
+[2026-05-13T19:05:02] 
+[2026-05-13T19:05:00] === IMAP bridge run (last_uid=158) ===
+[2026-05-13T19:05:00] Fetching HubSpot contacts…
+[2026-05-13T19:05:02]   Loaded 189 contacts
+[2026-05-13T19:05:02] Connecting to Gmail IMAP…
+[2026-05-13T19:05:02]   1 messages to inspect
+[2026-05-13T19:05:02] === Done. Bounces logged: 0  Replies logged: 0  Max UID: 158 ===
+[2026-05-13T19:05:02] 
