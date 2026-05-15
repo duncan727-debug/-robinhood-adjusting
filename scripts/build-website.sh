@@ -28,9 +28,32 @@ for md in sorted(briefs_dir.glob("[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md"
         print(f"[OK] Generated HTML brief for {date_str}")
 PYEOF
 
-# ── Sync brief HTML files ────────────────────────────────────────────────────
+# ── Sync brief HTML files (wrap with branded template) ───────────────────────
 mkdir -p site/briefs
-cp content/briefs/2026-*.html site/briefs/ 2>/dev/null || true
+python3 - << 'PYEOF'
+import importlib.util, pathlib, re
+
+spec = importlib.util.spec_from_file_location(
+    "send_daily_brief",
+    "/Users/victoria/.openclaw/workspace/scripts/send-daily-brief.py"
+)
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+
+src = pathlib.Path("/Users/victoria/.openclaw/workspace/content/briefs")
+dst = pathlib.Path("/Users/victoria/.openclaw/workspace/site/briefs")
+dst.mkdir(parents=True, exist_ok=True)
+
+DATE_RE = re.compile(r"^(2026-\d{2}-\d{2})(?:-[a-z-]+)?$")
+
+for p in sorted(src.glob("2026-*.html")):
+    m = DATE_RE.match(p.stem)
+    if not m:
+        continue
+    date_str = m.group(1)
+    wrapped = mod.wrap_brief_for_web(p.read_text(), date_str)
+    (dst / p.name).write_text(wrapped)
+PYEOF
 
 # ── Sync trends HTML files ───────────────────────────────────────────────────
 mkdir -p site/trends

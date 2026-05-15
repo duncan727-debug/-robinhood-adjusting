@@ -220,7 +220,7 @@ def _inline(text):
 
 
 def ensure_html_brief(date_str):
-    """Convert markdown brief to HTML if HTML doesn't exist yet."""
+    """Convert markdown brief to bare-body HTML used as the source for email + web wrapping."""
     html_path = BRIEFS_DIR / f"{date_str}.html"
     if html_path.exists():
         return
@@ -263,8 +263,19 @@ def get_brief_html(date_str, segment_key=None):
     return m.group(1).strip() if m else html
 
 
-def build_email_html(body_content, date_str, subject):
+def build_brief_page_html(body_content, date_str, subject, *, include_unsubscribe=False):
+    """Branded brief wrapper used for both website pages and email broadcasts.
+
+    Set include_unsubscribe=True for email; the unsubscribe line is omitted for
+    public web pages, where it doesn't apply.
+    """
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
+    unsubscribe_html = (
+        '<p style="color:#666;font-size:11px;margin:8px 0 0;">'
+        "You're receiving this because you subscribed at robinhoodadjusting.com. "
+        'To unsubscribe, reply with "unsubscribe" in the subject line.'
+        "</p>"
+    ) if include_unsubscribe else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -299,16 +310,35 @@ def build_email_html(body_content, date_str, subject):
           &nbsp;·&nbsp;
           <a href="https://www.instagram.com/robinhoodadjusting/" style="color:#c9922a;text-decoration:none;font-weight:bold;">Instagram</a>
         </p>
-        <p style="color:#666;font-size:11px;margin:8px 0 0;">
-          You're receiving this because you subscribed at robinhoodadjusting.com.
-          To unsubscribe, reply with "unsubscribe" in the subject line.
-        </p>
+        {unsubscribe_html}
       </td></tr>
     </table>
   </td></tr>
 </table>
 </body>
 </html>"""
+
+
+def build_email_html(body_content, date_str, subject):
+    return build_brief_page_html(body_content, date_str, subject, include_unsubscribe=True)
+
+
+def wrap_brief_for_web(input_html, date_str, default_subject=None):
+    """Wrap a bare-body brief HTML file with the branded website template.
+
+    Returns input unchanged when:
+      - already wrapped (logo-dark.svg sentinel present), or
+      - legacy self-styled page (has its own <style> block that the body relies on).
+    """
+    if "logo-dark.svg" in input_html:
+        return input_html
+    if re.search(r"<style[\s>]", input_html, re.IGNORECASE):
+        return input_html
+    tm = re.search(r"<title[^>]*>(.*?)</title>", input_html, re.DOTALL | re.IGNORECASE)
+    subject = tm.group(1).strip() if tm else (default_subject or f"Robinhood Adjusting Brief — {date_str}")
+    bm = re.search(r"<body[^>]*>(.*?)</body>", input_html, re.DOTALL | re.IGNORECASE)
+    body = bm.group(1).strip() if bm else input_html
+    return build_brief_page_html(body, date_str, subject, include_unsubscribe=False)
 
 
 def send_segment(emails, subject, html, password):
