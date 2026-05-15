@@ -33,7 +33,7 @@ git commit -m "$SUMMARY
 
 Generated $(date '+%Y-%m-%d at %H:%M EDT')
 
-Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>" 2>&1
+Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>" 2>&1
 
 # Push to GitHub
 git push origin main 2>&1
