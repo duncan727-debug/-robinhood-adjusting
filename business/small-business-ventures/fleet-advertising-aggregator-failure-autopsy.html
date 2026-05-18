@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Advertising Aggregator - Failure Autopsy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; color: #333; background: #f5f5f5; padding: 20px;
+        }
+        .container {
+            max-width: 1100px; margin: 0 auto; background: white;
+            border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 40px;
+        }
+        h1 {
+            font-size: 2.4em; color: #0066cc; margin-bottom: 10px;
+            border-bottom: 3px solid #0066cc; padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.6em; color: #0066cc; margin-top: 40px;
+            margin-bottom: 18px; border-left: 4px solid #0066cc; padding-left: 15px;
+        }
+        h3 { color: #0066cc; margin-bottom: 10px; margin-top: 20px; font-size: 1.15em; }
+        p { margin-bottom: 12px; }
+        ul { margin-left: 24px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; }
+        .case-study {
+            background: #fafafa; border-left: 4px solid #0066cc;
+            padding: 18px 22px; border-radius: 4px; margin: 18px 0;
+        }
+        .case-study h3 { margin-top: 0; }
+        .case-study .verdict {
+            display: inline-block; padding: 3px 10px; border-radius: 3px;
+            font-size: 0.82em; font-weight: 600; margin-left: 8px;
+            vertical-align: middle;
+        }
+        .v-pivoted { background: #fff4e6; color: #b35900; }
+        .v-stuck   { background: #fef0e6; color: #aa3300; }
+        .v-acquired { background: #e6f2ff; color: #003d99; }
+        .v-litigated { background: #e6f8e6; color: #1f6f1f; }
+        .v-niche { background: #f0e6ff; color: #4d1f99; }
+        .pattern-box {
+            background: white; border: 2px solid #0066cc; border-radius: 4px;
+            padding: 20px; margin: 14px 0;
+        }
+        .pattern-box .num {
+            display: inline-block; width: 38px; height: 38px; line-height: 38px;
+            background: #0066cc; color: white; border-radius: 50%; text-align: center;
+            font-weight: bold; margin-right: 14px; font-size: 1.1em; vertical-align: middle;
+        }
+        .pattern-box .title { font-size: 1.1em; font-weight: 600; color: #0066cc; vertical-align: middle; }
+        .pattern-box .body { margin-top: 12px; }
+        .pattern-box .applies {
+            margin-top: 10px; padding: 10px 14px; background: #e6f2ff;
+            border-left: 3px solid #0066cc; border-radius: 3px; font-size: 0.92em;
+        }
+        .warning {
+            background: #fff4e6; border-left: 5px solid #ff9800;
+            padding: 18px 22px; border-radius: 4px; margin: 20px 0;
+        }
+        .highlight {
+            background: #e6f2ff; border-left: 5px solid #0066cc;
+            padding: 18px 22px; border-radius: 4px; margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 0.93em; }
+        th { background: #0066cc; color: white; padding: 10px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .source-list { font-size: 0.85em; color: #555; margin-top: 30px; }
+        .source-list a { color: #0066cc; text-decoration: none; }
+        .source-list a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 40px; font-size: 0.85em; color: #999;
+            border-top: 1px solid #ddd; padding-top: 18px; text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fleet Advertising Aggregator — Failure Autopsy</h1>
+        <p style="color: #666; font-size: 1.05em;">Companion document to v3 plan · 2026-05-17</p>
+        <p style="color: #888; margin-bottom: 25px;">What killed (or stalled) past vehicle-advertising businesses, and how the v3 plan responds.</p>
+
+        <div class="highlight">
+            <strong>Bottom line up top:</strong> Truck-side advertising has almost no dramatic shutdowns — the failure mode is <em>stuck-small</em>, not bankruptcy. Production shops stay production shops; aggregators that try to scale either pivot to rideshare (which has its own ceiling) or get acquired before they can compound. The v3 plan threads a deliberately small needle: aggregate <em>commercial</em> fleets locally with a measurement layer, avoid the rideshare graveyard, and don't take wrap CapEx risk until advertisers have committed. Five real risks below have specific v3 mitigations; two remaining gaps need pre-Phase-0 research.
+        </div>
+
+        <h2>Case Studies — Who Tried This Before</h2>
+
+        <div class="case-study">
+            <h3>Wrapify <span class="verdict v-acquired">Acquired (2023)</span></h3>
+            <p><strong>What they did:</strong> Founded 2015. Rideshare + gig-driver vehicle advertising at national scale. Deployed 500,000+ Uber/Lyft/Doordash/Instacart drivers across the country. Three-time Inc 5000 honoree.</p>
+            <p><strong>What happened:</strong> Wrapmate acquired a majority stake in April 2023, combining Wrapify with Wrapmate's 2,000-installer network. Public framing was "strategic combination" — operational synergies, technology platforms, buying power. Wrapmate then raised $16M Series A in Feb 2024 to fund the combined entity.</p>
+            <p><strong>The signal:</strong> The category leader in moving-OOH couldn't scale standalone economics; it took consolidation + outside capital to keep going. If <em>Wrapify</em> needed $16M to scale, a bootstrapped local aggregator should expect the same wall around the same revenue mark — likely $5–10M ARR. Plan for it before you hit it.</p>
+        </div>
+
+        <div class="case-study">
+            <h3>Vugo <span class="verdict v-litigated">Survived via litigation</span></h3>
+            <p><strong>What they did:</strong> In-car rideshare advertising (tablets, top-of-car billboards). Minneapolis-based. Signed up rideshare drivers, sold ad inventory to local + national brands.</p>
+            <p><strong>What happened:</strong> Uber initially threatened to deactivate Vugo-partnered drivers — backed off when drivers' independent-contractor status was clarified. <strong>NYC banned rideshare ads via TLC; Vugo filed federal suit in 2015 and won in 2018.</strong> Chicago tried a similar ban. Vugo is still operating but at a fraction of original ambition.</p>
+            <p><strong>The signal:</strong> Municipal regulation is the real moat <em>against</em> you. Cities can ban moving-vehicle advertising via local ordinance, and you have to litigate (or relocate) to operate. This applies to commercial-fleet ads too, not just rideshare.</p>
+        </div>
+
+        <div class="case-study">
+            <h3>TruckSkin / TruckAds <span class="verdict v-stuck">Stuck-small (production shops)</span></h3>
+            <p><strong>What they did:</strong> Both started 1990s/2000s as truck-side advertising operators. TruckSkin (Michigan) sells the vinyl coverings; TruckAds runs a national broker model.</p>
+            <p><strong>What happened:</strong> Both still exist — neither broke through to media-platform scale. TruckSkin operates more like a sign shop with marketing literature; TruckAds runs broker matches. Neither built a measurement layer; neither raised institutional capital; neither commands the OOH multiples we're targeting for exit.</p>
+            <p><strong>The signal:</strong> Truck-side advertising can sustain a small business indefinitely. The "stuck-small" failure mode isn't bankruptcy — it's never crossing the chasm from production shop / matchmaker to measured media platform. That chasm requires: (1) impression reporting, (2) multi-market presence, (3) recurring advertiser contracts. Skip any of the three and you stay TruckSkin-sized.</p>
+        </div>
+
+        <div class="case-study">
+            <h3>Carvertise <span class="verdict v-pivoted">Pivoted to rideshare-only</span></h3>
+            <p><strong>What they did:</strong> Started as a broad consumer-vehicle wrap broker. Promised drivers $100–500/mo for wrapping personal cars.</p>
+            <p><strong>What happened:</strong> Reality forced a focus on rideshare drivers (Uber/Lyft/delivery) because consumer-driver supply was unreliable and routes were too random for measurement. They now compete with Wrapify in the same rideshare graveyard — high driver turnover, brand-safety issues, low CPMs.</p>
+            <p><strong>The signal:</strong> Personal-vehicle wraps don't aggregate cleanly; rideshare wraps do but cap on CPMs. <em>Neither covers commercial fleets</em> — which is exactly the gap v3 targets.</p>
+        </div>
+
+        <div class="case-study">
+            <h3>Mobile-billboard operators (Boxi, Movia, Rolling Adz) <span class="verdict v-niche">Niche, capital-intensive</span></h3>
+            <p><strong>What they do:</strong> Operate dedicated billboard-trucks (not someone else's commercial fleet). Box-truck or dedicated-vehicle inventory you can rent for a day or a week.</p>
+            <p><strong>What's hard:</strong> Capital-intensive (own the trucks), labor-intensive (own the drivers), event-driven revenue (one-off campaigns dominate). Operators stay regional, multiples stay low, exits stay scarce.</p>
+            <p><strong>The signal:</strong> Owning the fleet is the wrong business — capital efficiency dies. v3 wisely uses someone else's commercial fleet as inventory. Stay there.</p>
+        </div>
+
+        <h2>The Five Real Failure Patterns</h2>
+
+        <div class="pattern-box">
+            <span class="num">1</span><span class="title">Two-sided cold start eats 18–24 months of runway</span>
+            <div class="body">
+                Every operator before us spent the first 1–2 years burning cash to get supply (fleets) and demand (advertisers) into the same room. Most ran out of money. Wrapify needed 8 years + outside capital before consolidation. Vugo took 3 years just to win a regulatory ruling. The cold-start cost itself isn't a single number — it's the cumulative cash burn while you can't run real campaigns yet.
+            </div>
+            <div class="applies">
+                <strong>v3 response:</strong> Robin Hood newsletter audience + 62-listing provider directory + already-opened HOA/chamber/BNI threads <em>collapse the cold start to weeks instead of years</em>. Phase 0 expects 2 fleets and 5 advertisers in 120 days — only achievable because both sides come pre-warmed. <strong>This is the single biggest advantage v3 has over historical attempts.</strong>
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <span class="num">2</span><span class="title">Wrap CapEx purchased ahead of advertiser commitment</span>
+            <div class="body">
+                Classic operator mistake: buy wrap inventory ($3.5K–$6.5K per truck) on speculation that advertisers will come. They don't. The inventory sits, the cash sits inside the wraps, the operator can't pay the next month's lease. This trap killed many smaller pre-2020 outfits.
+            </div>
+            <div class="applies">
+                <strong>v3 response:</strong> Phase 0 uses <em>magnetic panels only</em> at $45/unit — basically zero CapEx risk. Full/partial wraps in Phase 1+ are amortized inside the advertiser's 6–12 month commitment, so we never carry wrap inventory on speculation. Fleet keeps the wrap value after campaign ends or pays $250 for removal.
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <span class="num">3</span><span class="title">Measurement disputes destroy advertiser retention</span>
+            <div class="body">
+                Pre-Geopath (pre-~2017), there was no industry-standard way to count impressions on a moving vehicle. Advertisers paid CPM-style rates without trusting the numbers. Renewals collapsed at month 6. Operators couldn't defend pricing. <strong>OAAA-published vehicle-wrap CPMs are as low as $0.77/thousand impressions</strong> — that's the price ceiling if you can't measure better than the methodology floor.
+            </div>
+            <div class="applies">
+                <strong>v3 response:</strong> Geopath-aligned methodology from day one (route GPS + DMA traffic data + mobile-device-based audience modeling). Weekly impression reports to every advertiser. Pricing pitched at $250–$850/truck/month is a 3–10× premium over OAAA-floor CPMs — defensible only if we deliver real measurement. <em>This is mandatory infrastructure, not a nice-to-have.</em>
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <span class="num">4</span><span class="title">Municipal ad-ordinance lottery — different rules in every city</span>
+            <div class="body">
+                Florida's Growth Management Act requires every county and city to enact its own signage rules, and there's "seldom uniformity between them." Mobile-billboard rules vary wildly across Central FL cities. NYC, Chicago, and others have banned rideshare advertising outright; some cities have ordinances against "advertising trucks" that could include wrapped commercial vehicles. <strong>Vugo had to sue NYC to operate.</strong>
+            </div>
+            <div class="applies">
+                <strong>v3 response (gap to close before Phase 0):</strong> The current plan does not contain Wellington/Palm Beach County-specific ad ordinance research. <em>This is a Week 1 task that must happen before any fleet outreach.</em> Acceptable answer: PBC + Wellington allow standard commercial vehicle advertising (most home-service fleets already have logos). Unacceptable answer: PBC ordinance treats wrapped vehicles as "off-premise outdoor advertising" subject to FDOT permitting — we'd need to redesign or relocate.
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <span class="num">5</span><span class="title">Concentration risk — one anchor leaves, the P&amp;L collapses</span>
+            <div class="body">
+                Small operators routinely get 60–80% of revenue from 1–2 advertisers. When the anchor advertiser leaves (most do at month 6 if measurement is shaky — see pattern #3), the whole business loses a quarter overnight. Same applies on the supply side: when 1 of 3 fleets quits, half the inventory disappears.
+            </div>
+            <div class="applies">
+                <strong>v3 response (rule to add):</strong> No single advertiser &gt; 30% of revenue; no single fleet &gt; 40% of trucks. Phase 0 targets 5 advertisers and 2 fleets specifically to spread this risk from day one. Phase 1 target of 6 fleets / 12+ advertisers builds the diversification before scale.
+            </div>
+        </div>
+
+        <h2>Two Smaller Failure Patterns</h2>
+
+        <div class="pattern-box">
+            <span class="num">6</span><span class="title">Fleet owner objections are operational, not financial</span>
+            <div class="body">
+                Fleet owners don't refuse advertising deals because the money is too small — they refuse because they're already overwhelmed managing 30 trucks, 30 drivers, 30 routes. The objection is "one more thing to manage," not "I won't take $300/truck/mo."
+            </div>
+            <div class="applies">
+                <strong>v3 response:</strong> Sales pitch to fleet owners must lead with "we handle everything — install, measurement, advertiser servicing, billing, removal." Not "you'll earn $9K/month on your 30 trucks." The money number is the closer, not the opener.
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <span class="num">7</span><span class="title">Heat / humidity degrades wraps faster in FL than spec sheet</span>
+            <div class="body">
+                3M IJ180Cv3 cast vinyl is rated for 5 years outdoor durability nationally — but FL UV + humidity + salt air shorten useful life to 18–30 months for high-visibility surfaces. Operators who priced wrap amortization at 5 years got squeezed when real replacement cycle hit at 2.
+            </div>
+            <div class="applies">
+                <strong>v3 response:</strong> Amortize wraps over <em>campaign term length</em> (6–12 months), not over physical wrap life. If campaign renews, we may re-wrap — that cost is built into the renewal price, not pre-funded. Annual inspections in the plan; refresh allowance in advertiser contracts.
+            </div>
+        </div>
+
+        <h2>How v3 Stacks Against Historical Failure Modes</h2>
+        <table>
+            <tr>
+                <th>Failure Mode</th>
+                <th>Operators It Killed / Stalled</th>
+                <th>v3 Status</th>
+            </tr>
+            <tr>
+                <td>Two-sided cold start</td>
+                <td>Wrapify (consolidated), countless smaller operators</td>
+                <td><strong>Mitigated</strong> — newsletter + directory + relationships pre-warm both sides</td>
+            </tr>
+            <tr>
+                <td>Wrap CapEx without commit</td>
+                <td>Most pre-2020 small operators</td>
+                <td><strong>Mitigated</strong> — Phase 0 magnets only; wraps amortized inside advertiser contract</td>
+            </tr>
+            <tr>
+                <td>Measurement disputes</td>
+                <td>Operators that priced above OAAA floor without proof</td>
+                <td><strong>Mitigated</strong> — Geopath methodology from Day 1, weekly reports</td>
+            </tr>
+            <tr>
+                <td>Municipal regulation</td>
+                <td>Vugo (NYC, Chicago)</td>
+                <td><strong>Gap</strong> — Wellington/PBC ordinance research needed Week 1</td>
+            </tr>
+            <tr>
+                <td>Concentration risk</td>
+                <td>Most small operators</td>
+                <td><strong>Mitigated</strong> — &lt;30% advertiser, &lt;40% fleet rules baked into Phase 0+1</td>
+            </tr>
+            <tr>
+                <td>Fleet operational objection</td>
+                <td>Cold outreach attempts everywhere</td>
+                <td><strong>Mitigated</strong> — managed-service framing in sales script (TBD: written pitch)</td>
+            </tr>
+            <tr>
+                <td>FL heat / wrap degradation</td>
+                <td>Operators that 60-month amortized in southern climates</td>
+                <td><strong>Mitigated</strong> — amortize over campaign term, not wrap life</td>
+            </tr>
+            <tr>
+                <td>Capital wall around $5–10M ARR</td>
+                <td>Wrapify (had to consolidate); Wrapmate (raised $16M)</td>
+                <td><strong>Acknowledged</strong> — Phase 3 (Y4+) likely needs outside capital. Plan now; don't be surprised later.</td>
+            </tr>
+        </table>
+
+        <h2>Two Gaps That Must Close Before Phase 0 Commit</h2>
+
+        <div class="warning">
+            <h3 style="margin-top: 0;">Gap 1 — Wellington / Palm Beach County ad ordinance</h3>
+            <p>Phase 0 commits $10K and 4 months on the assumption that commercial-fleet advertising is permitted in our target market. If PBC's ordinance treats wrapped/paneled commercial vehicles as "off-premise outdoor advertising" requiring FDOT signage permits, the entire model changes. <strong>Action:</strong> Pull PBC + Wellington municipal codes, call Wellington's planning department, confirm "vehicle wraps on commercial fleets operating for their own business OR with advertising for others" sit within permitted use. Estimated time: 4–6 hours of research + one phone call. Cost: $0. <em>Must happen Week 1 of Phase 0, before any fleet outreach.</em></p>
+        </div>
+
+        <div class="warning">
+            <h3 style="margin-top: 0;">Gap 2 — Outside capital plan for Phase 3</h3>
+            <p>If v3 hits plan, Y3 owner net is ~$735K and trucks under management approach 1,000+. That's the scale where every operator before us either consolidated (Wrapify) or raised significant outside capital (Wrapmate $16M Series A). <strong>Bootstrap won't make Phase 3 statewide work alone.</strong> No action required now, but Year 2 plan should include either (a) a cash retention strategy that funds Phase 3 from operating profit, or (b) a fundraise narrative built off Y2's actuals. Decide which path before Y2.Q3.</p>
+        </div>
+
+        <h2>The Honest Conclusion</h2>
+        <div class="highlight">
+            <p><strong>v3 doesn't have a bankruptcy graveyard ahead of it</strong> — it has a "stuck small" graveyard. Every prior operator either (a) consolidated to scale, (b) pivoted to rideshare, (c) stayed a sign shop, or (d) lost a municipal regulation fight. The v3 plan threads through (a)–(d) deliberately:</p>
+            <ul>
+                <li>Don't pivot to rideshare (avoid the Wrapify / Carvertise CPM ceiling)</li>
+                <li>Don't stay a sign shop (Geopath measurement + multi-market presence in plan)</li>
+                <li>Don't fight a municipal regulation surprise (close Gap 1 in Week 1)</li>
+                <li>Don't believe bootstrap goes all the way to statewide (close Gap 2 by Y2.Q3)</li>
+            </ul>
+            <p>Add the gap closures and the &lt;30% / &lt;40% concentration rule into the v3 plan, and the structural failure modes are all answered. Execution risk is the remaining risk — which is what Phase 0's Day-120 gate is designed to surface for $10K.</p>
+        </div>
+
+        <div class="source-list">
+            <h3>Sources</h3>
+            <ul style="list-style: none; margin-left: 0;">
+                <li>- <a href="https://en.wikipedia.org/wiki/Vugo_(company)">Vugo (company) — Wikipedia</a></li>
+                <li>- <a href="https://libertyjusticecenter.org/pressrelease/liberty-justice-center-vugo-inc-ask-u-s-supreme-court-hear-case-arguing-commercial-advertising-uber-lyft-rideshare-vehicles/">Liberty Justice Center &amp; VUGO Supreme Court filing</a></li>
+                <li>- <a href="https://blog.wrapmate.com/wrapmate-adds-rideshare-advertising-category-leader-wrapify-to-its-portfolio-of-companies-through-strategic-investment/">Wrapmate Adds Wrapify (April 2023)</a></li>
+                <li>- <a href="https://www.builtincolorado.com/articles/wrapmate-raises-16m-20240209">Wrapmate Secures $16M (Feb 2024) — Built In Colorado</a></li>
+                <li>- <a href="https://www.crunchbase.com/acquisition/wrapmate-acquires-wrapify--9878f78e">Wrapmate acquires Wrapify — Crunchbase</a></li>
+                <li>- <a href="https://oohtoday.com/what-media-buyers-often-misunderstand-about-mobile-billboard-advertising/">What Media Buyers Misunderstand About Mobile Billboard Advertising — OOH Today</a></li>
+                <li>- <a href="https://support.geopath.io/hc/en-us/articles/360001845811-Methodology">Geopath Methodology</a></li>
+                <li>- <a href="https://moviamedia.com/moving-billboard-blog/moving-ooh-measurement-geopath-oaaa-and-commb/">Moving OOH Measurement: Geopath, OAAA, COMMB</a></li>
+                <li>- <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&amp;URL=0400-0499%2F0479%2F0479.html">FL Statutes Chapter 479 — Outdoor Advertising</a></li>
+                <li>- <a href="https://flrules.org/gateway/chapterhome.asp?chapter=14-10">FL Administrative Code 14-10 — Outdoor Advertising Regulation</a></li>
+                <li>- <a href="https://www.markbentleypa.com/outdoor-advertising/">Outdoor Advertising Laws in Florida — Mark Bentley PA</a></li>
+                <li>- <a href="https://www.bbb.org/us/mi/traverse-city/profile/car-decals/truckskin-llc-0372-38139954">TruckSkin BBB Profile</a></li>
+                <li>- <a href="https://www.truckads.com/">TruckAds website</a></li>
+                <li>- <a href="https://ezchangenow.com/wp-content/uploads/2024/03/Fleet-Owners-Guide-To-Truckside-Advertising.pdf">Fleet Owners Guide to Truckside Advertising (2024)</a></li>
+                <li>- <a href="https://www.3m.com/3M/en_US/graphics-signage-us/applications/vehicles-and-transportation/fleet-graphics/power-of-fleet-graphics/">3M Fleet Wrap Effectiveness</a></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            Fleet Advertising Aggregator · Failure Autopsy Companion · 2026-05-17
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellington Yard Patrol — Pet Waste Subscription Business Plan</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; color: #333; background: #f5f7fa; padding: 20px;
+        }
+        .container {
+            max-width: 1200px; margin: 0 auto; background: white;
+            border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 50px;
+        }
+        h1 {
+            font-size: 2.6em; color: #1f3a5f; margin-bottom: 10px;
+            border-bottom: 3px solid #1f3a5f; padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.7em; color: #1f3a5f; margin-top: 50px;
+            margin-bottom: 25px; border-left: 4px solid #1f3a5f; padding-left: 15px;
+        }
+        h3 { font-size: 1.25em; color: #1f3a5f; margin-bottom: 12px; margin-top: 20px; }
+        p, li { font-size: 1em; line-height: 1.7; }
+        .section { margin-bottom: 40px; }
+        .subtitle { color: #666; font-size: 1.15em; margin-bottom: 8px; }
+        .meta { color: #999; font-size: 0.95em; margin-bottom: 30px; }
+        table {
+            width: 100%; border-collapse: collapse; margin: 18px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-size: 0.95em;
+        }
+        th {
+            background: #1f3a5f; color: white; padding: 12px;
+            text-align: left; font-weight: 600;
+        }
+        td { padding: 11px 12px; border-bottom: 1px solid #e0e6ed; }
+        tr:hover { background: #f9fbfd; }
+        tr:nth-child(even) { background: #f5f7fa; }
+        .total-row { background: #e8eef5 !important; font-weight: bold; color: #1f3a5f; }
+        .total-row td { border-top: 2px solid #1f3a5f; border-bottom: 2px solid #1f3a5f; }
+        .currency, .number { text-align: right; font-family: 'Courier New', monospace; }
+        .chart-container {
+            position: relative; height: 380px; margin: 25px 0; padding: 20px;
+            background: #fafbfc; border-radius: 4px; border: 1px solid #e8eef5;
+        }
+        .assumptions {
+            background: #f0f4fa; border-left: 5px solid #1f3a5f;
+            padding: 22px; border-radius: 4px; margin: 18px 0;
+        }
+        .assumptions h3 { color: #1f3a5f; margin-bottom: 12px; margin-top: 0; }
+        .assumptions ul { list-style: none; margin-left: 0; }
+        .assumptions li { padding: 7px 0; border-bottom: 1px solid #d4dfee; }
+        .assumptions li:last-child { border-bottom: none; }
+        .note {
+            background: #fff8e1; border-left: 4px solid #f59e0b;
+            padding: 16px; border-radius: 4px; margin: 18px 0; font-size: 0.95em;
+        }
+        .callout {
+            background: #ecfdf5; border-left: 5px solid #10b981;
+            padding: 22px; border-radius: 4px; margin: 22px 0;
+        }
+        .callout h3 { color: #047857; margin-top: 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 18px 0; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 18px 0; }
+        .key-metric {
+            display: inline-block; background: white; border: 2px solid #1f3a5f;
+            border-radius: 6px; padding: 18px 24px; margin: 8px 14px 8px 0; text-align: center;
+        }
+        .key-metric-value { font-size: 1.9em; font-weight: bold; color: #1f3a5f; }
+        .key-metric-label { font-size: 0.85em; color: #666; margin-top: 4px; }
+        .phase-box {
+            background: white; padding: 22px; border: 2px solid #1f3a5f;
+            border-radius: 6px; text-align: left;
+        }
+        .phase-box h4 { color: #1f3a5f; font-size: 1.15em; margin-bottom: 10px; }
+        ul.bullet { margin-left: 24px; }
+        ul.bullet li { margin-bottom: 8px; }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .page-break { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Wellington Yard Patrol</h1>
+    <p class="subtitle">Pet Waste Subscription Service — Wellington &amp; West Palm Beach County</p>
+    <p class="meta">Business Plan v1.0 · Prepared 2026-05-16 · Operator-prove → hire-out → restart model</p>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <p style="margin-bottom: 18px;">
+            <strong>Wellington Yard Patrol</strong> (working name) is a weekly subscription pet-waste removal service serving Wellington, Royal Palm Beach, Loxahatchee, and west WPB. The business runs on a fixed weekly route, charging $20-30 per visit on auto-pay, and is designed from day one to be handed off to a $20/hr operator once proven.
+        </p>
+        <div>
+            <div class="key-metric">
+                <div class="key-metric-value">$3.5K–$5K</div>
+                <div class="key-metric-label">Startup Capital (existing truck)</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">~$95K</div>
+                <div class="key-metric-label">Year 1 Revenue (owner-op)</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">150</div>
+                <div class="key-metric-label">Customer Route Capacity</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">3-4 mo</div>
+                <div class="key-metric-label">Capital Payback</div>
+            </div>
+        </div>
+        <div class="callout">
+            <h3>Why this business fits the operator-holding model</h3>
+            <ul class="bullet">
+                <li><strong>Recurring revenue:</strong> Subscription auto-pay = predictable cash flow, low churn (~5%/month industry average).</li>
+                <li><strong>Hireable by design:</strong> The work is routine, trainable in a week, and runs on a written SOP. No license required (FL does not require a pet-waste-removal license).</li>
+                <li><strong>Cheap to fail:</strong> Under $5K committed if using existing truck. Sub-90-day prove window.</li>
+                <li><strong>Independent of Robin Hood Adjusting:</strong> No PA-license dependency, no claims-cycle exposure, no Duncan-the-person required after Year 1.</li>
+                <li><strong>Wellington-specific tailwind:</strong> Dog-dense, large-yard, high-income, 4,000+ permanent horse-property residents who outsource yard work as default.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MARKET -->
+    <div class="section page-break">
+        <h2>Market — Wellington &amp; West PBC</h2>
+        <div class="grid-2">
+            <div class="assumptions">
+                <h3>Service Area</h3>
+                <ul>
+                    <li>Wellington: ~64,000 population</li>
+                    <li>Royal Palm Beach: ~40,000 population</li>
+                    <li>Loxahatchee/Acreage: ~45,000 population</li>
+                    <li>West WPB (33411 / 33414 / 33470): ~50,000 population</li>
+                    <li><strong>Service zone total: ~200,000 residents</strong></li>
+                </ul>
+            </div>
+            <div class="assumptions">
+                <h3>Addressable Demand</h3>
+                <ul>
+                    <li>FL household dog-ownership rate: ~45%</li>
+                    <li>Estimated dog-owning households in service zone: ~25,000-30,000</li>
+                    <li>National pet-waste subscription penetration: ~1-2% of dog households</li>
+                    <li><strong>Realistic addressable market: 250-600 paying customers</strong></li>
+                    <li>Current competitors in zone: 3 active (DoodyCalls franchise, Poop911 affiliate, 1-2 independents)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="note">
+            <strong>Wellington-specific wedge:</strong> Equestrian-community residents already pay $200-1000+/month for landscape and stable services. The "pay someone to handle my yard" buyer is the default mindset here, unlike most FL markets. Multi-dog households in equestrian neighborhoods are common.
+        </div>
+    </div>
+
+    <!-- SERVICE & PRICING -->
+    <div class="section">
+        <h2>Service Offering &amp; Pricing</h2>
+        <table>
+            <tr>
+                <th>Plan</th>
+                <th>Frequency</th>
+                <th class="number">1 Dog</th>
+                <th class="number">2 Dogs</th>
+                <th class="number">3+ Dogs</th>
+                <th class="number">Avg Monthly</th>
+            </tr>
+            <tr>
+                <td><strong>Standard</strong></td>
+                <td>Weekly (4×/mo)</td>
+                <td class="currency">$20/visit</td>
+                <td class="currency">$25/visit</td>
+                <td class="currency">$30/visit</td>
+                <td class="currency">$80–$120</td>
+            </tr>
+            <tr>
+                <td><strong>Premium</strong></td>
+                <td>2×/week (8×/mo)</td>
+                <td class="currency">$32/visit</td>
+                <td class="currency">$40/visit</td>
+                <td class="currency">$48/visit</td>
+                <td class="currency">$128–$192</td>
+            </tr>
+            <tr>
+                <td><strong>EOW</strong></td>
+                <td>Every other week</td>
+                <td class="currency">$30/visit</td>
+                <td class="currency">$35/visit</td>
+                <td class="currency">$40/visit</td>
+                <td class="currency">$60–$80</td>
+            </tr>
+            <tr>
+                <td><strong>One-Time</strong></td>
+                <td>Scheduled / move-out</td>
+                <td class="currency">$75 base</td>
+                <td class="currency">+$25/dog</td>
+                <td class="currency">—</td>
+                <td class="currency">$75–$150</td>
+            </tr>
+        </table>
+        <h3 style="margin-top: 25px;">Add-On Services</h3>
+        <table>
+            <tr><th>Add-On</th><th class="currency">Price</th><th>Frequency</th></tr>
+            <tr><td>Deodorizer / Sanitizer Treatment</td><td class="currency">$25</td><td>Per visit</td></tr>
+            <tr><td>Patio + porch cleanup</td><td class="currency">$15</td><td>Per visit</td></tr>
+            <tr><td>Pre-Party / Holiday Rush Cleanup</td><td class="currency">$40</td><td>On-demand</td></tr>
+            <tr><td>Annual Yard Refresh Package</td><td class="currency">$200</td><td>1×/year</td></tr>
+        </table>
+        <div class="note">
+            <strong>Blended assumption:</strong> ~$90/month average revenue per customer across mix. Captures 70% standard plan, 15% premium, 10% EOW, 5% multi-dog mix.
+        </div>
+    </div>
+
+    <!-- UNIT ECONOMICS -->
+    <div class="section page-break">
+        <h2>Unit Economics (per customer, per month)</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Owner-Operated (Year 1)</h3>
+                <table style="margin: 0;">
+                    <tr><td>Avg Revenue</td><td class="currency"><strong>$90.00</strong></td></tr>
+                    <tr><td>Consumables (bags, gloves)</td><td class="currency">-$2.00</td></tr>
+                    <tr><td>Fuel allocated</td><td class="currency">-$4.00</td></tr>
+                    <tr><td>Software CRM (per cust)</td><td class="currency">-$0.50</td></tr>
+                    <tr><td>Insurance amortized</td><td class="currency">-$1.00</td></tr>
+                    <tr><td>Marketing CAC amortized (18-mo LTV)</td><td class="currency">-$5.00</td></tr>
+                    <tr class="total-row"><td><strong>Owner cash margin / cust</strong></td><td class="currency"><strong>$77.50</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Gross margin: 86%. Owner is the labor.</p>
+            </div>
+            <div>
+                <h3>Operator-Run (Year 2+)</h3>
+                <table style="margin: 0;">
+                    <tr><td>Avg Revenue</td><td class="currency"><strong>$90.00</strong></td></tr>
+                    <tr><td>Operator labor (loaded $22/hr)</td><td class="currency">-$32.00</td></tr>
+                    <tr><td>Consumables</td><td class="currency">-$2.00</td></tr>
+                    <tr><td>Fuel allocated</td><td class="currency">-$4.00</td></tr>
+                    <tr><td>Software CRM</td><td class="currency">-$0.50</td></tr>
+                    <tr><td>Insurance amortized</td><td class="currency">-$1.50</td></tr>
+                    <tr><td>Marketing CAC amortized</td><td class="currency">-$5.00</td></tr>
+                    <tr class="total-row"><td><strong>Owner net margin / cust</strong></td><td class="currency"><strong>$45.00</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Net margin: 50%. Duncan ~5 hrs/week oversight.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPERATIONAL MODEL -->
+    <div class="section">
+        <h2>Route &amp; Operational Model</h2>
+        <table>
+            <tr><th>Metric</th><th>Value</th><th>Notes</th></tr>
+            <tr><td>On-property time per visit</td><td>8–12 min</td><td>Average yard, 1–2 dogs, weekly service</td></tr>
+            <tr><td>Drive time between stops (clustered route)</td><td>4–7 min</td><td>Tight zip-code clustering required</td></tr>
+            <tr><td>Stops per hour</td><td>4–5</td><td>Conservative; experienced ops hit 6/hr</td></tr>
+            <tr><td>Working hours per day</td><td>6</td><td>30 stops/day</td></tr>
+            <tr><td>Working days per week</td><td>5</td><td>Mon-Fri primary, Sat overflow</td></tr>
+            <tr><td><strong>Single-route capacity</strong></td><td><strong>~150 weekly customers</strong></td><td>Saturation point per FT operator</td></tr>
+            <tr><td>Multi-route scale</td><td>2 routes = 300 cust</td><td>Year 2 expansion target</td></tr>
+        </table>
+    </div>
+
+    <!-- STARTUP CAPITAL -->
+    <div class="section page-break">
+        <h2>Startup Capital</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Lean Launch (use existing truck)</h3>
+                <table style="margin: 0;">
+                    <tr><td>LLC formation + FEIN</td><td class="currency">$150</td></tr>
+                    <tr><td>General liability insurance (yr 1)</td><td class="currency">$800</td></tr>
+                    <tr><td>Commercial auto rider</td><td class="currency">$600</td></tr>
+                    <tr><td>Tool kit (scoops, rakes, sanitizer, bins, bags)</td><td class="currency">$500</td></tr>
+                    <tr><td>Truck-bed weather-tight bins (×2)</td><td class="currency">$300</td></tr>
+                    <tr><td>Sweep&amp;Go / Service Autopilot setup</td><td class="currency">$200</td></tr>
+                    <tr><td>Branding (logo, decals, biz cards)</td><td class="currency">$500</td></tr>
+                    <tr><td>Website + booking page</td><td class="currency">$300</td></tr>
+                    <tr><td>Door hangers (5,000 units)</td><td class="currency">$600</td></tr>
+                    <tr><td>Initial FB/Google ad budget (mo 1-2)</td><td class="currency">$1,500</td></tr>
+                    <tr><td>Working capital reserve</td><td class="currency">$1,000</td></tr>
+                    <tr class="total-row"><td><strong>Total Lean Launch</strong></td><td class="currency"><strong>$6,450</strong></td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Dedicated-Vehicle Launch</h3>
+                <table style="margin: 0;">
+                    <tr><td>Used pickup (1/2 ton, &lt;100k mi)</td><td class="currency">$8,000</td></tr>
+                    <tr><td>Truck wrap / branded decals</td><td class="currency">$1,200</td></tr>
+                    <tr><td>All items from Lean Launch column</td><td class="currency">$6,450</td></tr>
+                    <tr class="total-row"><td><strong>Total Dedicated Launch</strong></td><td class="currency"><strong>$15,650</strong></td></tr>
+                </table>
+                <p style="margin-top: 14px; font-size: 0.9em; color: #666;">Recommendation: start lean. Add dedicated vehicle in Month 6 once route is &gt;75 customers.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- YEAR 1 MONTHLY BUILDUP -->
+    <div class="section page-break">
+        <h2>Year 1 — Monthly Buildup (Owner-Operated)</h2>
+        <table>
+            <tr>
+                <th>Month</th>
+                <th class="number">Active Customers</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Direct Costs</th>
+                <th class="currency">Marketing</th>
+                <th class="currency">Net Cash</th>
+                <th class="currency">Cumulative</th>
+            </tr>
+            <tr><td>Jun (Mo 1) — Launch</td><td class="number">8</td><td class="currency">$720</td><td class="currency">$48</td><td class="currency">$1,500</td><td class="currency">-$828</td><td class="currency">-$828</td></tr>
+            <tr><td>Jul (Mo 2)</td><td class="number">22</td><td class="currency">$1,980</td><td class="currency">$132</td><td class="currency">$1,500</td><td class="currency">$348</td><td class="currency">-$480</td></tr>
+            <tr><td>Aug (Mo 3)</td><td class="number">42</td><td class="currency">$3,780</td><td class="currency">$252</td><td class="currency">$1,500</td><td class="currency">$2,028</td><td class="currency">$1,548</td></tr>
+            <tr><td>Sep (Mo 4)</td><td class="number">65</td><td class="currency">$5,850</td><td class="currency">$390</td><td class="currency">$1,500</td><td class="currency">$3,960</td><td class="currency">$5,508</td></tr>
+            <tr><td>Oct (Mo 5)</td><td class="number">88</td><td class="currency">$7,920</td><td class="currency">$528</td><td class="currency">$1,500</td><td class="currency">$5,892</td><td class="currency">$11,400</td></tr>
+            <tr><td>Nov (Mo 6)</td><td class="number">108</td><td class="currency">$9,720</td><td class="currency">$648</td><td class="currency">$1,500</td><td class="currency">$7,572</td><td class="currency">$18,972</td></tr>
+            <tr><td>Dec (Mo 7)</td><td class="number">125</td><td class="currency">$11,250</td><td class="currency">$750</td><td class="currency">$1,000</td><td class="currency">$9,500</td><td class="currency">$28,472</td></tr>
+            <tr><td>Jan (Mo 8)</td><td class="number">138</td><td class="currency">$12,420</td><td class="currency">$828</td><td class="currency">$1,000</td><td class="currency">$10,592</td><td class="currency">$39,064</td></tr>
+            <tr><td>Feb (Mo 9)</td><td class="number">148</td><td class="currency">$13,320</td><td class="currency">$888</td><td class="currency">$1,000</td><td class="currency">$11,432</td><td class="currency">$50,496</td></tr>
+            <tr><td>Mar (Mo 10)</td><td class="number">155</td><td class="currency">$13,950</td><td class="currency">$930</td><td class="currency">$1,000</td><td class="currency">$12,020</td><td class="currency">$62,516</td></tr>
+            <tr><td>Apr (Mo 11)</td><td class="number">158</td><td class="currency">$14,220</td><td class="currency">$948</td><td class="currency">$800</td><td class="currency">$12,472</td><td class="currency">$74,988</td></tr>
+            <tr><td>May (Mo 12)</td><td class="number">160</td><td class="currency">$14,400</td><td class="currency">$960</td><td class="currency">$800</td><td class="currency">$12,640</td><td class="currency">$87,628</td></tr>
+            <tr class="total-row">
+                <td><strong>YEAR 1 TOTAL</strong></td>
+                <td class="number">avg 101</td>
+                <td class="currency">$109,530</td>
+                <td class="currency">$7,302</td>
+                <td class="currency">$14,600</td>
+                <td class="currency">$87,628</td>
+                <td class="currency">$87,628</td>
+            </tr>
+        </table>
+        <div class="note">
+            <strong>Year 1 reality check:</strong> Net cash of $87,628 is BEFORE deducting ~$6,450 startup capital, software ($1,200), insurance amortized ($1,400), phone/admin ($600), and equipment refresh ($800). True Year 1 owner take: <strong>~$77,000</strong>. This assumes Duncan + son run the route Mon-Fri and convert 8-15 new customers per month from $1,500/month marketing spend.
+        </div>
+    </div>
+
+    <!-- YEAR 1 CHART -->
+    <div class="section">
+        <h2>Year 1 — Customer Ramp &amp; Revenue</h2>
+        <div class="chart-container"><canvas id="rampChart"></canvas></div>
+    </div>
+
+    <!-- 3-YEAR PROJECTIONS -->
+    <div class="section page-break">
+        <h2>3-Year Projections (Operator-Holding Model)</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Phase</th>
+                <th class="number">Avg Customers</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Operator Labor</th>
+                <th class="currency">Other Opex</th>
+                <th class="currency">Owner Net</th>
+            </tr>
+            <tr>
+                <td><strong>Year 1</strong></td>
+                <td>Duncan + son operate (prove)</td>
+                <td class="number">101 avg → 160 EOY</td>
+                <td class="currency">$109,530</td>
+                <td class="currency">$0</td>
+                <td class="currency">$22,500</td>
+                <td class="currency">$77,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 2</strong></td>
+                <td>Hire operator; grow to 200 cust</td>
+                <td class="number">180 avg → 200 EOY</td>
+                <td class="currency">$194,400</td>
+                <td class="currency">$50,000</td>
+                <td class="currency">$48,500</td>
+                <td class="currency">$95,900</td>
+            </tr>
+            <tr>
+                <td><strong>Year 3</strong></td>
+                <td>2nd route; 320 cust total</td>
+                <td class="number">280 avg → 320 EOY</td>
+                <td class="currency">$345,600</td>
+                <td class="currency">$95,000</td>
+                <td class="currency">$75,000</td>
+                <td class="currency">$175,600</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="3"><strong>3-Year Cumulative Owner Net</strong></td>
+                <td colspan="3"></td>
+                <td class="currency"><strong>$348,500</strong></td>
+            </tr>
+        </table>
+        <p style="font-size: 0.9em; color: #666; margin-top: 12px;">
+            Year 2 hire is the inflection point — your time investment drops from ~30 hrs/week to ~5 hrs/week. Year 3 second route requires modest additional capital (~$10K: second tool kit, possibly second vehicle, additional CRM seat).
+        </p>
+    </div>
+
+    <!-- 3-YEAR CHART -->
+    <div class="section">
+        <h2>3-Year Revenue &amp; Owner Net</h2>
+        <div class="chart-container"><canvas id="threeYearChart"></canvas></div>
+    </div>
+
+    <!-- CUSTOMER ACQUISITION -->
+    <div class="section page-break">
+        <h2>Customer Acquisition Plan</h2>
+        <table>
+            <tr>
+                <th>Channel</th>
+                <th class="number">Cost / Lead</th>
+                <th class="number">Conv Rate</th>
+                <th class="currency">CAC</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Door hangers (Wellington equestrian belts)</td>
+                <td class="number">$0.12</td>
+                <td class="number">1.0%</td>
+                <td class="currency">~$12</td>
+                <td>Best ROI; physically claim ground</td>
+            </tr>
+            <tr>
+                <td>Facebook ads (geo-targeted 33414/33470)</td>
+                <td class="number">$3</td>
+                <td class="number">8%</td>
+                <td class="currency">~$38</td>
+                <td>Lookalike audiences off existing customers</td>
+            </tr>
+            <tr>
+                <td>Google Ads ("pooper scooper Wellington")</td>
+                <td class="number">$8</td>
+                <td class="number">25%</td>
+                <td class="currency">~$32</td>
+                <td>High intent; small volume</td>
+            </tr>
+            <tr>
+                <td>Vet office cards (drop-in distribution)</td>
+                <td class="number">$0</td>
+                <td class="number">~organic</td>
+                <td class="currency">$0</td>
+                <td>15-20 vets in service zone</td>
+            </tr>
+            <tr>
+                <td>Yard signs at active customers</td>
+                <td class="number">$3</td>
+                <td class="number">organic</td>
+                <td class="currency">~$5</td>
+                <td>Free word-of-mouth amplifier</td>
+            </tr>
+            <tr>
+                <td>HOA newsletter ads (3 communities)</td>
+                <td class="number">$50–100</td>
+                <td class="number">2%</td>
+                <td class="currency">~$25</td>
+                <td>Direct community trust</td>
+            </tr>
+            <tr>
+                <td>Robin Hood newsletter cross-promo</td>
+                <td class="number">$0</td>
+                <td class="number">~organic</td>
+                <td class="currency">$0</td>
+                <td>Existing PA-business audience overlap</td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>Blended CAC target</strong></td>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="currency"><strong>$25–30</strong></td>
+                <td>Payback in &lt;1 month at $90 ARPC</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- HIRING & HANDOFF -->
+    <div class="section">
+        <h2>Hiring &amp; Handoff Plan (Year 2)</h2>
+        <div class="grid-3">
+            <div class="phase-box">
+                <h4>Months 1-6 (Year 1)</h4>
+                <p><strong>Duncan + son operate.</strong> Build SOPs, customer playbook, route software. Document every edge case.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Months 7-12</h4>
+                <p><strong>Hire a part-time helper</strong> to ride along, learn the route. $18/hr, 15-20 hr/week. Test the trainability of the system.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Year 2 Month 1</h4>
+                <p><strong>Promote helper or hire full-time operator.</strong> Duncan transitions to 5 hrs/week oversight. Helper becomes route owner.</p>
+            </div>
+        </div>
+        <h3 style="margin-top: 25px;">Operator Job Spec</h3>
+        <ul class="bullet">
+            <li><strong>Title:</strong> Route Operator — Wellington Yard Patrol</li>
+            <li><strong>Pay:</strong> $18-22/hr (FL market for outdoor route work); $40-45K/yr base + $5K performance bonus tied to customer retention</li>
+            <li><strong>Requirements:</strong> Valid FL driver's license, clean record, can lift 40 lbs, comfortable around dogs, fluent in English (Spanish preferred), reliable transport to Wellington</li>
+            <li><strong>Training:</strong> 1 week ride-along with Duncan + son; written SOP for every customer property; route software training</li>
+            <li><strong>Daily tools:</strong> Truck (provided), tool kit, smartphone with Sweep&amp;Go app, branded uniform shirt</li>
+        </ul>
+    </div>
+
+    <!-- RISKS -->
+    <div class="section page-break">
+        <h2>Risks &amp; Mitigations</h2>
+        <table>
+            <tr><th>Risk</th><th>Probability</th><th>Mitigation</th></tr>
+            <tr>
+                <td><strong>Slow customer ramp</strong> (less than 8 new/mo)</td>
+                <td>Medium</td>
+                <td>Increase door-hanger volume; add Google Ads; offer first-month-free promo</td>
+            </tr>
+            <tr>
+                <td><strong>Customer churn higher than 5%/mo</strong></td>
+                <td>Low-Medium</td>
+                <td>Quality control checklist per visit; quarterly customer NPS survey; loyalty discount at month 12</td>
+            </tr>
+            <tr>
+                <td><strong>Competitor price war</strong> (DoodyCalls, Poop911)</td>
+                <td>Low</td>
+                <td>Compete on local-owned, reliability, equestrian community trust — not price</td>
+            </tr>
+            <tr>
+                <td><strong>Operator turnover (Year 2+)</strong></td>
+                <td>Medium</td>
+                <td>Pay above market, route bonus, 1-week paid PTO at 6 months; cross-train backup operator</td>
+            </tr>
+            <tr>
+                <td><strong>Dog bite or property damage incident</strong></td>
+                <td>Low</td>
+                <td>$1M general liability + commercial auto from day 1; written safety protocol; customer signs liability waiver</td>
+            </tr>
+            <tr>
+                <td><strong>Weather days (lightning, hurricanes)</strong></td>
+                <td>High</td>
+                <td>Route flexibility — bump to next available day, communicate via Sweep&amp;Go SMS; no make-up obligation for force majeure (in T&amp;Cs)</td>
+            </tr>
+            <tr>
+                <td><strong>Owner burnout (Year 1)</strong></td>
+                <td>Medium</td>
+                <td>Hire helper at Month 6 even if route isn't full; weekly Friday-off rule; track hours weekly</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 90-DAY LAUNCH PLAN -->
+    <div class="section">
+        <h2>90-Day Launch Plan (start 2026-05-19)</h2>
+        <table>
+            <tr><th>Week</th><th>Milestones</th></tr>
+            <tr>
+                <td><strong>Week 1 (May 19-25)</strong></td>
+                <td>LLC filing · FEIN · open business bank account · order tool kit · order door hangers · register Sweep&amp;Go · register domain (wellingtonyardpatrol.com or similar)</td>
+            </tr>
+            <tr>
+                <td><strong>Week 2 (May 26 - Jun 1)</strong></td>
+                <td>Quotes on GL + auto insurance · launch one-page website + booking form · set up Stripe for auto-pay · door-hanger design + first 1,000 print run · branded truck magnets</td>
+            </tr>
+            <tr>
+                <td><strong>Week 3 (Jun 2-8)</strong></td>
+                <td>First 1,000 door hangers dropped in target Wellington zip codes (33414, 33470) · launch FB ad campaign at $50/day · cross-promo in Robin Hood newsletter · drop cards at 10 local vets</td>
+            </tr>
+            <tr>
+                <td><strong>Week 4 (Jun 9-15)</strong></td>
+                <td>Onboard first 5-10 customers · run route with son · refine SOPs · daily debrief</td>
+            </tr>
+            <tr>
+                <td><strong>Weeks 5-8</strong></td>
+                <td>Scale to 25-40 customers · second door-hanger drop (next 1,000) · add Google Ads at $20/day · request first reviews (Google, Nextdoor)</td>
+            </tr>
+            <tr>
+                <td><strong>Weeks 9-12</strong></td>
+                <td>50-70 customers · third door-hanger drop · add HOA newsletter ad in 1-2 communities · evaluate need for helper hire by Mo 6</td>
+            </tr>
+            <tr>
+                <td><strong>Day 90 review</strong></td>
+                <td>Target: <strong>60+ active customers, $5K+ MRR, &lt;5% churn, sub-$30 blended CAC.</strong> If hit, scale spend; if missed, diagnose channel by channel.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- DECISION GATES -->
+    <div class="section">
+        <h2>Decision Gates</h2>
+        <div class="grid-3">
+            <div class="phase-box">
+                <h4>Gate 1 — Day 90</h4>
+                <p><strong>Continue?</strong> Need 60+ customers, $5K+ MRR, churn under 5%/mo. If yes → continue ramp. If no → diagnose or shut down (sunk cost &lt;$8K).</p>
+            </div>
+            <div class="phase-box">
+                <h4>Gate 2 — Day 180</h4>
+                <p><strong>Hire helper?</strong> If at 100+ customers and route is taking &gt;30 hrs/week, hire part-time helper. Begin operator-trainability test.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Gate 3 — Day 365</h4>
+                <p><strong>Hire FT operator + restart?</strong> If at 150+ customers and SOPs are documented, promote helper or hire FT operator. Duncan steps to oversight. Begin scouting Business #2.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM LINE -->
+    <div class="section">
+        <h2>Bottom Line</h2>
+        <div class="callout">
+            <h3>Why this venture deserves the green light</h3>
+            <ul class="bullet">
+                <li><strong>Capital risk is small:</strong> &lt;$8K to find out, vs. $200K+ for the pellet pitch</li>
+                <li><strong>Cash-flow positive by Month 3</strong> at realistic ramp rates</li>
+                <li><strong>Recurring revenue = predictable handoff</strong> — the whole point of the operator-holding model</li>
+                <li><strong>No regulatory drag:</strong> No FDEP, no zoning fights, no licensing</li>
+                <li><strong>Leverages existing assets:</strong> Robin Hood newsletter, Duncan's HOA/PM relationships, the truck you already drive</li>
+                <li><strong>Year 1 prove-out is concrete:</strong> 150 customers, $90K-100K revenue, ~$75K owner take. Numbers don't require heroic assumptions.</li>
+                <li><strong>3-year cumulative owner net of ~$348K</strong> with one operator hire and one route expansion — far more credible than the pellet deck's $649K fantasy.</li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="margin-top: 50px; padding-top: 25px; border-top: 1px solid #e0e6ed; color: #999; font-size: 0.9em; text-align: center;">
+        Wellington Yard Patrol · Business Plan v1.0 · 2026-05-16<br>
+        Prepared for Duncan Littlejohn · Operator-Holding-Co Model
+    </p>
+
+</div>
+
+<script>
+    // Year 1 ramp chart
+    new Chart(document.getElementById('rampChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'],
+            datasets: [
+                {
+                    type: 'bar',
+                    label: 'Monthly Revenue ($)',
+                    data: [720, 1980, 3780, 5850, 7920, 9720, 11250, 12420, 13320, 13950, 14220, 14400],
+                    backgroundColor: '#1f3a5f',
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                },
+                {
+                    type: 'line',
+                    label: 'Active Customers',
+                    data: [8, 22, 42, 65, 88, 108, 125, 138, 148, 155, 158, 160],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 3,
+                    fill: false,
+                    pointRadius: 5,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                y: {
+                    type: 'linear', position: 'left', beginAtZero: true,
+                    title: { display: true, text: 'Revenue ($)' },
+                    ticks: { callback: v => '$' + v.toLocaleString() }
+                },
+                y1: {
+                    type: 'linear', position: 'right', beginAtZero: true,
+                    title: { display: true, text: 'Customers' },
+                    grid: { drawOnChartArea: false }
+                }
+            }
+        }
+    });
+
+    // 3-year chart
+    new Chart(document.getElementById('threeYearChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Year 1', 'Year 2', 'Year 3'],
+            datasets: [
+                { label: 'Revenue', data: [109530, 194400, 345600], backgroundColor: '#1f3a5f', borderRadius: 4 },
+                { label: 'Owner Net', data: [77000, 95900, 175600], backgroundColor: '#10b981', borderRadius: 4 }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } }
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellington Storm-Debris &amp; Yard Waste Hauling — Business Plan</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; color: #333; background: #f5f7fa; padding: 20px;
+        }
+        .container {
+            max-width: 1200px; margin: 0 auto; background: white;
+            border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 50px;
+        }
+        h1 {
+            font-size: 2.6em; color: #1f3a5f; margin-bottom: 10px;
+            border-bottom: 3px solid #1f3a5f; padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.7em; color: #1f3a5f; margin-top: 50px;
+            margin-bottom: 25px; border-left: 4px solid #1f3a5f; padding-left: 15px;
+        }
+        h3 { font-size: 1.25em; color: #1f3a5f; margin-bottom: 12px; margin-top: 20px; }
+        p, li { font-size: 1em; line-height: 1.7; }
+        .section { margin-bottom: 40px; }
+        .subtitle { color: #666; font-size: 1.15em; margin-bottom: 8px; }
+        .meta { color: #999; font-size: 0.95em; margin-bottom: 30px; }
+        table {
+            width: 100%; border-collapse: collapse; margin: 18px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-size: 0.95em;
+        }
+        th {
+            background: #1f3a5f; color: white; padding: 12px;
+            text-align: left; font-weight: 600;
+        }
+        td { padding: 11px 12px; border-bottom: 1px solid #e0e6ed; }
+        tr:hover { background: #f9fbfd; }
+        tr:nth-child(even) { background: #f5f7fa; }
+        .total-row { background: #e8eef5 !important; font-weight: bold; color: #1f3a5f; }
+        .total-row td { border-top: 2px solid #1f3a5f; border-bottom: 2px solid #1f3a5f; }
+        .currency, .number { text-align: right; font-family: 'Courier New', monospace; }
+        .chart-container {
+            position: relative; height: 380px; margin: 25px 0; padding: 20px;
+            background: #fafbfc; border-radius: 4px; border: 1px solid #e8eef5;
+        }
+        .assumptions {
+            background: #f0f4fa; border-left: 5px solid #1f3a5f;
+            padding: 22px; border-radius: 4px; margin: 18px 0;
+        }
+        .assumptions h3 { color: #1f3a5f; margin-bottom: 12px; margin-top: 0; }
+        .assumptions ul { list-style: none; margin-left: 0; }
+        .assumptions li { padding: 7px 0; border-bottom: 1px solid #d4dfee; }
+        .assumptions li:last-child { border-bottom: none; }
+        .note {
+            background: #fff8e1; border-left: 4px solid #f59e0b;
+            padding: 16px; border-radius: 4px; margin: 18px 0; font-size: 0.95em;
+        }
+        .callout {
+            background: #ecfdf5; border-left: 5px solid #10b981;
+            padding: 22px; border-radius: 4px; margin: 22px 0;
+        }
+        .callout h3 { color: #047857; margin-top: 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 18px 0; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 18px 0; }
+        .key-metric {
+            display: inline-block; background: white; border: 2px solid #1f3a5f;
+            border-radius: 6px; padding: 18px 24px; margin: 8px 14px 8px 0; text-align: center;
+        }
+        .key-metric-value { font-size: 1.9em; font-weight: bold; color: #1f3a5f; }
+        .key-metric-label { font-size: 0.85em; color: #666; margin-top: 4px; }
+        .phase-box {
+            background: white; padding: 22px; border: 2px solid #1f3a5f;
+            border-radius: 6px; text-align: left;
+        }
+        .phase-box h4 { color: #1f3a5f; font-size: 1.15em; margin-bottom: 10px; }
+        ul.bullet { margin-left: 24px; }
+        ul.bullet li { margin-bottom: 8px; }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .page-break { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Wellington Storm-Debris &amp; Yard Waste Hauling</h1>
+    <p class="subtitle">Father-Son Summer Venture · Wellington, Royal Palm Beach &amp; West PBC</p>
+    <p class="meta">Business Plan v1.0 · Prepared 2026-05-17 · Pivot from landscape-pellet concept · Operator-prove → hire-out model</p>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <p style="margin-bottom: 18px;">
+            A residential and small-commercial debris-hauling service serving Wellington, Royal Palm Beach, Loxahatchee, and west WPB. The business runs on three stacked revenue streams: (1) on-demand yard-waste pickup ($150–$500/job), (2) optional monthly subscription for routine pickup ($40–$80/mo), and (3) post-storm emergency response (premium pricing during named-storm windows). Built around the 2026 Atlantic hurricane season starting June 1 and the year-round PBC green-debris reality.
+        </p>
+        <div>
+            <div class="key-metric">
+                <div class="key-metric-value">$4.5K–$7K</div>
+                <div class="key-metric-label">Startup Capital (existing truck)</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">~$88K</div>
+                <div class="key-metric-label">Year 1 Revenue (owner-op)</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">$200–500</div>
+                <div class="key-metric-label">Avg Job Ticket</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">2–4 mo</div>
+                <div class="key-metric-label">Capital Payback</div>
+            </div>
+        </div>
+        <div class="callout">
+            <h3>Why this fits Duncan + son for summer 2026</h3>
+            <ul class="bullet">
+                <li><strong>Real cash flow from day one:</strong> Each job invoiced on completion. No multi-month sales cycle, no consumer credit risk.</li>
+                <li><strong>Seasonal alignment:</strong> Hurricane season opens June 1; school's out; father-son labor available exactly when demand spikes.</li>
+                <li><strong>No regulatory drag at small scale:</strong> Acting as transporter (not processor) for residential yard waste, dumped at SWA transfer stations at <strong>$35/ton or $5.25/yd³</strong> (Nov 2025 schedule). No FDEP permits, no zoning fights.</li>
+                <li><strong>Hireable by Year 2:</strong> Routes and SOPs document cleanly. Helper at $20/hr can take over operations.</li>
+                <li><strong>Wellington tailwind:</strong> Equestrian-belt homeowners and HOAs already outsource yard work and will pay premium for clean-up speed.</li>
+                <li><strong>Independent of Robin Hood Adjusting:</strong> No PA-license dependency. Cross-promotion possible but not required.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MARKET -->
+    <div class="section page-break">
+        <h2>Market &amp; Demand Drivers</h2>
+        <div class="grid-2">
+            <div class="assumptions">
+                <h3>Service Area</h3>
+                <ul>
+                    <li>Wellington: ~64,000 population, ~25K residences</li>
+                    <li>Royal Palm Beach: ~40,000 population</li>
+                    <li>Loxahatchee / Acreage: ~45,000 population, large lots</li>
+                    <li>West WPB (33411 / 33414 / 33470): ~50,000 population</li>
+                    <li><strong>Service zone total: ~200,000 residents</strong></li>
+                </ul>
+            </div>
+            <div class="assumptions">
+                <h3>Demand Engines (year-round + seasonal)</h3>
+                <ul>
+                    <li>Year-round palm-frond shedding (~6–10/tree/yr)</li>
+                    <li>Royal palm and queen palm prevalence on PBC residential lots</li>
+                    <li>Average lot size in target zips: 0.25–2.0 acres (larger than FL avg)</li>
+                    <li>Average named storms hitting PBC annually: 1–3 (NOAA 2020–2025)</li>
+                    <li>Hurricane Season: <strong>Jun 1 – Nov 30</strong></li>
+                    <li>Existing dedicated competitors: 4–6 (mostly tree-service add-ons, no pure haul-only player at this price tier)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="note">
+            <strong>SWA tipping reality:</strong> Solid Waste Authority of Palm Beach County accepts vegetative debris at the North County Transfer Station (Jog Rd) and South County (Lantana) at <strong>$35.00/ton</strong> or <strong>$5.25/yd³</strong> minimum (FY 2025–26 schedule). Pickups paid at $200/load with tipping cost of $25–40 produce gross margins above 80% before fuel and labor.
+        </div>
+        <div class="note">
+            <strong>Why landscapers won't absorb this themselves:</strong> Most small PBC landscape crews already run full-capacity routes. They charge premium for separate debris pickup or refuse altogether. We are the cheap, fast, no-contract alternative for the homeowner who just wants the pile gone.
+        </div>
+    </div>
+
+    <!-- SERVICE & PRICING -->
+    <div class="section">
+        <h2>Service Offering &amp; Pricing</h2>
+        <h3>Tier 1 — On-Demand Hauling (core)</h3>
+        <table>
+            <tr>
+                <th>Load Size</th>
+                <th>Description</th>
+                <th class="number">Price</th>
+                <th class="number">Time</th>
+                <th class="number">Tipping</th>
+                <th class="number">Gross/Job</th>
+            </tr>
+            <tr>
+                <td><strong>Small</strong></td>
+                <td>Up to 2 yd³ — small branch pile, fronds</td>
+                <td class="currency">$150</td>
+                <td class="number">30–45 min</td>
+                <td class="currency">$15</td>
+                <td class="currency">$135</td>
+            </tr>
+            <tr>
+                <td><strong>Medium</strong></td>
+                <td>3–6 yd³ — half-truckload</td>
+                <td class="currency">$275</td>
+                <td class="number">60–75 min</td>
+                <td class="currency">$32</td>
+                <td class="currency">$243</td>
+            </tr>
+            <tr>
+                <td><strong>Large</strong></td>
+                <td>7–10 yd³ — full pickup + trailer</td>
+                <td class="currency">$425</td>
+                <td class="number">90–120 min</td>
+                <td class="currency">$53</td>
+                <td class="currency">$372</td>
+            </tr>
+            <tr>
+                <td><strong>XL / Whole-Tree</strong></td>
+                <td>11–14 yd³ — requires chipping on site</td>
+                <td class="currency">$550–700</td>
+                <td class="number">2–3 hrs</td>
+                <td class="currency">$75</td>
+                <td class="currency">$475–625</td>
+            </tr>
+        </table>
+
+        <h3 style="margin-top: 25px;">Tier 2 — Monthly Subscription (recurring base)</h3>
+        <table>
+            <tr><th>Plan</th><th>Pickup Frequency</th><th class="currency">Monthly Price</th><th>Includes</th></tr>
+            <tr><td><strong>Basic</strong></td><td>1×/month</td><td class="currency">$40</td><td>Up to 2 yd³ per visit; overage at $25/yd³</td></tr>
+            <tr><td><strong>Standard</strong></td><td>2×/month</td><td class="currency">$70</td><td>Up to 2 yd³ per visit; priority storm window</td></tr>
+            <tr><td><strong>Premium</strong></td><td>Weekly</td><td class="currency">$120</td><td>Up to 3 yd³ per visit; 24-hr storm response guarantee</td></tr>
+        </table>
+
+        <h3 style="margin-top: 25px;">Tier 3 — Post-Storm Surge Pricing</h3>
+        <table>
+            <tr><th>Trigger</th><th>Premium</th><th>Notes</th></tr>
+            <tr><td>Named tropical storm in PBC</td><td>+50% over standard rate</td><td>Activate within 72 hrs of all-clear</td></tr>
+            <tr><td>Hurricane (Cat 1+) in PBC</td><td>+100% (2× standard)</td><td>Cash-pay only; 14-day surge window</td></tr>
+            <tr><td>Subscription customers</td><td>Surge waived (standard rate)</td><td>Key retention tool for subscription tier</td></tr>
+        </table>
+
+        <h3 style="margin-top: 25px;">Add-Ons</h3>
+        <table>
+            <tr><th>Add-On</th><th class="currency">Price</th><th>Notes</th></tr>
+            <tr><td>On-site chipping (small homeowner chipper)</td><td class="currency">+$75</td><td>Reduces volume; useful when client wants mulch retained</td></tr>
+            <tr><td>Storm-readiness yard sweep (pre-named-storm)</td><td class="currency">$125 flat</td><td>Loose-debris removal day before landfall</td></tr>
+            <tr><td>Recurring HOA common-area pickup</td><td class="currency">Bid per community</td><td>Monthly contract, billed to HOA</td></tr>
+            <tr><td>Tree-service partner referral (subcontract)</td><td class="currency">20% margin</td><td>For removals beyond our chainsaw scope</td></tr>
+        </table>
+
+        <div class="note">
+            <strong>Blended assumption:</strong> ~$240 average job ticket across mix. 75% on-demand jobs, 20% subscription pickups, 5% storm surge.
+        </div>
+    </div>
+
+    <!-- UNIT ECONOMICS -->
+    <div class="section page-break">
+        <h2>Unit Economics (per job, average mix)</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Father-Son Operated (Year 1)</h3>
+                <table style="margin: 0;">
+                    <tr><td>Avg Job Revenue</td><td class="currency"><strong>$240.00</strong></td></tr>
+                    <tr><td>Tipping fee at SWA</td><td class="currency">-$32.00</td></tr>
+                    <tr><td>Fuel allocated (round trip)</td><td class="currency">-$18.00</td></tr>
+                    <tr><td>Consumables (bags, ties, blades)</td><td class="currency">-$4.00</td></tr>
+                    <tr><td>Insurance amortized</td><td class="currency">-$6.00</td></tr>
+                    <tr><td>Software / dispatch CRM</td><td class="currency">-$2.00</td></tr>
+                    <tr><td>Marketing CAC amortized (per job)</td><td class="currency">-$15.00</td></tr>
+                    <tr class="total-row"><td><strong>Owner cash margin / job</strong></td><td class="currency"><strong>$163.00</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Gross margin: 68%. Father + son are the labor.</p>
+            </div>
+            <div>
+                <h3>Operator-Run (Year 2+)</h3>
+                <table style="margin: 0;">
+                    <tr><td>Avg Job Revenue</td><td class="currency"><strong>$240.00</strong></td></tr>
+                    <tr><td>Operator labor (loaded $22/hr × 1.25 hrs)</td><td class="currency">-$28.00</td></tr>
+                    <tr><td>Helper labor (loaded $18/hr × 1.25 hrs)</td><td class="currency">-$22.00</td></tr>
+                    <tr><td>Tipping fee at SWA</td><td class="currency">-$32.00</td></tr>
+                    <tr><td>Fuel allocated</td><td class="currency">-$18.00</td></tr>
+                    <tr><td>Consumables</td><td class="currency">-$4.00</td></tr>
+                    <tr><td>Insurance amortized</td><td class="currency">-$7.00</td></tr>
+                    <tr><td>CRM / dispatch</td><td class="currency">-$2.00</td></tr>
+                    <tr><td>Marketing CAC amortized</td><td class="currency">-$15.00</td></tr>
+                    <tr class="total-row"><td><strong>Owner net margin / job</strong></td><td class="currency"><strong>$112.00</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Net margin: 47%. Duncan ~5 hrs/week oversight.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPERATIONAL MODEL -->
+    <div class="section">
+        <h2>Route &amp; Operational Model</h2>
+        <table>
+            <tr><th>Metric</th><th>Value</th><th>Notes</th></tr>
+            <tr><td>Average on-property time</td><td>45–75 min</td><td>Loading + tidying</td></tr>
+            <tr><td>Drive time per stop (clustered)</td><td>15–20 min</td><td>Includes round trip to SWA on every 2–3 stops</td></tr>
+            <tr><td>Jobs per day (father + son)</td><td>5–7</td><td>10-hour day, June peak demand</td></tr>
+            <tr><td>Working days per week (summer)</td><td>6</td><td>Sat is highest-demand booking day</td></tr>
+            <tr><td><strong>Daily revenue capacity (Year 1)</strong></td><td><strong>$1,200–1,700</strong></td><td>5–7 jobs × $240 avg</td></tr>
+            <tr><td>SWA station round trip</td><td>20–35 min</td><td>From Wellington to Lantana or Jog Rd</td></tr>
+            <tr><td>Storm-surge daily capacity</td><td>10–14 jobs</td><td>Father + son + temp helper; daylight only</td></tr>
+        </table>
+    </div>
+
+    <!-- STARTUP CAPITAL -->
+    <div class="section page-break">
+        <h2>Startup Capital</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Lean Launch (use existing truck)</h3>
+                <table style="margin: 0;">
+                    <tr><td>LLC formation + FEIN</td><td class="currency">$150</td></tr>
+                    <tr><td>General liability insurance (yr 1)</td><td class="currency">$1,000</td></tr>
+                    <tr><td>Commercial auto rider</td><td class="currency">$700</td></tr>
+                    <tr><td>Used dump trailer (10–14 yd³, 7×14)</td><td class="currency">$2,800</td></tr>
+                    <tr><td>Used homeowner chipper (3–4" capacity)</td><td class="currency">$1,200</td></tr>
+                    <tr><td>Two chainsaws + chains + bar oil</td><td class="currency">$700</td></tr>
+                    <tr><td>PPE (helmets, chaps, gloves, eyewear ×2)</td><td class="currency">$350</td></tr>
+                    <tr><td>Rakes / pitchforks / tarps / ratchet straps</td><td class="currency">$300</td></tr>
+                    <tr><td>Hand-held leaf blower</td><td class="currency">$250</td></tr>
+                    <tr><td>Magnet decals for truck + trailer</td><td class="currency">$200</td></tr>
+                    <tr><td>One-page website + Stripe booking</td><td class="currency">$300</td></tr>
+                    <tr><td>Door hangers + yard signs (round 1)</td><td class="currency">$500</td></tr>
+                    <tr><td>FB/Google ad budget (Mo 1–2)</td><td class="currency">$1,000</td></tr>
+                    <tr><td>Working capital reserve</td><td class="currency">$1,000</td></tr>
+                    <tr class="total-row"><td><strong>Total Lean Launch</strong></td><td class="currency"><strong>$10,450</strong></td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Cash-Conservative Launch</h3>
+                <table style="margin: 0;">
+                    <tr><td>LLC + FEIN + insurance bundle</td><td class="currency">$1,850</td></tr>
+                    <tr><td>Rent dump trailer first 30 days ($75/day × 12 = $900) instead of buy</td><td class="currency">$900</td></tr>
+                    <tr><td>One chainsaw + minimal PPE + rakes</td><td class="currency">$700</td></tr>
+                    <tr><td>Hand-tool only first month (no chipper)</td><td class="currency">$0</td></tr>
+                    <tr><td>Magnets + door hangers + signage</td><td class="currency">$500</td></tr>
+                    <tr><td>Website + Stripe</td><td class="currency">$300</td></tr>
+                    <tr><td>Marketing (FB neighborhood + Nextdoor)</td><td class="currency">$500</td></tr>
+                    <tr><td>Working capital</td><td class="currency">$750</td></tr>
+                    <tr class="total-row"><td><strong>Cash-Conservative Total</strong></td><td class="currency"><strong>$5,500</strong></td></tr>
+                </table>
+                <p style="margin-top: 14px; font-size: 0.9em; color: #666;">
+                    Use this if Duncan wants to validate demand before committing capital. Buy the trailer + chipper at Month 2 once cash positive.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- EQUIPMENT DETAIL -->
+    <div class="section">
+        <h2>Equipment Detail</h2>
+        <table>
+            <tr><th>Item</th><th>Spec / Model Class</th><th class="number">Used</th><th class="number">New</th><th>Where to Buy</th></tr>
+            <tr><td>Dump trailer</td><td>10–14 yd³, 7'×14', 10K GVWR</td><td class="currency">$2,500–4,000</td><td class="currency">$7,000+</td><td>FB Marketplace, Lakeside Trailer Sales (FL), PJ Trailers dealers</td></tr>
+            <tr><td>Wood chipper (homeowner)</td><td>3–4" capacity, 6–10HP gas</td><td class="currency">$800–1,500</td><td class="currency">$2,000–3,000</td><td>Patriot, DR Power, FB Marketplace</td></tr>
+            <tr><td>Wood chipper (commercial)</td><td>6" capacity, towable, 25HP+</td><td class="currency">$4,500–8,000</td><td class="currency">$10K+</td><td>Bandit / Vermeer used; defer to Year 2</td></tr>
+            <tr><td>Chainsaw — main</td><td>20" bar, 55cc class (Stihl MS 271 / Husqv 455)</td><td class="currency">$300</td><td class="currency">$500</td><td>Husqvarna / Stihl dealer; new is fine</td></tr>
+            <tr><td>Chainsaw — limber</td><td>14" bar, 36–40cc class</td><td class="currency">$150</td><td class="currency">$280</td><td>Same</td></tr>
+            <tr><td>PPE per worker</td><td>Helmet w/ face screen, chaps, gloves, ear protection</td><td class="currency">—</td><td class="currency">$175 each</td><td>Bailey's, TreeStuff.com</td></tr>
+            <tr><td>Leaf blower</td><td>Backpack, 600+ CFM (Stihl BR 600 / Husqv 580)</td><td class="currency">$300</td><td class="currency">$550</td><td>Home Depot / dealer</td></tr>
+            <tr><td>Tarps + bungees + tie-downs</td><td>Heavy-duty</td><td class="currency">—</td><td class="currency">$150</td><td>HD / Amazon</td></tr>
+        </table>
+        <div class="note">
+            <strong>Buy used, sell unused:</strong> Florida has heavy used-equipment supply because many tree services upgrade after each storm season. Best window to buy: April–May (before season) or January (post-season liquidation). Avoid buying in October–November when storm-damaged sellers inflate prices.
+        </div>
+    </div>
+
+    <!-- YEAR 1 MONTHLY BUILDUP -->
+    <div class="section page-break">
+        <h2>Year 1 — Monthly Buildup (Father + Son Operated, June 1 Launch)</h2>
+        <table>
+            <tr>
+                <th>Month</th>
+                <th class="number">Jobs Done</th>
+                <th class="currency">Avg Ticket</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Direct Costs</th>
+                <th class="currency">Marketing</th>
+                <th class="currency">Net Cash</th>
+                <th class="currency">Cumulative</th>
+            </tr>
+            <tr><td>Jun (Mo 1) — Launch</td><td class="number">22</td><td class="currency">$220</td><td class="currency">$4,840</td><td class="currency">$1,400</td><td class="currency">$800</td><td class="currency">$2,640</td><td class="currency">$2,640</td></tr>
+            <tr><td>Jul (Mo 2)</td><td class="number">38</td><td class="currency">$235</td><td class="currency">$8,930</td><td class="currency">$2,450</td><td class="currency">$800</td><td class="currency">$5,680</td><td class="currency">$8,320</td></tr>
+            <tr><td>Aug (Mo 3) — peak hurricane</td><td class="number">52</td><td class="currency">$285</td><td class="currency">$14,820</td><td class="currency">$3,400</td><td class="currency">$600</td><td class="currency">$10,820</td><td class="currency">$19,140</td></tr>
+            <tr><td>Sep (Mo 4) — peak hurricane</td><td class="number">58</td><td class="currency">$310</td><td class="currency">$17,980</td><td class="currency">$3,800</td><td class="currency">$600</td><td class="currency">$13,580</td><td class="currency">$32,720</td></tr>
+            <tr><td>Oct (Mo 5)</td><td class="number">45</td><td class="currency">$255</td><td class="currency">$11,475</td><td class="currency">$3,000</td><td class="currency">$600</td><td class="currency">$7,875</td><td class="currency">$40,595</td></tr>
+            <tr><td>Nov (Mo 6)</td><td class="number">36</td><td class="currency">$235</td><td class="currency">$8,460</td><td class="currency">$2,400</td><td class="currency">$500</td><td class="currency">$5,560</td><td class="currency">$46,155</td></tr>
+            <tr><td>Dec (Mo 7)</td><td class="number">28</td><td class="currency">$215</td><td class="currency">$6,020</td><td class="currency">$1,800</td><td class="currency">$500</td><td class="currency">$3,720</td><td class="currency">$49,875</td></tr>
+            <tr><td>Jan (Mo 8)</td><td class="number">22</td><td class="currency">$210</td><td class="currency">$4,620</td><td class="currency">$1,400</td><td class="currency">$500</td><td class="currency">$2,720</td><td class="currency">$52,595</td></tr>
+            <tr><td>Feb (Mo 9)</td><td class="number">26</td><td class="currency">$215</td><td class="currency">$5,590</td><td class="currency">$1,600</td><td class="currency">$500</td><td class="currency">$3,490</td><td class="currency">$56,085</td></tr>
+            <tr><td>Mar (Mo 10) — spring clean-up</td><td class="number">38</td><td class="currency">$235</td><td class="currency">$8,930</td><td class="currency">$2,400</td><td class="currency">$500</td><td class="currency">$6,030</td><td class="currency">$62,115</td></tr>
+            <tr><td>Apr (Mo 11)</td><td class="number">32</td><td class="currency">$230</td><td class="currency">$7,360</td><td class="currency">$2,100</td><td class="currency">$500</td><td class="currency">$4,760</td><td class="currency">$66,875</td></tr>
+            <tr><td>May (Mo 12) — pre-season ramp</td><td class="number">35</td><td class="currency">$235</td><td class="currency">$8,225</td><td class="currency">$2,200</td><td class="currency">$700</td><td class="currency">$5,325</td><td class="currency">$72,200</td></tr>
+            <tr class="total-row">
+                <td><strong>YEAR 1 TOTAL</strong></td>
+                <td class="number">432 jobs</td>
+                <td class="currency">avg $244</td>
+                <td class="currency">$107,250</td>
+                <td class="currency">$27,950</td>
+                <td class="currency">$7,100</td>
+                <td class="currency">$72,200</td>
+                <td class="currency">$72,200</td>
+            </tr>
+        </table>
+        <div class="note">
+            <strong>Year 1 reality check:</strong> Net cash of $72,200 is BEFORE startup capital ($10,450 lean / $5,500 cash-conservative), insurance amortized ($1,700), phone/admin ($1,000), and equipment refresh ($1,500). True Year 1 owner take: <strong>~$58,000–63,000</strong>. Aug–Sep concentration means one bad storm year can swing total ±$15K. Subscription tier dampens that swing — every recurring subscriber is annual revenue insurance.
+        </div>
+    </div>
+
+    <!-- YEAR 1 CHART -->
+    <div class="section">
+        <h2>Year 1 — Monthly Revenue &amp; Jobs Pattern</h2>
+        <div class="chart-container"><canvas id="rampChart"></canvas></div>
+    </div>
+
+    <!-- 3-YEAR PROJECTIONS -->
+    <div class="section page-break">
+        <h2>3-Year Projections (Operator-Holding Model)</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Phase</th>
+                <th class="number">Jobs</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Operator Labor</th>
+                <th class="currency">Other Opex</th>
+                <th class="currency">Owner Net</th>
+            </tr>
+            <tr>
+                <td><strong>Year 1</strong></td>
+                <td>Father + son operate (prove)</td>
+                <td class="number">432</td>
+                <td class="currency">$107,250</td>
+                <td class="currency">$0</td>
+                <td class="currency">$45,000</td>
+                <td class="currency">$60,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 2</strong></td>
+                <td>Hire operator + helper; add subscription base</td>
+                <td class="number">720</td>
+                <td class="currency">$178,000</td>
+                <td class="currency">$58,000</td>
+                <td class="currency">$50,000</td>
+                <td class="currency">$70,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 3</strong></td>
+                <td>2nd truck + 6" chipper; HOA contracts</td>
+                <td class="number">1,150</td>
+                <td class="currency">$295,000</td>
+                <td class="currency">$110,000</td>
+                <td class="currency">$70,000</td>
+                <td class="currency">$115,000</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="3"><strong>3-Year Cumulative Owner Net</strong></td>
+                <td colspan="3"></td>
+                <td class="currency"><strong>$245,000</strong></td>
+            </tr>
+        </table>
+        <p style="font-size: 0.9em; color: #666; margin-top: 12px;">
+            Year 2 hire is the inflection. Year 3 second truck + commercial chipper requires ~$15K additional capital but unlocks HOA common-area contracts and small-commercial tree-service haul-outs.
+        </p>
+    </div>
+
+    <!-- 3-YEAR CHART -->
+    <div class="section">
+        <h2>3-Year Revenue &amp; Owner Net</h2>
+        <div class="chart-container"><canvas id="threeYearChart"></canvas></div>
+    </div>
+
+    <!-- CUSTOMER ACQUISITION -->
+    <div class="section page-break">
+        <h2>Customer Acquisition Plan</h2>
+        <table>
+            <tr>
+                <th>Channel</th>
+                <th class="number">Cost / Lead</th>
+                <th class="number">Conv Rate</th>
+                <th class="currency">CAC</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Door hangers (Wellington equestrian belt)</td>
+                <td class="number">$0.15</td>
+                <td class="number">0.8%</td>
+                <td class="currency">~$19</td>
+                <td>Drop 1,000 in Saddle Trail, Polo Club, Equestrian Club Estates</td>
+            </tr>
+            <tr>
+                <td>Facebook ads (geo 33414/33470/33411)</td>
+                <td class="number">$4</td>
+                <td class="number">6%</td>
+                <td class="currency">~$67</td>
+                <td>Storm-prep creative; lookalike of buyers</td>
+            </tr>
+            <tr>
+                <td>Google Ads ("yard debris removal Wellington")</td>
+                <td class="number">$6</td>
+                <td class="number">20%</td>
+                <td class="currency">~$30</td>
+                <td>High intent, spikes post-storm</td>
+            </tr>
+            <tr>
+                <td>Nextdoor neighborhood posts</td>
+                <td class="number">$0</td>
+                <td class="number">organic</td>
+                <td class="currency">$0</td>
+                <td>Free in equestrian neighborhoods; high trust</td>
+            </tr>
+            <tr>
+                <td>Yard signs at active jobs</td>
+                <td class="number">$3</td>
+                <td class="number">organic</td>
+                <td class="currency">~$10</td>
+                <td>Day-of-job sign; high local visibility</td>
+            </tr>
+            <tr>
+                <td>HOA newsletter / community board ads</td>
+                <td class="number">$50–100</td>
+                <td class="number">2%</td>
+                <td class="currency">~$45</td>
+                <td>Versailles, Olympia, Black Diamond, Binks Forest</td>
+            </tr>
+            <tr>
+                <td>Robin Hood Adjusting newsletter cross-promo</td>
+                <td class="number">$0</td>
+                <td class="number">organic</td>
+                <td class="currency">$0</td>
+                <td>Existing PA-audience overlap; pre/post-storm sponsor slot</td>
+            </tr>
+            <tr>
+                <td>Tree-service partner referrals</td>
+                <td class="number">$0</td>
+                <td class="number">organic</td>
+                <td class="currency">$0</td>
+                <td>Sub-out: they cut, we haul; 70/30 to them</td>
+            </tr>
+            <tr>
+                <td>Property manager outreach (existing HubSpot list)</td>
+                <td class="number">$0</td>
+                <td class="number">~5%</td>
+                <td class="currency">$0</td>
+                <td>Use existing CRM partnerships pipeline</td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>Blended CAC target</strong></td>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="currency"><strong>$20–35</strong></td>
+                <td>Payback in 1 job at $240 avg</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- HOA TARGET LIST -->
+    <div class="section page-break">
+        <h2>Wellington HOA Target List (door-to-door + newsletter)</h2>
+        <p>These are high-priority Wellington / RPB / Loxahatchee communities for first-90-day outreach. Combination of (a) door-hanger drops, (b) HOA-board pitch for common-area pickup contracts, and (c) community-newsletter ad placement.</p>
+        <table>
+            <tr><th>Community</th><th>Zip</th><th>Lots</th><th>Outreach Tier</th><th>Notes</th></tr>
+            <tr><td>Equestrian Club Estates</td><td>33414</td><td>~180</td><td>Tier 1</td><td>Large lots, heavy palm coverage</td></tr>
+            <tr><td>Saddle Trail Park</td><td>33414</td><td>~200</td><td>Tier 1</td><td>Equestrian belt, premium income</td></tr>
+            <tr><td>Palm Beach Polo &amp; CC</td><td>33414</td><td>~600</td><td>Tier 1</td><td>HOA-managed common areas</td></tr>
+            <tr><td>Versailles</td><td>33449</td><td>~750</td><td>Tier 1</td><td>Active HOA newsletter</td></tr>
+            <tr><td>Binks Forest</td><td>33414</td><td>~500</td><td>Tier 1</td><td>Mature trees, heavy debris</td></tr>
+            <tr><td>Olympia</td><td>33414</td><td>~1,200</td><td>Tier 1</td><td>Volume; price-sensitive but real</td></tr>
+            <tr><td>Black Diamond</td><td>33414</td><td>~380</td><td>Tier 2</td><td>Mid-size, smaller lots</td></tr>
+            <tr><td>Aero Club</td><td>33414</td><td>~270</td><td>Tier 1</td><td>Large lots, high disposable income</td></tr>
+            <tr><td>Lake Charleston</td><td>33414</td><td>~700</td><td>Tier 2</td><td>Mixed-density</td></tr>
+            <tr><td>Greenview Shores</td><td>33414</td><td>~430</td><td>Tier 2</td><td>Smaller yards</td></tr>
+            <tr><td>The Acreage (unincorporated)</td><td>33470</td><td>15,000+</td><td>Tier 1</td><td>1.25-acre minimum lots; massive vol</td></tr>
+            <tr><td>Loxahatchee Groves</td><td>33470</td><td>~3,000</td><td>Tier 1</td><td>5-ac lots, ag-residential mix</td></tr>
+            <tr><td>Madison Green</td><td>33411</td><td>~1,150</td><td>Tier 2</td><td>RPB master-planned</td></tr>
+            <tr><td>Bay Hill Estates</td><td>33411</td><td>~340</td><td>Tier 2</td><td>RPB premium</td></tr>
+            <tr><td>Wycliffe Golf &amp; CC</td><td>33449</td><td>~1,200</td><td>Tier 2</td><td>HOA-managed</td></tr>
+        </table>
+        <div class="note">
+            <strong>Existing HubSpot leverage:</strong> ~25 PBC property managers and HOA contacts are already in the CRM via the prospecting automation. Pull a clean cut and run a parallel B2B email sequence pitching the HOA common-area pickup tier. Different value proposition from PA, no conflict.
+        </div>
+    </div>
+
+    <!-- DOOR-TO-DOOR PLAYBOOK -->
+    <div class="section">
+        <h2>Door-to-Door &amp; Direct-Marketing Playbook</h2>
+        <div class="grid-2">
+            <div class="assumptions">
+                <h3>Door Hanger Mechanics</h3>
+                <ul>
+                    <li>Print run: 1,000 units, $0.12–0.18 each, full color, 2-sided</li>
+                    <li>Front: storm-debris photo + "$150 Small Loads / Same-Day Quotes"</li>
+                    <li>Back: QR code → booking page; subscription pricing; phone number</li>
+                    <li>Drop cadence: 250/day Saturdays in Tier 1 zips before season opens; refresh post-storm</li>
+                    <li>Conversion target: 0.8–1.5% (8–15 jobs per 1,000 drops)</li>
+                </ul>
+            </div>
+            <div class="assumptions">
+                <h3>Yard Signs at Active Jobs</h3>
+                <ul>
+                    <li>$3 each, request placement at every job (offer $25 service credit)</li>
+                    <li>Sign stays 7 days; pull on next nearby job</li>
+                    <li>Doubles visibility for free; closes referrals naturally</li>
+                    <li>Phone number large; "Locally Owned, Wellington" tagline</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>HOA Board Pitch (in person)</h3>
+        <ul class="bullet">
+            <li><strong>Hook:</strong> "We're a Wellington father-son crew offering single-bill, 24-hr-response yard-waste removal for common areas. Cheaper than your tree-service contract for routine pickup."</li>
+            <li><strong>Tier offered:</strong> Monthly common-area pickup (negotiated price); priority post-storm window included.</li>
+            <li><strong>Leave-behind:</strong> One-page service sheet + price list + insurance certificate.</li>
+            <li><strong>Close:</strong> "Want me to send a free quote on next month's pickup so the board has a number to look at?"</li>
+        </ul>
+
+        <h3>Tree-Service Partner Approach</h3>
+        <ul class="bullet">
+            <li>Target: 8–12 local tree services who currently haul their own debris</li>
+            <li>Pitch: "We take the haul off your hands. You stay on tools, finish more jobs, no SWA round trip."</li>
+            <li>Pricing: 30% discount to standard rate (still very profitable for us; saves them 2 hrs/job)</li>
+            <li>Already-existing PBC tree services (sample): Davey Tree, Treeman Co., Bartlett, Tropic Tree</li>
+        </ul>
+    </div>
+
+    <!-- HIRING & HANDOFF -->
+    <div class="section page-break">
+        <h2>Hiring &amp; Handoff Plan (Year 2)</h2>
+        <div class="grid-3">
+            <div class="phase-box">
+                <h4>Months 1–6 (Year 1, summer + fall)</h4>
+                <p><strong>Duncan + son operate.</strong> Build SOPs, customer playbook, dispatch software workflows. Document every job type and edge case.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Months 7–12 (Year 1, winter + spring)</h4>
+                <p><strong>Hire a part-time helper at $18/hr</strong>, 20–25 hr/week. Ride along, learn the route, prepare for season 2.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Year 2 Month 1 (June 2027)</h4>
+                <p><strong>Promote helper or hire FT operator + helper.</strong> Duncan transitions to 5 hrs/week oversight. Son returns to school or steps to Year-2 venture.</p>
+            </div>
+        </div>
+        <h3 style="margin-top: 25px;">Operator Job Spec</h3>
+        <ul class="bullet">
+            <li><strong>Title:</strong> Route Operator — debris hauling</li>
+            <li><strong>Pay:</strong> $20–24/hr (FL market for outdoor route work); $45–50K/yr base + $5K performance bonus tied to job throughput</li>
+            <li><strong>Requirements:</strong> Valid FL driver's license, clean record, can lift 60 lbs, comfortable with chainsaw operation, fluent in English (Spanish preferred), reliable transport</li>
+            <li><strong>Training:</strong> 2 weeks ride-along; written SOP for chainsaw safety + chipper feed; SWA tipping procedure; customer communication scripts</li>
+            <li><strong>Daily tools:</strong> Truck + trailer, full PPE, smartphone dispatch app, chainsaw + chipper, branded uniform</li>
+        </ul>
+    </div>
+
+    <!-- RISKS -->
+    <div class="section page-break">
+        <h2>Risks &amp; Mitigations</h2>
+        <table>
+            <tr><th>Risk</th><th>Probability</th><th>Mitigation</th></tr>
+            <tr>
+                <td><strong>Quiet storm season (no named landfalls)</strong></td>
+                <td>Medium</td>
+                <td>Subscription tier provides floor revenue; spring clean-up + routine pickup keeps cash positive even in light years</td>
+            </tr>
+            <tr>
+                <td><strong>Chainsaw / chipper injury</strong></td>
+                <td>Medium</td>
+                <td>$1M GL + workers comp (Yr 2); strict PPE protocol; chainsaw cert online; no chipper feed without 2 people</td>
+            </tr>
+            <tr>
+                <td><strong>Truck / trailer breakdown mid-season</strong></td>
+                <td>Medium</td>
+                <td>Pre-season service in May; spare-tire kit on trailer; partner with rental yard for backup unit</td>
+            </tr>
+            <tr>
+                <td><strong>SWA tipping fee increase</strong></td>
+                <td>Low</td>
+                <td>Build 10% buffer into pricing; pass through any fee bumps via website notice</td>
+            </tr>
+            <tr>
+                <td><strong>Competitor entry post-storm</strong></td>
+                <td>High (every season)</td>
+                <td>Locked-in subscription base; faster response time; insurance cert; Wellington local trust</td>
+            </tr>
+            <tr>
+                <td><strong>Bad-debt residential payment failure</strong></td>
+                <td>Low-Medium</td>
+                <td>Card-on-file via Stripe for all jobs; no work without payment authorization</td>
+            </tr>
+            <tr>
+                <td><strong>Weather lost-days (rain, lightning)</strong></td>
+                <td>High in summer</td>
+                <td>Same-day reschedule policy; subscription customers get first slot on dry day</td>
+            </tr>
+            <tr>
+                <td><strong>Son availability (school resumes Aug)</strong></td>
+                <td>Certain</td>
+                <td>Shift to weekend-only schedule mid-Aug; hire weekday helper if demand is there</td>
+            </tr>
+            <tr>
+                <td><strong>Permit / county registration creep</strong></td>
+                <td>Low at small scale</td>
+                <td>Stay under FDEP commercial-hauler threshold; SWA tipping registration only ($0 fee); upgrade to commercial registration at $300K revenue</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 90-DAY LAUNCH PLAN -->
+    <div class="section">
+        <h2>90-Day Launch Plan (start 2026-05-26 for June 1 launch)</h2>
+        <table>
+            <tr><th>Week</th><th>Milestones</th></tr>
+            <tr>
+                <td><strong>Week 1 (May 26 – Jun 1)</strong></td>
+                <td>LLC + FEIN · GL insurance quote + bind · open business bank account · register Stripe · register domain (wellingtondebris.com or similar) · order trailer (used) or reserve rental</td>
+            </tr>
+            <tr>
+                <td><strong>Week 2 (Jun 2–8)</strong></td>
+                <td>Take delivery of trailer · buy chainsaws + PPE · print 1,000 door hangers · launch one-page booking site · order yard signs + truck magnets · post Nextdoor in 6 neighborhoods · cross-promo in Robin Hood newsletter</td>
+            </tr>
+            <tr>
+                <td><strong>Week 3 (Jun 9–15)</strong></td>
+                <td>First door-hanger drop (250 units, Wellington Tier 1) · run first 5–10 jobs · launch FB ad at $25/day storm-prep creative · request first reviews (Google, Nextdoor)</td>
+            </tr>
+            <tr>
+                <td><strong>Week 4 (Jun 16–22)</strong></td>
+                <td>Refine SOPs · second 250-unit door-hanger drop · pitch first 3 HOA boards · onboard first subscription customers</td>
+            </tr>
+            <tr>
+                <td><strong>Weeks 5–8 (Jun 23 – Jul 20)</strong></td>
+                <td>Scale to 35–45 jobs/month · onboard 8–15 subscription accounts · approach 5 tree-service partners · refresh ads</td>
+            </tr>
+            <tr>
+                <td><strong>Weeks 9–12 (Jul 21 – Aug 17)</strong></td>
+                <td>Stress-test for first storm window · 50+ jobs/month · 20+ subscriptions · second HOA pitch round · evaluate 2nd trailer or commercial chipper need</td>
+            </tr>
+            <tr>
+                <td><strong>Day 90 review</strong></td>
+                <td>Target: <strong>50+ jobs/month run rate, $12K+ MRR, 20+ subscriptions, sub-$35 blended CAC.</strong> If hit → continue, plan for Sept-Oct hurricane peak. If missed → diagnose by channel.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- DECISION GATES -->
+    <div class="section">
+        <h2>Decision Gates</h2>
+        <div class="grid-3">
+            <div class="phase-box">
+                <h4>Gate 1 — Day 90 (Aug 30, 2026)</h4>
+                <p><strong>Continue?</strong> 50+ jobs/mo run rate, 20+ subscriptions, $12K+ MRR. If yes → ride storm peak. If no → diagnose or wind down (sunk cost &lt;$10K).</p>
+            </div>
+            <div class="phase-box">
+                <h4>Gate 2 — Day 180 (Nov 30, 2026)</h4>
+                <p><strong>Hire helper?</strong> Post-hurricane assessment. If $40K+ Year-1 cash and clear demand for off-season service, hire $18/hr helper for spring clean-up wave.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Gate 3 — Day 365 (Jun 2027)</h4>
+                <p><strong>Add operator + second truck?</strong> If Year-1 finishes &gt;$60K owner take and SOPs are documented, hire FT operator. Duncan steps to oversight. Begin scouting Business #2.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM LINE -->
+    <div class="section">
+        <h2>Bottom Line</h2>
+        <div class="callout">
+            <h3>Why this venture replaces the pellet pitch cleanly</h3>
+            <ul class="bullet">
+                <li><strong>Capital at risk is small:</strong> $5.5K–$10K to find out, vs. $200K+ for the pellet pitch</li>
+                <li><strong>Cash-positive Month 1</strong> with first job done in Week 3</li>
+                <li><strong>Three stacked revenue streams</strong> reduce single-channel risk: on-demand + subscription + storm surge</li>
+                <li><strong>No regulatory drag:</strong> No FDEP permits, no zoning fights, no licensing required at this scale</li>
+                <li><strong>Leverages existing assets:</strong> Robin Hood newsletter, HubSpot HOA/PM contacts, Duncan's local trust, son's labor through Aug 17</li>
+                <li><strong>Year 1 prove-out is grounded:</strong> 432 jobs, $107K revenue, ~$60K owner take. Numbers assume average storm year, not heroes.</li>
+                <li><strong>3-year cumulative owner net of ~$245K</strong> with one operator + one truck expansion — credible compared to the pellet deck's $649K fantasy on infeasible assumptions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="margin-top: 50px; padding-top: 25px; border-top: 1px solid #e0e6ed; color: #999; font-size: 0.9em; text-align: center;">
+        Wellington Storm-Debris &amp; Yard Waste Hauling · Business Plan v1.0 · 2026-05-17<br>
+        Prepared for Duncan Littlejohn + Son · Pivot from landscape-pellet concept (2026-05-16)
+    </p>
+
+</div>
+
+<script>
+    new Chart(document.getElementById('rampChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'],
+            datasets: [
+                {
+                    type: 'bar',
+                    label: 'Monthly Revenue ($)',
+                    data: [4840, 8930, 14820, 17980, 11475, 8460, 6020, 4620, 5590, 8930, 7360, 8225],
+                    backgroundColor: '#1f3a5f',
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                },
+                {
+                    type: 'line',
+                    label: 'Jobs Completed',
+                    data: [22, 38, 52, 58, 45, 36, 28, 22, 26, 38, 32, 35],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 3,
+                    fill: false,
+                    pointRadius: 5,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                y: {
+                    type: 'linear', position: 'left', beginAtZero: true,
+                    title: { display: true, text: 'Revenue ($)' },
+                    ticks: { callback: v => '$' + v.toLocaleString() }
+                },
+                y1: {
+                    type: 'linear', position: 'right', beginAtZero: true,
+                    title: { display: true, text: 'Jobs' },
+                    grid: { drawOnChartArea: false }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('threeYearChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Year 1', 'Year 2', 'Year 3'],
+            datasets: [
+                { label: 'Revenue', data: [107250, 178000, 295000], backgroundColor: '#1f3a5f', borderRadius: 4 },
+                { label: 'Owner Net', data: [60000, 70000, 115000], backgroundColor: '#10b981', borderRadius: 4 }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } }
+            }
+        }
+    });
+</script>
+</body>
+</html>

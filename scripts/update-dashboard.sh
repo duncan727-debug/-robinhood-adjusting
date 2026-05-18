@@ -142,6 +142,17 @@ grep -q "^\[$TODAY.*[Bb]atch 2" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/nu
   batch2_status="ok"; batch2_detail="Done"
 }
 
+# 10:45am contact form fallback
+formfb_status="idle"; formfb_detail="Not run"
+formfb_log="$WORKSPACE/scripts/contact_form_queue.log"
+# Look for the agent's summary line which contains both "submitted=" and "blacklisted="
+formfb_summary=$(grep "^\[$TODAY" "$formfb_log" 2>/dev/null | grep "submitted=" | grep "blacklisted=" | tail -1 || echo "")
+if [[ -n "$formfb_summary" ]]; then
+  submitted=$(echo "$formfb_summary" | grep -oE "submitted=[0-9]+" | grep -oE "[0-9]+" || echo 0)
+  blacklisted=$(echo "$formfb_summary" | grep -oE "blacklisted=[0-9]+" | grep -oE "[0-9]+" || echo 0)
+  formfb_status="ok"; formfb_detail="${submitted} submitted, ${blacklisted} skipped"
+fi
+
 # 11:00am linkedin sequencing
 linkedin_status="idle"; linkedin_detail="Not run"
 [[ -d "$WORKSPACE/crm/linkedin-queue/$TODAY" ]] && {
@@ -244,6 +255,7 @@ const DASHBOARD_DATA = {
     { time:"9:00am",  name:"Drip Sequence",        detail:$(printf '"%s"' "$drip_detail"),        status:"$drip_status" },
     { time:"10:00am", name:"Enrichment Gate",      detail:$(printf '"%s"' "$enrich_detail"),      status:"$enrich_status" },
     { time:"10:30am", name:"Outreach Batch 2",     detail:$(printf '"%s"' "$batch2_detail"),      status:"$batch2_status" },
+    { time:"10:45am", name:"Contact Form Fallback",detail:$(printf '"%s"' "$formfb_detail"),      status:"$formfb_status" },
     { time:"11:00am", name:"LinkedIn Sequencing",  detail:$(printf '"%s"' "$linkedin_detail"),    status:"$linkedin_status" },
     { time:"12:30pm", name:"Outreach Batch 3",     detail:$(printf '"%s"' "$batch3_detail"),      status:"$batch3_status" },
     { time:"1:00pm",  name:"Partnership Builder",  detail:$(printf '"%s"' "$partner_detail"),     status:"$partner_status" },

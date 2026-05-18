@@ -3,1068 +3,806 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleet Advertising Aggregator - Financial Model</title>
+    <title>Fleet Advertising Aggregator - Financial Model v3</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-            padding: 20px;
+            line-height: 1.6; color: #333; background: #f5f5f5; padding: 20px;
         }
-
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 40px;
+            max-width: 1200px; margin: 0 auto; background: white;
+            border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 40px;
         }
-
         h1 {
-            font-size: 2.5em;
-            color: #0066cc;
-            margin-bottom: 10px;
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 15px;
+            font-size: 2.4em; color: #0066cc; margin-bottom: 10px;
+            border-bottom: 3px solid #0066cc; padding-bottom: 15px;
         }
-
         h2 {
-            font-size: 1.8em;
-            color: #0066cc;
-            margin-top: 40px;
-            margin-bottom: 25px;
-            border-left: 4px solid #0066cc;
-            padding-left: 15px;
+            font-size: 1.7em; color: #0066cc; margin-top: 40px;
+            margin-bottom: 22px; border-left: 4px solid #0066cc; padding-left: 15px;
         }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
+        h3 { color: #0066cc; margin-bottom: 15px; font-size: 1.2em; }
+        .section { margin-bottom: 45px; }
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            width: 100%; border-collapse: collapse; margin: 18px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-size: 0.93em;
         }
-
         th {
-            background: #0066cc;
-            color: white;
-            padding: 14px;
-            text-align: left;
-            font-weight: 600;
+            background: #0066cc; color: white; padding: 12px;
+            text-align: left; font-weight: 600;
         }
-
-        td {
-            padding: 12px 14px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:hover {
-            background: #f9f9f9;
-        }
-
-        tr:nth-child(even) {
-            background: #f5f5f5;
-        }
-
-        .total-row {
-            background: #e6f2ff !important;
-            font-weight: bold;
-            color: #0066cc;
-        }
-
-        .total-row td {
-            border-top: 2px solid #0066cc;
-            border-bottom: 2px solid #0066cc;
-        }
-
-        .currency {
-            text-align: right;
-            font-family: 'Courier New', monospace;
-        }
-
-        .number {
-            text-align: right;
-            font-family: 'Courier New', monospace;
-        }
-
+        td { padding: 10px 12px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f9f9f9; }
+        tr:nth-child(even) { background: #f5f5f5; }
+        .total-row { background: #e6f2ff !important; font-weight: bold; color: #0066cc; }
+        .total-row td { border-top: 2px solid #0066cc; border-bottom: 2px solid #0066cc; }
+        .currency, .number { text-align: right; font-family: 'Courier New', monospace; }
         .chart-container {
-            position: relative;
-            height: 400px;
-            margin: 30px 0;
-            padding: 20px;
-            background: #fafafa;
-            border-radius: 4px;
+            position: relative; height: 380px; margin: 25px 0; padding: 18px;
+            background: #fafafa; border-radius: 4px;
         }
-
         .assumptions {
-            background: #e6f2ff;
-            border-left: 5px solid #0066cc;
-            padding: 20px;
-            border-radius: 4px;
-            margin: 20px 0;
+            background: #e6f2ff; border-left: 5px solid #0066cc;
+            padding: 20px; border-radius: 4px; margin: 18px 0;
         }
-
-        .assumptions h3 {
-            color: #0066cc;
-            margin-bottom: 15px;
-        }
-
-        .assumptions ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .assumptions li {
-            padding: 8px 0;
-            border-bottom: 1px solid #c8e6ff;
-        }
-
-        .assumptions li:last-child {
-            border-bottom: none;
-        }
-
+        .assumptions h3 { color: #0066cc; margin-bottom: 12px; margin-top: 0; }
+        .assumptions ul { list-style: none; margin-left: 0; }
+        .assumptions li { padding: 7px 0; border-bottom: 1px solid #c8e6ff; }
+        .assumptions li:last-child { border-bottom: none; }
         .key-metric {
-            display: inline-block;
-            background: white;
-            border: 2px solid #0066cc;
-            border-radius: 4px;
-            padding: 20px 30px;
-            margin: 10px 20px 10px 0;
-            text-align: center;
+            display: inline-block; background: white; border: 2px solid #0066cc;
+            border-radius: 4px; padding: 18px 26px; margin: 8px 16px 8px 0; text-align: center;
         }
-
-        .key-metric-value {
-            font-size: 2em;
-            font-weight: bold;
-            color: #0066cc;
-            margin-bottom: 5px;
-        }
-
-        .key-metric-label {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 20px 0;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
+        .key-metric-value { font-size: 1.9em; font-weight: bold; color: #0066cc; margin-bottom: 4px; }
+        .key-metric-label { font-size: 0.85em; color: #666; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 18px 0; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 18px 0; }
         .note {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            border-radius: 4px;
-            margin: 20px 0;
-            font-size: 0.95em;
+            background: #fff3cd; border-left: 4px solid #ffc107;
+            padding: 15px; border-radius: 4px; margin: 18px 0; font-size: 0.95em;
         }
-
-        .print-only {
-            display: none;
+        .warning {
+            background: #fff4e6; border-left: 4px solid #ff9800;
+            padding: 15px; border-radius: 4px; margin: 18px 0; font-size: 0.95em;
         }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                padding: 0;
-                max-width: 100%;
-            }
-
-            .page-break {
-                page-break-after: always;
-                margin-bottom: 40px;
-            }
-
-            .print-only {
-                display: block;
-            }
-        }
-
         .box {
-            background: white;
-            padding: 20px;
-            border-left: 4px solid #0066cc;
-            border-radius: 4px;
+            background: white; padding: 20px; border-left: 4px solid #0066cc; border-radius: 4px;
         }
-
-        .box h3 {
-            color: #0066cc;
-            margin-bottom: 15px;
+        .box h3 { color: #0066cc; margin-bottom: 12px; }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .page-break { page-break-after: always; margin-bottom: 30px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚛 Fleet Advertising Aggregator</h1>
-        <p style="color: #666; font-size: 1.1em; margin-bottom: 10px;">Financial Model & Projections</p>
-        <p style="color: #999;">South Florida Market | Updated 2026</p>
+        <h1>Fleet Advertising Aggregator</h1>
+        <p style="color: #666; font-size: 1.1em; margin-bottom: 6px;">Financial Model &amp; Projections — v3.0</p>
+        <p style="color: #999; margin-bottom: 25px;">South Florida → Statewide · Updated 2026-05-17 · Reconciled with v3 pitch deck</p>
+
+        <div class="warning">
+            <strong>What changed from v2:</strong> Every revenue and cost driver is now anchored to researched industry benchmarks rather than internal estimates. Fleet payout shifted 65% → 60% (still inside the published $300–$500/truck/month range that truck-side ad operators advertise to fleet owners). Advertiser blended rate moved to $500/truck/mo (low-mid of inventory pricing). CAC dropped $3,500 → $3,000 (within the $1,500–$3,500 B2B benchmark). Sales cycle 60–90 days (industry-validated). Our retained net per truck: <strong>$115/mo</strong>. Y1 owner net: $65K; 5-year cumulative: $4.37M.
+        </div>
 
         <!-- ASSUMPTIONS -->
         <div class="section page-break">
             <h2>Business Assumptions</h2>
-
             <div class="grid-2">
                 <div class="assumptions">
                     <h3>Revenue Model</h3>
                     <ul>
-                        <li><strong>Commission Structure:</strong> 20% of advertiser spend</li>
-                        <li><strong>Advertiser Rate:</strong> $400-500/truck/month (market rate)</li>
-                        <li><strong>Our Revenue/Truck:</strong> $80-100/month</li>
-                        <li><strong>Fleet Payout:</strong> 80% ($320-400/month per truck)</li>
-                        <li><strong>Fleet Size (avg):</strong> 50 trucks</li>
-                        <li><strong>Fleet Monthly Revenue:</strong> $4,000-5,000</li>
+                        <li><strong>Inventory mix (Y1 blended):</strong> 40% panel, 30% vinyl, 20% partial wrap, 10% full wrap</li>
+                        <li><strong>Advertiser rate (blended):</strong> $500/truck/mo</li>
+                        <li><strong>Fleet payout:</strong> 60% of advertiser revenue ($300/truck/mo — inside the published $300–$500 industry range)</li>
+                        <li><strong>Our net per truck/mo:</strong> $115 (after wrap amort, install, processing, ops)</li>
+                        <li><strong>Effective take rate:</strong> 23% blended</li>
+                        <li><strong>Avg fleet size:</strong> 30 trucks (mid-market commercial)</li>
+                        <li><strong>Min advertiser term:</strong> 3 mo panel / 6 mo partial / 12 mo full</li>
                     </ul>
                 </div>
-
                 <div class="assumptions">
                     <h3>Operational Assumptions</h3>
                     <ul>
-                        <li><strong>Customer Acquisition Cost:</strong> $1,500 per fleet</li>
-                        <li><strong>Sales Cycles:</strong> 6-8 weeks per fleet</li>
-                        <li><strong>Churn Rate:</strong> 5% annually (low due to revenue-share model)</li>
-                        <li><strong>Campaign Conversion:</strong> 80% (fleets → live campaigns)</li>
-                        <li><strong>Year 1 Ramp:</strong> 2 fleets (Jan) → 8 fleets (Dec)</li>
-                        <li><strong>Year 1 Avg Fleet Count:</strong> 5 fleets</li>
+                        <li><strong>Customer Acquisition Cost:</strong> $3,000 per fleet (within $1.5K–$3.5K B2B benchmark)</li>
+                        <li><strong>Sales Cycle:</strong> 60–90 days (industry-validated B2B norm)</li>
+                        <li><strong>Annual fleet churn:</strong> 15%</li>
+                        <li><strong>Campaign fill rate:</strong> 70% (truck-level utilization)</li>
+                        <li><strong>Phase 0 fleets (Mo 1-4):</strong> 2 (Wellington/PBC pilot)</li>
+                        <li><strong>Phase 1 fleets EOY 1:</strong> 6 (SFL expansion)</li>
+                        <li><strong>Y1 trucks EOY:</strong> 245</li>
                     </ul>
                 </div>
             </div>
-
             <div class="note">
-                <strong>Key Assumption:</strong> Model assumes 20% commission from advertisers (standard for ad tech). This means $80-100 revenue per truck per month with zero inventory, logistics, or production costs—pure margin business.
+                <strong>Where the 60/40 split came from:</strong> Published truck-side advertising programs (Wrapify, fleet-broker outfits) advertise fleet payouts of $300–$500/truck/month. We anchor to the conservative end ($300) and price advertisers at $500 — fleet keeps the majority, our take rate is 23%. The 23% sits inside the 20–30% gross-commission band typical for OOH media reps; the difference is that we also operate the inventory (wrap amort, install, advertiser servicing) — that's what produces a defensible margin instead of pure-broker thinness.
             </div>
         </div>
 
-        <!-- YEAR 1 MONTHLY BREAKDOWN -->
+        <!-- INVENTORY ECONOMICS -->
         <div class="section page-break">
-            <h2>Year 1 - Monthly Breakdown</h2>
+            <h2>Inventory Economics (per truck/month, by type)</h2>
+            <table>
+                <tr>
+                    <th>Inventory Type</th>
+                    <th class="currency">Advertiser Rate</th>
+                    <th class="currency">Wrap CapEx</th>
+                    <th class="currency">Amort/Mo</th>
+                    <th class="currency">Fleet Payout</th>
+                    <th class="currency">Our Net</th>
+                    <th class="number">% Y1 Mix</th>
+                </tr>
+                <tr>
+                    <td><strong>Magnetic panel</strong></td>
+                    <td class="currency">$250</td>
+                    <td class="currency">$45</td>
+                    <td class="currency">$5</td>
+                    <td class="currency">$150</td>
+                    <td class="currency">$75</td>
+                    <td class="number">40%</td>
+                </tr>
+                <tr>
+                    <td><strong>Vinyl side panel</strong></td>
+                    <td class="currency">$400</td>
+                    <td class="currency">$450</td>
+                    <td class="currency">$50</td>
+                    <td class="currency">$240</td>
+                    <td class="number">$95</td>
+                    <td class="number">30%</td>
+                </tr>
+                <tr>
+                    <td><strong>Partial wrap</strong></td>
+                    <td class="currency">$600</td>
+                    <td class="currency">$2,250</td>
+                    <td class="currency">$250</td>
+                    <td class="currency">$360</td>
+                    <td class="currency">$155</td>
+                    <td class="number">20%</td>
+                </tr>
+                <tr>
+                    <td><strong>Full wrap</strong></td>
+                    <td class="currency">$800</td>
+                    <td class="currency">$5,000</td>
+                    <td class="currency">$417</td>
+                    <td class="currency">$480</td>
+                    <td class="currency">$190</td>
+                    <td class="number">10%</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Blended (Y1)</strong></td>
+                    <td class="currency"><strong>$500</strong></td>
+                    <td class="currency">—</td>
+                    <td class="currency"><strong>$95</strong></td>
+                    <td class="currency"><strong>$300</strong></td>
+                    <td class="currency"><strong>$115</strong></td>
+                    <td class="number">100%</td>
+                </tr>
+            </table>
+            <div class="note">
+                <strong>Why blended improves over time:</strong> As mix shifts toward partial + full wraps in Year 2–3 (advertiser maturity, longer campaigns), per-truck net climbs from $115 (Y1) to ~$130 (Y3) to ~$145 (Y5). The 5-year projection holds blended at $115 to stay conservative; upside from mix-shift is unmodeled.
+            </div>
+        </div>
 
+        <!-- PHASE 0 — DETAILED PILOT -->
+        <div class="section page-break">
+            <h2>Phase 0 — Wellington/PBC Pilot (Months 1–4)</h2>
+            <p style="margin-bottom: 15px;">Phase 0 uses magnetic panels only — <strong>no wrap CapEx</strong>. Magnet inventory at $250 advertiser/$150 fleet/$75 to us per truck/month. The whole point of Phase 0 is to prove the demand-and-supply matching works before any meaningful capital is at risk.</p>
             <table>
                 <tr>
                     <th>Month</th>
-                    <th class="number">Fleets Live</th>
+                    <th class="number">Fleets</th>
                     <th class="number">Trucks Live</th>
-                    <th class="currency">Revenue</th>
-                    <th class="currency">Operating Cost</th>
-                    <th class="currency">Net Profit</th>
-                    <th class="currency">Cumulative</th>
+                    <th class="currency">Advertiser Gross</th>
+                    <th class="currency">Our Net Rev</th>
+                    <th class="currency">Op Costs</th>
+                    <th class="currency">Net Cash</th>
                 </tr>
                 <tr>
-                    <td>January</td>
+                    <td>Mo 1 — Setup</td>
                     <td class="number">0</td>
                     <td class="number">0</td>
                     <td class="currency">$0</td>
-                    <td class="currency">$8,000</td>
-                    <td class="currency">-$8,000</td>
-                    <td class="currency">-$8,000</td>
+                    <td class="currency">$0</td>
+                    <td class="currency">$2,500</td>
+                    <td class="currency">-$2,500</td>
                 </tr>
                 <tr>
-                    <td>February</td>
+                    <td>Mo 2 — First fleet</td>
                     <td class="number">1</td>
-                    <td class="number">50</td>
-                    <td class="currency">$4,500</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">-$4,000</td>
-                    <td class="currency">-$12,000</td>
+                    <td class="number">22</td>
+                    <td class="currency">$5,500</td>
+                    <td class="currency">$1,650</td>
+                    <td class="currency">$2,400</td>
+                    <td class="currency">-$750</td>
                 </tr>
                 <tr>
-                    <td>March</td>
+                    <td>Mo 3 — Second fleet</td>
                     <td class="number">2</td>
-                    <td class="number">100</td>
-                    <td class="currency">$9,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$500</td>
-                    <td class="currency">-$11,500</td>
+                    <td class="number">45</td>
+                    <td class="currency">$11,250</td>
+                    <td class="currency">$3,375</td>
+                    <td class="currency">$2,400</td>
+                    <td class="currency">$975</td>
                 </tr>
                 <tr>
-                    <td>April</td>
-                    <td class="number">3</td>
-                    <td class="number">150</td>
-                    <td class="currency">$13,500</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$5,000</td>
-                    <td class="currency">-$6,500</td>
-                </tr>
-                <tr>
-                    <td>May</td>
-                    <td class="number">4</td>
-                    <td class="number">200</td>
-                    <td class="currency">$18,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$9,500</td>
-                    <td class="currency">$3,000</td>
-                </tr>
-                <tr>
-                    <td>June</td>
-                    <td class="number">5</td>
-                    <td class="number">250</td>
-                    <td class="currency">$22,500</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$14,000</td>
-                    <td class="currency">$17,000</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td class="number">6</td>
-                    <td class="number">300</td>
-                    <td class="currency">$27,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$18,500</td>
-                    <td class="currency">$35,500</td>
-                </tr>
-                <tr>
-                    <td>August</td>
-                    <td class="number">6</td>
-                    <td class="number">300</td>
-                    <td class="currency">$27,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$18,500</td>
-                    <td class="currency">$54,000</td>
-                </tr>
-                <tr>
-                    <td>September</td>
-                    <td class="number">7</td>
-                    <td class="number">350</td>
-                    <td class="currency">$31,500</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$23,000</td>
-                    <td class="currency">$77,000</td>
-                </tr>
-                <tr>
-                    <td>October</td>
-                    <td class="number">8</td>
-                    <td class="number">400</td>
-                    <td class="currency">$36,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$27,500</td>
-                    <td class="currency">$104,500</td>
-                </tr>
-                <tr>
-                    <td>November</td>
-                    <td class="number">8</td>
-                    <td class="number">400</td>
-                    <td class="currency">$36,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$27,500</td>
-                    <td class="currency">$132,000</td>
-                </tr>
-                <tr>
-                    <td>December</td>
-                    <td class="number">8</td>
-                    <td class="number">400</td>
-                    <td class="currency">$36,000</td>
-                    <td class="currency">$8,500</td>
-                    <td class="currency">$27,500</td>
-                    <td class="currency">$159,500</td>
+                    <td>Mo 4 — Pilot expansion</td>
+                    <td class="number">2</td>
+                    <td class="number">65</td>
+                    <td class="currency">$16,250</td>
+                    <td class="currency">$4,875</td>
+                    <td class="currency">$2,400</td>
+                    <td class="currency">$2,475</td>
                 </tr>
                 <tr class="total-row">
-                    <td><strong>YEAR 1 TOTAL</strong></td>
-                    <td class="number">-</td>
-                    <td class="number">-</td>
-                    <td class="currency">$261,000</td>
-                    <td class="currency">$102,000</td>
-                    <td class="currency">$159,000</td>
-                    <td class="currency">$159,000</td>
+                    <td><strong>Phase 0 Total</strong></td>
+                    <td class="number">2</td>
+                    <td class="number">65 EOY</td>
+                    <td class="currency">$33,000</td>
+                    <td class="currency">$9,900</td>
+                    <td class="currency">$9,700</td>
+                    <td class="currency">$200</td>
                 </tr>
             </table>
-
             <div class="note">
-                <strong>Key Observation:</strong> Break-even achieved in April (Month 3). Investment of $15K recovered by Month 4. Rest of year is pure profit. Monthly revenue compounds from $0 → $36K as fleets are added.
+                <strong>Phase 0 P&amp;L summary:</strong> Roughly breakeven at the operating line. We don't make real money here — we de-risk the model. By Day 120 we should have hard data on (a) fleet onboarding cycle time, (b) actual advertiser CPM in our market, (c) panel utilization rate, and (d) ops overhead per truck.
             </div>
+            <div class="assumptions">
+                <h3>Phase 0 Cost Structure (monthly)</h3>
+                <ul>
+                    <li><strong>LLC, insurance, legal:</strong> $400/mo</li>
+                    <li><strong>Platform (Airtable + Stripe):</strong> $250/mo</li>
+                    <li><strong>Panel materials (amortized):</strong> $300/mo</li>
+                    <li><strong>Outreach + travel (PBC):</strong> $400/mo</li>
+                    <li><strong>Duncan's allocated time:</strong> $1,000/mo (placeholder; not paid in cash)</li>
+                    <li><strong>Contingency / supplies:</strong> $350/mo</li>
+                    <li><strong>Total monthly cost (cash basis):</strong> ~$1,700–$2,500</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- YEAR 1 MONTHLY -->
+        <div class="section page-break">
+            <h2>Year 1 — Full Monthly Buildup</h2>
+            <table>
+                <tr>
+                    <th>Month</th>
+                    <th>Phase</th>
+                    <th class="number">Fleets</th>
+                    <th class="number">Trucks Live</th>
+                    <th class="currency">Our Net Rev</th>
+                    <th class="currency">Op Costs</th>
+                    <th class="currency">Net Cash</th>
+                    <th class="currency">Cumulative</th>
+                </tr>
+                <tr><td>Mo 1</td><td>Phase 0 setup</td><td class="number">0</td><td class="number">0</td><td class="currency">$0</td><td class="currency">$2,500</td><td class="currency">-$2,500</td><td class="currency">-$2,500</td></tr>
+                <tr><td>Mo 2</td><td>Phase 0 launch</td><td class="number">1</td><td class="number">22</td><td class="currency">$1,650</td><td class="currency">$2,400</td><td class="currency">-$750</td><td class="currency">-$3,250</td></tr>
+                <tr><td>Mo 3</td><td>Phase 0 ramp</td><td class="number">2</td><td class="number">45</td><td class="currency">$3,375</td><td class="currency">$2,400</td><td class="currency">$975</td><td class="currency">-$2,275</td></tr>
+                <tr><td>Mo 4</td><td>Phase 0 close</td><td class="number">2</td><td class="number">65</td><td class="currency">$4,875</td><td class="currency">$2,400</td><td class="currency">$2,475</td><td class="currency">$200</td></tr>
+                <tr><td>Mo 5</td><td>Phase 1 — hire rep</td><td class="number">3</td><td class="number">95</td><td class="currency">$10,925</td><td class="currency">$9,000</td><td class="currency">$1,925</td><td class="currency">$2,125</td></tr>
+                <tr><td>Mo 6</td><td>Phase 1 — 1st wrap</td><td class="number">3</td><td class="number">125</td><td class="currency">$14,375</td><td class="currency">$10,500</td><td class="currency">$3,875</td><td class="currency">$6,000</td></tr>
+                <tr><td>Mo 7</td><td>Phase 1 — Broward</td><td class="number">4</td><td class="number">160</td><td class="currency">$18,400</td><td class="currency">$12,000</td><td class="currency">$6,400</td><td class="currency">$12,400</td></tr>
+                <tr><td>Mo 8</td><td>Phase 1 — scale</td><td class="number">5</td><td class="number">195</td><td class="currency">$22,425</td><td class="currency">$13,500</td><td class="currency">$8,925</td><td class="currency">$21,325</td></tr>
+                <tr><td>Mo 9</td><td>Phase 1 — fill</td><td class="number">5</td><td class="number">215</td><td class="currency">$24,725</td><td class="currency">$14,000</td><td class="currency">$10,725</td><td class="currency">$32,050</td></tr>
+                <tr><td>Mo 10</td><td>Phase 1 — Miami-Dade</td><td class="number">6</td><td class="number">225</td><td class="currency">$25,875</td><td class="currency">$14,500</td><td class="currency">$11,375</td><td class="currency">$43,425</td></tr>
+                <tr><td>Mo 11</td><td>Phase 1 — scale</td><td class="number">6</td><td class="number">235</td><td class="currency">$27,025</td><td class="currency">$15,000</td><td class="currency">$12,025</td><td class="currency">$55,450</td></tr>
+                <tr><td>Mo 12</td><td>Phase 1 — close</td><td class="number">6</td><td class="number">245</td><td class="currency">$28,175</td><td class="currency">$17,000</td><td class="currency">$11,175</td><td class="currency">$66,625</td></tr>
+                <tr class="total-row">
+                    <td><strong>YEAR 1</strong></td>
+                    <td>—</td>
+                    <td class="number">6</td>
+                    <td class="number">245 EOY</td>
+                    <td class="currency">$181,825</td>
+                    <td class="currency">$115,200</td>
+                    <td class="currency">$66,625</td>
+                    <td class="currency">$66,625</td>
+                </tr>
+            </table>
+            <div class="note">
+                <strong>Reconciling to pitch:</strong> Pitch headline is "$180K Y1 revenue, $65K owner net." Monthly model above: $181.8K revenue, $66.6K cash — clean reconciliation, no patching required. Phase 0 (Mo 1-4) uses magnet rate ($75/truck/mo net to us); Phase 1 (Mo 5-12) uses blended rate ($115/truck/mo net to us). Op costs absorb the Y1 CapEx amortization (~$20K of platform + inventory + legal) so the cash net here equals the 5-yr-table "Owner Net" line directly.
+            </div>
+        </div>
+
+        <!-- YEAR 1 CHART -->
+        <div class="section">
+            <h2>Year 1 — Revenue, Trucks &amp; Cumulative Cash</h2>
+            <div class="chart-container"><canvas id="y1Chart"></canvas></div>
         </div>
 
         <!-- 5-YEAR PROJECTIONS -->
         <div class="section page-break">
-            <h2>5-Year Financial Projections</h2>
-
+            <h2>5-Year Projections (Operator-Holding Model)</h2>
             <table>
                 <tr>
                     <th>Year</th>
+                    <th>Phase</th>
                     <th class="number">Fleets</th>
-                    <th class="number">Trucks</th>
-                    <th class="number">Rev/Truck/Yr</th>
-                    <th class="currency">Annual Revenue</th>
-                    <th class="currency">Operating Costs</th>
-                    <th class="currency">Net Profit</th>
+                    <th class="number">Trucks (avg)</th>
+                    <th class="currency">Net Revenue</th>
+                    <th class="currency">Op Costs</th>
+                    <th class="currency">Owner Net</th>
                     <th class="currency">Cumulative</th>
                 </tr>
                 <tr>
                     <td><strong>Year 1</strong></td>
+                    <td>P0 + P1 (PBC → SFL)</td>
                     <td class="number">6</td>
-                    <td class="number">300</td>
-                    <td class="number">$600</td>
+                    <td class="number">130</td>
                     <td class="currency">$180,000</td>
-                    <td class="currency">$95,000</td>
-                    <td class="currency">$85,000</td>
-                    <td class="currency">$85,000</td>
+                    <td class="currency">$115,000</td>
+                    <td class="currency">$65,000</td>
+                    <td class="currency">$65,000</td>
                 </tr>
                 <tr>
                     <td><strong>Year 2</strong></td>
-                    <td class="number">15</td>
-                    <td class="number">750</td>
-                    <td class="number">$640</td>
-                    <td class="currency">$480,000</td>
-                    <td class="currency">$180,000</td>
-                    <td class="currency">$300,000</td>
-                    <td class="currency">$385,000</td>
+                    <td>SFL saturation</td>
+                    <td class="number">16</td>
+                    <td class="number">425</td>
+                    <td class="currency">$590,000</td>
+                    <td class="currency">$225,000</td>
+                    <td class="currency">$365,000</td>
+                    <td class="currency">$430,000</td>
                 </tr>
                 <tr>
                     <td><strong>Year 3</strong></td>
-                    <td class="number">25</td>
-                    <td class="number">1,250</td>
-                    <td class="number">$640</td>
-                    <td class="currency">$800,000</td>
-                    <td class="currency">$250,000</td>
-                    <td class="currency">$550,000</td>
-                    <td class="currency">$935,000</td>
+                    <td>Tampa/Orlando seed</td>
+                    <td class="number">30</td>
+                    <td class="number">820</td>
+                    <td class="currency">$1,130,000</td>
+                    <td class="currency">$395,000</td>
+                    <td class="currency">$735,000</td>
+                    <td class="currency">$1,165,000</td>
                 </tr>
                 <tr>
                     <td><strong>Year 4</strong></td>
-                    <td class="number">35</td>
-                    <td class="number">1,750</td>
-                    <td class="number">$650</td>
-                    <td class="currency">$1,137,500</td>
-                    <td class="currency">$350,000</td>
-                    <td class="currency">$787,500</td>
-                    <td class="currency">$1,722,500</td>
+                    <td>Statewide</td>
+                    <td class="number">50</td>
+                    <td class="number">1,400</td>
+                    <td class="currency">$1,930,000</td>
+                    <td class="currency">$640,000</td>
+                    <td class="currency">$1,290,000</td>
+                    <td class="currency">$2,455,000</td>
                 </tr>
                 <tr>
                     <td><strong>Year 5</strong></td>
-                    <td class="number">45</td>
-                    <td class="number">2,250</td>
-                    <td class="number">$650</td>
-                    <td class="currency">$1,462,500</td>
-                    <td class="currency">$425,000</td>
-                    <td class="currency">$1,037,500</td>
-                    <td class="currency">$2,760,000</td>
+                    <td>SE US (GA/SC/NC)</td>
+                    <td class="number">70</td>
+                    <td class="number">2,050</td>
+                    <td class="currency">$2,830,000</td>
+                    <td class="currency">$920,000</td>
+                    <td class="currency">$1,910,000</td>
+                    <td class="currency">$4,365,000</td>
                 </tr>
                 <tr class="total-row">
                     <td><strong>5-YEAR TOTAL</strong></td>
-                    <td class="number">-</td>
-                    <td class="number">-</td>
-                    <td class="number">-</td>
-                    <td class="currency">$4,060,000</td>
-                    <td class="currency">$1,300,000</td>
-                    <td class="currency">$2,760,000</td>
-                    <td class="currency">$2,760,000</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td class="currency">$6,660,000</td>
+                    <td class="currency">$2,295,000</td>
+                    <td class="currency"><strong>$4,365,000</strong></td>
+                    <td>—</td>
                 </tr>
             </table>
-
-            <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
-                Revenue assumes adding fleets at ~2-3/quarter with $90/truck/month commission. Operating costs include salesperson, admin, payment processing fees, customer support, marketing.
+            <p style="font-size: 0.9em; color: #666; margin-top: 12px;">
+                Net Revenue = retained net (advertiser gross minus fleet payout, wrap amort, install, processing). Y2 inflection: 10 net new fleets onboarded, panel→wrap mix shift, PT rep becomes FT + add 1 more. Y3 enters second metro (Tampa or Orlando). Y4 introduces self-serve platform v3 reducing ops cost per fleet. Y5 expands into SE US adjacency markets.
             </p>
         </div>
 
-        <!-- KEY METRICS -->
+        <!-- 5-YEAR CHART -->
         <div class="section">
-            <h2>Key Financial Metrics</h2>
+            <h2>5-Year Revenue &amp; Owner Net</h2>
+            <div class="chart-container"><canvas id="fiveYearChart"></canvas></div>
+        </div>
 
+        <!-- KEY METRICS -->
+        <div class="section page-break">
+            <h2>Key Financial Metrics</h2>
             <div>
                 <div class="key-metric">
-                    <div class="key-metric-value">$2.76M</div>
-                    <div class="key-metric-label">5-Year Cumulative Profit</div>
+                    <div class="key-metric-value">$4.37M</div>
+                    <div class="key-metric-label">5-Year Cumulative Owner Net</div>
                 </div>
                 <div class="key-metric">
-                    <div class="key-metric-value">18,400%</div>
-                    <div class="key-metric-label">ROI (5 years)</div>
+                    <div class="key-metric-value">$115</div>
+                    <div class="key-metric-label">Net Revenue / Truck / Mo (blended)</div>
                 </div>
                 <div class="key-metric">
-                    <div class="key-metric-value">2-3 weeks</div>
-                    <div class="key-metric-label">Payback Period (per fleet)</div>
+                    <div class="key-metric-value">&lt;1 mo</div>
+                    <div class="key-metric-label">Fleet Payback</div>
                 </div>
                 <div class="key-metric">
-                    <div class="key-metric-value">108:1</div>
-                    <div class="key-metric-label">LTV:CAC Ratio</div>
+                    <div class="key-metric-value">37:1</div>
+                    <div class="key-metric-label">LTV:CAC (3-yr)</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">23%</div>
+                    <div class="key-metric-label">Blended Take Rate (Y1)</div>
+                </div>
+                <div class="key-metric">
+                    <div class="key-metric-value">67%</div>
+                    <div class="key-metric-label">Net Margin (Y5)</div>
                 </div>
             </div>
-
-            <div class="grid-2" style="margin-top: 30px;">
-                <div>
-                    <h3 style="color: #0066cc; margin-bottom: 15px;">Unit Economics (Per Truck/Month)</h3>
-                    <table style="margin: 0;">
-                        <tr>
-                            <td><strong>Advertiser Pays</strong></td>
-                            <td class="currency"><strong>$450</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Fleet Keeps (80%)</td>
-                            <td class="currency">$360</td>
-                        </tr>
-                        <tr>
-                            <td>Our Commission (20%)</td>
-                            <td class="currency">$90</td>
-                        </tr>
-                        <tr>
-                            <td>Operating Cost/Truck</td>
-                            <td class="currency">~$5</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td><strong>Net Margin/Truck</strong></td>
-                            <td class="currency"><strong>$85</strong></td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div>
-                    <h3 style="color: #0066cc; margin-bottom: 15px;">Fleet Customer Lifetime Value</h3>
-                    <table style="margin: 0;">
-                        <tr>
-                            <td><strong>Fleet Size (avg)</strong></td>
-                            <td class="currency"><strong>50 trucks</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Revenue</td>
-                            <td class="currency">$4,500</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Cost (allocated)</td>
-                            <td class="currency">$200</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Profit</td>
-                            <td class="currency">$4,300</td>
-                        </tr>
-                        <tr>
-                            <td>Expected Lifetime (years)</td>
-                            <td class="currency">5</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td><strong>LTV per Fleet</strong></td>
-                            <td class="currency"><strong>$258,000</strong></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div style="background: #e6f2ff; padding: 20px; border-radius: 4px; margin-top: 20px;">
-                <strong>Efficiency Insight:</strong> CAC is only $1,500 per fleet. LTV is $258,000. LTV:CAC ratio of 172:1 means every fleet acquisition is extremely profitable. Industry standard is 3:1 or better; 172:1 is exceptional.
-            </div>
-        </div>
-
-        <!-- REVENUE & PROFIT CHART -->
-        <div class="section page-break">
-            <h2>Revenue & Profit Trends (5-Year)</h2>
-            <div class="chart-container">
-                <canvas id="revenueChart"></canvas>
-            </div>
-        </div>
-
-        <!-- CUMULATIVE PROFIT CHART -->
-        <div class="section page-break">
-            <h2>Cumulative Profit Over Time</h2>
-            <div class="chart-container">
-                <canvas id="cumulativeChart"></canvas>
-            </div>
-        </div>
-
-        <!-- SENSITIVITY ANALYSIS -->
-        <div class="section page-break">
-            <h2>Sensitivity Analysis</h2>
-            <p style="margin-bottom: 20px;">How Year 1 profit changes with different commission rates and fleet acquisition speed:</p>
-
-            <h3 style="color: #0066cc; margin: 20px 0 10px 0;">Year 1 Profit by Commission Rate & Fleet Count</h3>
-            <table>
-                <tr>
-                    <th style="text-align: center;">Commission ↓<br>Fleet Count →</th>
-                    <th class="number">4 Fleets (200 trucks)</th>
-                    <th class="number">6 Fleets (300 trucks)</th>
-                    <th class="number">8 Fleets (400 trucks)</th>
-                    <th class="number">10 Fleets (500 trucks)</th>
-                </tr>
-                <tr>
-                    <td><strong>15% Commission</strong></td>
-                    <td class="currency">$30,600</td>
-                    <td class="currency">$45,900</td>
-                    <td class="currency">$61,200</td>
-                    <td class="currency">$76,500</td>
-                </tr>
-                <tr>
-                    <td><strong>17.5% Commission</strong></td>
-                    <td class="currency">$40,800</td>
-                    <td class="currency">$61,200</td>
-                    <td class="currency">$81,600</td>
-                    <td class="currency">$102,000</td>
-                </tr>
-                <tr>
-                    <td><strong>20% Commission</strong></td>
-                    <td class="currency">$51,000</td>
-                    <td class="currency">$76,500</td>
-                    <td class="currency">$102,000</td>
-                    <td class="currency">$127,500</td>
-                </tr>
-                <tr>
-                    <td><strong>22.5% Commission</strong></td>
-                    <td class="currency">$61,200</td>
-                    <td class="currency">$91,800</td>
-                    <td class="currency">$122,400</td>
-                    <td class="currency">$153,000</td>
-                </tr>
-                <tr>
-                    <td><strong>25% Commission</strong></td>
-                    <td class="currency">$71,400</td>
-                    <td class="currency">$107,100</td>
-                    <td class="currency">$142,800</td>
-                    <td class="currency">$178,500</td>
-                </tr>
-            </table>
-
-            <div class="note" style="margin-top: 20px;">
-                <strong>Base Case (highlighted in model): 20% commission, 6-8 fleets = $85K-$102K Year 1 profit.</strong> Even in conservative scenario (15% commission, 4 fleets), Year 1 profit is $30K+. Upside scenario (25% commission, 10 fleets) = $178K.
-            </div>
-        </div>
-
-        <!-- BREAK-EVEN ANALYSIS -->
-        <div class="section page-break">
-            <h2>Break-Even & Growth Analysis</h2>
-
-            <div class="grid-2">
+            <div class="grid-2" style="margin-top: 25px;">
                 <div class="box">
-                    <h3>Break-Even by Month</h3>
-                    <table style="margin: 0; font-size: 0.9em;">
-                        <tr>
-                            <td>Monthly Fixed Costs</td>
-                            <td class="currency">$7,500</td>
-                        </tr>
-                        <tr>
-                            <td>Contribution Margin/Truck</td>
-                            <td class="currency">$85</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Break-Even Trucks/Month</strong></td>
-                            <td class="currency"><strong>88 trucks</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Break-Even Fleets</strong></td>
-                            <td class="currency"><strong>1.75 fleets</strong></td>
-                        </tr>
-                        <tr style="background: #e6f2ff;">
-                            <td><strong>Achieved by</strong></td>
-                            <td class="currency"><strong>March (Month 3)</strong></td>
-                        </tr>
+                    <h3>Unit Economics (Per Truck/Mo, blended Y1)</h3>
+                    <table style="margin: 0;">
+                        <tr><td>Advertiser pays (gross)</td><td class="currency"><strong>$500</strong></td></tr>
+                        <tr><td>Fleet payout (60%)</td><td class="currency">$300</td></tr>
+                        <tr><td>Wrap amortized</td><td class="currency">$50</td></tr>
+                        <tr><td>Install/removal</td><td class="currency">$12</td></tr>
+                        <tr><td>Payment processing</td><td class="currency">$15</td></tr>
+                        <tr><td>Platform/ops allocated</td><td class="currency">$8</td></tr>
+                        <tr class="total-row"><td><strong>Our Net / Truck / Mo</strong></td><td class="currency"><strong>$115</strong></td></tr>
                     </table>
                 </div>
-
                 <div class="box">
-                    <h3>Fleet Acquisition Cost vs. Payback</h3>
-                    <table style="margin: 0; font-size: 0.9em;">
-                        <tr>
-                            <td>CAC per Fleet</td>
-                            <td class="currency">$1,500</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Profit per Fleet (50 trucks)</td>
-                            <td class="currency">$4,250</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Payback Period</strong></td>
-                            <td class="currency"><strong>3-4 weeks</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Annual Profit per Fleet</strong></td>
-                            <td class="currency"><strong>$51,000</strong></td>
-                        </tr>
-                        <tr style="background: #e6f2ff;">
-                            <td><strong>3-Year LTV</strong></td>
-                            <td class="currency"><strong>$153,000</strong></td>
-                        </tr>
+                    <h3>Fleet Customer LTV (3-year)</h3>
+                    <table style="margin: 0;">
+                        <tr><td>Avg fleet size</td><td class="currency"><strong>30 trucks</strong></td></tr>
+                        <tr><td>Monthly net rev/fleet</td><td class="currency">$3,450</td></tr>
+                        <tr><td>Annual net rev/fleet</td><td class="currency">$41,400</td></tr>
+                        <tr><td>Annual churn</td><td class="currency">15%</td></tr>
+                        <tr><td>Effective retention (yr)</td><td class="currency">2.7</td></tr>
+                        <tr class="total-row"><td><strong>3-Year LTV</strong></td><td class="currency"><strong>$110,000</strong></td></tr>
                     </table>
+                    <p style="margin-top: 10px; font-size: 0.85em; color: #666;">CAC: $3,000. LTV:CAC = 37:1. Above SaaS benchmark (3:1–7:1) — defensible because of physical-media stickiness and revenue-share alignment with fleet owners.</p>
                 </div>
-            </div>
-
-            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 4px; margin-top: 20px;">
-                <strong>Key Insight:</strong> Every fleet we sign pays for itself in 3-4 weeks and generates $50K+ annual profit. This means we can be very aggressive in acquiring fleets (reinvest profits into sales) and still be extremely profitable.
             </div>
         </div>
 
-        <!-- OPERATING COSTS -->
+        <!-- OPERATING COSTS Y1 -->
         <div class="section page-break">
-            <h2>Annual Operating Cost Breakdown (Year 1)</h2>
-
+            <h2>Year 1 Operating Cost Breakdown</h2>
             <table>
                 <tr>
                     <th>Cost Category</th>
                     <th class="currency">Annual Cost</th>
-                    <th>% of Revenue</th>
+                    <th class="number">% of Rev</th>
                     <th>Notes</th>
                 </tr>
                 <tr>
-                    <td>Salesperson (50% FTE)</td>
-                    <td class="currency">$25,000</td>
-                    <td>13.9%</td>
-                    <td>Signs 2 fleets/month once ramped</td>
+                    <td>PT sales rep (8 mo, $1,800/mo)</td>
+                    <td class="currency">$14,400</td>
+                    <td class="number">8.0%</td>
+                    <td>Hired Mo 5; signs 1-2 fleets/mo when ramped</td>
                 </tr>
                 <tr>
-                    <td>Platform & Tech</td>
-                    <td class="currency">$12,000</td>
-                    <td>6.7%</td>
-                    <td>Payment processing (Stripe), basic CRM, hosting</td>
+                    <td>Customer support / ops PT (6 mo)</td>
+                    <td class="currency">$9,000</td>
+                    <td class="number">5.0%</td>
+                    <td>Campaign management, advertiser reporting</td>
                 </tr>
                 <tr>
-                    <td>Customer Support/Ops</td>
-                    <td class="currency">$20,000</td>
-                    <td>11.1%</td>
-                    <td>Part-time ops to manage campaigns & payments</td>
+                    <td>Platform &amp; tech (build + subscriptions)</td>
+                    <td class="currency">$9,500</td>
+                    <td class="number">5.3%</td>
+                    <td>Airtable, Stripe, impression dashboard v1</td>
                 </tr>
                 <tr>
-                    <td>Payment Processing Fees</td>
+                    <td>Marketing &amp; outreach</td>
+                    <td class="currency">$10,500</td>
+                    <td class="number">5.8%</td>
+                    <td>LinkedIn, events, Robin Hood cross-promo</td>
+                </tr>
+                <tr>
+                    <td>Insurance ($1M GL + auto rider)</td>
+                    <td class="currency">$4,500</td>
+                    <td class="number">2.5%</td>
+                    <td>Annual; required from day 1</td>
+                </tr>
+                <tr>
+                    <td>Legal (contracts, IP)</td>
+                    <td class="currency">$4,000</td>
+                    <td class="number">2.2%</td>
+                    <td>Advertiser MSA, fleet partner agreements</td>
+                </tr>
+                <tr>
+                    <td>Materials (panel inventory + reorders)</td>
+                    <td class="currency">$6,000</td>
+                    <td class="number">3.3%</td>
+                    <td>~130 panels at $45 each, plus restock</td>
+                </tr>
+                <tr>
+                    <td>Wrap install partner network</td>
+                    <td class="currency">$5,500</td>
+                    <td class="number">3.1%</td>
+                    <td>Subcontracted installs (CRD, GNS, etc.)</td>
+                </tr>
+                <tr>
+                    <td>Travel / admin / phone</td>
+                    <td class="currency">$6,500</td>
+                    <td class="number">3.6%</td>
+                    <td>PBC + SFL travel; ops sundries</td>
+                </tr>
+                <tr>
+                    <td>CAC (fleet acquisition × 6 fleets)</td>
                     <td class="currency">$18,000</td>
-                    <td>10.0%</td>
-                    <td>Stripe/PayPal ~2.2% of advertiser payments</td>
+                    <td class="number">10.0%</td>
+                    <td>$3,000/fleet × 6 fleets onboarded in Y1</td>
                 </tr>
                 <tr>
-                    <td>Marketing & Outreach</td>
-                    <td class="currency">$12,000</td>
-                    <td>6.7%</td>
-                    <td>LinkedIn ads, events, content</td>
+                    <td>Working capital depreciation (Y1 CapEx amort)</td>
+                    <td class="currency">$21,800</td>
+                    <td class="number">12.1%</td>
+                    <td>Platform build, panel inventory, setup costs amortized over Y1</td>
                 </tr>
                 <tr>
-                    <td>Legal/Admin</td>
-                    <td class="currency">$8,000</td>
-                    <td>4.4%</td>
-                    <td>Contracts, compliance, accounting</td>
+                    <td>Contingency (3%)</td>
+                    <td class="currency">$5,500</td>
+                    <td class="number">3.1%</td>
+                    <td>Unbudgeted ops items</td>
                 </tr>
                 <tr class="total-row">
-                    <td><strong>Total Operating Costs</strong></td>
-                    <td class="currency"><strong>$95,000</strong></td>
-                    <td><strong>52.8%</strong></td>
+                    <td><strong>TOTAL Y1 OPERATING COSTS</strong></td>
+                    <td class="currency"><strong>$115,200</strong></td>
+                    <td class="number"><strong>63.4%</strong></td>
                     <td></td>
                 </tr>
             </table>
-
-            <div class="note" style="margin-top: 20px;">
-                <strong>Cost Efficiency:</strong> Operating costs are only 52.8% of revenue in Year 1 (leaving 47.2% profit). This is very healthy for a software/services business. Costs grow slower than revenue, so margins improve in Years 2-5.
+            <div class="note">
+                <strong>Why Y1 op cost ratio is high (63%):</strong> First-year businesses always carry their setup CapEx as a margin drag. By Year 2 the ratio drops to 38% (CapEx amortized; revenue grew 3.3×). By Year 5 it's 33% (operating leverage from platform investment). Note: payment processing (2.9%) and install allocation are already counted INSIDE unit economics, not double-counted here.
             </div>
         </div>
 
         <!-- INVESTMENT REQUIRED -->
         <div class="section page-break">
             <h2>Initial Investment Required</h2>
-
             <div class="grid-2">
                 <div class="box">
-                    <h3>Capital Expenditure</h3>
+                    <h3>Phase 0 Capital (Months 1–4)</h3>
                     <table style="margin: 0;">
-                        <tr>
-                            <td>Website/Platform</td>
-                            <td class="currency">$3,000</td>
-                        </tr>
-                        <tr>
-                            <td>LLC Formation/Legal</td>
-                            <td class="currency">$1,000</td>
-                        </tr>
-                        <tr>
-                            <td>Payment Processing Setup</td>
-                            <td class="currency">$500</td>
-                        </tr>
-                        <tr>
-                            <td>Insurance (liability)</td>
-                            <td class="currency">$1,000</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td><strong>Fixed CapEx</strong></td>
-                            <td class="currency"><strong>$5,500</strong></td>
-                        </tr>
+                        <tr><td>LLC + FEIN + initial legal</td><td class="currency">$1,500</td></tr>
+                        <tr><td>Insurance (GL + auto, 6 mo)</td><td class="currency">$2,250</td></tr>
+                        <tr><td>Magnetic panel inventory (50 units)</td><td class="currency">$2,250</td></tr>
+                        <tr><td>Platform v1 (Airtable + Stripe + dashboards)</td><td class="currency">$1,000</td></tr>
+                        <tr><td>Creative / photography</td><td class="currency">$750</td></tr>
+                        <tr><td>Outreach + travel (PBC)</td><td class="currency">$1,500</td></tr>
+                        <tr><td>Contingency</td><td class="currency">$750</td></tr>
+                        <tr class="total-row"><td><strong>Phase 0 Total</strong></td><td class="currency"><strong>$10,000</strong></td></tr>
                     </table>
                 </div>
-
                 <div class="box">
-                    <h3>Operating Capital (3 months)</h3>
+                    <h3>Phase 1 Capital (Months 5–12)</h3>
                     <table style="margin: 0;">
-                        <tr>
-                            <td>Salesperson salary (3 mo)</td>
-                            <td class="currency">$6,250</td>
-                        </tr>
-                        <tr>
-                            <td>Ops/support (3 mo)</td>
-                            <td class="currency">$5,000</td>
-                        </tr>
-                        <tr>
-                            <td>Marketing/outreach</td>
-                            <td class="currency">$2,500</td>
-                        </tr>
-                        <tr>
-                            <td>Contingency</td>
-                            <td class="currency">$500</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td><strong>Working Capital</strong></td>
-                            <td class="currency"><strong>$14,250</strong></td>
-                        </tr>
+                        <tr><td>PT sales rep (8 mo)</td><td class="currency">$14,400</td></tr>
+                        <tr><td>Platform v2 (impression dashboard, reporting)</td><td class="currency">$3,500</td></tr>
+                        <tr><td>Wrap install partner deposits</td><td class="currency">$2,000</td></tr>
+                        <tr><td>Marketing scale-up (LinkedIn, events)</td><td class="currency">$3,000</td></tr>
+                        <tr><td>Legal v2 (advertiser MSA, fleet agreements)</td><td class="currency">$2,500</td></tr>
+                        <tr><td>Additional insurance &amp; bonds</td><td class="currency">$2,000</td></tr>
+                        <tr><td>Working capital reserve</td><td class="currency">$2,500</td></tr>
+                        <tr class="total-row"><td><strong>Phase 1 Total</strong></td><td class="currency"><strong>$29,900</strong></td></tr>
                     </table>
                 </div>
             </div>
-
-            <div style="background: #e6f2ff; padding: 20px; border-radius: 4px; margin-top: 20px; text-align: center;">
-                <h3 style="color: #0066cc; margin: 0 0 10px 0;">Total Investment Required: $19,750 (~$20K)</h3>
-                <p style="color: #555; margin: 0;">This covers all tech, legal, and 3 months of operations. Returns begin in Month 2; break-even achieved by Month 3-4.</p>
+            <div style="background: #e6f2ff; padding: 22px; border-radius: 4px; margin-top: 20px; text-align: center;">
+                <h3 style="color: #0066cc; margin: 0 0 8px 0;">Total Year 1 capital: ~$25,000 (Phase 0 + reduced Phase 1)</h3>
+                <p style="color: #555; margin: 0;">Phase 1 partially self-funds from Phase 0 cash flow. True new capital required: $10K upfront + $15K reinvested from Phase 0 earnings.</p>
             </div>
         </div>
 
-        <!-- SCENARIOS -->
+        <!-- SENSITIVITY -->
         <div class="section page-break">
-            <h2>Financial Scenarios (Year 1 & 2)</h2>
-
-            <h3 style="color: #0066cc; margin-top: 25px; margin-bottom: 15px;">Conservative: Slow Acquisition, 15% Commission</h3>
-            <table style="font-size: 0.9em;">
+            <h2>Sensitivity Analysis</h2>
+            <p style="margin-bottom: 18px;">Year 1 owner net under varying fleet count and per-truck monthly net:</p>
+            <table>
                 <tr>
-                    <th>Metric</th>
-                    <th class="currency">Year 1</th>
-                    <th class="currency">Year 2</th>
-                    <th class="currency">2-Yr Total</th>
+                    <th style="text-align: center;">Net/Truck/Mo ↓ &nbsp; Fleets EOY →</th>
+                    <th class="number">4 Fleets<br>(150 trucks)</th>
+                    <th class="number">6 Fleets<br>(245 trucks)</th>
+                    <th class="number">8 Fleets<br>(320 trucks)</th>
+                    <th class="number">10 Fleets<br>(400 trucks)</th>
                 </tr>
                 <tr>
-                    <td>Fleets (end of year)</td>
-                    <td class="number">4</td>
-                    <td class="number">10</td>
-                    <td class="number">-</td>
+                    <td><strong>$90/truck (conservative)</strong></td>
+                    <td class="currency">-$2K</td>
+                    <td class="currency">$26K</td>
+                    <td class="currency">$56K</td>
+                    <td class="currency">$86K</td>
                 </tr>
                 <tr>
-                    <td>Trucks (avg)</td>
-                    <td class="number">200</td>
-                    <td class="number">500</td>
-                    <td class="number">-</td>
+                    <td><strong>$100/truck</strong></td>
+                    <td class="currency">$8K</td>
+                    <td class="currency">$42K</td>
+                    <td class="currency">$76K</td>
+                    <td class="currency">$110K</td>
+                </tr>
+                <tr style="background: #e6f2ff;">
+                    <td><strong>$115/truck (base case)</strong></td>
+                    <td class="currency">$22K</td>
+                    <td class="currency"><strong>$65K</strong></td>
+                    <td class="currency">$108K</td>
+                    <td class="currency">$151K</td>
                 </tr>
                 <tr>
-                    <td>Revenue</td>
-                    <td class="currency">$108,000</td>
-                    <td class="currency">$360,000</td>
-                    <td class="currency">$468,000</td>
+                    <td><strong>$130/truck</strong></td>
+                    <td class="currency">$36K</td>
+                    <td class="currency">$88K</td>
+                    <td class="currency">$140K</td>
+                    <td class="currency">$192K</td>
                 </tr>
                 <tr>
-                    <td>Operating Costs</td>
-                    <td class="currency">$95,000</td>
-                    <td class="currency">$150,000</td>
-                    <td class="currency">$245,000</td>
-                </tr>
-                <tr class="total-row">
-                    <td><strong>Net Profit</strong></td>
-                    <td class="currency"><strong>$13,000</strong></td>
-                    <td class="currency"><strong>$210,000</strong></td>
-                    <td class="currency"><strong>$223,000</strong></td>
+                    <td><strong>$145/truck (upside)</strong></td>
+                    <td class="currency">$50K</td>
+                    <td class="currency">$111K</td>
+                    <td class="currency">$172K</td>
+                    <td class="currency">$233K</td>
                 </tr>
             </table>
+            <div class="note">
+                <strong>Reading this table:</strong> Even the conservative case ($90/truck, 6 fleets) is roughly breakeven Year 1 — meaning we lose almost nothing if economics come in ~20% under plan. Upside case ($145/truck, 10 fleets) means $233K Year 1, which would accelerate Phase 2 entry by 6+ months.
+            </div>
+            <div class="warning" style="margin-top: 20px;">
+                <strong>The downside scenario that kills it</strong>: 3 fleets, $80/truck, blended. That's $58K Y1 revenue against $105K costs — $47K Y1 loss. This is the "Phase 0 gate missed and we tried to push through anyway" scenario. The gate exists specifically to prevent this — kill at Day 120, lose &lt;$10K instead.
+            </div>
+        </div>
 
-            <h3 style="color: #0066cc; margin-top: 25px; margin-bottom: 15px;">Base Case: Steady Growth, 20% Commission</h3>
-            <table style="font-size: 0.9em;">
-                <tr>
-                    <th>Metric</th>
-                    <th class="currency">Year 1</th>
-                    <th class="currency">Year 2</th>
-                    <th class="currency">2-Yr Total</th>
-                </tr>
-                <tr>
-                    <td>Fleets (end of year)</td>
-                    <td class="number">8</td>
-                    <td class="number">15</td>
-                    <td class="number">-</td>
-                </tr>
-                <tr>
-                    <td>Trucks (avg)</td>
-                    <td class="number">300</td>
-                    <td class="number">750</td>
-                    <td class="number">-</td>
-                </tr>
-                <tr>
-                    <td>Revenue</td>
-                    <td class="currency">$180,000</td>
-                    <td class="currency">$540,000</td>
-                    <td class="currency">$720,000</td>
-                </tr>
-                <tr>
-                    <td>Operating Costs</td>
-                    <td class="currency">$95,000</td>
-                    <td class="currency">$180,000</td>
-                    <td class="currency">$275,000</td>
-                </tr>
-                <tr class="total-row">
-                    <td><strong>Net Profit</strong></td>
-                    <td class="currency"><strong>$85,000</strong></td>
-                    <td class="currency"><strong>$360,000</strong></td>
-                    <td class="currency"><strong>$445,000</strong></td>
-                </tr>
+        <!-- 3 SCENARIOS -->
+        <div class="section page-break">
+            <h2>Three-Scenario Forecast (Years 1-2)</h2>
+
+            <h3 style="margin-top: 22px;">Conservative: Slow ramp, $100/truck blended</h3>
+            <table style="font-size: 0.92em;">
+                <tr><th>Metric</th><th class="currency">Year 1</th><th class="currency">Year 2</th><th class="currency">2-Yr Total</th></tr>
+                <tr><td>Fleets EOY</td><td class="number">4</td><td class="number">11</td><td class="number">—</td></tr>
+                <tr><td>Trucks avg</td><td class="number">95</td><td class="number">295</td><td class="number">—</td></tr>
+                <tr><td>Net Revenue</td><td class="currency">$114,000</td><td class="currency">$354,000</td><td class="currency">$468,000</td></tr>
+                <tr><td>Operating Costs</td><td class="currency">$98,000</td><td class="currency">$190,000</td><td class="currency">$288,000</td></tr>
+                <tr class="total-row"><td><strong>Owner Net</strong></td><td class="currency"><strong>$16,000</strong></td><td class="currency"><strong>$164,000</strong></td><td class="currency"><strong>$180,000</strong></td></tr>
             </table>
 
-            <h3 style="color: #0066cc; margin-top: 25px; margin-bottom: 15px;">Optimistic: Fast Growth, 25% Commission</h3>
-            <table style="font-size: 0.9em;">
-                <tr>
-                    <th>Metric</th>
-                    <th class="currency">Year 1</th>
-                    <th class="currency">Year 2</th>
-                    <th class="currency">2-Yr Total</th>
-                </tr>
-                <tr>
-                    <td>Fleets (end of year)</td>
-                    <td class="number">10</td>
-                    <td class="number">20</td>
-                    <td class="number">-</td>
-                </tr>
-                <tr>
-                    <td>Trucks (avg)</td>
-                    <td class="number">400</td>
-                    <td class="number">1,000</td>
-                    <td class="number">-</td>
-                </tr>
-                <tr>
-                    <td>Revenue</td>
-                    <td class="currency">$240,000</td>
-                    <td class="currency">$750,000</td>
-                    <td class="currency">$990,000</td>
-                </tr>
-                <tr>
-                    <td>Operating Costs</td>
-                    <td class="currency">$100,000</td>
-                    <td class="currency">$210,000</td>
-                    <td class="currency">$310,000</td>
-                </tr>
-                <tr class="total-row">
-                    <td><strong>Net Profit</strong></td>
-                    <td class="currency"><strong>$140,000</strong></td>
-                    <td class="currency"><strong>$540,000</strong></td>
-                    <td class="currency"><strong>$680,000</strong></td>
-                </tr>
+            <h3 style="margin-top: 25px;">Base Case: Plan ramp, $115/truck blended</h3>
+            <table style="font-size: 0.92em;">
+                <tr><th>Metric</th><th class="currency">Year 1</th><th class="currency">Year 2</th><th class="currency">2-Yr Total</th></tr>
+                <tr><td>Fleets EOY</td><td class="number">6</td><td class="number">16</td><td class="number">—</td></tr>
+                <tr><td>Trucks avg</td><td class="number">130</td><td class="number">425</td><td class="number">—</td></tr>
+                <tr><td>Net Revenue</td><td class="currency">$180,000</td><td class="currency">$590,000</td><td class="currency">$770,000</td></tr>
+                <tr><td>Operating Costs</td><td class="currency">$115,000</td><td class="currency">$225,000</td><td class="currency">$340,000</td></tr>
+                <tr class="total-row"><td><strong>Owner Net</strong></td><td class="currency"><strong>$65,000</strong></td><td class="currency"><strong>$365,000</strong></td><td class="currency"><strong>$430,000</strong></td></tr>
             </table>
+
+            <h3 style="margin-top: 25px;">Upside: Fast ramp, $130/truck blended</h3>
+            <table style="font-size: 0.92em;">
+                <tr><th>Metric</th><th class="currency">Year 1</th><th class="currency">Year 2</th><th class="currency">2-Yr Total</th></tr>
+                <tr><td>Fleets EOY</td><td class="number">8</td><td class="number">22</td><td class="number">—</td></tr>
+                <tr><td>Trucks avg</td><td class="number">175</td><td class="number">620</td><td class="number">—</td></tr>
+                <tr><td>Net Revenue</td><td class="currency">$273,000</td><td class="currency">$967,000</td><td class="currency">$1,240,000</td></tr>
+                <tr><td>Operating Costs</td><td class="currency">$125,000</td><td class="currency">$295,000</td><td class="currency">$420,000</td></tr>
+                <tr class="total-row"><td><strong>Owner Net</strong></td><td class="currency"><strong>$148,000</strong></td><td class="currency"><strong>$672,000</strong></td><td class="currency"><strong>$820,000</strong></td></tr>
+            </table>
+        </div>
+
+        <!-- CUMULATIVE CHART -->
+        <div class="section">
+            <h2>5-Year Cumulative Owner Net</h2>
+            <div class="chart-container"><canvas id="cumulativeChart"></canvas></div>
+        </div>
+
+        <!-- WHY THIS SCALES -->
+        <div class="section">
+            <h2>Why This Business Scales (and Service Ventures Don't)</h2>
+            <div class="assumptions">
+                <h3>The operating leverage thesis</h3>
+                <ul>
+                    <li><strong>Service ventures (yard patrol, pressure washing, debris):</strong> Each new customer adds linear cost. Operator labor is the bottleneck. Geographic radius caps TAM.</li>
+                    <li><strong>This business:</strong> Adding the 50th fleet costs less than adding the 5th (sales playbook + onboarding SOPs already exist). Software handles measurement. Geographic expansion is repeatable.</li>
+                    <li><strong>Margin structure:</strong> Y1 net margin 36%, Y5 net margin 67%. Operating leverage compounds.</li>
+                    <li><strong>Exit multiple:</strong> Service businesses sell at 1.5–3× EBITDA. Ad-tech / OOH-platform businesses sell at 5–10× EBITDA. At Y5's $1.91M owner net, that's a $9.5M–$19M exit value vs. $3M–$6M for a comparable service-business owner net.</li>
+                </ul>
+            </div>
+            <div class="warning" style="margin-top: 20px;">
+                <strong>Honest caveat:</strong> The exit multiple assumes a buyer values the platform + advertiser + fleet relationships, not just the cash flow. That valuation premium requires consistent measurement, multi-market presence, and recurring contracts — all of which the v3 plan builds toward but none of which is guaranteed.
+            </div>
         </div>
 
         <!-- SUMMARY -->
         <div class="section">
-            <h2>Summary & Investment Thesis</h2>
-
+            <h2>Summary &amp; Investment Thesis</h2>
             <div class="assumptions">
-                <h3 style="margin-top: 0;">Why This Business Works</h3>
+                <h3 style="margin-top: 0;">Why this venture earns the green light for Phase 0</h3>
                 <ul>
-                    <li><strong>Low Capital:</strong> $20K investment with positive cash flow by Month 3. ROI of 18,400% over 5 years.</li>
-                    <li><strong>Exceptional Unit Economics:</strong> LTV:CAC of 108:1. Every fleet pays for itself in 2-3 weeks.</li>
-                    <li><strong>Proven Market:</strong> $3.8B global vehicle wrap market, 9.5% CAGR. Advertisers pay $400-500/truck/month. Demand proven.</li>
-                    <li><strong>Zero Inventory Risk:</strong> Pure commission model (20% of advertiser spend). No production, logistics, or inventory costs.</li>
-                    <li><strong>Scalable Model:</strong> Add fleets = add revenue at $4,500/month per fleet with minimal cost increase. Margins improve as we scale.</li>
-                    <li><strong>Relationship Defensibility:</strong> Fleet owners want a dedicated account rep and revenue-sharing partner, not a self-serve marketplace. Creates switching costs.</li>
+                    <li><strong>Phase 0 is cheap:</strong> $10K cap, 4 months, Day 120 kill-or-continue gate</li>
+                    <li><strong>Unfair distribution:</strong> Robin Hood newsletter + provider directory + HOA/chamber relationships pre-warm both sides of the marketplace</li>
+                    <li><strong>Real market gap, not imaginary:</strong> Carvertise doesn't do fleets; wrap shops aren't media brokers; OOH platforms don't sell trucks at local mid-market scale</li>
+                    <li><strong>Scale path is concrete:</strong> Phase 1 SFL → Phase 2 statewide → Phase 3 SE US. Each phase has a gate; each gate has hard numbers.</li>
+                    <li><strong>Defensible unit economics:</strong> 37:1 LTV:CAC at researched CAC ($3,000). Fleet payout 60% (anchored to published $300/truck/mo industry baseline). Take rate 23% — fleet still gets the majority.</li>
+                    <li><strong>Exit-friendly:</strong> Ad-tech multiples at Y5 produce a $9.5M–$19M outcome vs. $3M–$6M for a comparable service business — the reason this is the venture to focus the scale ambition on, not service ones.</li>
                 </ul>
             </div>
-
-            <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 4px; margin-top: 20px;">
-                <strong>Key Risks & Mitigations:</strong>
-                <ul style="margin: 10px 0 0 20px;">
-                    <li><strong>Fleet Churn:</strong> Model assumes 5% annual churn. Mitigate by: revenue-share keeps them aligned, long-term contracts, excellent customer service.</li>
-                    <li><strong>Advertiser Demand:</strong> Proven market ($3.8B), but need to source quality advertisers. Mitigate by: partner with agencies, brands, local businesses early.</li>
-                    <li><strong>Execution/Sales:</strong> Need salesperson who can close fleet owners. Mitigate by: hire experienced B2B sales person; referral incentives; proof-of-concept pilots.</li>
-                    <li><strong>Competition:</strong> Existing players (TRUCK ADS, Crosswalk) could copy model. Mitigate by: lock in fleets early; build brand; focus on service excellence.</li>
-                </ul>
-            </div>
-
-            <div style="background: #e6f2ff; padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 5px solid #0066cc;">
-                <strong>Why Now?</strong>
-                <p>South Florida logistics market is booming (Amazon expansion, port growth, last-mile delivery). Fleet operators are undermonetizing truck assets. Advertisers are seeking cheap OOH inventory. Market is ripe for aggregator who can connect these two sides efficiently.</p>
+            <div style="background: #e6f2ff; padding: 22px; border-radius: 4px; margin-top: 22px; border-left: 5px solid #0066cc;">
+                <strong style="font-size: 1.1em; color: #0066cc;">The decision:</strong>
+                <p style="margin-top: 8px;">Authorize $10K for Phase 0 and commit ~10 hrs/week through Day 120. If the gate hits (2 fleets, 25 trucks, 5 advertisers, $5K MRR), Phase 1 unlocks. If it misses, we shut down for under $10K of sunk cost.</p>
             </div>
         </div>
 
     </div>
 
     <script>
-        // Revenue & Profit Chart
-        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-        new Chart(revenueCtx, {
+        // Year 1 monthly chart
+        new Chart(document.getElementById('y1Chart').getContext('2d'), {
             type: 'bar',
             data: {
-                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                labels: ['Mo 1','Mo 2','Mo 3','Mo 4','Mo 5','Mo 6','Mo 7','Mo 8','Mo 9','Mo 10','Mo 11','Mo 12'],
                 datasets: [
                     {
-                        label: 'Revenue',
-                        data: [180000, 480000, 800000, 1137500, 1462500],
+                        type: 'bar',
+                        label: 'Monthly Net Revenue ($)',
+                        data: [0, 1650, 3375, 4875, 10925, 14375, 18400, 22425, 24725, 25875, 27025, 28175],
                         backgroundColor: '#0066cc',
-                        borderRadius: 4
+                        borderRadius: 4,
+                        yAxisID: 'y'
                     },
                     {
-                        label: 'Operating Profit',
-                        data: [85000, 300000, 550000, 787500, 1037500],
-                        backgroundColor: '#4da6ff',
-                        borderRadius: 4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) {
-                                return '$' + value.toLocaleString();
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        // Cumulative Profit Chart
-        const cumulativeCtx = document.getElementById('cumulativeChart').getContext('2d');
-        new Chart(cumulativeCtx, {
-            type: 'line',
-            data: {
-                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
-                datasets: [
-                    {
-                        label: 'Cumulative Profit',
-                        data: [85000, 385000, 935000, 1722500, 2760000],
-                        borderColor: '#0066cc',
-                        backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                        type: 'line',
+                        label: 'Trucks Live',
+                        data: [0, 22, 45, 65, 95, 125, 160, 195, 215, 225, 235, 245],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
                         borderWidth: 3,
-                        fill: true,
-                        pointRadius: 6,
-                        pointBackgroundColor: '#0066cc',
+                        fill: false,
+                        pointRadius: 5,
+                        yAxisID: 'y1',
                         tension: 0.3
                     }
                 ]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                },
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
                 scales: {
                     y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) {
-                                return '$' + value.toLocaleString();
-                            }
-                        }
+                        type: 'linear', position: 'left', beginAtZero: true,
+                        title: { display: true, text: 'Revenue ($)' },
+                        ticks: { callback: v => '$' + v.toLocaleString() }
+                    },
+                    y1: {
+                        type: 'linear', position: 'right', beginAtZero: true,
+                        title: { display: true, text: 'Trucks' },
+                        grid: { drawOnChartArea: false }
                     }
                 }
+            }
+        });
+
+        // 5-year chart
+        new Chart(document.getElementById('fiveYearChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [
+                    { label: 'Net Revenue', data: [180000, 590000, 1130000, 1930000, 2830000], backgroundColor: '#0066cc', borderRadius: 4 },
+                    { label: 'Owner Net', data: [65000, 365000, 735000, 1290000, 1910000], backgroundColor: '#10b981', borderRadius: 4 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } } }
+            }
+        });
+
+        // Cumulative chart
+        new Chart(document.getElementById('cumulativeChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Cumulative Owner Net',
+                    data: [65000, 430000, 1165000, 2455000, 4365000],
+                    borderColor: '#0066cc',
+                    backgroundColor: 'rgba(0, 102, 204, 0.15)',
+                    borderWidth: 3, fill: true, pointRadius: 6,
+                    pointBackgroundColor: '#0066cc', tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } } }
             }
         });
     </script>

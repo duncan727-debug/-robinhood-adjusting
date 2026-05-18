@@ -1,0 +1,15 @@
+company_id,name,reason,attempted_date
+321848222400,EDS Air Conditioning & Plumbing,no-form (chatbot iframe + Book Online button only),2026-05-15
+321848057539,Castle Group,reCAPTCHA gated (3 captcha iframes),2026-05-15
+321832382148,Craft Realty,broken contact page (no form element rendered),2026-05-15
+321163657916,Quantum Roofing Solutions,domain parked / for sale (no real site),2026-05-16
+321786470081,Cee Dee Air Conditioning Inc,no real contact form (service-booking wizard + phone CTAs only),2026-05-16
+321848169157,Leon Roofing Contractor,broken site (default WordPress Hello world install),2026-05-16
+321848107719,Altec Roofing,quote-only intake form (street address required); no general contact form,2026-05-16
+321848999620,First Degree Air Conditioning Inc.,quote-only form (no message field for partnership pitch),2026-05-16
+321848222409,South Florida Roofing,multi-step quote-only form (no message field),2026-05-16
+321179438796,HOA Advocates Management,domain does not resolve (ENOTFOUND),2026-05-16
+321838784201,Ewing & Ewing Air Conditioning,/contact and /contact-us render 404 placeholder (no form),2026-05-16
+321848999626,CountrySide Loxahatchee HVAC Repair,SSL cert invalid + empty page on HTTP fallback,2026-05-16
+321838786246,All Star Plumbing & Air,no contact form (booking flow + phone CTA only),2026-05-16
+321848117972,Paul Davis Restoration of Palm Beach County,service-request intake form (no message field for partnership pitch),2026-05-16

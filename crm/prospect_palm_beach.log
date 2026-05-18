@@ -711,3 +711,126 @@
     QUEUED (25/25): Palm Beach Realty Group [West Palm Beach] — (561) 594-4000
   Done: 25 added, 44 duplicate/existing, 0 large firms skipped, 0 errors
   Google Places API: 2026-05-14 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-05-15 10:45:58] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 15 results
+    QUEUED (1/25): Banyan Construction Group [Jupiter] — (561) 558-3454
+    QUEUED (2/25): W & J Contractors [West Palm Beach] — (561) 370-8009
+    QUEUED (3/25): Villa's Construction & Remodeling Inc. [Boynton Beach] — (561) 374-2866
+    QUEUED (4/25): Stepbrothers Contracting Group LLC [Lake Worth Beach] — (561) 536-1481
+    QUEUED (5/25): Greenview Renovation [Boynton Beach] — (561) 660-0955
+    QUEUED (6/25): Thum Co. Contractors [West Palm Beach] — (561) 366-2050
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+    QUEUED (7/25): The Phoenix Restoration of West Palm Beach [West Palm Beach] — (561) 462-5074
+    SKIP (only 2 reviews): Pure Water Damage Repair Palm Beach
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (8/25): Hurricane Heroes Roofing, Solar, And Impact Windows [Boca Raton] — (954) 800-0570
+    QUEUED (9/25): Hercules Roofing [Boynton Beach] — (561) 220-9998
+  Searching: roofing company Wellington FL
+    → 20 results
+    QUEUED (10/25): O'Neal Jr. Roofing [Loxahatchee] — (561) 656-4945
+    QUEUED (11/25): Hammerhead Roofing of South Florida Inc [Loxahatchee] — (561) 969-7663
+    QUEUED (12/25): Pinewood Construction [Loxahatchee] — (561) 309-0134
+    SKIP (no website): Dr. Roofix | Wellington Roofers
+    QUEUED (13/25): Espin Roofing [Wellington] — (561) 679-8626
+    SKIP (no website): Higgins Roofing Co
+    SKIP (only 3 reviews): Roofing Reina
+    QUEUED (14/25): Louis Roofing LLC [Royal Palm Beach] — (561) 567-4638
+    SKIP (no website): Cdc Roofing
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+    QUEUED (15/25): Proper Roofing West Palm Beach [West Palm Beach] — (561) 769-2654
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+    QUEUED (16/25): Global RestorationTeam [West Palm Beach] — (954) 470-5510
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+    QUEUED (17/25): PETRA A/C SERVICES [Palm Springs] — (561) 968-4112
+    QUEUED (18/25): Snyder Air Conditioning, Plumbing & Electric [Lake Worth Beach] — (561) 966-9995
+    QUEUED (19/25): All Out Air Conditioning [West Palm Beach] — (561) 299-1991
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+    SKIP (exists): GRS Community Management
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (20/25): Blue View Real Estate [West Palm Beach] — (561) 785-2991
+    QUEUED (21/25): CGI Realty [Royal Palm Beach] — (561) 507-0107
+    QUEUED (22/25): Brent and Raquel Crowe | Great Palm Beach Homes | Wellington Real Estate [Wellington] — (561) 798-3955
+    QUEUED (23/25): Logan Realty, Inc [West Palm Beach] — (561) 351-1686
+    QUEUED (24/25): Real Estate 4 All LLC [West Palm Beach] — (561) 867-2439
+  Done: 24 added, 238 duplicate/existing, 4 large firms skipped, 5 quality-filtered, 0 errors
+  Google Places API: 2026-05-15 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-15 10:46:32] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 15 results
+    QUEUED (1/25): Banyan Construction Group [Jupiter] — (561) 558-3454
+    QUEUED (2/25): W & J Contractors [West Palm Beach] — (561) 370-8009
+    QUEUED (3/25): Villa's Construction & Remodeling Inc. [Boynton Beach] — (561) 374-2866
+    QUEUED (4/25): Stepbrothers Contracting Group LLC [Lake Worth Beach] — (561) 536-1481
+    QUEUED (5/25): Greenview Renovation [Boynton Beach] — (561) 660-0955
+    QUEUED (6/25): Thum Co. Contractors [West Palm Beach] — (561) 366-2050
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+    QUEUED (7/25): The Phoenix Restoration of West Palm Beach [West Palm Beach] — (561) 462-5074
+    SKIP (only 2 reviews): Pure Water Damage Repair Palm Beach
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (8/25): Hurricane Heroes Roofing, Solar, And Impact Windows [Boca Raton] — (954) 800-0570
+    QUEUED (9/25): Hercules Roofing [Boynton Beach] — (561) 220-9998
+  Searching: roofing company Wellington FL
+    → 20 results
+    QUEUED (10/25): O'Neal Jr. Roofing [Loxahatchee] — (561) 656-4945
+    QUEUED (11/25): Hammerhead Roofing of South Florida Inc [Loxahatchee] — (561) 969-7663
+    QUEUED (12/25): Pinewood Construction [Loxahatchee] — (561) 309-0134
+    SKIP (no website): Dr. Roofix | Wellington Roofers
+    QUEUED (13/25): Espin Roofing [Wellington] — (561) 679-8626
+    SKIP (no website): Higgins Roofing Co
+    SKIP (only 3 reviews): Roofing Reina
+    QUEUED (14/25): Louis Roofing LLC [Royal Palm Beach] — (561) 567-4638
+    SKIP (no website): Cdc Roofing
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+    QUEUED (15/25): Proper Roofing West Palm Beach [West Palm Beach] — (561) 769-2654
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+    QUEUED (16/25): Global RestorationTeam [West Palm Beach] — (954) 470-5510
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+    QUEUED (17/25): PETRA A/C SERVICES [Palm Springs] — (561) 968-4112
+    QUEUED (18/25): Snyder Air Conditioning, Plumbing & Electric [Lake Worth Beach] — (561) 966-9995
+    QUEUED (19/25): All Out Air Conditioning [West Palm Beach] — (561) 299-1991
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+    SKIP (exists): GRS Community Management
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (20/25): Blue View Real Estate [West Palm Beach] — (561) 785-2991
+    QUEUED (21/25): CGI Realty [Royal Palm Beach] — (561) 507-0107
+    QUEUED (22/25): Brent and Raquel Crowe | Great Palm Beach Homes | Wellington Real Estate [Wellington] — (561) 798-3955
+    QUEUED (23/25): Logan Realty, Inc [West Palm Beach] — (561) 351-1686
+    QUEUED (24/25): Real Estate 4 All LLC [West Palm Beach] — (561) 867-2439
+  Done: 24 added, 238 duplicate/existing, 4 large firms skipped, 5 quality-filtered, 0 errors
+  Google Places API: 2026-05-15 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining

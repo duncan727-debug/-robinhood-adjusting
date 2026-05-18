@@ -1,0 +1,119 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Robin Hood Adjusting//Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZNAME:EST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZNAME:EDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:c7329a0f-e62f-464c-88b5-2847b6847be4@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20260519T173000
+DTEND;TZID=America/New_York:20260519T193000
+SUMMARY:Chamber Connections (Central PBC Chamber) — TENTATIVE
+LOCATION:Central Palm Beach County Chamber area\, Wellington FL (venue TBD)
+DESCRIPTION:Central PBC Chamber monthly mixer. Time and venue TBD pending 
+ reply from Info@CPBChamber.com (sent 2026-05-16). Registration: https://c
+ pbchamber.chambermaster.com/events/register/6001697 · Phone: 561-790-6200
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:76c5d926-59de-4b26-88aa-e159b00fc928@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20260520T074500
+DTEND;TZID=America/New_York:20260520T090000
+SUMMARY:Wellington/WPB Breakfast Networking @ Nana's — TENTATIVE
+LOCATION:Nana's Diner\, 1230 Military Trail\, West Palm Beach FL 33409
+DESCRIPTION:1st & 3rd Wed monthly. FREE\, no dues\, category-exclusive (on
+ e PA per group). Call Arlene at 561-670-6828 to confirm PA seat is open. 
+ No email available for Arlene.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:051ee179-7b0b-496d-b429-8f41b3ec336f@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20260521T080000
+DTEND;TZID=America/New_York:20260521T093000
+SUMMARY:SFL Business Connections — Wellington Thu networking — TENTATI
+ VE
+LOCATION:Wellington\, FL (venue TBD)
+DESCRIPTION:Free Thursday morning Wellington networking group. Owner: Alan
+  Feuerman. Email sent 2026-05-16 to sflbusinessconnectionsreply@gmail.com
+  asking PA seat status + venue. Phone: 561-674-4300
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:dd6737f7-6ee5-48a8-9ad0-48a3c8031e58@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20260521T074500
+DTEND;TZID=America/New_York:20260521T090000
+SUMMARY:PRE Palm Beach Gardens (visitor) — TENTATIVE — CONFLICTS WITH 
+ SFL
+LOCATION:Berry Fresh Café\, 11658 US Hwy 1\, Palm Beach Gardens FL 33408
+DESCRIPTION:Professional Referral Exchange — PBG chapter. Thursdays 7:45
+ -9am. Email sent 2026-05-16 to Craig Valarik (Area Director) at craig@pre
+ networking.net. President: Kelly Mueller. PA seat status unknown — aske
+ d directly. CONFLICT: SFL Business Connections is also Thursday AM in Wel
+ lington — pick one.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:82388364-c83b-4019-a377-870d637cacb4@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20260602T183000
+DTEND;TZID=America/New_York:20260602T203000
+SUMMARY:West Palm Beach REI (first Tuesday) — TENTATIVE
+LOCATION:West Palm Beach\, FL (venue TBD)
+DESCRIPTION:Monthly real estate investor meetup. First Tuesday. Meetup.com
+ /west-palm-beach-real-estate-investors
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:24c16590-fb62-43b1-b949-e86537d903d2@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20260603T090000
+DTEND;TZID=America/New_York:20260603T110000
+SUMMARY:Small Business Boot Camp (Central PBC Chamber) — TENTATIVE
+LOCATION:Central PBC Chamber\, 12794 W Forest Hill Blvd Suite 19\, Welling
+ ton FL 33414
+DESCRIPTION:Central PBC Chamber workshop series. Reg: https://cpbchamber.c
+ hambermaster.com/events/register/6001703 · Phone: 561-790-6200
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:3838f105-2d4a-4e29-a5a0-659ffb1deca0@robinhoodadjusting.com
+DTSTAMP:20260516T170825Z
+DTSTART;TZID=America/New_York:20270501T110000
+DTEND;TZID=America/New_York:20270501T140000
+SUMMARY:Wellington Hurricane & Severe Weather Expo 2027 — VENDOR SLOT 
+ — TENTATIVE
+LOCATION:Mall at Wellington Green\, 10300 Forest Hill Blvd\, Wellington FL
+  33414
+DESCRIPTION:Vendor inquiry sent 2026-05-16 to Michelle Garvey\, mgarvey@we
+ llingtonfl.gov\, 561-791-4082. Free event\, ~3000 PBC homeowners attend. 
+ High-leverage warm-lead venue. Confirm vendor slot once Garvey replies.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

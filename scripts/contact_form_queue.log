@@ -1,0 +1,43 @@
+[2026-05-15T11:55:31] === Build contact-form queue for 2026-05-15 ===
+[2026-05-15T11:55:31] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-15T11:56:07]   Found 71 companies with at least one UNQUALIFIED contact
+[2026-05-15T11:57:09]   Wrote 15 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-15.csv
+[2026-05-15T11:57:09] === Done ===
+
+[2026-05-15T11:58:14] === Build contact-form queue for 2026-05-15 ===
+[2026-05-15T11:58:14]   Loaded 3 companies on do-not-retry blacklist
+[2026-05-15T11:58:14] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-15T11:58:46]   Found 68 eligible companies after blacklist filter
+[2026-05-15T11:59:45]   Wrote 15 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-15.csv
+[2026-05-15T11:59:45] === Done ===
+
+[2026-05-16T12:41:18] === Build contact-form queue for 2026-05-16 ===
+[2026-05-16T12:41:18]   Loaded 3 companies on do-not-retry blacklist
+[2026-05-16T12:41:18] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-16T12:44:14] === Build contact-form queue for 2026-05-16 ===
+[2026-05-16T12:44:14]   Loaded 3 companies on do-not-retry blacklist
+[2026-05-16T12:44:14] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-16T12:44:24]   Found 70 eligible companies after blacklist filter
+[2026-05-16T12:44:48]   Found 70 eligible companies after blacklist filter
+[2026-05-16T12:45:22]   Wrote 15 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-16.csv
+[2026-05-16T12:45:22] === Done ===
+
+[2026-05-16T12:45:46]   Wrote 15 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-16.csv
+[2026-05-16T12:45:46] === Done ===
+
+[2026-05-16 13:15 EDT] Fernandez Plumbing LLC: VIABLE submitted
+[2026-05-16 13:15 EDT] Quantum Roofing Solutions: SKIP-BROKEN (domain parked)
+[2026-05-16 13:15 EDT] Cee Dee Air Conditioning: SKIP-CHATBOT (booking wizard only)
+[2026-05-16 13:15 EDT] Leon Roofing Contractor: SKIP-BROKEN (default WordPress)
+[2026-05-16 13:15 EDT] Altec Roofing: SKIP-BROKEN (quote intake only)
+[2026-05-16 13:15 EDT] First Degree Air Conditioning: SKIP-BROKEN (quote intake only)
+[2026-05-16 13:15 EDT] South Florida Roofing: SKIP-BROKEN (quote intake only)
+[2026-05-16 13:15 EDT] Rainbow Roofing LLC: VIABLE submitted
+[2026-05-16 13:15 EDT] Complete Roofing Solutions Inc.: VIABLE submitted
+[2026-05-16 13:15 EDT] HOA Advocates Management: SKIP-BROKEN (domain ENOTFOUND)
+[2026-05-16 13:15 EDT] Ewing & Ewing Air Conditioning: SKIP-BROKEN (contact pages render 404)
+[2026-05-16 13:15 EDT] CountrySide Loxahatchee HVAC Repair: SKIP-BROKEN (SSL invalid + empty HTTP)
+[2026-05-16 13:15 EDT] All Star Plumbing & Air: SKIP-CHATBOT (booking flow + phone only)
+[2026-05-16 13:15 EDT] Paul Davis Restoration of Palm Beach County: SKIP-BROKEN (service intake only)
+[2026-05-16 13:15 EDT] KLR Roofing Corp.: VIABLE submitted
+[2026-05-16 13:15 EDT] queued=15 submitted=4 blacklisted=11 errors=0

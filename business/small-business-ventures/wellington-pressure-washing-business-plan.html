@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellington Pressure Washing — Residential Exterior Cleaning Business Plan</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; color: #333; background: #f5f7fa; padding: 20px;
+        }
+        .container {
+            max-width: 1200px; margin: 0 auto; background: white;
+            border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 50px;
+        }
+        h1 {
+            font-size: 2.6em; color: #1f3a5f; margin-bottom: 10px;
+            border-bottom: 3px solid #1f3a5f; padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 1.7em; color: #1f3a5f; margin-top: 50px;
+            margin-bottom: 25px; border-left: 4px solid #1f3a5f; padding-left: 15px;
+        }
+        h3 { font-size: 1.25em; color: #1f3a5f; margin-bottom: 12px; margin-top: 20px; }
+        p, li { font-size: 1em; line-height: 1.7; }
+        .section { margin-bottom: 40px; }
+        .subtitle { color: #666; font-size: 1.15em; margin-bottom: 8px; }
+        .meta { color: #999; font-size: 0.95em; margin-bottom: 30px; }
+        table {
+            width: 100%; border-collapse: collapse; margin: 18px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-size: 0.95em;
+        }
+        th {
+            background: #1f3a5f; color: white; padding: 12px;
+            text-align: left; font-weight: 600;
+        }
+        td { padding: 11px 12px; border-bottom: 1px solid #e0e6ed; }
+        tr:hover { background: #f9fbfd; }
+        tr:nth-child(even) { background: #f5f7fa; }
+        .total-row { background: #e8eef5 !important; font-weight: bold; color: #1f3a5f; }
+        .total-row td { border-top: 2px solid #1f3a5f; border-bottom: 2px solid #1f3a5f; }
+        .currency, .number { text-align: right; font-family: 'Courier New', monospace; }
+        .chart-container {
+            position: relative; height: 380px; margin: 25px 0; padding: 20px;
+            background: #fafbfc; border-radius: 4px; border: 1px solid #e8eef5;
+        }
+        .assumptions {
+            background: #f0f4fa; border-left: 5px solid #1f3a5f;
+            padding: 22px; border-radius: 4px; margin: 18px 0;
+        }
+        .assumptions h3 { color: #1f3a5f; margin-bottom: 12px; margin-top: 0; }
+        .assumptions ul { list-style: none; margin-left: 0; }
+        .assumptions li { padding: 7px 0; border-bottom: 1px solid #d4dfee; }
+        .assumptions li:last-child { border-bottom: none; }
+        .note {
+            background: #fff8e1; border-left: 4px solid #f59e0b;
+            padding: 16px; border-radius: 4px; margin: 18px 0; font-size: 0.95em;
+        }
+        .callout {
+            background: #ecfdf5; border-left: 5px solid #10b981;
+            padding: 22px; border-radius: 4px; margin: 22px 0;
+        }
+        .callout h3 { color: #047857; margin-top: 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 18px 0; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 18px 0; }
+        .key-metric {
+            display: inline-block; background: white; border: 2px solid #1f3a5f;
+            border-radius: 6px; padding: 18px 24px; margin: 8px 14px 8px 0; text-align: center;
+        }
+        .key-metric-value { font-size: 1.9em; font-weight: bold; color: #1f3a5f; }
+        .key-metric-label { font-size: 0.85em; color: #666; margin-top: 4px; }
+        .phase-box {
+            background: white; padding: 22px; border: 2px solid #1f3a5f;
+            border-radius: 6px; text-align: left;
+        }
+        .phase-box h4 { color: #1f3a5f; font-size: 1.15em; margin-bottom: 10px; }
+        ul.bullet { margin-left: 24px; }
+        ul.bullet li { margin-bottom: 8px; }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .page-break { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Wellington Pressure Washing</h1>
+    <p class="subtitle">Residential Exterior Cleaning — Wellington &amp; West Palm Beach County</p>
+    <p class="meta">Business Plan v1.0 · Prepared 2026-05-17 · Operator-prove → hire-out → restart model</p>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <p style="margin-bottom: 18px;">
+            <strong>Wellington Pressure Washing</strong> (working name) is a residential exterior-cleaning service focused on driveways, paver patios, pool decks, roofs (soft-wash), and house siding for Wellington, Royal Palm Beach, Loxahatchee, and west WPB. The business runs a high-ticket project model ($200–$800/job) with a recurring "Annual Refresh" subscription overlay, and is designed from day one to be handed off to a $20–22/hr operator once proven.
+        </p>
+        <div>
+            <div class="key-metric">
+                <div class="key-metric-value">$5K–$8K</div>
+                <div class="key-metric-label">Startup Capital (existing truck)</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">~$92K</div>
+                <div class="key-metric-label">Year 1 Revenue (owner-op)</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">240</div>
+                <div class="key-metric-label">Year 1 Job Capacity</div>
+            </div>
+            <div class="key-metric">
+                <div class="key-metric-value">3–4 mo</div>
+                <div class="key-metric-label">Capital Payback</div>
+            </div>
+        </div>
+        <div class="callout">
+            <h3>Why this business fits the operator-holding model</h3>
+            <ul class="bullet">
+                <li><strong>High-ticket, daylight-visible work:</strong> $200–$800 jobs; results are dramatic and drive word-of-mouth in dense, manicured neighborhoods.</li>
+                <li><strong>Hireable by design:</strong> Surface-cleaner work is trainable in 1–2 weeks under a written SOP. No state license required for residential pressure washing in Florida (commercial chemical roof-cleaning has separate rules — see Risks).</li>
+                <li><strong>Cheap to fail:</strong> Under $8K committed if using existing truck. Sub-90-day prove window.</li>
+                <li><strong>Independent of Robin Hood Adjusting:</strong> No PA-license dependency, no claims-cycle exposure. Visible, tangible service that closes on a single visit.</li>
+                <li><strong>Wellington-specific tailwind:</strong> Paver driveways, tile/barrel roofs, pool decks, and equestrian-property concrete are the four highest-margin surfaces — and Wellington has them in abundance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MARKET -->
+    <div class="section page-break">
+        <h2>Market — Wellington &amp; West PBC</h2>
+        <div class="grid-2">
+            <div class="assumptions">
+                <h3>Service Area</h3>
+                <ul>
+                    <li>Wellington: ~64,000 population</li>
+                    <li>Royal Palm Beach: ~40,000 population</li>
+                    <li>Loxahatchee/Acreage: ~45,000 population</li>
+                    <li>West WPB (33411 / 33414 / 33470): ~50,000 population</li>
+                    <li><strong>Service zone total: ~200,000 residents / ~65,000 households</strong></li>
+                </ul>
+            </div>
+            <div class="assumptions">
+                <h3>Addressable Demand</h3>
+                <ul>
+                    <li>SFL homeowners who pressure-wash annually: ~30%</li>
+                    <li>Estimated annual-buy households in zone: ~18,000–20,000</li>
+                    <li>Avg ticket: $350 (driveway + walkway) to $650 (full house + roof soft-wash)</li>
+                    <li><strong>Realistic addressable market: ~$8M–$10M annual spend</strong></li>
+                    <li>Current competitors in zone: 12–18 active (mix of solo operators, 2 franchises, 1 mid-size local)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="note">
+            <strong>Wellington-specific wedge:</strong> The four most lucrative residential pressure-washing surfaces — pavers, barrel-tile roofs, pool decks, and white estate fencing — are dramatically over-represented in Wellington vs. typical FL markets. Mold/algae buildup on these surfaces is highly visible and seasonal (peaks May–Oct), which compresses the annual buying decision into a tight, urgent window.
+        </div>
+    </div>
+
+    <!-- SERVICE & PRICING -->
+    <div class="section">
+        <h2>Service Offering &amp; Pricing</h2>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Typical Job</th>
+                <th class="number">Small</th>
+                <th class="number">Standard</th>
+                <th class="number">Large</th>
+                <th class="number">Hours</th>
+            </tr>
+            <tr>
+                <td><strong>Driveway + Walkway</strong></td>
+                <td>Concrete or pavers</td>
+                <td class="currency">$175</td>
+                <td class="currency">$275</td>
+                <td class="currency">$400</td>
+                <td class="number">1.5–2.5</td>
+            </tr>
+            <tr>
+                <td><strong>House Wash</strong></td>
+                <td>Soft-wash siding + soffits</td>
+                <td class="currency">$225</td>
+                <td class="currency">$350</td>
+                <td class="currency">$525</td>
+                <td class="number">2–3</td>
+            </tr>
+            <tr>
+                <td><strong>Roof Soft-Wash</strong></td>
+                <td>Tile / shingle, algae removal</td>
+                <td class="currency">$350</td>
+                <td class="currency">$500</td>
+                <td class="currency">$750</td>
+                <td class="number">2.5–4</td>
+            </tr>
+            <tr>
+                <td><strong>Pool Deck / Patio</strong></td>
+                <td>Pavers, travertine, concrete</td>
+                <td class="currency">$200</td>
+                <td class="currency">$325</td>
+                <td class="currency">$475</td>
+                <td class="number">1.5–3</td>
+            </tr>
+            <tr>
+                <td><strong>Paver Seal (add-on)</strong></td>
+                <td>Sand re-set + sealer</td>
+                <td class="currency">$400</td>
+                <td class="currency">$650</td>
+                <td class="currency">$950</td>
+                <td class="number">3–5</td>
+            </tr>
+            <tr>
+                <td><strong>Full Exterior Package</strong></td>
+                <td>House + driveway + walks</td>
+                <td class="currency">$425</td>
+                <td class="currency">$575</td>
+                <td class="currency">$800</td>
+                <td class="number">3–4.5</td>
+            </tr>
+            <tr>
+                <td><strong>Annual Refresh Subscription</strong></td>
+                <td>House wash 1×/yr + driveway 2×/yr</td>
+                <td class="currency">—</td>
+                <td class="currency">$595/yr</td>
+                <td class="currency">$895/yr</td>
+                <td class="number">recurring</td>
+            </tr>
+        </table>
+        <div class="note">
+            <strong>Blended assumption:</strong> ~$385 average revenue per job across mix. Captures 35% driveway-only, 25% house wash, 15% full package, 12% roof, 8% pool deck, 5% paver seal. Annual Refresh subscriptions targeted at 15% of repeat customers by EOY 1.
+        </div>
+    </div>
+
+    <!-- UNIT ECONOMICS -->
+    <div class="section page-break">
+        <h2>Unit Economics (per job)</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Owner-Operated (Year 1)</h3>
+                <table style="margin: 0;">
+                    <tr><td>Avg Revenue / Job</td><td class="currency"><strong>$385.00</strong></td></tr>
+                    <tr><td>Chemicals (SH, surfactant, sealer)</td><td class="currency">-$22.00</td></tr>
+                    <tr><td>Fuel + equipment fuel</td><td class="currency">-$14.00</td></tr>
+                    <tr><td>Water (customer-supplied)</td><td class="currency">$0.00</td></tr>
+                    <tr><td>Equipment depreciation</td><td class="currency">-$12.00</td></tr>
+                    <tr><td>Software / CRM</td><td class="currency">-$2.00</td></tr>
+                    <tr><td>Insurance amortized</td><td class="currency">-$8.00</td></tr>
+                    <tr><td>Marketing CAC amortized (job-level)</td><td class="currency">-$45.00</td></tr>
+                    <tr class="total-row"><td><strong>Owner cash margin / job</strong></td><td class="currency"><strong>$282.00</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Gross margin: 73%. Owner is the labor. Effective hourly: ~$95/hr at 3-hour avg job.</p>
+            </div>
+            <div>
+                <h3>Operator-Run (Year 2+)</h3>
+                <table style="margin: 0;">
+                    <tr><td>Avg Revenue / Job</td><td class="currency"><strong>$385.00</strong></td></tr>
+                    <tr><td>Operator labor (loaded $24/hr × 3 hr)</td><td class="currency">-$72.00</td></tr>
+                    <tr><td>Chemicals</td><td class="currency">-$22.00</td></tr>
+                    <tr><td>Fuel + equipment fuel</td><td class="currency">-$14.00</td></tr>
+                    <tr><td>Equipment depreciation</td><td class="currency">-$15.00</td></tr>
+                    <tr><td>Software / CRM</td><td class="currency">-$2.00</td></tr>
+                    <tr><td>Insurance amortized</td><td class="currency">-$10.00</td></tr>
+                    <tr><td>Marketing CAC amortized</td><td class="currency">-$45.00</td></tr>
+                    <tr class="total-row"><td><strong>Owner net margin / job</strong></td><td class="currency"><strong>$205.00</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Net margin: 53%. Duncan ~6 hrs/week oversight + estimating.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPERATIONAL MODEL -->
+    <div class="section">
+        <h2>Route &amp; Operational Model</h2>
+        <table>
+            <tr><th>Metric</th><th>Value</th><th>Notes</th></tr>
+            <tr><td>Avg time per job (on-site)</td><td>2.5–3 hr</td><td>Setup, wash, soft-rinse, breakdown</td></tr>
+            <tr><td>Drive + setup time between jobs</td><td>30–45 min</td><td>Equipment-heavy moves vs. pet-waste</td></tr>
+            <tr><td>Jobs per day (owner-op)</td><td>2</td><td>3 possible w/ son helping &amp; clustered routes</td></tr>
+            <tr><td>Working days per week</td><td>5</td><td>Mon–Fri primary, Sat overflow / paid premium</td></tr>
+            <tr><td>Weather days lost / month</td><td>4–6</td><td>FL summer afternoons; schedule mornings</td></tr>
+            <tr><td><strong>Single-operator capacity</strong></td><td><strong>~38 jobs/month</strong></td><td>~450 jobs/year saturation</td></tr>
+            <tr><td>Two-person crew capacity</td><td>~60 jobs/month</td><td>Year 2 once helper trained</td></tr>
+            <tr><td>Multi-truck scale</td><td>2 trucks = ~110 jobs/mo</td><td>Year 3 expansion target</td></tr>
+        </table>
+    </div>
+
+    <!-- STARTUP CAPITAL -->
+    <div class="section page-break">
+        <h2>Startup Capital</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Lean Launch (use existing truck)</h3>
+                <table style="margin: 0;">
+                    <tr><td>LLC formation + FEIN</td><td class="currency">$150</td></tr>
+                    <tr><td>General liability insurance (yr 1, $1M)</td><td class="currency">$950</td></tr>
+                    <tr><td>Commercial auto rider</td><td class="currency">$600</td></tr>
+                    <tr><td>Commercial pressure washer (8 GPM, gas)</td><td class="currency">$1,800</td></tr>
+                    <tr><td>Surface cleaner (20", stainless)</td><td class="currency">$450</td></tr>
+                    <tr><td>Soft-wash setup (12V pump, tank, hose)</td><td class="currency">$900</td></tr>
+                    <tr><td>Hose reels, extension hose (200 ft), wand kit</td><td class="currency">$400</td></tr>
+                    <tr><td>Chemicals starter (SH, surfactant, sealer)</td><td class="currency">$300</td></tr>
+                    <tr><td>Safety + PPE (respirator, harness, ladder upgrade)</td><td class="currency">$500</td></tr>
+                    <tr><td>Branding (logo, decals, biz cards, uniforms)</td><td class="currency">$600</td></tr>
+                    <tr><td>Website + booking + quote form</td><td class="currency">$400</td></tr>
+                    <tr><td>Door hangers (5,000 units)</td><td class="currency">$600</td></tr>
+                    <tr><td>Initial FB/Google ad budget (mo 1–2)</td><td class="currency">$1,500</td></tr>
+                    <tr><td>Working capital reserve</td><td class="currency">$1,000</td></tr>
+                    <tr class="total-row"><td><strong>Total Lean Launch</strong></td><td class="currency"><strong>$10,150</strong></td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Dedicated-Trailer Launch</h3>
+                <table style="margin: 0;">
+                    <tr><td>Used 6×10 enclosed trailer</td><td class="currency">$3,500</td></tr>
+                    <tr><td>Trailer wrap / branded decals</td><td class="currency">$900</td></tr>
+                    <tr><td>Water buffer tank (100 gal) + plumbing</td><td class="currency">$500</td></tr>
+                    <tr><td>All items from Lean Launch column</td><td class="currency">$10,150</td></tr>
+                    <tr class="total-row"><td><strong>Total Dedicated Launch</strong></td><td class="currency"><strong>$15,050</strong></td></tr>
+                </table>
+                <p style="margin-top: 14px; font-size: 0.9em; color: #666;">Recommendation: start lean (equipment in truck bed). Add dedicated trailer in Month 4–6 once monthly revenue clears $7K. Trailer becomes the operator's "office" at handoff.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- YEAR 1 MONTHLY BUILDUP -->
+    <div class="section page-break">
+        <h2>Year 1 — Monthly Buildup (Owner-Operated)</h2>
+        <table>
+            <tr>
+                <th>Month</th>
+                <th class="number">Jobs Completed</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Direct Costs</th>
+                <th class="currency">Marketing</th>
+                <th class="currency">Net Cash</th>
+                <th class="currency">Cumulative</th>
+            </tr>
+            <tr><td>Jun (Mo 1) — Launch</td><td class="number">8</td><td class="currency">$3,080</td><td class="currency">$385</td><td class="currency">$1,500</td><td class="currency">$1,195</td><td class="currency">$1,195</td></tr>
+            <tr><td>Jul (Mo 2)</td><td class="number">14</td><td class="currency">$5,390</td><td class="currency">$672</td><td class="currency">$1,500</td><td class="currency">$3,218</td><td class="currency">$4,413</td></tr>
+            <tr><td>Aug (Mo 3)</td><td class="number">20</td><td class="currency">$7,700</td><td class="currency">$960</td><td class="currency">$1,500</td><td class="currency">$5,240</td><td class="currency">$9,653</td></tr>
+            <tr><td>Sep (Mo 4)</td><td class="number">24</td><td class="currency">$9,240</td><td class="currency">$1,152</td><td class="currency">$1,500</td><td class="currency">$6,588</td><td class="currency">$16,241</td></tr>
+            <tr><td>Oct (Mo 5)</td><td class="number">26</td><td class="currency">$10,010</td><td class="currency">$1,248</td><td class="currency">$1,500</td><td class="currency">$7,262</td><td class="currency">$23,503</td></tr>
+            <tr><td>Nov (Mo 6)</td><td class="number">22</td><td class="currency">$8,470</td><td class="currency">$1,056</td><td class="currency">$1,200</td><td class="currency">$6,214</td><td class="currency">$29,717</td></tr>
+            <tr><td>Dec (Mo 7) — Holiday rush</td><td class="number">24</td><td class="currency">$9,240</td><td class="currency">$1,152</td><td class="currency">$1,000</td><td class="currency">$7,088</td><td class="currency">$36,805</td></tr>
+            <tr><td>Jan (Mo 8) — Slow season</td><td class="number">16</td><td class="currency">$6,160</td><td class="currency">$768</td><td class="currency">$1,000</td><td class="currency">$4,392</td><td class="currency">$41,197</td></tr>
+            <tr><td>Feb (Mo 9)</td><td class="number">20</td><td class="currency">$7,700</td><td class="currency">$960</td><td class="currency">$1,000</td><td class="currency">$5,740</td><td class="currency">$46,937</td></tr>
+            <tr><td>Mar (Mo 10) — Spring peak</td><td class="number">28</td><td class="currency">$10,780</td><td class="currency">$1,344</td><td class="currency">$1,000</td><td class="currency">$8,436</td><td class="currency">$55,373</td></tr>
+            <tr><td>Apr (Mo 11)</td><td class="number">26</td><td class="currency">$10,010</td><td class="currency">$1,248</td><td class="currency">$800</td><td class="currency">$7,962</td><td class="currency">$63,335</td></tr>
+            <tr><td>May (Mo 12)</td><td class="number">24</td><td class="currency">$9,240</td><td class="currency">$1,152</td><td class="currency">$800</td><td class="currency">$7,288</td><td class="currency">$70,623</td></tr>
+            <tr class="total-row">
+                <td><strong>YEAR 1 TOTAL</strong></td>
+                <td class="number">252 jobs</td>
+                <td class="currency">$97,020</td>
+                <td class="currency">$12,097</td>
+                <td class="currency">$14,300</td>
+                <td class="currency">$70,623</td>
+                <td class="currency">$70,623</td>
+            </tr>
+        </table>
+        <div class="note">
+            <strong>Year 1 reality check:</strong> Net cash of $70,623 is BEFORE deducting ~$10,150 startup capital, software ($1,500), insurance amortized ($1,550), phone/admin ($600), and equipment refresh ($1,200). True Year 1 owner take: <strong>~$55,600</strong>. This assumes Duncan + son run two jobs per workday at peak, dropping to 0.7–0.8/day in slow season (Jan), and convert ~6–10 new customers per month from $1,500/mo marketing spend.
+        </div>
+    </div>
+
+    <!-- YEAR 1 CHART -->
+    <div class="section">
+        <h2>Year 1 — Job Ramp &amp; Revenue</h2>
+        <div class="chart-container"><canvas id="rampChart"></canvas></div>
+    </div>
+
+    <!-- 3-YEAR PROJECTIONS -->
+    <div class="section page-break">
+        <h2>3-Year Projections (Operator-Holding Model)</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Phase</th>
+                <th class="number">Jobs / Year</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Operator Labor</th>
+                <th class="currency">Other Opex</th>
+                <th class="currency">Owner Net</th>
+            </tr>
+            <tr>
+                <td><strong>Year 1</strong></td>
+                <td>Duncan + son operate (prove)</td>
+                <td class="number">252</td>
+                <td class="currency">$97,020</td>
+                <td class="currency">$0</td>
+                <td class="currency">$26,400</td>
+                <td class="currency">$55,600</td>
+            </tr>
+            <tr>
+                <td><strong>Year 2</strong></td>
+                <td>Hire operator; grow to 480 jobs</td>
+                <td class="number">450</td>
+                <td class="currency">$173,250</td>
+                <td class="currency">$58,000</td>
+                <td class="currency">$42,000</td>
+                <td class="currency">$73,250</td>
+            </tr>
+            <tr>
+                <td><strong>Year 3</strong></td>
+                <td>2nd truck/operator; 800 jobs total</td>
+                <td class="number">800</td>
+                <td class="currency">$308,000</td>
+                <td class="currency">$112,000</td>
+                <td class="currency">$68,000</td>
+                <td class="currency">$128,000</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="3"><strong>3-Year Cumulative Owner Net</strong></td>
+                <td colspan="3"></td>
+                <td class="currency"><strong>$256,850</strong></td>
+            </tr>
+        </table>
+        <p style="font-size: 0.9em; color: #666; margin-top: 12px;">
+            Year 2 hire is the inflection point — your time investment drops from ~30 hrs/week to ~6 hrs/week (estimating, scheduling, QC). Year 3 second truck/operator requires ~$12K additional capital (second equipment set, possibly second used truck, marketing scale-up).
+        </p>
+    </div>
+
+    <!-- 3-YEAR CHART -->
+    <div class="section">
+        <h2>3-Year Revenue &amp; Owner Net</h2>
+        <div class="chart-container"><canvas id="threeYearChart"></canvas></div>
+    </div>
+
+    <!-- CUSTOMER ACQUISITION -->
+    <div class="section page-break">
+        <h2>Customer Acquisition Plan</h2>
+        <table>
+            <tr>
+                <th>Channel</th>
+                <th class="number">Cost / Lead</th>
+                <th class="number">Conv Rate</th>
+                <th class="currency">CAC</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Door hangers (Wellington paver-heavy belts)</td>
+                <td class="number">$0.12</td>
+                <td class="number">0.6%</td>
+                <td class="currency">~$20</td>
+                <td>Drop on streets where you've just finished a job</td>
+            </tr>
+            <tr>
+                <td>Facebook ads (geo-targeted 33414/33470/33411)</td>
+                <td class="number">$4</td>
+                <td class="number">6%</td>
+                <td class="currency">~$67</td>
+                <td>Before/after photo carousels convert hardest</td>
+            </tr>
+            <tr>
+                <td>Google Ads ("pressure washing Wellington")</td>
+                <td class="number">$12</td>
+                <td class="number">20%</td>
+                <td class="currency">~$60</td>
+                <td>Highest intent; expensive per click but closes</td>
+            </tr>
+            <tr>
+                <td>Google Local Service Ads (LSAs)</td>
+                <td class="number">$18</td>
+                <td class="number">35%</td>
+                <td class="currency">~$51</td>
+                <td>Pay-per-lead; Google-verified badge unlocks trust</td>
+            </tr>
+            <tr>
+                <td>Yard signs at active jobs (24-hr drop)</td>
+                <td class="number">$4</td>
+                <td class="number">organic</td>
+                <td class="currency">~$8</td>
+                <td>Neighbors literally watch the transformation</td>
+            </tr>
+            <tr>
+                <td>Realtor / property manager referrals</td>
+                <td class="number">$0</td>
+                <td class="number">~organic</td>
+                <td class="currency">$0</td>
+                <td>Pre-listing curb-appeal cleanings (high margin)</td>
+            </tr>
+            <tr>
+                <td>HOA newsletter ads (3 communities)</td>
+                <td class="number">$50–$100</td>
+                <td class="number">2.5%</td>
+                <td class="currency">~$32</td>
+                <td>Direct community trust; offer HOA discount</td>
+            </tr>
+            <tr>
+                <td>Robin Hood newsletter cross-promo</td>
+                <td class="number">$0</td>
+                <td class="number">~organic</td>
+                <td class="currency">$0</td>
+                <td>Existing PA audience overlap; pre-claim curb appeal</td>
+            </tr>
+            <tr class="total-row">
+                <td><strong>Blended CAC target</strong></td>
+                <td class="number"></td>
+                <td class="number"></td>
+                <td class="currency"><strong>$40–$50</strong></td>
+                <td>Payback in 1 job (avg $385); LTV 1.4× w/ refresh sub</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- HIRING & HANDOFF -->
+    <div class="section">
+        <h2>Hiring &amp; Handoff Plan (Year 2)</h2>
+        <div class="grid-3">
+            <div class="phase-box">
+                <h4>Months 1–6 (Year 1)</h4>
+                <p><strong>Duncan + son operate.</strong> Build SOPs by surface type (driveway, soft-wash, roof, paver seal). Document every chemical ratio, dwell time, and rinse sequence.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Months 7–12</h4>
+                <p><strong>Hire a part-time helper.</strong> Ride along on every job; train as second wand-operator. $18/hr, 20–25 hr/week. Test the trainability of the SOP.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Year 2 Month 1</h4>
+                <p><strong>Promote helper or hire full-time lead operator.</strong> Duncan transitions to estimating + customer relations + QC (~6 hrs/week). Operator owns the wand.</p>
+            </div>
+        </div>
+        <h3 style="margin-top: 25px;">Operator Job Spec</h3>
+        <ul class="bullet">
+            <li><strong>Title:</strong> Lead Technician — Wellington Pressure Washing</li>
+            <li><strong>Pay:</strong> $20–24/hr (FL market for skilled outdoor trade work); $45–50K/yr base + $5K performance bonus tied to job-quality reviews and customer retention</li>
+            <li><strong>Requirements:</strong> Valid FL driver's license, clean record, can lift 60 lbs, comfortable on ladders + roofs, basic chemical-safety understanding, fluent in English (Spanish preferred), reliable transport to Wellington</li>
+            <li><strong>Training:</strong> 2 weeks ride-along with Duncan; written SOP per surface type; chemical-mixing checklist; ladder + roof-safety certification (free, OSHA online)</li>
+            <li><strong>Daily tools:</strong> Truck (provided), trailer w/ equipment (provided), uniform, smartphone with Jobber app, GoPro for before/after documentation</li>
+        </ul>
+    </div>
+
+    <!-- RISKS -->
+    <div class="section page-break">
+        <h2>Risks &amp; Mitigations</h2>
+        <table>
+            <tr><th>Risk</th><th>Probability</th><th>Mitigation</th></tr>
+            <tr>
+                <td><strong>Slow customer ramp</strong> (less than 6 jobs/mo by Mo 2)</td>
+                <td>Medium</td>
+                <td>Increase door-hanger volume; add Google LSAs; offer first-driveway-$99 promo to seed reviews</td>
+            </tr>
+            <tr>
+                <td><strong>Property damage</strong> (etched concrete, broken window, paint stripped)</td>
+                <td>Medium</td>
+                <td>$1M general liability from day 1; written pre-job inspection checklist; surface-test in inconspicuous area first; soft-wash for anything painted</td>
+            </tr>
+            <tr>
+                <td><strong>Chemical injury or runoff complaint</strong></td>
+                <td>Low</td>
+                <td>PPE protocol; sodium hypochlorite mixing SOP; pre-rinse landscaping; carry SDS sheets; bag/cover stormwater inlets near job site</td>
+            </tr>
+            <tr>
+                <td><strong>Roof soft-wash regulation</strong> (FL Dept of Ag chemical-applicator rules)</td>
+                <td>Medium</td>
+                <td>Confirm whether residential roof soft-wash requires Limited Commercial Applicator license; if yes, get license (~$200, 6 hr course) before offering roof service</td>
+            </tr>
+            <tr>
+                <td><strong>Equipment failure</strong> (pump, engine, hose)</td>
+                <td>Medium</td>
+                <td>Maintenance schedule (oil + pump-oil every 50 hr); carry spare belts, fittings, O-rings; warranty service provider identified pre-launch</td>
+            </tr>
+            <tr>
+                <td><strong>Competitor price war</strong> (cheap solo operators)</td>
+                <td>High</td>
+                <td>Compete on insured, uniformed, before/after photo guarantee — NOT price. Decline races to bottom</td>
+            </tr>
+            <tr>
+                <td><strong>Operator turnover (Year 2+)</strong></td>
+                <td>Medium</td>
+                <td>Pay above market; quarterly retention bonus; equipment ownership-path option; cross-train backup operator (son or 2nd hire)</td>
+            </tr>
+            <tr>
+                <td><strong>Weather days (lightning, hurricanes)</strong></td>
+                <td>High</td>
+                <td>Morning-first scheduling; same-week reschedule policy (in T&amp;Cs); use winter / Jan slow season for trailer maintenance + paver sealing (less weather-sensitive)</td>
+            </tr>
+            <tr>
+                <td><strong>Owner burnout (Year 1)</strong></td>
+                <td>Medium-High</td>
+                <td>Cap at 2 jobs/day with son helping; hire helper at Month 6 even if not full; one-day-off-per-week rule; track hours weekly</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 90-DAY LAUNCH PLAN -->
+    <div class="section">
+        <h2>90-Day Launch Plan (start 2026-05-19)</h2>
+        <table>
+            <tr><th>Week</th><th>Milestones</th></tr>
+            <tr>
+                <td><strong>Week 1 (May 19–25)</strong></td>
+                <td>LLC filing · FEIN · open business bank account · order pressure washer + surface cleaner · order soft-wash kit · register Jobber · register domain (wellingtonpressurewashing.com or similar)</td>
+            </tr>
+            <tr>
+                <td><strong>Week 2 (May 26 – Jun 1)</strong></td>
+                <td>Quotes on GL + auto insurance · launch one-page website + quote form · set up Stripe for deposits · door-hanger design + first 1,000 print run · uniform polos + truck magnets · verify chemical-applicator license requirement for roofs</td>
+            </tr>
+            <tr>
+                <td><strong>Week 3 (Jun 2–8)</strong></td>
+                <td>Equipment shakedown — 2 free practice jobs (family / Duncan's own driveway) for SOP refinement &amp; before/after content · first 1,000 door hangers dropped in target Wellington zip codes (33414, 33470) · launch FB ad campaign at $50/day · cross-promo in Robin Hood newsletter</td>
+            </tr>
+            <tr>
+                <td><strong>Week 4 (Jun 9–15)</strong></td>
+                <td>Onboard first 5–8 paying customers · run jobs with son · refine SOPs · daily debrief · launch Google LSA · request first reviews (Google, Nextdoor)</td>
+            </tr>
+            <tr>
+                <td><strong>Weeks 5–8</strong></td>
+                <td>Scale to 14–20 jobs/month · second door-hanger drop (next 1,000) · add Google Ads at $30/day · pitch 5 local realtors / property managers for pre-listing curb-appeal program</td>
+            </tr>
+            <tr>
+                <td><strong>Weeks 9–12</strong></td>
+                <td>20–26 jobs/month · third door-hanger drop · add HOA newsletter ad in 1–2 communities · launch Annual Refresh subscription offer to first 30 customers · evaluate helper hire by Mo 6</td>
+            </tr>
+            <tr>
+                <td><strong>Day 90 review</strong></td>
+                <td>Target: <strong>20+ jobs in Mo 3, $7K+ monthly revenue, blended CAC under $50, 8+ five-star Google reviews.</strong> If hit, scale ad spend; if missed, diagnose channel by channel.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- DECISION GATES -->
+    <div class="section">
+        <h2>Decision Gates</h2>
+        <div class="grid-3">
+            <div class="phase-box">
+                <h4>Gate 1 — Day 90</h4>
+                <p><strong>Continue?</strong> Need 20+ jobs/mo, $7K+ monthly revenue, blended CAC under $50, 8+ five-star reviews. If yes → continue ramp. If no → diagnose or shut down (sunk cost &lt;$12K).</p>
+            </div>
+            <div class="phase-box">
+                <h4>Gate 2 — Day 180</h4>
+                <p><strong>Hire helper?</strong> If at 25+ jobs/mo and route is taking &gt;30 hrs/week including drive + estimating, hire part-time helper. Begin operator-trainability test on chemical handling.</p>
+            </div>
+            <div class="phase-box">
+                <h4>Gate 3 — Day 365</h4>
+                <p><strong>Hire FT lead + restart?</strong> If at 30+ jobs/mo and SOPs are documented across all surface types, promote helper or hire FT lead. Duncan steps to estimating + QC. Begin scouting Business #3 (yard patrol or storm debris already on the bench).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM LINE -->
+    <div class="section">
+        <h2>Bottom Line</h2>
+        <div class="callout">
+            <h3>Why this venture deserves the green light</h3>
+            <ul class="bullet">
+                <li><strong>Capital risk is moderate:</strong> ~$10K to find out, vs. $200K+ for the pellet pitch</li>
+                <li><strong>Cash-flow positive from Month 1</strong> at realistic ramp rates — first job covers the marketing spend that produced it</li>
+                <li><strong>Highest visible ROI per dollar of effort:</strong> $385 average ticket, 73% gross margin, 2.5–3 hr per job</li>
+                <li><strong>No regulatory drag:</strong> No FDEP, no zoning fights, no state license (roof soft-wash may need Limited Commercial Applicator — confirm pre-launch)</li>
+                <li><strong>Leverages existing assets:</strong> Robin Hood newsletter, Duncan's HOA / property-manager relationships, the truck you already drive</li>
+                <li><strong>Year 1 prove-out is concrete:</strong> 250 jobs, $97K revenue, ~$55K owner take. Numbers don't require heroic assumptions.</li>
+                <li><strong>3-year cumulative owner net of ~$257K</strong> with one operator hire and one truck expansion — high-margin, high-visibility, hireable work that complements the operator-holding-co thesis.</li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="margin-top: 50px; padding-top: 25px; border-top: 1px solid #e0e6ed; color: #999; font-size: 0.9em; text-align: center;">
+        Wellington Pressure Washing · Business Plan v1.0 · 2026-05-17<br>
+        Prepared for Duncan Littlejohn · Operator-Holding-Co Model
+    </p>
+
+</div>
+
+<script>
+    // Year 1 ramp chart
+    new Chart(document.getElementById('rampChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'],
+            datasets: [
+                {
+                    type: 'bar',
+                    label: 'Monthly Revenue ($)',
+                    data: [3080, 5390, 7700, 9240, 10010, 8470, 9240, 6160, 7700, 10780, 10010, 9240],
+                    backgroundColor: '#1f3a5f',
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                },
+                {
+                    type: 'line',
+                    label: 'Jobs Completed',
+                    data: [8, 14, 20, 24, 26, 22, 24, 16, 20, 28, 26, 24],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 3,
+                    fill: false,
+                    pointRadius: 5,
+                    yAxisID: 'y1',
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                y: {
+                    type: 'linear', position: 'left', beginAtZero: true,
+                    title: { display: true, text: 'Revenue ($)' },
+                    ticks: { callback: v => '$' + v.toLocaleString() }
+                },
+                y1: {
+                    type: 'linear', position: 'right', beginAtZero: true,
+                    title: { display: true, text: 'Jobs' },
+                    grid: { drawOnChartArea: false }
+                }
+            }
+        }
+    });
+
+    // 3-year chart
+    new Chart(document.getElementById('threeYearChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Year 1', 'Year 2', 'Year 3'],
+            datasets: [
+                { label: 'Revenue', data: [97020, 173250, 308000], backgroundColor: '#1f3a5f', borderRadius: 4 },
+                { label: 'Owner Net', data: [55600, 73250, 128000], backgroundColor: '#10b981', borderRadius: 4 }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'top' } },
+            scales: {
+                y: { beginAtZero: true, ticks: { callback: v => '$' + v.toLocaleString() } }
+            }
+        }
+    });
+</script>
+</body>
+</html>

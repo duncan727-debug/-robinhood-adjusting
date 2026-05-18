@@ -3,694 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleet Advertising Aggregator - Investor Pitch</title>
+    <title>Fleet Advertising Aggregator - Investor Pitch v3</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
         .slide {
             page-break-after: always;
-            width: 10in;
-            height: 7.5in;
-            padding: 60px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: white;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
+            width: 10in; min-height: 7.5in;
+            padding: 60px; margin: 0 auto 20px auto;
+            display: flex; flex-direction: column; justify-content: center;
+            background: white; border: 1px solid #ddd; position: relative; overflow: hidden;
         }
-
         .slide.title-slide {
             background: linear-gradient(135deg, #0066cc 0%, #003d99 100%);
-            color: white;
-            text-align: center;
+            color: white; text-align: center;
         }
-
-        .slide.dark {
-            background: #f5f5f5;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
+        .slide.dark { background: #f5f5f5; }
+        h1 { font-size: 3.2em; margin-bottom: 20px; font-weight: bold; }
         h2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #0066cc;
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 20px;
+            font-size: 2.3em; margin-bottom: 30px; color: #0066cc;
+            border-bottom: 3px solid #0066cc; padding-bottom: 15px;
         }
-
-        .slide.title-slide h1 {
-            color: white;
-            font-size: 4em;
-        }
-
-        .slide.title-slide p {
-            font-size: 1.5em;
-            color: rgba(255,255,255,0.9);
-            margin: 10px 0;
-        }
-
-        .subtitle {
-            font-size: 2em;
-            color: rgba(255,255,255,0.8);
-            margin-top: 40px;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .content.single {
-            grid-template-columns: 1fr;
-        }
-
+        .slide.title-slide h1 { color: white; font-size: 3.6em; }
+        .slide.title-slide p { font-size: 1.4em; color: rgba(255,255,255,0.9); margin: 10px 0; }
+        .subtitle { font-size: 1.8em; color: rgba(255,255,255,0.8); margin-top: 30px; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+        .content.single { grid-template-columns: 1fr; }
         .box {
-            background: white;
-            padding: 30px;
-            border-left: 5px solid #0066cc;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: white; padding: 25px; border-left: 5px solid #0066cc;
+            border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-
-        .box h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #0066cc;
-        }
-
-        .box p, .box li {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            line-height: 1.8;
-        }
-
-        ul {
-            margin-left: 20px;
-        }
-
-        li {
-            margin-bottom: 12px;
-        }
-
-        .metrics {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .metric-box {
-            background: #e6f2ff;
-            padding: 25px;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .metric-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #0066cc;
-            margin-bottom: 10px;
-        }
-
-        .metric-label {
-            font-size: 1em;
-            color: #666;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 1em;
-        }
-
-        th {
-            background: #0066cc;
-            color: white;
-            padding: 12px;
-            text-align: left;
-        }
-
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-
+        .box h3 { font-size: 1.4em; margin-bottom: 12px; color: #0066cc; }
+        .box p, .box li { font-size: 1em; margin-bottom: 8px; line-height: 1.65; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; font-size: 1em; }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px; }
+        .metric-box { background: #e6f2ff; padding: 18px; border-radius: 4px; text-align: center; }
+        .metric-number { font-size: 1.9em; font-weight: bold; color: #0066cc; margin-bottom: 6px; }
+        .metric-label { font-size: 0.85em; color: #666; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.93em; }
+        th { background: #0066cc; color: white; padding: 10px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background: #f9f9f9; }
         .highlight {
-            background: #e6f2ff;
-            padding: 30px;
-            border-radius: 4px;
-            border-left: 5px solid #0066cc;
-            margin: 20px 0;
+            background: #e6f2ff; padding: 22px; border-radius: 4px;
+            border-left: 5px solid #0066cc; margin: 15px 0;
         }
-
+        .warning {
+            background: #fff4e6; padding: 18px; border-radius: 4px;
+            border-left: 5px solid #ff9800; margin: 15px 0; font-size: 0.95em;
+        }
         .footer {
-            font-size: 0.9em;
-            color: #999;
-            margin-top: 40px;
-            text-align: right;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
+            font-size: 0.85em; color: #999; margin-top: 30px;
+            text-align: right; border-top: 1px solid #ddd; padding-top: 15px;
         }
-
-        .growth-path {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .path-box {
-            background: white;
-            padding: 20px;
-            border: 2px solid #0066cc;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .path-box h4 {
-            color: #0066cc;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .path-box p {
-            font-size: 0.95em;
-            color: #666;
-        }
-
+        .growth-path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
+        .path-box { background: white; padding: 20px; border: 2px solid #0066cc; border-radius: 4px; }
+        .path-box h4 { color: #0066cc; margin-bottom: 10px; font-size: 1.15em; }
+        .path-box p { font-size: 0.95em; color: #555; }
+        .currency, .number { text-align: right; font-family: 'Courier New', monospace; }
         @media print {
-            body {
-                background: white;
-            }
-            .slide {
-                margin: 0;
-                border: none;
-                box-shadow: none;
-                margin-bottom: 0;
-            }
+            body { background: white; }
+            .slide { margin: 0; border: none; box-shadow: none; }
         }
     </style>
 </head>
 <body>
+
     <!-- Slide 1: Title -->
     <div class="slide title-slide">
         <h1>Fleet Advertising Aggregator</h1>
-        <p class="subtitle">Commercial Truck Side Revenue Platform</p>
-        <p style="margin-top: 80px; font-size: 1.2em;">Connecting Fleets with Premium Advertisers</p>
-        <div class="footer" style="border: none; color: rgba(255,255,255,0.7); margin-top: 100px;">South Florida, Florida | 2026</div>
+        <p class="subtitle">Local-First Commercial-Fleet Media Platform</p>
+        <p style="margin-top: 60px; font-size: 1.15em;">Prove in Wellington/PBC → Scale to South Florida → Statewide</p>
+        <div class="footer" style="border: none; color: rgba(255,255,255,0.7); margin-top: 80px;">
+            Business Plan v3.0 · Prepared 2026-05-17 · Operator-Holding-Co Model
+        </div>
     </div>
 
     <!-- Slide 2: Executive Summary -->
     <div class="slide dark">
         <h2>Executive Summary</h2>
-        <div class="content single">
-            <div class="metrics">
-                <div class="metric-box">
-                    <div class="metric-number">$180K</div>
-                    <div class="metric-label">Year 1 Revenue</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">400+</div>
-                    <div class="metric-label">Trucks (End Y1)</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">$15K</div>
-                    <div class="metric-label">Capital Required</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">2-3 mo</div>
-                    <div class="metric-label">Payback Period</div>
-                </div>
+        <p style="margin-bottom: 18px; font-size: 1.05em;">
+            <strong>A media-aggregation layer on top of mid-size local commercial fleets</strong> (10–60 trucks each). Sell side panels, partial wraps, and full wraps as a managed media inventory to local advertisers — geo-targeted, route-measured, and sold like out-of-home (OOH) impressions instead of one-off sign jobs.
+        </p>
+        <div class="metrics">
+            <div class="metric-box">
+                <div class="metric-number">$25K</div>
+                <div class="metric-label">Phase 0 + 1 Capital</div>
             </div>
-            <div class="highlight" style="margin-top: 30px;">
-                <strong>Opportunity:</strong> South Florida's logistics boom creates $500M+ in annual truck advertising demand. By aggregating local fleet operators and connecting them with premium advertisers, we capture 20% commission ($80-100/truck/month) with no inventory or production costs—pure software margin.
+            <div class="metric-box">
+                <div class="metric-number">~$180K</div>
+                <div class="metric-label">Year 1 Net Revenue</div>
             </div>
+            <div class="metric-box">
+                <div class="metric-number">245</div>
+                <div class="metric-label">Trucks Live by EOY 1</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-number">4–5 mo</div>
+                <div class="metric-label">Capital Payback</div>
+            </div>
+        </div>
+        <div class="highlight" style="margin-top: 20px;">
+            <strong>The opportunity:</strong> Carvertise (rideshare) and the wrap-shop ecosystem (CRD, GNS, Evolutions, Florida Car Wrap) both exist — but neither aggregates mid-size commercial fleets into a sold media product. That gap is the business.
+        </div>
+        <div class="warning" style="margin-top: 12px;">
+            <strong>Why this deck was revised:</strong> v1 ignored wrap CapEx ($3.5K–$6.5K per vehicle), overstated CAC, conflated rideshare with fleet, and skipped the local-pilot path. v3 rebuilds the financials from researched industry benchmarks: fleets earn $300–$500/truck/month on truck-side advertising (validated), B2B sales cycle is 45–90 days, CAC benchmarks for relationship-led B2B are $1.5K–$3.5K, and LTV:CAC targets are 3:1 to 7:1. We give fleets 60% of advertiser revenue — they still get the majority — and our retained net is $115/truck/mo.
         </div>
     </div>
 
-    <!-- Slide 3: The Problem & Market -->
+    <!-- Slide 3: The Real Market Gap -->
     <div class="slide">
-        <h2>The Problem & Market Opportunity</h2>
+        <h2>The Real Market Gap</h2>
         <div class="content">
             <div class="box">
-                <h3>Fleet Operators' Problem</h3>
+                <h3>What exists today</h3>
                 <ul>
-                    <li><strong>Unused Asset:</strong> Trucks sit idle 40% of day; sides are blank billboards</li>
-                    <li><strong>No Direct Access:</strong> Don't know advertisers directly; hard to monetize</li>
-                    <li><strong>Fragmented Supply:</strong> Small fleets (20-100 trucks) can't negotiate directly with brands</li>
-                    <li><strong>Logistics Friction:</strong> No one to manage campaigns, payments, installation</li>
+                    <li><strong>Carvertise / Wrapify:</strong> Brokers <em>rideshare and personal-vehicle</em> drivers (Uber/Lyft/Grubhub). Not commercial fleets.</li>
+                    <li><strong>Local wrap shops</strong> (CRD, GNS, Evolutions, Florida Car Wrap): Production houses — they sell the wrap, not the media spend behind it.</li>
+                    <li><strong>OOH brokers</strong> (AdQuick, Adomni): Sell billboards and digital screens, not truck-side inventory at the local level.</li>
+                    <li><strong>Direct sales</strong> (TruckSkin, etc.): One-off brand → one-off fleet matches; no aggregation, no measurement layer.</li>
                 </ul>
             </div>
             <div class="box">
-                <h3>Advertiser Demand</h3>
+                <h3>What's missing</h3>
                 <ul>
-                    <li><strong>CPM: $0.76</strong> (cheapest ad medium—beats digital, TV, radio)</li>
-                    <li><strong>Market Size:</strong> $3.8B vehicle wrap market, 9.5% CAGR</li>
-                    <li><strong>Fleet Ads High-ROI:</strong> Targeting high-traffic routes (I-95, Port of Miami)</li>
-                    <li><strong>Easy Metrics:</strong> GPS tracking + impression measurement = data-driven buying</li>
+                    <li><strong>Local-market aggregation</strong> of 10–60-truck commercial fleets (lawn, pool, HVAC, pest, delivery, junk-haul)</li>
+                    <li><strong>Sold like media</strong> with impressions, route data, and geo-targeting — not like a sign job</li>
+                    <li><strong>Bundled CapEx handling:</strong> advertiser pays for wrap amortized over 6-month minimum campaign</li>
+                    <li><strong>Multi-fleet campaign delivery:</strong> one buy across HVAC fleet + lawn fleet + pool fleet for category-isolated reach</li>
                 </ul>
             </div>
         </div>
-    </div>
-
-    <!-- Slide 4: Business Model -->
-    <div class="slide dark">
-        <h2>Business Model</h2>
-        <div class="content single">
-            <table>
-                <tr>
-                    <th>Component</th>
-                    <th>Details</th>
-                    <th>Financial Impact</th>
-                </tr>
-                <tr>
-                    <td><strong>Fleet Partnerships</strong></td>
-                    <td>Direct B2B relationships with fleet operators (25-100 trucks each)</td>
-                    <td>Free to partner; no upfront costs for fleets</td>
-                </tr>
-                <tr>
-                    <td><strong>Advertiser Revenue</strong></td>
-                    <td>Charge advertisers $400-500/truck/month via platform</td>
-                    <td>$400-500/truck/month gross</td>
-                </tr>
-                <tr>
-                    <td><strong>Commission Model</strong></td>
-                    <td>Take 20% of advertiser spend (standard ad tech rate)</td>
-                    <td>$80-100/truck/month revenue (pure margin)</td>
-                </tr>
-                <tr>
-                    <td><strong>Fleet Payment</strong></td>
-                    <td>Pay fleets 80% of advertiser spend ($320-400/truck/month)</td>
-                    <td>Fleets keep majority; we handle logistics</td>
-                </tr>
-                <tr>
-                    <td><strong>Year 1 Target</strong></td>
-                    <td>8 fleets × 50 trucks avg = 400 trucks</td>
-                    <td>$40,000/month × 12 = $480,000 revenue</td>
-                </tr>
-                <tr>
-                    <td><strong>Actual Year 1</strong></td>
-                    <td>Ramp: 2 fleets → 4 fleets → 6 fleets (seasonal growth)</td>
-                    <td>~$15,000/month average = $180,000/year</td>
-                </tr>
-            </table>
+        <div class="highlight" style="margin-top: 20px;">
+            <strong>Why no one's done it:</strong> Wrap CapEx is real, B2B fleet sales is slow, and OOH measurement is fragmented. Each is solvable individually — but solving all three at the same time has been the moat.
         </div>
     </div>
 
-    <!-- Slide 5: Why We Win -->
-    <div class="slide">
-        <h2>Competitive Advantage</h2>
+    <!-- Slide 4: The Wellington/PBC Wedge -->
+    <div class="slide dark">
+        <h2>The Wellington / PBC Wedge</h2>
         <div class="content">
             <div class="box">
-                <h3>vs. Direct Sales (TRUCK ADS, Crosswalk)</h3>
+                <h3>Unfair distribution advantages</h3>
                 <ul>
-                    <li><strong>Faster Growth:</strong> Our aggregation model reaches fleets 10x faster than door-to-door sales</li>
-                    <li><strong>Better Margins:</strong> They sell to fleets at fixed rates; we scale on commission</li>
-                    <li><strong>Easier for Fleets:</strong> We handle everything—they just provide trucks</li>
+                    <li><strong>Robin Hood Adjusting newsletter:</strong> Existing audience of homeowners, providers, real-estate pros = built-in <em>advertiser</em> demand</li>
+                    <li><strong>Provider directory:</strong> 62 PBC service businesses already listed = built-in <em>fleet supply</em> conversations</li>
+                    <li><strong>HOA + chamber + BNI relationships:</strong> Already opened threads with Wellington Expo (Garvey), Chamber Connections, BNI Pinnacle</li>
+                    <li><strong>Wellington / 33414 density:</strong> Equestrian-belt traffic patterns concentrate impressions on high-value eyeballs</li>
                 </ul>
             </div>
             <div class="box">
-                <h3>vs. Pure Marketplace (Wrapify)</h3>
+                <h3>Pilot-friendly market characteristics</h3>
                 <ul>
-                    <li><strong>B2B Focus:</strong> Wrapify targets personal vehicles; we own commercial truck market</li>
-                    <li><strong>Relationship Sales:</strong> Fleet owners want a dedicated account rep, not a self-serve app</li>
-                    <li><strong>Higher LTV:</strong> One fleet = 50+ trucks; Wrapify gets $150-400/month per driver</li>
+                    <li><strong>500+ mid-size commercial fleets</strong> in tri-county (lawn, pool, HVAC, pest, pool, delivery, junk)</li>
+                    <li><strong>Concentrated advertiser categories:</strong> Real estate, home services, dental, PI law, restaurants, auto dealers — all already-heavy local-ad spenders</li>
+                    <li><strong>Low competitive intensity:</strong> No regional fleet-media aggregator exists between Carvertise (national rideshare) and one-off wrap shops</li>
+                    <li><strong>Walkable proof:</strong> Duncan can drive every campaign route within 30 min — verify impressions, photograph deployment, debug in real time</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- Slide 6: Target Market -->
-    <div class="slide dark">
-        <h2>South Florida Addressable Market</h2>
-        <div class="content single">
-            <div class="metrics">
-                <div class="metric-box">
-                    <div class="metric-number">50K+</div>
-                    <div class="metric-label">Commercial Trucks in South FL</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">500+</div>
-                    <div class="metric-label">Potential Fleet Partners</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">$25M</div>
-                    <div class="metric-label">Annual Market (Year 1)</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">$5M</div>
-                    <div class="metric-label">Our TAM (20% take rate)</div>
-                </div>
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <strong>Key Markets:</strong> Amazon DSPs (200+ in SFL, 20-40 vans each), UPS/FedEx substations, waste management companies, local delivery fleets (Instacart, DoorDash, Walmart), construction/logistics. These are geographically concentrated and relationship-driven—perfect for our model.
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 7: Go-To-Market -->
+    <!-- Slide 5: Three-Phase Plan -->
     <div class="slide">
-        <h2>Go-To-Market Strategy</h2>
-        <div class="content single">
-            <table style="font-size: 0.95em;">
-                <tr>
-                    <th>Phase</th>
-                    <th>Timeline</th>
-                    <th>Activities</th>
-                    <th>Target</th>
-                </tr>
-                <tr>
-                    <td><strong>Phase 1</strong></td>
-                    <td>Month 1-2</td>
-                    <td>Direct outreach to Amazon DSP owners, waste mgmt, local logistics</td>
-                    <td>2 fleets signed</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 2</strong></td>
-                    <td>Month 3-6</td>
-                    <td>Proof of concept: run first campaigns, collect testimonials</td>
-                    <td>4 fleets, 200+ trucks live</td>
-                </tr>
-                <tr>
-                    <td><strong>Phase 3</strong></td>
-                    <td>Month 7-12</td>
-                    <td>Referral program; launch self-serve partner portal</td>
-                    <td>6-8 fleets, 300-400 trucks</td>
-                </tr>
-                <tr>
-                    <td><strong>Year 2+</strong></td>
-                    <td>12+ months</td>
-                    <td>Regional expansion; brand partnerships; API integrations</td>
-                    <td>15-20 fleets, 750+ trucks</td>
-                </tr>
-            </table>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <strong>Sales Strategy:</strong> 1 full-time salesperson reaches out to fleet owners via LinkedIn, phone, events. CAC $1,000-2,000 per fleet. Payback: 1-2 months (50-truck fleet = $5K/month revenue).
+        <h2>Three-Phase Plan</h2>
+        <div class="growth-path">
+            <div class="path-box">
+                <h4>Phase 0 — Wellington / PBC Pilot</h4>
+                <p><strong>Months 1–4 · Prove the model</strong></p>
+                <p style="margin-top: 10px;">2 friendly fleets (20–40 trucks). Magnet/panel ads only — <em>no wrap CapEx</em>. 4–6 friendly advertisers from Robin Hood network. Goal: 90 days of paid impressions + 5 testimonials.</p>
             </div>
+            <div class="path-box">
+                <h4>Phase 1 — South Florida Scale</h4>
+                <p><strong>Months 5–12 · Add wraps + reps</strong></p>
+                <p style="margin-top: 10px;">Expand to 5–7 fleets, 180–220 vehicles. Introduce partial/full wraps where advertiser commits 6+ months. Hire 1 part-time sales rep. Goal: $150K+ run rate by Month 12.</p>
+            </div>
+            <div class="path-box">
+                <h4>Phase 2 — Florida / SE US</h4>
+                <p><strong>Year 2–3 · Productize</strong></p>
+                <p style="margin-top: 10px;">Build platform for impression reporting + advertiser self-serve. Expand to Broward, Miami-Dade, Tampa, Orlando. Goal: 1,000+ trucks live; $1.2M+ Y3 revenue.</p>
+            </div>
+        </div>
+        <div class="highlight" style="margin-top: 25px;">
+            <strong>Phase 0 gate (Day 120):</strong> If we can't get 2 fleets, 25 trucks, 4 paying advertisers, and $5K/mo run rate in Wellington/PBC — the model is wrong and we shut down for &lt;$10K sunk cost. If we hit those numbers, the regional case becomes a math problem, not a hope problem.
         </div>
     </div>
 
-    <!-- Slide 8: Financial Projections (5-Year) -->
+    <!-- Slide 6: Inventory & Pricing -->
     <div class="slide dark">
-        <h2>5-Year Financial Projections</h2>
-        <div class="content single">
-            <table style="font-size: 0.95em;">
-                <tr>
-                    <th>Year</th>
-                    <th>Fleets</th>
-                    <th>Trucks</th>
-                    <th>Avg Revenue/Truck</th>
-                    <th>Annual Revenue</th>
-                    <th>Operating Costs</th>
-                    <th>Net Profit</th>
-                    <th>Cumulative</th>
-                </tr>
-                <tr>
-                    <td><strong>Year 1</strong></td>
-                    <td>6</td>
-                    <td>300</td>
-                    <td>$600</td>
-                    <td>$180,000</td>
-                    <td>$95,000</td>
-                    <td>$85,000</td>
-                    <td>$85,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Year 2</strong></td>
-                    <td>15</td>
-                    <td>750</td>
-                    <td>$640</td>
-                    <td>$480,000</td>
-                    <td>$180,000</td>
-                    <td>$300,000</td>
-                    <td>$385,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Year 3</strong></td>
-                    <td>25</td>
-                    <td>1,250</td>
-                    <td>$640</td>
-                    <td>$800,000</td>
-                    <td>$250,000</td>
-                    <td>$550,000</td>
-                    <td>$935,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Year 4</strong></td>
-                    <td>35</td>
-                    <td>1,750</td>
-                    <td>$650</td>
-                    <td>$1,137,500</td>
-                    <td>$350,000</td>
-                    <td>$787,500</td>
-                    <td>$1,722,500</td>
-                </tr>
-                <tr>
-                    <td><strong>Year 5</strong></td>
-                    <td>45</td>
-                    <td>2,250</td>
-                    <td>$650</td>
-                    <td>$1,462,500</td>
-                    <td>$425,000</td>
-                    <td>$1,037,500</td>
-                    <td>$2,760,000</td>
-                </tr>
-            </table>
-            <p style="font-size: 0.9em; margin-top: 15px; color: #666;">Assumes 20% commission on $400-500/truck/month advertiser spend. Year 1 ramps from $10K/mo (Jan) to $20K/mo (Dec).</p>
+        <h2>Inventory &amp; Pricing</h2>
+        <table>
+            <tr>
+                <th>Inventory Type</th>
+                <th>CapEx</th>
+                <th class="currency">Advertiser Rate</th>
+                <th>Min Term</th>
+                <th>Best for</th>
+            </tr>
+            <tr>
+                <td><strong>Magnetic panel (24"×18")</strong></td>
+                <td>$45/unit</td>
+                <td class="currency">$200–$300/truck/mo</td>
+                <td>3 mo</td>
+                <td>Phase 0 pilot; small local advertisers</td>
+            </tr>
+            <tr>
+                <td><strong>Vinyl side panel (kiss-cut)</strong></td>
+                <td>$300–$600/unit</td>
+                <td class="currency">$300–$450/truck/mo</td>
+                <td>6 mo</td>
+                <td>Mid-tier brands; 6-mo campaigns</td>
+            </tr>
+            <tr>
+                <td><strong>Partial wrap</strong></td>
+                <td>$1,500–$3,000/unit</td>
+                <td class="currency">$500–$650/truck/mo</td>
+                <td>9 mo</td>
+                <td>Premium brands; high-impression routes</td>
+            </tr>
+            <tr>
+                <td><strong>Full wrap</strong></td>
+                <td>$3,500–$6,500/unit</td>
+                <td class="currency">$650–$850/truck/mo</td>
+                <td>12 mo</td>
+                <td>Anchor advertisers; long campaigns</td>
+            </tr>
+            <tr>
+                <td><strong>Roof flag / topper</strong></td>
+                <td>$200/unit</td>
+                <td class="currency">$150–$250/truck/mo</td>
+                <td>3 mo</td>
+                <td>Add-on inventory; aerial visibility</td>
+            </tr>
+        </table>
+        <div class="highlight" style="margin-top: 15px;">
+            <strong>Wrap CapEx model:</strong> Advertiser funds wrap as part of campaign budget; we amortize over the minimum term. Fleet keeps wrap branding when campaign ends (or we remove for $250 — built into close-out). This is how Phase 1 economics work without us holding inventory capital.
         </div>
     </div>
 
-    <!-- Slide 9: Unit Economics -->
+    <!-- Slide 7: Unit Economics -->
     <div class="slide">
-        <h2>Unit Economics (Year 1)</h2>
-        <div class="content single">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div class="box">
-                    <h3>Per Truck, Per Month</h3>
-                    <table style="margin-top: 0; font-size: 0.95em;">
-                        <tr>
-                            <td>Advertiser Pays</td>
-                            <td style="text-align: right;"><strong>$450</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Fleet Keeps (80%)</td>
-                            <td style="text-align: right;">$360</td>
-                        </tr>
-                        <tr>
-                            <td>Our Commission (20%)</td>
-                            <td style="text-align: right;"><strong>$90</strong></td>
-                        </tr>
-                        <tr style="background: #e6f2ff;">
-                            <td><strong>Our Gross Margin</strong></td>
-                            <td style="text-align: right;"><strong>100%</strong></td>
-                        </tr>
-                    </table>
-                    <p style="margin-top: 20px; font-size: 0.9em; color: #666;"><strong>Per Truck/Year:</strong> $1,080 revenue</p>
-                </div>
-
-                <div class="box">
-                    <h3>Customer Economics</h3>
-                    <ul style="list-style: none; margin-left: 0;">
-                        <li style="margin-bottom: 15px;">
-                            <strong>CAC per Fleet:</strong> $1,500 (sales commissions, travel)
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong>Fleet Size (avg):</strong> 50 trucks
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong>Fleet Revenue/Mo:</strong> $4,500 (50 × $90)
-                        </li>
-                        <li style="margin-bottom: 15px; background: #e6f2ff; padding: 10px; border-radius: 4px;">
-                            <strong>Payback Period:</strong> 2-3 weeks
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong>LTV (3-year):</strong> $162,000
-                        </li>
-                        <li>
-                            <strong>LTV:CAC Ratio:</strong> 108:1 (exceptional)
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 10: Investment Ask -->
-    <div class="slide dark">
-        <h2>Investment Ask & Use of Funds</h2>
-        <div class="content single">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div class="box">
-                    <h3>Total Investment: $15,000</h3>
-                    <table style="margin-top: 10px; font-size: 0.95em;">
-                        <tr>
-                            <td>Salesperson (3 months salary)</td>
-                            <td style="text-align: right;">$7,500</td>
-                        </tr>
-                        <tr>
-                            <td>Basic Web Platform</td>
-                            <td style="text-align: right;">$3,000</td>
-                        </tr>
-                        <tr>
-                            <td>Marketing/Outreach</td>
-                            <td style="text-align: right;">$2,500</td>
-                        </tr>
-                        <tr>
-                            <td>Legal/Admin</td>
-                            <td style="text-align: right;">$1,500</td>
-                        </tr>
-                        <tr>
-                            <td>Working Capital</td>
-                            <td style="text-align: right;">$500</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="box">
-                    <h3>Return Projections</h3>
-                    <ul>
-                        <li><strong>Month 1:</strong> Break-even on investment</li>
-                        <li><strong>Year 1 Net:</strong> $85,000 profit</li>
-                        <li><strong>Year 2 Net:</strong> $300,000 profit</li>
-                        <li><strong>Year 3 Net:</strong> $550,000 profit</li>
-                        <li style="margin-top: 15px; background: #e6f2ff; padding: 10px; border-radius: 4px;"><strong>5-Year Cumulative:</strong> $2.76M profit</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 11: Risk Mitigation -->
-    <div class="slide">
-        <h2>Risk Mitigation</h2>
+        <h2>Unit Economics (Phase 1 Steady State)</h2>
         <div class="content">
             <div class="box">
-                <h3>Demand Risk</h3>
-                <ul>
-                    <li><strong>Risk:</strong> Advertisers won't pay premium rates for truck ads</li>
-                    <li><strong>Mitigation:</strong> Market proven ($3.8B global, $0.76 CPM); start with brand partners we know will commit</li>
-                </ul>
+                <h3>Per Truck, Per Month (blended)</h3>
+                <table style="margin-top: 5px; font-size: 0.95em;">
+                    <tr><td>Avg advertiser rate (blended)</td><td class="currency"><strong>$500</strong></td></tr>
+                    <tr><td>Fleet payout (60%)</td><td class="currency">-$300</td></tr>
+                    <tr><td>Wrap amortized (panel/wrap mix)</td><td class="currency">-$50</td></tr>
+                    <tr><td>Install + removal allocated</td><td class="currency">-$12</td></tr>
+                    <tr><td>Payment processing (2.9%)</td><td class="currency">-$15</td></tr>
+                    <tr><td>Platform / CRM / ops allocated</td><td class="currency">-$8</td></tr>
+                    <tr style="background: #e6f2ff;"><td><strong>Our net / truck / mo</strong></td><td class="currency"><strong>$115</strong></td></tr>
+                </table>
+                <p style="margin-top: 10px; font-size: 0.85em; color: #666;">Per truck/year net: <strong>$1,380</strong>. Blended take rate: ~23%. Fleet still keeps the majority ($300 lands inside the researched $300–$500/truck/month fleet-payout range).</p>
             </div>
             <div class="box">
-                <h3>Supply Risk</h3>
-                <ul>
-                    <li><strong>Risk:</strong> Fleets unwilling to participate</li>
-                    <li><strong>Mitigation:</strong> Free to fleets, 80% of revenue; instant pilot programs prove value before scaling</li>
+                <h3>Customer / Fleet Economics</h3>
+                <ul style="list-style: none; margin-left: 0;">
+                    <li style="margin-bottom: 10px;"><strong>Avg fleet size:</strong> 30 trucks (mid-market sweet spot)</li>
+                    <li style="margin-bottom: 10px;"><strong>Fleet monthly net to us:</strong> $3,450 (30 × $115)</li>
+                    <li style="margin-bottom: 10px;"><strong>Fleet CAC (B2B benchmark-aligned):</strong> $3,000 (60–90 day cycle, 2 decision-makers)</li>
+                    <li style="margin-bottom: 10px;"><strong>Fleet payback:</strong> &lt;1 month</li>
+                    <li style="margin-bottom: 10px;"><strong>Annual net per fleet:</strong> $41,400</li>
+                    <li style="margin-bottom: 10px; background: #e6f2ff; padding: 8px; border-radius: 4px;"><strong>3-Year fleet LTV:</strong> $110,000</li>
+                    <li><strong>LTV : CAC ratio:</strong> 37 : 1 (vs. 3:1–7:1 B2B SaaS benchmark)</li>
                 </ul>
             </div>
         </div>
-        <div class="content" style="margin-top: 20px;">
-            <div class="box">
-                <h3>Execution Risk</h3>
-                <ul>
-                    <li><strong>Risk:</strong> Platform tech fails or takes too long to build</li>
-                    <li><strong>Mitigation:</strong> MVP is simple—spreadsheet + Stripe integration to manage payments. Can run first 3 months manually.</li>
-                </ul>
-            </div>
-            <div class="box">
-                <h3>Competition Risk</h3>
-                <ul>
-                    <li><strong>Risk:</strong> Existing players (TRUCK ADS) expand into aggregation</li>
-                    <li><strong>Mitigation:</strong> Lock in fleets early via contracts + revenue share; build brand loyalty through service</li>
-                </ul>
-            </div>
+        <div class="warning" style="margin-top: 15px;">
+            <strong>Where these numbers come from:</strong> Fleet payout ($300/truck/mo at 60%) matches the researched $300–$500/truck/month range published by truck-side advertising operators. Advertiser blended rate ($500) is the lower-mid of inventory pricing in Slide 6. CAC ($3,000) sits inside the $1,500–$3,500 benchmark for relationship-led local B2B sales. LTV:CAC 37:1 is high vs. SaaS targets (3:1–7:1), but defensible because this is a physical-media business with strong retention once a fleet is wrapped and earning.
         </div>
     </div>
 
-    <!-- Slide 12: Timeline & Milestones -->
+    <!-- Slide 8: 5-Year Projections -->
     <div class="slide dark">
-        <h2>Implementation Timeline</h2>
+        <h2>5-Year Projections (Operator-Holding Model)</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Phase</th>
+                <th class="number">Fleets EOY</th>
+                <th class="number">Trucks EOY</th>
+                <th class="currency">Revenue</th>
+                <th class="currency">Op Costs</th>
+                <th class="currency">Owner Net</th>
+            </tr>
+            <tr>
+                <td><strong>Year 1</strong></td>
+                <td>Phase 0 + 1 (PBC → SFL)</td>
+                <td class="number">6</td>
+                <td class="number">245</td>
+                <td class="currency">$180,000</td>
+                <td class="currency">$115,000</td>
+                <td class="currency">$65,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 2</strong></td>
+                <td>Phase 2a — SFL saturation</td>
+                <td class="number">16</td>
+                <td class="number">600</td>
+                <td class="currency">$590,000</td>
+                <td class="currency">$225,000</td>
+                <td class="currency">$365,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 3</strong></td>
+                <td>Phase 2b — Tampa/Orlando seed</td>
+                <td class="number">30</td>
+                <td class="number">1,050</td>
+                <td class="currency">$1,130,000</td>
+                <td class="currency">$395,000</td>
+                <td class="currency">$735,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 4</strong></td>
+                <td>Phase 3 — Statewide</td>
+                <td class="number">50</td>
+                <td class="number">1,750</td>
+                <td class="currency">$1,930,000</td>
+                <td class="currency">$640,000</td>
+                <td class="currency">$1,290,000</td>
+            </tr>
+            <tr>
+                <td><strong>Year 5</strong></td>
+                <td>Phase 3 — SE US (GA/SC/NC)</td>
+                <td class="number">70</td>
+                <td class="number">2,400</td>
+                <td class="currency">$2,830,000</td>
+                <td class="currency">$920,000</td>
+                <td class="currency">$1,910,000</td>
+            </tr>
+            <tr style="background: #e6f2ff; font-weight: bold; color: #0066cc;">
+                <td colspan="4"><strong>5-Year Cumulative Owner Net</strong></td>
+                <td></td>
+                <td></td>
+                <td class="currency"><strong>$4,365,000</strong></td>
+            </tr>
+        </table>
+        <p style="font-size: 0.85em; color: #666; margin-top: 12px;">
+            Revenue line = our retained net (advertiser dollars minus fleet payout, wrap amortization, install, processing). Y1 is conservative — Phase 0 first 4 months are near-breakeven by design. Y2 inflection comes from Phase 1's six fleets reaching annualized run rate + adding ~10 net new fleets. Y3 introduces second market; Y4 introduces platform investment.
+        </p>
+    </div>
+
+    <!-- Slide 9: Go-To-Market -->
+    <div class="slide">
+        <h2>Go-To-Market — Phase 0 (Months 1–4)</h2>
         <div class="content single">
-            <table>
+            <table style="font-size: 0.92em;">
                 <tr>
-                    <th>Phase</th>
-                    <th>Timeline</th>
-                    <th>Key Milestones</th>
-                    <th>Target</th>
+                    <th>Week</th>
+                    <th>Supply Side (Fleets)</th>
+                    <th>Demand Side (Advertisers)</th>
                 </tr>
                 <tr>
-                    <td><strong>MVP Launch</strong></td>
-                    <td>Month 1</td>
-                    <td>Basic payment system, fleet portal, advertiser onboarding</td>
-                    <td>1st fleet pilot</td>
+                    <td><strong>Wk 1–2</strong></td>
+                    <td>Reach out to 8 PBC fleets we already know (lawn, pool, HVAC, pest from provider directory). Pitch revenue-share + zero CapEx.</td>
+                    <td>Identify 10 candidate advertisers from Robin Hood newsletter + provider directory. Build sample impression report.</td>
                 </tr>
                 <tr>
-                    <td><strong>Proof of Concept</strong></td>
-                    <td>Month 2-3</td>
-                    <td>Run first campaigns, collect data & testimonials</td>
-                    <td>2 fleets, 100 trucks</td>
+                    <td><strong>Wk 3–4</strong></td>
+                    <td>LOIs from 2 fleets. Inspect vehicles. Order magnetic panel inventory (~$1,500 total).</td>
+                    <td>Pre-sell 3 anchor advertisers at $300/truck/mo. Mock up creative. Lock 90-day campaigns.</td>
                 </tr>
                 <tr>
-                    <td><strong>Sales Ramp</strong></td>
-                    <td>Month 4-8</td>
-                    <td>Hire salesperson; outreach to Amazon DSPs, waste mgmt, local logistics</td>
-                    <td>6 fleets, 300 trucks</td>
+                    <td><strong>Wk 5–8</strong></td>
+                    <td>Deploy first 20–30 panels. GPS-log routes. Photo-document weekly. Train fleet ops on swap-out / cleaning protocol.</td>
+                    <td>Send weekly impression reports. Begin reference-selling next 4 advertisers off the first 3 testimonials.</td>
                 </tr>
                 <tr>
-                    <td><strong>Platform Scale</strong></td>
-                    <td>Month 9-12</td>
-                    <td>Self-serve partner portal, referral program, API integrations</td>
-                    <td>6-8 fleets, 400 trucks</td>
+                    <td><strong>Wk 9–12</strong></td>
+                    <td>Onboard 3rd fleet. Trial 2 partial wraps with the best-performing advertiser (proof of upgrade path).</td>
+                    <td>Hit 5–6 active advertisers, $5K+ MRR. Begin Phase 1 fleet outreach to Broward.</td>
+                </tr>
+                <tr>
+                    <td><strong>Day 120 gate</strong></td>
+                    <td colspan="2"><strong>Target: 2 fleets, 25+ trucks, 5 paying advertisers, $5K+ MRR.</strong> If hit, go Phase 1. If missed, diagnose; decide kill or pivot.</td>
                 </tr>
             </table>
+        </div>
+        <div class="highlight" style="margin-top: 18px;">
+            <strong>Why phase 0 is winnable:</strong> The supply and demand sides BOTH come pre-warmed from Robin Hood's existing network. Cold-calling Amazon DSPs or chasing national brands is what kills these businesses in Month 2; we skip that fight entirely.
+        </div>
+    </div>
 
-            <div style="background: #e6f2ff; padding: 20px; border-radius: 4px; margin-top: 30px;">
-                <strong>Speed to Revenue:</strong> First paying customer in Month 2. Break-even on $15K investment by Month 3-4. Recurring revenue kicks in Month 2 and compounds monthly.
+    <!-- Slide 10: Competitive Landscape -->
+    <div class="slide dark">
+        <h2>Competitive Landscape — Honest View</h2>
+        <table>
+            <tr>
+                <th>Competitor</th>
+                <th>Model</th>
+                <th>Overlap with us</th>
+                <th>Why we don't lose to them</th>
+            </tr>
+            <tr>
+                <td><strong>Carvertise</strong></td>
+                <td>Rideshare driver wraps (national)</td>
+                <td>Low — they don't touch commercial fleets</td>
+                <td>Different supply pool; they need 200-city scale to work</td>
+            </tr>
+            <tr>
+                <td><strong>Wrapify</strong></td>
+                <td>Rideshare + personal-vehicle (national)</td>
+                <td>Low — same reason as Carvertise</td>
+                <td>Self-serve marketplace; fleet owners want managed service</td>
+            </tr>
+            <tr>
+                <td><strong>Firefly</strong></td>
+                <td>Rideshare-top digital screens (NYC/LA/SF)</td>
+                <td>None in FL</td>
+                <td>Different inventory class (digital), not in our market</td>
+            </tr>
+            <tr>
+                <td><strong>AdQuick / Adomni</strong></td>
+                <td>OOH marketplace (billboards, DOOH)</td>
+                <td>Adjacent — they could add truck inventory</td>
+                <td>Local sales relationships are the moat; aggregators struggle in mid-market</td>
+            </tr>
+            <tr>
+                <td><strong>Wrap shops (CRD, GNS, Florida Car Wrap)</strong></td>
+                <td>Production / sign shop</td>
+                <td>None — they sell wraps, not media</td>
+                <td>Potential <em>partners</em>, not competitors (install subcontractors)</td>
+            </tr>
+            <tr>
+                <td><strong>TruckSkin / TruckAds / Crosswalk</strong></td>
+                <td>Static-wrap brokers (older)</td>
+                <td>Medium — same conceptual model, weak execution</td>
+                <td>Outdated tech; no impression measurement; no local-market focus</td>
+            </tr>
+        </table>
+        <div class="warning" style="margin-top: 18px;">
+            <strong>Real risk isn't a competitor — it's substitution:</strong> Local Facebook/Instagram ads at $5 CPM, Nextdoor sponsorships, and Google LSA are the actual budget competitors. Our pitch has to beat <em>"I could just buy more Meta ads"</em> — not <em>"I could use Wrapify instead."</em>
+        </div>
+    </div>
+
+    <!-- Slide 11: Risks & Mitigations -->
+    <div class="slide">
+        <h2>Risks &amp; Mitigations</h2>
+        <table style="font-size: 0.92em;">
+            <tr><th>Risk</th><th>Likelihood</th><th>Mitigation</th></tr>
+            <tr>
+                <td><strong>Wrap CapEx eats margin</strong></td>
+                <td>High</td>
+                <td>Phase 0 uses magnetic panels only ($45/unit). Wraps only when advertiser signs 6+ month minimum that amortizes the CapEx with 25%+ headroom</td>
+            </tr>
+            <tr>
+                <td><strong>Long B2B sales cycle (8–16 wk)</strong></td>
+                <td>High</td>
+                <td>Phase 0 supply comes from existing PBC relationships, skipping cold cycle. Phase 1 hires 1 PT rep with referral comp on top of base</td>
+            </tr>
+            <tr>
+                <td><strong>Lease-vehicle restrictions</strong></td>
+                <td>Medium</td>
+                <td>Pre-qualify fleets — confirm owned vs. leased vehicles, get lessor approval in writing where needed. Skip fleets that won't or can't approve.</td>
+            </tr>
+            <tr>
+                <td><strong>FL heat damages vinyl (year-round)</strong></td>
+                <td>Medium</td>
+                <td>Use 3M IJ180Cv3 or equivalent cast vinyl (5-yr durability). Annual inspections; warranty terms in advertiser contract</td>
+            </tr>
+            <tr>
+                <td><strong>Brand safety / category conflicts</strong></td>
+                <td>Medium</td>
+                <td>Written exclusivity terms (no competing brand on same fleet); category opt-outs on fleet contracts (e.g., no political ads)</td>
+            </tr>
+            <tr>
+                <td><strong>Impression measurement disputes</strong></td>
+                <td>Medium</td>
+                <td>Use route GPS + DMA traffic data + Geopath impression methodology (industry standard); weekly reports to advertisers</td>
+            </tr>
+            <tr>
+                <td><strong>Fleet churn</strong></td>
+                <td>Medium</td>
+                <td>Revenue-share alignment + 12-mo contracts on full wraps + quarterly fleet check-ins. Target &lt;15% annual churn</td>
+            </tr>
+            <tr>
+                <td><strong>Advertiser substitution to digital</strong></td>
+                <td>High</td>
+                <td>Pitch as <em>complement</em> to Meta/Google, not replacement. Sell on "physical brand presence the algorithm can't undo"</td>
+            </tr>
+            <tr>
+                <td><strong>Insurance / liability</strong></td>
+                <td>Low</td>
+                <td>$1M GL day one; fleets carry their own commercial auto; clear contract language on wrap damage, accident scenarios, removal</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Slide 12: Investment & Decision Gates -->
+    <div class="slide dark">
+        <h2>Investment &amp; Decision Gates</h2>
+        <div class="content">
+            <div class="box">
+                <h3>Phase 0 Capital (Months 1–4)</h3>
+                <table style="margin-top: 5px; font-size: 0.93em;">
+                    <tr><td>LLC + FEIN + insurance</td><td class="currency">$1,500</td></tr>
+                    <tr><td>Magnetic panel inventory (50 units)</td><td class="currency">$2,250</td></tr>
+                    <tr><td>Basic platform (Airtable + Stripe)</td><td class="currency">$1,000</td></tr>
+                    <tr><td>Sample creative + photography</td><td class="currency">$750</td></tr>
+                    <tr><td>Outreach + travel (PBC fleets)</td><td class="currency">$1,500</td></tr>
+                    <tr><td>Working capital reserve</td><td class="currency">$3,000</td></tr>
+                    <tr style="background: #e6f2ff; font-weight: bold;"><td><strong>Phase 0 Total</strong></td><td class="currency"><strong>$10,000</strong></td></tr>
+                </table>
+            </div>
+            <div class="box">
+                <h3>Phase 1 Capital (Months 5–12)</h3>
+                <table style="margin-top: 5px; font-size: 0.93em;">
+                    <tr><td>PT sales rep (8 mo, $1,800/mo)</td><td class="currency">$14,400</td></tr>
+                    <tr><td>Platform v2 (impression dashboard)</td><td class="currency">$3,500</td></tr>
+                    <tr><td>Wrap install partner deposits</td><td class="currency">$2,000</td></tr>
+                    <tr><td>Marketing (LinkedIn, events)</td><td class="currency">$3,000</td></tr>
+                    <tr><td>Legal (advertiser contracts v2)</td><td class="currency">$2,500</td></tr>
+                    <tr><td>Working capital</td><td class="currency">$4,500</td></tr>
+                    <tr style="background: #e6f2ff; font-weight: bold;"><td><strong>Phase 1 Total</strong></td><td class="currency"><strong>$29,900</strong></td></tr>
+                </table>
+            </div>
+        </div>
+        <div style="background: #e6f2ff; padding: 20px; border-radius: 4px; margin-top: 20px;">
+            <strong style="font-size: 1.1em; color: #0066cc;">Year 1 total capital: ~$25K (Phase 0 + reduced Phase 1, since Phase 1 partially self-funds from Phase 0 cash flow). Break-even Month 8–9; payback Month 11–12.</strong>
+        </div>
+        <div class="growth-path" style="margin-top: 22px;">
+            <div class="path-box">
+                <h4>Gate 1 — Day 120</h4>
+                <p>2 fleets, 25 trucks, 5 advertisers, $5K MRR. Hit → Phase 1. Miss → diagnose / kill.</p>
+            </div>
+            <div class="path-box">
+                <h4>Gate 2 — Day 365</h4>
+                <p>6 fleets, 200+ trucks, $12K+ MRR, blended take ≥17%. Hit → hire FT, Phase 2a. Miss → stay in PBC.</p>
+            </div>
+            <div class="path-box">
+                <h4>Gate 3 — Day 730</h4>
+                <p>15 fleets, 500 trucks, $40K+ MRR, churn &lt;15%. Hit → second market expansion. Miss → consolidate SFL.</p>
             </div>
         </div>
     </div>
 
-    <!-- Slide 13: Why Now? -->
+    <!-- Slide 13: Why This One Scales -->
     <div class="slide">
-        <h2>Why This Opportunity? Why Now?</h2>
-        <div class="content single">
-            <div class="highlight" style="border-left-color: #0066cc;">
-                <h3 style="color: #0066cc; margin-top: 0; margin-bottom: 15px;">Perfect Timing</h3>
+        <h2>Why This One Scales (vs. Service Ventures)</h2>
+        <div class="content">
+            <div class="box">
+                <h3>What service ventures cap at</h3>
                 <ul>
-                    <li><strong>South Florida Logistics Boom:</strong> Port of Miami, Amazon expansion, last-mile delivery explosion = 50,000+ trucks in region, all undermonetized</li>
-                    <li><strong>Advertiser Demand:</strong> Brands want cheap, measurable OOH; $0.76 CPM beats all other media; market growing at 9.5% CAGR</li>
-                    <li><strong>Low Capital, Fast Payback:</strong> $15K investment breaks even in weeks; pure software margin business with no inventory</li>
-                    <li><strong>Relationship-Driven Market:</strong> Competitors focus on self-serve (Wrapify) or enterprise sales (TRUCK ADS). We own the sweet spot: aggregation + dedicated service</li>
-                    <li><strong>Scalable Unit Economics:</strong> LTV:CAC of 108:1 means every fleet we acquire is highly profitable; can scale aggressively once proven</li>
+                    <li><strong>Yard patrol / pressure washing / storm debris:</strong> Operator-labor bound. Each route adds linear cost.</li>
+                    <li><strong>Geographic radius constrained:</strong> Drive time defines TAM</li>
+                    <li><strong>Scale = more trucks, more operators, more keys</strong></li>
+                    <li><strong>Exit value:</strong> 1.5–3× EBITDA at sale</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Why fleet ad aggregation breaks the cap</h3>
+                <ul>
+                    <li><strong>Software + relationship moat</strong> — adding the 50th fleet costs less than adding the 5th</li>
+                    <li><strong>Geographic expansion is repeatable</strong> — same playbook works in Tampa, Orlando, Atlanta, Charlotte</li>
+                    <li><strong>Scale = same headcount, more inventory</strong> — operating leverage compounds</li>
+                    <li><strong>Exit value:</strong> 5–10× EBITDA at scale (ad-tech / OOH multiples)</li>
                 </ul>
             </div>
         </div>
+        <div class="highlight" style="margin-top: 22px;">
+            <strong>Bottom line:</strong> A successful pressure-washing business at Year 3 = ~$150K owner net, route-bound. A successful fleet-ad aggregator at Year 3 = ~$735K owner net, geographically expandable, with a 5–10× exit multiple at sale. That's why the local-first prove-out matters: <em>get to Day 120 cheap, then the scale path becomes a math problem instead of a hope problem.</em>
+        </div>
     </div>
 
-    <!-- Slide 14: Contact -->
+    <!-- Slide 14: The Ask / Next Step -->
     <div class="slide title-slide">
-        <h1>Questions?</h1>
-        <p class="subtitle">Fleet Advertising Aggregator</p>
-        <div style="margin-top: 100px; font-size: 1.3em;">
-            <p>Let's monetize South Florida's trucks.</p>
+        <h1>Next Step</h1>
+        <p class="subtitle">Phase 0 — Wellington/PBC Pilot</p>
+        <div style="margin-top: 60px; font-size: 1.1em; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <p style="margin-bottom: 12px;"><strong>Capital:</strong> $10K to Day 120</p>
+            <p style="margin-bottom: 12px;"><strong>Time:</strong> Duncan ~10 hrs/week through Month 4</p>
+            <p style="margin-bottom: 12px;"><strong>Risk:</strong> Capped at $10K if Day 120 gate misses</p>
+            <p style="margin-bottom: 12px;"><strong>Decision needed:</strong> Approve Phase 0 budget &amp; commit Q2 calendar to fleet/advertiser outreach</p>
+            <p style="margin-top: 30px; font-size: 1.05em;"><strong>If gate hits, the math says Year 5 owner net is ~$1.9M and 5-yr cumulative is ~$4.4M. If it misses, we know in 120 days for $10K.</strong></p>
+        </div>
+        <div class="footer" style="border: none; color: rgba(255,255,255,0.7); margin-top: 50px;">
+            Fleet Advertising Aggregator · Business Plan v3.0 · 2026-05-17
         </div>
     </div>
 

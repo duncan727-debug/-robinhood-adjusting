@@ -472,3 +472,71 @@ Contacts missing email: 12
 [2026-05-14 14:33]   Recycled (retry tomorrow): 2
 [2026-05-14 14:33]   Skipped (duplicates): 7
 [2026-05-14 14:33]   Flagged manual lookup: 7
+[2026-05-15 10:46] === enrich_before_upload start ===
+[2026-05-15 10:46]   ✓ NEW → HubSpot: Banyan Construction Group | admin@banyanconstructiongroup.com
+[2026-05-15 10:47]   REVIEW (best-guess email): W & J Contractors | info@wandjcontractorsfl.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Villa's Construction & Remodeling Inc. | andrea@villasgc.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Stepbrothers Contracting Group LLC | info@stepbrothersgc.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Greenview Renovation | info@greenviewrenovation.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Thum Co. Contractors | office@thum.co
+[2026-05-15 10:47]   ✓ NEW → HubSpot: The Phoenix Restoration of West Palm Beach | info@thephoenixrestoration.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Hurricane Heroes Roofing, Solar, And Impact Windows | sales@hurricaneheroesgo.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Hercules Roofing | gil@herculesroofing.com
+[2026-05-15 10:48]   REVIEW (best-guess email): O'Neal Jr. Roofing | info@onealjrroofing.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Hammerhead Roofing of South Florida Inc | info@hammerheadroofing.com
+[2026-05-15 10:48]   REVIEW (best-guess email): Pinewood Construction | info@pinewoodconstructioninc.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Espin Roofing | newroof@espinroofing.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Louis Roofing LLC | contact@louis-roofingllc.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Proper Roofing West Palm Beach | appointment@properoofing.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Global RestorationTeam | office@globalrestorationteam.com
+[2026-05-15 10:48]   REVIEW (best-guess email): PETRA A/C SERVICES | info@petraacservices.com
+[2026-05-15 10:48]   REVIEW (best-guess email): Snyder Air Conditioning, Plumbing & Electric | info@snyderac.com
+[2026-05-15 10:48]   REVIEW (best-guess email): All Out Air Conditioning | info@alloutac.com
+[2026-05-15 10:49]   REVIEW (best-guess email): Blue View Real Estate | info@blueviewrealestate.com
+[2026-05-15 10:49]   REVIEW (best-guess email): CGI Realty | info@cgi.realestate
+[2026-05-15 10:49]   REVIEW (best-guess email): Brent and Raquel Crowe | Great Palm Beach Homes | Wellington Real Estate | info@greatpalmbeachhomes.com
+[2026-05-15 10:49]   ✓ NEW → HubSpot: Logan Realty, Inc | rhys@loganrealtyinc.com
+[2026-05-15 10:49]   ✓ NEW → HubSpot: Real Estate 4 All LLC | info@realestate4all.com
+[2026-05-15 10:49]   FLAG (manual lookup needed): Emerson Plumbing, LLC.
+[2026-05-15 10:49]   FLAG (manual lookup needed): Palm Beach Plumbing & Heater
+[2026-05-15 10:49]   Review queue: wrote 11 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-15.csv
+[2026-05-15 10:49] === Done ===
+[2026-05-15 10:49]   Uploaded to HubSpot (NEW only): 15
+[2026-05-15 10:49]   Routed to review queue (best-guess): 9
+[2026-05-15 10:49]   Recycled (retry tomorrow): 0
+[2026-05-15 10:49]   Skipped (duplicates): 0
+[2026-05-15 10:49]   Flagged manual lookup: 2
+[2026-05-15 10:46] === enrich_before_upload start ===
+[2026-05-15 10:46]   ✓ NEW → HubSpot: Banyan Construction Group | admin@banyanconstructiongroup.com
+[2026-05-15 10:47]   REVIEW (best-guess email): W & J Contractors | info@wandjcontractorsfl.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Villa's Construction & Remodeling Inc. | andrea@villasgc.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Stepbrothers Contracting Group LLC | info@stepbrothersgc.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Greenview Renovation | info@greenviewrenovation.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Thum Co. Contractors | office@thum.co
+[2026-05-15 10:47]   ✓ NEW → HubSpot: The Phoenix Restoration of West Palm Beach | info@thephoenixrestoration.com
+[2026-05-15 10:47]   ✓ NEW → HubSpot: Hurricane Heroes Roofing, Solar, And Impact Windows | sales@hurricaneheroesgo.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Hercules Roofing | gil@herculesroofing.com
+[2026-05-15 10:48]   REVIEW (best-guess email): O'Neal Jr. Roofing | info@onealjrroofing.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Hammerhead Roofing of South Florida Inc | info@hammerheadroofing.com
+[2026-05-15 10:48]   REVIEW (best-guess email): Pinewood Construction | info@pinewoodconstructioninc.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Espin Roofing | newroof@espinroofing.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Louis Roofing LLC | contact@louis-roofingllc.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Proper Roofing West Palm Beach | appointment@properoofing.com
+[2026-05-15 10:48]   ✓ NEW → HubSpot: Global RestorationTeam | office@globalrestorationteam.com
+[2026-05-15 10:48]   REVIEW (best-guess email): PETRA A/C SERVICES | info@petraacservices.com
+[2026-05-15 10:48]   REVIEW (best-guess email): Snyder Air Conditioning, Plumbing & Electric | info@snyderac.com
+[2026-05-15 10:48]   REVIEW (best-guess email): All Out Air Conditioning | info@alloutac.com
+[2026-05-15 10:49]   REVIEW (best-guess email): Blue View Real Estate | info@blueviewrealestate.com
+[2026-05-15 10:49]   REVIEW (best-guess email): CGI Realty | info@cgi.realestate
+[2026-05-15 10:49]   REVIEW (best-guess email): Brent and Raquel Crowe | Great Palm Beach Homes | Wellington Real Estate | info@greatpalmbeachhomes.com
+[2026-05-15 10:49]   ✓ NEW → HubSpot: Logan Realty, Inc | rhys@loganrealtyinc.com
+[2026-05-15 10:49]   ✓ NEW → HubSpot: Real Estate 4 All LLC | info@realestate4all.com
+[2026-05-15 10:49]   FLAG (manual lookup needed): Emerson Plumbing, LLC.
+[2026-05-15 10:49]   FLAG (manual lookup needed): Palm Beach Plumbing & Heater
+[2026-05-15 10:49]   Review queue: wrote 11 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-15.csv
+[2026-05-15 10:49] === Done ===
+[2026-05-15 10:49]   Uploaded to HubSpot (NEW only): 15
+[2026-05-15 10:49]   Routed to review queue (best-guess): 9
+[2026-05-15 10:49]   Recycled (retry tomorrow): 0
+[2026-05-15 10:49]   Skipped (duplicates): 0
+[2026-05-15 10:49]   Flagged manual lookup: 2

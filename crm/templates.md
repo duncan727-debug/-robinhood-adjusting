@@ -21,6 +21,35 @@ All templates include CAN-SPAM opt-out language. Personalization uses placeholde
 
 ---
 
+## CONTACT-FORM FALLBACK — All Trades (USE WHEN GUESSED EMAILS BOUNCED)
+
+Used when 3 guessed emails for a company have hard-bounced and we're submitting via their public "Contact Us" form. Tone: short, recipient-first, asks for nothing except a name to address.
+
+**Trade-keyword fills the `{{trade}}` slot:** plumber / property manager / roofer / restoration crew / HVAC tech / general contractor / mold remediation team / insurance attorney / etc.
+
+---
+
+Hi {{org_name}} team,
+
+I'm Duncan Littlejohn, a public adjuster in Wellington. My homeowner clients regularly need a trusted {{trade}} right after a claim, and I don't have a go-to in your area yet.
+
+If that's the kind of work you'd want more of, who on your team should I send referrals to?
+
+Thanks,
+Duncan
+561-772-7528 · duncanlittlejohn727@gmail.com
+
+---
+
+**Why this works on a contact-form recipient:**
+- Opens like a customer note — "homeowner clients" + "your area" reads as inbound, not outbound
+- Asks for nothing except a name to address — easiest reply in the world
+- Loaded with value signal — "claim" implies insurance money, "send referrals" implies repeat flow
+- Trade-specific so they feel seen, not blasted
+- No links, no newsletter, no directory — those come *after* they reply
+
+---
+
 ## LISTING-FIRST INITIAL — All Trades (USE THIS FOR COLD OUTREACH)
 
 **Subject:** Homeowners are asking me for {{category}} referrals in Palm Beach County — can I list you?
