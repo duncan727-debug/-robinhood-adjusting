@@ -242,7 +242,7 @@ CONFIRMATION_SUBJECT = "You're listed — {company_name} is now on the Robinhood
 CONFIRMATION_BODY = """\
 Hi {first_name},
 
-Great news — {company_name} is now listed on our provider directory at:
+Great news — {company_name} is now LIVE on our provider directory with a ✓ Verified badge:
 {site_url}/providers
 
 Homeowners searching for trusted {category} professionals in Palm Beach County will be able \
@@ -250,7 +250,7 @@ to find you there. Your listing shows your business name, phone, city, and servi
 
 A few things to know:
 - Listings are free, always
-- You'll receive a "Verified Provider" badge once we confirm your details
+- The ✓ Verified badge means we've confirmed your licensing and contact info
 - I'll reach out personally when I have a referral that matches your service area
 
 I've also added you to our daily Trade Professional Brief — you can unsubscribe anytime \
@@ -287,12 +287,19 @@ def log(msg):
 # ── confirmation pass ────────────────────────────────────────────────────────
 
 def run_confirmation_pass(gmail_pw, token, state, cat_map):
-    """Send confirmation emails to contacts HubSpot marked CONNECTED but not yet emailed."""
+    """Send confirmation emails to contacts HubSpot marked CONNECTED *and* who have
+    been actually added to the public provider directory (directory_listing_status=listed).
+
+    Gating on directory_listing_status prevents the bug where the bridge bumps a
+    contact to CONNECTED on first reply and confirmation fires *before* the manual
+    directory-add step — telling the contractor "you're listed" when they aren't.
+    """
     _, data = hs("POST", "/crm/v3/objects/contacts/search", {
         "filterGroups": [{"filters": [
             {"propertyName": "hs_lead_status", "operator": "EQ", "value": "CONNECTED"},
+            {"propertyName": "directory_listing_status", "operator": "EQ", "value": "listed"},
         ]}],
-        "properties": ["firstname", "email", "company"],
+        "properties": ["firstname", "email", "company", "directory_listing_status"],
         "limit": 50,
     }, token)
 

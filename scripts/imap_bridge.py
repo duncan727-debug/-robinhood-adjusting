@@ -28,6 +28,7 @@ WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
 STATE_PATH = WORKSPACE / "crm" / ".imap_bridge_state.json"
 LOG_PATH = WORKSPACE / "scripts" / "imap_bridge.log"
 SECRETS_PATH = WORKSPACE / "config" / ".secrets"
+REPLY_QUEUE_DIR = WORKSPACE / "crm" / "reply_queue"
 
 BOUNCE_SENDERS = (
     "mailer-daemon@",
@@ -323,9 +324,14 @@ def log_reply_note(contact_id, sender, subject, snippet):
     if status not in (200, 201):
         log(f"  ✗ REPLY note creation failed for {sender} ({status})")
         return False
-    # Advance lead status
+    # Advance lead status + mark listing as pending_add (gates confirmation pass —
+    # we only auto-confirm once a human has added them to the directory page and
+    # set directory_listing_status=listed).
     hs_request("PATCH", f"/crm/v3/objects/contacts/{contact_id}",
-               {"properties": {"hs_lead_status": "CONNECTED"}})
+               {"properties": {
+                   "hs_lead_status": "CONNECTED",
+                   "directory_listing_status": "pending_add",
+               }})
     log(f"  ✓ REPLY   → {sender} (contact {contact_id})  subject: {subject[:60]}")
     return True
 
@@ -494,6 +500,70 @@ def extract_snippet(msg):
     return " ".join(keep)[:800]
 
 
+def extract_full_text(msg):
+    """Return the plain-text body of a reply with quoted history removed.
+    Falls back to stripped HTML if no text/plain part exists."""
+    text = ""
+    if msg.is_multipart():
+        for part in msg.walk():
+            if part.get_content_type() == "text/plain":
+                try:
+                    payload = part.get_payload(decode=True)
+                    if payload:
+                        text = payload.decode("utf-8", errors="replace")
+                        break
+                except Exception:
+                    pass
+        if not text:
+            for part in msg.walk():
+                if part.get_content_type() == "text/html":
+                    try:
+                        payload = part.get_payload(decode=True)
+                        if payload:
+                            html = payload.decode("utf-8", errors="replace")
+                            text = re.sub(r"<[^>]+>", " ", html)
+                            break
+                    except Exception:
+                        pass
+    else:
+        try:
+            text = (msg.get_payload(decode=True) or b"").decode("utf-8", errors="replace")
+        except Exception:
+            pass
+    # Drop quoted/forwarded blocks: stop at first ">", "On ... wrote:", "From:" header echo
+    lines_out = []
+    for line in text.splitlines():
+        s = line.strip()
+        if s.startswith(">"):
+            continue
+        if re.match(r"On .+ wrote:\s*$", s):
+            break
+        if re.match(r"From:\s.+<.+@", s):
+            break
+        if s.startswith("-----Original Message-----"):
+            break
+        lines_out.append(line)
+    return "\n".join(lines_out).strip()
+
+
+def queue_reply_for_autoresponse(contact_id, sender, subject, full_text, message_id, in_reply_to):
+    """Append a reply to today's queue so the auto-reply orchestrator can process it."""
+    REPLY_QUEUE_DIR.mkdir(parents=True, exist_ok=True)
+    queue_path = REPLY_QUEUE_DIR / f"{datetime.now().strftime('%Y-%m-%d')}.jsonl"
+    record = {
+        "queued_at": datetime.now(timezone.utc).isoformat(),
+        "contact_id": contact_id,
+        "sender": sender,
+        "subject": subject,
+        "message_id": message_id or "",
+        "in_reply_to": in_reply_to or "",
+        "body": full_text[:8000],
+        "status": "pending",
+    }
+    with queue_path.open("a") as f:
+        f.write(json.dumps(record) + "\n")
+
+
 def main():
     state = load_state()
     log(f"=== IMAP bridge run (last_uid={state['last_uid']}) ===")
@@ -578,6 +648,15 @@ def main():
                 if log_reply_note(cid, from_addr, subject, snippet):
                     replies += 1
                     state["processed_replies"].append(uid)
+                    full_text = extract_full_text(msg)
+                    queue_reply_for_autoresponse(
+                        cid,
+                        from_addr,
+                        subject,
+                        full_text,
+                        msg.get("Message-ID", ""),
+                        msg.get("In-Reply-To", ""),
+                    )
 
     state["last_uid"] = max_uid
     save_state(state)
