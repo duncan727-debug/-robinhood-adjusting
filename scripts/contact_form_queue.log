@@ -41,3 +41,24 @@
 [2026-05-16 13:15 EDT] Paul Davis Restoration of Palm Beach County: SKIP-BROKEN (service intake only)
 [2026-05-16 13:15 EDT] KLR Roofing Corp.: VIABLE submitted
 [2026-05-16 13:15 EDT] queued=15 submitted=4 blacklisted=11 errors=0
+[2026-05-18T13:03:48] === Build contact-form queue for 2026-05-18 ===
+[2026-05-18T13:03:48]   Loaded 14 companies on do-not-retry blacklist
+[2026-05-18T13:03:48] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-19T12:23:49] === Build contact-form queue for 2026-05-19 ===
+[2026-05-19T12:23:49]   Loaded 14 companies on do-not-retry blacklist
+[2026-05-19T12:23:49] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-19T12:24:27]   Found 61 eligible companies after blacklist filter
+[2026-05-19T12:25:21]   Wrote 14 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-19.csv
+[2026-05-19T12:25:21] === Done ===
+
+[2026-05-19T12:40:22] === Build contact-form queue for 2026-05-19 ===
+[2026-05-19T12:40:22]   Loaded 23 companies on do-not-retry blacklist
+[2026-05-19T12:40:22] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-19T12:40:59]   Found 52 eligible companies after blacklist filter
+[2026-05-19T12:41:41]   Wrote 3 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-19.csv
+[2026-05-19T12:41:41] === Done ===
+
+[2026-05-19 12:48 EDT] Premier Comfort Services VIABLE+SUCCESS submitted (deal → Contact Form Submitted)
+[2026-05-19 12:48 EDT] Lindstrom Air Conditioning & Plumbing SKIP-CHATBOT (no contact form on any standard path)
+[2026-05-19 12:48 EDT] Coastal Restoration Specialists SKIP-BROKEN (DB error on /contact + /contact-us; homepage form has no message field)
+[2026-05-19 12:48 EDT] queued=3 submitted=1 blacklisted=2 errors=0

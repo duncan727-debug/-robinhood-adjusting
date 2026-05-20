@@ -1,5 +1,5 @@
 {
-  "last_uid": 214,
+  "last_uid": 233,
   "processed_bounces": [
     116,
     117,
@@ -18,7 +18,10 @@
     204,
     205,
     206,
-    212
+    212,
+    215,
+    222,
+    232
   ],
   "processed_replies": [
     87,

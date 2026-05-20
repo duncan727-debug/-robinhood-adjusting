@@ -540,3 +540,71 @@ Contacts missing email: 12
 [2026-05-15 10:49]   Recycled (retry tomorrow): 0
 [2026-05-15 10:49]   Skipped (duplicates): 0
 [2026-05-15 10:49]   Flagged manual lookup: 2
+[2026-05-18 17:45] === enrich_before_upload start ===
+[2026-05-18 17:45]   ✓ NEW → HubSpot: SC Wells Construction | info@scwells.com
+[2026-05-18 17:45]   REVIEW (best-guess email): Anderson Construction Group | info@andersonconstructionfl.com
+[2026-05-18 17:45]   REVIEW (best-guess email): AAA Roofing Services, Inc. | info@aaaroofingservicesinc.com
+[2026-05-18 17:46]   ✓ NEW → HubSpot: Hermes Roofing | office@hermesroofing.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Top Flight Property Restoration | info@topflightpropertyrestoration.com
+[2026-05-18 17:46]   ✓ NEW → HubSpot: Cinergy Restoration | cinergy@cbirestorations.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Healthy Builds Restoration | info@healthybuildsrestoration.com
+[2026-05-18 17:46]   REVIEW (best-guess email): EES Restoration | info@eesrestoration.com
+[2026-05-18 17:46]   REVIEW (best-guess email): NENA'S Roofing LLC - Palm Beach County insta quote Re-roofs & Repairs | info@nenasroofing.com
+[2026-05-18 17:46]   REVIEW (best-guess email): DRYmedic Restoration Services North Palm Beach | info@drymedic.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Palm Beach HVAC Repair Company | info@chiefhvacrepair.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Quality Pro Plumbing Welington | info@leucadiaplumbingco.com
+[2026-05-18 17:46]   Review queue: wrote 9 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-18.csv
+[2026-05-18 17:46] === Done ===
+[2026-05-18 17:46]   Uploaded to HubSpot (NEW only): 3
+[2026-05-18 17:46]   Routed to review queue (best-guess): 9
+[2026-05-18 17:46]   Recycled (retry tomorrow): 0
+[2026-05-18 17:46]   Skipped (duplicates): 0
+[2026-05-18 17:46]   Flagged manual lookup: 0
+[2026-05-18 17:45] === enrich_before_upload start ===
+[2026-05-18 17:45]   ✓ NEW → HubSpot: SC Wells Construction | info@scwells.com
+[2026-05-18 17:45]   REVIEW (best-guess email): Anderson Construction Group | info@andersonconstructionfl.com
+[2026-05-18 17:45]   REVIEW (best-guess email): AAA Roofing Services, Inc. | info@aaaroofingservicesinc.com
+[2026-05-18 17:46]   ✓ NEW → HubSpot: Hermes Roofing | office@hermesroofing.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Top Flight Property Restoration | info@topflightpropertyrestoration.com
+[2026-05-18 17:46]   ✓ NEW → HubSpot: Cinergy Restoration | cinergy@cbirestorations.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Healthy Builds Restoration | info@healthybuildsrestoration.com
+[2026-05-18 17:46]   REVIEW (best-guess email): EES Restoration | info@eesrestoration.com
+[2026-05-18 17:46]   REVIEW (best-guess email): NENA'S Roofing LLC - Palm Beach County insta quote Re-roofs & Repairs | info@nenasroofing.com
+[2026-05-18 17:46]   REVIEW (best-guess email): DRYmedic Restoration Services North Palm Beach | info@drymedic.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Palm Beach HVAC Repair Company | info@chiefhvacrepair.com
+[2026-05-18 17:46]   REVIEW (best-guess email): Quality Pro Plumbing Welington | info@leucadiaplumbingco.com
+[2026-05-18 17:46]   Review queue: wrote 9 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-18.csv
+[2026-05-18 17:46] === Done ===
+[2026-05-18 17:46]   Uploaded to HubSpot (NEW only): 3
+[2026-05-18 17:46]   Routed to review queue (best-guess): 9
+[2026-05-18 17:46]   Recycled (retry tomorrow): 0
+[2026-05-18 17:46]   Skipped (duplicates): 0
+[2026-05-18 17:46]   Flagged manual lookup: 0
+[2026-05-19 12:39] === enrich_before_upload start ===
+[2026-05-19 12:39]   REVIEW (best-guess email): General Contractor Construction LLC | info@genconconstruct.com
+[2026-05-19 12:39]   ✓ NEW → HubSpot: Skyline Roof Experts | manhattanbeach@skylineroofexperts.click
+[2026-05-19 12:39]   REVIEW (best-guess email): Roof Repairs Lake Worth Beach by ApexRoof | info@lakeworthbeach.apexroof.pro
+[2026-05-19 12:39]   ✓ NEW → HubSpot: All-Pro Electrical and Air Conditioning | bill@trustallpro.com
+[2026-05-19 12:39]   REVIEW (best-guess email): Unlimited Restoration, Inc. (URI) - West Palm Beach, FL Office | info@urinow.com
+[2026-05-19 12:39]   REVIEW (best-guess email): Smart Choice Plumbing & Air Conditioning LLC | info@smartchoiceplumbingandairconditioning.com
+[2026-05-19 12:39]   Review queue: wrote 4 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-19.csv
+[2026-05-19 12:39] === Done ===
+[2026-05-19 12:39]   Uploaded to HubSpot (NEW only): 2
+[2026-05-19 12:39]   Routed to review queue (best-guess): 4
+[2026-05-19 12:39]   Recycled (retry tomorrow): 0
+[2026-05-19 12:39]   Skipped (duplicates): 0
+[2026-05-19 12:39]   Flagged manual lookup: 0
+[2026-05-19 12:39] === enrich_before_upload start ===
+[2026-05-19 12:39]   REVIEW (best-guess email): General Contractor Construction LLC | info@genconconstruct.com
+[2026-05-19 12:39]   ✓ NEW → HubSpot: Skyline Roof Experts | manhattanbeach@skylineroofexperts.click
+[2026-05-19 12:39]   REVIEW (best-guess email): Roof Repairs Lake Worth Beach by ApexRoof | info@lakeworthbeach.apexroof.pro
+[2026-05-19 12:39]   ✓ NEW → HubSpot: All-Pro Electrical and Air Conditioning | bill@trustallpro.com
+[2026-05-19 12:39]   REVIEW (best-guess email): Unlimited Restoration, Inc. (URI) - West Palm Beach, FL Office | info@urinow.com
+[2026-05-19 12:39]   REVIEW (best-guess email): Smart Choice Plumbing & Air Conditioning LLC | info@smartchoiceplumbingandairconditioning.com
+[2026-05-19 12:39]   Review queue: wrote 4 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-19.csv
+[2026-05-19 12:39] === Done ===
+[2026-05-19 12:39]   Uploaded to HubSpot (NEW only): 2
+[2026-05-19 12:39]   Routed to review queue (best-guess): 4
+[2026-05-19 12:39]   Recycled (retry tomorrow): 0
+[2026-05-19 12:39]   Skipped (duplicates): 0
+[2026-05-19 12:39]   Flagged manual lookup: 0

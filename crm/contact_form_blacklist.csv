@@ -13,3 +13,14 @@ company_id,name,reason,attempted_date
 321848999626,CountrySide Loxahatchee HVAC Repair,SSL cert invalid + empty page on HTTP fallback,2026-05-16
 321838786246,All Star Plumbing & Air,no contact form (booking flow + phone CTA only),2026-05-16
 321848117972,Paul Davis Restoration of Palm Beach County,service-request intake form (no message field for partnership pitch),2026-05-16
+321160047319,Storm Shield Roofing,domain does not resolve (ENOTFOUND stormshieldfl.com),2026-05-19
+321138130650,Coastal Property Management Group,domain does not resolve (ENOTFOUND coastalproperty.com),2026-05-19
+321186361051,Prestige Realty Management,domain parked / for sale (no real site),2026-05-19
+321848185562,Thunder Restoration,service-request intake form rejected partnership submission (customer-intake only),2026-05-19
+321849028320,Leading Plumbing Services LLC,form submission rejected (likely invisible captcha iframe),2026-05-19
+321237699302,Atlantic Water & Mold Solutions,domain does not resolve (ENOTFOUND atlanticwaterfl.com),2026-05-19
+321848168167,House Call Construction,manual captcha required (Enter the captcha textbox),2026-05-19
+321849088745,Buckeye Plumbing Inc,no message field (Name/Phone/Email/category dropdown only),2026-05-19
+321832441578,Top Roofer West Palm Beach,domain does not resolve (ENOTFOUND toprooferwestpalmbeach.com),2026-05-19
+321770333942,Lindstrom Air Conditioning & Plumbing,no contact form across /contact /contact-us /contact-request /get-in-touch (chat widget + SCHEDULE NOW booking only),2026-05-19
+321832383223,Coastal Restoration Specialists,/contact and /contact-us throw "Error establishing a database connection"; homepage form is quote-only intake (no message field for partnership pitch),2026-05-19

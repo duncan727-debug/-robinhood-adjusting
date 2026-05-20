@@ -196,3 +196,76 @@ Processing 59 records...
   40/59 processed...
   50/59 processed...
   Done: 0 created, 59 updated, 0 errors, 0 skipped
+Upload error: Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1346, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1426, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/victoria/.openclaw/workspace/scripts/hubspot_upload.py", line 182, in <module>
+    sys.exit(0 if main() else 1)
+  File "/Users/victoria/.openclaw/workspace/scripts/hubspot_upload.py", line 157, in main
+    contact_id = upsert_contact(first, last, email, phone, company_id)
+  File "/Users/victoria/.openclaw/workspace/scripts/hubspot_upload.py", line 123, in upsert_contact
+    hs_request("PUT",
+  File "/Users/victoria/.openclaw/workspace/scripts/hubspot_upload.py", line 46, in hs_request
+    with urllib.request.urlopen(req) as resp:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 517, in open
+    response = self._open(req, data)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1349, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 54] Connection reset by peer>
+
+Loaded 11 organizations from CSV
+Loaded 76 interaction records
+
+Found 138 unique prospect records from markdown drafts
+
+Wrote 11 existing + 48 new = 59 total records
+Master import file saved to: /Users/victoria/.openclaw/workspace/crm/hubspot_master_import_2026-05-19.csv
+Also updated: /Users/victoria/.openclaw/workspace/crm/hubspot_master_import.csv
+
+✓ Daily HubSpot consolidation complete
+Uploading 59 records to HubSpot...
+Processing 59 records...
+
+[2026-05-19 12:13:18] HubSpot upload started
+  Records to process: 59
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
+[2026-05-19 12:14:31] Upload complete
+
+Processing 59 records...
+  10/59 processed...
+  20/59 processed...
+  30/59 processed...
+  40/59 processed...
+  50/59 processed...
+  Done: 0 created, 59 updated, 0 errors, 0 skipped
