@@ -1138,3 +1138,74 @@
     → 20 results
   Done: 0 added, 271 duplicate/existing, 0 large firms skipped, 0 quality-filtered, 0 errors
   Google Places API: 2026-05-19 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-20 09:00:00] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Renegade Roofing Co. [Deerfield Beach] — (954) 533-0707
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    QUEUED (2/25): Air Boca [Boca Raton] — (561) 750-1625
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (3/25): Restoration Maintenance [Oakland Park] — (954) 329-1759
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+    QUEUED (4/25): Leo Roofing & Construction [Palm Beach Gardens] — (561) 935-4979
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 4 added, 268 duplicate/existing, 0 large firms skipped, 0 quality-filtered, 0 errors
+  Google Places API: 2026-05-20 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-20 09:00:19] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Renegade Roofing Co. [Deerfield Beach] — (954) 533-0707
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    QUEUED (2/25): Air Boca [Boca Raton] — (561) 750-1625
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (3/25): Restoration Maintenance [Oakland Park] — (954) 329-1759
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+    QUEUED (4/25): Leo Roofing & Construction [Palm Beach Gardens] — (561) 935-4979
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 4 added, 268 duplicate/existing, 0 large firms skipped, 0 quality-filtered, 0 errors
+  Google Places API: 2026-05-20 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining

@@ -1417,3 +1417,157 @@ urllib.error.URLError: <urlopen error [Errno 8] nodename nor servname provided, 
 [2026-05-20T08:05:04]   ✓ BOUNCE  → louis.eisenberg@dortfi.org (contact 488502345434)  reason: Bcc: 246055074@bcc.hubspot.com
 [2026-05-20T08:05:04] === Done. Hard bounces: 1  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 233 ===
 [2026-05-20T08:05:04] 
+[2026-05-20T09:05:00] === IMAP bridge run (last_uid=233) ===
+[2026-05-20T09:05:00] Fetching HubSpot contacts…
+[2026-05-20T09:05:02]   Loaded 211 contacts
+[2026-05-20T09:05:02] Connecting to Gmail IMAP…
+[2026-05-20T09:05:03]   1 messages to inspect
+[2026-05-20T09:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 234 ===
+[2026-05-20T09:05:03] 
+[2026-05-20T09:05:00] === IMAP bridge run (last_uid=233) ===
+[2026-05-20T09:05:00] Fetching HubSpot contacts…
+[2026-05-20T09:05:02]   Loaded 211 contacts
+[2026-05-20T09:05:02] Connecting to Gmail IMAP…
+[2026-05-20T09:05:03]   1 messages to inspect
+[2026-05-20T09:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 234 ===
+[2026-05-20T09:05:03] 
+[2026-05-20T10:05:01] === IMAP bridge run (last_uid=234) ===
+[2026-05-20T10:05:01] Fetching HubSpot contacts…
+[2026-05-20T10:05:02]   Loaded 212 contacts
+[2026-05-20T10:05:02] Connecting to Gmail IMAP…
+[2026-05-20T10:05:03]   1 messages to inspect
+[2026-05-20T10:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 234 ===
+[2026-05-20T10:05:03] 
+[2026-05-20T10:05:01] === IMAP bridge run (last_uid=234) ===
+[2026-05-20T10:05:01] Fetching HubSpot contacts…
+[2026-05-20T10:05:02]   Loaded 212 contacts
+[2026-05-20T10:05:02] Connecting to Gmail IMAP…
+[2026-05-20T10:05:03]   1 messages to inspect
+[2026-05-20T10:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 234 ===
+[2026-05-20T10:05:03] 
+[2026-05-20T11:05:00] === IMAP bridge run (last_uid=234) ===
+[2026-05-20T11:05:00] Fetching HubSpot contacts…
+[2026-05-20T11:05:01]   Loaded 212 contacts
+[2026-05-20T11:05:01] Connecting to Gmail IMAP…
+[2026-05-20T11:05:02]   1 messages to inspect
+[2026-05-20T11:05:02] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 234 ===
+[2026-05-20T11:05:02] 
+[2026-05-20T11:05:00] === IMAP bridge run (last_uid=234) ===
+[2026-05-20T11:05:00] Fetching HubSpot contacts…
+[2026-05-20T11:05:01]   Loaded 212 contacts
+[2026-05-20T11:05:01] Connecting to Gmail IMAP…
+[2026-05-20T11:05:02]   1 messages to inspect
+[2026-05-20T11:05:02] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 234 ===
+[2026-05-20T11:05:02] 
+[2026-05-20T12:05:00] === IMAP bridge run (last_uid=234) ===
+[2026-05-20T12:05:00] Fetching HubSpot contacts…
+[2026-05-20T12:05:02]   Loaded 212 contacts
+[2026-05-20T12:05:02] Connecting to Gmail IMAP…
+[2026-05-20T12:05:03]   2 messages to inspect
+[2026-05-20T12:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T12:05:03] 
+[2026-05-20T12:05:00] === IMAP bridge run (last_uid=234) ===
+[2026-05-20T12:05:00] Fetching HubSpot contacts…
+[2026-05-20T12:05:02]   Loaded 212 contacts
+[2026-05-20T12:05:02] Connecting to Gmail IMAP…
+[2026-05-20T12:05:03]   2 messages to inspect
+[2026-05-20T12:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T12:05:03] 
+[2026-05-20T14:37:07] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T14:37:07] Fetching HubSpot contacts…
+[2026-05-20T14:37:09]   Loaded 212 contacts
+[2026-05-20T14:37:09] Connecting to Gmail IMAP…
+[2026-05-20T14:37:09]   1 messages to inspect
+[2026-05-20T14:37:09] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T14:37:09] 
+[2026-05-20T14:37:07] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T14:37:07] Fetching HubSpot contacts…
+[2026-05-20T14:37:09]   Loaded 212 contacts
+[2026-05-20T14:37:09] Connecting to Gmail IMAP…
+[2026-05-20T14:37:09]   1 messages to inspect
+[2026-05-20T14:37:09] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T14:37:09] 
+[2026-05-20T15:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T15:05:00] Fetching HubSpot contacts…
+[2026-05-20T15:05:02]   Loaded 213 contacts
+[2026-05-20T15:05:02] Connecting to Gmail IMAP…
+[2026-05-20T15:05:03]   1 messages to inspect
+[2026-05-20T15:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T15:05:03] 
+[2026-05-20T15:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T15:05:00] Fetching HubSpot contacts…
+[2026-05-20T15:05:02]   Loaded 213 contacts
+[2026-05-20T15:05:02] Connecting to Gmail IMAP…
+[2026-05-20T15:05:03]   1 messages to inspect
+[2026-05-20T15:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T15:05:03] 
+[2026-05-20T16:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T16:05:00] Fetching HubSpot contacts…
+[2026-05-20T16:05:02]   Loaded 213 contacts
+[2026-05-20T16:05:02] Connecting to Gmail IMAP…
+[2026-05-20T16:05:04]   1 messages to inspect
+[2026-05-20T16:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T16:05:04] 
+[2026-05-20T16:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T16:05:00] Fetching HubSpot contacts…
+[2026-05-20T16:05:02]   Loaded 213 contacts
+[2026-05-20T16:05:02] Connecting to Gmail IMAP…
+[2026-05-20T16:05:04]   1 messages to inspect
+[2026-05-20T16:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T16:05:04] 
+[2026-05-20T17:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T17:05:00] Fetching HubSpot contacts…
+[2026-05-20T17:05:02]   Loaded 213 contacts
+[2026-05-20T17:05:02] Connecting to Gmail IMAP…
+[2026-05-20T17:05:02]   1 messages to inspect
+[2026-05-20T17:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T17:05:03] 
+[2026-05-20T17:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T17:05:00] Fetching HubSpot contacts…
+[2026-05-20T17:05:02]   Loaded 213 contacts
+[2026-05-20T17:05:02] Connecting to Gmail IMAP…
+[2026-05-20T17:05:02]   1 messages to inspect
+[2026-05-20T17:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T17:05:03] 
+[2026-05-20T18:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T18:05:00] Fetching HubSpot contacts…
+[2026-05-20T18:05:02]   Loaded 213 contacts
+[2026-05-20T18:05:02] Connecting to Gmail IMAP…
+[2026-05-20T18:05:03]   1 messages to inspect
+[2026-05-20T18:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T18:05:03] 
+[2026-05-20T18:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T18:05:00] Fetching HubSpot contacts…
+[2026-05-20T18:05:02]   Loaded 213 contacts
+[2026-05-20T18:05:02] Connecting to Gmail IMAP…
+[2026-05-20T18:05:03]   1 messages to inspect
+[2026-05-20T18:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T18:05:03] 
+[2026-05-20T19:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T19:05:00] Fetching HubSpot contacts…
+[2026-05-20T19:05:02]   Loaded 213 contacts
+[2026-05-20T19:05:02] Connecting to Gmail IMAP…
+[2026-05-20T19:05:03]   1 messages to inspect
+[2026-05-20T19:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T19:05:03] 
+[2026-05-20T19:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T19:05:00] Fetching HubSpot contacts…
+[2026-05-20T19:05:02]   Loaded 213 contacts
+[2026-05-20T19:05:02] Connecting to Gmail IMAP…
+[2026-05-20T19:05:03]   1 messages to inspect
+[2026-05-20T19:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 236 ===
+[2026-05-20T19:05:03] 
+[2026-05-20T20:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T20:05:00] Fetching HubSpot contacts…
+[2026-05-20T20:05:02]   Loaded 213 contacts
+[2026-05-20T20:05:02] Connecting to Gmail IMAP…
+[2026-05-20T20:05:03]   1 messages to inspect
+[2026-05-20T20:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 237 ===
+[2026-05-20T20:05:03] 
+[2026-05-20T20:05:00] === IMAP bridge run (last_uid=236) ===
+[2026-05-20T20:05:00] Fetching HubSpot contacts…
+[2026-05-20T20:05:02]   Loaded 213 contacts
+[2026-05-20T20:05:02] Connecting to Gmail IMAP…
+[2026-05-20T20:05:03]   1 messages to inspect
+[2026-05-20T20:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Max UID: 237 ===
+[2026-05-20T20:05:03] 

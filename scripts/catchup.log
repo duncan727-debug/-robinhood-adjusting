@@ -4673,3 +4673,737 @@ To https://github.com/duncan727-debug/-robinhood-adjusting.git
 [2026-05-20T12:09:37Z]   build-website: pushed
 [2026-05-20T12:09:37Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=443), skip
 [2026-05-20T12:09:37Z] === catchup end ===
+[2026-05-20T12:24:47Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=504 ===
+[2026-05-20T12:24:47Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T12:24:47Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T12:24:47Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T12:24:47Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T12:24:47Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T12:24:47Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T12:24:47Z]   outreach batch 1: already ran today, skip
+[2026-05-20T12:24:47Z]   imap_bridge: ran 19m ago, skip
+[2026-05-20T12:24:47Z]   newsletter-send: already sent today, skip
+[2026-05-20T12:24:47Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T12:24:47Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=504), skip
+[2026-05-20T12:24:47Z] === catchup end ===
+[2026-05-20T12:39:58Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=519 ===
+[2026-05-20T12:39:58Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T12:39:58Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T12:39:58Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T12:39:58Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T12:39:58Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T12:39:58Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T12:39:58Z]   outreach batch 1: already ran today, skip
+[2026-05-20T12:39:58Z]   imap_bridge: ran 34m ago, skip
+[2026-05-20T12:39:58Z]   newsletter-send: already sent today, skip
+[2026-05-20T12:39:58Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T12:39:58Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=519), skip
+[2026-05-20T12:39:58Z] === catchup end ===
+[2026-05-20T12:55:07Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=535 ===
+[2026-05-20T12:55:07Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T12:55:07Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T12:55:07Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T12:55:07Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T12:55:07Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T12:55:07Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T12:55:07Z]   outreach batch 1: already ran today, skip
+[2026-05-20T12:55:07Z]   imap_bridge: ran 50m ago, skip
+[2026-05-20T12:55:07Z]   newsletter-send: already sent today, skip
+[2026-05-20T12:55:07Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T12:55:07Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=535), skip
+[2026-05-20T12:55:07Z] === catchup end ===
+[2026-05-20T13:10:17Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=550 ===
+[2026-05-20T13:10:17Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T13:10:17Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T13:10:17Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T13:10:17Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T13:10:17Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T13:10:17Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T13:10:17Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T13:10:17Z]   drip: already ran today, skip
+[2026-05-20T13:10:17Z]   outreach batch 1: already ran today, skip
+[2026-05-20T13:10:18Z]   imap_bridge: ran 5m ago, skip
+[2026-05-20T13:10:18Z]   newsletter-send: already sent today, skip
+[2026-05-20T13:10:18Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T13:10:18Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=550), skip
+[2026-05-20T13:10:18Z] === catchup end ===
+[2026-05-20T13:25:27Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=565 ===
+[2026-05-20T13:25:27Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T13:25:27Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T13:25:27Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T13:25:27Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T13:25:27Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T13:25:27Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T13:25:27Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T13:25:27Z]   drip: already ran today, skip
+[2026-05-20T13:25:27Z]   outreach batch 1: already ran today, skip
+[2026-05-20T13:25:27Z]   imap_bridge: ran 20m ago, skip
+[2026-05-20T13:25:27Z]   newsletter-send: already sent today, skip
+[2026-05-20T13:25:27Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T13:25:27Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=565), skip
+[2026-05-20T13:25:27Z] === catchup end ===
+[2026-05-20T13:40:39Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=580 ===
+[2026-05-20T13:40:39Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T13:40:39Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T13:40:39Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T13:40:39Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T13:40:39Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T13:40:39Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T13:40:39Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T13:40:39Z]   drip: already ran today, skip
+[2026-05-20T13:40:39Z]   outreach batch 1: already ran today, skip
+[2026-05-20T13:40:39Z]   imap_bridge: ran 35m ago, skip
+[2026-05-20T13:40:39Z]   newsletter-send: already sent today, skip
+[2026-05-20T13:40:39Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T13:40:39Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=580), skip
+[2026-05-20T13:40:39Z] === catchup end ===
+[2026-05-20T13:55:49Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=595 ===
+[2026-05-20T13:55:49Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T13:55:49Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T13:55:49Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T13:55:49Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T13:55:49Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T13:55:49Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T13:55:49Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T13:55:49Z]   drip: already ran today, skip
+[2026-05-20T13:55:49Z]   outreach batch 1: already ran today, skip
+[2026-05-20T13:55:49Z]   imap_bridge: ran 50m ago, skip
+[2026-05-20T13:55:49Z]   newsletter-send: already sent today, skip
+[2026-05-20T13:55:49Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T13:55:49Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=595), skip
+[2026-05-20T13:55:49Z] === catchup end ===
+[2026-05-20T14:10:59Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=610 ===
+[2026-05-20T14:10:59Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T14:10:59Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T14:10:59Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T14:10:59Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T14:10:59Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T14:10:59Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T14:10:59Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T14:10:59Z]   drip: already ran today, skip
+[2026-05-20T14:10:59Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T14:10:59Z]   outreach batch 1: already ran today, skip
+[2026-05-20T14:10:59Z]   imap_bridge: ran 5m ago, skip
+[2026-05-20T14:10:59Z]   newsletter-send: already sent today, skip
+[2026-05-20T14:10:59Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T14:10:59Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=610), skip
+[2026-05-20T14:10:59Z] === catchup end ===
+[2026-05-20T14:26:10Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=626 ===
+[2026-05-20T14:26:10Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T14:26:10Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T14:26:10Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T14:26:10Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T14:26:10Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T14:26:10Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T14:26:10Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T14:26:10Z]   drip: already ran today, skip
+[2026-05-20T14:26:10Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T14:26:10Z]   outreach batch 1: already ran today, skip
+[2026-05-20T14:26:10Z]   imap_bridge: ran 21m ago, skip
+[2026-05-20T14:26:10Z]   newsletter-send: already sent today, skip
+[2026-05-20T14:26:10Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T14:26:10Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=626), skip
+[2026-05-20T14:26:10Z] === catchup end ===
+[2026-05-20T14:41:22Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=641 ===
+[2026-05-20T14:41:22Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T14:41:22Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T14:41:22Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T14:41:22Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T14:41:22Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T14:41:22Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T14:41:22Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T14:41:22Z]   drip: already ran today, skip
+[2026-05-20T14:41:22Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T14:41:22Z]   outreach batch 1: already ran today, skip
+[2026-05-20T14:41:22Z]   outreach batch 2: already ran today, skip
+[2026-05-20T14:41:22Z]   imap_bridge: ran 36m ago, skip
+[2026-05-20T14:41:22Z]   newsletter-send: already sent today, skip
+[2026-05-20T14:41:22Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T14:41:22Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=641), skip
+[2026-05-20T14:41:22Z] === catchup end ===
+[2026-05-20T14:56:33Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=656 ===
+[2026-05-20T14:56:33Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T14:56:33Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T14:56:33Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T14:56:33Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T14:56:33Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T14:56:33Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T14:56:33Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T14:56:33Z]   drip: already ran today, skip
+[2026-05-20T14:56:33Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T14:56:33Z]   outreach batch 1: already ran today, skip
+[2026-05-20T14:56:33Z]   outreach batch 2: already ran today, skip
+[2026-05-20T14:56:33Z]   imap_bridge: ran 51m ago, skip
+[2026-05-20T14:56:33Z]   newsletter-send: already sent today, skip
+[2026-05-20T14:56:33Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T14:56:33Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=656), skip
+[2026-05-20T14:56:33Z] === catchup end ===
+[2026-05-20T15:11:45Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=671 ===
+[2026-05-20T15:11:45Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T15:11:45Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T15:11:45Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T15:11:45Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T15:11:45Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T15:11:45Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T15:11:45Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T15:11:45Z]   drip: already ran today, skip
+[2026-05-20T15:11:45Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T15:11:45Z]   outreach batch 1: already ran today, skip
+[2026-05-20T15:11:45Z]   outreach batch 2: already ran today, skip
+[2026-05-20T15:11:45Z]   imap_bridge: ran 6m ago, skip
+[2026-05-20T15:11:45Z]   newsletter-send: already sent today, skip
+[2026-05-20T15:11:45Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T15:11:45Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=671), skip
+[2026-05-20T15:11:45Z] === catchup end ===
+[2026-05-20T15:26:55Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=686 ===
+[2026-05-20T15:26:55Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T15:26:55Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T15:26:55Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T15:26:55Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T15:26:55Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T15:26:55Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T15:26:55Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T15:26:55Z]   drip: already ran today, skip
+[2026-05-20T15:26:55Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T15:26:55Z]   outreach batch 1: already ran today, skip
+[2026-05-20T15:26:55Z]   outreach batch 2: already ran today, skip
+[2026-05-20T15:26:55Z]   imap_bridge: ran 21m ago, skip
+[2026-05-20T15:26:55Z]   newsletter-send: already sent today, skip
+[2026-05-20T15:26:55Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T15:26:55Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=686), skip
+[2026-05-20T15:26:55Z] === catchup end ===
+[2026-05-20T15:42:07Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=702 ===
+[2026-05-20T15:42:07Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T15:42:07Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T15:42:07Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T15:42:07Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T15:42:07Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T15:42:07Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T15:42:07Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T15:42:07Z]   drip: already ran today, skip
+[2026-05-20T15:42:07Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T15:42:07Z]   outreach batch 1: already ran today, skip
+[2026-05-20T15:42:07Z]   outreach batch 2: already ran today, skip
+[2026-05-20T15:42:07Z]   imap_bridge: ran 37m ago, skip
+[2026-05-20T15:42:07Z]   newsletter-send: already sent today, skip
+[2026-05-20T15:42:07Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T15:42:07Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=702), skip
+[2026-05-20T15:42:07Z] === catchup end ===
+[2026-05-20T15:57:17Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=717 ===
+[2026-05-20T15:57:17Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T15:57:17Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T15:57:17Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T15:57:17Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T15:57:17Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T15:57:17Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T15:57:17Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T15:57:17Z]   drip: already ran today, skip
+[2026-05-20T15:57:17Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T15:57:17Z]   outreach batch 1: already ran today, skip
+[2026-05-20T15:57:17Z]   outreach batch 2: already ran today, skip
+[2026-05-20T15:57:17Z]   imap_bridge: ran 52m ago, skip
+[2026-05-20T15:57:17Z]   newsletter-send: already sent today, skip
+[2026-05-20T15:57:17Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T15:57:17Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=717), skip
+[2026-05-20T15:57:17Z] === catchup end ===
+[2026-05-20T16:12:28Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=732 ===
+[2026-05-20T16:12:28Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T16:12:28Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T16:12:28Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T16:12:28Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T16:12:28Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T16:12:28Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T16:12:28Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T16:12:28Z]   drip: already ran today, skip
+[2026-05-20T16:12:28Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T16:12:28Z]   outreach batch 1: already ran today, skip
+[2026-05-20T16:12:28Z]   outreach batch 2: already ran today, skip
+[2026-05-20T16:12:28Z]   imap_bridge: ran 7m ago, skip
+[2026-05-20T16:12:28Z]   newsletter-send: already sent today, skip
+[2026-05-20T16:12:28Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T16:12:28Z]   partnership-network-builder: not yet scheduled (sched_min=780 now=732), skip
+[2026-05-20T16:12:28Z] === catchup end ===
+[2026-05-20T18:37:07Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=877 ===
+[2026-05-20T18:37:07Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T18:37:07Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T18:37:07Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T18:37:07Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T18:37:07Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T18:37:07Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T18:37:07Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T18:37:07Z]   drip: already ran today, skip
+[2026-05-20T18:37:07Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T18:37:07Z]   outreach batch 1: already ran today, skip
+[2026-05-20T18:37:07Z]   outreach batch 2: already ran today, skip
+[2026-05-20T18:37:07Z]   outreach batch 3: running
+[2026-05-20T18:37:07Z]   outreach batch 3: done
+[2026-05-20T18:37:07Z]   imap_bridge: last run was 152m ago, running
+[2026-05-20T18:37:09Z]   imap_bridge: done
+[2026-05-20T18:37:09Z]   newsletter-send: already sent today, skip
+[2026-05-20T18:37:09Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T18:37:10Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T18:37:10Z] === catchup end ===
+[2026-05-20T18:52:22Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=892 ===
+[2026-05-20T18:52:22Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T18:52:22Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T18:52:22Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T18:52:22Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T18:52:22Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T18:52:22Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T18:52:22Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T18:52:22Z]   drip: already ran today, skip
+[2026-05-20T18:52:22Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T18:52:22Z]   outreach batch 1: already ran today, skip
+[2026-05-20T18:52:22Z]   outreach batch 2: already ran today, skip
+[2026-05-20T18:52:22Z]   outreach batch 3: running
+[2026-05-20T18:52:22Z]   outreach batch 3: done
+[2026-05-20T18:52:22Z]   imap_bridge: ran 15m ago, skip
+[2026-05-20T18:52:22Z]   newsletter-send: already sent today, skip
+[2026-05-20T18:52:22Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T18:52:22Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T18:52:22Z] === catchup end ===
+[2026-05-20T19:07:35Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=907 ===
+[2026-05-20T19:07:35Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T19:07:35Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T19:07:35Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T19:07:35Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T19:07:35Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T19:07:35Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T19:07:35Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T19:07:35Z]   drip: already ran today, skip
+[2026-05-20T19:07:35Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T19:07:35Z]   outreach batch 1: already ran today, skip
+[2026-05-20T19:07:35Z]   outreach batch 2: already ran today, skip
+[2026-05-20T19:07:35Z]   outreach batch 3: running
+[2026-05-20T19:07:35Z]   outreach batch 3: done
+[2026-05-20T19:07:35Z]   outreach batch 4: running
+[2026-05-20T19:07:35Z]   outreach batch 4: done
+[2026-05-20T19:07:35Z]   imap_bridge: ran 2m ago, skip
+[2026-05-20T19:07:35Z]   newsletter-send: already sent today, skip
+[2026-05-20T19:07:35Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T19:07:35Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T19:07:35Z] === catchup end ===
+[2026-05-20T19:22:52Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=922 ===
+[2026-05-20T19:22:52Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T19:22:52Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T19:22:52Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T19:22:52Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T19:22:52Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T19:22:52Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T19:22:52Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T19:22:52Z]   drip: already ran today, skip
+[2026-05-20T19:22:52Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T19:22:52Z]   outreach batch 1: already ran today, skip
+[2026-05-20T19:22:52Z]   outreach batch 2: already ran today, skip
+[2026-05-20T19:22:52Z]   outreach batch 3: running
+[2026-05-20T19:22:52Z]   outreach batch 3: done
+[2026-05-20T19:22:52Z]   outreach batch 4: running
+[2026-05-20T19:22:52Z]   outreach batch 4: done
+[2026-05-20T19:22:52Z]   imap_bridge: ran 17m ago, skip
+[2026-05-20T19:22:52Z]   newsletter-send: already sent today, skip
+[2026-05-20T19:22:52Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T19:22:52Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T19:22:52Z] === catchup end ===
+[2026-05-20T19:38:03Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=938 ===
+[2026-05-20T19:38:03Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T19:38:03Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T19:38:03Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T19:38:03Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T19:38:03Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T19:38:03Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T19:38:03Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T19:38:03Z]   drip: already ran today, skip
+[2026-05-20T19:38:03Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T19:38:03Z]   outreach batch 1: already ran today, skip
+[2026-05-20T19:38:03Z]   outreach batch 2: already ran today, skip
+[2026-05-20T19:38:03Z]   outreach batch 3: running
+[2026-05-20T19:38:03Z]   outreach batch 3: done
+[2026-05-20T19:38:03Z]   outreach batch 4: running
+[2026-05-20T19:38:04Z]   outreach batch 4: done
+[2026-05-20T19:38:04Z]   imap_bridge: ran 33m ago, skip
+[2026-05-20T19:38:04Z]   newsletter-send: already sent today, skip
+[2026-05-20T19:38:04Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T19:38:04Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T19:38:04Z] === catchup end ===
+[2026-05-20T19:53:14Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=953 ===
+[2026-05-20T19:53:14Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T19:53:14Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T19:53:14Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T19:53:14Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T19:53:14Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T19:53:14Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T19:53:14Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T19:53:14Z]   drip: already ran today, skip
+[2026-05-20T19:53:14Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T19:53:14Z]   outreach batch 1: already ran today, skip
+[2026-05-20T19:53:14Z]   outreach batch 2: already ran today, skip
+[2026-05-20T19:53:14Z]   outreach batch 3: running
+[2026-05-20T19:53:14Z]   outreach batch 3: done
+[2026-05-20T19:53:14Z]   outreach batch 4: running
+[2026-05-20T19:53:14Z]   outreach batch 4: done
+[2026-05-20T19:53:14Z]   imap_bridge: ran 48m ago, skip
+[2026-05-20T19:53:14Z]   newsletter-send: already sent today, skip
+[2026-05-20T19:53:14Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T19:53:14Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T19:53:14Z] === catchup end ===
+[2026-05-20T20:08:24Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=968 ===
+[2026-05-20T20:08:24Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T20:08:24Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T20:08:24Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T20:08:24Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T20:08:24Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T20:08:24Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T20:08:24Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T20:08:24Z]   drip: already ran today, skip
+[2026-05-20T20:08:24Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T20:08:24Z]   outreach batch 1: already ran today, skip
+[2026-05-20T20:08:24Z]   outreach batch 2: already ran today, skip
+[2026-05-20T20:08:24Z]   outreach batch 3: running
+[2026-05-20T20:08:24Z]   outreach batch 3: done
+[2026-05-20T20:08:24Z]   outreach batch 4: running
+[2026-05-20T20:08:24Z]   outreach batch 4: done
+[2026-05-20T20:08:24Z]   imap_bridge: ran 3m ago, skip
+[2026-05-20T20:08:24Z]   newsletter-send: already sent today, skip
+[2026-05-20T20:08:24Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T20:08:24Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T20:08:24Z] === catchup end ===
+[2026-05-20T20:23:36Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=983 ===
+[2026-05-20T20:23:36Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T20:23:36Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T20:23:36Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T20:23:36Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T20:23:36Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T20:23:36Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T20:23:36Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T20:23:36Z]   drip: already ran today, skip
+[2026-05-20T20:23:36Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T20:23:36Z]   outreach batch 1: already ran today, skip
+[2026-05-20T20:23:36Z]   outreach batch 2: already ran today, skip
+[2026-05-20T20:23:36Z]   outreach batch 3: running
+[2026-05-20T20:23:36Z]   outreach batch 3: done
+[2026-05-20T20:23:36Z]   outreach batch 4: running
+[2026-05-20T20:23:36Z]   outreach batch 4: done
+[2026-05-20T20:23:36Z]   imap_bridge: ran 18m ago, skip
+[2026-05-20T20:23:36Z]   newsletter-send: already sent today, skip
+[2026-05-20T20:23:36Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T20:23:36Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T20:23:36Z] === catchup end ===
+[2026-05-20T20:38:46Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=998 ===
+[2026-05-20T20:38:46Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T20:38:46Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T20:38:46Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T20:38:46Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T20:38:46Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T20:38:46Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T20:38:46Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T20:38:46Z]   drip: already ran today, skip
+[2026-05-20T20:38:46Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T20:38:46Z]   outreach batch 1: already ran today, skip
+[2026-05-20T20:38:46Z]   outreach batch 2: already ran today, skip
+[2026-05-20T20:38:46Z]   outreach batch 3: running
+[2026-05-20T20:38:46Z]   outreach batch 3: done
+[2026-05-20T20:38:46Z]   outreach batch 4: running
+[2026-05-20T20:38:46Z]   outreach batch 4: done
+[2026-05-20T20:38:46Z]   imap_bridge: ran 33m ago, skip
+[2026-05-20T20:38:46Z]   newsletter-send: already sent today, skip
+[2026-05-20T20:38:46Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T20:38:46Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T20:38:46Z] === catchup end ===
+[2026-05-20T20:53:57Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1013 ===
+[2026-05-20T20:53:57Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T20:53:57Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T20:53:57Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T20:53:57Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T20:53:57Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T20:53:57Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T20:53:57Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T20:53:57Z]   drip: already ran today, skip
+[2026-05-20T20:53:57Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T20:53:57Z]   outreach batch 1: already ran today, skip
+[2026-05-20T20:53:57Z]   outreach batch 2: already ran today, skip
+[2026-05-20T20:53:57Z]   outreach batch 3: running
+[2026-05-20T20:53:57Z]   outreach batch 3: done
+[2026-05-20T20:53:57Z]   outreach batch 4: running
+[2026-05-20T20:53:57Z]   outreach batch 4: done
+[2026-05-20T20:53:57Z]   imap_bridge: ran 48m ago, skip
+[2026-05-20T20:53:57Z]   newsletter-send: already sent today, skip
+[2026-05-20T20:53:57Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T20:53:58Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T20:53:58Z] === catchup end ===
+[2026-05-20T21:09:08Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1029 ===
+[2026-05-20T21:09:08Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T21:09:08Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T21:09:08Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T21:09:08Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T21:09:08Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T21:09:08Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T21:09:08Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T21:09:08Z]   drip: already ran today, skip
+[2026-05-20T21:09:08Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T21:09:08Z]   outreach batch 1: already ran today, skip
+[2026-05-20T21:09:08Z]   outreach batch 2: already ran today, skip
+[2026-05-20T21:09:08Z]   outreach batch 3: running
+[2026-05-20T21:09:08Z]   outreach batch 3: done
+[2026-05-20T21:09:08Z]   outreach batch 4: running
+[2026-05-20T21:09:08Z]   outreach batch 4: done
+[2026-05-20T21:09:08Z]   imap_bridge: ran 4m ago, skip
+[2026-05-20T21:09:08Z]   newsletter-send: already sent today, skip
+[2026-05-20T21:09:08Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T21:09:09Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T21:09:09Z] === catchup end ===
+[2026-05-20T21:24:19Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1044 ===
+[2026-05-20T21:24:19Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T21:24:19Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T21:24:19Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T21:24:19Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T21:24:19Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T21:24:19Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T21:24:19Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T21:24:19Z]   drip: already ran today, skip
+[2026-05-20T21:24:19Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T21:24:19Z]   outreach batch 1: already ran today, skip
+[2026-05-20T21:24:19Z]   outreach batch 2: already ran today, skip
+[2026-05-20T21:24:19Z]   outreach batch 3: running
+[2026-05-20T21:24:19Z]   outreach batch 3: done
+[2026-05-20T21:24:19Z]   outreach batch 4: running
+[2026-05-20T21:24:19Z]   outreach batch 4: done
+[2026-05-20T21:24:19Z]   imap_bridge: ran 19m ago, skip
+[2026-05-20T21:24:19Z]   newsletter-send: already sent today, skip
+[2026-05-20T21:24:19Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T21:24:19Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T21:24:19Z] === catchup end ===
+[2026-05-20T21:39:31Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1059 ===
+[2026-05-20T21:39:31Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T21:39:31Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T21:39:31Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T21:39:31Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T21:39:31Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T21:39:31Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T21:39:31Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T21:39:31Z]   drip: already ran today, skip
+[2026-05-20T21:39:31Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T21:39:31Z]   outreach batch 1: already ran today, skip
+[2026-05-20T21:39:31Z]   outreach batch 2: already ran today, skip
+[2026-05-20T21:39:31Z]   outreach batch 3: running
+[2026-05-20T21:39:31Z]   outreach batch 3: done
+[2026-05-20T21:39:31Z]   outreach batch 4: running
+[2026-05-20T21:39:31Z]   outreach batch 4: done
+[2026-05-20T21:39:31Z]   imap_bridge: ran 34m ago, skip
+[2026-05-20T21:39:31Z]   newsletter-send: already sent today, skip
+[2026-05-20T21:39:31Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T21:39:31Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T21:39:31Z] === catchup end ===
+[2026-05-20T21:54:42Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1074 ===
+[2026-05-20T21:54:42Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T21:54:42Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T21:54:42Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T21:54:42Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T21:54:42Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T21:54:42Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T21:54:42Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T21:54:42Z]   drip: already ran today, skip
+[2026-05-20T21:54:42Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T21:54:42Z]   outreach batch 1: already ran today, skip
+[2026-05-20T21:54:42Z]   outreach batch 2: already ran today, skip
+[2026-05-20T21:54:42Z]   outreach batch 3: running
+[2026-05-20T21:54:42Z]   outreach batch 3: done
+[2026-05-20T21:54:42Z]   outreach batch 4: running
+[2026-05-20T21:54:42Z]   outreach batch 4: done
+[2026-05-20T21:54:42Z]   imap_bridge: ran 49m ago, skip
+[2026-05-20T21:54:42Z]   newsletter-send: already sent today, skip
+[2026-05-20T21:54:42Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T21:54:42Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T21:54:42Z] === catchup end ===
+[2026-05-20T22:09:53Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1089 ===
+[2026-05-20T22:09:53Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T22:09:53Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T22:09:53Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T22:09:53Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T22:09:53Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T22:09:53Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T22:09:53Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T22:09:53Z]   drip: already ran today, skip
+[2026-05-20T22:09:53Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T22:09:53Z]   outreach batch 1: already ran today, skip
+[2026-05-20T22:09:53Z]   outreach batch 2: already ran today, skip
+[2026-05-20T22:09:53Z]   outreach batch 3: running
+[2026-05-20T22:09:53Z]   outreach batch 3: done
+[2026-05-20T22:09:53Z]   outreach batch 4: running
+[2026-05-20T22:09:53Z]   outreach batch 4: done
+[2026-05-20T22:09:53Z]   imap_bridge: ran 4m ago, skip
+[2026-05-20T22:09:53Z]   newsletter-send: already sent today, skip
+[2026-05-20T22:09:53Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T22:09:53Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T22:09:53Z] === catchup end ===
+[2026-05-20T22:25:04Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1105 ===
+[2026-05-20T22:25:04Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T22:25:04Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T22:25:04Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T22:25:04Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T22:25:04Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T22:25:04Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T22:25:04Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T22:25:04Z]   drip: already ran today, skip
+[2026-05-20T22:25:04Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T22:25:04Z]   outreach batch 1: already ran today, skip
+[2026-05-20T22:25:04Z]   outreach batch 2: already ran today, skip
+[2026-05-20T22:25:04Z]   outreach batch 3: running
+[2026-05-20T22:25:04Z]   outreach batch 3: done
+[2026-05-20T22:25:04Z]   outreach batch 4: running
+[2026-05-20T22:25:04Z]   outreach batch 4: done
+[2026-05-20T22:25:04Z]   imap_bridge: ran 20m ago, skip
+[2026-05-20T22:25:04Z]   newsletter-send: already sent today, skip
+[2026-05-20T22:25:04Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T22:25:04Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T22:25:04Z] === catchup end ===
+[2026-05-20T22:40:15Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1120 ===
+[2026-05-20T22:40:15Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T22:40:15Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T22:40:15Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T22:40:15Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T22:40:15Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T22:40:15Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T22:40:15Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T22:40:15Z]   drip: already ran today, skip
+[2026-05-20T22:40:15Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T22:40:15Z]   outreach batch 1: already ran today, skip
+[2026-05-20T22:40:15Z]   outreach batch 2: already ran today, skip
+[2026-05-20T22:40:15Z]   outreach batch 3: running
+[2026-05-20T22:40:15Z]   outreach batch 3: done
+[2026-05-20T22:40:15Z]   outreach batch 4: running
+[2026-05-20T22:40:15Z]   outreach batch 4: done
+[2026-05-20T22:40:15Z]   imap_bridge: ran 35m ago, skip
+[2026-05-20T22:40:15Z]   newsletter-send: already sent today, skip
+[2026-05-20T22:40:15Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T22:40:15Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T22:40:15Z] === catchup end ===
+[2026-05-20T22:55:25Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1135 ===
+[2026-05-20T22:55:25Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T22:55:25Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T22:55:25Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T22:55:25Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T22:55:25Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T22:55:25Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T22:55:25Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T22:55:25Z]   drip: already ran today, skip
+[2026-05-20T22:55:25Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T22:55:25Z]   outreach batch 1: already ran today, skip
+[2026-05-20T22:55:25Z]   outreach batch 2: already ran today, skip
+[2026-05-20T22:55:25Z]   outreach batch 3: running
+[2026-05-20T22:55:25Z]   outreach batch 3: done
+[2026-05-20T22:55:25Z]   outreach batch 4: running
+[2026-05-20T22:55:25Z]   outreach batch 4: done
+[2026-05-20T22:55:25Z]   imap_bridge: ran 50m ago, skip
+[2026-05-20T22:55:25Z]   newsletter-send: already sent today, skip
+[2026-05-20T22:55:25Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T22:55:25Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T22:55:25Z] === catchup end ===
+[2026-05-20T23:10:36Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1150 ===
+[2026-05-20T23:10:36Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T23:10:36Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T23:10:36Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T23:10:36Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T23:10:36Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T23:10:36Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T23:10:36Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T23:10:36Z]   drip: already ran today, skip
+[2026-05-20T23:10:36Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T23:10:36Z]   outreach batch 1: already ran today, skip
+[2026-05-20T23:10:36Z]   outreach batch 2: already ran today, skip
+[2026-05-20T23:10:36Z]   outreach batch 3: running
+[2026-05-20T23:10:36Z]   outreach batch 3: done
+[2026-05-20T23:10:36Z]   outreach batch 4: running
+[2026-05-20T23:10:36Z]   outreach batch 4: done
+[2026-05-20T23:10:36Z]   imap_bridge: ran 5m ago, skip
+[2026-05-20T23:10:36Z]   newsletter-send: already sent today, skip
+[2026-05-20T23:10:36Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T23:10:36Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T23:10:36Z] === catchup end ===
+[2026-05-20T23:25:47Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1165 ===
+[2026-05-20T23:25:47Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T23:25:47Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T23:25:47Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T23:25:47Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T23:25:47Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T23:25:47Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T23:25:47Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T23:25:47Z]   drip: already ran today, skip
+[2026-05-20T23:25:47Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T23:25:47Z]   outreach batch 1: already ran today, skip
+[2026-05-20T23:25:47Z]   outreach batch 2: already ran today, skip
+[2026-05-20T23:25:47Z]   outreach batch 3: running
+[2026-05-20T23:25:47Z]   outreach batch 3: done
+[2026-05-20T23:25:47Z]   outreach batch 4: running
+[2026-05-20T23:25:47Z]   outreach batch 4: done
+[2026-05-20T23:25:47Z]   imap_bridge: ran 20m ago, skip
+[2026-05-20T23:25:47Z]   newsletter-send: already sent today, skip
+[2026-05-20T23:25:47Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T23:25:47Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T23:25:47Z] === catchup end ===
+[2026-05-20T23:40:57Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1180 ===
+[2026-05-20T23:40:57Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-20T23:40:57Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-20T23:40:57Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-20T23:40:57Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-20T23:40:57Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-20T23:40:57Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-20T23:40:57Z]   prospect_palm_beach: already ran today, skip
+[2026-05-20T23:40:57Z]   drip: already ran today, skip
+[2026-05-20T23:40:57Z]   enrich_before_upload: already ran today, skip
+[2026-05-20T23:40:57Z]   outreach batch 1: already ran today, skip
+[2026-05-20T23:40:57Z]   outreach batch 2: already ran today, skip
+[2026-05-20T23:40:57Z]   outreach batch 3: running
+[2026-05-20T23:40:57Z]   outreach batch 3: done
+[2026-05-20T23:40:57Z]   outreach batch 4: running
+[2026-05-20T23:40:58Z]   outreach batch 4: done
+[2026-05-20T23:40:58Z]   imap_bridge: ran 35m ago, skip
+[2026-05-20T23:40:58Z]   newsletter-send: already sent today, skip
+[2026-05-20T23:40:58Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-20T23:40:58Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-20T23:40:58Z] === catchup end ===
+[2026-05-21T00:44:18Z] === catchup start: today=2026-05-20 dow=3 dom=20 mins=1244 ===
+[2026-05-21T00:44:18Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-05-20.md), skip
+[2026-05-21T00:44:18Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-05-20/blog.md), skip
+[2026-05-21T00:44:18Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-20), skip
+[2026-05-21T00:44:18Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-20), skip
+[2026-05-21T00:44:18Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-05-20), skip
+[2026-05-21T00:44:18Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-05-20.md), skip
+[2026-05-21T00:44:18Z]   prospect_palm_beach: already ran today, skip
+[2026-05-21T00:44:18Z]   drip: already ran today, skip
+[2026-05-21T00:44:18Z]   enrich_before_upload: already ran today, skip
+[2026-05-21T00:44:18Z]   outreach batch 1: already ran today, skip
+[2026-05-21T00:44:18Z]   outreach batch 2: already ran today, skip
+[2026-05-21T00:44:18Z]   outreach batch 3: running
+[2026-05-21T00:44:18Z]   outreach batch 3: done
+[2026-05-21T00:44:18Z]   outreach batch 4: running
+[2026-05-21T00:44:18Z]   outreach batch 4: done
+[2026-05-21T00:44:18Z]   imap_bridge: ran 39m ago, skip
+[2026-05-21T00:44:18Z]   newsletter-send: already sent today, skip
+[2026-05-21T00:44:18Z]   build-website: site/briefs/2026-05-20.html exists, skip
+[2026-05-21T00:44:19Z]   partnership-network-builder: already ran today at 1779285600011ms (status=ok), skip
+[2026-05-21T00:44:19Z] === catchup end ===
+[2026-05-21T14:45:36Z] === catchup start: today=2026-05-21 dow=4 dom=21 mins=645 ===
+[2026-05-21T14:45:37Z]   daily-research-brief: MISSING output=/Users/victoria/.openclaw/workspace/briefs/2026-05-21.md lastRun=1779351207746 status=error — triggering openclaw cron run 8a47ce9a-b505-4247-a0cb-84ac817f588c
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:8a47ce9a-b505-4247-a0cb-84ac817f588c:1779374745506:4"
+}
+[2026-05-21T14:45:45Z]   daily-research-brief: submitted; waiting up to 45m for /Users/victoria/.openclaw/workspace/briefs/2026-05-21.md
+[2026-05-21T14:52:06Z]   daily-research-brief: OK (output present)
+[2026-05-21T14:52:06Z]   daily-content: MISSING output=/Users/victoria/.openclaw/workspace/content/2026-05-21/blog.md lastRun=1779353603868 status=error — triggering openclaw cron run 0abcf54e-9628-4e0c-b6ff-3ddc3aac1a02
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:0abcf54e-9628-4e0c-b6ff-3ddc3aac1a02:1779375133781:5"
+}
+[2026-05-21T14:52:13Z]   daily-content: submitted; waiting up to 20m for /Users/victoria/.openclaw/workspace/content/2026-05-21/blog.md
+[2026-05-21T14:55:14Z]   daily-content: OK (output present)
+[2026-05-21T14:55:14Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-05-21), skip
+[2026-05-21T14:55:14Z]   weekday-crm-outreach: MISSING output=/Users/victoria/.openclaw/workspace/crm/drafts/2026-05-21 lastRun=1779360809394 status=error — triggering openclaw cron run bd327112-f77e-4030-8d60-89c0374a01ed
+{
+  "ok": true,
+  "enqueued": true,
+  "runId": "manual:bd327112-f77e-4030-8d60-89c0374a01ed:1779375322037:6"
+}
+[2026-05-21T14:55:22Z]   weekday-crm-outreach: submitted; waiting up to 20m for /Users/victoria/.openclaw/workspace/crm/drafts/2026-05-21

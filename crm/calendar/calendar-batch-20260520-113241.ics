@@ -1,0 +1,57 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Robin Hood Adjusting//Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZNAME:EST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZNAME:EDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:d822f277-049b-4726-8b44-049c04a40441@robinhoodadjusting.com
+DTSTAMP:20260520T153241Z
+DTSTART;TZID=America/New_York:20260526T173000
+DTEND;TZID=America/New_York:20260526T193000
+SUMMARY:Boca Chamber Live After Five (Yard House) — TENTATIVE
+LOCATION:Yard House\, 201 Plaza Real\, Mizner Park\, Boca Raton\, FL 33432
+DESCRIPTION:Cost: TBD (Chamber pricing — likely $0-25 for members/guests
+ \; check registration page)\nContact: Greater Boca Raton Chamber\, 561-39
+ 5-4433\nWebsite: https://business.bocachamber.com/ap/Events/Register/b3Fm
+ 30ACNCRCw\nSource: https://business.bocachamber.com/chamber-events-calend
+ ar\nNotes: After-hours networking mixer — light bites + 1 drink include
+ d. Open to Boca Raton + South PBC professionals. Good for warm intros out
+ side Wellington bubble\; PA-relevant audience (homeowners\, insurance\, r
+ eal estate). Yard House at Mizner Park is easy parking + central Boca.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:ba0f48a6-779c-4fe9-8466-4f6165645ad7@robinhoodadjusting.com
+DTSTAMP:20260520T153241Z
+DTSTART;TZID=America/New_York:20260623T173000
+DTEND;TZID=America/New_York:20260623T193000
+SUMMARY:Boca Chamber Live After Five (June) — TENTATIVE
+LOCATION:Venue TBD — check Boca Chamber registration page
+DESCRIPTION:Cost: TBD\nContact: Greater Boca Raton Chamber\, 561-395-4433\
+ nWebsite: https://business.bocachamber.com/ap/Events/Register/yEFeE2wueCo
+ CR\nSource: https://business.bocachamber.com/chamber-events-calendar\nNot
+ es: Next month's Live After Five. Venue not yet announced as of 2026-05-2
+ 0. Confirm venue + cost via registration link closer to date. Same audien
+ ce as May edition (South PBC professionals).
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

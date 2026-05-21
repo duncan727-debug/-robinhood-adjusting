@@ -12,5 +12,12 @@ crm/.prospect_pending.json
 crm/.prospect_recycle.json
 crm/.prospect_uploaded.json
 
+# Google OAuth tokens
+config/google_calendar_token.json
+
+# Python cache
+__pycache__/
+*.pyc
+
 # Local Netlify folder
 .netlify

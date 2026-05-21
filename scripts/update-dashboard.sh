@@ -260,7 +260,7 @@ const DASHBOARD_DATA = {
     { time:"12:30pm", name:"Outreach Batch 3",     detail:$(printf '"%s"' "$batch3_detail"),      status:"$batch3_status" },
     { time:"1:00pm",  name:"Partnership Builder",  detail:$(printf '"%s"' "$partner_detail"),     status:"$partner_status" },
     { time:"3:00pm",  name:"Outreach Batch 4",     detail:$(printf '"%s"' "$batch4_detail"),      status:"$batch4_status" },
-    { time:"Daily",   name:"Trends",               detail:$(printf '"%s"' "${trends_detail:-Not generated}"), status:"$trends_status" },
+    { time:"Sat 9am", name:"Trends (weekly)",      detail:$(printf '"%s"' "${trends_detail:-Not generated}"), status:"$trends_status" },
     { time:"5:00pm",  name:"Weekly Rollup",        detail:$(printf '"%s"' "$rollup_detail"),      status:"$rollup_status" }
   ],
 

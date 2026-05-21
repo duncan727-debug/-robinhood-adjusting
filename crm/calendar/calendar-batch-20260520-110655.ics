@@ -1,0 +1,106 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Robin Hood Adjusting//Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZNAME:EST
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZNAME:EDT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:97d779bb-ee6e-4f69-a9cc-33eef84b672a@robinhoodadjusting.com
+DTSTAMP:20260520T150655Z
+DTSTART;TZID=America/New_York:20260521T074500
+DTEND;TZID=America/New_York:20260521T090000
+SUMMARY:PRE Palm Beach Gardens (visitor) — TENTATIVE
+LOCATION:Berry Fresh Café\, 11658 US Hwy 1\, Palm Beach Gardens FL 33408
+DESCRIPTION:Professional Referral Exchange — Palm Beach Gardens chapter.
+  Thursdays 7:45-9am.\nCost: FREE for first-time visitors (PRE policy). Me
+ mbership dues if Duncan joins (TBD).\nContact: Craig Valarik (Area Direct
+ or) — craig@prenetworking.net\nPresident: Kelly Mueller\nWebsite: https
+ ://prenetworking.net\nStatus: Email inquiry sent 2026-05-16 asking PA sea
+ t status. Drop-ins usually allowed if no reply.\nCONFLICT: SFL Business C
+ onnections is also Thursday AM in Wellington — pick one.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:6ecbedb8-db6a-47c8-8dfe-cb5a61692684@robinhoodadjusting.com
+DTSTAMP:20260520T150655Z
+DTSTART;TZID=America/New_York:20260521T080000
+DTEND;TZID=America/New_York:20260521T093000
+SUMMARY:SFL Business Connections — Wellington Thu networking — TENTATI
+ VE
+LOCATION:Wellington\, FL (venue TBD)
+DESCRIPTION:Free Thursday morning Wellington networking group.\nCost: FREE
+  (no dues per group description).\nContact: Alan Feuerman — sflbusiness
+ connectionsreply@gmail.com · 561-674-4300\nStatus: Email inquiry sent 20
+ 26-05-16 asking PA seat status + venue.\nCONFLICT: PRE Palm Beach Gardens
+  is also Thursday AM — pick one.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:7bc1ea63-a4b0-4ac5-b524-2a404662e9aa@robinhoodadjusting.com
+DTSTAMP:20260520T150655Z
+DTSTART;TZID=America/New_York:20260602T183000
+DTEND;TZID=America/New_York:20260602T203000
+SUMMARY:West Palm Beach REI (first Tuesday) — TENTATIVE
+LOCATION:West Palm Beach\, FL (venue TBD)
+DESCRIPTION:Monthly real estate investor meetup. First Tuesday of every mo
+ nth.\nCost: Usually free for first-time visitors\; $20-25 for non-members
+  thereafter (typical REI fee).\nWebsite: https://www.meetup.com/west-palm
+ -beach-real-estate-investors/\nStatus: Researched 2026-05-16\, not yet co
+ ntacted. Drop-in friendly.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:25a00221-5ceb-4cd6-b8e0-e5132de49e97@robinhoodadjusting.com
+DTSTAMP:20260520T150655Z
+DTSTART;TZID=America/New_York:20260603T090000
+DTEND;TZID=America/New_York:20260603T110000
+SUMMARY:Small Business Boot Camp (Central PBC Chamber) — TENTATIVE
+LOCATION:Central PBC Chamber\, 12794 W Forest Hill Blvd Suite 19\, Welling
+ ton FL 33414
+DESCRIPTION:Central PBC Chamber workshop series for small business owners.
+ \nCost: Usually free or low-cost for Chamber members\; non-member fee TBD
+ .\nContact: Central PBC Chamber — 561-790-6200 · Info@CPBChamber.com\n
+ Registration: https://cpbchamber.chambermaster.com/events/register/600170
+ 3\nWebsite: https://cpbchamber.com\nStatus: Researched 2026-05-16\, regis
+ ter once 5/19 Chamber Connections traction confirmed.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:3382b6ea-58a0-46c7-8318-8fd1e7914849@robinhoodadjusting.com
+DTSTAMP:20260520T150655Z
+DTSTART;TZID=America/New_York:20270501T110000
+DTEND;TZID=America/New_York:20270501T140000
+SUMMARY:Wellington Hurricane & Severe Weather Expo 2027 — VENDOR SLOT 
+ — TENTATIVE
+LOCATION:Mall at Wellington Green\, 10300 Forest Hill Blvd\, Wellington FL
+  33414
+DESCRIPTION:Annual hurricane preparedness expo for PBC residents. ~3000 ho
+ meowner attendees.\nCost: TBD for vendor booth (typical municipal expos $
+ 0-500 for local businesses).\nContact: Michelle Garvey — mgarvey@wellin
+ gtonfl.gov · 561-791-4082\nWebsite: https://www.wellingtonfl.gov\nStatus
+ : Vendor inquiry sent 2026-05-16\, awaiting reply. High-leverage warm-lea
+ d venue.
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

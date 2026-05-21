@@ -603,3 +603,189 @@ ERROR: Gmail App Password not found in config.
 [2026-05-20 08:01]   ✓ Sent: Mary Lou @ Central Palm Beach County Chamber of Commerce <marylou@cpbchamber.com>
 [2026-05-20 08:01] Batch 1 done — sent: 6, errors: 0
 [2026-05-20 08:01] === Batch 1 complete ===
+[2026-05-20 10:30] === Outreach batch 2 start (2026-05-20) ===
+[2026-05-20 10:30] Sending 1 emails (batch 2, slots 6–11)...
+[2026-05-20 10:30]   ✓ Sent: Ana @ Central Palm Beach County Chamber of Commerce <ana@cpbchamber.com>
+[2026-05-20 10:30] Batch 2 done — sent: 1, errors: 0
+[2026-05-20 10:30] === Batch 2 complete ===
+[2026-05-20 10:30] === Outreach batch 2 start (2026-05-20) ===
+[2026-05-20 10:30] Sending 1 emails (batch 2, slots 6–11)...
+[2026-05-20 10:30]   ✓ Sent: Ana @ Central Palm Beach County Chamber of Commerce <ana@cpbchamber.com>
+[2026-05-20 10:30] Batch 2 done — sent: 1, errors: 0
+[2026-05-20 10:30] === Batch 2 complete ===
+2026-05-20T11:07:02  one-off  SENT  duncanlittlejohn727@gmail.com  Calendar batch (5 events)
+2026-05-20T11:32:47  one-off  SENT  duncanlittlejohn727@gmail.com  Calendar batch (2 events)
+2026-05-20T11:36:59  one-off  ADDED  duncanlittlejohn727@gmail.com  Calendar API insert (5 events)
+2026-05-20T11:37:05  one-off  ADDED  duncanlittlejohn727@gmail.com  Calendar API insert (2 events)
+[2026-05-20 14:37] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 14:37] No contacts left in queue for this batch.
+[2026-05-20 14:37] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 14:37] No contacts left in queue for this batch.
+[2026-05-20 14:52] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 14:52] No contacts left in queue for this batch.
+[2026-05-20 14:52] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 14:52] No contacts left in queue for this batch.
+[2026-05-20 15:00] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:00] No contacts left in queue for this batch.
+[2026-05-20 15:00] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:00] No contacts left in queue for this batch.
+[2026-05-20 15:07] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:07] No contacts left in queue for this batch.
+[2026-05-20 15:07] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:07] No contacts left in queue for this batch.
+[2026-05-20 15:07] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:07] No contacts left in queue for this batch.
+[2026-05-20 15:07] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:07] No contacts left in queue for this batch.
+[2026-05-20 15:22] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:22] No contacts left in queue for this batch.
+[2026-05-20 15:22] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:22] No contacts left in queue for this batch.
+[2026-05-20 15:22] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:22] No contacts left in queue for this batch.
+[2026-05-20 15:22] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:22] No contacts left in queue for this batch.
+[2026-05-20 15:38] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:38] No contacts left in queue for this batch.
+[2026-05-20 15:38] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:38] No contacts left in queue for this batch.
+[2026-05-20 15:38] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:38] No contacts left in queue for this batch.
+[2026-05-20 15:38] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:38] No contacts left in queue for this batch.
+[2026-05-20 15:53] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:53] No contacts left in queue for this batch.
+[2026-05-20 15:53] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 15:53] No contacts left in queue for this batch.
+[2026-05-20 15:53] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:53] No contacts left in queue for this batch.
+[2026-05-20 15:53] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 15:53] No contacts left in queue for this batch.
+[2026-05-20 16:08] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:08] No contacts left in queue for this batch.
+[2026-05-20 16:08] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:08] No contacts left in queue for this batch.
+[2026-05-20 16:08] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:08] No contacts left in queue for this batch.
+[2026-05-20 16:08] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:08] No contacts left in queue for this batch.
+[2026-05-20 16:23] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:23] No contacts left in queue for this batch.
+[2026-05-20 16:23] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:23] No contacts left in queue for this batch.
+[2026-05-20 16:23] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:23] No contacts left in queue for this batch.
+[2026-05-20 16:23] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:23] No contacts left in queue for this batch.
+[2026-05-20 16:38] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:38] No contacts left in queue for this batch.
+[2026-05-20 16:38] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:38] No contacts left in queue for this batch.
+[2026-05-20 16:38] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:38] No contacts left in queue for this batch.
+[2026-05-20 16:38] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:38] No contacts left in queue for this batch.
+[2026-05-20 16:53] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:53] No contacts left in queue for this batch.
+[2026-05-20 16:53] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 16:53] No contacts left in queue for this batch.
+[2026-05-20 16:53] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:53] No contacts left in queue for this batch.
+[2026-05-20 16:53] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 16:53] No contacts left in queue for this batch.
+[2026-05-20 17:09] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:09] No contacts left in queue for this batch.
+[2026-05-20 17:09] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:09] No contacts left in queue for this batch.
+[2026-05-20 17:09] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:09] No contacts left in queue for this batch.
+[2026-05-20 17:09] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:09] No contacts left in queue for this batch.
+[2026-05-20 17:24] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:24] No contacts left in queue for this batch.
+[2026-05-20 17:24] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:24] No contacts left in queue for this batch.
+[2026-05-20 17:24] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:24] No contacts left in queue for this batch.
+[2026-05-20 17:24] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:24] No contacts left in queue for this batch.
+[2026-05-20 17:39] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:39] No contacts left in queue for this batch.
+[2026-05-20 17:39] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:39] No contacts left in queue for this batch.
+[2026-05-20 17:39] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:39] No contacts left in queue for this batch.
+[2026-05-20 17:39] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:39] No contacts left in queue for this batch.
+[2026-05-20 17:54] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:54] No contacts left in queue for this batch.
+[2026-05-20 17:54] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 17:54] No contacts left in queue for this batch.
+[2026-05-20 17:54] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:54] No contacts left in queue for this batch.
+[2026-05-20 17:54] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 17:54] No contacts left in queue for this batch.
+[2026-05-20 18:09] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:09] No contacts left in queue for this batch.
+[2026-05-20 18:09] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:09] No contacts left in queue for this batch.
+[2026-05-20 18:09] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:09] No contacts left in queue for this batch.
+[2026-05-20 18:09] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:09] No contacts left in queue for this batch.
+[2026-05-20 18:25] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:25] No contacts left in queue for this batch.
+[2026-05-20 18:25] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:25] No contacts left in queue for this batch.
+[2026-05-20 18:25] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:25] No contacts left in queue for this batch.
+[2026-05-20 18:25] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:25] No contacts left in queue for this batch.
+[2026-05-20 18:40] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:40] No contacts left in queue for this batch.
+[2026-05-20 18:40] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:40] No contacts left in queue for this batch.
+[2026-05-20 18:40] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:40] No contacts left in queue for this batch.
+[2026-05-20 18:40] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:40] No contacts left in queue for this batch.
+[2026-05-20 18:55] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:55] No contacts left in queue for this batch.
+[2026-05-20 18:55] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 18:55] No contacts left in queue for this batch.
+[2026-05-20 18:55] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:55] No contacts left in queue for this batch.
+[2026-05-20 18:55] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 18:55] No contacts left in queue for this batch.
+[2026-05-20 19:10] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 19:10] No contacts left in queue for this batch.
+[2026-05-20 19:10] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 19:10] No contacts left in queue for this batch.
+[2026-05-20 19:10] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 19:10] No contacts left in queue for this batch.
+[2026-05-20 19:10] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 19:10] No contacts left in queue for this batch.
+[2026-05-20 19:25] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 19:25] No contacts left in queue for this batch.
+[2026-05-20 19:25] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 19:25] No contacts left in queue for this batch.
+[2026-05-20 19:25] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 19:25] No contacts left in queue for this batch.
+[2026-05-20 19:25] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 19:25] No contacts left in queue for this batch.
+[2026-05-20 19:40] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 19:40] No contacts left in queue for this batch.
+[2026-05-20 19:40] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 19:40] No contacts left in queue for this batch.
+[2026-05-20 19:40] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 19:40] No contacts left in queue for this batch.
+[2026-05-20 19:40] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 19:40] No contacts left in queue for this batch.
+[2026-05-20 20:44] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 20:44] No contacts left in queue for this batch.
+[2026-05-20 20:44] === Outreach batch 3 start (2026-05-20) ===
+[2026-05-20 20:44] No contacts left in queue for this batch.
+[2026-05-20 20:44] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 20:44] No contacts left in queue for this batch.
+[2026-05-20 20:44] === Outreach batch 4 start (2026-05-20) ===
+[2026-05-20 20:44] No contacts left in queue for this batch.

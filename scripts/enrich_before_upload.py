@@ -155,46 +155,6 @@ def create_contact(prospect, company_id, email, lead_status):
            None)
     return contact_id
 
-def get_owner_id():
-    status, data = hs("GET", "/crm/v3/owners?limit=10")
-    if status == 200 and data.get("results"):
-        for o in data["results"]:
-            if "duncan" in o.get("email", "").lower():
-                return o["id"]
-        return data["results"][0]["id"]
-    return None
-
-def create_task(contact_id, prospect, email, lead_status, owner_id):
-    due_ts = int(datetime.now(timezone.utc).timestamp() * 1000) + 86400000
-    status_note = "Confirmed email scraped from website." if lead_status == "NEW" \
-                  else "Best-guess email (info@domain) — verify before sending."
-    details = [
-        f"Sector: {prospect['sector']}",
-        f"City: {prospect.get('city','Palm Beach County')}, FL",
-        f"Phone: {prospect.get('phone') or 'not listed'}",
-        f"Website: {prospect.get('website') or 'not listed'}",
-        f"Email: {email or 'not found'}",
-        f"Google Rating: {prospect.get('rating') or 'n/a'}",
-        f"Email status: {status_note}",
-        "",
-        "Action: Review email, personalize outreach template, send.",
-    ]
-    props = {
-        "hs_task_subject": f"Outreach ready: {prospect['name']} [{prospect.get('city','')}]",
-        "hs_task_body":    "\n".join(details),
-        "hs_task_status":  "NOT_STARTED",
-        "hs_task_type":    "TODO",
-        "hs_timestamp":    due_ts,
-    }
-    if owner_id:
-        props["hubspot_owner_id"] = owner_id
-    status, data = hs("POST", "/crm/v3/objects/tasks", {"properties": props})
-    task_id = data.get("id") if status in (200, 201) else None
-    if task_id and contact_id:
-        hs("PUT",
-           f"/crm/v3/objects/tasks/{task_id}/associations/contacts/{contact_id}/task_to_contact",
-           None)
-
 # ── email scraping ────────────────────────────────────────────────────────────
 
 def fetch_page(url, timeout=8):
@@ -260,7 +220,6 @@ def main():
     pending  = load_json(PENDING_FILE)
     recycle  = load_json(RECYCLE_FILE)
     uploaded = set(load_json(UPLOADED_FILE))
-    owner_id = get_owner_id()
 
     ready_count = best_guess_count = recycle_count = skip_count = manual_flag = 0
     review_rows = []  # collect best-guess rows for CSV review queue
@@ -324,7 +283,6 @@ def main():
             continue
 
         contact_id = create_contact(prospect, company_id, email, lead_status)
-        create_task(contact_id, prospect, email, lead_status, owner_id)
         uploaded.add(name)
         ready_count += 1
         log(f"  ✓ NEW → HubSpot: {name} | {email}")
@@ -343,7 +301,6 @@ def main():
             company_id = create_company(prospect)
             if company_id:
                 contact_id = create_contact(prospect, company_id, email, "NEW")
-                create_task(contact_id, prospect, email, "NEW", owner_id)
                 uploaded.add(name)
                 ready_count += 1
                 log(f"  ✓ RECYCLED → HubSpot: {name} | {email}")

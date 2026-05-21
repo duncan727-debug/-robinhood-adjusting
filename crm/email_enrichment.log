@@ -608,3 +608,29 @@ Contacts missing email: 12
 [2026-05-19 12:39]   Recycled (retry tomorrow): 0
 [2026-05-19 12:39]   Skipped (duplicates): 0
 [2026-05-19 12:39]   Flagged manual lookup: 0
+[2026-05-20 10:00] === enrich_before_upload start ===
+[2026-05-20 10:00]   REVIEW (best-guess email): OCD Roofing | info@ocdroofing.com
+[2026-05-20 10:00]   ✓ NEW → HubSpot: Renegade Roofing Co. | info@renegaderoofingco.com
+[2026-05-20 10:00]   REVIEW (best-guess email): Air Boca | info@airboca.com
+[2026-05-20 10:00]   REVIEW (best-guess email): Restoration Maintenance | info@restomain.com
+[2026-05-20 10:00]   REVIEW (best-guess email): Leo Roofing & Construction | info@leoroofingfl.com
+[2026-05-20 10:00]   Review queue: wrote 4 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-20.csv
+[2026-05-20 10:00] === Done ===
+[2026-05-20 10:00]   Uploaded to HubSpot (NEW only): 1
+[2026-05-20 10:00]   Routed to review queue (best-guess): 4
+[2026-05-20 10:00]   Recycled (retry tomorrow): 0
+[2026-05-20 10:00]   Skipped (duplicates): 0
+[2026-05-20 10:00]   Flagged manual lookup: 0
+[2026-05-20 10:00] === enrich_before_upload start ===
+[2026-05-20 10:00]   REVIEW (best-guess email): OCD Roofing | info@ocdroofing.com
+[2026-05-20 10:00]   ✓ NEW → HubSpot: Renegade Roofing Co. | info@renegaderoofingco.com
+[2026-05-20 10:00]   REVIEW (best-guess email): Air Boca | info@airboca.com
+[2026-05-20 10:00]   REVIEW (best-guess email): Restoration Maintenance | info@restomain.com
+[2026-05-20 10:00]   REVIEW (best-guess email): Leo Roofing & Construction | info@leoroofingfl.com
+[2026-05-20 10:00]   Review queue: wrote 4 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-20.csv
+[2026-05-20 10:00] === Done ===
+[2026-05-20 10:00]   Uploaded to HubSpot (NEW only): 1
+[2026-05-20 10:00]   Routed to review queue (best-guess): 4
+[2026-05-20 10:00]   Recycled (retry tomorrow): 0
+[2026-05-20 10:00]   Skipped (duplicates): 0
+[2026-05-20 10:00]   Flagged manual lookup: 0
