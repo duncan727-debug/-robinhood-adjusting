@@ -155,6 +155,25 @@ def create_contact(prospect, company_id, email, lead_status):
            None)
     return contact_id
 
+def create_deal(prospect, company_id, contact_id):
+    """Spawn a deal at 'New Prospect' stage so the pipeline reflects every outbound contact.
+    send_outreach.py advances to 'Outreach Sent' on send; imap_bridge.py advances to
+    'Responded' on reply; manual moves take it to 'Listed in Directory' onward."""
+    props = {
+        "dealname":  f"{prospect['name']} — Outreach",
+        "dealstage": "appointmentscheduled",   # New Prospect
+        "pipeline":  "default",
+    }
+    status, data = hs("POST", "/crm/v3/objects/deals", {"properties": props})
+    deal_id = data.get("id") if status in (200, 201) else None
+    if not deal_id:
+        return None
+    if company_id:
+        hs("PUT", f"/crm/v4/objects/deals/{deal_id}/associations/default/companies/{company_id}", None)
+    if contact_id:
+        hs("PUT", f"/crm/v4/objects/deals/{deal_id}/associations/default/contacts/{contact_id}", None)
+    return deal_id
+
 # ── email scraping ────────────────────────────────────────────────────────────
 
 def fetch_page(url, timeout=8):
@@ -283,9 +302,10 @@ def main():
             continue
 
         contact_id = create_contact(prospect, company_id, email, lead_status)
+        deal_id    = create_deal(prospect, company_id, contact_id)
         uploaded.add(name)
         ready_count += 1
-        log(f"  ✓ NEW → HubSpot: {name} | {email}")
+        log(f"  ✓ NEW → HubSpot: {name} | {email} | deal={deal_id}")
         time.sleep(0.2)
 
     # Process recycle queue (retry previous failures)
@@ -301,9 +321,10 @@ def main():
             company_id = create_company(prospect)
             if company_id:
                 contact_id = create_contact(prospect, company_id, email, "NEW")
+                deal_id    = create_deal(prospect, company_id, contact_id)
                 uploaded.add(name)
                 ready_count += 1
-                log(f"  ✓ RECYCLED → HubSpot: {name} | {email}")
+                log(f"  ✓ RECYCLED → HubSpot: {name} | {email} | deal={deal_id}")
                 time.sleep(0.2)
             else:
                 still_recycling.append(prospect)

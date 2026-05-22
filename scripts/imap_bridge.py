@@ -304,7 +304,17 @@ def mark_soft_bounce(contact_id, recipient, reason):
 
 
 def log_reply_note(contact_id, sender, subject, snippet):
-    """Create a Note engagement on the contact and bump status to CONNECTED."""
+    """Create a Note engagement on the contact and bump status to CONNECTED.
+
+    Returns the contact's directory_listing_status BEFORE this call (so the
+    caller can detect "this is a qualifying-questions answer reply" and route
+    it to parse_listing_answers.py).
+    """
+    # Read current status first so we don't downgrade listed → pending_add.
+    _, cur = hs_request("GET",
+        f"/crm/v3/objects/contacts/{contact_id}?properties=directory_listing_status")
+    prior_status = (cur.get("properties") or {}).get("directory_listing_status")
+
     note_body = f"<p><strong>Reply received via Gmail bridge</strong></p>" \
                 f"<p><em>Subject:</em> {subject}</p>" \
                 f"<p>{snippet[:500]}</p>"
@@ -323,17 +333,24 @@ def log_reply_note(contact_id, sender, subject, snippet):
     status, _ = hs_request("POST", "/crm/v3/objects/notes", note_payload)
     if status not in (200, 201):
         log(f"  ✗ REPLY note creation failed for {sender} ({status})")
-        return False
-    # Advance lead status + mark listing as pending_add (gates confirmation pass —
-    # we only auto-confirm once a human has added them to the directory page and
-    # set directory_listing_status=listed).
+        return None
+    # Advance lead status. Only set directory_listing_status=pending_add on the
+    # FIRST YES reply (when it's currently null/empty). Preserve listed/pending_add
+    # so a subsequent answers-reply doesn't reset the workflow.
+    contact_props = {"hs_lead_status": "CONNECTED"}
+    if not prior_status:
+        contact_props["directory_listing_status"] = "pending_add"
     hs_request("PATCH", f"/crm/v3/objects/contacts/{contact_id}",
-               {"properties": {
-                   "hs_lead_status": "CONNECTED",
-                   "directory_listing_status": "pending_add",
-               }})
+               {"properties": contact_props})
+    # Move associated deal(s) to 'Responded' stage so the pipeline reflects the reply.
+    _, deal_data = hs_request("GET", f"/crm/v3/objects/contacts/{contact_id}/associations/deals")
+    for assoc in (deal_data.get("results") or []):
+        did = assoc.get("id") or assoc.get("toObjectId")
+        if did:
+            hs_request("PATCH", f"/crm/v3/objects/deals/{did}",
+                       {"properties": {"dealstage": "presentationscheduled"}})
     log(f"  ✓ REPLY   → {sender} (contact {contact_id})  subject: {subject[:60]}")
-    return True
+    return prior_status or ""
 
 
 def parse_calendly_booking(msg):
@@ -645,10 +662,29 @@ def main():
             cid = contacts_by_email[from_addr]
             if uid not in state["processed_replies"]:
                 snippet = extract_snippet(msg)
-                if log_reply_note(cid, from_addr, subject, snippet):
+                prior_status = log_reply_note(cid, from_addr, subject, snippet)
+                if prior_status is not None:
                     replies += 1
                     state["processed_replies"].append(uid)
                     full_text = extract_full_text(msg)
+                    # If this contact was awaiting their qualifying-questions
+                    # answers (pending_add), route the reply to the parser so it
+                    # updates HubSpot properties + sends the welcome email.
+                    if prior_status == "pending_add":
+                        try:
+                            tmp = REPLY_QUEUE_DIR / f"answers_{cid}_{uid}.txt"
+                            REPLY_QUEUE_DIR.mkdir(parents=True, exist_ok=True)
+                            tmp.write_text(full_text or snippet or "")
+                            import subprocess
+                            subprocess.Popen([
+                                sys.executable,
+                                str(WORKSPACE / "scripts" / "parse_listing_answers.py"),
+                                str(cid),
+                                str(tmp),
+                            ])
+                            log(f"  ↪ ANSWERS routed to parse_listing_answers.py (contact {cid})")
+                        except Exception as e:
+                            log(f"  ✗ ANSWERS routing failed for contact {cid}: {e}")
                     queue_reply_for_autoresponse(
                         cid,
                         from_addr,

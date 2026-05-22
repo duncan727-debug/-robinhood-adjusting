@@ -27,7 +27,7 @@
         }
         .daily-schedule {
             display: grid;
-            grid-template-columns: 120px 1fr;
+            grid-template-columns: 140px 1fr;
             gap: 15px;
             margin: 15px 0;
         }
@@ -64,9 +64,9 @@
             background-color: #e6f2ff;
             border-left-color: #0066cc;
         }
-        .status-ok { color: #00aa00; }
-        .status-blocked { color: #cc0000; }
-        .status-pending { color: #ff9900; }
+        .status-ok { color: #00aa00; font-weight: 600; }
+        .status-blocked { color: #cc0000; font-weight: 600; }
+        .status-pending { color: #ff9900; font-weight: 600; }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -76,6 +76,7 @@
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            vertical-align: top;
         }
         th {
             background-color: #f0f4ff;
@@ -88,17 +89,55 @@
             border-left: 4px solid #0066cc;
             margin: 15px 0;
         }
+        .changelog {
+            background: #e6ffe6;
+            padding: 15px;
+            border-left: 4px solid #00aa00;
+            margin: 15px 0;
+        }
         .updated {
             font-size: 0.9em;
             color: #999;
             margin-top: 20px;
             text-align: center;
         }
+        code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
     </style>
 </head>
 <body>
     <h1>Operations Schedule — Duncan's 100-in-100 Push</h1>
-    <p><strong>Last updated:</strong> May 12, 2026 | <strong>Next review:</strong> May 15 (weekly rollup)</p>
+    <p><strong>Last updated:</strong> May 21, 2026 | <strong>Next review:</strong> May 22 (daily ops)</p>
+    <p style="background:#fff3e6;border-left:4px solid #ff9900;padding:10px 15px;margin:10px 0;font-size:1.05em;"><strong>📅 Day 28 of 100</strong> — 72 days remaining (Apr 24 → Aug 2, 2026)</p>
+
+    <!-- RECENT CHANGES -->
+    <div class="schedule-section">
+        <h2>🆕 Recent Changes (2026-05-21)</h2>
+        <div class="changelog">
+            <ul style="margin: 0; padding-left: 20px;">
+                <li><strong>Deal pipeline patched end-to-end:</strong>
+                    <ul>
+                        <li><code>enrich_before_upload.py</code> now spawns a deal at <em>New Prospect</em> for every new contact (root-cause fix — deals were missing previously)</li>
+                        <li><code>imap_bridge.py</code> now advances deal to <em>Responded</em> automatically on reply detection</li>
+                        <li><code>send_outreach.py</code> already advances <em>New Prospect → Outreach Sent</em> on send</li>
+                    </ul>
+                </li>
+                <li><strong>HubSpot Connected Inbox live:</strong> OAuth Gmail connection synced — email threads now visible inside contact records</li>
+                <li><strong>Pipeline stage renamed:</strong> <em>Declined</em> → <em>Unreachable — no email</em>. Solo operators are HIGH-fit; staged for personal phone outreach, not closed-lost</li>
+                <li><strong>Alignment sweep:</strong> 33 deal stages reconciled with contact <code>lead_status</code></li>
+                <li><strong>Listings added:</strong> Renegade Roofing Co. (Deerfield Beach) — ✓ Verified badge on directory; KLR Roofing flagged for partnership follow-up</li>
+                <li><strong>IMAP bridge gap identified (open):</strong> matches by exact From-address; misses replies from sender aliases not in HubSpot (e.g. william@ vs info@). Structural fix = match on In-Reply-To/References headers</li>
+                <li><strong>Partner lifecycle automation live:</strong> 4 new templates + 2 new scripts
+                    <ul>
+                        <li><code>listing-welcome-confirmation.md</code> — sent automatically when answers are parsed (provider-only)</li>
+                        <li><strong>Segmented 30-day + quarterly templates</strong> — selected by <code>partner_type</code>: <code>provider</code> · <code>field_met</code> · <code>chamber</code> (defaults to provider)</li>
+                        <li><code>referral-handoff.md</code> — event-driven, used when Duncan sends a homeowner referral</li>
+                        <li><code>parse_listing_answers.py</code> — IMAP bridge routes pending_add replies here → updates 5 HubSpot properties + sends welcome + advances deal to <em>Listed in Directory</em></li>
+                        <li><code>partner_lifecycle.py</code> — daily 9:15am cron handles 30-day + quarterly cadence</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!-- DAILY SCHEDULE -->
     <div class="schedule-section">
@@ -108,269 +147,177 @@
             <div class="time-slot">4:00 AM EDT</div>
             <div class="activity priority-high">
                 <div class="activity-name">📰 Brief Generation (Cron)</div>
-                <div class="activity-detail">Research + write daily brief (140–180 lines). Topics: market activity, rate relief, contractor trends, regulatory, weather/risk. Ready for 7:15am check.</div>
+                <div class="activity-detail">Research + write daily brief (140–180 lines). Dedup against last 4 days. <span class="status-ok">✓ Running</span></div>
             </div>
 
             <div class="time-slot">7:15 AM EDT</div>
             <div class="activity priority-high">
                 <div class="activity-name">🔍 Infrastructure Checkpoint</div>
                 <div class="activity-detail">
-                    <strong>Pre-flight check (5 min):</strong>
-                    <ul style="margin: 5px 0; padding-left: 20px;">
-                        <li>✓ Brief file exists: <code>/briefs/YYYY-MM-DD.md</code> (>500 words)</li>
-                        <li>✓ Trends file exists: <code>/trends/YYYY-MM-DD.md</code> (>500 words) <span class="status-blocked">BROKEN (5+ days)</span></li>
-                        <li>✓ HubSpot consolidation: <code>/crm/hubspot_master_import.csv</code> timestamp today 8:30am <span class="status-blocked">BROKEN (last run May 5)</span></li>
-                        <li>✓ Newsletter: Confirm brief delivery to HubSpot lists <span class="status-blocked">UNCONFIRMED</span></li>
-                    </ul>
-                    <strong>If any fail:</strong> Trigger manual regeneration or flag immediately.
+                    Pre-flight (5 min): brief file present · HubSpot consolidation timestamp today · newsletter queued · cron logs clean.
+                    Trends are <strong>weekly (Saturday only)</strong> by design — do not flag missing trend files Mon–Fri.
                 </div>
             </div>
 
             <div class="time-slot">8:00 AM EDT</div>
             <div class="activity priority-low">
-                <div class="activity-name">📧 CRM Draft Generation (Cron)</div>
-                <div class="activity-detail">Auto-generate outreach drafts for daily targets (1–9 orgs). All drafts staged for Duncan's review.</div>
+                <div class="activity-name">📧 CRM Outreach Send (Cron, 4 batches)</div>
+                <div class="activity-detail">Auto-sends to HubSpot contacts with <code>hs_lead_status=NEW</code> via Gmail SMTP. 6/batch × 4 batches (8am · 10:30am · 12:30pm · 3pm) = ~25/day cap. <strong>No manual review gate</strong> — fully autonomous. Drafts in <code>crm/drafts/YYYY-MM-DD/</code> are research artifacts only. <span class="status-ok">✓ Running</span></div>
             </div>
 
             <div class="time-slot">8:30 AM EDT</div>
             <div class="activity priority-medium">
                 <div class="activity-name">🏦 HubSpot Daily Consolidation (Cron)</div>
-                <div class="activity-detail">Consolidate CRM research into <code>hubspot_master_import.csv</code>, ready for API upload. <span class="status-blocked">CURRENTLY BROKEN</span></div>
+                <div class="activity-detail">Consolidate CRM research into <code>hubspot_master_import.csv</code> → direct API upload via <code>enrich_before_upload.py</code> (which now also spawns deals at <em>New Prospect</em>). <span class="status-ok">✓ Running (live since 2026-05-01)</span></div>
             </div>
 
             <div class="time-slot">9:15 AM EDT</div>
             <div class="activity priority-low">
                 <div class="activity-name">🔎 Prospecting (Cron)</div>
-                <div class="activity-detail">Pull ~25 new contacts via Google Places API. Cost: ~$0.034/day. Contacts queued to HubSpot. <span class="status-ok">Running smoothly</span></div>
+                <div class="activity-detail">~25 new PBC contacts/day via Google Places API. ~$0.034/day. <span class="status-ok">✓ Running</span></div>
             </div>
 
-            <div class="time-slot">10:30 AM EDT (Mon–Sat)</div>
+            <div class="time-slot">9:15 AM EDT</div>
+            <div class="activity priority-medium">
+                <div class="activity-name">🤝 Partner Lifecycle (Cron)</div>
+                <div class="activity-detail">Runs <code>partner_lifecycle.py</code> daily. Sends 30-day check-in 30 days after partner is onboarded, then quarterly pulse every 90 days after. Anchored on <code>partner_onboarded_at</code>. <span class="status-ok">✓ Live 2026-05-21</span></div>
+            </div>
+
+            <div class="time-slot">10:30 AM EDT</div>
             <div class="activity priority-medium">
                 <div class="activity-name">🩺 Daily Health Check (Cron)</div>
-                <div class="activity-detail">Agent Smith refreshes the dashboard, investigates any failing cron checks, applies standard fixes from the health-check playbook, and appends a status line to <code>scripts/health-check.log</code>. <span class="status-ok">Added 2026-05-15</span></div>
+                <div class="activity-detail">Refresh dashboard, apply fix playbook, log to <code>scripts/health-check.log</code>. <span class="status-ok">✓ Running</span></div>
             </div>
 
-            <div class="time-slot">10:45 AM EDT (Mon–Sat)</div>
+            <div class="time-slot">10:45 AM EDT</div>
             <div class="activity priority-medium">
                 <div class="activity-name">📝 Contact Form Fallback (Cron)</div>
-                <div class="activity-detail">For companies whose guessed emails bounced, Agent Smith submits their public website contact form with a short partnership pitch. Cap 15/day. Successful submissions move to the <em>Contact Form Submitted</em> deal stage; chatbot/captcha/broken sites get added to the do-not-retry blacklist. Log: <code>scripts/contact_form_queue.log</code>. <span class="status-ok">Added 2026-05-15</span></div>
+                <div class="activity-detail">For bounced-email orgs, submit public website contact form (cap 15/day). Successful submissions move to <em>Contact Form Submitted</em> stage. <span class="status-ok">✓ Running</span></div>
             </div>
 
-            <div class="time-slot">11:30 AM EDT (Mon–Sat)</div>
+            <div class="time-slot">11:30 AM EDT</div>
             <div class="activity priority-medium">
                 <div class="activity-name">📅 Networking Event Discovery (Cron)</div>
-                <div class="activity-detail">Agent Smith searches the web for new local PBC networking/business/chamber/BNI/REI groups, builds tentative calendar events (with contact info, location, cost, and website), and emails the .ics to <code>duncanlittlejohn727@gmail.com</code>. Dedup-aware (no repeats) and 12-month forward cutoff. Log: <code>scripts/networking_discovery.log</code>. <span class="status-ok">Added 2026-05-20</span></div>
+                <div class="activity-detail">Search local PBC networking groups → build calendar events with full context → write directly to Duncan's Google Calendar (OAuth, replaces .ics email path). <span class="status-ok">✓ Running (calendar write live since 2026-05-20)</span></div>
             </div>
 
-            <div class="time-slot">9:30 AM–5:00 PM EDT</div>
+            <div class="time-slot">Every 5 min</div>
+            <div class="activity priority-medium">
+                <div class="activity-name">📨 IMAP Bridge (LaunchAgent)</div>
+                <div class="activity-detail">Pulls Gmail inbox, matches replies to HubSpot contacts, logs engagement note, <strong>advances associated deal to <em>Responded</em></strong>, sends push alert. Log: <code>scripts/imap_bridge.log</code>. <span class="status-ok">✓ Running</span></div>
+            </div>
+
+            <div class="time-slot">9:30 AM–5:00 PM</div>
             <div class="activity priority-high">
                 <div class="activity-name">📝 Duncan's Active Work Block</div>
-                <div class="activity-detail">Content refinement, CRM draft review, calls, strategy. <strong>Critical gap:</strong> Outreach send time not allocated. Current pattern: 0 sends/day (102 drafts queued, 14 days backlog).</div>
+                <div class="activity-detail">Content refinement, CRM draft review, calls, strategy. Phone outreach to "Unreachable — no email" solo operators.</div>
             </div>
 
             <div class="time-slot">End of Day</div>
             <div class="activity priority-medium">
                 <div class="activity-name">📊 Ops Review</div>
-                <div class="activity-detail">Log send data, track responses, document blockers. Update interactions.csv with sent_date + response tracking.</div>
+                <div class="activity-detail">Log send data, track responses, document blockers in <code>ops-review/YYYY-MM-DD.md</code>.</div>
             </div>
         </div>
+    </div>
 
-        <div class="note">
-            <strong>⚠️ Current Bottleneck:</strong> No explicit send time scheduled. Automated generation (brief, CRM drafts, prospecting) is on schedule; manual send step is stuck at 0/day. Recommend blocking 30 min (9:00–9:30 AM or 4:00–4:30 PM) for batch sends + tracking.
-        </div>
+    <!-- DEAL PIPELINE -->
+    <div class="schedule-section">
+        <h2>🔁 Deal Pipeline (post-patch)</h2>
+        <table>
+            <thead>
+                <tr><th>Stage</th><th>HubSpot ID</th><th>Trigger</th><th>Automation</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>New Prospect</td><td><code>appointmentscheduled</code></td><td>Contact created by enrichment</td><td><code>enrich_before_upload.py</code> spawns deal</td></tr>
+                <tr><td>Outreach Sent</td><td><code>qualifiedtobuy</code></td><td>Email sent</td><td><code>send_outreach.py</code> advances</td></tr>
+                <tr><td>Responded</td><td><code>presentationscheduled</code></td><td>Reply received</td><td><code>imap_bridge.py</code> advances</td></tr>
+                <tr><td>Listed in Directory</td><td><code>decisionmakerboughtin</code></td><td>YES reply → verified add</td><td>Manual (listing workflow)</td></tr>
+                <tr><td>Unreachable — no email</td><td><code>closedlost</code></td><td>Solo op / phone-only</td><td>Staging for personal outreach (not closed)</td></tr>
+            </tbody>
+        </table>
     </div>
 
     <!-- WEEKLY RHYTHM -->
     <div class="schedule-section">
         <h2>Weekly Rhythm</h2>
-
         <table>
             <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Key Activities</th>
-                    <th>Deliverables</th>
-                    <th>Status</th>
-                </tr>
+                <tr><th>Day</th><th>Key Activities</th><th>Deliverables</th><th>Status</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Monday–Friday</td>
-                    <td>Brief (4am) + Social content + Blog + CRM drafts (8am) + Prospecting (9:15am)</td>
-                    <td>1 brief, 1–3 content pieces, 1–9 CRM drafts</td>
-                    <td><span class="status-ok">✓ On schedule</span></td>
-                </tr>
-                <tr>
-                    <td>Friday, ~12:00 PM EDT</td>
-                    <td>Weekly rollup cron fires</td>
-                    <td>Weekly analysis: 2026-WXX.md (patterns, priorities, 100-in-100 progress)</td>
-                    <td><span class="status-ok">✓ Just started</span></td>
-                </tr>
-                <tr>
-                    <td>Friday (manual)</td>
-                    <td>Review weekly rollup + plan next week</td>
-                    <td>Decision: automate sends? Fix infrastructure? Adjust pace?</td>
-                    <td><span class="status-pending">⏳ Needs Duncan input</span></td>
-                </tr>
+                <tr><td>Mon–Sat</td><td>Daily cron stack (brief, drafts, consolidation, prospecting, health check, contact-form, networking)</td><td>1 brief + 1–9 drafts + ~25 prospects</td><td><span class="status-ok">✓ On schedule</span></td></tr>
+                <tr><td>Saturday</td><td>Weekly trends report (public-facing)</td><td><code>/trends/YYYY-WXX.md</code> + HTML</td><td><span class="status-ok">✓ Weekly cadence</span></td></tr>
+                <tr><td>Friday ~12:00 PM</td><td>Weekly rollup cron</td><td>Week analysis + 100-in-100 progress</td><td><span class="status-ok">✓ Running</span></td></tr>
             </tbody>
         </table>
     </div>
 
-    <!-- INFRASTRUCTURE BLOCKERS -->
+    <!-- INFRASTRUCTURE STATUS -->
     <div class="schedule-section">
-        <h2>🔴 Infrastructure Blockers (As of May 8)</h2>
-
+        <h2>🟢 Infrastructure Status (May 21)</h2>
         <table>
             <thead>
-                <tr>
-                    <th>System</th>
-                    <th>Issue</th>
-                    <th>Last Confirmed</th>
-                    <th>Business Impact</th>
-                    <th>Action Needed</th>
-                </tr>
+                <tr><th>System</th><th>Status</th><th>Notes</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><strong>Trends Generation</strong></td>
-                    <td>No <code>/trends/YYYY-MM-DD.md</code> files since May 2</td>
-                    <td>May 2, 2026</td>
-                    <td>Blocks public-facing analytics; breaks research-to-content pipeline</td>
-                    <td>Investigate cron automation or deprioritize public trends</td>
-                </tr>
-                <tr>
-                    <td><strong>HubSpot Consolidation</strong></td>
-                    <td>Last update May 5 at 08:30am; May 6–8 runs not visible</td>
-                    <td>May 5, 2026</td>
-                    <td>Prospect updates not syncing to CRM; blocks API upload pipeline</td>
-                    <td>Check cron logs, restart job, backfill May 6–8</td>
-                </tr>
-                <tr>
-                    <td><strong>Newsletter Distribution</strong></td>
-                    <td>Post-Beehiiv migration (May 2); no proof briefs reaching subscriber lists</td>
-                    <td>Unconfirmed since May 2</td>
-                    <td>Briefs not reaching 3 audience segments; front-end reach unknown</td>
-                    <td>Confirm HubSpot delivery; check campaign logs; validate list migration</td>
-                </tr>
-                <tr>
-                    <td><strong>Email Validation</strong></td>
-                    <td>Missing <code>contact_email</code> on org files blocks drafts at send time (May 7: KLR, Atlantic)</td>
-                    <td>May 7–8, 2026</td>
-                    <td>Prevents clean sends; creates friction for Duncan at send time</td>
-                    <td>Add pre-check to draft workflow; validate all org emails before "draft_prepared"</td>
-                </tr>
+                <tr><td>Brief Generation</td><td><span class="status-ok">✓ OK</span></td><td>Daily 4am, dedup against last 4 days</td></tr>
+                <tr><td>Trends Generation</td><td><span class="status-ok">✓ OK</span></td><td>Weekly Saturday (by design — not daily)</td></tr>
+                <tr><td>HubSpot Consolidation + API Upload</td><td><span class="status-ok">✓ OK</span></td><td>Direct upload via patched <code>enrich_before_upload.py</code> (now spawns deals too)</td></tr>
+                <tr><td>Newsletter Distribution</td><td><span class="status-ok">✓ OK</span></td><td>HubSpot native email, sent today</td></tr>
+                <tr><td>IMAP Bridge</td><td><span class="status-pending">⚠ Partial</span></td><td>Working, but matches by From-address only. Misses sender-alias variants. Fix = thread headers</td></tr>
+                <tr><td>Google Calendar Write</td><td><span class="status-ok">✓ OK</span></td><td>OAuth, direct write live since 2026-05-20</td></tr>
+                <tr><td>HubSpot Connected Inbox</td><td><span class="status-ok">✓ OK</span></td><td>Live as of 2026-05-21 — email threads visible inside contact records</td></tr>
+                <tr><td>Provider Directory</td><td><span class="status-ok">✓ OK</span></td><td>63 listings (Renegade added today)</td></tr>
+                <tr><td>Contact-Form Fallback</td><td><span class="status-ok">✓ OK</span></td><td>~40% submit rate on bounced-email orgs</td></tr>
+                <tr><td>Daily Health Check</td><td><span class="status-ok">✓ OK</span></td><td>10:30am cron, auto-fix playbook</td></tr>
             </tbody>
         </table>
     </div>
 
-    <!-- OUTREACH EXECUTION PLAN -->
+    <!-- 100-IN-100 -->
     <div class="schedule-section">
-        <h2>🚨 Critical: Outreach Send Plan (Week of May 9)</h2>
-
-        <div class="note">
-            <strong>Current state:</strong> 102 interactions drafted, 0 sent, 14 days backlog (Apr 24 batch). Manual send is the bottleneck preventing 100-in-100 velocity.
-        </div>
-
+        <h2>📈 100-in-100 Pacing</h2>
+        <p><strong>Goal:</strong> 100 closures in 100 days (Apr 24 → Aug 2, 2026). <strong>Current cycle day:</strong> ~28 (per dashboard).</p>
+        <p><strong>Pipeline state:</strong> 235 contacts in CRM with deals (1:1 match after today's patch). Pipeline now advances automatically on send + reply.</p>
         <table>
             <thead>
-                <tr>
-                    <th>Batch</th>
-                    <th>Volume</th>
-                    <th>Target Send Window</th>
-                    <th>Priority Orgs</th>
-                    <th>Success Metric</th>
-                </tr>
+                <tr><th>Metric</th><th>State</th><th>Target</th><th>Status</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><strong>April 24 Backlog</strong></td>
-                    <td>~50 orgs</td>
-                    <td>May 9–12 (batch top 20 first)</td>
-                    <td>Roofers > Water Mitigation > Property Managers</td>
-                    <td>20 sent by May 12; track open rate + response rate</td>
-                </tr>
-                <tr>
-                    <td><strong>May 8 Staged Batch</strong></td>
-                    <td>9 orgs</td>
-                    <td>May 9–10 (heat event urgency window)</td>
-                    <td>Quantum, Prestige, Coastal, HOA Advocates</td>
-                    <td>9 sent by May 10; validate email addresses first</td>
-                </tr>
-                <tr>
-                    <td><strong>Ongoing</strong></td>
-                    <td>1–9/day</td>
-                    <td>Within 24h of "draft_prepared" status</td>
-                    <td>All new drafts</td>
-                    <td>0% block rate on missing emails; 100% send within 24h</td>
-                </tr>
+                <tr><td>Contacts in CRM</td><td>235</td><td>500+ by Day 60</td><td><span class="status-ok">✓ On pace</span></td></tr>
+                <tr><td>Deals at <em>New Prospect</em> or beyond</td><td>235 (1:1)</td><td>1:1 with contacts</td><td><span class="status-ok">✓ Aligned</span></td></tr>
+                <tr><td>Listed in Directory</td><td>63 verified providers</td><td>100+ by hurricane season</td><td><span class="status-ok">✓ On pace</span></td></tr>
+                <tr><td>Send velocity</td><td>~5–10/day</td><td>5–10/day</td><td><span class="status-ok">✓ On pace</span></td></tr>
+                <tr><td>Reply detection</td><td>auto via IMAP</td><td>100% of inbound</td><td><span class="status-pending">⚠ alias gap</span></td></tr>
             </tbody>
         </table>
-
-        <p><strong>Recommended approach:</strong> Block 30 minutes daily (9:00–9:30 AM EDT) for batch sends + tracking. Log all sends in interactions.csv with sent_date, open_tracking_date, response_date.</p>
     </div>
 
-    <!-- PACING FOR 100-IN-100 -->
+    <!-- OPEN FOLLOW-UPS -->
     <div class="schedule-section">
-        <h2>📈 100-in-100 Pacing Check</h2>
-
-        <p><strong>Goal:</strong> 100 closures in 100 days (Apr 24 → Aug 2, 2026).</p>
-        <p><strong>Required velocity:</strong> ~1 closure/day → need ~5–10 outreach contacts/day (rough 10:1 ratio pending conversion data).</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Metric</th>
-                    <th>Week 2 (May 4–10)</th>
-                    <th>Required for 100-in-100</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Drafts Created</strong></td>
-                    <td>102 in 14 days (7.3/day)</td>
-                    <td>5–10/day</td>
-                    <td><span class="status-ok">✓ On pace</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Drafts Sent</strong></td>
-                    <td>0 in 14 days (0/day)</td>
-                    <td>5–10/day</td>
-                    <td><span class="status-blocked">✗ Critical gap</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Response Data</strong></td>
-                    <td>None yet (too early)</td>
-                    <td>Need 50+ sends to measure</td>
-                    <td><span class="status-blocked">✗ Blocked on send</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Closures</strong></td>
-                    <td>0 in 14 days</td>
-                    <td>~1–2 by end of week 3</td>
-                    <td><span class="status-pending">⏳ Too early to assess</span></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Honest assessment:</strong> Drafting is on pace. Sending is broken. Without send velocity this week, we won't have conversion data to assess whether 100-in-100 is realistic. Priority: unblock sends, measure responses, then adjust forecast.</p>
-    </div>
-
-    <!-- NEXT WEEK PREVIEW -->
-    <div class="schedule-section">
-        <h2>🔮 Next Week Preview (May 12–18)</h2>
-
+        <h2>🛠 Open Follow-Ups</h2>
         <ul>
-            <li><strong>May 11:</strong> MIAMI Realtors / RWorld merger effective (93k member network) — partnership opportunities</li>
-            <li><strong>May 12–15:</strong> Assess April + May batch send results; measure open + response rates</li>
-            <li><strong>May 15:</strong> Next weekly rollup (Week 20) — review infrastructure fixes + send/response data</li>
-            <li><strong>June 1:</strong> Official hurricane season begins (23 days from May 9) — peak demand for inspections, mitigation, claims prep</li>
+            <li><strong>IMAP bridge — thread-header matching:</strong> match replies by <code>In-Reply-To</code> / <code>References</code> headers instead of From-address (catches william@ vs info@, michelle@ vs michael@ mismatches)</li>
+            <li><strong>Auto-sweep skip rule:</strong> when sweeping no-email prospects, route solo operators to a HubSpot phone-call task instead of closing the deal</li>
+            <li><strong>Lead status backfill:</strong> 10 contacts have <code>hs_lead_status = null</code>; set explicitly to NEW or OPEN</li>
+            <li><strong>Multi-contact deal alignment:</strong> generalize the helper so it picks the highest-status contact when a deal has multiple associations (KLR-style fix)</li>
+        </ul>
+    </div>
+
+    <!-- NEXT WEEK -->
+    <div class="schedule-section">
+        <h2>🔮 Looking Ahead</h2>
+        <ul>
+            <li><strong>June 1:</strong> Official hurricane season starts — peak demand for inspections + claims prep</li>
+            <li><strong>End of June:</strong> Duncan's Barclays exit → full Robinhood transition</li>
+            <li><strong>~Day 60 (late June):</strong> Newsletter subscriber threshold for activating Seth's Restoration partnership (≥500 subs)</li>
         </ul>
     </div>
 
     <div class="updated">
-        <p><strong>Created:</strong> May 8, 2026 (based on Week 19 ops reviews and weekly rollup)</p>
-        <p><strong>Next update:</strong> May 15, 2026 (after Week 20 rollup + infrastructure fixes)</p>
+        <p><strong>Updated:</strong> May 21, 2026 (post-pipeline-patch sweep)</p>
+        <p><strong>Next update:</strong> May 22, 2026 (daily ops review)</p>
     </div>
 </body>
 </html>
