@@ -153,6 +153,16 @@
             color: #2e7d32;
         }
 
+        .frequency.weekday {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .frequency.sunday {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
         .category {
             display: inline-block;
             padding: 3px 8px;
@@ -321,7 +331,7 @@
         </div>
 
         <div class="summary">
-            <strong>Current Stack:</strong> 20 automated daily operations (4:00am–5:00pm Mon-Sat) spanning content generation, CRM prospecting, 4-batch email outreach, LinkedIn sequencing, enrichment, and HubSpot sync. Wednesday adds Partnership Builder; Friday adds Weekly Rollup.
+            <strong>Current Stack:</strong> 20+ automated operations spanning content generation, CRM prospecting, 4-batch email outreach, LinkedIn sequencing, enrichment, and HubSpot sync. Mon–Sat 4:00am–5:00pm core schedule. Wednesday adds Partnership Builder; Friday adds Weekly Rollup; Saturday writes the daily brief + generates Weekly Trends synthesis (site-only, no email); Sunday delivers the Weekly Trends email to all subscribers.
         </div>
 
         <h2>Complete Daily Operations (Timezone: America/New_York / EDT)</h2>
@@ -373,17 +383,35 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="time">5:45 AM</td>
-                    <td class="job-name">📧 Newsletter Send</td>
-                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td class="time">9:00 AM</td>
+                    <td class="job-name">📧 Daily Brief Send</td>
+                    <td><span class="frequency weekday">Mon-Fri</span></td>
                     <td><span class="category email">Email</span></td>
                     <td>
                         <div class="description">
-                            Daily brief emailed to all HubSpot newsletter subscribers via <code>send-daily-brief.py</code>:
+                            Daily brief emailed to HubSpot subscriber lists via <code>send-daily-brief.py</code>:
                             <ul>
                                 <li>3 audiences: Homeowners (list 18), Service Providers (list 19), RE Pros (list 20)</li>
                                 <li>Auto-converts brief MD to HTML if not present</li>
                                 <li>Send marker: <code>scripts/.newsletter-sent-YYYY-MM-DD</code></li>
+                                <li><strong>Saturday brief is site-only — no email send.</strong> Sunday delivers the weekly trends synthesis instead (see Sun row).</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">9:00 AM</td>
+                    <td class="job-name">📊 Weekly Trends Send</td>
+                    <td><span class="frequency sunday">Sunday</span></td>
+                    <td><span class="category email">Email</span></td>
+                    <td>
+                        <div class="description">
+                            Sunday morning broadcast of Saturday's weekly trends report via <code>send-weekly-trends.py</code>:
+                            <ul>
+                                <li>Pulls latest <code>content/trends/YYYY-MM-DD.html</code></li>
+                                <li>Deduped union of lists 18, 19, 20 — each subscriber receives one copy</li>
+                                <li>Subject: "South Florida Weekly Trends — Week of [range]"</li>
+                                <li>Send marker: <code>scripts/.weekly-trends-sent-YYYY-MM-DD</code></li>
                             </ul>
                         </div>
                     </td>
@@ -692,7 +720,7 @@
             <ul>
                 <li><strong>Two-Day Prospecting Cycle:</strong> Contacts scraped Day 1 (9am) → enriched (10am) → intel profiles Day 2 (5am) → personalized drafts Day 2 (6am) → outreach Day 2 (8am–3pm).</li>
                 <li><strong>4-Batch Outreach:</strong> Drafts are spread across 8am, 10:30am, 12:30pm, and 3pm to avoid spam signals and spread engagement windows.</li>
-                <li><strong>Mon-Sat Schedule:</strong> All jobs except Partnership Builder (Wed) and Weekly Rollup (Fri) run Mon-Sat. No automated jobs on Sundays.</li>
+                <li><strong>Schedule:</strong> Operations cadence runs Mon–Sat. Special days: Partnership Builder (Wed), Weekly Rollup (Fri), Weekly Trends generation (Sat). Sundays now have one job: the Weekly Trends email send at 9am — Saturday's brief is site-only (no email) and Sunday delivers the synthesis to all subscribers.</li>
                 <li><strong>Auto-Recovery:</strong> LaunchAgent catches any missed jobs when the Mac wakes. State tracking via lock files and log entries prevents duplicate runs.</li>
                 <li><strong>HubSpot Fully Automated:</strong> CRM uploads via API — no manual import steps required. Daily master CSV generated + uploaded at 8:30am.</li>
                 <li><strong>Drip vs. Deal Pipeline:</strong> Response Handler routes warm replies to the HubSpot Deal Pipeline; non-responders and soft declines enter the 3-touch Drip Queue (runs daily at 9am).</li>
