@@ -245,6 +245,36 @@ def ensure_html_brief(date_str):
     html_path.write_text(full_html)
 
 
+def ensure_segmented_briefs(date_str):
+    """Run build_segmented_briefs.py if any segment HTML is missing.
+
+    Self-healing: keeps the newsletter from silently falling back to generic
+    copy when the generator step was skipped earlier in the chain.
+    """
+    needed = [BRIEFS_DIR / f"{date_str}-{s['key']}.html"
+              for s in SEGMENTS]
+    if all(p.exists() for p in needed):
+        return
+    src = BRIEFS_DIR / f"{date_str}.html"
+    if not src.exists():
+        return  # no source to split — send loop will skip the day
+    script = Path(__file__).resolve().parent / "build_segmented_briefs.py"
+    if not script.exists():
+        log(f"  [segmented] {script.name} missing — cannot auto-split")
+        return
+    import subprocess
+    log(f"  [segmented] splitting {src.name} into 3 segment variants")
+    rc = subprocess.run(
+        [sys.executable, str(script), date_str],
+        capture_output=True, text=True,
+    )
+    if rc.returncode != 0:
+        log(f"  [segmented] split failed rc={rc.returncode}: {rc.stderr.strip()}")
+    else:
+        for line in rc.stdout.strip().splitlines():
+            log(f"  [segmented] {line.strip()}")
+
+
 def get_brief_html(date_str, segment_key=None):
     """Load segment-specific brief, falling back to generic brief."""
     if segment_key:
@@ -381,11 +411,13 @@ def main():
         return
 
     ensure_html_brief(date_str)
+    ensure_segmented_briefs(date_str)
     password, hs_token = load_credentials()
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
 
     total_sent = 0
     total_failed = 0
+    fallback_segments = []
 
     for segment in SEGMENTS:
         list_id = segment["list_id"]
@@ -400,6 +432,7 @@ def main():
         using_generic = not (BRIEFS_DIR / f"{date_str}-{key}.html").exists()
         if using_generic:
             log(f"  [{key}] Using fallback generic brief")
+            fallback_segments.append(key)
 
         emails = get_list_emails(list_id, hs_token)
         log(f"  [{key}] {len(emails)} subscribers in list {list_id}")
@@ -420,7 +453,49 @@ def main():
         total_failed += len(failed)
 
     log(f"=== Done — total sent: {total_sent} | total failed: {total_failed} ===")
+
+    if fallback_segments:
+        alert_fallback(date_str, fallback_segments)
+
     marker.touch()
+
+
+def alert_fallback(date_str, segments):
+    """Loud-fail when one or more segments fell back to the generic brief.
+    Writes a marker to health-check.log AND creates a HubSpot task for Duncan."""
+    msg = f"newsletter fallback for {date_str}: {', '.join(segments)} (segmented variant missing)"
+    log(f"  ⚠️  ALERT: {msg}")
+
+    try:
+        health_log = WORKSPACE / "scripts" / "health-check.log"
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M EDT")
+        with health_log.open("a") as f:
+            f.write(f"[{ts}] ⚠️ {msg}\n")
+    except Exception as e:
+        log(f"  alert: failed to write health-check.log: {e}")
+
+    try:
+        import subprocess
+        body = (
+            f"Newsletter for {date_str} fell back to the generic brief for: "
+            f"{', '.join(segments)}.\n\n"
+            "These subscribers received the homeowner-flavored copy instead of their "
+            "audience-targeted variant. Fix the brief generator so segmented HTML files "
+            "are produced at content/briefs/YYYY-MM-DD-{segment}.html, then verify the "
+            "next send doesn't trip this alert.\n\n"
+            "Auto-created by scripts/send-daily-brief.py."
+        )
+        subprocess.run(
+            [
+                "python3", str(WORKSPACE / "scripts" / "hubspot_task.py"),
+                "--subject", f"Newsletter silent-fallback {date_str}",
+                "--body", body,
+                "--priority", "HIGH",
+            ],
+            check=False, timeout=30,
+        )
+    except Exception as e:
+        log(f"  alert: failed to create HubSpot task: {e}")
 
 
 if __name__ == "__main__":

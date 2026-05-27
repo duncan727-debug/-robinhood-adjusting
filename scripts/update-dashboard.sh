@@ -119,7 +119,7 @@ fi
 # 8:00am outreach batch 1
 batch1_status="idle"; batch1_detail="Not run"
 grep -q "^\[$TODAY.*[Bb]atch 1" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null && {
-  sent=$(grep "^\[$TODAY.*[Bb]atch 1 done" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null | grep -o "sent: [0-9]*" | tail -1 | awk '{print $2}')
+  sent=$(grep "^\[$TODAY.*[Bb]atch 1 done" "$WORKSPACE/scripts/outreach_send.log" 2>/dev/null | grep -o "sent: [0-9]*" | tail -1 | awk '{print $2}' || true)
   batch1_status="ok"; batch1_detail="${sent:-?} sent"
 }
 

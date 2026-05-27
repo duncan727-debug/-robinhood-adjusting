@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280">
+  <rect width="600" height="280" fill="#1d1d1f"/>
+  <text x="20" y="30" font-family="-apple-system,Helvetica,Arial" font-size="14" fill="#f5f3ef" font-weight="600">Concept B — Two-hand tube (Braun T1000 inspired)</text>
+  <text x="20" y="48" font-family="-apple-system,Helvetica,Arial" font-size="11" fill="#a1a1a6">Cylindrical body, side-pump action, palm-trigger at rear</text>
+
+  <!-- Long cylindrical body -->
+  <rect x="80" y="120" width="420" height="44" rx="22" fill="#3a3a3c" stroke="#a1a1a6" stroke-width="1"/>
+  <!-- Front muzzle ring -->
+  <rect x="495" y="124" width="18" height="36" rx="3" fill="#f5f3ef"/>
+  <!-- Rear cap / palm trigger -->
+  <circle cx="80" cy="142" r="20" fill="#ff7a30"/>
+  <text x="68" y="146" font-family="-apple-system,Helvetica,Arial" font-size="9" fill="#1d1d1f" font-weight="700">FIRE</text>
+
+  <!-- Side pump handle -->
+  <rect x="260" y="80" width="80" height="22" rx="11" fill="#f5f3ef"/>
+  <line x1="300" y1="102" x2="300" y2="120" stroke="#a1a1a6" stroke-width="1.5"/>
+  <text x="262" y="74" font-family="-apple-system,Helvetica,Arial" font-size="9" fill="#a1a1a6">pump up / down</text>
+
+  <!-- Loaded torpedo (dashed, outside muzzle) -->
+  <ellipse cx="555" cy="142" rx="32" ry="9" fill="none" stroke="#a1a1a6" stroke-width="1" stroke-dasharray="3 3"/>
+  <polygon points="585,142 597,135 597,149" fill="none" stroke="#a1a1a6" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Pressure window -->
+  <rect x="130" y="135" width="50" height="14" rx="2" fill="#0a0a0a" stroke="#a1a1a6"/>
+  <rect x="132" y="137" width="32" height="10" fill="#ff7a30"/>
+
+  <!-- Callouts -->
+  <text x="20" y="210" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#a1a1a6">Body: charcoal anodized-look ABS (Braun T1000 charcoal)</text>
+  <text x="20" y="224" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#a1a1a6">Accents: warm white pump + muzzle, signal orange palm-trigger</text>
+  <text x="20" y="238" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#a1a1a6">Pressure window: amber LCD-style strip, visible underwater</text>
+  <text x="20" y="252" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#a1a1a6">Two-hand operation = inherent safety (both hands occupied)</text>
+  <text x="20" y="266" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#a1a1a6">No grip texture, no decals. Single 6mm etched dot at rear cap.</text>
+</svg>

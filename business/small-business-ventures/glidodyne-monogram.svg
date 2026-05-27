@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <style>
+      .label { font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="600" height="600" fill="#f5f3ef"/>
+
+  <!-- Primary monogram: a geometric G whose interior negative space reads as an arrow/trajectory -->
+  <!-- Outer ring -->
+  <circle cx="300" cy="280" r="140" fill="none" stroke="#1d1d1f" stroke-width="32"/>
+  <!-- G opening: cut on the right side -->
+  <rect x="300" y="248" width="160" height="64" fill="#f5f3ef"/>
+  <!-- The horizontal bar of the G (where the trajectory points) -->
+  <rect x="300" y="265" width="118" height="30" fill="#1d1d1f"/>
+  <!-- Trajectory accent: signal orange dot at the muzzle tip -->
+  <circle cx="430" cy="280" r="12" fill="#ff7a30"/>
+
+  <!-- Wordmark below -->
+  <text x="300" y="500" text-anchor="middle" class="label" font-size="64" font-weight="500" letter-spacing="2" fill="#1d1d1f">Glidodyne</text>
+
+  <!-- Tagline placeholder -->
+  <text x="300" y="540" text-anchor="middle" class="label" font-size="16" letter-spacing="4" fill="#6e6e73">HYDRODYNAMIC PRECISION</text>
+
+  <!-- Construction notes (will be removed in production assets) -->
+  <text x="20" y="585" class="label" font-size="9" fill="#a1a1a6">Construction: geometric G, 32px stroke, mouth opens right (firing direction); orange dot = muzzle/projectile; wordmark uses system sans, medium weight, 2px tracking. Single-color usage = solid black on warm white.</text>
+</svg>

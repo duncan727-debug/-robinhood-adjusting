@@ -1,0 +1,333 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Robinhood Adjusting — Daily Ops Stack (v2)</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f8fafc;
+    --fg: #172033;
+    --muted: #5b6475;
+    --line: #64748b;
+    --line-soft: #cbd5e1;
+    --neutral: #e2e8f0;
+    --input: #bfdbfe;       /* research / intel */
+    --process: #c7d2fe;     /* generation / drafts / sync */
+    --storage: #99f6e4;     /* live / persistent state */
+    --external: #fde68a;    /* outbound send */
+    --risk: #fecaca;        /* follow-up / fallback */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a;
+      --fg: #e5e7eb;
+      --muted: #a3adbd;
+      --line: #94a3b8;
+      --line-soft: #475569;
+      --neutral: #334155;
+      --input: #1d4ed8;
+      --process: #4338ca;
+      --storage: #0f766e;
+      --external: #92400e;
+      --risk: #991b1b;
+    }
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  main { max-width: 1180px; margin: 24px auto 48px; padding: 0 20px; }
+  svg { width: 100%; height: auto; display: block; }
+  h1 { font-size: 22px; margin: 0 0 4px; font-weight: 650; }
+  .sub { color: var(--muted); font-size: 13px; margin: 0 0 18px; }
+
+  .title { font-size: 20px; font-weight: 650; fill: var(--fg); }
+  .lane-title { font-size: 12px; font-weight: 700; fill: var(--muted); letter-spacing: 1.5px; }
+  .label { font-size: 13px; font-weight: 600; fill: var(--fg); }
+  .label-sm { font-size: 11px; font-weight: 600; fill: var(--fg); }
+  .small { font-size: 11px; fill: var(--muted); }
+  .tag { font-size: 10px; font-weight: 700; fill: var(--muted); letter-spacing: 0.5px; }
+  .node { stroke: var(--line); stroke-width: 1; }
+  .neutral { fill: var(--neutral); }
+  .input { fill: var(--input); }
+  .process { fill: var(--process); }
+  .storage { fill: var(--storage); }
+  .external { fill: var(--external); }
+  .risk { fill: var(--risk); }
+  .edge { stroke: var(--line); stroke-width: 1.5; fill: none; }
+  .edge-soft { stroke: var(--line-soft); stroke-width: 1.2; fill: none; stroke-dasharray: 4 4; }
+  .zone { fill: none; stroke: var(--line-soft); stroke-width: 1; stroke-dasharray: 6 5; opacity: 0.8; }
+  .timebar { fill: var(--neutral); }
+</style>
+<main>
+  <h1>Robinhood Adjusting — Daily Ops Stack</h1>
+  <p class="sub">v2 · 2026-05-21 · Mon–Sat · operated by Agent Smith</p>
+
+  <svg viewBox="0 0 1140 1010" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" markerWidth="7" markerHeight="6" refX="9" refY="5" orient="auto">
+        <path d="M0 0L10 5L0 10z" fill="currentColor"/>
+      </marker>
+    </defs>
+
+    <!-- ── Lane backgrounds ── -->
+    <rect x="120" y="50" width="440" height="700" rx="14" class="zone"/>
+    <rect x="600" y="50" width="500" height="820" rx="14" class="zone"/>
+
+    <!-- ── Lane titles ── -->
+    <text x="340" y="42" text-anchor="middle" class="lane-title">CONTENT PIPELINE</text>
+    <text x="850" y="42" text-anchor="middle" class="lane-title">CRM &amp; OUTREACH PIPELINE</text>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         CONNECTORS first (so boxes sit on top)
+         ══════════════════════════════════════════════════════════════ -->
+    <g color="var(--line)">
+      <!-- Content lane main spine -->
+      <path class="edge" d="M340 138 L340 162" marker-end="url(#arr)"/>
+      <path class="edge" d="M340 238 L340 262" marker-end="url(#arr)"/>
+      <path class="edge" d="M340 338 L340 362" marker-end="url(#arr)"/>
+      <path class="edge" d="M340 438 L340 462" marker-end="url(#arr)"/>
+      <path class="edge" d="M340 538 L340 562" marker-end="url(#arr)"/>
+      <path class="edge" d="M340 638 L340 662" marker-end="url(#arr)"/>
+
+      <!-- CRM lane main spine -->
+      <path class="edge" d="M850 138 L850 162" marker-end="url(#arr)"/>
+      <path class="edge" d="M850 238 L850 262" marker-end="url(#arr)"/>
+      <path class="edge" d="M850 338 L850 362" marker-end="url(#arr)"/>
+      <path class="edge" d="M850 438 L850 462" marker-end="url(#arr)"/>
+      <path class="edge" d="M850 538 L850 562" marker-end="url(#arr)"/>
+      <path class="edge" d="M850 638 L850 662" marker-end="url(#arr)"/>
+      <path class="edge" d="M850 738 L850 762" marker-end="url(#arr)"/>
+
+      <!-- Reply branches off Response Handler (right at y≈300) -->
+      <path class="edge" d="M945 300 L985 300" marker-end="url(#arr)"/>
+      <!-- YES → up to Deal Pipeline -->
+      <path class="edge" d="M1010 290 L1010 250" marker-end="url(#arr)"/>
+      <!-- NO → down to Drip Queue (loops back into 9am Drip via dashed) -->
+      <path class="edge" d="M1010 310 L1010 350" marker-end="url(#arr)"/>
+      <!-- dashed drip loopback into 9am drip box -->
+      <path class="edge-soft" d="M1010 388 L1010 600 L935 600" marker-end="url(#arr)"/>
+    </g>
+
+    <!-- Inbox loop: IMAP bridge (continuous) feeds Response Handler -->
+    <g color="var(--line-soft)">
+      <path class="edge-soft" d="M620 300 L740 300" marker-end="url(#arr)"/>
+    </g>
+
+    <!-- Feedback loop: Outreach 2-4 → next day Prospect Intel (dashed) -->
+    <g color="var(--line-soft)">
+      <path class="edge-soft" d="M850 838 Q 1080 838 1080 110 L 962 110" marker-end="url(#arr)"/>
+    </g>
+
+    <!-- Friday Trends side branch off Website -->
+    <g color="var(--line-soft)">
+      <path class="edge-soft" d="M450 600 L500 600 L500 690 L455 690" marker-end="url(#arr)"/>
+    </g>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         TIME LEGEND (left rail)
+         ══════════════════════════════════════════════════════════════ -->
+    <g>
+      <rect x="20" y="105" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="120" text-anchor="middle" class="tag">SOURCES</text>
+
+      <rect x="20" y="205" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="220" text-anchor="middle" class="tag">4:00 AM</text>
+
+      <rect x="20" y="305" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="320" text-anchor="middle" class="tag">4:30 AM</text>
+
+      <rect x="20" y="405" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="420" text-anchor="middle" class="tag">5:45 AM</text>
+
+      <rect x="20" y="505" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="520" text-anchor="middle" class="tag">6:30 AM</text>
+
+      <rect x="20" y="605" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="620" text-anchor="middle" class="tag">2–5 MIN</text>
+
+      <rect x="20" y="705" width="80" height="22" rx="6" class="timebar"/>
+      <text x="60" y="720" text-anchor="middle" class="tag">FRI</text>
+    </g>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         CONTENT PIPELINE NODES (center x=340)
+         ══════════════════════════════════════════════════════════════ -->
+
+    <!-- C1: Research Sources -->
+    <rect class="node input"   x="230" y="80"  width="220" height="58" rx="8"/>
+    <text x="340" y="105" text-anchor="middle" class="label">Research Sources</text>
+    <text x="340" y="125" text-anchor="middle" class="small">NWS · OIR · MLS · Real Deal · Press</text>
+
+    <!-- C2: 4am Daily Brief -->
+    <rect class="node process" x="230" y="180" width="220" height="58" rx="8"/>
+    <text x="340" y="205" text-anchor="middle" class="label">Daily Brief</text>
+    <text x="340" y="225" text-anchor="middle" class="small">research + writing · Mon–Sat</text>
+
+    <!-- C3: 4:30am Content Gen -->
+    <rect class="node process" x="230" y="280" width="220" height="58" rx="8"/>
+    <text x="340" y="305" text-anchor="middle" class="label">Content Generation</text>
+    <text x="340" y="325" text-anchor="middle" class="small">blog post · FB · IG (1/day each)</text>
+
+    <!-- C4: 5:45am Newsletter Send -->
+    <rect class="node external" x="230" y="380" width="220" height="58" rx="8"/>
+    <text x="340" y="405" text-anchor="middle" class="label">Newsletter Send</text>
+    <text x="340" y="425" text-anchor="middle" class="small">HubSpot · 3-segment dedupe</text>
+
+    <!-- C5: 6:30am Website Sync -->
+    <rect class="node process" x="230" y="480" width="220" height="58" rx="8"/>
+    <text x="340" y="505" text-anchor="middle" class="label">Website Sync</text>
+    <text x="340" y="525" text-anchor="middle" class="small">PA-WEBSITE.html → GitHub push</text>
+
+    <!-- C6: Live Site (Netlify) -->
+    <rect class="node storage" x="230" y="580" width="220" height="58" rx="8"/>
+    <text x="340" y="605" text-anchor="middle" class="label">robinhoodadjusting.com</text>
+    <text x="340" y="625" text-anchor="middle" class="small">Netlify auto-deploy · 2–5 min</text>
+
+    <!-- C7: Friday Trends -->
+    <rect class="node process" x="230" y="680" width="220" height="58" rx="8"/>
+    <text x="340" y="705" text-anchor="middle" class="label">Weekly Trends Report</text>
+    <text x="340" y="725" text-anchor="middle" class="small">Fridays · public-facing only</text>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         CRM PIPELINE NODES (center x=850)
+         ══════════════════════════════════════════════════════════════ -->
+
+    <!-- R1: 5am Prospect Intel -->
+    <rect class="node input"   x="740" y="80"  width="220" height="58" rx="8"/>
+    <text x="850" y="105" text-anchor="middle" class="label">Prospect Intel · 5:00 AM</text>
+    <text x="850" y="125" text-anchor="middle" class="small">deep research · pending companies</text>
+
+    <!-- R2: 6am CRM Drafts -->
+    <rect class="node process" x="740" y="180" width="220" height="58" rx="8"/>
+    <text x="850" y="205" text-anchor="middle" class="label">CRM Drafts · 6:00 AM</text>
+    <text x="850" y="225" text-anchor="middle" class="small">personalized outreach drafts</text>
+
+    <!-- R3: 7am Response Handler -->
+    <rect class="node neutral" x="740" y="280" width="220" height="58" rx="8"/>
+    <text x="850" y="305" text-anchor="middle" class="label">Response Handler · 7:00 AM</text>
+    <text x="850" y="325" text-anchor="middle" class="small">Gmail · reply detection</text>
+
+    <!-- Reply branch: YES box (storage) -->
+    <rect class="node storage" x="985" y="220" width="155" height="58" rx="8"/>
+    <text x="1062" y="245" text-anchor="middle" class="label-sm">Deal Pipeline ↑</text>
+    <text x="1062" y="263" text-anchor="middle" class="small">HubSpot stage move</text>
+    <text x="993" y="298" class="tag" fill="#0f766e">YES</text>
+
+    <!-- Reply branch: NO box (risk) -->
+    <rect class="node risk"    x="985" y="350" width="155" height="42" rx="8"/>
+    <text x="1062" y="368" text-anchor="middle" class="label-sm">Drip Queue ↓</text>
+    <text x="1062" y="383" text-anchor="middle" class="small">Day 3 · Day 7</text>
+    <text x="993" y="318" class="tag" fill="#b91c1c">NO</text>
+
+    <!-- R4: 8am Outreach Batch 1 -->
+    <rect class="node external" x="740" y="380" width="220" height="58" rx="8"/>
+    <text x="850" y="405" text-anchor="middle" class="label">Outreach · 8:00 AM</text>
+    <text x="850" y="425" text-anchor="middle" class="small">Batch 1 · prior-day synced contacts</text>
+
+    <!-- R5: 8:30am HubSpot Sync -->
+    <rect class="node process" x="740" y="480" width="220" height="58" rx="8"/>
+    <text x="850" y="505" text-anchor="middle" class="label">HubSpot Sync · 8:30 AM</text>
+    <text x="850" y="525" text-anchor="middle" class="small">today's drafts → CRM</text>
+
+    <!-- R6: 9am Prospecting + Drip.py (split) -->
+    <rect class="node input"   x="740" y="580" width="105" height="58" rx="8"/>
+    <text x="792" y="605" text-anchor="middle" class="label-sm">Prospecting · 9 AM</text>
+    <text x="792" y="623" text-anchor="middle" class="small">25/day · PBC</text>
+
+    <rect class="node risk"    x="855" y="580" width="105" height="58" rx="8"/>
+    <text x="907" y="605" text-anchor="middle" class="label-sm">Drip.py · 9 AM</text>
+    <text x="907" y="623" text-anchor="middle" class="small">Day 3 · Day 7</text>
+
+    <!-- R7: 10am Enrichment Gate -->
+    <rect class="node process" x="740" y="680" width="220" height="58" rx="8"/>
+    <text x="850" y="705" text-anchor="middle" class="label">Enrichment Gate · 10:00 AM</text>
+    <text x="850" y="725" text-anchor="middle" class="small">email finder · HubSpot upload</text>
+
+    <!-- R8: Outreach Batches 2-4 -->
+    <rect class="node external" x="740" y="780" width="220" height="58" rx="8"/>
+    <text x="850" y="805" text-anchor="middle" class="label">Outreach Batches 2 – 4</text>
+    <text x="850" y="825" text-anchor="middle" class="small">10:30 AM · 12:30 PM · 3:00 PM</text>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         CONTINUOUS / FALLBACK NODES
+         ══════════════════════════════════════════════════════════════ -->
+
+    <!-- IMAP Bridge (continuous, middle gap above Response Handler) -->
+    <rect class="node storage" x="475" y="270" width="145" height="58" rx="8"/>
+    <text x="547" y="295" text-anchor="middle" class="label-sm">IMAP Bridge</text>
+    <text x="547" y="313" text-anchor="middle" class="small">every 5 min · push alerts</text>
+
+    <!-- Contact-form fallback (3+ bounces) -->
+    <rect class="node risk"    x="475" y="380" width="120" height="58" rx="8"/>
+    <text x="535" y="402" text-anchor="middle" class="label-sm">Contact-form</text>
+    <text x="535" y="418" text-anchor="middle" class="small">3+ bounces</text>
+    <text x="535" y="432" text-anchor="middle" class="small">10:45 AM</text>
+    <path class="edge-soft" d="M620 408 L590 408" marker-end="url(#arr)" color="var(--line-soft)"/>
+
+    <!-- Provider Directory (listing-first strategy) -->
+    <rect class="node storage" x="475" y="480" width="120" height="58" rx="8"/>
+    <text x="535" y="502" text-anchor="middle" class="label-sm">Provider</text>
+    <text x="535" y="517" text-anchor="middle" class="label-sm">Directory</text>
+    <text x="535" y="532" text-anchor="middle" class="small">listing-first</text>
+    <path class="edge-soft" d="M620 508 L590 508" marker-end="url(#arr)" color="var(--line-soft)"/>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         BOTTOM: Ops & Monitoring band
+         ══════════════════════════════════════════════════════════════ -->
+    <rect class="node neutral" x="120" y="900" width="980" height="80" rx="10"/>
+    <text x="610" y="924" text-anchor="middle" class="label">Ops &amp; Monitoring</text>
+
+    <!-- Ops review -->
+    <rect class="node neutral" x="150" y="940" width="200" height="30" rx="6"/>
+    <text x="250" y="960" text-anchor="middle" class="label-sm">Ops Review · 7:30 AM</text>
+
+    <!-- Health check -->
+    <rect class="node neutral" x="370" y="940" width="200" height="30" rx="6"/>
+    <text x="470" y="960" text-anchor="middle" class="label-sm">Health Check · 10:30 AM</text>
+
+    <!-- Catchup safety net -->
+    <rect class="node neutral" x="590" y="940" width="200" height="30" rx="6"/>
+    <text x="690" y="960" text-anchor="middle" class="label-sm">Catchup (LaunchAgent)</text>
+
+    <!-- Partnership builder (Wed) -->
+    <rect class="node neutral" x="810" y="940" width="260" height="30" rx="6"/>
+    <text x="940" y="960" text-anchor="middle" class="label-sm">Partnership Builder · Wed 1 PM</text>
+
+    <!-- Connectors from main lanes into Ops band -->
+    <path class="edge-soft" d="M340 740 L340 900" color="var(--line-soft)"/>
+    <path class="edge-soft" d="M850 840 L850 900" color="var(--line-soft)"/>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LEGEND
+         ══════════════════════════════════════════════════════════════ -->
+    <g transform="translate(120, 860)">
+      <text x="0" y="-4" class="tag">LEGEND</text>
+      <rect class="node input"    x="0"   y="2" width="14" height="14" rx="3"/>
+      <text x="22"  y="14" class="small">Research / Intel</text>
+      <rect class="node process"  x="130" y="2" width="14" height="14" rx="3"/>
+      <text x="152" y="14" class="small">Generation / Drafts</text>
+      <rect class="node external" x="290" y="2" width="14" height="14" rx="3"/>
+      <text x="312" y="14" class="small">Outbound Send</text>
+      <rect class="node storage"  x="430" y="2" width="14" height="14" rx="3"/>
+      <text x="452" y="14" class="small">Live / Persistent</text>
+      <rect class="node risk"     x="570" y="2" width="14" height="14" rx="3"/>
+      <text x="592" y="14" class="small">Follow-up / Fallback</text>
+      <rect class="node neutral"  x="730" y="2" width="14" height="14" rx="3"/>
+      <text x="752" y="14" class="small">Ops / Monitoring</text>
+    </g>
+
+    <!-- Side annotation: feedback loop label -->
+    <text x="1095" y="490" text-anchor="middle" class="tag" transform="rotate(90, 1095, 490)">FEEDS NEXT DAY ↺</text>
+  </svg>
+
+  <p class="sub" style="margin-top:20px; max-width:900px;">
+    <strong>What changed from v1:</strong>
+    LinkedIn Sequencing removed (killed 2026-05-19).
+    Added: IMAP Bridge (every 5 min, push alerts), Contact-form fallback (10:45 AM after 3+ bounces),
+    Provider Directory (listing-first), Catchup safety net, Health Check.
+    Color palette reduced from 10 categories to 6 semantic ones.
+  </p>
+</main>

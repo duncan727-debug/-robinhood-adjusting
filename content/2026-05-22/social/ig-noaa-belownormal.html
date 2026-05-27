@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IG — NOAA Below-Normal</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #1a1a1a; }
+  .frame {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="storm" cx="50%" cy="35%" r="75%">
+      <stop offset="0%"  stop-color="#1b3260"/>
+      <stop offset="55%" stop-color="#11244a"/>
+      <stop offset="100%" stop-color="#0a1832"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Navy top region -->
+  <rect x="0" y="0" width="1080" height="945" fill="url(#storm)"/>
+
+  <!-- Subtle cloud-weight discs (no images, low-opacity shapes) -->
+  <circle cx="200" cy="180" r="240" fill="#ffffff" opacity="0.025"/>
+  <circle cx="900" cy="120" r="280" fill="#ffffff" opacity="0.022"/>
+  <circle cx="540" cy="500" r="380" fill="#ffffff" opacity="0.018"/>
+  <circle cx="120" cy="780" r="220" fill="#ffffff" opacity="0.020"/>
+  <circle cx="980" cy="820" r="260" fill="#ffffff" opacity="0.020"/>
+
+  <!-- Gold corner accents (top) -->
+  <line x1="80" y1="80" x2="180" y2="80" stroke="#c9a449" stroke-width="3"/>
+  <line x1="80" y1="80" x2="80"  y2="180" stroke="#c9a449" stroke-width="3"/>
+  <line x1="1000" y1="80" x2="900" y2="80" stroke="#c9a449" stroke-width="3"/>
+  <line x1="1000" y1="80" x2="1000" y2="180" stroke="#c9a449" stroke-width="3"/>
+
+  <!-- Kicker -->
+  <text x="540" y="160"
+        text-anchor="middle"
+        fill="#c9a449"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="26"
+        font-weight="600"
+        letter-spacing="8">
+    NOAA 2026 ATLANTIC FORECAST
+  </text>
+
+  <!-- Thin gold divider under kicker -->
+  <line x1="380" y1="195" x2="700" y2="195" stroke="#c9a449" stroke-width="1.5"/>
+
+  <!-- Headline (serif, large, multi-line) -->
+  <text x="540" y="310"
+        text-anchor="middle"
+        fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="92"
+        font-weight="700">
+    Below-normal
+  </text>
+  <text x="540" y="408"
+        text-anchor="middle"
+        fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="92"
+        font-weight="700">
+    is <tspan fill="#c9a449" font-style="italic">not</tspan> a
+  </text>
+  <text x="540" y="506"
+        text-anchor="middle"
+        fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="92"
+        font-weight="700">
+    landfall forecast.
+  </text>
+
+  <!-- Subhead -->
+  <text x="540" y="582"
+        text-anchor="middle"
+        fill="#cfd6e2"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="30"
+        font-style="italic"
+        font-weight="400">
+    It's a basin-wide probability — not a promise.
+  </text>
+
+  <!-- Cautionary Tales section label -->
+  <line x1="380" y1="660" x2="700" y2="660" stroke="#c9a449" stroke-width="1.5"/>
+  <text x="540" y="700"
+        text-anchor="middle"
+        fill="#c9a449"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="22"
+        font-weight="600"
+        letter-spacing="6">
+    CAUTIONARY TALES
+  </text>
+
+  <!-- Two-column callout -->
+  <!-- LEFT column: 1992 -->
+  <text x="270" y="785"
+        text-anchor="middle"
+        fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="58"
+        font-weight="700">
+    1992
+  </text>
+  <text x="270" y="825"
+        text-anchor="middle"
+        fill="#cfd6e2"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="22"
+        font-weight="500"
+        letter-spacing="1">
+    Below-normal season
+  </text>
+  <text x="270" y="880"
+        text-anchor="middle"
+        fill="#c9a449"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="26"
+        font-style="italic"
+        font-weight="600">
+    Produced Andrew.
+  </text>
+
+  <!-- Vertical divider -->
+  <line x1="540" y1="760" x2="540" y2="905" stroke="#c9a449" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- RIGHT column: 2018 -->
+  <text x="810" y="785"
+        text-anchor="middle"
+        fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="58"
+        font-weight="700">
+    2018
+  </text>
+  <text x="810" y="825"
+        text-anchor="middle"
+        fill="#cfd6e2"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="22"
+        font-weight="500"
+        letter-spacing="1">
+    Near-normal season
+  </text>
+  <text x="810" y="880"
+        text-anchor="middle"
+        fill="#c9a449"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="26"
+        font-style="italic"
+        font-weight="600">
+    Produced Michael (Cat 5).
+  </text>
+
+  <!-- ── Cream CTA block (bottom 30%) ─────────────────────────────────── -->
+  <rect x="0" y="945" width="1080" height="405" fill="#f5f1e8"/>
+
+  <!-- Top gold divider on cream block -->
+  <line x1="0" y1="945" x2="1080" y2="945" stroke="#c9a449" stroke-width="6"/>
+
+  <text x="540" y="1055"
+        text-anchor="middle"
+        fill="#0d1e3a"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="56"
+        font-weight="700">
+    Season starts June 1.
+  </text>
+  <text x="540" y="1125"
+        text-anchor="middle"
+        fill="#0d1e3a"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="56"
+        font-weight="700"
+        font-style="italic">
+    Don't under-prepare.
+  </text>
+
+  <!-- CTA detail line -->
+  <text x="540" y="1200"
+        text-anchor="middle"
+        fill="#3a4a66"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="24"
+        font-weight="500">
+    Review your policy. Photograph your home.
+  </text>
+  <text x="540" y="1234"
+        text-anchor="middle"
+        fill="#3a4a66"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="24"
+        font-weight="500">
+    Plan your contractor calls — <tspan font-style="italic" font-weight="700" fill="#0d1e3a">before</tspan> a storm.
+  </text>
+
+  <!-- Footer divider -->
+  <line x1="380" y1="1278" x2="700" y2="1278" stroke="#c9a449" stroke-width="1.5"/>
+
+  <!-- Footer -->
+  <text x="540" y="1308"
+        text-anchor="middle"
+        fill="#0d1e3a"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="18"
+        font-weight="600"
+        letter-spacing="3">
+    ROBINHOOD ADJUSTING   ·   robinhoodadjusting.com
+  </text>
+  <text x="540" y="1333"
+        text-anchor="middle"
+        fill="#c9a449"
+        font-family="-apple-system, Helvetica Neue, Arial, sans-serif"
+        font-size="16"
+        font-weight="600"
+        letter-spacing="3">
+    @robinhoodadjusting
+  </text>
+</svg>
+</div>
+</body>
+</html>

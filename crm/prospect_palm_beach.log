@@ -1209,3 +1209,352 @@
     → 20 results
   Done: 4 added, 268 duplicate/existing, 0 large firms skipped, 0 quality-filtered, 0 errors
   Google Places API: 2026-05-20 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-21 11:01:23] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+    SKIP (only 1 reviews): Equestrian Roofers Co
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    SKIP (only 2 reviews): Elite AC Repair Boca Raton
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (1/25): Tri County Restoration, Inc. [Deerfield Beach] — (888) 906-0188
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+    QUEUED (2/25): LCI Plumbing & Septic, Palm Beach County [North Palm Beach] — (561) 473-9833
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 2 added, 268 duplicate/existing, 0 large firms skipped, 2 quality-filtered, 0 errors
+  Google Places API: 2026-05-21 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-21 11:01:41] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+    SKIP (only 1 reviews): Equestrian Roofers Co
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    SKIP (only 2 reviews): Elite AC Repair Boca Raton
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (1/25): Tri County Restoration, Inc. [Deerfield Beach] — (888) 906-0188
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+    QUEUED (2/25): LCI Plumbing & Septic, Palm Beach County [North Palm Beach] — (561) 473-9833
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 2 added, 268 duplicate/existing, 0 large firms skipped, 2 quality-filtered, 0 errors
+  Google Places API: 2026-05-21 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-22 09:00:00] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+    QUEUED (1/25): Structure Builders LLC [Royal Palm Beach] — (954) 826-7667
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 20 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+    QUEUED (2/25): SOUTHERN SHORES MANAGEMENT INC [Greenacres] — (561) 460-2619
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (3/25): KW Reserve Palm Beach [West Palm Beach] — (561) 966-4000
+  Done: 3 added, 269 duplicate/existing, 1 large firms skipped, 0 quality-filtered, 0 errors
+  Google Places API: 2026-05-22 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-22 09:00:19] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+    QUEUED (1/25): Structure Builders LLC [Royal Palm Beach] — (954) 826-7667
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 20 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+    QUEUED (2/25): SOUTHERN SHORES MANAGEMENT INC [Greenacres] — (561) 460-2619
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (3/25): KW Reserve Palm Beach [West Palm Beach] — (561) 966-4000
+  Done: 3 added, 269 duplicate/existing, 1 large firms skipped, 0 quality-filtered, 0 errors
+  Google Places API: 2026-05-22 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-25 09:00:01] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 17 results
+  Searching: water damage restoration Palm Beach County FL
+    → 18 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Harrington & Sons Inc [Boca Raton] — (844) 766-3799
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    QUEUED (2/25): BOCA COOLING [Boca Raton] — (561) 778-7362
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 18 results
+    QUEUED (3/25): Benjamin Franklin Plumbing of West Palm Beach [West Palm Beach] — (561) 509-5325
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (4/25): South Palm Realty [Greenacres] — (561) 588-0660
+  Done: 4 added, 267 duplicate/existing, 0 large firms skipped, 0 quality-filtered, 0 errors
+  Google Places API: 2026-05-25 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-25 09:00:20] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 17 results
+  Searching: water damage restoration Palm Beach County FL
+    → 18 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Harrington & Sons Inc [Boca Raton] — (844) 766-3799
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    QUEUED (2/25): BOCA COOLING [Boca Raton] — (561) 778-7362
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+  Searching: plumbing company Palm Beach County FL
+    → 18 results
+    QUEUED (3/25): Benjamin Franklin Plumbing of West Palm Beach [West Palm Beach] — (561) 509-5325
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+    QUEUED (4/25): South Palm Realty [Greenacres] — (561) 588-0660
+  Done: 4 added, 267 duplicate/existing, 0 large firms skipped, 0 quality-filtered, 0 errors
+  Google Places API: 2026-05-25 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-26 09:00:00] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+    SKIP (no website): AR Emergency Water Damage Restoration Wellington
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+    QUEUED (1/25): The Air Squad [West Palm Beach] — (561) 444-0051
+    QUEUED (2/25): Comfortly Air Conditioning [West Palm Beach] — (561) 556-6271
+    QUEUED (3/25): All Time Air Conditioning [Boynton Beach] — (561) 777-9888
+    QUEUED (4/25): Cooling Advisors [West Palm Beach] — (561) 571-9971
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 4 added, 267 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-05-26 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-26 09:00:23] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+    SKIP (no website): AR Emergency Water Damage Restoration Wellington
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 19 results
+    QUEUED (1/25): The Air Squad [West Palm Beach] — (561) 444-0051
+    QUEUED (2/25): Comfortly Air Conditioning [West Palm Beach] — (561) 556-6271
+    QUEUED (3/25): All Time Air Conditioning [Boynton Beach] — (561) 777-9888
+    QUEUED (4/25): Cooling Advisors [West Palm Beach] — (561) 571-9971
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 4 added, 267 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-05-26 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-27 09:18:05] Palm Beach prospect run started
+  Searching: general contractor Palm Beach County FL
+    → 17 results
+    SKIP (only 3 reviews): Sloane Construction Company
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 20 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 0 added, 273 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-05-27 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining
+[2026-05-27 09:18:25] Run complete
+
+  Searching: general contractor Palm Beach County FL
+    → 17 results
+    SKIP (only 3 reviews): Sloane Construction Company
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 20 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Done: 0 added, 273 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-05-27 | calls: 14 | $0.2380 today | $0.2380 MTD | 0.12% used | 99.88% remaining

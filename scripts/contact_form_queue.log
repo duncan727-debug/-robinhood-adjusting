@@ -70,3 +70,43 @@
 [2026-05-20T10:49:02] === Done ===
 
 [2026-05-20 10:45 EDT] queued=0 submitted=0 blacklisted=0 errors=0
+[2026-05-21T11:06:33] === Build contact-form queue for 2026-05-21 ===
+[2026-05-21T11:06:33]   Loaded 25 companies on do-not-retry blacklist
+[2026-05-21T11:06:33] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-21T11:07:27]   Found 64 eligible companies after blacklist filter
+[2026-05-21T11:08:37]   Wrote 0 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-21.csv
+[2026-05-21T11:08:37] === Done ===
+
+[2026-05-21 11:08 EDT] queued=0 submitted=0 blacklisted=0 errors=0 (no candidates after blacklist filter; 25 companies on do-not-retry list, 64 eligible but 0 had bounce signals + viable website)
+[2026-05-22T10:45:05] === Build contact-form queue for 2026-05-22 ===
+[2026-05-22T10:45:05]   Loaded 25 companies on do-not-retry blacklist
+[2026-05-22T10:45:05] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-22T10:45:46]   Found 64 eligible companies after blacklist filter
+[2026-05-22T10:46:53]   Wrote 1 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-22.csv
+[2026-05-22T10:46:53] === Done ===
+
+[2026-05-22 10:48 EDT] queued=1 submitted=1 (KLR Roofing Corp.) blacklisted=0 errors=0
+[2026-05-23T11:21:11] === Build contact-form queue for 2026-05-23 ===
+[2026-05-23T11:21:11]   Loaded 26 companies on do-not-retry blacklist
+[2026-05-23T11:21:11] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-23T11:21:47]   Found 63 eligible companies after blacklist filter
+[2026-05-23T11:22:46]   Wrote 0 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-23.csv
+[2026-05-23T11:22:46] === Done ===
+
+[2026-05-23 11:22 EDT] queued=0 submitted=0 blacklisted=0 errors=0 (no eligible companies after filter)
+[2026-05-25T10:45:06] === Build contact-form queue for 2026-05-25 ===
+[2026-05-25T10:45:06]   Loaded 26 companies on do-not-retry blacklist
+[2026-05-25T10:45:06] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-25T10:45:43]   Found 63 eligible companies after blacklist filter
+[2026-05-25T10:46:44]   Wrote 0 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-25.csv
+[2026-05-25T10:46:44] === Done ===
+
+[2026-05-25 10:46 EDT] queued=0 submitted=0 blacklisted=0 errors=0 (no candidates after filter)
+[2026-05-26T10:45:06] === Build contact-form queue for 2026-05-26 ===
+[2026-05-26T10:45:06]   Loaded 26 companies on do-not-retry blacklist
+[2026-05-26T10:45:06] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-26T10:45:47]   Found 63 eligible companies after blacklist filter
+[2026-05-26T10:46:56]   Wrote 0 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-26.csv
+[2026-05-26T10:46:56] === Done ===
+
+[2026-05-26 10:45 EDT] queued=0 submitted=0 blacklisted=0 errors=0

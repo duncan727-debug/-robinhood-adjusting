@@ -1,0 +1,50 @@
+Robinhood Adjusting — Firm Setup: Costs & Timeline
+Prepared by Smith, 2026-05-26
+
+SECTION 1 — ONE-TIME + RECURRING COSTS
+Component	Low Estimate ($)	High Estimate ($)	Frequency	Notes
+FL LLC formation (Sunbiz)	125	125	One-time	Same-day file; you act as registered agent
+EIN (IRS)	0	0	One-time	Free online, instant
+FL Adjusting Firm License (DFS)	0	0	One-time	No application fee; perpetual if primary adjuster designated
+$50K Surety Bond premium	500	750	Annual	Existing individual bond may transfer; credit-dependent
+E&O Insurance ($1M/$1M)	500	1000	Annual	Solo PA firm typical range; $750 midpoint
+General Liability Insurance	400	800	Annual	Optional but standard for client visits
+Business Bank Account	0	300	Annual	$0 if free biz checking; $25/mo if not
+Domain / website / email	0	0	Annual	robinhoodadjusting.com already live
+FL LLC Annual Report (year 2+)	138	138	Annual	Filed via Sunbiz
+
+SECTION 2 — TOTALS
+Period	Low ($)	High ($)
+First-Year Total (all-in)	1525	2975
+Recurring Annual (year 2+)	1538	2688
+Attorney consult (contingent, see Section 4)	150	300
+
+SECTION 3 — TIMELINE
+Day	Action	Owner	Status	Notes
+D1 (Tue 2026-05-26)	Re-read Barclays contract for non-compete/non-solicit	Duncan	OPEN	Blocks everything below if a restriction exists
+D1	File FL LLC on Sunbiz	Duncan	OPEN	Smith to prep filing language
+D1	Apply for EIN online (IRS.gov)	Duncan	OPEN	Instant
+D1	Request bond + E&O quotes	Smith	OPEN	3 carrier quotes target
+D2-3	Review quotes	Both	—
+D2-3	Bind bond + E&O policies	Duncan	—	Pay first premium
+D5-7	LLC confirmation received	—	—	Required before bank account
+D5-7	Open business bank account	Duncan	—	Chase/BoA/local CU
+D7-10	File FL DFS Adjusting Firm License application	Smith drafts; Duncan signs	—	Designate self as primary adjuster
+D21-35	DFS approval (typical 2-4 weeks)	—	—	License # issued
+~July 1, 2026	Firm operational	—	TARGET	Aligned with Barclays exit
+
+SECTION 4 — RISKS / UNKNOWNS
+Risk	Severity	Mitigation
+Barclays non-compete or non-solicit clause	HIGH	Re-read contract TODAY; 30-min attorney consult ($150-300) if any clause unclear
+Existing surety bond not transferable to new firm name	LOW	Confirm with bond carrier; new bond ~$500
+DFS application requires fingerprinting (re-do)	LOW	Already on file from initial license; verify not required again
+Barclays-originated claims stay with Barclays	HIGH	Plan to retain only new claims post-firm-license
+DFS approval slower than 4 weeks	MEDIUM	File D7 to give 4-week buffer before July 1
+
+SECTION 5 — NEXT IMMEDIATE ACTIONS
+#	Action	Owner	Due
+1	Locate + read Barclays contract	Duncan	EOD Tue 5/26
+2	Prep Sunbiz LLC filing form draft	Smith	Wed 5/27 AM
+3	Request 3 surety bond quotes	Smith	Wed 5/27 AM
+4	Request 3 E&O quotes	Smith	Wed 5/27 AM
+5	Sign + submit LLC + EIN	Duncan	Wed 5/27 PM (after #1 clears)

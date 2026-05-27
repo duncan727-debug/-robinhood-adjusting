@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280">
+  <rect width="600" height="280" fill="#f5f3ef"/>
+  <text x="20" y="30" font-family="-apple-system,Helvetica,Arial" font-size="14" fill="#1d1d1f" font-weight="600">Concept A — Pistol-grip pneumatic</text>
+  <text x="20" y="48" font-family="-apple-system,Helvetica,Arial" font-size="11" fill="#6e6e73">Single-pump cylinder, integrated trigger, removable torpedo nose</text>
+
+  <!-- Main barrel/cylinder -->
+  <rect x="120" y="110" width="320" height="42" rx="21" fill="#e8e6df" stroke="#1d1d1f" stroke-width="1.5"/>
+  <!-- Pump plunger detail -->
+  <rect x="115" y="118" width="14" height="26" rx="3" fill="#1d1d1f"/>
+  <!-- Muzzle (where torpedo seats) -->
+  <rect x="440" y="118" width="32" height="26" rx="4" fill="#ff7a30" stroke="#1d1d1f" stroke-width="1.5"/>
+  <!-- Torpedo (loaded, dotted) -->
+  <ellipse cx="510" cy="131" rx="42" ry="11" fill="none" stroke="#1d1d1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="552,131 568,124 568,138" fill="none" stroke="#1d1d1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- Grip -->
+  <path d="M 260 152 L 245 250 L 295 250 L 305 152 Z" fill="#e8e6df" stroke="#1d1d1f" stroke-width="1.5"/>
+  <!-- Trigger -->
+  <path d="M 295 165 Q 280 180 290 200 Q 305 195 305 175 Z" fill="#1d1d1f"/>
+  <!-- Trigger guard -->
+  <path d="M 280 165 Q 265 200 295 215" fill="none" stroke="#1d1d1f" stroke-width="1.5"/>
+
+  <!-- Pressure indicator dot -->
+  <circle cx="200" cy="131" r="4" fill="#ff7a30"/>
+  <text x="190" y="105" font-family="-apple-system,Helvetica,Arial" font-size="9" fill="#6e6e73">pressure idx</text>
+
+  <!-- Material/finish callouts -->
+  <text x="20" y="220" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">Body: matte off-white ABS (Pantone Warm Gray 1C feel)</text>
+  <text x="20" y="234" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">Accent: signal orange (Pantone 165C) — muzzle ring + pressure dot only</text>
+  <text x="20" y="248" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">Trigger + plunger cap: black anodized-look TPE overmold</text>
+  <text x="20" y="262" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">No decals. Logo: laser-etched 6mm monogram on grip base.</text>
+</svg>

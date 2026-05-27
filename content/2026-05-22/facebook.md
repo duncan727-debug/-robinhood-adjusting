@@ -1,0 +1,7 @@
+**NOAA just called a "below-normal" hurricane season. Here's why that's a problem for your pipeline — and what to do about it before June 1.**
+
+The official 2026 Atlantic outlook dropped yesterday: 8–14 named storms, 3–6 hurricanes, 1–3 majors. A 55% chance of a below-normal season, driven by a developing (possibly "super") El Niño. The press will run with "quiet year." Homeowners will under-prepare. We've seen this movie before — 1992 was officially "below-normal." That's the year Andrew flattened Homestead.
+
+Here's the part nobody is saying out loud: a quiet season historically squeezes margins on roofers, water mitigation, A/C, and exterior trades. Storm-driven volume softens. The contractors who win in years like this aren't the ones waiting on the phone — they're the ones who turn June and July into an **off-season inspection season** while homeowner attention is still on hurricane prep. Twenty new homeowners carriers entered Florida this spring, the 30-day rate-filing average just went negative, and policyholders are actively shopping. Translation: clean, current inspection paperwork is suddenly worth real money on a renewal.
+
+If you're a service provider in PBC, Martin, or St. Lucie and you don't have an off-season inspection or maintenance offer landing in homeowner inboxes by next week, you're leaving the easiest revenue of the summer on the table. I'm helping a handful of local contractors position this exact play right now. What's your June plan look like?

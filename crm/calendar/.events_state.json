@@ -1,5 +1,17 @@
 {
   "sent_signatures": {
+    "0a7e13cbf3c118f1": {
+      "date": "2026-05-22",
+      "google_event_id": "78afih4enj98ju5805blk6qna8",
+      "sent_at": "2026-05-21T11:32:38",
+      "summary": "Power Networking (PBN Chamber) \u2014 TENTATIVE"
+    },
+    "1e20f57302453e44": {
+      "date": "2026-06-10",
+      "google_event_id": "6col7fsgcdqr9q264semdrjksg",
+      "sent_at": "2026-05-26T11:31:19",
+      "summary": "The Networking Beast \u2014 Business Card Exchange (Boca) \u2014 TENTATIVE"
+    },
     "2157704ce091b5a9": {
       "date": "2026-05-21",
       "google_event_id": "e18lgci3a1esl76lo69t3kblic",
@@ -18,11 +30,29 @@
       "sent_at": "2026-05-20T11:37:05",
       "summary": "Boca Chamber Live After Five (Yard House) \u2014 TENTATIVE"
     },
+    "69e26270c5f993e2": {
+      "date": "2026-06-02",
+      "google_event_id": "2hcjled4dmtbgoaa4vh6320odc",
+      "sent_at": "2026-05-25T11:31:12",
+      "summary": "Awards Celebration Luncheon (Palm Beach Chamber) \u2014 TENTATIVE"
+    },
     "788a162e2618c571": {
       "date": "2026-05-21",
       "google_event_id": "r3f6e3jn8nuktatqpiarleenc8",
       "sent_at": "2026-05-20T11:36:59",
       "summary": "PRE Palm Beach Gardens (visitor) \u2014 TENTATIVE"
+    },
+    "7a48b431cfb724e7": {
+      "date": "2026-06-16",
+      "google_event_id": "pjb3p2e0phtch041g1hmd5m2e0",
+      "sent_at": "2026-05-21T11:32:38",
+      "summary": "Chamber Connections (Central PBC Chamber) \u2014 TENTATIVE"
+    },
+    "7c92380c1f9e28ce": {
+      "date": "2026-06-10",
+      "google_event_id": "gini6ojd8qp4hn2c5fd3e6l5mc",
+      "sent_at": "2026-05-21T11:32:38",
+      "summary": "Business Connections (PBN Chamber) \u2014 TENTATIVE"
     },
     "8c3441c2e5a92ff8": {
       "date": "2026-06-02",
@@ -30,17 +60,35 @@
       "sent_at": "2026-05-20T11:36:59",
       "summary": "West Palm Beach REI (first Tuesday) \u2014 TENTATIVE"
     },
+    "9156eb728e0a20f1": {
+      "date": "2026-06-16",
+      "google_event_id": "a55sn7ob97mj8e3095afn7vs4c",
+      "sent_at": "2026-05-23T11:31:33",
+      "summary": "West Palm Beach Tech Happy Hour (Top of the Rox) \u2014 TENTATIVE"
+    },
     "9d28d11c565c49b0": {
       "date": "2027-05-01",
       "google_event_id": "hu2c77ngekuag1nlrom81eh64c",
       "sent_at": "2026-05-20T11:36:59",
       "summary": "Wellington Hurricane & Severe Weather Expo 2027 \u2014 VENDOR SLOT \u2014 TENTATIVE"
     },
+    "ba2015280647907f": {
+      "date": "2026-06-18",
+      "google_event_id": "54bfq9u0r0i305q8eu6jot7ros",
+      "sent_at": "2026-05-25T11:31:12",
+      "summary": "PBYP Social \u2014 Hamptons White Party (Palm Beach Chamber) \u2014 TENTATIVE"
+    },
     "dd17e23375d4059a": {
       "date": "2026-06-23",
       "google_event_id": "t2e9pn4ba9ed0p45ksr4mqvt90",
       "sent_at": "2026-05-20T11:37:05",
       "summary": "Boca Chamber Live After Five (June) \u2014 TENTATIVE"
+    },
+    "fb9f4dcb5d5ad0d1": {
+      "date": "2026-06-11",
+      "google_event_id": "25lek8lgn5p8n137peprju8ft0",
+      "sent_at": "2026-05-25T11:31:12",
+      "summary": "June Breakfast (Palm Beach Chamber) \u2014 TENTATIVE"
     }
   }
 }

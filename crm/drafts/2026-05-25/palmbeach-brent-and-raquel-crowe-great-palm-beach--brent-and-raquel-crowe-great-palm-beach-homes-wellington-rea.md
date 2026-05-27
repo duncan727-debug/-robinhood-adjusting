@@ -1,0 +1,39 @@
+# Draft — Brent and Raquel Crowe | Great Palm Beach Homes | Wellington Real Estate
+
+- **Org ID:** palmbeach-brent-and-raquel-crowe-great-palm-beach-
+- **Category:** real-estate | **County:** palm-beach
+- **Stage:** initial
+- **Contact:**  
+- **Email:** info@greatpalmbeachhomes.com
+- **Phone:** (561) 798-3955
+- **Website:** greatpalmbeachhomes.com
+
+---
+
+Subject: Homeowners are asking me for real estate professional referrals in Palm Beach County — can I list you?
+
+Hi team,
+
+I'm Duncan Littlejohn, a licensed public adjuster based in Wellington. I run a daily newsletter for South Florida homeowners, contractors, and real estate professionals — currently covering Palm Beach, Broward, and Miami-Dade counties.
+
+Through that newsletter I regularly hear from homeowners specifically looking for a trusted real estate professional in Palm Beach County, and right now I don't have enough vetted providers to send their way. A lot of these folks are coming out of a claim situation, so they're ready to move.
+
+Hurricane season opens June 1 — exactly one week from today. NOAA called it below-normal this year (8–14 named storms), so homeowners are in pre-season inspection mode rather than emergency mode. That's the window where capacity at roofers, mitigation crews, and trades gets booked out.
+
+I'd like to add Brent and Raquel Crowe | Great Palm Beach Homes | Wellington Real Estate to our free provider directory at robinhoodadjusting.com/providers so I can start referring that business to you. No fee, no pitch — just a free listing visible to our homeowner subscriber base.
+
+All I need to get you listed:
+- Your service area (cities/zip codes)
+- Best contact number
+- Website, if you have one
+
+As a bonus, I'll add you to our trade professional brief — a free daily update on insurance market trends, PBC property activity, and roofing/restoration news that most contractors in the area find worth having.
+
+Just reply with those three things and I'll get you added.
+
+Best,
+Duncan Littlejohn
+Licensed Public Adjuster · Robinhood Adjusting · Wellington, FL
+561-772-7528 · robinhoodadjusting.com/providers
+
+To opt out, reply "unsubscribe" and I'll remove you immediately.

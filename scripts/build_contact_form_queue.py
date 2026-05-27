@@ -119,6 +119,53 @@ def fetch_company(company_id: int) -> dict | None:
         return None
 
 
+def fetch_company_contact_ids(company_id: int) -> list[int]:
+    try:
+        assoc = hub_get(
+            f"/crm/v4/objects/companies/{company_id}/associations/contacts"
+        )
+        return [int(a["toObjectId"]) for a in assoc.get("results", [])]
+    except urllib.error.HTTPError:
+        return []
+
+
+def has_recent_inbound_reply(contact_ids: list[int], days: int = 30) -> bool:
+    """Defense-in-depth: skip any company whose contacts received a reply note
+    in the last `days`. The IMAP bridge logs replies with body 'Reply received',
+    so we filter on that marker (avoids over-matching bounce/soft-bounce notes)."""
+    cutoff_ms = int((time.time() - days * 86400) * 1000)
+    for cid in contact_ids:
+        try:
+            assoc = hub_get(
+                f"/crm/v4/objects/contacts/{cid}/associations/notes"
+            )
+            note_ids = [a["toObjectId"] for a in assoc.get("results", [])]
+        except urllib.error.HTTPError:
+            continue
+        for nid in note_ids:
+            try:
+                note = hub_get(
+                    f"/crm/v3/objects/notes/{nid}?properties=hs_note_body,hs_timestamp"
+                )
+            except urllib.error.HTTPError:
+                continue
+            props = note.get("properties") or {}
+            ts_raw = props.get("hs_timestamp")
+            try:
+                ts_ms = int(datetime.fromisoformat(
+                    ts_raw.replace("Z", "+00:00")
+                ).timestamp() * 1000) if ts_raw and not ts_raw.isdigit() else int(ts_raw or 0)
+            except (ValueError, AttributeError):
+                ts_ms = 0
+            if ts_ms < cutoff_ms:
+                continue
+            body = (props.get("hs_note_body") or "").lower()
+            if "reply received" in body:
+                return True
+            time.sleep(0.02)
+    return False
+
+
 def fetch_company_deals(company_id: int) -> list[dict]:
     try:
         assoc = hub_get(
@@ -216,6 +263,13 @@ def main() -> int:
         # Require at least one deal in an early stage
         early = [d for d in deals if d["properties"].get("dealstage") in EARLY_STAGE_IDS]
         if not early:
+            continue
+        # Defense in depth: skip if any associated contact has an inbound reply
+        # logged in the last 30 days. Catches the case where lead_status wasn't
+        # flipped off UNQUALIFIED after a reply was identified via an alias.
+        contact_ids = fetch_company_contact_ids(cid)
+        if has_recent_inbound_reply(contact_ids):
+            log(f"  ⏭  {props.get('name')} (cid {cid}) — recent inbound reply, skipping")
             continue
         rows.append({
             "company_id": cid,

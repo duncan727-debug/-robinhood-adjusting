@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280">
+  <rect width="600" height="280" fill="#eef2ef"/>
+  <text x="20" y="30" font-family="-apple-system,Helvetica,Arial" font-size="14" fill="#1d1d1f" font-weight="600">Concept C — Elastic-band slingshot ring</text>
+  <text x="20" y="48" font-family="-apple-system,Helvetica,Arial" font-size="11" fill="#6e6e73">No pressure system. Draw-back ring + torpedo cradle. Simplest, cheapest, no patent worry.</text>
+
+  <!-- Ring/yoke body -->
+  <ellipse cx="200" cy="155" rx="80" ry="55" fill="none" stroke="#1d1d1f" stroke-width="3"/>
+  <!-- Grip extension -->
+  <rect x="118" y="148" width="20" height="80" rx="10" fill="#1d1d1f"/>
+  <!-- Elastic bands (two, stretched) -->
+  <path d="M 200 100 Q 280 130 360 155" fill="none" stroke="#ff7a30" stroke-width="2.5"/>
+  <path d="M 200 210 Q 280 180 360 155" fill="none" stroke="#ff7a30" stroke-width="2.5"/>
+  <!-- Torpedo cradle (a small pocket) -->
+  <ellipse cx="360" cy="155" rx="14" ry="9" fill="#1d1d1f"/>
+  <!-- Torpedo (dashed, sitting in cradle) -->
+  <ellipse cx="395" cy="155" rx="40" ry="10" fill="none" stroke="#1d1d1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="435,155 450,148 450,162" fill="none" stroke="#1d1d1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- Draw direction arrow -->
+  <line x1="360" y1="240" x2="395" y2="240" stroke="#1d1d1f" stroke-width="1"/>
+  <polygon points="395,240 388,236 388,244" fill="#1d1d1f"/>
+  <text x="305" y="255" font-family="-apple-system,Helvetica,Arial" font-size="9" fill="#6e6e73">draw back to load</text>
+
+  <!-- Callouts -->
+  <text x="20" y="240" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">Body: solid HDPE, sea-foam green + cream (Pantone 5523 + warm white)</text>
+  <text x="20" y="254" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">Bands: replaceable food-safe silicone, signal orange</text>
+  <text x="20" y="268" font-family="-apple-system,Helvetica,Arial" font-size="10" fill="#6e6e73">Cheapest tooling, fastest to market, naturally child-safe (no pressure)</text>
+</svg>

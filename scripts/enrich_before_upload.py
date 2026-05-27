@@ -163,6 +163,7 @@ def create_deal(prospect, company_id, contact_id):
         "dealname":  f"{prospect['name']} — Outreach",
         "dealstage": "appointmentscheduled",   # New Prospect
         "pipeline":  "default",
+        "deal_line": "public_adjusting",       # Storm Shield deals are created separately
     }
     status, data = hs("POST", "/crm/v3/objects/deals", {"properties": props})
     deal_id = data.get("id") if status in (200, 201) else None

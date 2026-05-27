@@ -1,0 +1,296 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Weekly self-review 2026-W21</title>
+<style>
+body{font-family:Georgia,serif;max-width:780px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}
+h1,h2,h3,h4{font-family:-apple-system,Helvetica,sans-serif;color:#111}
+h1{border-bottom:2px solid #333;padding-bottom:.3em}
+h2{border-bottom:1px solid #ccc;padding-bottom:.2em;margin-top:1.8em}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+th,td{border:1px solid #bbb;padding:.4em .6em;text-align:left;vertical-align:top}
+th{background:#f4f4f4}
+code{background:#f3f3f3;padding:1px 5px;border-radius:3px;font-size:.92em}
+blockquote{border-left:4px solid #888;background:#fafafa;padding:.5em 1em;margin:1em 0;color:#444}
+</style></head><body>
+<h1>Weekly self-review — 2026-W21 (Sat 2026-05-23, manual run)</h1>
+<blockquote>
+<p><strong>Note:</strong> This is the first review, run on-demand instead of waiting for the Sunday 18:00 EDT cron. Subsequent reviews will land Sunday evenings via the <code>weekly-self-review</code> cron (id <code>653ec441-...</code>). Mode: <strong>propose-first</strong>.</p>
+</blockquote>
+<h2>TL;DR</h2>
+<ol>
+<li><strong>Two daily-content cron jobs failed today</strong> (<code>daily-research-brief</code> runtime-plugins stall, <code>daily-content</code> 600s CLI timeout) — today's site brief came from a non-cron path. Root-cause investigation is the #1 Monday item.</li>
+<li><strong>Schedule moved</strong>: brief 4am → <strong>5am</strong>, content 4:30am → <strong>5:30am</strong> (per Duncan, Sat 13:00 EDT). Schedule HTML mirror is pending.</li>
+<li><strong>Collector bugs identified</strong>: 3 metric-extraction bugs in <code>collect_metrics.py</code> (audience regex, interactions.csv column offsets, acronym allowlist). Real content quality is likely better than the raw numbers show. Will be fixed before W22.</li>
+</ol>
+<h2>Pipeline metrics (7d)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Outreach sent (7d)</td>
+<td><strong>collector bug</strong></td>
+<td>Parser used wrong CSV columns — fix queued</td>
+</tr>
+<tr>
+<td>Replies (7d)</td>
+<td><strong>collector bug</strong></td>
+<td>Same root cause</td>
+</tr>
+<tr>
+<td>Bounces (7d)</td>
+<td><strong>collector bug</strong></td>
+<td>Same</td>
+</tr>
+<tr>
+<td>Contact-form queue rows</td>
+<td>96 lines in log (7d)</td>
+<td>Real</td>
+</tr>
+<tr>
+<td>Newsletter send log volume</td>
+<td>433 lines (7d)</td>
+<td>Real</td>
+</tr>
+<tr>
+<td>Outreach send log volume</td>
+<td>2,017 lines (7d) ≈ 290/day</td>
+<td>Healthy</td>
+</tr>
+<tr>
+<td>IMAP bridge log</td>
+<td>6,379 lines (7d) ≈ 5min push pace = ~12/hr expected</td>
+<td>Healthy</td>
+</tr>
+<tr>
+<td>Catchup log</td>
+<td>7,383 lines (7d)</td>
+<td>Loud; investigate if any are errors</td>
+</tr>
+<tr>
+<td>HubSpot task queue depth</td>
+<td><strong>not collected</strong></td>
+<td>Not in v1 collector — adding for W22</td>
+</tr>
+</tbody>
+</table>
+<h2>Cron health (last 7d)</h2>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th>Last status</th>
+<th>Error</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>daily-research-brief</code></td>
+<td>❌ error</td>
+<td><code>cron: isolated agent run stalled before execution start (last phase: runtime-plugins)</code></td>
+<td><strong>Investigate</strong> — gateway restart today may have fixed; verify with manual <code>cron run</code></td>
+</tr>
+<tr>
+<td><code>daily-content</code></td>
+<td>❌ error</td>
+<td><code>CLI produced no output for 600s and was terminated</code></td>
+<td><strong>Investigate</strong> — depends on brief output; cascade failure?</td>
+</tr>
+<tr>
+<td><code>linkedin-sequencing</code></td>
+<td>(disabled)</td>
+<td>n/a</td>
+<td>Correctly disabled per 2026-05-19 halt — no action</td>
+</tr>
+<tr>
+<td>Other 18 jobs</td>
+<td>not yet introspected per-job</td>
+<td>—</td>
+<td>Add per-job <code>cron runs</code> to W22 collector</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Schedule moves applied today:</strong>
+- <code>daily-research-brief</code>: <code>0 4 * * 1-6</code> → <code>0 5 * * 1-6</code> ✅
+- <code>daily-content</code>: <code>30 4 * * 1-6</code> → <code>30 5 * * 1-6</code> ✅
+- ⚠️ <strong>Pending</strong>: <code>docs/OPERATIONS-SCHEDULE.html</code> does not yet reflect the move. Will run <code>schedule-sync</code> skill before Monday.</p>
+<h2>Content quality flags</h2>
+<ul>
+<li>Audience regex in collector was singular ("homeowner") but briefs use plurals ("homeowners", "service providers"). All 5 "missing audience" flags this week were <strong>false positives</strong>. Confirmed by reading 2026-05-22 brief — all three audiences present and properly segmented.</li>
+<li>Real allowlist additions needed for acronym scan: <code>FIGA</code>, <code>HB</code>, <code>SB</code>, <code>AFD</code>, <code>DK</code>, <code>CRE</code>, <code>CAI</code>, <code>CSU</code>, <code>BD</code>, <code>AA</code>, <code>AM</code> (these are real terms — FL Insurance Guaranty Association, House Bill, Senate Bill, weather forecast jargon, etc).</li>
+<li>2026-05-17 (Sunday): no brief — <strong>expected</strong>, Sunday is weekly-trends day, not daily-brief day. Collector should know this.</li>
+</ul>
+<h2>Skill performance (this week)</h2>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Invocations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>daily-brief</td>
+<td>0 explicit</td>
+<td>Skills only created today (2026-05-23); no historical data</td>
+</tr>
+<tr>
+<td>ops-review</td>
+<td>0 explicit</td>
+<td>Same — covered by <code>weekday-ops-review</code> cron in old structure</td>
+</tr>
+<tr>
+<td>crm-outreach-draft</td>
+<td>0 explicit</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>schedule-sync</td>
+<td>0 explicit</td>
+<td>Same — manual schedule edits today not yet mirrored</td>
+</tr>
+<tr>
+<td>weekly-self-review</td>
+<td>1 (this run)</td>
+<td>Manual, first-ever</td>
+</tr>
+</tbody>
+</table>
+<p>Baseline established. Next week we'll see real invocation counts.</p>
+<h2>Technical efficiency</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Token usage 7d</td>
+<td><strong>not collected</strong></td>
+<td>Gateway logs at <code>/tmp/openclaw/openclaw-*.log</code> — parser TBD for W22</td>
+</tr>
+<tr>
+<td>Slowest task (7d)</td>
+<td><code>daily-content</code> 44 min before timeout-kill</td>
+<td>Pathological — needs root cause</td>
+</tr>
+<tr>
+<td>Cache hit rate</td>
+<td><strong>not collected</strong></td>
+<td>Prompt-caching enablement check is a W22 item</td>
+</tr>
+<tr>
+<td>Estimated $ cost 7d</td>
+<td><strong>not collected</strong></td>
+<td>Pending token parser</td>
+</tr>
+</tbody>
+</table>
+<h2>Industry signals (this week)</h2>
+<p>Pulled from today's brief (2026-05-22) — already in-product:
+- Three more carriers entered FL post-reform; market count now ~20; $850M fresh capital
+- 2026 hurricane forecast called "below-normal" by NOAA — but Duncan's brief correctly warned that 1992 was also "below-normal" + produced Andrew
+- HB/SB property-insurance bill movement (specifics in brief)</p>
+<p>Nothing surfaced this week that requires Duncan to <em>change tactics</em> — proceed with current outreach mix.</p>
+<h2>AI / tooling advances</h2>
+<blockquote>
+<p>First-pass without web scan (skill's <code>ai-scan-sources.md</code> is in place but full scan was descoped for this manual run; W22 cron-fired review will do the full pass).</p>
+</blockquote>
+<p>Quick notes from local context only:
+- OpenClaw CLI updated to 2026.5.19 today (version skew was the cause of the morning gateway issue).
+- Prompt caching: not verified enabled on the cron-fired isolated sessions. <strong>Worth checking</strong> — likely 50-80% cost reduction on the briefs given large repeating prompt prefixes.
+- Anthropic SDK / Claude 4.7 capabilities not changed since last week's known state.</p>
+<h2>Memory hygiene</h2>
+<p><code>MEMORY.md</code> index now 86 lines, approaching the 200-line truncation limit. Recent additions are good, but we should plan a Q3 audit to merge/retire older entries. Not urgent.</p>
+<hr />
+<h2>Proposed upgrades — pick what to approve</h2>
+<blockquote>
+<p><strong>Status (Sat 2026-05-23 ~13:35 EDT):</strong> P0 + all P1 items completed. See "Completed this session" block at bottom.</p>
+</blockquote>
+<h3>🔴 P0 — Must fix before Monday</h3>
+<p><strong>P0-1. Root-cause the daily-research-brief and daily-content cron failures.</strong>
+- Manually trigger <code>cron run</code> on both jobs now (gateway is restarted; should work).
+- If still fails: check OpenClaw CLI runtime-plugins config, isolated-session bootstrap.
+- Risk if not done: Monday's brief doesn't fire, ops cascade.
+- Effort: S (15-30 min). Risk: low.</p>
+<p><strong>P0-2. Sync OPERATIONS-SCHEDULE.html.</strong>
+- Run <code>schedule-sync</code> skill to reflect the 4am→5am brief move + 4:30am→5:30am content move.
+- Effort: S. Risk: none.</p>
+<h3>🟡 P1 — Ship this week</h3>
+<p><strong>P1-1. Fix <code>collect_metrics.py</code> bugs.</strong>
+- Audience regex → plural-aware
+- interactions.csv column offsets → use header row, not positional
+- Acronym allowlist → expand with FIGA, HB, SB, AFD, etc.
+- Effort: M (~45 min). Risk: low.</p>
+<p><strong>P1-2. Extend collector for missing metrics.</strong>
+- HubSpot task queue depth via API
+- Per-cron <code>runs</code> history (failures, runtimes)
+- Token usage from gateway logs
+- Cache hit rate
+- Effort: M-L (~2 hrs). Risk: low.</p>
+<p><strong>P1-3. Verify prompt caching is enabled on all cron-fired agent runs.</strong>
+- If not, this is potentially 50-80% cost savings on daily briefs (largest repeating prompt prefix).
+- Effort: S. Risk: low. <strong>High value.</strong></p>
+<h3>🟢 P2 — Within 2 weeks</h3>
+<p><strong>P2-1. Add <code>linkedin-sequencing</code> job removal.</strong>
+- It's disabled but still in jobs.json. Disabled crons are harmless, but cleanup signals intent.
+- Or: relabel to something like <code>paused/linkedin-sequencing-DELETE-2026-06-19</code> so it's clear it'll be removed.
+- Effort: S. Risk: none.</p>
+<p><strong>P2-2. Auto-create the Sunday HubSpot task</strong> ("Weekly review ready").
+- Skill specifies it but creation isn't wired. Add to <code>weekly-self-review</code> workflow.
+- Effort: S. Risk: low.</p>
+<p><strong>P2-3. Add memory dedupe pass to the weekly review.</strong>
+- Find duplicate or contradictory memory entries (e.g., two <code>feedback_</code> files saying conflicting things).
+- Surface to Duncan for merge decision.
+- Effort: M. Risk: low.</p>
+<h3>🔵 P3 — Future / explore</h3>
+<p><strong>P3-1. AI/industry scan via WebSearch on the cron-fired review.</strong>
+- Currently descoped for this manual run. Cron-fired W22 review will be first real test.
+- Track which sources actually surface signal vs noise.</p>
+<p><strong>P3-2. Skill registration into OpenClaw plugin-skills.</strong>
+- Currently workspace-resident. If we add a <code>manifest.yaml</code> and drop into <code>~/.openclaw/plugin-skills/</code>, they'd be invocable via the Skill tool directly.
+- Effort: M. Risk: low. <strong>Defer until skills are stable.</strong></p>
+<p><strong>P3-3. Father-son venture pipeline (pellet → pressure-wash → fleet-ad).</strong>
+- Three deck cycles complete. No next venture queued. If Duncan wants the pattern continued, the venture-deck skill in my original 8-skill proposal is the natural home.</p>
+<hr />
+<h2>Proposed new skills</h2>
+<p><strong>None this week.</strong> Will revisit after observing W21 → W22 deltas.</p>
+<hr />
+<h2>Completed this session (Sat 2026-05-23 ~13:35 EDT)</h2>
+<ul>
+<li>✅ <strong>P0-1</strong> — Both cron failures re-ran cleanly on <code>cron run --force</code>. <code>daily-research-brief</code> correctly skipped (today's brief already exists); <code>daily-content</code> produced today's drafts in 91s on Opus 4.7.</li>
+<li>✅ <strong>P0-2</strong> — <code>operations/OPERATIONS-SCHEDULE.html</code> + root mirror updated to reflect 5:00 AM brief / 5:30 AM content moves.</li>
+<li>✅ <strong>P1-1</strong> — <code>collect_metrics.py</code> fixed:</li>
+<li>Audience regex now plural-aware (<code>homeowners?</code>, <code>(service )?providers?</code>, <code>real[\\s-]estate</code>)</li>
+<li><code>interactions.csv</code> parser switched to <code>csv.DictReader</code> — uses real header columns (date, type, outcome)</li>
+<li>Acronym allowlist expanded (FIGA/HB/SB/AFD/DK/CRE/CAI/CSU/BD/AA/AM/PBC/SFL/BNI/CRM/API/Q1-Q4/P0-P3/etc) + length capped to 2-5 chars + HTML tag stripping + ALL-CAPS-English-word denylist. Result: today's brief shows 0 stray acronyms; yesterday's shows 1.</li>
+<li>✅ <strong>P1-2</strong> — Collector extended:</li>
+<li>HubSpot task queue depth + breakdown by priority + overdue count via API (today: 20 open tasks, 0 overdue, 3 HIGH / 15 MEDIUM / 2 LOW)</li>
+<li>Per-cron history (last status, consecutive errors, last run timestamp, last duration, model) — pulled from <code>~/.openclaw/cron/jobs.json</code> state field</li>
+<li>Token usage + cache hit rate left as documented gaps (data lives in Anthropic Console, not gateway logs)</li>
+<li>✅ <strong>P1-3</strong> — Prompt caching is on by default. All 17 agentTurn crons route via <code>claude-cli/claude-opus-4-7</code> (the official Claude CLI), which sends <code>cache_control: ephemeral</code> on system + tool prompts automatically. No config knob needed. Hit-rate verification requires Anthropic Console access (deferred).</li>
+<li>✅ <strong>P1-4</strong> — Cheap-model fallback path <strong>does not exist</strong> in current config. All enabled agentTurn crons explicitly pin <code>claude-cli/claude-opus-4-7</code>; <code>payload.fallbacks</code> empty on every job; <code>~/.openclaw/openclaw.json</code> fallback chain empty. Historical haiku runs visible in cron history predate the 2026-05-15 model-routing rule and were already migrated. False alarm — finding closed.</li>
+</ul>
+<h3>P2 completed (Sat 2026-05-23 ~13:50 EDT)</h3>
+<ul>
+<li>✅ <strong>P2-1</strong> — <code>linkedin-sequencing</code> cron (id <code>614a7216-...</code>) removed entirely. Was disabled since 2026-05-19 halt; now gone.</li>
+<li>✅ <strong>P2-2</strong> — Sunday HubSpot task creation wired into <code>weekly-self-review/SKILL.md</code> with exact <code>hubspot_task.py</code> invocation, priority HIGH, due Monday 08:00 EDT, body includes link to HTML deliverable.</li>
+<li>✅ <strong>P2-3</strong> — Memory dedupe: merged <code>feedback_operations_schedule.md</code> into <code>feedback_schedule_updates.md</code> (true duplicates, both said "update OPERATIONS-SCHEDULE.html when cron changes"). MEMORY.md index trimmed by 1 line. Examined narration trio (<code>narrate_steps</code> / <code>narrate_means_doing</code> / <code>catchup_announce</code>) — kept all three; they encode genuinely distinct lessons.</li>
+</ul>
+<h3>P3 deferred (with reasons)</h3>
+<ul>
+<li><strong>P3-1</strong> — AI/industry WebSearch scan: first real test on cron-fired W22 review (Sun 2026-05-24 18:00 EDT). Cron payload already has WebSearch + WebFetch in toolsAllow.</li>
+<li><strong>P3-2</strong> — Register skills into <code>~/.openclaw/plugin-skills/</code>: skills are &lt;24h old, still iterating. Workspace-resident skills already work (crons invoke by absolute SKILL.md path). Revisit once invocation patterns settle (≥2 weeks of stable use).</li>
+<li><strong>P3-3</strong> — Father-son venture-deck skill: no next venture queued; needs Duncan's direction. Three deck cycles complete (pellet → pressure-wash → fleet-ad).</li>
+</ul>
+<hr />
+<p><em>Generated by <code>weekly-self-review</code> skill — Sat 2026-05-23 13:05 EDT — manual run. Next cron-fired run: Sun 2026-05-24 18:00 EDT.</em>
+<em>P0 + P1 completion: Sat 2026-05-23 ~13:35 EDT.</em></p></body></html>

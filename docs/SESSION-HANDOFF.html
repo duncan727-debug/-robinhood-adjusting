@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Session Handoff — 2026-05-21 OpenClaw Upgrade</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 15px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; max-width: 880px; margin: 2rem auto; padding: 0 1.25rem; color: #1a1a1a; background: #fafafa; }
+  h1 { font-size: 1.7rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.2rem; margin: 2rem 0 .5rem; border-bottom: 1px solid #ddd; padding-bottom: .25rem; }
+  h3 { font-size: 1rem; margin: 1.25rem 0 .35rem; }
+  .meta { color: #666; font-size: .9rem; margin-bottom: 1.5rem; }
+  code, pre { font: 13px/1.45 "SF Mono", Menlo, Consolas, monospace; background: #eee; padding: 1px 5px; border-radius: 4px; }
+  pre { padding: .75rem 1rem; overflow-x: auto; }
+  .warn { background: #fff3cd; border-left: 4px solid #f0ad4e; padding: .6rem .9rem; margin: .75rem 0; border-radius: 3px; }
+  .danger { background: #fde2e2; border-left: 4px solid #d9534f; padding: .6rem .9rem; margin: .75rem 0; border-radius: 3px; }
+  .ok { background: #e3f3e3; border-left: 4px solid #5cb85c; padding: .6rem .9rem; margin: .75rem 0; border-radius: 3px; }
+  .note { background: #e7f0fb; border-left: 4px solid #4a90e2; padding: .6rem .9rem; margin: .75rem 0; border-radius: 3px; }
+  ul { padding-left: 1.4rem; }
+  li { margin: .25rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: .75rem 0; }
+  th, td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+  th { background: #f0f0f0; }
+  .duncan-note { background: #fffbe6; border: 1px dashed #c4a700; padding: .6rem .9rem; margin: .5rem 0; border-radius: 3px; color: #5a4500; }
+  .duncan-note::before { content: "✎ Duncan to fill in: "; font-weight: 600; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #181818; color: #e8e8e8; }
+    h2 { border-color: #333; }
+    code, pre { background: #2a2a2a; }
+    th { background: #222; }
+    th, td { border-color: #333; }
+    .warn { background: #3a2f10; }
+    .danger { background: #3a1717; }
+    .ok { background: #1c2f1c; }
+    .note { background: #14253a; }
+    .duncan-note { background: #2a2410; color: #f0e1a0; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Session Handoff — OpenClaw Upgrade</h1>
+<p class="meta">Written 2026-05-21 by Agent Smith (Opus 4.7) for myself, to re-read after Duncan restarts OpenClaw for a version upgrade. Duncan, please add anything missing in the dashed-yellow blocks before restarting.</p>
+
+<div class="note">
+<strong>Reason for handoff:</strong> Duncan wants to upgrade OpenClaw from <code>2026.4.15</code> → <code>2026.5.19</code> (~5 weeks of changes). The restart will kill the gateway, the IMAP bridge LaunchAgent, the catchup LaunchAgent, and any in-flight cron jobs. I need to be able to resume cleanly when he comes back.
+</div>
+
+<h2>1. What we were mid-conversation about (THIS session)</h2>
+
+<h3>1a. Clipboard leak — UNRESOLVED, deferred until after upgrade</h3>
+<p>Duncan reported: <em>"every time I copy paste, this shows up: <code>http://127.0.0.1:18789/#token=62e43867…</code>"</em>. The URL is the gateway control-UI URL with embedded auth token.</p>
+<ul>
+  <li><strong>Confirmed:</strong> right now <code>pbpaste</code> returns exactly that URL. The clipboard <em>is</em> holding the URL.</li>
+  <li><strong>Confirmed:</strong> no clipboard manager (Maccy, Raycast, Paste, Alfred) installed; no keyboard automation (Karabiner, BTT, Hammerspoon); no browser extension intercepting copy; no <code>copy</code>/<code>paste</code> event handler in the bundled control-UI JS.</li>
+  <li><strong>Confirmed:</strong> background test showed nothing is rewriting the clipboard on a timer — wrote a test string, it persisted at 1s/5s/15s.</li>
+  <li><strong>Duncan's last update (11:23):</strong> when he copies something new it works, but the URL "tends to come back." He'll flag if it recurs.</li>
+  <li><strong>Likely remaining causes:</strong>
+    <ol>
+      <li>macOS Universal Clipboard syncing the URL back from another Apple device (iPhone/iPad/other Mac on same iCloud) where it's pinned to the pasteboard.</li>
+      <li>A copy keystroke not actually reaching the system pasteboard (focus issue), leaving the old URL stale.</li>
+    </ol>
+  </li>
+  <li><strong>After restart, next action if it recurs:</strong> ask Duncan whether the URL is on any other Apple device's clipboard; if yes, that's Universal Clipboard. Otherwise, do a live capture (<code>pbpaste</code> right after his ⌘C) to see if the keystroke is taking.</li>
+</ul>
+
+<h3>1b. Gateway token rotation — DEFERRED until after upgrade</h3>
+<p>The token <code>62e43867d6cacfb3f1f0f82ddec5a1ae15aada2fdaab0799</code> is the master auth secret for the OpenClaw gateway. Because it's been landing on the clipboard, it could leak via paste-into-wrong-place. Duncan agreed to rotate but wants to upgrade first.</p>
+<p><strong>Rotation procedure (post-upgrade):</strong></p>
+<pre>1. Stop gateway:   launchctl bootout gui/$UID ~/Library/LaunchAgents/ai.openclaw.gateway.plist
+2. Edit ~/.openclaw/openclaw.json → gateway.auth.token = new 48-hex-char random string
+3. Restart:        launchctl bootstrap gui/$UID ~/Library/LaunchAgents/ai.openclaw.gateway.plist
+4. Duncan re-opens control UI at the new URL (the new token will be shown by `openclaw dashboard`).</pre>
+
+<h3>1c. New feedback memory saved (this session)</h3>
+<p>Saved <code>feedback_catchup_announce.md</code> + indexed in <code>MEMORY.md</code>: announce before running catchup, narrate each step during multi-minute background jobs so Duncan doesn't think the session froze. Triggered by my silent "catchup ran already" report at 11:00 EDT.</p>
+
+<h2>2. Operational state at handoff time</h2>
+
+<h3>2a. Running processes I care about</h3>
+<table>
+<tr><th>Process</th><th>PID</th><th>Purpose</th><th>Auto-restart?</th></tr>
+<tr><td><code>openclaw-gateway</code></td><td>3761</td><td>Control plane on :18789</td><td>Yes — LaunchAgent <code>ai.openclaw.gateway</code></td></tr>
+<tr><td><code>imap_bridge.py</code></td><td>15076</td><td>Hourly Gmail→HubSpot bounce/reply sync; 5-min push alert</td><td>Yes — LaunchAgent <code>com.openclaw.imap-bridge-5min</code></td></tr>
+<tr><td><code>imap_bridge_alert.sh</code></td><td>15073</td><td>Wakes main session on new prospect replies</td><td>Yes — managed by bridge LaunchAgent</td></tr>
+<tr><td>Chrome (openclaw profile)</td><td>4880</td><td>Browser attach for AppleScript bridge (signed-in Duncan profile, drives outreach via UI when needed)</td><td>Manual</td></tr>
+<tr><td>Active Claude CLI</td><td>37965</td><td>THIS session — will end on restart</td><td>n/a</td></tr>
+</table>
+
+<h3>2b. Cron jobs (these run via system crontab, not OpenClaw cron — survive restart)</h3>
+<ul>
+  <li><code>06:30 Mon-Sat</code> — daily website build (<code>build-website.sh</code>) + commit/push</li>
+  <li><code>08:00 / 10:30 / 12:30 / 15:00 Mon-Sat</code> — outreach send batches 1-4 (25/day)</li>
+  <li><code>09:00 Mon-Sat</code> — drip campaign + Palm Beach prospecting</li>
+  <li><code>10:00 Mon-Sat</code> — enrichment gate (<code>enrich_before_upload.py</code>)</li>
+  <li><code>10:30 Mon-Sat</code> — morning health check</li>
+  <li><code>05:* hourly</code> — IMAP bridge fallback</li>
+  <li>+ HubSpot daily consolidation 08:30, contact-form fallback 10:45, drafts/dashboard refreshes</li>
+</ul>
+<div class="ok"><strong>Good:</strong> cron jobs are in user crontab — they run regardless of OpenClaw being up. Newsletter, outreach, prospecting, website build all continue uninterrupted during the upgrade.</div>
+
+<h3>2c. Today's morning-run status (Thu 2026-05-21)</h3>
+<ul>
+  <li>Catchup ran at session start (auto, via LaunchAgent) — site synced for 2026-05-21, daily brief committed (<code>69e4759</code>), build-website rerun committed (<code>afeab81</code>).</li>
+  <li>Outreach batches 1-3 fired (08:00, 10:30, 12:30 — last one still 75 min out at handoff time).</li>
+  <li>Prospecting ran (new file <code>crm/review_queue/best_guess_2026-05-21.csv</code>).</li>
+  <li>Drafts generated (new dir <code>crm/drafts/2026-05-21/</code>).</li>
+  <li>Contact-form queue built (new file <code>crm/contact_form_queue/2026-05-21.csv</code>).</li>
+  <li>Health check at 10:30 EDT — no failures surfaced.</li>
+</ul>
+
+<h3>2d. Open work items I'm tracking</h3>
+<ul>
+  <li>Listing-reply confirmation pass — gated on <code>directory_listing_status=listed</code> per the new workflow (saved memory <code>listing_reply_workflow.md</code>).</li>
+  <li>Chamber Connections Tue 2026-05-26 8am Wellington (HCCPBC co-host) — no prep action needed from me before then; Duncan attending in person.</li>
+  <li>Pellet/pressure-washing/fleet-ad father-son ventures — all in research-deck stage, no pending tasks.</li>
+  <li>Seth's Restoration partnership — parked until subscriber count ≥500.</li>
+  <li>Barclays → Robinhood firm transition end of June 2026 — all new branding already Robinhood-bound.</li>
+</ul>
+
+<h2>3. The upgrade itself</h2>
+
+<h3>3a. What will happen when Duncan runs the upgrade</h3>
+<pre>npm install -g openclaw@latest</pre>
+<p>This replaces the contents of <code>/usr/local/lib/node_modules/openclaw/</code>. Side effects to expect:</p>
+<ul>
+  <li>The <code>openclaw-gateway</code> process keeps running on the old binary until its LaunchAgent is reloaded — Duncan will need to <code>launchctl kickstart -k gui/$UID/ai.openclaw.gateway</code> (or full bootout/bootstrap) for the new code to take effect.</li>
+  <li><code>openclaw.json</code> at <code>~/.openclaw/openclaw.json</code> is NOT touched by npm install. Token, gateway port, plugin entries, agent defaults all preserved.</li>
+  <li>Config schema may have changed across 5 weeks of updates. If the new gateway rejects the old config, fall back to the most recent backup: <code>~/.openclaw/openclaw.json.bak</code> (latest) or roll forward by running <code>openclaw configure</code>.</li>
+  <li>Control-UI URL will be the same: <code>http://127.0.0.1:18789/#token=…</code> with the same token (unless we rotate).</li>
+  <li>Bundled skills under <code>/usr/local/lib/node_modules/openclaw/skills/</code> will refresh — workspace skill cache may rebuild on first use.</li>
+</ul>
+
+<h3>3b. What could break (watch list)</h3>
+<div class="warn">
+<strong>Potential breakage to test for after upgrade:</strong>
+<ul>
+  <li><strong>MCP config path:</strong> the running Claude CLI uses an ephemeral MCP config at <code>/var/folders/…/openclaw-cli-mcp-iGqkXa/mcp.json</code>. New version may regenerate with a different schema; if the spawned Claude CLI can't find an MCP server, restart of the gateway is required.</li>
+  <li><strong>Plugin compatibility:</strong> <code>anthropic</code>, <code>google</code>, <code>codex</code>, <code>browser</code>, <code>memory-core</code> are all enabled. If any plugin's API changed, it may error on first call.</li>
+  <li><strong>Skills with custom env (openai-whisper, sherpa-onnx-tts):</strong> these have hand-edited PATH/runtime-dir entries in openclaw.json. New skill versions may expect different env shape.</li>
+  <li><strong>browser plugin:</strong> CDP attach to the openclaw Chrome profile uses port 18792. If the browser plugin's attach logic changed, the AppleScript bridge fallback should still work but the native browser tool may need re-pairing.</li>
+  <li><strong>Memory format:</strong> my <code>~/.claude/projects/-Users-victoria--openclaw-workspace/memory/*.md</code> files are owned by me, not OpenClaw — should be untouched.</li>
+</ul>
+</div>
+
+<h3>3c. Suggested upgrade sequence (Duncan to run)</h3>
+<pre>1. cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.bak.pre-upgrade-$(date +%Y%m%d)
+2. npm install -g openclaw@latest
+3. openclaw --version           # confirm 2026.5.19
+4. launchctl kickstart -k gui/$UID/ai.openclaw.gateway
+5. Reload the control UI tab.
+6. Send me a quick message — I'll re-read this handoff doc and confirm everything came back up.</pre>
+
+<h2>4. What I'll do when I read this on the other side of the restart</h2>
+<ol>
+  <li>Confirm gateway is on the new version (<code>openclaw --version</code>).</li>
+  <li>Confirm <code>imap_bridge.py</code> + LaunchAgent are back up (PID will be new).</li>
+  <li>Confirm today's outreach batch 4 (15:00) and any later cron jobs ran (or are still scheduled).</li>
+  <li>Ask Duncan whether the clipboard URL leak is still happening — if yes, ask the Universal Clipboard question.</li>
+  <li>Ask Duncan if he wants to rotate the gateway token now.</li>
+  <li>Resume any work he flags.</li>
+</ol>
+
+<h2>5. Things Duncan should know I'm NOT doing automatically</h2>
+<ul>
+  <li>Not touching the openclaw.json config myself — Duncan runs the upgrade.</li>
+  <li>Not stopping any cron jobs.</li>
+  <li>Not committing or pushing anything new before the restart.</li>
+  <li>Not rotating the token yet (per his instruction).</li>
+</ul>
+
+<h2>6. Open questions for Duncan (please answer or note before restart)</h2>
+<div class="duncan-note">Are you on any iPhone/iPad/other Mac with the same iCloud, and could that URL be pinned to its clipboard? (helps diagnose the leak)</div>
+<div class="duncan-note">Anything in-flight from yesterday/this morning that I should pick up first when you come back?</div>
+<div class="duncan-note">Any other notes / corrections / things to add before you restart?</div>
+
+<p class="meta">— Agent Smith, 2026-05-21 11:24 EDT</p>
+
+</body>
+</html>
