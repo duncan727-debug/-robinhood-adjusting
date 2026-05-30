@@ -4,3 +4,6 @@
 [2026-05-23 11:31 EDT] discovered=6 kept=1 duplicates=0 too_far=0 sources=pbnchamber.com,cpbchamber.chambermaster.com,eventbrite.com,bocachamber.com,meetup.com
 [2026-05-25 11:31 EDT] discovered=3 kept=3 duplicates=0 too_far=0 sources=members.palmbeachchamber.com,members.npbchamber.com
 [2026-05-26 11:31 EDT] discovered=4 kept=1 duplicates=1 too_far=0 sources=members.npbchamber.com,bocachamber.com,allevents.in,business.palmbeaches.org
+[2026-05-27 11:31 EDT] discovered=5 kept=5 duplicates=0 too_far=0 sources=business.bocachamber.com,members.palmbeachchamber.com
+[2026-05-28 11:35 EDT] discovered=2 kept=0 duplicates=0 too_far=0 sources=boyntonchamber.org ERROR=google_oauth_token_expired_or_revoked
+[2026-05-29 11:45 EDT] discovered=3 kept=0 duplicates=0 too_far=0 sources=npbchamber.com BLOCKED: google calendar OAuth token expired/revoked — needs reauth

@@ -46,6 +46,25 @@ CALENDLY_SENDERS = (
 
 CALENDLY_PIPELINE = "default"
 CALENDLY_STAGE_BOOKED = "3671479994"  # Virtual Review Booked (used for all Calendly bookings until split stages exist)
+
+OUTREACH_PIPELINE = "default"
+OUTREACH_STAGE_SENT = "qualifiedtobuy"  # "Outreach Sent"
+# Stages that mean "dormant — reopen on a fresh send"
+REOPEN_FROM_STAGES = {"closedlost", "3670098632"}
+# Stages we must NOT downgrade (contact already engaged)
+DO_NOT_TOUCH_STAGES = {
+    "presentationscheduled",      # Responded
+    "decisionmakerboughtin",      # Listed in Directory
+    "contractsent",               # Meeting Scheduled
+    "closedwon",                  # Active Partner
+    "3671479994", "3671664335",   # Virtual Review Booked / Held
+    "3671479995", "3671664336",   # Recommended Self-Help / PA Engagement
+    "3671664337",                 # Engagement Active
+    "3671664344",                 # No Show / Cancelled
+    "3676569326",                 # Wrong Fit
+    "3676570348",                 # Contact Form Submitted
+}
+HUBSPOT_BCC_ADDR = "246055074@bcc.hubspot.com"
 CALENDLY_INVITEE_EMAIL_RE = re.compile(
     r"(?:Invitee\s*Email|Invitee:|<a[^>]*href=\"mailto:)([\w.\-+@]+@[\w.\-]+\.[a-z]{2,})",
     re.I,
@@ -105,8 +124,11 @@ def load_state():
     if STATE_PATH.exists():
         state = json.loads(STATE_PATH.read_text())
         state.setdefault("processed_calendly", [])
+        state.setdefault("last_sent_uid", 0)
+        state.setdefault("processed_sent", [])
         return state
-    return {"last_uid": 0, "processed_bounces": [], "processed_replies": [], "processed_calendly": []}
+    return {"last_uid": 0, "processed_bounces": [], "processed_replies": [],
+            "processed_calendly": [], "last_sent_uid": 0, "processed_sent": []}
 
 
 def save_state(state):
@@ -270,7 +292,26 @@ def mark_bounced(contact_id, recipient, reason):
         ],
     }
     hs_request("POST", "/crm/v3/objects/notes", note_payload)
-    log(f"  ✓ BOUNCE  → {recipient} (contact {contact_id})  reason: {reason[:80]}")
+
+    # Move any active outreach deal to closedlost so the pipeline reflects the dead address.
+    _, deal_data = hs_request("GET", f"/crm/v4/objects/contacts/{contact_id}/associations/deals")
+    moved = 0
+    for assoc in (deal_data.get("results") or []):
+        did = assoc.get("toObjectId") or assoc.get("id")
+        if not did:
+            continue
+        ds, d = hs_request("GET", f"/crm/v3/objects/deals/{did}?properties=pipeline,dealstage")
+        if ds != 200:
+            continue
+        props = d.get("properties", {})
+        if props.get("pipeline") != OUTREACH_PIPELINE:
+            continue
+        if props.get("dealstage") in DO_NOT_TOUCH_STAGES or props.get("dealstage") == "closedlost":
+            continue
+        hs_request("PATCH", f"/crm/v3/objects/deals/{did}",
+                   {"properties": {"dealstage": "closedlost"}})
+        moved += 1
+    log(f"  ✓ BOUNCE  → {recipient} (contact {contact_id})  reason: {reason[:80]}  deals→closedlost: {moved}")
     return True
 
 
@@ -495,6 +536,131 @@ def create_calendly_deal(contact_id, invitee_email, invitee_name, event_label, e
     return deal_id
 
 
+def get_or_reopen_outreach_deal(contact_id, contact_email):
+    """For an outbound email to `contact_email`: ensure a deal exists at 'Outreach Sent'.
+
+    Logic:
+      - If contact has NO deal in the default pipeline → create one at 'Outreach Sent'.
+      - If contact has a deal sitting in closedlost / 'No Response — Circle Back' →
+        reopen it to 'Outreach Sent' (we just re-engaged them).
+      - If contact has a deal at any post-response stage → leave alone.
+      - If already at 'Outreach Sent' or 'New Prospect' → leave alone (already correct or already in flight).
+    Returns ("created"|"reopened"|"skipped", deal_id) or (None, None) on error.
+    """
+    status, data = hs_request("GET", f"/crm/v4/objects/contacts/{contact_id}/associations/deals")
+    deals_in_default = []
+    if status == 200:
+        for assoc in data.get("results", []):
+            did = assoc.get("toObjectId") or assoc.get("id")
+            if not did:
+                continue
+            ds, d = hs_request("GET", f"/crm/v3/objects/deals/{did}?properties=pipeline,dealstage")
+            if ds == 200 and d.get("properties", {}).get("pipeline") == OUTREACH_PIPELINE:
+                deals_in_default.append((did, d["properties"].get("dealstage")))
+
+    if not deals_in_default:
+        # Try to associate the contact's primary company too
+        company_id = None
+        cs, cd = hs_request("GET", f"/crm/v4/objects/contacts/{contact_id}/associations/companies")
+        if cs == 200 and cd.get("results"):
+            company_id = cd["results"][0].get("toObjectId")
+        # Need a display name for the deal
+        cs2, cinfo = hs_request("GET",
+            f"/crm/v3/objects/contacts/{contact_id}?properties=firstname,lastname,email")
+        name = ""
+        if cs2 == 200:
+            p = cinfo.get("properties", {})
+            name = (f"{p.get('firstname','')} {p.get('lastname','')}").strip() or (p.get("email") or contact_email)
+        else:
+            name = contact_email
+        assocs = [{"to": {"id": contact_id},
+                   "types": [{"associationCategory": "HUBSPOT_DEFINED", "associationTypeId": 3}]}]
+        if company_id:
+            assocs.append({"to": {"id": company_id},
+                           "types": [{"associationCategory": "HUBSPOT_DEFINED", "associationTypeId": 5}]})
+        payload = {"properties": {
+            "dealname": f"Outreach — {name}",
+            "pipeline": OUTREACH_PIPELINE,
+            "dealstage": OUTREACH_STAGE_SENT,
+        }, "associations": assocs}
+        cs3, cdata = hs_request("POST", "/crm/v3/objects/deals", payload)
+        if cs3 not in (200, 201):
+            log(f"  ✗ SENT deal create failed for {contact_email} ({cs3})")
+            return None, None
+        return "created", cdata.get("id")
+
+    for did, stage in deals_in_default:
+        if stage in DO_NOT_TOUCH_STAGES:
+            return "skipped", did
+    for did, stage in deals_in_default:
+        if stage in REOPEN_FROM_STAGES:
+            hs_request("PATCH", f"/crm/v3/objects/deals/{did}",
+                       {"properties": {"dealstage": OUTREACH_STAGE_SENT}})
+            return "reopened", did
+    return "skipped", deals_in_default[0][0]
+
+
+def process_sent_folder(M, state, contacts_by_email):
+    """Scan [Gmail]/Sent for outbound messages and ensure each recipient has a
+    deal at 'Outreach Sent'. Idempotent via state['processed_sent'] UID list,
+    plus per-contact deal-stage checks."""
+    typ, _ = M.select('"[Gmail]/Sent Mail"', readonly=True)
+    if typ != "OK":
+        typ, _ = M.select('"[Gmail]/Sent"', readonly=True)
+    if typ != "OK":
+        log("  ! Could not select Sent folder, skipping send-path")
+        return 0, 0, state["last_sent_uid"]
+
+    if state["last_sent_uid"]:
+        typ, data = M.uid("search", None, f"UID {state['last_sent_uid']+1}:*")
+    else:
+        cutoff = (datetime.now() - timedelta(days=7)).strftime("%d-%b-%Y")
+        typ, data = M.uid("search", None, f"SINCE {cutoff}")
+    uids = data[0].split() if typ == "OK" else []
+    log(f"  Sent folder: {len(uids)} messages to inspect")
+
+    created = reopened = 0
+    max_uid = state["last_sent_uid"]
+    for uid_b in uids:
+        uid = int(uid_b)
+        if uid <= state["last_sent_uid"]:
+            continue
+        if uid > max_uid:
+            max_uid = uid
+        if uid in state["processed_sent"]:
+            continue
+
+        typ, msg_data = M.uid("fetch", uid_b, "(BODY.PEEK[HEADER.FIELDS (TO CC SUBJECT FROM)])")
+        if typ != "OK" or not msg_data or not msg_data[0]:
+            continue
+        msg = email.message_from_bytes(msg_data[0][1])
+        recipients = []
+        for hdr in ("To", "Cc"):
+            raw = msg.get(hdr) or ""
+            for part in raw.split(","):
+                addr = parseaddr(part)[1].lower().strip()
+                if addr and addr != HUBSPOT_BCC_ADDR and addr not in SELF_SKIP:
+                    recipients.append(addr)
+        if not recipients:
+            state["processed_sent"].append(uid)
+            continue
+
+        for addr in recipients:
+            cid = contacts_by_email.get(addr)
+            if not cid:
+                continue
+            action, did = get_or_reopen_outreach_deal(cid, addr)
+            if action == "created":
+                created += 1
+                log(f"  ✓ SENT    → {addr}: created deal {did} (Outreach Sent)")
+            elif action == "reopened":
+                reopened += 1
+                log(f"  ↑ SENT    → {addr}: reopened deal {did} → Outreach Sent")
+        state["processed_sent"].append(uid)
+
+    return created, reopened, max_uid
+
+
 def extract_snippet(msg):
     text = ""
     if msg.is_multipart():
@@ -695,10 +861,17 @@ def main():
                     )
 
     state["last_uid"] = max_uid
+
+    # Sent-folder pass: create/reopen 'Outreach Sent' deals for outbound mail
+    sent_created, sent_reopened, max_sent_uid = process_sent_folder(M, state, contacts_by_email)
+    state["last_sent_uid"] = max_sent_uid
+
     save_state(state)
     M.logout()
 
-    log(f"=== Done. Hard bounces: {bounces}  Soft bounces: {soft_bounces}  Replies: {replies}  Calendly deals: {calendly_deals}  Max UID: {max_uid} ===")
+    log(f"=== Done. Hard bounces: {bounces}  Soft bounces: {soft_bounces}  Replies: {replies}  "
+        f"Calendly deals: {calendly_deals}  Sent-deals created: {sent_created}  "
+        f"reopened: {sent_reopened}  Max INBOX UID: {max_uid}  Max SENT UID: {max_sent_uid} ===")
     log("")
 
 

@@ -219,23 +219,36 @@ def _inline(text):
     return text
 
 
-def ensure_html_brief(date_str):
-    """Convert markdown brief to bare-body HTML used as the source for email + web wrapping."""
-    html_path = BRIEFS_DIR / f"{date_str}.html"
+SEGMENT_TITLES = {
+    None: "South Florida Property Intelligence",
+    "homeowner": "South Florida Property Intelligence — Homeowner Brief",
+    "service-provider": "South Florida Trade Professional Brief",
+    "real-estate": "South Florida Real Estate & Insurance Brief",
+}
+
+
+def _render_one(date_str, segment_key=None):
+    """Render briefs/{date}[-{seg}].md -> content/briefs/{date}[-{seg}].html.
+
+    Idempotent: skips when the HTML already exists. Returns True if rendered or
+    already present, False if no source markdown exists.
+    """
+    suffix = f"-{segment_key}" if segment_key else ""
+    html_path = BRIEFS_DIR / f"{date_str}{suffix}.html"
+    md_path = MD_BRIEFS_DIR / f"{date_str}{suffix}.md"
     if html_path.exists():
-        return
-    md_path = MD_BRIEFS_DIR / f"{date_str}.md"
+        return True
     if not md_path.exists():
-        return
-    md_text = md_path.read_text()
-    body_html = md_to_html_body(md_text)
+        return False
+    body_html = md_to_html_body(md_path.read_text())
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
+    title = f"{SEGMENT_TITLES[segment_key]} — {date_fmt}"
     full_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>South Florida Property Intelligence — {date_fmt}</title>
+<title>{title}</title>
 </head>
 <body>
 {body_html}
@@ -243,6 +256,14 @@ def ensure_html_brief(date_str):
 </html>"""
     BRIEFS_DIR.mkdir(parents=True, exist_ok=True)
     html_path.write_text(full_html)
+    return True
+
+
+def ensure_html_brief(date_str):
+    """Render the master brief and any per-segment markdowns to HTML."""
+    _render_one(date_str)
+    for key in ("homeowner", "service-provider", "real-estate"):
+        _render_one(date_str, key)
 
 
 def ensure_segmented_briefs(date_str):

@@ -314,4 +314,24 @@ if [ "$DOM" -eq 1 ]; then
   check_and_run "$ID_MONTHLY"  "monthly-velocity-review"   540 "$WORKSPACE/monthly/$MONTHKEY-overview.md" 30
 fi
 
+# Catchup for daily-git-sync (8am cron). If the openclaw main-session wake
+# didn't land or didn't actually push, ensure today's content reaches GitHub
+# so Netlify rebuilds the live site. Only fires after 8am local, once per day.
+SYNC_MARKER="$WORKSPACE/scripts/.git-sync-done-$TODAY"
+if [ "$MINS" -ge 480 ] && [ ! -f "$SYNC_MARKER" ]; then
+  TODAY_COMMITS=$(git -C "$WORKSPACE" log --since="midnight" --oneline 2>/dev/null | wc -l | tr -d ' ')
+  if [ "$TODAY_COMMITS" -eq 0 ]; then
+    log "  daily-git-sync: no commit today, running git-sync-daily.sh"
+    if bash "$WORKSPACE/scripts/git-sync-daily.sh" >>"$LOG" 2>&1; then
+      log "  daily-git-sync: OK, pushed"
+      touch "$SYNC_MARKER"
+    else
+      log "  daily-git-sync: ERROR (see catchup.log)"
+    fi
+  else
+    log "  daily-git-sync: $TODAY_COMMITS commit(s) already today, skip"
+    touch "$SYNC_MARKER"
+  fi
+fi
+
 log "=== catchup end ==="

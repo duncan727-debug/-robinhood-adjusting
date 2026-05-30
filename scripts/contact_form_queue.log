@@ -110,3 +110,32 @@
 [2026-05-26T10:46:56] === Done ===
 
 [2026-05-26 10:45 EDT] queued=0 submitted=0 blacklisted=0 errors=0
+[2026-05-27T10:45:06] === Build contact-form queue for 2026-05-27 ===
+[2026-05-27T10:45:06]   Loaded 26 companies on do-not-retry blacklist
+[2026-05-27T10:45:06] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-27T10:45:48]   Found 63 eligible companies after blacklist filter
+[2026-05-27T10:46:51]   Wrote 0 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-27.csv
+[2026-05-27T10:46:51] === Done ===
+
+[2026-05-27 10:47 EDT] queued=0 submitted=0 blacklisted=0 errors=0
+[2026-05-28T10:45:05] === Build contact-form queue for 2026-05-28 ===
+[2026-05-28T10:45:05]   Loaded 26 companies on do-not-retry blacklist
+[2026-05-28T10:45:05] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-28T10:45:42]   Found 64 eligible companies after blacklist filter
+[2026-05-28T10:46:50]   Wrote 5 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-28.csv
+[2026-05-28T10:46:50] === Done ===
+
+[2026-05-28 10:55 EDT] iThink Financial SKIP-CHATBOT
+[2026-05-28 10:55 EDT] All-Pro Electrical SUBMITTED -> stage Contact Form Submitted
+[2026-05-28 10:55 EDT] Palm Air AC SKIP-BROKEN (mailto only)
+[2026-05-28 10:55 EDT] SERVPRO WPB SKIP-BROKEN (no form)
+[2026-05-28 10:55 EDT] APM 24/7 SKIP-BROKEN (DB error)
+[2026-05-28 10:55 EDT] queued=5 submitted=1 blacklisted=4 errors=0
+[2026-05-29T10:45:04] === Build contact-form queue for 2026-05-29 ===
+[2026-05-29T10:45:04]   Loaded 30 companies on do-not-retry blacklist
+[2026-05-29T10:45:04] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-29T10:45:40]   Found 65 eligible companies after blacklist filter
+[2026-05-29T10:46:47]   Wrote 3 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-29.csv
+[2026-05-29T10:46:47] === Done ===
+
+[2026-05-29 10:50 EDT] queued=3 submitted=1 blacklisted=2 errors=0 — Code Red Roofers SUBMITTED; Integrity Roofing SKIP-CAPTCHA; JMA Community Management SKIP-CAPTCHA

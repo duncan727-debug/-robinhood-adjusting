@@ -82,6 +82,27 @@ SEARCH_QUERIES = [
     ("HVAC service Boca Raton FL",                     "HVAC"),
     ("property manager West Palm Beach FL",            "Property Management"),
     ("insurance restoration contractor FL",            "Restoration / Remediation"),
+    # 2026-05-28: queue starvation — saturated on roofers/HVAC/PM. Expanding to
+    # adjacent referral segments (insurance, condo HOA admins, attorneys, mold).
+    ("independent insurance agent Palm Beach County FL", "Insurance Agency"),
+    ("insurance agency Boca Raton FL",                 "Insurance Agency"),
+    ("insurance agency Wellington FL",                 "Insurance Agency"),
+    ("insurance agency West Palm Beach FL",            "Insurance Agency"),
+    ("condominium management Palm Beach County FL",    "Property Management"),
+    ("HOA management Palm Beach County FL",            "Property Management"),
+    ("HOA management Boca Raton FL",                   "Property Management"),
+    ("real estate attorney Palm Beach County FL",      "Attorney"),
+    ("real estate attorney Boca Raton FL",             "Attorney"),
+    ("construction attorney Palm Beach County FL",     "Attorney"),
+    ("mold remediation Palm Beach County FL",          "Restoration / Remediation"),
+    ("mold inspection Boca Raton FL",                  "Restoration / Remediation"),
+    ("storm damage contractor Palm Beach County FL",   "Restoration / Remediation"),
+    ("hurricane shutters Palm Beach County FL",        "Storm Protection"),
+    ("impact windows Palm Beach County FL",            "Storm Protection"),
+    ("roofing inspection Palm Beach County FL",        "Roofing Contractor"),
+    ("home inspector Palm Beach County FL",            "Inspection"),
+    ("structural engineer Palm Beach County FL",       "Engineering"),
+    ("public adjuster Palm Beach County FL",           "Public Adjuster"),
 ]
 
 

@@ -373,6 +373,25 @@ def main():
 
     if not batch_ids:
         log("No contacts left in queue for this batch.")
+        # Queue-empty alarm: fire ONCE per day (state["queue_empty_alerted"]) so
+        # repeated batch runs don't spam the wake event. The alarm fires only when
+        # the original queue itself is empty (not when we've simply consumed all
+        # 25 slots — that's expected late-day behavior).
+        if not state.get("queue") and not state.get("queue_empty_alerted"):
+            try:
+                import subprocess
+                msg = (
+                    f"🚨 Outreach queue empty at batch {batch} ({today}). "
+                    f"No prospects to send. Refill: run enrich_before_upload.py "
+                    f"+ check crm/prospect_palm_beach.log for dedup-starvation. "
+                    f"Fix before next batch slot."
+                )
+                subprocess.run(["openclaw", "system", "event", "--mode", "now",
+                                "--text", msg], timeout=10, check=False)
+                log("Queue-empty alert fired to main session.")
+                state["queue_empty_alerted"] = today
+            except Exception as e:
+                log(f"Queue-empty alert failed: {e}")
         save_state(state)
         return
 

@@ -498,3 +498,33 @@ urllib.error.URLError: <urlopen error [Errno 8] nodename nor servname provided, 
 [2026-05-27 09:47]   [segmented] wrote content/briefs/2026-05-27-service-provider.html (18,995 bytes)
 [2026-05-27 09:47]   [segmented] wrote content/briefs/2026-05-27-real-estate.html (18,789 bytes)
 [2026-05-27 09:47]   [segmented] OK: 3 segmented variants written for 2026-05-27
+[2026-05-28 05:49] === Daily brief send start: 2026-05-28 ===
+[2026-05-28 05:49]   [homeowner] 4 subscribers in list 18
+[2026-05-28 05:49]   [homeowner] Sent: 4 | Failed: 0
+[2026-05-28 05:49]   [service-provider] 8 subscribers in list 19
+[2026-05-28 05:49]   [service-provider] Sent: 8 | Failed: 0
+[2026-05-28 05:49]   [real-estate] 0 subscribers in list 20
+[2026-05-28 05:49]   [real-estate] No subscribers — skipping
+[2026-05-28 05:49] === Done — total sent: 12 | total failed: 0 ===
+[2026-05-28 05:49] === Daily brief send start: 2026-05-28 ===
+[2026-05-28 05:49]   [homeowner] 4 subscribers in list 18
+[2026-05-28 05:49]   [homeowner] Sent: 4 | Failed: 0
+[2026-05-28 05:49]   [service-provider] 8 subscribers in list 19
+[2026-05-28 05:49]   [service-provider] Sent: 8 | Failed: 0
+[2026-05-28 05:49]   [real-estate] 0 subscribers in list 20
+[2026-05-28 05:49]   [real-estate] No subscribers — skipping
+[2026-05-28 05:49] === Done — total sent: 12 | total failed: 0 ===
+[2026-05-28 09:00] === Daily brief send start: 2026-05-28 ===
+[2026-05-28 09:00] Already sent for 2026-05-28 — skipping (delete .newsletter-sent-2026-05-28 to force resend)
+[2026-05-28 09:00] cron run — already sent for 2026-05-28, no-op
+[2026-05-29 04:08] === Daily brief send start: 2026-05-29 ===
+[2026-05-29 04:08]   [homeowner] 4 subscribers in list 18
+[2026-05-29 04:08]   [homeowner] Sent: 4 | Failed: 0
+[2026-05-29 04:08]   [service-provider] 15 subscribers in list 19
+[2026-05-29 04:08]   [service-provider] Sent: 15 | Failed: 0
+[2026-05-29 04:08]   [real-estate] 0 subscribers in list 20
+[2026-05-29 04:08]   [real-estate] No subscribers — skipping
+[2026-05-29 04:08] === Done — total sent: 19 | total failed: 0 ===
+[2026-05-29 09:00] === Daily brief send start: 2026-05-29 ===
+[2026-05-29 09:00] Already sent for 2026-05-29 — skipping (delete .newsletter-sent-2026-05-29 to force resend)
+[2026-05-29 09:00] cron daily-newsletter-send: no-op, already sent for 2026-05-29 (sentinel present)

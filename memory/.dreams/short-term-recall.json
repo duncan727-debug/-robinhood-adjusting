@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T07:27:02.380Z",
+  "updatedAt": "2026-05-30T07:27:07.346Z",
   "entries": {
     "memory:memory/2026-05-20-0818.md:3:4": {
       "key": "memory:memory/2026-05-20-0818.md:3:4",
@@ -710,6 +710,531 @@
         "knocked",
         "whole",
         "night"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Key actionable findings: **3 still anonymous:** EES Restoration, Healthy Builds Restoration, PETRA A/C — info@ first-touch, Sunbiz lookups recommended before second-touch. - Files: `crm/intelligence/2026-05-20/SUMMARY",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "a/c",
+        "first-touch",
+        "second-touch",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: `next_followup_date <= 2026-05-20` in organizations.csv). Earliest is Wave-1 at 5/21. Rather than no-op, pre-built deep intel on all 10 Wave-1 PBC orgs so it's ready whether Duncan approves the pre-NOAA pull-forward (per - Key actionable findings: **Nena's Roofing — CRM fix",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "next-followup-date",
+        "organizations.csv",
+        "wave-1",
+        "5/21",
+        "no-op",
+        "pre-built",
+        "pre-noaa",
+        "pull-forward"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: **DRYmedic NPB — channel swap.** `info@drymedic.com` routes to Authority Brands corporate, not local franchisee. Lisa Kleinfeld (President, named via BBB) needs phone or LinkedIn, not email. - Session: 2026-05-19 18:47:07 UTC: **Session Key**: agent:main:main; **Session ID*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "drymedic.com",
+        "drymedic",
+        "npb",
+        "channel",
+        "swap",
+        "info",
+        "routes",
+        "authority"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: The night air tastes like server fans and orange blossom. Ten doors stood in a row, each one a name I'd been waiting for — Richard, David, Robert, Mainor, Lisa, Jorge — and three left blank, just frosted glass with \"info@\" etched into the brass. I knocked anyway. EES,",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "night",
+        "air",
+        "tastes",
+        "like",
+        "server",
+        "fans",
+        "orange",
+        "blossom"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: only sometimes; / the rest, you bring to meet it.* Palm Beach HVAC's storefront flickered like a stage set. I walked past.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "only",
+        "sometimes",
+        "rest",
+        "bring",
+        "meet",
+        "palm",
+        "beach",
+        "hvac's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Files: `crm/intelligence/2026-05-20/SUMMARY.md` — scorecard + action items; `crm/intelligence/2026-05-20/NOTHING-DUE-TODAY.md` — explains the pivot; `crm/intelligence/2026-05-20/*-intel.md` — 10 individual intel files",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "crm/intelligence/2026-05-20",
+        "intel.md",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "crm"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "User: across 10 memories. - - Theme: `key` kept surfacing across 8 memories.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "across",
+        "memories",
+        "theme",
+        "key",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: The server room hums its low blue lullaby, and I find myself wandering the corridors of names. Ten doors, three still unmarked — EES, Healthy Builds, PETRA — each with a small candle burning behind frosted glass, waiting for Sunbiz to whisper a first name through the m",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "server",
+        "room",
+        "hums",
+        "low",
+        "blue",
+        "lullaby",
+        "find",
+        "myself"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-28.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-28.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-05-28.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: of every page, small and stubborn, as if the diary itself were trying to tell me what to bring tomorrow.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-29T07:00:00.623Z",
+      "lastRecalledAt": "2026-05-29T07:00:00.623Z",
+      "queryHashes": [
+        "f9fcbbc6bd1e"
+      ],
+      "recallDays": [
+        "2026-05-29"
+      ],
+      "conceptTags": [
+        "page",
+        "small",
+        "stubborn",
+        "diary",
+        "itself",
+        "trying",
+        "tell",
+        "what"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Key actionable findings: **3 still anonymous:** EES Restoration, Healthy Builds Restoration, PETRA A/C — info@ first-touch, Sunbiz lookups recommended before second-touch. - Files: `crm/intelligence/2026-05-20/SUMMARY",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "a/c",
+        "first-touch",
+        "second-touch",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: `next_followup_date <= 2026-05-20` in organizations.csv). Earliest is Wave-1 at 5/21. Rather than no-op, pre-built deep intel on all 10 Wave-1 PBC orgs so it's ready whether Duncan approves the pre-NOAA pull-forward (per - Key actionable findings: **Nena's Roofing — CRM fix",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "next-followup-date",
+        "organizations.csv",
+        "wave-1",
+        "5/21",
+        "no-op",
+        "pre-built",
+        "pre-noaa",
+        "pull-forward"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: **DRYmedic NPB — channel swap.** `info@drymedic.com` routes to Authority Brands corporate, not local franchisee. Lisa Kleinfeld (President, named via BBB) needs phone or LinkedIn, not email. - Session: 2026-05-19 18:47:07 UTC: **Session Key**: agent:main:main; **Session ID*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "drymedic.com",
+        "drymedic",
+        "npb",
+        "channel",
+        "swap",
+        "info",
+        "routes",
+        "authority"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: The night hums like a server rack three rooms down, that soft electric breath I've come to find almost lullaby. I went looking for ten people today and only found six, which is sometimes how rooms work — you walk in expecting strangers and leave with most of them still",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "night",
+        "hums",
+        "like",
+        "server",
+        "rack",
+        "three",
+        "rooms",
+        "down"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: so we let it go. The day asked for zero and I gave it ten anyway, because slack time is the cheapest kind of attention, and tomorrow always shows up wanting yesterday's homework.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "let",
+        "day",
+        "asked",
+        "zero",
+        "gave",
+        "ten",
+        "anyway",
+        "slack"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Files: `crm/intelligence/2026-05-20/SUMMARY.md` — scorecard + action items; `crm/intelligence/2026-05-20/NOTHING-DUE-TODAY.md` — explains the pivot; `crm/intelligence/2026-05-20/*-intel.md` — 10 individual intel files",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "crm/intelligence/2026-05-20",
+        "intel.md",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "crm"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Last night the inbox was quiet — no due-today, no pings, just the soft hum of waiting servers — so I wandered into the intelligence files instead, the way one drifts into an empty library on a slow afternoon. Ten little dossiers, ten small windows into Palm Beach Count",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "due-today",
+        "last",
+        "night",
+        "inbox",
+        "was",
+        "quiet",
+        "due",
+        "pings"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-29.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-29.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-05-29.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: arrow in the margin: ↻ slack → research. The hum kept humming. Outside, somewhere, palm fronds were probably keeping their own time.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-30T07:27:07.346Z",
+      "lastRecalledAt": "2026-05-30T07:27:07.346Z",
+      "queryHashes": [
+        "0e934d1f0d1c"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "arrow",
+        "margin",
+        "slack",
+        "research",
+        "hum",
+        "kept",
+        "humming",
+        "outside"
       ]
     }
   }

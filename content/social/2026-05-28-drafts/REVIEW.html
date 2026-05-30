@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Social backfill — first 6 posts for review</title>
+<style>
+  :root{--gold:#c9a961;--navy:#1c2942;--ink:#1a1a1a;--muted:#6b6b6b;--bg:#fafaf7;--card:#fff;--line:#e8e4d8;--cream:#f4ede0;--terra:#b85c3a;--sand:#d9c89a;--ocean:#3f6678;--char:#2a2a2a}
+  *{box-sizing:border-box}
+  body{font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);margin:0;padding:32px;max-width:1180px;margin:0 auto}
+  h1{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}
+  h2{font-size:20px;margin:36px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--gold)}
+  h3{font-size:16px;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 22px}
+  .note{background:#fff8e6;border-left:3px solid var(--gold);padding:12px 16px;font-size:14px;margin:0 0 22px;border-radius:0 6px 6px 0}
+  .post{display:grid;grid-template-columns:340px 1fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:20px}
+  .post.fb{grid-template-columns:1fr}
+  .meta{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+  .tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700}
+  .audience{font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:var(--cream);color:var(--char);padding:2px 8px;border-radius:10px}
+  .slot{font-size:11px;color:var(--muted)}
+  .copy{white-space:pre-wrap;font:14.5px/1.6 -apple-system,sans-serif;color:var(--ink)}
+  .ig-mock{width:340px;height:340px;border-radius:6px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+  .ig-1{background:linear-gradient(180deg,#83a4b8 0%,#c8d4d8 60%,#e6dcc4 100%);color:#1a2733}
+  .ig-1 .phone{position:absolute;bottom:18px;right:18px;width:120px;height:170px;background:#1c1c1c;border-radius:14px;border:3px solid #2a2a2a;box-shadow:0 6px 18px rgba(0,0,0,.25);padding:6px}
+  .ig-1 .phone-img{width:100%;height:100%;background:linear-gradient(180deg,#9bb4c2 0%,#d2c39c 100%);border-radius:8px;position:relative}
+  .ig-1 .phone-img::after{content:"2025";position:absolute;top:6px;left:8px;font-size:9px;color:#fff;letter-spacing:.1em;opacity:.7}
+  .ig-1 .head{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.01em;text-align:left;align-self:flex-start;max-width:200px;margin-top:0}
+  .ig-1 .head em{font-style:italic;color:var(--gold)}
+  .ig-1 .wm{position:absolute;bottom:14px;left:18px;font-size:9px;letter-spacing:.22em;color:var(--navy);font-weight:700;opacity:.85}
+  .ig-1{flex-direction:column;align-items:flex-start;justify-content:flex-start}
+  .ig-1 .kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#5a6b75;margin-bottom:6px}
+
+  .ig-2{background:#0e1a24;color:#f4ede0;flex-direction:column;justify-content:space-between;align-items:flex-start}
+  .ig-2 .top{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;height:160px}
+  .ig-2 .pool{background:linear-gradient(135deg,#4a8aa3 0%,#7eb3c4 50%,#c4d8de 100%);border-radius:4px;position:relative;overflow:hidden}
+  .ig-2 .pool::before{content:"";position:absolute;top:60%;left:0;right:0;height:40%;background:linear-gradient(180deg,#3f6678 0%,#2a4d5e 100%)}
+  .ig-2 .pool::after{content:"";position:absolute;top:10px;left:10px;width:22px;height:80px;background:#2d5237;border-radius:50%}
+  .ig-2 .gear{background:#1a2733;border-radius:4px;position:relative;padding:8px;display:flex;flex-direction:column;justify-content:space-around}
+  .ig-2 .gear-row{display:flex;gap:6px;font-size:8px;color:#9aa4ab;align-items:center}
+  .ig-2 .gear-dot{width:18px;height:18px;background:#3a4654;border-radius:3px;flex-shrink:0}
+  .ig-2 .head{font-family:Georgia,serif;font-size:26px;font-weight:700;line-height:1.05;letter-spacing:-.01em;margin-top:14px}
+  .ig-2 .head .gold{color:var(--gold)}
+
+  .ig-3{background:#f4ede0;color:#1c2942;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}
+  .ig-3::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center bottom,rgba(184,92,58,.08) 0%,transparent 70%);pointer-events:none}
+  .ig-3 .head{font-family:"Times New Roman",Georgia,serif;font-size:28px;line-height:1.08;font-weight:600;letter-spacing:-.005em;max-width:280px;position:relative;z-index:2}
+  .ig-3 .head .rule{display:block;width:32px;height:2px;background:var(--gold);margin:16px auto 0}
+  .ig-3 .kicker{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;position:relative;z-index:2}
+  .ig-3 .wm{position:absolute;bottom:14px;font-size:9px;letter-spacing:.22em;color:var(--navy);font-weight:700;opacity:.85}
+  .ig-2 .wm{position:absolute;bottom:14px;right:18px;font-size:9px;letter-spacing:.22em;color:var(--gold);font-weight:700;opacity:.85}
+  .ig-mock{position:relative}
+
+  .photo-direction{background:#f4ede0;border-radius:6px;padding:10px 14px;font-size:13px;color:#5a4a2a;margin-top:12px}
+  .photo-direction strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;color:var(--terra)}
+  .fb-mock{background:#fff;border:1px solid #dadde1;border-radius:8px;padding:14px 16px;max-width:600px}
+  .fb-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .fb-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+  .fb-name{font-weight:600;font-size:14px;color:#050505}
+  .fb-time{font-size:12px;color:#65676b}
+  .fb-body{font-size:14.5px;line-height:1.5;color:#050505;white-space:pre-wrap}
+  .questions{background:#fff;border:2px dashed var(--gold);padding:18px 22px;border-radius:10px;margin-top:30px}
+  .questions h3{margin-top:0}
+  .questions ol{margin:8px 0 0;padding-left:22px}
+  .questions li{margin:8px 0;font-size:14.5px}
+</style>
+</head>
+<body>
+
+<h1>Social backfill — first 6 posts for review</h1>
+<p class="lead">3 Facebook + 3 Instagram. Mixed audiences (homeowner / service provider / real estate). All tips-of-the-trade voice — no sales, no CTA. IG photos are direction mockups, not final art.</p>
+
+<div class="note">
+<strong>Pacing plan if approved:</strong> 2–3/day across FB and IG, staggered times (e.g. Day 1: 8:42am, 1:17pm, 7:34pm — then Day 2 totally different). Mix of audiences across the week so no segment feels neglected. These 6 cover the first 2–3 days of posting.
+</div>
+
+<!-- ==================== FB POSTS ==================== -->
+
+<h2>Facebook — 3 drafts</h2>
+
+<div class="post fb">
+  <div>
+    <div class="meta"><span class="tag">FB · Post 1</span> <span class="audience">Homeowner</span> <span class="slot">Suggested slot: mid-morning</span></div>
+    <div class="fb-mock">
+      <div class="fb-head">
+        <div class="fb-avatar">RA</div>
+        <div>
+          <div class="fb-name">Robinhood Adjusting</div>
+          <div class="fb-time">Wellington, FL · Public</div>
+        </div>
+      </div>
+      <div class="fb-body">Quick one for South Florida homeowners renewing this summer.
+
+A wind mitigation inspection is the biggest discount most policies can access — often 15 to 45% off the wind premium. But timing matters: get it done 60 to 90 days BEFORE your renewal date, not after.
+
+Once your renewal notice arrives, the rate is already locked. The inspection only flows into the next cycle.
+
+Your renewal date isn't always your policy effective date — check the top-right corner of your declarations page.</div>
+    </div>
+  </div>
+</div>
+
+<div class="post fb">
+  <div>
+    <div class="meta"><span class="tag">FB · Post 2</span> <span class="audience">Service provider</span> <span class="slot">Suggested slot: early afternoon</span></div>
+    <div class="fb-mock">
+      <div class="fb-head">
+        <div class="fb-avatar">RA</div>
+        <div>
+          <div class="fb-name">Robinhood Adjusting</div>
+          <div class="fb-time">Wellington, FL · Public</div>
+        </div>
+      </div>
+      <div class="fb-body">For South Florida roofers and restoration crews working on commercial portfolios — one tip on locking in priority-response season agreements without the back-and-forth on rate.
+
+Property managers expect to negotiate price. What they actually need is the SLA. Lead with the response window, not the rate.
+
+Template language that tends to work:
+
+"Priority response: crew on-site within 12 business hours of activation call. Dry-in within 48 hours. Tarp through standard adjuster cycle. Standard pricing applies. Allocation: portfolio receives queue priority over non-contracted work."
+
+That's it. No discount language. The value being sold is the slot, not the price.
+
+Two things crews commonly miss: (1) define "activation call" so weekend and holiday timing is unambiguous, (2) cap each portfolio at a specific square footage so you can sign multiple property managers without overcommitting capacity. If you can't service everyone you signed, your SLA reputation is the thing that breaks first.</div>
+    </div>
+  </div>
+</div>
+
+<div class="post fb">
+  <div>
+    <div class="meta"><span class="tag">FB · Post 3</span> <span class="audience">Real estate</span> <span class="slot">Suggested slot: late afternoon</span></div>
+    <div class="fb-mock">
+      <div class="fb-head">
+        <div class="fb-avatar">RA</div>
+        <div>
+          <div class="fb-name">Robinhood Adjusting</div>
+          <div class="fb-time">Wellington, FL · Public</div>
+        </div>
+      </div>
+      <div class="fb-body">For South Florida agents writing listing agreements this summer — a small tweak that's saved a few clients from post-close grief.
+
+When a seller has had a prior insurance claim (even a paid-and-closed one from 5+ years back), it shows up on the buyer's CLUE report at underwriting. Buyer's lender pulls it, buyer's premium quote spikes, deal nearly falls apart at 11pm two nights before close. Happens more than you'd think.
+
+The fix: ask the seller upfront for their CLUE report (free from LexisNexis, 7 to 10 day turnaround) and disclose any prior losses in the listing remarks. Buyer's agent prices the higher premium quote in from day one. No surprise underwriting calls at the worst possible moment.
+
+Costs nothing, fixes a pattern. Most sellers don't even know CLUE reports exist until something goes sideways with the file.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== IG POSTS ==================== -->
+
+<h2>Instagram — 3 drafts (visual mockups)</h2>
+
+<p class="note">
+<strong>Honest read on the photos:</strong> these CSS mockups show the <em>direction</em> — editorial/magazine energy, not the "social tile" look. Final production will need real photography or AI-generated images (DALL-E / Midjourney) for the photo-driven concepts, plus type set in real fonts. <strong>Pick the direction first; I'll source / generate the actual images second.</strong>
+</p>
+
+<div class="post">
+  <div>
+    <div class="ig-mock ig-1">
+      <div class="kicker">Spring habit · 5 minutes</div>
+      <div class="head">Photograph your roof from the curb. <em>Every spring.</em></div>
+      <div class="phone"><div class="phone-img"></div></div>
+      <div class="wm">RA</div>
+    </div>
+    <div class="photo-direction">
+      <strong>Photo direction</strong>
+      Real photography — soft-focus Florida single-story home in the background (palm tree, terra-cotta tile or asphalt shingle, golden hour). Sharp foreground: a hand holding a phone, on the screen is the same roof photographed a year prior with a small "2025" timestamp visible. Editorial, restrained color (sand / sage / cream). Type sits top-left in serif (Caslon / Tiempos), italic gold accent on "Every spring." Not a graphic — looks like a magazine spread.
+    </div>
+  </div>
+  <div>
+    <div class="meta"><span class="tag">IG · Post 1</span> <span class="audience">Homeowner</span> <span class="slot">Suggested slot: evening</span></div>
+    <h3>Caption</h3>
+    <div class="copy">5-minute habit that saves a claim:
+
+Every spring, walk to the curb, point your phone at your roof from the same four spots, and shoot.
+
+That's it. That's the whole tip.
+
+Two years later when a storm pulls eight shingles and the adjuster says "this looks like wear and tear" — you've got dated photos showing the roof was clean and tight in 2024, in 2025, in 2026. The claim becomes about the storm, not about the age of the roof.
+
+You're not building a case. You're building a baseline. Most denials we see could have been preempted by 30 seconds of dated photos sitting somewhere in the past.
+
+#SouthFlorida #PalmBeachCounty #Homeowner #InsuranceTips #HurricanePrep</div>
+  </div>
+</div>
+
+<div class="post">
+  <div>
+    <div class="ig-mock ig-2">
+      <div class="top">
+        <div class="pool"></div>
+        <div class="gear">
+          <div class="gear-row"><div class="gear-dot"></div>WATER SHUTOFF</div>
+          <div class="gear-row"><div class="gear-dot"></div>METER KEY</div>
+          <div class="gear-row"><div class="gear-dot"></div>DEC PAGE PDF</div>
+          <div class="gear-row"><div class="gear-dot"></div>FLASHLIGHT</div>
+        </div>
+      </div>
+      <div class="head">Storm prep isn't<br>just <span class="gold">shutters.</span></div>
+      <div class="wm">RA</div>
+    </div>
+    <div class="photo-direction">
+      <strong>Photo direction</strong>
+      Split-frame editorial — top half is a luxurious South Florida pool deck under a calm sky (the "visible 5%" people focus on). Bottom half is a flat-lay on dark slate or weathered wood of the boring-but-critical gear: water shutoff key, gas meter wrench, flashlight, printed declarations page, a phone with the carrier's number pulled up. Tight composition, single light source, deep navy + cream palette. Type bottom-left in display serif with gold accent on "shutters."
+    </div>
+  </div>
+  <div>
+    <div class="meta"><span class="tag">IG · Post 2</span> <span class="audience">Homeowner</span> <span class="slot">Suggested slot: late morning</span></div>
+    <h3>Caption</h3>
+    <div class="copy">Four things most South Florida hurricane prep lists skip:
+
+1. Test your water shutoff valve in May. If it's been 3 years since anyone turned it, it's probably seized. You don't want to learn that at 2am during a leak.
+
+2. PDF your declarations page to your phone. Not the whole policy — just the dec page. That's the document your adjuster, your contractor, and your mortgage company all ask for first.
+
+3. Photograph each room with the doors open. Two angles. Then do the garage. Time-stamped, geo-tagged, sitting in your camera roll. That's your contents inventory if anything ever goes sideways.
+
+4. Know where your meter is. Power and water. If a tree pulls the line, the first responder's question is "where's the cutoff" — not "where do we find it."
+
+Shutters are the visible 5%. These four are the boring 95%.
+
+#HurricaneSeason2026 #SouthFlorida #PalmBeachCounty #HomeownerTips</div>
+  </div>
+</div>
+
+<div class="post">
+  <div>
+    <div class="ig-mock ig-3">
+      <div>
+        <div class="kicker">Plain English · §626.854</div>
+        <div class="head">A public adjuster is not your lawyer.<br>And not your contractor.<span class="rule"></span></div>
+      </div>
+      <div class="wm">RA</div>
+    </div>
+    <div class="photo-direction">
+      <strong>Photo direction</strong>
+      Pure typography. Cream / sand background with very faint underlying texture (coquina rock close-up, or sunlight-on-terrazzo, low saturation). Serif type centered, magazine-cover energy — restrained, confident, no graphic clutter. Small kicker in caps tracked wide above. Tiny terra-cotta hairline rule under the headline. The kind of image people screenshot.
+    </div>
+  </div>
+  <div>
+    <div class="meta"><span class="tag">IG · Post 3</span> <span class="audience">Homeowner</span> <span class="slot">Suggested slot: morning</span></div>
+    <h3>Caption</h3>
+    <div class="copy">What we are, in 30 seconds:
+
+A public adjuster represents you — the policyholder — when you file a property insurance claim. Not the insurance company. Not the contractor doing the repairs. Not in litigation.
+
+We read your policy, document the damage, write the estimate to the carrier's standards, and negotiate the settlement.
+
+What we are not:
+— An attorney. We can't file suit. If your claim is in active litigation, that's a lawyer's job.
+— A contractor. We don't do the repairs. We work alongside whoever you hire — they're independent of us.
+— A magic wand. Some claims are correctly denied. We tell you when that's the case before you sign anything.
+
+Florida statute §626.854 governs what we can and can't do. Worth a 5-minute read if you've never had a claim.
+
+#PublicAdjuster #FloridaInsurance #SouthFlorida #PalmBeachCounty #HomeownerEducation</div>
+  </div>
+</div>
+
+<!-- ==================== QUESTIONS ==================== -->
+
+<div class="questions">
+<h3>Decisions I need from you to move forward</h3>
+<ol>
+<li><strong>Voice / tone:</strong> Do these read like you'd say them? Anything sound forced or off-brand?</li>
+<li><strong>IG photo direction:</strong> Which of the three styles feels closest to "cool" — (1) editorial photography w/ phone foreground, (2) split-frame magazine spread, (3) pure typography? Want all three styles in rotation, or pick one and standardize?</li>
+<li><strong>Image production path:</strong> AI-generated (DALL·E / Midjourney) for the photo-heavy ones, or do you want to shoot real iPhone shots yourself for authenticity?</li>
+<li><strong>Audience mix:</strong> Right balance of homeowner / service-provider / RE — or should we lean harder on homeowner since that's the bigger TAM?</li>
+<li><strong>Hashtags:</strong> I went light. Want more local-specific (#Wellington #BocaRaton #JupiterFL) or keep generic?</li>
+<li><strong>Posting times for tomorrow:</strong> If approved, I'd suggest: FB Post 1 (homeowner) at 9:14am, IG Post 3 (PA explainer) at 11:47am, FB Post 2 (service provider) at 3:22pm. Reasonable?</li>
+</ol>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Marketing Materials Review — 2026-05-28</title>
+<style>
+  :root { --gold:#c9a961; --ink:#1a1a1a; --muted:#6b6b6b; --bg:#fafaf7; --card:#fff; --line:#e8e4d8; }
+  *{box-sizing:border-box}
+  body{font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);margin:0;padding:32px;max-width:1100px;margin:0 auto}
+  h1{font-size:28px;margin:0 0 4px;letter-spacing:-.01em}
+  h2{font-size:20px;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--gold)}
+  h3{font-size:15px;margin:14px 0 4px;color:var(--ink)}
+  .lead{color:var(--muted);margin:0 0 24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:600}
+  .card a{display:block;font-weight:600;color:var(--ink);text-decoration:none;margin:4px 0 2px}
+  .card a:hover{color:var(--gold)}
+  .meta{font-size:12px;color:var(--muted)}
+  .status{display:inline-block;font-size:11px;padding:2px 7px;border-radius:10px;background:#eef3e8;color:#3e6a2a;margin-left:6px}
+  .status.warn{background:#fbf2dd;color:#8a6a1a}
+  .status.cold{background:#f1eeea;color:#7a6a55}
+  ul.list{margin:6px 0 0;padding-left:18px}
+  ul.list li{margin:3px 0;font-size:13.5px}
+  .note{background:#fff8e6;border-left:3px solid var(--gold);padding:10px 14px;font-size:14px;margin:8px 0 0;border-radius:0 6px 6px 0}
+  details{margin-top:6px;font-size:13px}
+  details summary{cursor:pointer;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<h1>Marketing Materials — Where We Stand</h1>
+<p class="lead">Snapshot for Duncan, Thu 2026-05-28. Everything live, drafted, or sitting in a folder. Click anything to open the source file.</p>
+
+<h2>1. Brand & Foundations</h2>
+<div class="grid">
+  <div class="card">
+    <div class="tag">Brand kit</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/SOCIAL-BRAND-KIT.html">SOCIAL-BRAND-KIT.html</a>
+    <div class="meta">Voice, colors, logo usage, post templates. 547 lines.</div>
+    <span class="status">Live</span>
+  </div>
+  <div class="card">
+    <div class="tag">Growth plan</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/SUBSCRIBER-GROWTH-PLAN.html">SUBSCRIBER-GROWTH-PLAN.html</a>
+    <div class="meta">Subscriber acquisition roadmap. 628 lines.</div>
+    <span class="status">Live</span>
+  </div>
+</div>
+
+<h2>2. Website &amp; Landing Pages</h2>
+<div class="grid">
+  <div class="card">
+    <div class="tag">Main site</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/site/index.html">site/index.html</a>
+    <div class="meta">robinhoodadjusting.com homepage. 1,514 lines. Newsletter signup, free-review CTA, guides.</div>
+    <span class="status">Live on Netlify</span>
+  </div>
+  <div class="card">
+    <div class="tag">Lead magnet</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/site/free-review.html">site/free-review.html</a>
+    <div class="meta">"Free Virtual Property Review" — hero, Calendly embed, §626.854 disclaimer.</div>
+    <span class="status warn">Live — Calendly setup pending</span>
+    <details><summary>What's still manual</summary>See FREE-REVIEW-SETUP.md — Calendly event type <code>/virtual-review</code> + HubSpot screening Qs.</details>
+  </div>
+  <div class="card">
+    <div class="tag">Side venture</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/storm-shield/marketing/landing-page-v1.html">storm-shield/landing-page-v1.html</a>
+    <div class="meta">Storm Shield concept landing (separate venture). Pilot pitch script alongside.</div>
+    <span class="status cold">Draft</span>
+  </div>
+</div>
+
+<h2>3. Email Templates</h2>
+<div class="grid">
+  <div class="card">
+    <div class="tag">Outreach email A</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/crm/email-templates/version-a-clean-minimal.html">version-a-clean-minimal.html</a>
+    <div class="meta">Clean / minimal — text-forward. A/B test variant A.</div>
+    <span class="status">In rotation</span>
+  </div>
+  <div class="card">
+    <div class="tag">Outreach email B</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/crm/email-templates/version-b-warm-branded.html">version-b-warm-branded.html</a>
+    <div class="meta">Warm / branded — gold accents, more visual chrome.</div>
+    <span class="status">In rotation</span>
+  </div>
+  <div class="card">
+    <div class="tag">Daily newsletter</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/scripts/send-daily-brief.py">scripts/send-daily-brief.py</a>
+    <div class="meta">Renders daily brief into HubSpot email. Includes free-review gold CTA footer.</div>
+    <span class="status">Live, sends Mon–Sun</span>
+  </div>
+</div>
+
+<h2>4. Daily Brief (your #1 marketing asset)</h2>
+<div class="grid">
+  <div class="card">
+    <div class="tag">Today — homeowner</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/briefs/2026-05-28-homeowner.html">2026-05-28-homeowner.html</a>
+    <div class="meta">Hurricane countdown, homeowner-voiced.</div>
+  </div>
+  <div class="card">
+    <div class="tag">Today — service provider</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/briefs/2026-05-28-service-provider.html">2026-05-28-service-provider.html</a>
+    <div class="meta">"Sell the slot, not the discount" — priority-response agreements.</div>
+  </div>
+  <div class="card">
+    <div class="tag">Today — real estate</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/briefs/2026-05-28-real-estate.html">2026-05-28-real-estate.html</a>
+    <div class="meta">RE-pro voiced, transaction angles.</div>
+  </div>
+  <div class="card">
+    <div class="tag">Archive</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/briefs/">content/briefs/ index</a>
+    <div class="meta">Full HTML brief archive. Mon–Sat publish, Sun = weekly trends.</div>
+  </div>
+</div>
+
+<h2>5. Articles &amp; SEO Content</h2>
+<div class="grid">
+  <div class="card">
+    <a href="file:///Users/victoria/.openclaw/workspace/content/articles/what-is-a-public-adjuster.html">What is a Public Adjuster?</a>
+    <div class="meta">Top-of-funnel explainer.</div>
+  </div>
+  <div class="card">
+    <a href="file:///Users/victoria/.openclaw/workspace/content/articles/before-the-storm.html">Before the Storm</a>
+    <div class="meta">Pre-season homeowner playbook.</div>
+  </div>
+  <div class="card">
+    <a href="file:///Users/victoria/.openclaw/workspace/content/articles/wind-mitigation-revenue-strategy.html">Wind Mitigation Revenue Strategy</a>
+    <div class="meta">Service-provider angle.</div>
+  </div>
+  <div class="card">
+    <a href="file:///Users/victoria/.openclaw/workspace/content/articles/water-and-mold-referral-strategy.html">Water &amp; Mold Referral Strategy</a>
+    <div class="meta">B2B referral piece for restoration partners.</div>
+  </div>
+  <div class="card">
+    <a href="file:///Users/victoria/.openclaw/workspace/content/articles/contractors-and-insurance-scope.html">Contractors &amp; Insurance Scope</a>
+    <div class="meta">For GC / roofer audience.</div>
+  </div>
+</div>
+
+<h2>6. Social — Facebook &amp; Instagram</h2>
+<p class="note"><strong>Reminder:</strong> Facebook page still blocked by Meta (since ~2026-05-22). All current social distribution is <strong>Instagram only</strong> until FB clears. Drafts still being produced for both so we can backfill.</p>
+
+<div class="grid">
+  <div class="card">
+    <div class="tag">Today — Facebook copy</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/2026-05-28/facebook.md">2026-05-28/facebook.md</a>
+    <div class="meta">"Calendar, not price." Service-provider angle.</div>
+  </div>
+  <div class="card">
+    <div class="tag">Today — Instagram copy</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/2026-05-28/instagram.md">2026-05-28/instagram.md</a>
+    <div class="meta">"Sell the slot, not the discount." Hashtags + image direction included.</div>
+  </div>
+  <div class="card">
+    <div class="tag">Visual posts (designed)</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/social/2026-05-13/">content/social/2026-05-13/</a>
+    <div class="meta">3 finished IG post designs (HTML + PNG). Only fully-designed set we've produced so far.</div>
+    <span class="status warn">Gap — only 1 dated set</span>
+  </div>
+  <div class="card">
+    <div class="tag">Archive — daily copy</div>
+    <a href="file:///Users/victoria/.openclaw/workspace/content/">content/ — daily folders</a>
+    <div class="meta">~25 dated folders, each with facebook.md + instagram.md drafts.</div>
+  </div>
+</div>
+
+<h2>Honest read on the state of things</h2>
+<div class="note">
+<strong>Strong:</strong> Daily brief engine (3 audiences) + landing pages + email rotation A/B + 8 evergreen articles. The content side is producing.<br><br>
+<strong>Weak:</strong> Only one batch of <em>designed</em> visual social posts (May 13). Everything since is text drafts only. FB blocked since May 22 — IG is carrying alone. Storm Shield landing is a v1 draft, no traffic.<br><br>
+<strong>Open loops:</strong> Calendly <code>/virtual-review</code> event still needs the manual setup from FREE-REVIEW-SETUP.md before that page converts. Brand kit is written but not yet enforced on the IG feed grid.
+</div>
+
+<p class="lead" style="margin-top:24px">Tell me which bucket you want to dig into — visual social, the landing pages, the email A/B, or the article queue — and I'll pull it up full-screen.</p>
+
+</body>
+</html>

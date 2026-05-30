@@ -1,5 +1,11 @@
 {
   "sent_signatures": {
+    "022dc0032513b497": {
+      "date": "2026-07-21",
+      "google_event_id": "eb1a35ususlijtqup4tsriu6lc",
+      "sent_at": "2026-05-27T11:31:22",
+      "summary": "PULSE Young Professionals July Networking Mixer (Boca Chamber) \u2014 TENTATIVE"
+    },
     "0a7e13cbf3c118f1": {
       "date": "2026-05-22",
       "google_event_id": "78afih4enj98ju5805blk6qna8",
@@ -54,6 +60,12 @@
       "sent_at": "2026-05-21T11:32:38",
       "summary": "Business Connections (PBN Chamber) \u2014 TENTATIVE"
     },
+    "84d6b09e7c7e2f81": {
+      "date": "2026-07-30",
+      "google_event_id": "3r81k9un3phl9ojt49p9sr7oi0",
+      "sent_at": "2026-05-27T11:31:22",
+      "summary": "Business + PBYP Social \u2014 July (Palm Beach Chamber) \u2014 TENTATIVE"
+    },
     "8c3441c2e5a92ff8": {
       "date": "2026-06-02",
       "google_event_id": "9igel20ntu927pfnka29tm8e9c",
@@ -72,17 +84,35 @@
       "sent_at": "2026-05-20T11:36:59",
       "summary": "Wellington Hurricane & Severe Weather Expo 2027 \u2014 VENDOR SLOT \u2014 TENTATIVE"
     },
+    "b98c945d708a4d1f": {
+      "date": "2026-06-16",
+      "google_event_id": "0jjg5gfc16n0s5orrfidcvvgv0",
+      "sent_at": "2026-05-27T11:31:22",
+      "summary": "PULSE Young Professionals June Luncheon (Boca Chamber) \u2014 TENTATIVE"
+    },
     "ba2015280647907f": {
       "date": "2026-06-18",
       "google_event_id": "54bfq9u0r0i305q8eu6jot7ros",
       "sent_at": "2026-05-25T11:31:12",
       "summary": "PBYP Social \u2014 Hamptons White Party (Palm Beach Chamber) \u2014 TENTATIVE"
     },
+    "c57b8e454b338a9d": {
+      "date": "2026-06-25",
+      "google_event_id": "qa5qlnd8idk9olplep1bet2hf8",
+      "sent_at": "2026-05-27T11:31:22",
+      "summary": "Networking for a Good Cause \u2014 Inner Circle (Boca Chamber) \u2014 TENTATIVE"
+    },
     "dd17e23375d4059a": {
       "date": "2026-06-23",
       "google_event_id": "t2e9pn4ba9ed0p45ksr4mqvt90",
       "sent_at": "2026-05-20T11:37:05",
       "summary": "Boca Chamber Live After Five (June) \u2014 TENTATIVE"
+    },
+    "e6d67d12d17e3e04": {
+      "date": "2026-07-28",
+      "google_event_id": "0ub3ncb7cgs7gn9ibokqgl6mk4",
+      "sent_at": "2026-05-27T11:31:22",
+      "summary": "Boca Chamber Live After Five \u2014 July (Maggie McFly's) \u2014 TENTATIVE"
     },
     "fb9f4dcb5d5ad0d1": {
       "date": "2026-06-11",

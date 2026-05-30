@@ -9,3 +9,7 @@
 [2026-05-26 10:31 EDT] DIAGNOSIS Website Sync err: build-website.sh ran (site/PA-WEBSITE.html + site/index.html mtime 07:02; site/briefs/2026-05-26.html exists). No commits today. The 8am `daily-git-sync` cron (id 3a1dc1bf...) has lastRunStatus=None — wake event didn't fire or main session didn't act on it. Needs Duncan: run git-sync-daily.sh manually or investigate why next-heartbeat wake never landed. Cannot auto-fix per rules (no git push).
 [2026-05-26 10:31 EDT] health=88% fixed=0 remaining=1 notes=websync err — daily-git-sync cron did not run; underlying build did. Triage 8am wake.
 [2026-05-27 09:16 EDT] ⚠️ newsletter fallback for 2026-05-27: homeowner, service-provider, real-estate (segmented variant missing)
+[2026-05-27 10:30 EDT] health=100% fixed=0 remaining=0 notes=all green
+[2026-05-28 10:30 EDT] OK health=100%
+[2026-05-28 10:30 EDT] health=100% fixed=0 remaining=0 notes=all green
+[2026-05-29 10:30 EDT] health=100% fixed=0 remaining=0 notes=all green

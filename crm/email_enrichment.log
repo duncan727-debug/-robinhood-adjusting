@@ -724,3 +724,157 @@ Contacts missing email: 12
 [2026-05-26 10:00]   Recycled (retry tomorrow): 0
 [2026-05-26 10:00]   Skipped (duplicates): 0
 [2026-05-26 10:00]   Flagged manual lookup: 0
+[2026-05-27 10:00] === enrich_before_upload start ===
+[2026-05-27 10:00] === Done ===
+[2026-05-27 10:00]   Uploaded to HubSpot (NEW only): 0
+[2026-05-27 10:00]   Routed to review queue (best-guess): 0
+[2026-05-27 10:00]   Recycled (retry tomorrow): 0
+[2026-05-27 10:00]   Skipped (duplicates): 0
+[2026-05-27 10:00]   Flagged manual lookup: 0
+[2026-05-27 10:00] === enrich_before_upload start ===
+[2026-05-27 10:00] === Done ===
+[2026-05-27 10:00]   Uploaded to HubSpot (NEW only): 0
+[2026-05-27 10:00]   Routed to review queue (best-guess): 0
+[2026-05-27 10:00]   Recycled (retry tomorrow): 0
+[2026-05-27 10:00]   Skipped (duplicates): 0
+[2026-05-27 10:00]   Flagged manual lookup: 0
+[2026-05-28 10:00] === enrich_before_upload start ===
+[2026-05-28 10:00]   REVIEW (best-guess email): Now Air Conditioning | info@nowairconditioning.com
+[2026-05-28 10:00]   REVIEW (best-guess email): Samantha Curry Real Estate | Douglas Elliman Palm Beach | info@samanthasellspalmbeach.com
+[2026-05-28 10:00]   Review queue: wrote 2 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-28.csv
+[2026-05-28 10:00] === Done ===
+[2026-05-28 10:00]   Uploaded to HubSpot (NEW only): 0
+[2026-05-28 10:00]   Routed to review queue (best-guess): 2
+[2026-05-28 10:00]   Recycled (retry tomorrow): 0
+[2026-05-28 10:00]   Skipped (duplicates): 0
+[2026-05-28 10:00]   Flagged manual lookup: 0
+[2026-05-28 10:00] === enrich_before_upload start ===
+[2026-05-28 10:00]   REVIEW (best-guess email): Now Air Conditioning | info@nowairconditioning.com
+[2026-05-28 10:00]   REVIEW (best-guess email): Samantha Curry Real Estate | Douglas Elliman Palm Beach | info@samanthasellspalmbeach.com
+[2026-05-28 10:00]   Review queue: wrote 2 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-28.csv
+[2026-05-28 10:00] === Done ===
+[2026-05-28 10:00]   Uploaded to HubSpot (NEW only): 0
+[2026-05-28 10:00]   Routed to review queue (best-guess): 2
+[2026-05-28 10:00]   Recycled (retry tomorrow): 0
+[2026-05-28 10:00]   Skipped (duplicates): 0
+[2026-05-28 10:00]   Flagged manual lookup: 0
+[2026-05-29 08:10] === enrich_before_upload start ===
+[2026-05-29 08:10] === Done ===
+[2026-05-29 08:10]   Uploaded to HubSpot (NEW only): 0
+[2026-05-29 08:10]   Routed to review queue (best-guess): 0
+[2026-05-29 08:10]   Recycled (retry tomorrow): 0
+[2026-05-29 08:10]   Skipped (duplicates): 0
+[2026-05-29 08:10]   Flagged manual lookup: 0
+[2026-05-29 08:11] === enrich_before_upload start ===
+[2026-05-29 08:11]   ✓ NEW → HubSpot: Insurance Express Florida | info@insuranceexpressagency.com | deal=327308467924
+[2026-05-29 08:11]   REVIEW (best-guess email): Insurance Express Reviews | info@insuranceexpress.com
+[2026-05-29 08:11]   ✓ NEW → HubSpot: Evergreen Insurance Agency | info@evergreeninsurance.com | deal=327308505828
+[2026-05-29 08:11]   REVIEW (best-guess email): AC Insurance Services | info@myacis.com
+[2026-05-29 08:11]   ✓ NEW → HubSpot: AIM Insurance Group Inc. | admin@insmast.com | deal=327308288755
+[2026-05-29 08:11]   REVIEW (best-guess email): America's Insurance Services | info@americasins.com
+[2026-05-29 08:11]   ✓ NEW → HubSpot: M & M Insurance Agency, Inc. | sales@mminsuranceinc.com | deal=327066572492
+[2026-05-29 08:12]   ✓ NEW → HubSpot: Eaton Insurance Inc | brian@eatoninsurance.net | deal=327034590927
+[2026-05-29 08:12]   REVIEW (best-guess email): Sardina Insurance | info@sardinainsurance.com
+[2026-05-29 08:12]   REVIEW (best-guess email): The Leonard Insurance Agency, LLC | info@leonardagencyfl.com
+[2026-05-29 08:12]   ✓ NEW → HubSpot: Absolute Insurance | absolute@absoluteinsurancepbc.com | deal=327272686328
+[2026-05-29 08:12]   ✓ NEW → HubSpot: Top Coverage Insurance West Palm Beach | documents@top-coverage.com | deal=327064864455
+[2026-05-29 08:12]   ✓ NEW → HubSpot: Absolute Insurance Inc | info@absoluteinsuranceinc.com | deal=327308258033
+[2026-05-29 08:12]   REVIEW (best-guess email): Florida Low Cost Insurance | info@fllci.com
+[2026-05-29 08:12]   REVIEW (best-guess email): GreatFlorida Insurance: Brian Lariviere | info@westpalmbeach1.greatflorida.com
+[2026-05-29 08:12]   REVIEW (best-guess email): Jacobs/Straub Squad Insurance | info@shopmyins.net
+[2026-05-29 08:12]   ✓ NEW → HubSpot: Insurance Solutions of Palm Beach, LLC | yespinosa@insurancesolutionspb.com | deal=327308283613
+[2026-05-29 08:13]   REVIEW (best-guess email): Motivated Insurance- Commercial Insurance Specialists | info@motivatedinsurance.com
+[2026-05-29 08:13]   ✓ NEW → HubSpot: The Gordon Agency Inc. - Car Insurance, Auto Insurance, Home Owners Insurance & More | michael@tgafl.com | deal=327064864459
+[2026-05-29 08:13]   ✓ NEW → HubSpot: Keystone Insurance Group, Inc | info@keystone-ins.com | deal=327308498620
+[2026-05-29 08:13]   ✓ NEW → HubSpot: A Security Insurance Agency | asecurityinsuranceagency@asecurityinsurance.com | deal=327308404460
+[2026-05-29 08:13]   REVIEW (best-guess email): NSI Insurance Boca | info@boca.nsigroup.org
+[2026-05-29 08:13]   REVIEW (best-guess email): Nsure.com | info@nsure.com
+[2026-05-29 08:13]   ✓ NEW → HubSpot: Fiorentino Insurance Group | info@figfl.com | deal=327308283615
+[2026-05-29 08:13]   REVIEW (best-guess email): Simplified Insurance Agency | info@simplifiedinsurance.net
+[2026-05-29 08:13]   Review queue: wrote 12 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-29.csv
+[2026-05-29 08:13] === Done ===
+[2026-05-29 08:13]   Uploaded to HubSpot (NEW only): 13
+[2026-05-29 08:13]   Routed to review queue (best-guess): 12
+[2026-05-29 08:13]   Recycled (retry tomorrow): 0
+[2026-05-29 08:13]   Skipped (duplicates): 0
+[2026-05-29 08:13]   Flagged manual lookup: 0
+[2026-05-29 10:00] === enrich_before_upload start ===
+[2026-05-29 10:00]   REVIEW (best-guess email): GreatFlorida Insurance: Cheryl Miller | info@wellington.greatflorida.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Brightway Insurance, The Bill Thomas Agency | info@brightway.com
+[2026-05-29 10:00]   ✓ NEW → HubSpot: We Insure Wellington | nationalsales@weinsuregroup.com | deal=327071362750
+[2026-05-29 10:00]   REVIEW (best-guess email): Kyle Bradshaw: Allstate Insurance | info@agents.allstate.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Didi Burton - State Farm Insurance Agent | info@didiburton.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Ken Magaro - State Farm Insurance Agent | info@kenmagaro.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Todd Miller: Allstate Insurance | info@agents.allstate.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Bridget Hinckley: Allstate Insurance | info@agents.allstate.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Tony Garcia - State Farm Insurance Agent | info@tonygarciainsurance.com
+[2026-05-29 10:00]   REVIEW (best-guess email): First American Title Insurance Company | info@local.firstam.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Robert Lapeter - State Farm Insurance Agent | info@robinsures.com
+[2026-05-29 10:00]   ✓ NEW → HubSpot: DSI- Educators Premier Insurance | info@darrschackowinsurance.com | deal=327309511376
+[2026-05-29 10:01]   ✓ NEW → HubSpot: Protective Choice Insurance | help@protectivechoice.com | deal=327309068993
+[2026-05-29 10:01]   REVIEW (best-guess email): Daniel Tamargo - State Farm Insurance Agent | info@dantamargo.com
+[2026-05-29 10:01]   REVIEW (best-guess email): Estrella Insurance | info@agents.estrellainsurance.com
+[2026-05-29 10:01]   REVIEW (best-guess email): Freeway Insurance | info@locations.freeway.com
+[2026-05-29 10:01]   REVIEW (best-guess email): David Dunham Insurance | info@daviddunhamins.com
+[2026-05-29 10:01]   ✓ NEW → HubSpot: All County Insurance | quotes@allcountyinsurance.com | deal=327064893142
+[2026-05-29 10:02]   REVIEW (best-guess email): LOI Insurance | info@loiinsurance.com
+[2026-05-29 10:02]   REVIEW (best-guess email): World Insurance Associates LLC | info@locations.worldinsurance.com
+[2026-05-29 10:02]   REVIEW (best-guess email): Direct Auto Insurance | info@local.directauto.com
+[2026-05-29 10:02]   REVIEW (best-guess email): Brightway Insurance, West Palm Beach | info@brightway.com
+[2026-05-29 10:02]   REVIEW (best-guess email): CMC Management | info@cmcmanagement.biz
+[2026-05-29 10:02]   REVIEW (best-guess email): Sea Breeze Community Management Services, Inc | info@home.seabreezecms.com
+[2026-05-29 10:02]   ✓ NEW → HubSpot: Grand Isles Gate House-Wllngtn | webmaster@grandisleshoa.com | deal=327162284783
+[2026-05-29 10:02]   Review queue: wrote 20 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-29.csv
+[2026-05-29 10:02] === Done ===
+[2026-05-29 10:02]   Uploaded to HubSpot (NEW only): 5
+[2026-05-29 10:02]   Routed to review queue (best-guess): 20
+[2026-05-29 10:02]   Recycled (retry tomorrow): 0
+[2026-05-29 10:02]   Skipped (duplicates): 0
+[2026-05-29 10:02]   Flagged manual lookup: 0
+[2026-05-29 10:00] === enrich_before_upload start ===
+[2026-05-29 10:00]   REVIEW (best-guess email): GreatFlorida Insurance: Cheryl Miller | info@wellington.greatflorida.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Brightway Insurance, The Bill Thomas Agency | info@brightway.com
+[2026-05-29 10:00]   ✓ NEW → HubSpot: We Insure Wellington | nationalsales@weinsuregroup.com | deal=327071362750
+[2026-05-29 10:00]   REVIEW (best-guess email): Kyle Bradshaw: Allstate Insurance | info@agents.allstate.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Didi Burton - State Farm Insurance Agent | info@didiburton.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Ken Magaro - State Farm Insurance Agent | info@kenmagaro.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Todd Miller: Allstate Insurance | info@agents.allstate.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Bridget Hinckley: Allstate Insurance | info@agents.allstate.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Tony Garcia - State Farm Insurance Agent | info@tonygarciainsurance.com
+[2026-05-29 10:00]   REVIEW (best-guess email): First American Title Insurance Company | info@local.firstam.com
+[2026-05-29 10:00]   REVIEW (best-guess email): Robert Lapeter - State Farm Insurance Agent | info@robinsures.com
+[2026-05-29 10:00]   ✓ NEW → HubSpot: DSI- Educators Premier Insurance | info@darrschackowinsurance.com | deal=327309511376
+[2026-05-29 10:01]   ✓ NEW → HubSpot: Protective Choice Insurance | help@protectivechoice.com | deal=327309068993
+[2026-05-29 10:01]   REVIEW (best-guess email): Daniel Tamargo - State Farm Insurance Agent | info@dantamargo.com
+[2026-05-29 10:01]   REVIEW (best-guess email): Estrella Insurance | info@agents.estrellainsurance.com
+[2026-05-29 10:01]   REVIEW (best-guess email): Freeway Insurance | info@locations.freeway.com
+[2026-05-29 10:01]   REVIEW (best-guess email): David Dunham Insurance | info@daviddunhamins.com
+[2026-05-29 10:01]   ✓ NEW → HubSpot: All County Insurance | quotes@allcountyinsurance.com | deal=327064893142
+[2026-05-29 10:02]   REVIEW (best-guess email): LOI Insurance | info@loiinsurance.com
+[2026-05-29 10:02]   REVIEW (best-guess email): World Insurance Associates LLC | info@locations.worldinsurance.com
+[2026-05-29 10:02]   REVIEW (best-guess email): Direct Auto Insurance | info@local.directauto.com
+[2026-05-29 10:02]   REVIEW (best-guess email): Brightway Insurance, West Palm Beach | info@brightway.com
+[2026-05-29 10:02]   REVIEW (best-guess email): CMC Management | info@cmcmanagement.biz
+[2026-05-29 10:02]   REVIEW (best-guess email): Sea Breeze Community Management Services, Inc | info@home.seabreezecms.com
+[2026-05-29 10:02]   ✓ NEW → HubSpot: Grand Isles Gate House-Wllngtn | webmaster@grandisleshoa.com | deal=327162284783
+[2026-05-29 10:02]   Review queue: wrote 20 rows → /Users/victoria/.openclaw/workspace/crm/review_queue/best_guess_2026-05-29.csv
+[2026-05-29 10:02] === Done ===
+[2026-05-29 10:02]   Uploaded to HubSpot (NEW only): 5
+[2026-05-29 10:02]   Routed to review queue (best-guess): 20
+[2026-05-29 10:02]   Recycled (retry tomorrow): 0
+[2026-05-29 10:02]   Skipped (duplicates): 0
+[2026-05-29 10:02]   Flagged manual lookup: 0
+[2026-05-30 10:00] === enrich_before_upload start ===
+[2026-05-30 10:00] === Done ===
+[2026-05-30 10:00]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-05-30 10:00]   Rejected by verify gate: 0
+[2026-05-30 10:00]   Phone-only (no email found): 0
+[2026-05-30 10:00]   Recycled (retry tomorrow): 0
+[2026-05-30 10:00]   Skipped (duplicates): 0
+[2026-05-30 10:00] === enrich_before_upload start ===
+[2026-05-30 10:00] === Done ===
+[2026-05-30 10:00]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-05-30 10:00]   Rejected by verify gate: 0
+[2026-05-30 10:00]   Phone-only (no email found): 0
+[2026-05-30 10:00]   Recycled (retry tomorrow): 0
+[2026-05-30 10:00]   Skipped (duplicates): 0

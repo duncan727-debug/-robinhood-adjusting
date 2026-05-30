@@ -3,18 +3,24 @@
 Enrich HubSpot contact emails from company website fields.
 1. Find contacts missing email whose company has a website
 2. Scrape homepage + /contact + /about for real email addresses
-3. If found: write to HubSpot, mark hs_lead_status=NEW
-4. If not found: write info@domain as best-guess, mark hs_lead_status=OPEN (needs review)
-5. Log everything — Duncan reviews OPEN ones tomorrow
+3. If found AND verified (MX + Sunbiz): write to HubSpot, mark hs_lead_status=NEW
+4. If website scrape misses: try FB/IG fallback, verify, then write
+5. If nothing found: leave contact email empty (no more `info@` best-guesses —
+   they bounced and tanked sender reputation)
 """
 
 import json
 import re
 import ssl
+import sys
 import time
 import urllib.request
 import urllib.error
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from verify_prospect import classify as verify_classify  # noqa: E402
+from find_social_email import find_email_via_social      # noqa: E402
 
 WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
 LOG_PATH = WORKSPACE / "crm" / "email_enrichment.log"
@@ -161,31 +167,33 @@ def main():
         # Try to scrape a real email
         email, domain = scrape_website(website)
 
+        source = "scraped" if email else None
+        if not email:
+            # Try FB/IG fallback
+            email, source = find_email_via_social(co_name, website)
+
         if email:
-            # Real email found — write it, mark NEW
+            # Verify before write (MX + Sunbiz + source gate)
+            v = verify_classify({"name": co_name, "company": co_name, "email": email, "source": source})
+            if v.get("verdict") != "verified":
+                log(f"  ✗  {co_name:45s} | {email}  (rejected: {','.join(v.get('reasons',[]))})")
+                guess_count += 1  # reusing counter as "discovered but rejected"
+                continue
             hs("PATCH", f"/crm/v3/objects/contacts/{cid}", {
                 "properties": {"email": email, "hs_lead_status": "NEW"}
             })
-            log(f"  ✓  {co_name:45s} | {email}  (scraped)")
+            log(f"  ✓  {co_name:45s} | {email}  ({source}, verified)")
             found_count += 1
-        elif domain:
-            # Best-guess fallback
-            guess_email = f"info@{domain}"
-            hs("PATCH", f"/crm/v3/objects/contacts/{cid}", {
-                "properties": {"email": guess_email, "hs_lead_status": "OPEN"}
-            })
-            log(f"  ~  {co_name:45s} | {guess_email}  (best-guess — needs review)")
-            guess_count += 1
         else:
             no_website_count += 1
-            log(f"  —  {co_name:45s} | couldn't parse website: {website}")
+            log(f"  —  {co_name:45s} | no email found on site or social")
 
         time.sleep(0.2)
 
     log(f"\n=== Done ===")
-    log(f"  Scraped real email : {found_count}")
-    log(f"  Best-guess (review): {guess_count}  — these have hs_lead_status=OPEN in HubSpot")
-    log(f"  No website / error : {no_website_count}")
+    log(f"  Scraped + verified real email: {found_count}")
+    log(f"  Discovered but rejected by verify: {guess_count}")
+    log(f"  No email found anywhere: {no_website_count}")
 
 
 if __name__ == "__main__":

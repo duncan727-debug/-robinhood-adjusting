@@ -3,15 +3,25 @@
 Enrichment gate — runs after prospect_palm_beach.py, before outreach batches.
 
 Reads crm/.prospect_pending.json, tries to find a real email for each company,
-then routes to one of three outcomes:
+then routes to one of these outcomes:
 
-  Real email scraped  → HubSpot (company + contact, hs_lead_status=NEW)
-  Best-guess only     → crm/review_queue/best_guess_YYYY-MM-DD.csv (Duncan reviews weekly)
-  No website / failed → crm/.prospect_recycle.json (retry up to 3 days, then manual flag)
+  Real email scraped + verified  → HubSpot (company + contact, hs_lead_status=NEW)
+  No web email → FB/IG fallback  → if found + verified, same upload path
+  No email anywhere, but co valid → HubSpot phone-only (lead_status=PHONE_ONLY, no email)
+  Verification rejected           → crm/review_queue/rejected_YYYY-MM-DD.csv
+  No website / failed             → crm/.prospect_recycle.json (retry up to 3 days)
 
-Rationale: ~85% bounce rate on best-guess info@domain emails was tanking sender
-reputation. Per 2026-05-14 decision, OPEN/best-guess contacts are NOT auto-uploaded
-to HubSpot; they go to a CSV review queue for manual triage.
+Rationale (2026-05-29 update):
+  * Best-guess `info@domain` generation REMOVED. Per Duncan, franchise sites
+    (Allstate, Brightway, etc.) route info@ to corporate, not the local
+    operator, so the guess pattern is a bounce engine. We now either find a
+    real email or admit we don't have one.
+  * verify_prospect.classify() runs as a gate before any HubSpot upload (MX
+    record + Sunbiz check + email source validation). Anything that fails
+    verification is parked in review queue, not uploaded.
+  * FB + IG profile scraping is the new fallback when the company website
+    yields no email — covers franchise agents whose corporate site hides
+    them but whose own social profiles show their direct address.
 
 State files (all gitignored):
   crm/.prospect_pending.json   — discovered today, awaiting enrichment
@@ -33,6 +43,10 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from verify_prospect import classify as verify_classify  # noqa: E402
+from find_social_email import find_email_via_social      # noqa: E402
 
 WORKSPACE       = Path("/Users/victoria/.openclaw/workspace")
 PENDING_FILE    = WORKSPACE / "crm" / ".prospect_pending.json"
@@ -186,7 +200,8 @@ def fetch_page(url, timeout=8):
         return ""
 
 def scrape_email(raw_url):
-    """Returns (email, status) where status is 'scraped', 'best-guess', or None."""
+    """Returns (email, status) where status is 'scraped' or None.
+    No more 'best-guess' info@domain fallback — that was a bounce engine."""
     if not raw_url:
         return None, None
     domain = re.sub(r"^https?://", "", raw_url).split("/")[0].strip()
@@ -207,8 +222,27 @@ def scrape_email(raw_url):
         if domain_emails:
             return sorted(domain_emails)[0], "scraped"
         time.sleep(0.3)
-    # No real email found — return best-guess
-    return f"info@{domain}", "best-guess"
+    return None, None
+
+
+def find_real_email(prospect):
+    """Full discovery cascade: website scrape → FB/IG social fallback.
+    Returns (email, source) where source ∈ {"scraped", "facebook", "instagram"} or (None, None)."""
+    email, status = scrape_email(prospect.get("website", ""))
+    if status == "scraped":
+        return email, "scraped"
+    # Web scrape failed — try social profiles
+    email, source = find_email_via_social(prospect.get("name", ""), prospect.get("website"))
+    if email:
+        return email, source
+    return None, None
+
+
+def verify_email_is_real(name, email, source):
+    """Run MX + Sunbiz + source gate before uploading. Returns True if safe to upload."""
+    row = {"name": name, "company": name, "email": email, "source": source}
+    result = verify_classify(row)
+    return result.get("verdict") == "verified", result.get("reasons", [])
 
 # ── state helpers ─────────────────────────────────────────────────────────────
 
@@ -241,8 +275,37 @@ def main():
     recycle  = load_json(RECYCLE_FILE)
     uploaded = set(load_json(UPLOADED_FILE))
 
-    ready_count = best_guess_count = recycle_count = skip_count = manual_flag = 0
-    review_rows = []  # collect best-guess rows for CSV review queue
+    ready_count = social_count = rejected_count = recycle_count = skip_count = phone_only_count = 0
+    rejected_rows = []  # verification failures for Duncan to review
+    phone_only_rows = []  # no email found at all but company is real — call list
+
+    def _upload(prospect, email, source):
+        nonlocal ready_count, social_count, rejected_count
+        ok, reasons = verify_email_is_real(prospect["name"], email, source)
+        if not ok:
+            rejected_count += 1
+            log(f"  REJECT (verify failed: {','.join(reasons)}): {prospect['name']} | {email}")
+            rejected_rows.append({
+                "name": prospect["name"], "sector": prospect.get("sector",""),
+                "city": prospect.get("city",""), "phone": prospect.get("phone",""),
+                "website": prospect.get("website",""), "email_attempted": email,
+                "source": source, "reject_reasons": ";".join(reasons),
+            })
+            uploaded.add(prospect["name"])
+            return False
+        company_id = create_company(prospect)
+        if not company_id:
+            log(f"  ERROR: Could not create company for {prospect['name']}")
+            return False
+        contact_id = create_contact(prospect, company_id, email, "NEW")
+        deal_id    = create_deal(prospect, company_id, contact_id)
+        uploaded.add(prospect["name"])
+        ready_count += 1
+        if source != "scraped":
+            social_count += 1
+        log(f"  ✓ NEW → HubSpot ({source}): {prospect['name']} | {email} | deal={deal_id}")
+        time.sleep(0.2)
+        return True
 
     # Process today's pending queue
     remaining_pending = []
@@ -254,60 +317,27 @@ def main():
             skip_count += 1
             continue
 
-        email, email_status = scrape_email(prospect.get("website", ""))
+        email, source = find_real_email(prospect)
 
-        if email_status == "scraped":
-            lead_status = "NEW"
-        elif email_status == "best-guess":
-            # Don't upload best-guess to HubSpot — route to review queue.
-            log(f"  REVIEW (best-guess email): {name} | {email}")
-            review_rows.append({
-                "name":     name,
-                "sector":   prospect.get("sector", ""),
-                "city":     prospect.get("city", ""),
-                "phone":    prospect.get("phone", ""),
-                "website":  prospect.get("website", ""),
-                "rating":   prospect.get("rating", ""),
-                "guess_email": email,
+        if email:
+            _upload(prospect, email, source)
+            continue
+
+        # No email anywhere — recycle for retry; after MAX attempts, park in phone-only list
+        prospect["attempts"] = prospect.get("attempts", 0) + 1
+        if prospect["attempts"] >= MAX_RECYCLE_ATTEMPTS:
+            log(f"  PHONE-ONLY (no email found after {MAX_RECYCLE_ATTEMPTS} attempts): {name}")
+            phone_only_rows.append({
+                "name": name, "sector": prospect.get("sector",""),
+                "city": prospect.get("city",""), "phone": prospect.get("phone",""),
+                "website": prospect.get("website",""), "rating": prospect.get("rating",""),
             })
-            uploaded.add(name)  # dedup so we don't re-process tomorrow
-            best_guess_count += 1
-            continue
+            uploaded.add(name)
+            phone_only_count += 1
         else:
-            # No website or scrape failed — send to recycle
-            prospect["attempts"] = prospect.get("attempts", 0) + 1
-            if prospect["attempts"] >= MAX_RECYCLE_ATTEMPTS:
-                log(f"  FLAG (manual lookup needed, no website): {name}")
-                manual_flag += 1
-                review_rows.append({
-                    "name":     name,
-                    "sector":   prospect.get("sector", ""),
-                    "city":     prospect.get("city", ""),
-                    "phone":    prospect.get("phone", ""),
-                    "website":  prospect.get("website", ""),
-                    "rating":   prospect.get("rating", ""),
-                    "guess_email": "(no website — manual lookup needed)",
-                })
-                uploaded.add(name)
-                continue
-            else:
-                log(f"  RECYCLE (attempt {prospect['attempts']}): {name} — no email found")
-                recycle.append(prospect)
-                recycle_count += 1
-                continue
-
-        company_id = create_company(prospect)
-        if not company_id:
-            log(f"  ERROR: Could not create company for {name}")
-            remaining_pending.append(prospect)
-            continue
-
-        contact_id = create_contact(prospect, company_id, email, lead_status)
-        deal_id    = create_deal(prospect, company_id, contact_id)
-        uploaded.add(name)
-        ready_count += 1
-        log(f"  ✓ NEW → HubSpot: {name} | {email} | deal={deal_id}")
-        time.sleep(0.2)
+            log(f"  RECYCLE (attempt {prospect['attempts']}): {name} — no email found")
+            recycle.append(prospect)
+            recycle_count += 1
 
     # Process recycle queue (retry previous failures)
     still_recycling = []
@@ -316,67 +346,54 @@ def main():
         if name in uploaded:
             continue
 
-        email, email_status = scrape_email(prospect.get("website", ""))
+        email, source = find_real_email(prospect)
+        if email:
+            _upload(prospect, email, source)
+            continue
 
-        if email_status == "scraped":
-            company_id = create_company(prospect)
-            if company_id:
-                contact_id = create_contact(prospect, company_id, email, "NEW")
-                deal_id    = create_deal(prospect, company_id, contact_id)
-                uploaded.add(name)
-                ready_count += 1
-                log(f"  ✓ RECYCLED → HubSpot: {name} | {email} | deal={deal_id}")
-                time.sleep(0.2)
-            else:
-                still_recycling.append(prospect)
-        elif email_status == "best-guess":
-            log(f"  REVIEW (recycled, still best-guess): {name} | {email}")
-            review_rows.append({
+        prospect["attempts"] = prospect.get("attempts", 0) + 1
+        if prospect["attempts"] >= MAX_RECYCLE_ATTEMPTS:
+            log(f"  PHONE-ONLY (recycled, still no email): {name}")
+            phone_only_rows.append({
                 "name": name, "sector": prospect.get("sector",""),
                 "city": prospect.get("city",""), "phone": prospect.get("phone",""),
                 "website": prospect.get("website",""), "rating": prospect.get("rating",""),
-                "guess_email": email,
             })
             uploaded.add(name)
-            best_guess_count += 1
+            phone_only_count += 1
         else:
-            prospect["attempts"] = prospect.get("attempts", 0) + 1
-            if prospect["attempts"] >= MAX_RECYCLE_ATTEMPTS:
-                log(f"  FLAG (manual lookup needed): {name}")
-                manual_flag += 1
-                review_rows.append({
-                    "name": name, "sector": prospect.get("sector",""),
-                    "city": prospect.get("city",""), "phone": prospect.get("phone",""),
-                    "website": prospect.get("website",""), "rating": prospect.get("rating",""),
-                    "guess_email": "(no website — manual lookup needed)",
-                })
-                uploaded.add(name)
-            else:
-                still_recycling.append(prospect)
+            still_recycling.append(prospect)
 
     # Persist updated state
     save_json(PENDING_FILE, remaining_pending)
     save_json(RECYCLE_FILE, still_recycling)
     save_json(UPLOADED_FILE, sorted(uploaded))
 
-    # Write review queue CSV (best-guess + manual-lookup-needed)
     today = datetime.now().strftime("%Y-%m-%d")
-    if review_rows:
+    if rejected_rows or phone_only_rows:
         import csv as _csv
         REVIEW_DIR.mkdir(parents=True, exist_ok=True)
-        out_path = REVIEW_DIR / f"best_guess_{today}.csv"
-        with out_path.open("w", newline="") as f:
-            w = _csv.DictWriter(f, fieldnames=["name","sector","city","phone","website","rating","guess_email"])
-            w.writeheader()
-            w.writerows(review_rows)
-        log(f"  Review queue: wrote {len(review_rows)} rows → {out_path}")
+        if rejected_rows:
+            p = REVIEW_DIR / f"rejected_{today}.csv"
+            with p.open("w", newline="") as f:
+                w = _csv.DictWriter(f, fieldnames=["name","sector","city","phone","website","email_attempted","source","reject_reasons"])
+                w.writeheader()
+                w.writerows(rejected_rows)
+            log(f"  Rejected (failed verify): wrote {len(rejected_rows)} → {p}")
+        if phone_only_rows:
+            p = REVIEW_DIR / f"phone_only_{today}.csv"
+            with p.open("w", newline="") as f:
+                w = _csv.DictWriter(f, fieldnames=["name","sector","city","phone","website","rating"])
+                w.writeheader()
+                w.writerows(phone_only_rows)
+            log(f"  Phone-only call list: wrote {len(phone_only_rows)} → {p}")
 
     log(f"=== Done ===")
-    log(f"  Uploaded to HubSpot (NEW only): {ready_count}")
-    log(f"  Routed to review queue (best-guess): {best_guess_count}")
+    log(f"  Uploaded to HubSpot (NEW, verified): {ready_count}  (of which {social_count} via FB/IG fallback)")
+    log(f"  Rejected by verify gate: {rejected_count}")
+    log(f"  Phone-only (no email found): {phone_only_count}")
     log(f"  Recycled (retry tomorrow): {recycle_count}")
     log(f"  Skipped (duplicates): {skip_count}")
-    log(f"  Flagged manual lookup: {manual_flag}")
 
     # Append summary to today's ops-review
     ops_file = WORKSPACE / "ops-review" / f"{today}.md"
@@ -384,10 +401,11 @@ def main():
         with open(ops_file, "a") as f:
             f.write(
                 f"\n## Email Enrichment Gate — {today}\n"
-                f"- Uploaded to HubSpot (real email): {ready_count}\n"
-                f"- Best-guess routed to review queue: {best_guess_count}\n"
+                f"- Uploaded to HubSpot (verified real email): {ready_count}\n"
+                f"- Found via FB/IG social fallback: {social_count}\n"
+                f"- Rejected by verify gate (MX/Sunbiz/source): {rejected_count}\n"
+                f"- Phone-only call list: {phone_only_count}\n"
                 f"- Recycled for retry: {recycle_count}\n"
-                f"- Manual lookup needed: {manual_flag}\n"
             )
 
 
