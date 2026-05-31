@@ -11391,3 +11391,268 @@ GatewayClientRequestError: Error: unknown cron job id: 614a7216-f906-464e-be2a-5
 [2026-05-30T14:10:23Z]   imap_bridge: ran 2m ago, skip
 [2026-05-30T14:10:23Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
 [2026-05-30T14:10:23Z]   daily-git-sync: no commit today, running git-sync-daily.sh
+[main 457de34] Daily content sync:        1 trend(s)
+ 141 files changed, 25150 insertions(+), 953 deletions(-)
+ create mode 100644 briefs/2026-05-27-homeowner.md
+ create mode 100644 briefs/2026-05-27-real-estate.md
+ create mode 100644 briefs/2026-05-27-service-provider.md
+ create mode 100644 briefs/2026-05-28-homeowner.md
+ create mode 100644 briefs/2026-05-28-real-estate.md
+ create mode 100644 briefs/2026-05-28-service-provider.md
+ create mode 100644 briefs/2026-05-28.md
+ create mode 100644 briefs/2026-05-29-homeowner.md
+ create mode 100644 briefs/2026-05-29-real-estate.md
+ create mode 100644 briefs/2026-05-29-service-provider.md
+ create mode 100644 briefs/2026-05-29.md
+ create mode 100644 content/2026-05-28/blog.md
+ create mode 100644 content/2026-05-28/facebook.md
+ create mode 100644 content/2026-05-28/instagram.md
+ create mode 100644 content/2026-05-28/marketing-review.html
+ create mode 100644 content/2026-05-29/blog.md
+ create mode 100644 content/2026-05-29/facebook.md
+ create mode 100644 content/2026-05-29/instagram.md
+ create mode 100644 content/briefs/2026-05-28-homeowner.html
+ create mode 100644 content/briefs/2026-05-28-real-estate.html
+ create mode 100644 content/briefs/2026-05-28-service-provider.html
+ create mode 100644 content/briefs/2026-05-28.html
+ create mode 100644 content/briefs/2026-05-29-homeowner.html
+ create mode 100644 content/briefs/2026-05-29-real-estate.html
+ create mode 100644 content/briefs/2026-05-29-service-provider.html
+ create mode 100644 content/briefs/2026-05-29.html
+ create mode 100644 content/mathias/2026-05-29-summer-plan.html
+ create mode 100644 content/mathias/2026-05-29-summer-plan.pdf
+ create mode 100644 content/social/2026-05-28-drafts/PAGE-INFO-REVIEW.html
+ create mode 100644 content/social/2026-05-28-drafts/REVIEW.html
+ create mode 100644 content/social/2026-05-28-drafts/WELCOME-REPLIES.html
+ create mode 100644 crm/contact_form_queue/2026-05-27.csv
+ create mode 100644 crm/contact_form_queue/2026-05-28.csv
+ create mode 100644 crm/contact_form_queue/2026-05-29.csv
+ create mode 100644 crm/drafts/2026-05-28/new-prospects.md
+ create mode 100644 crm/drafts/2026-05-28/palmbeach-renegade-roofing-co-renegade-roofing.md
+ create mode 100644 crm/drafts/2026-05-29/queue-summary.md
+ create mode 100644 crm/hubspot_master_import_2026-05-28.csv
+ create mode 100644 crm/hubspot_master_import_2026-05-29.csv
+ create mode 100644 crm/hubspot_master_import_2026-05-30.csv
+ create mode 100644 crm/intelligence/2026-05-28/palmbeach-renegade-roofing-co-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-all-out-air-conditioning-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-blue-view-real-estate-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-brent-and-raquel-crowe-great-palm-beach--intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-cleary-plumbing-air-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-general-contractor-construction-llc-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-general-plumbing-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-integrity-plumbing-and-drain-inc-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-roof-repairs-lake-worth-beach-by-apexroo-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-top-flight-property-restoration-intel.md
+ create mode 100644 crm/intelligence/2026-05-29/palmbeach-w-j-contractors-intel.md
+ create mode 100644 crm/organizations.csv.bak.2026-05-28-0600
+ create mode 100644 crm/partnerships/2026-W22/PARTNERSHIPS-SUMMARY.md
+ create mode 100644 crm/partnerships/2026-W22/attorneys-partners.md
+ create mode 100644 crm/partnerships/2026-W22/insurance-professionals-partners.md
+ create mode 100644 crm/partnerships/2026-W22/property-managers-partners.md
+ create mode 100644 crm/partnerships/2026-W22/roofers-partners.md
+ create mode 100644 crm/partnerships/2026-W22/water-mitigation-partners.md
+ create mode 100644 crm/reply_queue/2026-05-28.jsonl
+ create mode 100644 crm/reply_queue/2026-05-29.jsonl
+ create mode 100644 crm/reply_queue/answers_490407084747_301.txt
+ create mode 100644 crm/reply_queue/answers_491092600523_300.txt
+ create mode 100644 crm/responses/2026-05-28/NO-REPLIES.md
+ create mode 100644 crm/responses/2026-05-29/_no-replies.md
+ create mode 100644 crm/review_queue/best_guess_2026-05-28.csv
+ create mode 100644 crm/review_queue/best_guess_2026-05-29.csv
+ create mode 100644 family/mathias/resume-private-equity.html
+ create mode 100644 family/mathias/resume-private-equity.pdf
+ create mode 100644 memory/.dreams/session-corpus/2026-05-28.txt
+ create mode 100644 memory/.dreams/session-corpus/2026-05-29.txt
+ create mode 100644 memory/dreaming/deep/2026-05-28.md
+ create mode 100644 memory/dreaming/deep/2026-05-29.md
+ create mode 100644 memory/dreaming/deep/2026-05-30.md
+ create mode 100644 memory/dreaming/light/2026-05-28.md
+ create mode 100644 memory/dreaming/light/2026-05-29.md
+ create mode 100644 memory/dreaming/light/2026-05-30.md
+ create mode 100644 memory/dreaming/rem/2026-05-28.md
+ create mode 100644 memory/dreaming/rem/2026-05-29.md
+ create mode 100644 memory/dreaming/rem/2026-05-30.md
+ create mode 100644 ops-review/2026-05-28.md
+ create mode 100644 ops-review/2026-05-29.md
+ create mode 100644 scripts/.git-sync-done-2026-05-27
+ create mode 100644 scripts/.git-sync-done-2026-05-28
+ create mode 100644 scripts/.git-sync-done-2026-05-29
+ create mode 100644 scripts/.newsletter-sent-2026-05-28
+ create mode 100644 scripts/.newsletter-sent-2026-05-29
+ create mode 100644 scripts/_chamber-style-refresh-batch.json
+ create mode 100644 scripts/_chamber-style-refresh-meta.json
+ create mode 100644 scripts/_create_deals_for_staged.py
+ create mode 100644 scripts/_research-followup-batch.json
+ create mode 100644 scripts/_stage_followups_one_shot.py
+ create mode 100644 scripts/add_category_piecharts.py
+ create mode 100644 scripts/add_may_2026_chase_tab.py
+ create mode 100644 scripts/find_social_email.py
+ create mode 100644 scripts/outreach_style_log.csv
+ create mode 100644 scripts/outreach_style_report.py
+ create mode 100644 scripts/rewrite_may_2026.py
+ create mode 100755 scripts/stage_gmail_drafts.py
+ create mode 100644 scripts/verify_prospect.py
+ create mode 100644 trends/2026-05-30-internal.md
+ create mode 100644 trends/2026-05-30.md
+ create mode 100644 weekly/2026-W22.md
+To https://github.com/duncan727-debug/-robinhood-adjusting.git
+   7f720e9..457de34  main -> main
+[2026-05-30 10:10:26] Building website...
+[2026-05-30 10:10:26] Briefs: 2026-05-29 2026-05-28 2026-05-27 2026-05-26 2026-05-25
+[2026-05-30 10:10:26] Trends: 4 found
+[SKIP] No template markers found in site/PA-WEBSITE.html
+[SKIP] No template markers found in site/index.html
+[2026-05-30 10:10:26] Done.
+[2026-05-30 10:10:26] Sync complete
+[2026-05-30T14:10:26Z]   daily-git-sync: OK, pushed
+[2026-05-30T14:10:26Z] === catchup end ===
+[2026-05-30T14:25:29Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=625 ===
+[2026-05-30T14:25:29Z]   imap_bridge: ran 2m ago, skip
+[2026-05-30T14:25:29Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T14:25:29Z] === catchup end ===
+[2026-05-30T14:40:32Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=640 ===
+[2026-05-30T14:40:32Z]   imap_bridge: ran 2m ago, skip
+[2026-05-30T14:40:32Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T14:40:32Z] === catchup end ===
+[2026-05-30T14:55:35Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=655 ===
+[2026-05-30T14:55:35Z]   imap_bridge: ran 2m ago, skip
+[2026-05-30T14:55:35Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T14:55:35Z] === catchup end ===
+[2026-05-30T15:10:38Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=670 ===
+[2026-05-30T15:10:38Z]   imap_bridge: ran 2m ago, skip
+[2026-05-30T15:10:38Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T15:10:38Z] === catchup end ===
+[2026-05-30T15:25:41Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=685 ===
+[2026-05-30T15:25:41Z]   imap_bridge: ran 2m ago, skip
+[2026-05-30T15:25:41Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T15:25:41Z] === catchup end ===
+[2026-05-30T15:40:44Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=700 ===
+[2026-05-30T15:40:44Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T15:40:44Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T15:40:44Z] === catchup end ===
+[2026-05-30T15:55:47Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=715 ===
+[2026-05-30T15:55:47Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T15:55:47Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T15:55:47Z] === catchup end ===
+[2026-05-30T16:10:50Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=730 ===
+[2026-05-30T16:10:50Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T16:10:50Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T16:10:50Z] === catchup end ===
+[2026-05-30T16:25:53Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=745 ===
+[2026-05-30T16:25:53Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T16:25:53Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T16:25:53Z] === catchup end ===
+[2026-05-30T16:40:57Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=760 ===
+[2026-05-30T16:40:57Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T16:40:57Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T16:40:57Z] === catchup end ===
+[2026-05-30T16:56:00Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=776 ===
+[2026-05-30T16:56:00Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T16:56:00Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T16:56:00Z] === catchup end ===
+[2026-05-30T17:11:57Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=791 ===
+[2026-05-30T17:11:57Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T17:11:57Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T17:11:57Z] === catchup end ===
+[2026-05-30T17:27:00Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=807 ===
+[2026-05-30T17:27:00Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T17:27:00Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T17:27:00Z] === catchup end ===
+[2026-05-30T17:42:03Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=822 ===
+[2026-05-30T17:42:03Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T17:42:03Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T17:42:03Z] === catchup end ===
+[2026-05-30T17:57:06Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=837 ===
+[2026-05-30T17:57:06Z]   imap_bridge: ran 1m ago, skip
+[2026-05-30T17:57:06Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T17:57:06Z] === catchup end ===
+[2026-05-30T18:12:09Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=852 ===
+[2026-05-30T18:12:09Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T18:12:09Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T18:12:09Z] === catchup end ===
+[2026-05-30T18:27:12Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=867 ===
+[2026-05-30T18:27:12Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T18:27:12Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T18:27:12Z] === catchup end ===
+[2026-05-30T21:57:04Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1077 ===
+[2026-05-30T21:57:04Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T21:57:04Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T21:57:04Z] === catchup end ===
+[2026-05-30T22:12:07Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1092 ===
+[2026-05-30T22:12:07Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T22:12:07Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T22:12:07Z] === catchup end ===
+[2026-05-30T22:27:10Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1107 ===
+[2026-05-30T22:27:10Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T22:27:10Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T22:27:10Z] === catchup end ===
+[2026-05-30T22:42:14Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1122 ===
+[2026-05-30T22:42:14Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T22:42:14Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T22:42:14Z] === catchup end ===
+[2026-05-30T22:57:17Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1137 ===
+[2026-05-30T22:57:17Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T22:57:17Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T22:57:17Z] === catchup end ===
+[2026-05-30T23:16:24Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1156 ===
+[2026-05-30T23:16:24Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T23:16:24Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T23:16:24Z] === catchup end ===
+[2026-05-30T23:31:27Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1171 ===
+[2026-05-30T23:31:27Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T23:31:27Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T23:31:27Z] === catchup end ===
+[2026-05-30T23:46:30Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1186 ===
+[2026-05-30T23:46:30Z]   imap_bridge: ran 0m ago, skip
+[2026-05-30T23:46:30Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-30T23:46:30Z] === catchup end ===
+[2026-05-31T00:01:33Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1201 ===
+[2026-05-31T00:01:33Z]   imap_bridge: ran 0m ago, skip
+[2026-05-31T00:01:33Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-31T00:01:33Z] === catchup end ===
+[2026-05-31T00:16:37Z] === catchup start: today=2026-05-30 dow=6 dom=30 mins=1216 ===
+[2026-05-31T00:16:37Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T00:16:37Z]   daily-trends: output exists (/Users/victoria/.openclaw/workspace/trends/2026-05-30.md), skip
+[2026-05-31T00:16:37Z] === catchup end ===
+[2026-05-31T08:55:55Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=295 ===
+[2026-05-31T08:55:55Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T08:55:55Z] === catchup end ===
+[2026-05-31T09:10:57Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=310 ===
+[2026-05-31T09:10:57Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T09:10:57Z] === catchup end ===
+[2026-05-31T09:25:59Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=325 ===
+[2026-05-31T09:25:59Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T09:25:59Z] === catchup end ===
+[2026-05-31T09:41:02Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=341 ===
+[2026-05-31T09:41:02Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T09:41:02Z] === catchup end ===
+[2026-05-31T09:56:04Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=356 ===
+[2026-05-31T09:56:04Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T09:56:04Z] === catchup end ===
+[2026-05-31T10:11:06Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=371 ===
+[2026-05-31T10:11:06Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T10:11:06Z] === catchup end ===
+[2026-05-31T10:26:08Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=386 ===
+[2026-05-31T10:26:08Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T10:26:08Z] === catchup end ===
+[2026-05-31T10:41:10Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=401 ===
+[2026-05-31T10:41:10Z]   imap_bridge: ran 4m ago, skip
+[2026-05-31T10:41:10Z] === catchup end ===
+[2026-05-31T10:56:12Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=416 ===
+[2026-05-31T10:56:12Z]   imap_bridge: ran 3m ago, skip
+[2026-05-31T10:56:12Z] === catchup end ===
+[2026-05-31T11:11:14Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=431 ===
+[2026-05-31T11:11:14Z]   imap_bridge: ran 3m ago, skip
+[2026-05-31T11:11:14Z] === catchup end ===
+[2026-05-31T11:26:16Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=446 ===
+[2026-05-31T11:26:16Z]   imap_bridge: ran 3m ago, skip
+[2026-05-31T11:26:16Z] === catchup end ===
+[2026-05-31T11:41:18Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=461 ===
+[2026-05-31T11:41:19Z]   imap_bridge: ran 3m ago, skip
+[2026-05-31T11:41:19Z] === catchup end ===
+[2026-05-31T11:56:21Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=476 ===
+[2026-05-31T11:56:21Z]   imap_bridge: ran 3m ago, skip
+[2026-05-31T11:56:21Z] === catchup end ===
+[2026-05-31T12:11:23Z] === catchup start: today=2026-05-31 dow=7 dom=31 mins=491 ===
+[2026-05-31T12:11:23Z]   imap_bridge: ran 3m ago, skip
+[2026-05-31T12:11:23Z]   daily-git-sync: no commit today, running git-sync-daily.sh

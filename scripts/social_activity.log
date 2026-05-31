@@ -1,0 +1,26 @@
+
+==================== 2026-05-30 10:30-11:00 EDT ====================
+Social ops takeover attempt — Duncan handed live browser access.
+
+LISTENING SWEEP RESULTS:
+- FB personal notifications: nothing actionable (Gladys Mann Carr + Milly Taylor welcome-photo tags 1wk old; Dave Smith reaction)
+- FB Page (Robinhood Adjusting) inbox: empty
+- FB Page state: 0 followers, 5 following, no posts visible in admin view, 0 reviews
+- IG (@robinhoodadjusting): 4 posts, 0 followers, 0 following, DMs empty
+- IG NOT connected to Meta Business Suite
+
+GROUP STATE:
+- Wellington/Loxahatchee/RPB/Acreage (Small Business) — 8.3K members, approved 1wk ago
+- Feed = mostly B2B promo posts (Airmetrix A/C, Tobias plantation shutters, Edwin cleaning, JP Soars event)
+- Wrong audience for PA tips; right audience for referral relationships
+
+CONTENT:
+- Saturday hurricane-prep post drafted (homeowner angle, 925 chars) → /tmp/fb_post.txt + content/2026-05-30/instagram.md
+- Composer typing BLOCKED: Meta Lexical editor ignores JS-injected text + paste w/o OS focus
+- Workaround needed: install cliclick OR set up Page Access Token via Graph API
+
+PROPOSED PIVOTS FOR DUNCAN:
+- Stop doing B2B group commenting from page (spammy); pivot to homeowner-focused groups
+- Connect IG to Meta Business Suite for unified inbox/posting
+- Invite FB friends to like the page (only way to escape 0-follower trap)
+- Set up Graph API Page Access Token so posts can ship without browser

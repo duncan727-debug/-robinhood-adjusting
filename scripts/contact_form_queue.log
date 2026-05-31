@@ -139,3 +139,11 @@
 [2026-05-29T10:46:47] === Done ===
 
 [2026-05-29 10:50 EDT] queued=3 submitted=1 blacklisted=2 errors=0 — Code Red Roofers SUBMITTED; Integrity Roofing SKIP-CAPTCHA; JMA Community Management SKIP-CAPTCHA
+[2026-05-30T10:45:04] === Build contact-form queue for 2026-05-30 ===
+[2026-05-30T10:45:04]   Loaded 32 companies on do-not-retry blacklist
+[2026-05-30T10:45:04] Fetching UNQUALIFIED contacts and their companies…
+[2026-05-30T10:45:40]   Found 64 eligible companies after blacklist filter
+[2026-05-30T10:46:39]   Wrote 0 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-05-30.csv
+[2026-05-30T10:46:39] === Done ===
+
+[2026-05-30 10:45 EDT] queued=0 submitted=0 blacklisted=0 errors=0
