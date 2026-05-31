@@ -383,6 +383,40 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="time">8:30 AM</td>
+                    <td class="job-name">📣 FB Page Post (Meta API)</td>
+                    <td><span class="frequency monday-saturday">Mon-Sat</span></td>
+                    <td><span class="category content">Content</span></td>
+                    <td>
+                        <div class="description">
+                            Publishes <code>content/YYYY-MM-DD/facebook.md</code> to Robinhood Adjusting FB Page via Graph API:
+                            <ul>
+                                <li>LaunchAgent: <code>com.openclaw.meta-post-daily</code></li>
+                                <li>Script: <code>scripts/meta_post.py --fb-only</code></li>
+                                <li>State: <code>scripts/state/meta_posted/YYYY-MM-DD.json</code> (idempotent)</li>
+                                <li>IG posting added later when image asset pipeline is built</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">every 15 min</td>
+                    <td class="job-name">👂 Meta Social Listener</td>
+                    <td><span class="frequency continuous">24/7</span></td>
+                    <td><span class="category crm">CRM</span></td>
+                    <td>
+                        <div class="description">
+                            Polls FB Page + IG Business for new comments and DMs via Graph API; alerts on new activity:
+                            <ul>
+                                <li>LaunchAgent: <code>com.openclaw.meta-listen</code> (StartInterval 900s)</li>
+                                <li>Script: <code>scripts/meta_listen.py</code></li>
+                                <li>Alerts to <code>scripts/meta_alerts.log</code> + macOS notification</li>
+                                <li>State: <code>scripts/state/meta_listen/last_seen.json</code></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
                     <td class="time">9:00 AM</td>
                     <td class="job-name">📧 Daily Brief Send</td>
                     <td><span class="frequency weekday">Mon-Fri</span></td>
