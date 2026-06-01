@@ -62,6 +62,13 @@ When a homeowner, a trade professional, and a real-estate agent open their respe
 ## Fact-checking (mandatory before publish)
 Every factual claim must be verified against a primary or major-publisher source before it appears in the brief. No plausible-sounding fakes. No estimates rendered as facts. If a number can't be verified, either omit it or label it explicitly (e.g., "industry-estimated", "as reported by [source]"). When citing legislation, link the bill page (flsenate.gov / flhouse.gov). When citing carrier filings, link FLOIR or the carrier's release. When citing weather, link NOAA / NWS / NHC. Per `feedback_no_fabrication` — verified or labeled estimate, nothing in between.
 
+### Independent verifier pass (mandatory before send)
+After all 4 brief files are written and BEFORE the send/publish step:
+1. Run `python3 scripts/extract_brief_claims.py briefs/YYYY-MM-DD*.md` — produces `*-verify.md` checklists.
+2. For each claim, run an independent web search and judge: `[x]` verified, `[!]` contradicted, `[?]` unfindable. Record the source URL inline.
+3. If ANY `[!]` flag fires, halt publish, fix the brief, and re-run the extractor + verifier loop.
+4. Watch for **claim-conflation** specifically: numbers attributed to the wrong entity (e.g., a Governor's-office aggregate ascribed to a single carrier). When two facts share a paragraph, verify each independently. **Reference incident (2026-06-01):** the 26,000 PBC homes / 11.9% figure was bound to Heritage; it actually belongs to a broader DeSantis market-relief aggregate spanning multiple carriers.
+
 ## Naming rules in real-estate stories
 - **Firms / brokerages OK.** When referencing a recent sale or transaction, the listing firm or brokerage name can appear (e.g., "listed by Compass," "Sotheby's International Realty closed…").
 - **Family / last names NOT OK.** Do not include the buyer or seller's surname, even if it is in the public record. First names alone are also not allowed unless the person is a public figure quoted on the record. The real-estate brief is for the professional reader, not a society page.
