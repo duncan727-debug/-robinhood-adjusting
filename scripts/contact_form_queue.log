@@ -147,3 +147,32 @@
 [2026-05-30T10:46:39] === Done ===
 
 [2026-05-30 10:45 EDT] queued=0 submitted=0 blacklisted=0 errors=0
+[2026-06-01T11:18:59] === Build contact-form queue for 2026-06-01 ===
+[2026-06-01T11:18:59]   Loaded 32 companies on do-not-retry blacklist
+[2026-06-01T11:18:59] Fetching UNQUALIFIED contacts and their companies…
+[2026-06-01T11:19:38]   Found 67 eligible companies after blacklist filter
+[2026-06-01T11:20:50]   Wrote 4 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-06-01.csv
+[2026-06-01T11:20:50] === Done ===
+
+[2026-06-01 11:21 EDT] queued=4 submitted=0 blacklisted=0 errors=0 note=halted-trade-mismatch (insurance agencies tagged as general-contractor)
+[2026-06-02T10:45:05] === Build contact-form queue for 2026-06-02 ===
+[2026-06-02T10:45:05]   Loaded 32 companies on do-not-retry blacklist
+[2026-06-02T10:45:05] Fetching UNQUALIFIED contacts and their companies…
+[2026-06-02T10:45:44]   Found 69 eligible companies after blacklist filter
+[2026-06-02T10:46:55]   Wrote 5 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-06-02.csv
+[2026-06-02T10:46:55] === Done ===
+
+[2026-06-02 10:46 EDT] queued=5 submitted=0 blacklisted=0 errors=0 — HALTED: all 5 queue rows are insurance agencies/law firm misclassified as industry=CONSTRUCTION → trade=general contractor. Cohen Norris (law), Insurance Solutions of PB, All County Insurance, Protective Choice Insurance, DSI Educators Premier Insurance. Trade mismatch would burn the pitch. Needs upstream classification fix before resuming.
+[2026-06-03T12:06:36] === Build contact-form queue for 2026-06-03 ===
+[2026-06-03T12:06:36]   Loaded 32 companies on do-not-retry blacklist
+[2026-06-03T12:06:36] Fetching UNQUALIFIED contacts and their companies…
+[2026-06-03T12:07:22]   Found 72 eligible companies after blacklist filter
+[2026-06-03T12:08:35]   Wrote 5 candidates to /Users/victoria/.openclaw/workspace/crm/contact_form_queue/2026-06-03.csv
+[2026-06-03T12:08:35] === Done ===
+
+[2026-06-03 12:10 EDT] Cohen Norris (325344804570) SKIP-BROKEN no form, email-only info@cohennorris.com → blacklisted
+[2026-06-03 12:10 EDT] Insurance Solutions PB (324661581500) HALT mis-tagged (insurance agency, not GC) — task 373570792183
+[2026-06-03 12:10 EDT] All County Insurance (324918513357) HALT mis-tagged (insurance agency, not GC) — task 373570792183
+[2026-06-03 12:10 EDT] Protective Choice Insurance (324917817053) HALT mis-tagged (insurance agency, not GC) — task 373570792183
+[2026-06-03 12:10 EDT] DSI Educators Premier (324917690057) HALT mis-tagged (insurance agency, not GC) — task 373570792183
+[2026-06-03 12:10 EDT] queued=5 submitted=0 blacklisted=1 errors=0 halted=4 (industry-tag bug)

@@ -1,0 +1,6 @@
+[2026-05-31 10:27:30] loaded facebook.md (998 chars)
+[2026-06-01 08:30:03] loaded facebook.md (1550 chars)
+[2026-06-01 08:30:06] FB POSTED: 1153127137879005_122104216197318866
+[2026-06-01 12:40:12] loaded facebook.md (1550 chars)
+[2026-06-01 12:48:25] loaded instagram.md (1110 chars)
+[2026-06-01 12:48:25] IG ERROR: {'error': {'message': "Any of the pages_read_engagement, pages_manage_metadata,\n        pages_read_user_content, pages_manage_ads, pages_show_list or\n        pages_messaging permission(s) must be granted before impersonating a\n        user's page.", 'type': 'OAuthException', 'code': 190, 'fbtrace_id': 'AXGQlOdMgcm7T10uxAr3vqq'}, '_http_status': 400}

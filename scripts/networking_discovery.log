@@ -8,3 +8,6 @@
 [2026-05-28 11:35 EDT] discovered=2 kept=0 duplicates=0 too_far=0 sources=boyntonchamber.org ERROR=google_oauth_token_expired_or_revoked
 [2026-05-29 11:45 EDT] discovered=3 kept=0 duplicates=0 too_far=0 sources=npbchamber.com BLOCKED: google calendar OAuth token expired/revoked — needs reauth
 [2026-05-30 11:35 EDT] discovered=4 kept=0 duplicates=0 too_far=0 sources=members.npbchamber.com — BLOCKED: Google Calendar OAuth token expired/revoked; events queued at /tmp/discovered_events_20260530.json
+[2026-06-01 11:32 EDT] discovered=2 kept=0 duplicates=0 too_far=0 sources=eventbrite.com,members.npbchamber.com BLOCKED: google_calendar_token.json refresh failed (invalid_grant) — events staged at /tmp/discovered_events_20260601.json awaiting re-auth
+[2026-06-02 11:35 EDT] discovered=3 kept=0 duplicates=0 too_far=0 sources=eventbrite.com,members.palmbeachchamber.com — BLOCKED: google_calendar_token.json refresh_token expired/revoked; events written to /tmp/discovered_events_20260602.json but NOT inserted. Needs Duncan to re-run OAuth.
+[2026-06-03 12:15 EDT] discovered=3 kept=0 duplicates=0 too_far=0 sources=members.npbchamber.com  ERROR: google_calendar_token.json refresh failed (invalid_grant) — token expired/revoked, needs re-auth

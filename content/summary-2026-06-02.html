@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Duncan × Smith — What We've Built (Apr 21 → Jun 2, 2026)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#121821; --ink:#e8eef7; --mute:#8aa0bb;
+    --accent:#7cc4ff; --good:#73e0a9; --warn:#f5c46b; --line:#1e2733;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;background:var(--bg);color:var(--ink);}
+  .wrap{max-width:920px;margin:0 auto;padding:48px 28px 80px;}
+  header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:32px;}
+  .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:600;}
+  h1{font-size:34px;line-height:1.15;margin:8px 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--mute);font-size:15px;}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin:36px 0 14px;}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 8px;}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;}
+  .stat .n{font-size:24px;font-weight:700;color:var(--good);letter-spacing:-.02em;}
+  .stat .l{color:var(--mute);font-size:12px;margin-top:4px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:10px 0;}
+  .card h3{margin:0 0 6px;font-size:16px;}
+  .card p{margin:0;color:#cfdcec;}
+  .tag{display:inline-block;font-size:11px;color:var(--accent);background:rgba(124,196,255,.08);border:1px solid rgba(124,196,255,.25);padding:2px 8px;border-radius:999px;margin-right:6px;}
+  ul.clean{margin:6px 0 0;padding-left:18px;}
+  ul.clean li{margin:4px 0;color:#cfdcec;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  footer{margin-top:48px;color:var(--mute);font-size:12px;border-top:1px solid var(--line);padding-top:18px;}
+  @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr);}.twocol{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Robinhood Adjusting · Operating Brief</div>
+  <h1>Six weeks. One operator. A working business.</h1>
+  <div class="sub">From a blank workspace on Apr 21 to a live brand, live newsletter, live CRM, and live social — by Jun 2, 2026.</div>
+</header>
+
+<h2>The scoreboard</h2>
+<div class="grid">
+  <div class="stat"><div class="n">5</div><div class="l">automation workflows live (100-in-100 stack)</div></div>
+  <div class="stat"><div class="n">62</div><div class="l">PBC providers in the live directory</div></div>
+  <div class="stat"><div class="n">25/day</div><div class="l">Palm Beach County prospects worked</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">audience-distinct briefs published daily</div></div>
+  <div class="stat"><div class="n">~119</div><div class="l">monthly infra spend ($)</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">manual steps in the morning CRM push</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">reusable AgentSkills built &amp; iterated</div></div>
+  <div class="stat"><div class="n">∞</div><div class="l">things that would otherwise still be a Google Doc</div></div>
+</div>
+
+<h2>The brand &amp; the front door</h2>
+<div class="card">
+  <h3>robinhoodadjusting.com — built, deployed, self-updating</h3>
+  <p>Netlify-hosted, GitHub-backed, refreshes Mon–Sat with the latest three briefs after each morning run. Newsletter signup, provider directory, get-listed form, and FL PA license disclosure all wired in. Two-to-five-minute deploys from commit to live.</p>
+  <p style="margin-top:8px"><span class="tag">Netlify Pro</span><span class="tag">GitHub CI</span><span class="tag">Namecheap DNS</span><span class="tag">License G127132</span></p>
+</div>
+
+<h2>The newsletter engine</h2>
+<div class="twocol">
+  <div class="card">
+    <h3>3 audiences, 3 voices, one research pass</h3>
+    <p>Daily brief skill researches once, writes three distinct briefs — homeowner, service provider, real-estate pro — with audience-specific "what it means" framing. Deduplicates against the prior four days. Sunday flips to a weekly trends report.</p>
+  </div>
+  <div class="card">
+    <h3>HubSpot-native delivery</h3>
+    <p>Beehiiv retired May 2; sends now run on HubSpot's native email so subscribers, deals, and tasks live in one system. Calendly + IMAP bridge close the loop: replies post to deals within five minutes.</p>
+  </div>
+</div>
+
+<h2>The CRM &amp; outreach machine</h2>
+<div class="card">
+  <h3>Prospect → reply → task, fully automated</h3>
+  <ul class="clean">
+    <li><strong>Daily consolidation</strong> 8:30am: research → <code>hubspot_master_import.csv</code> → API upload, no manual paste.</li>
+    <li><strong>Outreach send</strong>: personalized voice, soft on first contact, intent ramps on follow-ups; A/B styles tracked.</li>
+    <li><strong>IMAP bridge</strong>: scripts/imap_bridge.py runs every 5 min — bounces, replies, deal updates land in HubSpot automatically.</li>
+    <li><strong>Contact-form fallback</strong>: after 3 bounces, escalates to website forms (~40% submit rate).</li>
+    <li><strong>Email-type tasks → Gmail Drafts</strong>: Duncan reviews from Gmail, not HubSpot — actually gets done.</li>
+  </ul>
+</div>
+
+<h2>Social ops — handed off, running</h2>
+<div class="card">
+  <h3>Instagram live, Meta Graph API wired, FB pending review</h3>
+  <p>FB Page and IG (<strong>@robinhoodadjusting</strong>) launched mid-May. After FB was flagged, we pivoted to IG-only and shipped a permanent-token Meta Graph integration on May 31 — posting and listening now run from cron, no Chrome dependency. Posture is "helpful expert, no pitch"; service requests escalate to Duncan in real time.</p>
+</div>
+
+<h2>Local relationships in motion</h2>
+<div class="twocol">
+  <div class="card"><h3>Chamber Connections</h3><p>Confirmed Wellington Tue 8am, co-hosted by Hispanic Chamber PBC — face-to-face shot at HCCPBC leadership.</p></div>
+  <div class="card"><h3>Wellington Expo + BNI Pinnacle</h3><p>Threads opened with Garvey (Expo) and BNI Pinnacle DM; night-before reminders now standard for every networking event.</p></div>
+  <div class="card"><h3>Seth's Restoration partnership</h3><p>Parked at owner level — activates when subscriber count clears 500.</p></div>
+  <div class="card"><h3>Firm transition</h3><p>Barclays exit end of June 2026; all branding/affiliation already cut over to Robinhood.</p></div>
+</div>
+
+<h2>Ventures evaluated (we don't just say yes)</h2>
+<div class="twocol">
+  <div class="card"><h3>Torpedo launcher</h3><p>Premium-impulse-upgrade thesis (Aerobie pattern). Capital-light Kickstarter path; Smith leads CAD + legal research.</p></div>
+  <div class="card"><h3>Father-son summer ventures</h3><p>Pellet pitch rejected on feasibility, pivoted to storm-debris hauling. Pressure-washing deck: ~$10K startup, ~$97K Y1, ~$257K 3-yr owner net.</p></div>
+  <div class="card"><h3>Fleet Ad Aggregator v3</h3><p>Research-anchored revision — 60/40 fleet split, $115/truck/mo net, $4.37M 5-yr owner net. Failure autopsy mapped 7 risk modes; 2 must-close gaps flagged with deadlines.</p></div>
+  <div class="card"><h3>South Florida brainstorm shelf</h3><p>Claims mediation, contractor directory, HOA consulting — sequenced behind newsletter lead-flow.</p></div>
+</div>
+
+<h2>Infrastructure that quietly does its job</h2>
+<div class="card">
+  <ul class="clean">
+    <li><strong>Skills library</strong>: daily-brief, ops-review, crm-outreach-draft, schedule-sync, weekly-self-review, taskflow — meta-iterated every Sunday 6pm.</li>
+    <li><strong>Catch-up infrastructure</strong>: LaunchAgent-driven <code>catchup.sh</code> recovers any missed cron when the Mac was off.</li>
+    <li><strong>Health check</strong>: 10:30am Mon–Sat dashboard refresh + automated fix playbook.</li>
+    <li><strong>Browser bridge</strong>: JXA/AppleScript driving Duncan's signed-in Chrome — Chrome 136+ CDP block solved.</li>
+    <li><strong>Google Calendar API</strong>: direct OAuth writes; .ics email path retired.</li>
+    <li><strong>Operations schedule</strong>: every cron change mirrors live to <code>OPERATIONS-SCHEDULE.html</code>. Always in sync, by rule.</li>
+  </ul>
+</div>
+
+<h2>How we operate</h2>
+<div class="card">
+  <p>Consent-first when stakes are high. Move first when they're not. Never fabricate a fact, a citation, or a number. Flag disagreement once, then execute. Write everything down — sessions reset, memory persists. Always offer the durable option, even when it costs more upfront.</p>
+</div>
+
+<footer>
+  Compiled 2026-06-02 · Robinhood Adjusting · Wellington, FL · FL PA G127132
+</footer>
+
+</div>
+</body>
+</html>

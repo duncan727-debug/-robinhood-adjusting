@@ -154,3 +154,35 @@ ERROR: HUBSPOT_API_KEY not set.
 [2026-05-29 09:00] Found 19 subscriber contacts across all lists
 [2026-05-29 09:00] Done — sent: 0 | skipped: 19 | errors: 0
 [2026-05-29 09:00] === Drip run complete ===
+[2026-06-01 09:00] === Drip sequence run start ===
+[2026-06-01 09:00] Found 28 subscriber contacts across all lists
+[2026-06-01 09:00] Done — sent: 0 | skipped: 28 | errors: 0
+[2026-06-01 09:00] === Drip run complete ===
+[2026-06-01 09:00] === Drip sequence run start ===
+[2026-06-01 09:00] Found 28 subscriber contacts across all lists
+[2026-06-01 09:00] Done — sent: 0 | skipped: 28 | errors: 0
+[2026-06-01 09:00] === Drip run complete ===
+[2026-06-02 09:00] === Drip sequence run start ===
+[2026-06-02 09:00] Found 8 subscriber contacts across all lists
+[2026-06-02 09:00] Done — sent: 0 | skipped: 8 | errors: 0
+[2026-06-02 09:00] === Drip run complete ===
+[2026-06-02 09:00] === Drip sequence run start ===
+[2026-06-02 09:00] Found 8 subscriber contacts across all lists
+[2026-06-02 09:00] Done — sent: 0 | skipped: 8 | errors: 0
+[2026-06-02 09:00] === Drip run complete ===
+[2026-06-03 09:00] === Drip sequence run start ===
+[2026-06-03 09:00] Found 10 subscriber contacts across all lists
+[2026-06-03 09:00] Done — sent: 0 | skipped: 10 | errors: 0
+[2026-06-03 09:00] === Drip run complete ===
+[2026-06-03 09:00] === Drip sequence run start ===
+[2026-06-03 09:00] Found 10 subscriber contacts across all lists
+[2026-06-03 09:00] Done — sent: 0 | skipped: 10 | errors: 0
+[2026-06-03 09:00] === Drip run complete ===
+[2026-06-04 09:03] === Drip sequence run start ===
+[2026-06-04 09:03] Found 10 subscriber contacts across all lists
+[2026-06-04 09:03] Done — sent: 0 | skipped: 10 | errors: 0
+[2026-06-04 09:03] === Drip run complete ===
+[2026-06-04 09:03] === Drip sequence run start ===
+[2026-06-04 09:03] Found 10 subscriber contacts across all lists
+[2026-06-04 09:03] Done — sent: 0 | skipped: 10 | errors: 0
+[2026-06-04 09:03] === Drip run complete ===

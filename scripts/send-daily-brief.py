@@ -75,9 +75,22 @@ def hubspot_get(path, token, retries=3):
     return {}
 
 
+SUBSCRIBER_STAGES = {"subscriber", "lead", "marketingqualifiedlead", "customer", "evangelist"}
+# Allowlist: addresses Duncan wants to receive the brief regardless of lifecyclestage
+# (his own personal inbox — clarified 2026-06-01). NOT for prospect-stage contacts.
+SEND_ALLOWLIST = {"duncanlittlejohn727@gmail.com", "duncanlittlejohnjr@gmail.com"}
+
+
 def get_list_emails(list_id, token):
-    """Fetch all contact emails from a single HubSpot list."""
+    """Fetch opt-in subscriber emails from a HubSpot list.
+
+    Guardrail: skip any contact whose lifecyclestage is not in SUBSCRIBER_STAGES
+    (e.g. 'opportunity' = sales prospect). Prospects landing on a newsletter list
+    by accident must not receive cold marketing. Allowlist covers Duncan's own
+    inboxes.
+    """
     emails = []
+    skipped = []
     after = None
     while True:
         url = f"/crm/v3/lists/{list_id}/memberships?limit=100"
@@ -86,16 +99,28 @@ def get_list_emails(list_id, token):
         data = hubspot_get(url, token)
         for member in data.get("results", []):
             contact_id = member.get("recordId")
-            if contact_id:
-                contact = hubspot_get(f"/crm/v3/objects/contacts/{contact_id}?properties=email", token)
-                email = contact.get("properties", {}).get("email", "")
-                if email:
-                    emails.append(email.lower())
-                time.sleep(0.05)
+            if not contact_id:
+                continue
+            contact = hubspot_get(
+                f"/crm/v3/objects/contacts/{contact_id}?properties=email,lifecyclestage",
+                token,
+            )
+            props = contact.get("properties", {})
+            email = (props.get("email") or "").lower()
+            stage = (props.get("lifecyclestage") or "").lower()
+            if not email:
+                continue
+            if email in SEND_ALLOWLIST or stage in SUBSCRIBER_STAGES:
+                emails.append(email)
+            else:
+                skipped.append(f"{email} (stage={stage or 'unset'})")
+            time.sleep(0.05)
         paging = data.get("paging", {}).get("next", {})
         after = paging.get("after") if paging else None
         if not after:
             break
+    if skipped:
+        log(f"  [list {list_id}] guardrail skipped {len(skipped)} non-subscriber contact(s): {', '.join(skipped[:5])}{' ...' if len(skipped) > 5 else ''}")
     return emails
 
 

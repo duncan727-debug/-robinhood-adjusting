@@ -878,3 +878,357 @@ Contacts missing email: 12
 [2026-05-30 10:00]   Phone-only (no email found): 0
 [2026-05-30 10:00]   Recycled (retry tomorrow): 0
 [2026-05-30 10:00]   Skipped (duplicates): 0
+[2026-06-01 11:30] === enrich_before_upload start ===
+[2026-06-01 11:30]   RECYCLE (attempt 1): FirstService Residential Boca Raton — no email found
+[2026-06-01 11:30]   ✓ NEW → HubSpot (scraped): Elite Property Management of Boca Raton | fabiola@elitepropmgt.com | deal=327723009750
+[2026-06-01 11:30]   RECYCLE (attempt 1): Campbell Property Management — no email found
+[2026-06-01 11:31]   RECYCLE (attempt 1): Hawk-Eye Management — no email found
+[2026-06-01 11:31]   RECYCLE (attempt 1): Boca Isles South Management Office — no email found
+[2026-06-01 11:31]   RECYCLE (attempt 1): Dayan Property Management — no email found
+[2026-06-01 11:31]   ✓ NEW → HubSpot (scraped): Luxury Property Care | outreach@luxurypropertycare.com | deal=327681208057
+[2026-06-01 11:31]   ✓ NEW → HubSpot (scraped): James Brown Law | hello@jamesbrownlaw.com | deal=327731885779
+[2026-06-01 11:32]   ✓ NEW → HubSpot (scraped): Kelley Grant & Tanis, P.A. | info@kelleygrantlaw.com | deal=327742683896
+[2026-06-01 11:32]   RECYCLE (attempt 1): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney — no email found
+[2026-06-01 11:32]   RECYCLE (attempt 1): Law Office of Ryan S. Shipp, PLLC — no email found
+[2026-06-01 11:32]   RECYCLE (attempt 1): The Law Office Of Jed A. Stabler P.A. — no email found
+[2026-06-01 11:32]   ✓ NEW → HubSpot (scraped): Marecki Law Firm | recep@mylegaladvocate.com | deal=327731885792
+[2026-06-01 11:33]   RECYCLE (attempt 1): Law Office of Donna Hearne-Gousse, P.A. — no email found
+[2026-06-01 11:33]   RECYCLE (attempt 1): Law Office of David Steinfeld — no email found
+[2026-06-01 11:33]   ✓ NEW → HubSpot (scraped): Cohen Norris Wolmer Ray Telepman Berkowitz & Cohen | info@cohennorris.com | deal=327721210598
+[2026-06-01 11:33]   RECYCLE (attempt 1): Zaretsky Law Group — no email found
+[2026-06-01 11:33]   RECYCLE (attempt 1): Sokoloff and Weinstein, P.A. — no email found
+[2026-06-01 11:34]   RECYCLE (attempt 1): APLaw - Construction, Real Estate, Business — no email found
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Grantham Law Firm | info@kirkgrantham.com | deal=327742684893
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): The Law Office of John A. Wagner, PLLC | info@johnwagnerlaw.com | deal=327740884686
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Gobin Law, PLLC | sheehan@gobinlaw.com | deal=327681209064
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Shenkman & Shenkman Law Firm & TitleTime.net | curtis@palmbeachlawyer.law | deal=327748222677
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Brunelli Law, P.A. | marjorie@brunelli-law.com | deal=327723011822
+[2026-06-01 11:34]   RECYCLE (attempt 1): Blue Line Law Firm — no email found
+[2026-06-01 11:38] === Done ===
+[2026-06-01 11:38]   Uploaded to HubSpot (NEW, verified): 11  (of which 0 via FB/IG fallback)
+[2026-06-01 11:38]   Rejected by verify gate: 0
+[2026-06-01 11:38]   Phone-only (no email found): 0
+[2026-06-01 11:38]   Recycled (retry tomorrow): 14
+[2026-06-01 11:38]   Skipped (duplicates): 0
+[2026-06-01 11:30] === enrich_before_upload start ===
+[2026-06-01 11:30]   RECYCLE (attempt 1): FirstService Residential Boca Raton — no email found
+[2026-06-01 11:30]   ✓ NEW → HubSpot (scraped): Elite Property Management of Boca Raton | fabiola@elitepropmgt.com | deal=327723009750
+[2026-06-01 11:30]   RECYCLE (attempt 1): Campbell Property Management — no email found
+[2026-06-01 11:31]   RECYCLE (attempt 1): Hawk-Eye Management — no email found
+[2026-06-01 11:31]   RECYCLE (attempt 1): Boca Isles South Management Office — no email found
+[2026-06-01 11:31]   RECYCLE (attempt 1): Dayan Property Management — no email found
+[2026-06-01 11:31]   ✓ NEW → HubSpot (scraped): Luxury Property Care | outreach@luxurypropertycare.com | deal=327681208057
+[2026-06-01 11:31]   ✓ NEW → HubSpot (scraped): James Brown Law | hello@jamesbrownlaw.com | deal=327731885779
+[2026-06-01 11:32]   ✓ NEW → HubSpot (scraped): Kelley Grant & Tanis, P.A. | info@kelleygrantlaw.com | deal=327742683896
+[2026-06-01 11:32]   RECYCLE (attempt 1): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney — no email found
+[2026-06-01 11:32]   RECYCLE (attempt 1): Law Office of Ryan S. Shipp, PLLC — no email found
+[2026-06-01 11:32]   RECYCLE (attempt 1): The Law Office Of Jed A. Stabler P.A. — no email found
+[2026-06-01 11:32]   ✓ NEW → HubSpot (scraped): Marecki Law Firm | recep@mylegaladvocate.com | deal=327731885792
+[2026-06-01 11:33]   RECYCLE (attempt 1): Law Office of Donna Hearne-Gousse, P.A. — no email found
+[2026-06-01 11:33]   RECYCLE (attempt 1): Law Office of David Steinfeld — no email found
+[2026-06-01 11:33]   ✓ NEW → HubSpot (scraped): Cohen Norris Wolmer Ray Telepman Berkowitz & Cohen | info@cohennorris.com | deal=327721210598
+[2026-06-01 11:33]   RECYCLE (attempt 1): Zaretsky Law Group — no email found
+[2026-06-01 11:33]   RECYCLE (attempt 1): Sokoloff and Weinstein, P.A. — no email found
+[2026-06-01 11:34]   RECYCLE (attempt 1): APLaw - Construction, Real Estate, Business — no email found
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Grantham Law Firm | info@kirkgrantham.com | deal=327742684893
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): The Law Office of John A. Wagner, PLLC | info@johnwagnerlaw.com | deal=327740884686
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Gobin Law, PLLC | sheehan@gobinlaw.com | deal=327681209064
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Shenkman & Shenkman Law Firm & TitleTime.net | curtis@palmbeachlawyer.law | deal=327748222677
+[2026-06-01 11:34]   ✓ NEW → HubSpot (scraped): Brunelli Law, P.A. | marjorie@brunelli-law.com | deal=327723011822
+[2026-06-01 11:34]   RECYCLE (attempt 1): Blue Line Law Firm — no email found
+[2026-06-01 11:38] === Done ===
+[2026-06-01 11:38]   Uploaded to HubSpot (NEW, verified): 11  (of which 0 via FB/IG fallback)
+[2026-06-01 11:38]   Rejected by verify gate: 0
+[2026-06-01 11:38]   Phone-only (no email found): 0
+[2026-06-01 11:38]   Recycled (retry tomorrow): 14
+[2026-06-01 11:38]   Skipped (duplicates): 0
+[2026-06-02 10:00] === enrich_before_upload start ===
+[2026-06-02 10:00]   RECYCLE (attempt 1): Peter J. Snyder, P.A. — no email found
+[2026-06-02 10:00]   RECYCLE (attempt 1): Ganim Law Group, PLLC — no email found
+[2026-06-02 10:00]   RECYCLE (attempt 1): The Siegel Law Group, P.A. — no email found
+[2026-06-02 10:00]   ✓ NEW → HubSpot (scraped): ASR Law Firm | info@asrlawfirm.com | deal=327757762256
+[2026-06-02 10:01]   RECYCLE (attempt 1): Attorneys Signature Title — no email found
+[2026-06-02 10:01]   ✓ NEW → HubSpot (scraped): Jacob & Greenfield, PLLC | admin@floridaestateplanninglawyer.com | deal=327737892595
+[2026-06-02 10:01]   RECYCLE (attempt 1): Andrew M. Schwartz Legal Team — no email found
+[2026-06-02 10:01]   ✓ NEW → HubSpot (scraped): Glachman & Brill, P.A. | info@glachmanbrill.com | deal=327811643076
+[2026-06-02 10:01]   ✓ NEW → HubSpot (scraped): Alina E. Altamirano, P.A. | info@icallmylawyer.com | deal=327700085459
+[2026-06-02 10:02]   RECYCLE (attempt 1): Lisa I. Glassman, P.A. — no email found
+[2026-06-02 10:02]   RECYCLE (attempt 1): Grant W. Kehres, P.A- BocaClosings — no email found
+[2026-06-02 10:02]   RECYCLE (attempt 1): The Levy Firm PLLC — no email found
+[2026-06-02 10:02]   RECYCLE (attempt 1): Eastham Law Offices — no email found
+[2026-06-02 10:03]   RECYCLE (attempt 1): Cohen Samuels, PLLC — no email found
+[2026-06-02 10:03]   RECYCLE (attempt 1): Loughlin Law, P.A. — no email found
+[2026-06-02 10:03] === enrich_before_upload start ===
+[2026-06-02 10:03]   RECYCLE (attempt 1): Peter J. Snyder, P.A. — no email found
+[2026-06-02 10:03]   RECYCLE (attempt 1): Marlyn J. Wiener, P.A. — no email found
+[2026-06-02 10:03]   ✓ NEW → HubSpot (scraped): Law Offices Of Edgar A. Benes, P.A. | info@beneslaw.com | deal=327741437673
+[2026-06-02 10:04]   ✓ NEW → HubSpot (scraped): Jill B Gordon PA, Real Estate Attorney | jill@jillgordonpa.com | deal=327737895613
+[2026-06-02 10:04]   RECYCLE (attempt 1): Ganim Law Group, PLLC — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): The Siegel Law Group, P.A. — no email found
+[2026-06-02 10:04]   SKIP (already in HubSpot): ASR Law Firm
+[2026-06-02 10:04]   RECYCLE (attempt 1): Robert Marc Schwartz, P.A. — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): Attorneys Signature Title — no email found
+[2026-06-02 10:04]   SKIP (already in HubSpot): Jacob & Greenfield, PLLC
+[2026-06-02 10:04]   RECYCLE (attempt 1): Palm Beach law Group — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): Andrew M. Schwartz Legal Team — no email found
+[2026-06-02 10:04]   SKIP (already in HubSpot): Glachman & Brill, P.A.
+[2026-06-02 10:04]   SKIP (already in HubSpot): Alina E. Altamirano, P.A.
+[2026-06-02 10:04]   RECYCLE (attempt 1): Linkhorst Law Firm, P.A. - Florida Construction Lawyers — no email found
+[2026-06-02 10:04]   ✓ NEW → HubSpot (scraped): Wyman Legal Solutions - Construction Law | andy@wymanlegalsolutions.com | deal=327734262478
+[2026-06-02 10:05]   RECYCLE (attempt 1): Lisa I. Glassman, P.A. — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): Loren & Kean Law — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): Grant W. Kehres, P.A- BocaClosings — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): The Quattro Firm — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): The Levy Firm PLLC — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): The Law Office of Rafael M. Diaz, PLLC — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): Eastham Law Offices — no email found
+[2026-06-02 10:06]   PHONE-ONLY (recycled, still no email): FirstService Residential Boca Raton
+[2026-06-02 10:06]   RECYCLE (attempt 1): Cohen Samuels, PLLC — no email found
+[2026-06-02 10:06]   PHONE-ONLY (recycled, still no email): Campbell Property Management
+[2026-06-02 10:06]   RECYCLE (attempt 1): Loughlin Law, P.A. — no email found
+[2026-06-02 10:06]   PHONE-ONLY (recycled, still no email): Hawk-Eye Management
+[2026-06-02 10:07]   RECYCLE (attempt 1): Marlyn J. Wiener, P.A. — no email found
+[2026-06-02 10:07]   SKIP (already in HubSpot): Law Offices Of Edgar A. Benes, P.A.
+[2026-06-02 10:07]   SKIP (already in HubSpot): Jill B Gordon PA, Real Estate Attorney
+[2026-06-02 10:07]   RECYCLE (attempt 1): Robert Marc Schwartz, P.A. — no email found
+[2026-06-02 10:07]   PHONE-ONLY (recycled, still no email): Boca Isles South Management Office
+[2026-06-02 10:07]   RECYCLE (attempt 1): Palm Beach law Group — no email found
+[2026-06-02 10:07]   PHONE-ONLY (recycled, still no email): Dayan Property Management
+[2026-06-02 10:07]   RECYCLE (attempt 1): Linkhorst Law Firm, P.A. - Florida Construction Lawyers — no email found
+[2026-06-02 10:07]   PHONE-ONLY (recycled, still no email): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney
+[2026-06-02 10:07]   SKIP (already in HubSpot): Wyman Legal Solutions - Construction Law
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): Law Office of Ryan S. Shipp, PLLC
+[2026-06-02 10:08]   RECYCLE (attempt 1): Loren & Kean Law — no email found
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): The Law Office Of Jed A. Stabler P.A.
+[2026-06-02 10:08]   RECYCLE (attempt 1): The Quattro Firm — no email found
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): Law Office of Donna Hearne-Gousse, P.A.
+[2026-06-02 10:08]   RECYCLE (attempt 1): The Law Office of Rafael M. Diaz, PLLC — no email found
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): Law Office of David Steinfeld
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): FirstService Residential Boca Raton
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Zaretsky Law Group
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Campbell Property Management
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Sokoloff and Weinstein, P.A.
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Hawk-Eye Management
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): APLaw - Construction, Real Estate, Business
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Blue Line Law Firm
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Boca Isles South Management Office
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Dayan Property Management
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Law Office of Ryan S. Shipp, PLLC
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): The Law Office Of Jed A. Stabler P.A.
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): Law Office of Donna Hearne-Gousse, P.A.
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): Law Office of David Steinfeld
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): Zaretsky Law Group
+[2026-06-02 10:12]   PHONE-ONLY (recycled, still no email): Sokoloff and Weinstein, P.A.
+[2026-06-02 10:12]   PHONE-ONLY (recycled, still no email): APLaw - Construction, Real Estate, Business
+[2026-06-02 10:12]   PHONE-ONLY (recycled, still no email): Blue Line Law Firm
+[2026-06-02 10:15]   Phone-only call list: wrote 14 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-02.csv
+[2026-06-02 10:15] === Done ===
+[2026-06-02 10:15]   Uploaded to HubSpot (NEW, verified): 7  (of which 0 via FB/IG fallback)
+[2026-06-02 10:15]   Rejected by verify gate: 0
+[2026-06-02 10:15]   Phone-only (no email found): 14
+[2026-06-02 10:15]   Recycled (retry tomorrow): 18
+[2026-06-02 10:15]   Skipped (duplicates): 0
+[2026-06-02 10:00] === enrich_before_upload start ===
+[2026-06-02 10:00]   RECYCLE (attempt 1): Peter J. Snyder, P.A. — no email found
+[2026-06-02 10:00]   RECYCLE (attempt 1): Ganim Law Group, PLLC — no email found
+[2026-06-02 10:00]   RECYCLE (attempt 1): The Siegel Law Group, P.A. — no email found
+[2026-06-02 10:00]   ✓ NEW → HubSpot (scraped): ASR Law Firm | info@asrlawfirm.com | deal=327757762256
+[2026-06-02 10:01]   RECYCLE (attempt 1): Attorneys Signature Title — no email found
+[2026-06-02 10:01]   ✓ NEW → HubSpot (scraped): Jacob & Greenfield, PLLC | admin@floridaestateplanninglawyer.com | deal=327737892595
+[2026-06-02 10:01]   RECYCLE (attempt 1): Andrew M. Schwartz Legal Team — no email found
+[2026-06-02 10:01]   ✓ NEW → HubSpot (scraped): Glachman & Brill, P.A. | info@glachmanbrill.com | deal=327811643076
+[2026-06-02 10:01]   ✓ NEW → HubSpot (scraped): Alina E. Altamirano, P.A. | info@icallmylawyer.com | deal=327700085459
+[2026-06-02 10:02]   RECYCLE (attempt 1): Lisa I. Glassman, P.A. — no email found
+[2026-06-02 10:02]   RECYCLE (attempt 1): Grant W. Kehres, P.A- BocaClosings — no email found
+[2026-06-02 10:02]   RECYCLE (attempt 1): The Levy Firm PLLC — no email found
+[2026-06-02 10:02]   RECYCLE (attempt 1): Eastham Law Offices — no email found
+[2026-06-02 10:03]   RECYCLE (attempt 1): Cohen Samuels, PLLC — no email found
+[2026-06-02 10:03]   RECYCLE (attempt 1): Loughlin Law, P.A. — no email found
+[2026-06-02 10:03]   RECYCLE (attempt 1): Marlyn J. Wiener, P.A. — no email found
+[2026-06-02 10:03]   ✓ NEW → HubSpot (scraped): Law Offices Of Edgar A. Benes, P.A. | info@beneslaw.com | deal=327741437673
+[2026-06-02 10:04]   ✓ NEW → HubSpot (scraped): Jill B Gordon PA, Real Estate Attorney | jill@jillgordonpa.com | deal=327737895613
+[2026-06-02 10:04]   RECYCLE (attempt 1): Robert Marc Schwartz, P.A. — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): Palm Beach law Group — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): Linkhorst Law Firm, P.A. - Florida Construction Lawyers — no email found
+[2026-06-02 10:04]   ✓ NEW → HubSpot (scraped): Wyman Legal Solutions - Construction Law | andy@wymanlegalsolutions.com | deal=327734262478
+[2026-06-02 10:05]   RECYCLE (attempt 1): Loren & Kean Law — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): The Quattro Firm — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): The Law Office of Rafael M. Diaz, PLLC — no email found
+[2026-06-02 10:06]   PHONE-ONLY (recycled, still no email): FirstService Residential Boca Raton
+[2026-06-02 10:06]   PHONE-ONLY (recycled, still no email): Campbell Property Management
+[2026-06-02 10:06]   PHONE-ONLY (recycled, still no email): Hawk-Eye Management
+[2026-06-02 10:07]   PHONE-ONLY (recycled, still no email): Boca Isles South Management Office
+[2026-06-02 10:07]   PHONE-ONLY (recycled, still no email): Dayan Property Management
+[2026-06-02 10:07]   PHONE-ONLY (recycled, still no email): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): Law Office of Ryan S. Shipp, PLLC
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): The Law Office Of Jed A. Stabler P.A.
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): Law Office of Donna Hearne-Gousse, P.A.
+[2026-06-02 10:08]   PHONE-ONLY (recycled, still no email): Law Office of David Steinfeld
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Zaretsky Law Group
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Sokoloff and Weinstein, P.A.
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): APLaw - Construction, Real Estate, Business
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Blue Line Law Firm
+[2026-06-02 10:15]   Phone-only call list: wrote 14 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-02.csv
+[2026-06-02 10:15] === Done ===
+[2026-06-02 10:15]   Uploaded to HubSpot (NEW, verified): 7  (of which 0 via FB/IG fallback)
+[2026-06-02 10:15]   Rejected by verify gate: 0
+[2026-06-02 10:15]   Phone-only (no email found): 14
+[2026-06-02 10:15]   Recycled (retry tomorrow): 18
+[2026-06-02 10:15]   Skipped (duplicates): 0
+[2026-06-02 10:17]   Phone-only call list: wrote 14 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-02.csv
+[2026-06-02 10:17] === Done ===
+[2026-06-02 10:17]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-02 10:17]   Rejected by verify gate: 0
+[2026-06-02 10:17]   Phone-only (no email found): 14
+[2026-06-02 10:17]   Recycled (retry tomorrow): 18
+[2026-06-02 10:17]   Skipped (duplicates): 7
+[2026-06-02 10:03] === enrich_before_upload start ===
+[2026-06-02 10:03]   RECYCLE (attempt 1): Peter J. Snyder, P.A. — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): Ganim Law Group, PLLC — no email found
+[2026-06-02 10:04]   RECYCLE (attempt 1): The Siegel Law Group, P.A. — no email found
+[2026-06-02 10:04]   SKIP (already in HubSpot): ASR Law Firm
+[2026-06-02 10:04]   RECYCLE (attempt 1): Attorneys Signature Title — no email found
+[2026-06-02 10:04]   SKIP (already in HubSpot): Jacob & Greenfield, PLLC
+[2026-06-02 10:04]   RECYCLE (attempt 1): Andrew M. Schwartz Legal Team — no email found
+[2026-06-02 10:04]   SKIP (already in HubSpot): Glachman & Brill, P.A.
+[2026-06-02 10:04]   SKIP (already in HubSpot): Alina E. Altamirano, P.A.
+[2026-06-02 10:05]   RECYCLE (attempt 1): Lisa I. Glassman, P.A. — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): Grant W. Kehres, P.A- BocaClosings — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): The Levy Firm PLLC — no email found
+[2026-06-02 10:05]   RECYCLE (attempt 1): Eastham Law Offices — no email found
+[2026-06-02 10:06]   RECYCLE (attempt 1): Cohen Samuels, PLLC — no email found
+[2026-06-02 10:06]   RECYCLE (attempt 1): Loughlin Law, P.A. — no email found
+[2026-06-02 10:07]   RECYCLE (attempt 1): Marlyn J. Wiener, P.A. — no email found
+[2026-06-02 10:07]   SKIP (already in HubSpot): Law Offices Of Edgar A. Benes, P.A.
+[2026-06-02 10:07]   SKIP (already in HubSpot): Jill B Gordon PA, Real Estate Attorney
+[2026-06-02 10:07]   RECYCLE (attempt 1): Robert Marc Schwartz, P.A. — no email found
+[2026-06-02 10:07]   RECYCLE (attempt 1): Palm Beach law Group — no email found
+[2026-06-02 10:07]   RECYCLE (attempt 1): Linkhorst Law Firm, P.A. - Florida Construction Lawyers — no email found
+[2026-06-02 10:07]   SKIP (already in HubSpot): Wyman Legal Solutions - Construction Law
+[2026-06-02 10:08]   RECYCLE (attempt 1): Loren & Kean Law — no email found
+[2026-06-02 10:08]   RECYCLE (attempt 1): The Quattro Firm — no email found
+[2026-06-02 10:08]   RECYCLE (attempt 1): The Law Office of Rafael M. Diaz, PLLC — no email found
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): FirstService Residential Boca Raton
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Campbell Property Management
+[2026-06-02 10:09]   PHONE-ONLY (recycled, still no email): Hawk-Eye Management
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Boca Isles South Management Office
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Dayan Property Management
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney
+[2026-06-02 10:10]   PHONE-ONLY (recycled, still no email): Law Office of Ryan S. Shipp, PLLC
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): The Law Office Of Jed A. Stabler P.A.
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): Law Office of Donna Hearne-Gousse, P.A.
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): Law Office of David Steinfeld
+[2026-06-02 10:11]   PHONE-ONLY (recycled, still no email): Zaretsky Law Group
+[2026-06-02 10:12]   PHONE-ONLY (recycled, still no email): Sokoloff and Weinstein, P.A.
+[2026-06-02 10:12]   PHONE-ONLY (recycled, still no email): APLaw - Construction, Real Estate, Business
+[2026-06-02 10:12]   PHONE-ONLY (recycled, still no email): Blue Line Law Firm
+[2026-06-02 10:17]   Phone-only call list: wrote 14 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-02.csv
+[2026-06-02 10:17] === Done ===
+[2026-06-02 10:17]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-02 10:17]   Rejected by verify gate: 0
+[2026-06-02 10:17]   Phone-only (no email found): 14
+[2026-06-02 10:17]   Recycled (retry tomorrow): 18
+[2026-06-02 10:17]   Skipped (duplicates): 7
+[2026-06-03 12:14] === enrich_before_upload start ===
+[2026-06-03 12:14]   RECYCLE (attempt 1): A Plus Mold Remediation Inc. — no email found
+[2026-06-03 12:14]   RECYCLE (attempt 1): Fast Mold Testing - West Palm Beach — no email found
+[2026-06-03 12:15]   RECYCLE (attempt 1): Mold Only, Inc — no email found
+[2026-06-03 12:16]   RECYCLE (attempt 1): Ambar Mold — no email found
+[2026-06-03 12:16]   RECYCLE (attempt 1): A&A Mold Busters — no email found
+[2026-06-03 12:16]   ✓ NEW → HubSpot (scraped): BioBusters Remediation, LLC | info@thebiobusters.com | deal=328127702752
+[2026-06-03 12:16]   RECYCLE (attempt 1): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results — no email found
+[2026-06-03 12:17]   RECYCLE (attempt 1): Fast Mold Testing - Boca Raton — no email found
+[2026-06-03 12:17]   ✓ NEW → HubSpot (scraped): Mold Testers 561 | admin@moldtesters561.com | deal=328135995124
+[2026-06-03 12:17]   RECYCLE (attempt 1): Affordable Mold Testing and Assessments — no email found
+[2026-06-03 12:17]   ✓ NEW → HubSpot (scraped): Moldman Boca Raton | hello@moldmanusa.com | deal=328097380042
+[2026-06-03 12:17]   RECYCLE (attempt 1): ITS Mold - (Inspection, Testing, Solutions) — no email found
+[2026-06-03 12:17]   RECYCLE (attempt 1): RCI Home and Mold Inspections, Inc. — no email found
+[2026-06-03 12:18]   RECYCLE (attempt 1): Mold Response Team — no email found
+[2026-06-03 12:18]   RECYCLE (attempt 1): SporeSure Mold Inspections — no email found
+[2026-06-03 12:18]   ✓ NEW → HubSpot (scraped): Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Boca Raton | info@rescueclean911.com | deal=328125905610
+[2026-06-03 12:19]   RECYCLE (attempt 1): Eagle Eye Mold Inspection of South Florida — no email found
+[2026-06-03 12:19]   RECYCLE (attempt 1): COREQ Mold Analysis — no email found
+[2026-06-03 12:19]   ✓ NEW → HubSpot (scraped): AirMD Boca Raton FL | info@airmd.com | deal=328135996122
+[2026-06-03 12:19]   ✓ NEW → HubSpot (scraped): All Around Inspections | info@allaroundinspectionsfl.com | deal=328146735812
+[2026-06-03 12:19]   ✓ NEW → HubSpot (scraped): Supreme Restorations | support@supremerestorationsllc.com | deal=328071539405
+[2026-06-03 12:19]   RECYCLE (attempt 1): Wonderful — no email found
+[2026-06-03 12:20]   RECYCLE (attempt 1): Noah Restoration — no email found
+[2026-06-03 12:20]   RECYCLE (attempt 1): Patriot Disaster Specialist — no email found
+[2026-06-03 12:21]   RECYCLE (attempt 1): Guardian Storm Protection — no email found
+[2026-06-03 12:21]   PHONE-ONLY (recycled, still no email): Peter J. Snyder, P.A.
+[2026-06-03 12:21]   PHONE-ONLY (recycled, still no email): Ganim Law Group, PLLC
+[2026-06-03 12:22]   PHONE-ONLY (recycled, still no email): The Siegel Law Group, P.A.
+[2026-06-03 12:22]   PHONE-ONLY (recycled, still no email): Attorneys Signature Title
+[2026-06-03 12:22]   PHONE-ONLY (recycled, still no email): Andrew M. Schwartz Legal Team
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): Lisa I. Glassman, P.A.
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): Grant W. Kehres, P.A- BocaClosings
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): The Levy Firm PLLC
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): Eastham Law Offices
+[2026-06-03 12:24]   PHONE-ONLY (recycled, still no email): Cohen Samuels, PLLC
+[2026-06-03 12:24]   PHONE-ONLY (recycled, still no email): Loughlin Law, P.A.
+[2026-06-03 12:24]   PHONE-ONLY (recycled, still no email): Marlyn J. Wiener, P.A.
+[2026-06-03 12:25]   PHONE-ONLY (recycled, still no email): Robert Marc Schwartz, P.A.
+[2026-06-03 12:25]   PHONE-ONLY (recycled, still no email): Palm Beach law Group
+[2026-06-03 12:25]   PHONE-ONLY (recycled, still no email): Linkhorst Law Firm, P.A. - Florida Construction Lawyers
+[2026-06-03 12:26]   PHONE-ONLY (recycled, still no email): Loren & Kean Law
+[2026-06-03 12:26]   ✓ NEW → HubSpot (scraped): The Quattro Firm | info@thequattrofirm.com | deal=328078748364
+[2026-06-03 12:26]   PHONE-ONLY (recycled, still no email): The Law Office of Rafael M. Diaz, PLLC
+[2026-06-03 14:33]   Phone-only call list: wrote 17 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-03.csv
+[2026-06-03 14:33] === Done ===
+[2026-06-03 14:33]   Uploaded to HubSpot (NEW, verified): 8  (of which 0 via FB/IG fallback)
+[2026-06-03 14:33]   Rejected by verify gate: 0
+[2026-06-03 14:33]   Phone-only (no email found): 17
+[2026-06-03 14:33]   Recycled (retry tomorrow): 18
+[2026-06-03 14:33]   Skipped (duplicates): 0
+[2026-06-03 12:14] === enrich_before_upload start ===
+[2026-06-03 12:14]   RECYCLE (attempt 1): A Plus Mold Remediation Inc. — no email found
+[2026-06-03 12:14]   RECYCLE (attempt 1): Fast Mold Testing - West Palm Beach — no email found
+[2026-06-03 12:15]   RECYCLE (attempt 1): Mold Only, Inc — no email found
+[2026-06-03 12:16]   RECYCLE (attempt 1): Ambar Mold — no email found
+[2026-06-03 12:16]   RECYCLE (attempt 1): A&A Mold Busters — no email found
+[2026-06-03 12:16]   ✓ NEW → HubSpot (scraped): BioBusters Remediation, LLC | info@thebiobusters.com | deal=328127702752
+[2026-06-03 12:16]   RECYCLE (attempt 1): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results — no email found
+[2026-06-03 12:17]   RECYCLE (attempt 1): Fast Mold Testing - Boca Raton — no email found
+[2026-06-03 12:17]   ✓ NEW → HubSpot (scraped): Mold Testers 561 | admin@moldtesters561.com | deal=328135995124
+[2026-06-03 12:17]   RECYCLE (attempt 1): Affordable Mold Testing and Assessments — no email found
+[2026-06-03 12:17]   ✓ NEW → HubSpot (scraped): Moldman Boca Raton | hello@moldmanusa.com | deal=328097380042
+[2026-06-03 12:17]   RECYCLE (attempt 1): ITS Mold - (Inspection, Testing, Solutions) — no email found
+[2026-06-03 12:17]   RECYCLE (attempt 1): RCI Home and Mold Inspections, Inc. — no email found
+[2026-06-03 12:18]   RECYCLE (attempt 1): Mold Response Team — no email found
+[2026-06-03 12:18]   RECYCLE (attempt 1): SporeSure Mold Inspections — no email found
+[2026-06-03 12:18]   ✓ NEW → HubSpot (scraped): Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Boca Raton | info@rescueclean911.com | deal=328125905610
+[2026-06-03 12:19]   RECYCLE (attempt 1): Eagle Eye Mold Inspection of South Florida — no email found
+[2026-06-03 12:19]   RECYCLE (attempt 1): COREQ Mold Analysis — no email found
+[2026-06-03 12:19]   ✓ NEW → HubSpot (scraped): AirMD Boca Raton FL | info@airmd.com | deal=328135996122
+[2026-06-03 12:19]   ✓ NEW → HubSpot (scraped): All Around Inspections | info@allaroundinspectionsfl.com | deal=328146735812
+[2026-06-03 12:19]   ✓ NEW → HubSpot (scraped): Supreme Restorations | support@supremerestorationsllc.com | deal=328071539405
+[2026-06-03 12:19]   RECYCLE (attempt 1): Wonderful — no email found
+[2026-06-03 12:20]   RECYCLE (attempt 1): Noah Restoration — no email found
+[2026-06-03 12:20]   RECYCLE (attempt 1): Patriot Disaster Specialist — no email found
+[2026-06-03 12:21]   RECYCLE (attempt 1): Guardian Storm Protection — no email found
+[2026-06-03 12:21]   PHONE-ONLY (recycled, still no email): Peter J. Snyder, P.A.
+[2026-06-03 12:21]   PHONE-ONLY (recycled, still no email): Ganim Law Group, PLLC
+[2026-06-03 12:22]   PHONE-ONLY (recycled, still no email): The Siegel Law Group, P.A.
+[2026-06-03 12:22]   PHONE-ONLY (recycled, still no email): Attorneys Signature Title
+[2026-06-03 12:22]   PHONE-ONLY (recycled, still no email): Andrew M. Schwartz Legal Team
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): Lisa I. Glassman, P.A.
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): Grant W. Kehres, P.A- BocaClosings
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): The Levy Firm PLLC
+[2026-06-03 12:23]   PHONE-ONLY (recycled, still no email): Eastham Law Offices
+[2026-06-03 12:24]   PHONE-ONLY (recycled, still no email): Cohen Samuels, PLLC
+[2026-06-03 12:24]   PHONE-ONLY (recycled, still no email): Loughlin Law, P.A.
+[2026-06-03 12:24]   PHONE-ONLY (recycled, still no email): Marlyn J. Wiener, P.A.
+[2026-06-03 12:25]   PHONE-ONLY (recycled, still no email): Robert Marc Schwartz, P.A.
+[2026-06-03 12:25]   PHONE-ONLY (recycled, still no email): Palm Beach law Group
+[2026-06-03 12:25]   PHONE-ONLY (recycled, still no email): Linkhorst Law Firm, P.A. - Florida Construction Lawyers
+[2026-06-03 12:26]   PHONE-ONLY (recycled, still no email): Loren & Kean Law
+[2026-06-03 12:26]   ✓ NEW → HubSpot (scraped): The Quattro Firm | info@thequattrofirm.com | deal=328078748364
+[2026-06-03 12:26]   PHONE-ONLY (recycled, still no email): The Law Office of Rafael M. Diaz, PLLC
+[2026-06-03 14:33]   Phone-only call list: wrote 17 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-03.csv
+[2026-06-03 14:33] === Done ===
+[2026-06-03 14:33]   Uploaded to HubSpot (NEW, verified): 8  (of which 0 via FB/IG fallback)
+[2026-06-03 14:33]   Rejected by verify gate: 0
+[2026-06-03 14:33]   Phone-only (no email found): 17
+[2026-06-03 14:33]   Recycled (retry tomorrow): 18
+[2026-06-03 14:33]   Skipped (duplicates): 0

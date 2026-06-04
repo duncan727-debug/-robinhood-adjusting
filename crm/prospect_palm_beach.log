@@ -1761,3 +1761,307 @@
     QUEUED (25/25): Grand Isles Gate House-Wllngtn [West Palm Beach] — (561) 333-0728
   Done: 25 added, 44 duplicate/existing, 0 large firms skipped, 5 quality-filtered, 0 errors
   Google Places API: 2026-05-29 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-06-01 09:00:01] Palm Beach prospect run started
+  Searching: HOA management Boca Raton FL
+    → 20 results
+    SKIP (exists): Grant Property Management
+    SKIP (rating 2.2 < 3.5): Crest Management Group, Inc.
+    QUEUED (1/25): FirstService Residential Boca Raton [Boca Raton] — (561) 997-4045
+    SKIP (rating 2.9 < 3.5): Superior Association Management
+    QUEUED (2/25): Elite Property Management of Boca Raton [Boca Raton] — (561) 206-2770
+    QUEUED (3/25): Campbell Property Management [Deerfield Beach] — (954) 427-8770
+    QUEUED (4/25): Hawk-Eye Management [Boca Raton] — (561) 392-1600
+    SKIP (rating 2.9 < 3.5): Florida Skyline Management
+    SKIP (rating 2.5 < 3.5): Vesta Property Services
+    SKIP (no website): Quality Management Group, Inc. | Property Management Company
+    SKIP (rating 3 < 3.5): FLORIDA ONE PROPERTY MANAGEMENT
+    QUEUED (5/25): Boca Isles South Management Office [Boca Raton] — (561) 477-7334
+    SKIP (rating 3.1 < 3.5): Lang Management
+    QUEUED (6/25): Dayan Property Management [Boca Raton] — (561) 822-7115
+    QUEUED (7/25): Luxury Property Care [Boca Raton] — (561) 944-2992
+    SKIP (rating 2.1 < 3.5): Mahogany Services, Inc.
+    SKIP (no website): Boca Lago Management
+    SKIP (no website): Black Palm Property Management
+    SKIP (only 4 reviews): Teem Property Management
+  Searching: real estate attorney Palm Beach County FL
+    → 20 results
+    QUEUED (8/25): James Brown Law [West Palm Beach] — (561) 838-9595
+    QUEUED (9/25): Kelley Grant & Tanis, P.A. [West Palm Beach] — (561) 672-1161
+    QUEUED (10/25): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney [West Palm Beach] — (561) 880-5345
+    QUEUED (11/25): Law Office of Ryan S. Shipp, PLLC [Lantana] — (561) 699-0399
+    QUEUED (12/25): The Law Office Of Jed A. Stabler P.A. [West Palm Beach] — (561) 708-4613
+    QUEUED (13/25): Marecki Law Firm [Wellington] — (561) 847-2868
+    QUEUED (14/25): Law Office of Donna Hearne-Gousse, P.A. [Royal Palm Beach] — (561) 582-5670
+    QUEUED (15/25): Law Office of David Steinfeld [Palm Beach Gardens] — (561) 316-7905
+    QUEUED (16/25): Cohen Norris Wolmer Ray Telepman Berkowitz & Cohen [North Palm Beach] — (561) 844-3600
+    QUEUED (17/25): Zaretsky Law Group [West Palm Beach] — (561) 689-6660
+    QUEUED (18/25): Sokoloff and Weinstein, P.A. [West Palm Beach] — (561) 790-6788
+    QUEUED (19/25): APLaw - Construction, Real Estate, Business [West Palm Beach] — (561) 729-0123
+    QUEUED (20/25): Grantham Law Firm [West Palm Beach] — (561) 966-3000
+    QUEUED (21/25): The Law Office of John A. Wagner, PLLC [Boynton Beach] — (561) 202-8971
+    QUEUED (22/25): Gobin Law, PLLC [Wellington] — (561) 408-0898
+    QUEUED (23/25): Shenkman & Shenkman Law Firm & TitleTime.net [Jupiter] — (561) 822-3939
+    QUEUED (24/25): Brunelli Law, P.A. [West Palm Beach] — (954) 474-7703
+    QUEUED (25/25): Blue Line Law Firm [West Palm Beach] — (561) 247-3371
+  Done: 25 added, 3 duplicate/existing, 0 large firms skipped, 11 quality-filtered, 0 errors
+  Google Places API: 2026-06-01 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-06-01 09:00:23] Run complete
+
+  Searching: HOA management Boca Raton FL
+    → 20 results
+    SKIP (exists): Grant Property Management
+    SKIP (rating 2.2 < 3.5): Crest Management Group, Inc.
+    QUEUED (1/25): FirstService Residential Boca Raton [Boca Raton] — (561) 997-4045
+    SKIP (rating 2.9 < 3.5): Superior Association Management
+    QUEUED (2/25): Elite Property Management of Boca Raton [Boca Raton] — (561) 206-2770
+    QUEUED (3/25): Campbell Property Management [Deerfield Beach] — (954) 427-8770
+    QUEUED (4/25): Hawk-Eye Management [Boca Raton] — (561) 392-1600
+    SKIP (rating 2.9 < 3.5): Florida Skyline Management
+    SKIP (rating 2.5 < 3.5): Vesta Property Services
+    SKIP (no website): Quality Management Group, Inc. | Property Management Company
+    SKIP (rating 3 < 3.5): FLORIDA ONE PROPERTY MANAGEMENT
+    QUEUED (5/25): Boca Isles South Management Office [Boca Raton] — (561) 477-7334
+    SKIP (rating 3.1 < 3.5): Lang Management
+    QUEUED (6/25): Dayan Property Management [Boca Raton] — (561) 822-7115
+    QUEUED (7/25): Luxury Property Care [Boca Raton] — (561) 944-2992
+    SKIP (rating 2.1 < 3.5): Mahogany Services, Inc.
+    SKIP (no website): Boca Lago Management
+    SKIP (no website): Black Palm Property Management
+    SKIP (only 4 reviews): Teem Property Management
+  Searching: real estate attorney Palm Beach County FL
+    → 20 results
+    QUEUED (8/25): James Brown Law [West Palm Beach] — (561) 838-9595
+    QUEUED (9/25): Kelley Grant & Tanis, P.A. [West Palm Beach] — (561) 672-1161
+    QUEUED (10/25): Stefan Sinn, Esq., B.C.S. Board Certified Real Estate Attorney [West Palm Beach] — (561) 880-5345
+    QUEUED (11/25): Law Office of Ryan S. Shipp, PLLC [Lantana] — (561) 699-0399
+    QUEUED (12/25): The Law Office Of Jed A. Stabler P.A. [West Palm Beach] — (561) 708-4613
+    QUEUED (13/25): Marecki Law Firm [Wellington] — (561) 847-2868
+    QUEUED (14/25): Law Office of Donna Hearne-Gousse, P.A. [Royal Palm Beach] — (561) 582-5670
+    QUEUED (15/25): Law Office of David Steinfeld [Palm Beach Gardens] — (561) 316-7905
+    QUEUED (16/25): Cohen Norris Wolmer Ray Telepman Berkowitz & Cohen [North Palm Beach] — (561) 844-3600
+    QUEUED (17/25): Zaretsky Law Group [West Palm Beach] — (561) 689-6660
+    QUEUED (18/25): Sokoloff and Weinstein, P.A. [West Palm Beach] — (561) 790-6788
+    QUEUED (19/25): APLaw - Construction, Real Estate, Business [West Palm Beach] — (561) 729-0123
+    QUEUED (20/25): Grantham Law Firm [West Palm Beach] — (561) 966-3000
+    QUEUED (21/25): The Law Office of John A. Wagner, PLLC [Boynton Beach] — (561) 202-8971
+    QUEUED (22/25): Gobin Law, PLLC [Wellington] — (561) 408-0898
+    QUEUED (23/25): Shenkman & Shenkman Law Firm & TitleTime.net [Jupiter] — (561) 822-3939
+    QUEUED (24/25): Brunelli Law, P.A. [West Palm Beach] — (954) 474-7703
+    QUEUED (25/25): Blue Line Law Firm [West Palm Beach] — (561) 247-3371
+  Done: 25 added, 3 duplicate/existing, 0 large firms skipped, 11 quality-filtered, 0 errors
+  Google Places API: 2026-06-01 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-06-02 09:00:01] Palm Beach prospect run started
+  Searching: real estate attorney Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Peter J. Snyder, P.A. [Boca Raton] — (561) 367-1581
+    QUEUED (2/25): Ganim Law Group, PLLC [Boca Raton] — (561) 461-6466
+    QUEUED (3/25): The Siegel Law Group, P.A. [Boca Raton] — (561) 708-5832
+    QUEUED (4/25): ASR Law Firm [Boca Raton] — (561) 961-8695
+    QUEUED (5/25): Attorneys Signature Title [Boca Raton] — (561) 277-3773
+    QUEUED (6/25): Jacob & Greenfield, PLLC [Boca Raton] — (561) 771-6047
+    QUEUED (7/25): Andrew M. Schwartz Legal Team [Boca Raton] — (561) 347-6767
+    QUEUED (8/25): Glachman & Brill, P.A. [Boca Raton] — (561) 859-0679
+    QUEUED (9/25): Alina E. Altamirano, P.A. [Boca Raton] — (561) 782-3972
+    QUEUED (10/25): Lisa I. Glassman, P.A. [Boca Raton] — (561) 447-6676
+    QUEUED (11/25): Grant W. Kehres, P.A- BocaClosings [Boca Raton] — (561) 392-5200
+    QUEUED (12/25): The Levy Firm PLLC [Boca Raton] — (954) 615-0866
+    QUEUED (13/25): Eastham Law Offices [Boca Raton] — (561) 395-6800
+    QUEUED (14/25): Cohen Samuels, PLLC [Boca Raton] — (561) 600-1250
+    QUEUED (15/25): Loughlin Law, P.A. [Boca Raton] — (561) 285-0439
+    QUEUED (16/25): Marlyn J. Wiener, P.A. [Boca Raton] — (561) 443-7124
+    QUEUED (17/25): Law Offices Of Edgar A. Benes, P.A. [Boca Raton] — (561) 999-1993
+    QUEUED (18/25): Jill B Gordon PA, Real Estate Attorney [Boca Raton] — (561) 317-8419
+    QUEUED (19/25): Robert Marc Schwartz, P.A. [Boca Raton] — (561) 241-1850
+  Searching: construction attorney Palm Beach County FL
+    → 20 results
+    SKIP (only 3 reviews): Maier Law, P.A.
+    QUEUED (20/25): Palm Beach law Group [West Palm Beach] — (561) 257-5000
+    QUEUED (21/25): Linkhorst Law Firm, P.A. - Florida Construction Lawyers [Jupiter] — (561) 626-8880
+    QUEUED (22/25): Wyman Legal Solutions - Construction Law [Boca Raton] — (561) 361-8700
+    QUEUED (23/25): Loren & Kean Law [Palm Beach Gardens] — (561) 615-5701
+    QUEUED (24/25): The Quattro Firm [West Palm Beach] — (561) 517-8634
+    QUEUED (25/25): The Law Office of Rafael M. Diaz, PLLC [West Palm Beach] — (561) 771-4878
+  Done: 25 added, 4 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-06-02 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-06-02 09:00:21] Run complete
+
+  Searching: real estate attorney Boca Raton FL
+    → 20 results
+    QUEUED (1/25): Peter J. Snyder, P.A. [Boca Raton] — (561) 367-1581
+    QUEUED (2/25): Ganim Law Group, PLLC [Boca Raton] — (561) 461-6466
+    QUEUED (3/25): The Siegel Law Group, P.A. [Boca Raton] — (561) 708-5832
+    QUEUED (4/25): ASR Law Firm [Boca Raton] — (561) 961-8695
+    QUEUED (5/25): Attorneys Signature Title [Boca Raton] — (561) 277-3773
+    QUEUED (6/25): Jacob & Greenfield, PLLC [Boca Raton] — (561) 771-6047
+    QUEUED (7/25): Andrew M. Schwartz Legal Team [Boca Raton] — (561) 347-6767
+    QUEUED (8/25): Glachman & Brill, P.A. [Boca Raton] — (561) 859-0679
+    QUEUED (9/25): Alina E. Altamirano, P.A. [Boca Raton] — (561) 782-3972
+    QUEUED (10/25): Lisa I. Glassman, P.A. [Boca Raton] — (561) 447-6676
+    QUEUED (11/25): Grant W. Kehres, P.A- BocaClosings [Boca Raton] — (561) 392-5200
+    QUEUED (12/25): The Levy Firm PLLC [Boca Raton] — (954) 615-0866
+    QUEUED (13/25): Eastham Law Offices [Boca Raton] — (561) 395-6800
+    QUEUED (14/25): Cohen Samuels, PLLC [Boca Raton] — (561) 600-1250
+    QUEUED (15/25): Loughlin Law, P.A. [Boca Raton] — (561) 285-0439
+    QUEUED (16/25): Marlyn J. Wiener, P.A. [Boca Raton] — (561) 443-7124
+    QUEUED (17/25): Law Offices Of Edgar A. Benes, P.A. [Boca Raton] — (561) 999-1993
+    QUEUED (18/25): Jill B Gordon PA, Real Estate Attorney [Boca Raton] — (561) 317-8419
+    QUEUED (19/25): Robert Marc Schwartz, P.A. [Boca Raton] — (561) 241-1850
+  Searching: construction attorney Palm Beach County FL
+    → 20 results
+    SKIP (only 3 reviews): Maier Law, P.A.
+    QUEUED (20/25): Palm Beach law Group [West Palm Beach] — (561) 257-5000
+    QUEUED (21/25): Linkhorst Law Firm, P.A. - Florida Construction Lawyers [Jupiter] — (561) 626-8880
+    QUEUED (22/25): Wyman Legal Solutions - Construction Law [Boca Raton] — (561) 361-8700
+    QUEUED (23/25): Loren & Kean Law [Palm Beach Gardens] — (561) 615-5701
+    QUEUED (24/25): The Quattro Firm [West Palm Beach] — (561) 517-8634
+    QUEUED (25/25): The Law Office of Rafael M. Diaz, PLLC [West Palm Beach] — (561) 771-4878
+  Done: 25 added, 4 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-06-02 | calls: 2 | $0.0340 today | $0.0340 MTD | 0.02% used | 99.98% remaining
+[2026-06-03 09:00:00] Palm Beach prospect run started
+  Searching: mold remediation Palm Beach County FL
+    → 14 results
+    QUEUED (1/25): A Plus Mold Remediation Inc. [West Palm Beach] — (561) 247-3506
+    QUEUED (2/25): Fast Mold Testing - West Palm Beach [West Palm Beach] — (561) 486-6774
+    QUEUED (3/25): Mold Only, Inc [Lake Park] — (866) 591-6653
+    QUEUED (4/25): Ambar Mold [West Palm Beach] — (866) 466-5391
+    QUEUED (5/25): A&A Mold Busters [Palm Springs] — (305) 767-0397
+    QUEUED (6/25): BioBusters Remediation, LLC [West Palm Beach] — (561) 570-7755
+  Searching: mold inspection Boca Raton FL
+    → 15 results
+    QUEUED (7/25): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results [Boca Raton] — (561) 809-5900
+    QUEUED (8/25): Fast Mold Testing - Boca Raton [Boca Raton] — (561) 564-0621
+    QUEUED (9/25): Mold Testers 561 [Boca Raton] — (561) 886-8241
+    QUEUED (10/25): Affordable Mold Testing and Assessments [Boca Raton] — (561) 698-1991
+    QUEUED (11/25): Moldman Boca Raton [Boca Raton] — (561) 453-3065
+    QUEUED (12/25): ITS Mold - (Inspection, Testing, Solutions) [Boca Raton] — (561) 319-0600
+    QUEUED (13/25): RCI Home and Mold Inspections, Inc. [Boca Raton] — (561) 350-8805
+    QUEUED (14/25): Mold Response Team [Boca Raton] — (561) 600-5500
+    QUEUED (15/25): SporeSure Mold Inspections [Boca Raton] — (561) 769-3180
+    QUEUED (16/25): Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Boca Raton [Boca Raton] — (561) 425-6700
+    QUEUED (17/25): Eagle Eye Mold Inspection of South Florida [Boca Raton] — (561) 654-1476
+    QUEUED (18/25): COREQ Mold Analysis [Boca Raton] — (888) 413-5665
+    QUEUED (19/25): AirMD Boca Raton FL [Boca Raton] — (561) 245-4500
+    SKIP (exists): Miami Mold Specialist
+    QUEUED (20/25): All Around Inspections [Boca Raton] — (888) 715-1114
+  Searching: storm damage contractor Palm Beach County FL
+    → 20 results
+    QUEUED (21/25): Supreme Restorations [West Palm Beach] — (561) 917-5288
+    QUEUED (22/25): Wonderful [Greenacres] — (561) 678-4925
+    SKIP (no website): Maxim Mitigation
+    QUEUED (23/25): Noah Restoration [West Palm Beach] — (855) 275-8326
+    QUEUED (24/25): Patriot Disaster Specialist [Boynton Beach] — (561) 770-6800
+  Searching: hurricane shutters Palm Beach County FL
+    → 20 results
+    QUEUED (25/25): Guardian Storm Protection [West Palm Beach] — (561) 559-7380
+  Done: 25 added, 24 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-06-03 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-06-03 09:00:25] Run complete
+
+  Searching: mold remediation Palm Beach County FL
+    → 14 results
+    QUEUED (1/25): A Plus Mold Remediation Inc. [West Palm Beach] — (561) 247-3506
+    QUEUED (2/25): Fast Mold Testing - West Palm Beach [West Palm Beach] — (561) 486-6774
+    QUEUED (3/25): Mold Only, Inc [Lake Park] — (866) 591-6653
+    QUEUED (4/25): Ambar Mold [West Palm Beach] — (866) 466-5391
+    QUEUED (5/25): A&A Mold Busters [Palm Springs] — (305) 767-0397
+    QUEUED (6/25): BioBusters Remediation, LLC [West Palm Beach] — (561) 570-7755
+  Searching: mold inspection Boca Raton FL
+    → 15 results
+    QUEUED (7/25): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results [Boca Raton] — (561) 809-5900
+    QUEUED (8/25): Fast Mold Testing - Boca Raton [Boca Raton] — (561) 564-0621
+    QUEUED (9/25): Mold Testers 561 [Boca Raton] — (561) 886-8241
+    QUEUED (10/25): Affordable Mold Testing and Assessments [Boca Raton] — (561) 698-1991
+    QUEUED (11/25): Moldman Boca Raton [Boca Raton] — (561) 453-3065
+    QUEUED (12/25): ITS Mold - (Inspection, Testing, Solutions) [Boca Raton] — (561) 319-0600
+    QUEUED (13/25): RCI Home and Mold Inspections, Inc. [Boca Raton] — (561) 350-8805
+    QUEUED (14/25): Mold Response Team [Boca Raton] — (561) 600-5500
+    QUEUED (15/25): SporeSure Mold Inspections [Boca Raton] — (561) 769-3180
+    QUEUED (16/25): Rescue Clean 911 Water Damage, Mold Remediation, Air Duct Cleaning in Boca Raton [Boca Raton] — (561) 425-6700
+    QUEUED (17/25): Eagle Eye Mold Inspection of South Florida [Boca Raton] — (561) 654-1476
+    QUEUED (18/25): COREQ Mold Analysis [Boca Raton] — (888) 413-5665
+    QUEUED (19/25): AirMD Boca Raton FL [Boca Raton] — (561) 245-4500
+    SKIP (exists): Miami Mold Specialist
+    QUEUED (20/25): All Around Inspections [Boca Raton] — (888) 715-1114
+  Searching: storm damage contractor Palm Beach County FL
+    → 20 results
+    QUEUED (21/25): Supreme Restorations [West Palm Beach] — (561) 917-5288
+    QUEUED (22/25): Wonderful [Greenacres] — (561) 678-4925
+    SKIP (no website): Maxim Mitigation
+    QUEUED (23/25): Noah Restoration [West Palm Beach] — (855) 275-8326
+    QUEUED (24/25): Patriot Disaster Specialist [Boynton Beach] — (561) 770-6800
+  Searching: hurricane shutters Palm Beach County FL
+    → 20 results
+    QUEUED (25/25): Guardian Storm Protection [West Palm Beach] — (561) 559-7380
+  Done: 25 added, 24 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-06-03 | calls: 4 | $0.0680 today | $0.0680 MTD | 0.03% used | 99.97% remaining
+[2026-06-04 09:03:53] Palm Beach prospect run started
+  Searching: impact windows Palm Beach County FL
+    → 17 results
+    QUEUED (1/25): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL [Royal Palm Beach] — (561) 453-3860
+    QUEUED (2/25): Wright's Impact Window & Door (East Coast) [West Palm Beach] — (561) 588-7353
+    QUEUED (3/25): Impact Windows and Doors by Project and Property [Lake Worth Beach] — (561) 480-3074
+    QUEUED (4/25): Castle Impact Windows Doors & Shutters [Riviera Beach] — (561) 372-2583
+    QUEUED (5/25): Boca Impact Window and Door [Boca Raton] — (561) 556-4539
+    QUEUED (6/25): Max Guard Hurricane Windows & Doors [West Palm Beach] — (561) 444-2915
+    QUEUED (7/25): Monster Impact Windows and Doors [West Palm Beach] — (561) 562-7600
+    SKIP (only 0 reviews): Impact Windows
+    QUEUED (8/25): Statewide Windows & Doors [Boca Raton] — (561) 264-5283
+    QUEUED (9/25): K Line Impact Windows & Doors [Delray Beach] — (561) 332-0186
+    QUEUED (10/25): Window and Door Replacement Company [Jupiter] — (561) 623-8446
+    QUEUED (11/25): STS Impact Windows & Doors. [Boca Raton] — (561) 600-1018
+    QUEUED (12/25): The Window Guys of Florida [Wellington] — (561) 598-6295
+    QUEUED (13/25): Newman Windows & Doors [Riviera Beach] — (561) 640-1092
+    QUEUED (14/25): Florida Impact Windows & Doors [Deerfield Beach] — (954) 822-0867
+    QUEUED (15/25): Impact Windows Center [Boynton Beach] — (772) 444-7504
+    QUEUED (16/25): MCi Impact Windows & Doors [Lake Worth Beach] — (561) 933-8933
+  Searching: roofing inspection Palm Beach County FL
+    → 20 results
+    QUEUED (17/25): Roofing Systems of America, Inc. - Palm Beach [Royal Palm Beach] — (561) 666-9231
+    QUEUED (18/25): All Pro Builders & Roofing [West Palm Beach] — (561) 662-3497
+  Searching: home inspector Palm Beach County FL
+    → 16 results
+    QUEUED (19/25): Elite Property Inspection & Management [West Palm Beach] — (561) 420-0277
+    QUEUED (20/25): Billings Home Inspections [Royal Palm Beach] — (561) 644-0279
+    QUEUED (21/25): Home Inspection Solutions - Palm Beach County Property Inspection [Wellington] — (561) 305-3582
+    QUEUED (22/25): Guardian Angel Inspections Inc. [Royal Palm Beach] — (561) 512-7854
+    QUEUED (23/25): Palm Beach Inspections, LLC [West Palm Beach] — (561) 582-4332
+    QUEUED (24/25): Florida State Inspectors [Loxahatchee] — (561) 409-9082
+    QUEUED (25/25): Multi Point Home Inspections [Wellington] — (561) 445-2297
+  Done: 25 added, 18 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-06-04 | calls: 3 | $0.0510 today | $0.0510 MTD | 0.03% used | 99.97% remaining
+[2026-06-04 09:04:14] Run complete
+
+  Searching: impact windows Palm Beach County FL
+    → 17 results
+    QUEUED (1/25): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL [Royal Palm Beach] — (561) 453-3860
+    QUEUED (2/25): Wright's Impact Window & Door (East Coast) [West Palm Beach] — (561) 588-7353
+    QUEUED (3/25): Impact Windows and Doors by Project and Property [Lake Worth Beach] — (561) 480-3074
+    QUEUED (4/25): Castle Impact Windows Doors & Shutters [Riviera Beach] — (561) 372-2583
+    QUEUED (5/25): Boca Impact Window and Door [Boca Raton] — (561) 556-4539
+    QUEUED (6/25): Max Guard Hurricane Windows & Doors [West Palm Beach] — (561) 444-2915
+    QUEUED (7/25): Monster Impact Windows and Doors [West Palm Beach] — (561) 562-7600
+    SKIP (only 0 reviews): Impact Windows
+    QUEUED (8/25): Statewide Windows & Doors [Boca Raton] — (561) 264-5283
+    QUEUED (9/25): K Line Impact Windows & Doors [Delray Beach] — (561) 332-0186
+    QUEUED (10/25): Window and Door Replacement Company [Jupiter] — (561) 623-8446
+    QUEUED (11/25): STS Impact Windows & Doors. [Boca Raton] — (561) 600-1018
+    QUEUED (12/25): The Window Guys of Florida [Wellington] — (561) 598-6295
+    QUEUED (13/25): Newman Windows & Doors [Riviera Beach] — (561) 640-1092
+    QUEUED (14/25): Florida Impact Windows & Doors [Deerfield Beach] — (954) 822-0867
+    QUEUED (15/25): Impact Windows Center [Boynton Beach] — (772) 444-7504
+    QUEUED (16/25): MCi Impact Windows & Doors [Lake Worth Beach] — (561) 933-8933
+  Searching: roofing inspection Palm Beach County FL
+    → 20 results
+    QUEUED (17/25): Roofing Systems of America, Inc. - Palm Beach [Royal Palm Beach] — (561) 666-9231
+    QUEUED (18/25): All Pro Builders & Roofing [West Palm Beach] — (561) 662-3497
+  Searching: home inspector Palm Beach County FL
+    → 16 results
+    QUEUED (19/25): Elite Property Inspection & Management [West Palm Beach] — (561) 420-0277
+    QUEUED (20/25): Billings Home Inspections [Royal Palm Beach] — (561) 644-0279
+    QUEUED (21/25): Home Inspection Solutions - Palm Beach County Property Inspection [Wellington] — (561) 305-3582
+    QUEUED (22/25): Guardian Angel Inspections Inc. [Royal Palm Beach] — (561) 512-7854
+    QUEUED (23/25): Palm Beach Inspections, LLC [West Palm Beach] — (561) 582-4332
+    QUEUED (24/25): Florida State Inspectors [Loxahatchee] — (561) 409-9082
+    QUEUED (25/25): Multi Point Home Inspections [Wellington] — (561) 445-2297
+  Done: 25 added, 18 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
+  Google Places API: 2026-06-04 | calls: 3 | $0.0510 today | $0.0510 MTD | 0.03% used | 99.97% remaining

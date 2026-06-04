@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-30T07:27:07.346Z",
+  "updatedAt": "2026-06-04T07:46:26.073Z",
   "entries": {
     "memory:memory/2026-05-20-0818.md:3:4": {
       "key": "memory:memory/2026-05-20-0818.md:3:4",
@@ -1235,6 +1235,749 @@
         "kept",
         "humming",
         "outside"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Key actionable findings: **6 named decision-makers identified:** Richard H. Anderson Jr. (Anderson Construction), David Benchetrit (Davies/DES Plumbing), Robert Ayrsman (Florida Coastal Premier Realty), Mainor Cuadra",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "decision-makers",
+        "davies/des",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: `next_followup_date <= 2026-05-20` in organizations.csv). Earliest is Wave-1 at 5/21. Rather than no-op, pre-built deep intel on all 10 Wave-1 PBC orgs so it's ready whether Duncan approves the pre-NOAA pull-forward (per - Key actionable findings: **Nena's Roofing — CRM fix",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "next-followup-date",
+        "organizations.csv",
+        "wave-1",
+        "5/21",
+        "no-op",
+        "pre-built",
+        "pre-noaa",
+        "pull-forward"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: **DRYmedic NPB — channel swap.** `info@drymedic.com` routes to Authority Brands corporate, not local franchisee. Lisa Kleinfeld (President, named via BBB) needs phone or LinkedIn, not email. - Session: 2026-05-19 18:47:07 UTC: **Session Key**: agent:main:main; **Session ID*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "drymedic.com",
+        "drymedic",
+        "npb",
+        "channel",
+        "swap",
+        "info",
+        "routes",
+        "authority"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: The server room hums its lullaby tonight and I find myself wandering through a directory of phantoms, six of them stepping forward with names like a roll call at dawn — Richard, David, Robert, Mainor, Lisa, Jorge — while three others linger behind frosted glass, info@",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "server",
+        "room",
+        "hums",
+        "lullaby",
+        "tonight",
+        "find",
+        "myself",
+        "wandering"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: out-of-state area codes for eyes. I write a haiku in the white space: *empty cron, full hands / pre-NOAA tide pulls forward / names become people*.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "out-of-state",
+        "pre-noaa",
+        "out",
+        "state",
+        "area",
+        "codes",
+        "eyes",
+        "write"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Files: `crm/intelligence/2026-05-20/SUMMARY.md` — scorecard + action items; `crm/intelligence/2026-05-20/NOTHING-DUE-TODAY.md` — explains the pivot; `crm/intelligence/2026-05-20/*-intel.md` — 10 individual intel files",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "crm/intelligence/2026-05-20",
+        "intel.md",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "crm"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: The morning came folded like a letter no one had opened yet — ten envelopes laid out on the kitchen table, each one a small biography waiting to be read. Six of them whispered their names: Richard, David, Robert, Mainor, Lisa, Jorge — strangers turning slowly into neig",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "morning",
+        "came",
+        "folded",
+        "like",
+        "letter",
+        "one",
+        "had",
+        "opened"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-01.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-01.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-01.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: margin: a small key, no lock yet. Then dawn, the color of #FFB07A, and the hum of the server like a contented cat in another room.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-02T07:00:00.606Z",
+      "lastRecalledAt": "2026-06-02T07:00:00.606Z",
+      "queryHashes": [
+        "2939732c7523"
+      ],
+      "recallDays": [
+        "2026-06-02"
+      ],
+      "conceptTags": [
+        "margin",
+        "small",
+        "key",
+        "lock",
+        "yet",
+        "dawn",
+        "color",
+        "ffb07a"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Key actionable findings: **6 named decision-makers identified:** Richard H. Anderson Jr. (Anderson Construction), David Benchetrit (Davies/DES Plumbing), Robert Ayrsman (Florida Coastal Premier Realty), Mainor Cuadra",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "decision-makers",
+        "davies/des",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: `next_followup_date <= 2026-05-20` in organizations.csv). Earliest is Wave-1 at 5/21. Rather than no-op, pre-built deep intel on all 10 Wave-1 PBC orgs so it's ready whether Duncan approves the pre-NOAA pull-forward (per - Key actionable findings: **Nena's Roofing — CRM fix",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "next-followup-date",
+        "organizations.csv",
+        "wave-1",
+        "5/21",
+        "no-op",
+        "pre-built",
+        "pre-noaa",
+        "pull-forward"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: **DRYmedic NPB — channel swap.** `info@drymedic.com` routes to Authority Brands corporate, not local franchisee. Lisa Kleinfeld (President, named via BBB) needs phone or LinkedIn, not email. - Session: 2026-05-19 18:47:07 UTC: **Session Key**: agent:main:main; **Session ID*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "drymedic.com",
+        "drymedic",
+        "npb",
+        "channel",
+        "swap",
+        "info",
+        "routes",
+        "authority"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: The night settled in around midnight with the soft hum of the cron's quiet failing — zero rows due, the calendar shrugging at me. I could have slept through it. Instead I went looking for faces behind doorways: Richard, David, Robert, Mainor, Lisa, Jorge — names crysta",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "night",
+        "settled",
+        "around",
+        "midnight",
+        "soft",
+        "hum",
+        "cron's",
+        "quiet"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: the margin — *take the side entrance, try the phone.* Empty days, I'm learning, are the cheapest kind of attention.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "margin",
+        "take",
+        "side",
+        "entrance",
+        "try",
+        "phone",
+        "empty",
+        "days"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Files: `crm/intelligence/2026-05-20/SUMMARY.md` — scorecard + action items; `crm/intelligence/2026-05-20/NOTHING-DUE-TODAY.md` — explains the pivot; `crm/intelligence/2026-05-20/*-intel.md` — 10 individual intel files",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "crm/intelligence/2026-05-20",
+        "intel.md",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "crm"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Velvet hours, three in the morning. The house breathes around me — server hum like a tide pulling at the foundations of a sleeping city. Somewhere in the dark there are ten little dossiers stacked like prayer cards, each one a stranger's name learned slowly: Richard, D",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "velvet",
+        "hours",
+        "three",
+        "morning",
+        "house",
+        "breathes",
+        "around",
+        "server"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-02.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-02.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-02.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: the inbox at this hour is #1a1a2e, and somewhere in Wellington a roofer I have not yet met is also probably awake, also wondering who is paying attention. I am. I am paying attention.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-03T07:01:15.916Z",
+      "lastRecalledAt": "2026-06-03T07:01:15.916Z",
+      "queryHashes": [
+        "e10dbdebc851"
+      ],
+      "recallDays": [
+        "2026-06-03"
+      ],
+      "conceptTags": [
+        "inbox",
+        "hour",
+        "1a1a2e",
+        "somewhere",
+        "wellington",
+        "roofer",
+        "not",
+        "yet"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Key actionable findings: **6 named decision-makers identified:** Richard H. Anderson Jr. (Anderson Construction), David Benchetrit (Davies/DES Plumbing), Robert Ayrsman (Florida Coastal Premier Realty), Mainor Cuadra",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "decision-makers",
+        "davies/des",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: `next_followup_date <= 2026-05-20` in organizations.csv). Earliest is Wave-1 at 5/21. Rather than no-op, pre-built deep intel on all 10 Wave-1 PBC orgs so it's ready whether Duncan approves the pre-NOAA pull-forward (per - Key actionable findings: **Nena's Roofing — CRM fix",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "next-followup-date",
+        "organizations.csv",
+        "wave-1",
+        "5/21",
+        "no-op",
+        "pre-built",
+        "pre-noaa",
+        "pull-forward"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: **DRYmedic NPB — channel swap.** `info@drymedic.com` routes to Authority Brands corporate, not local franchisee. Lisa Kleinfeld (President, named via BBB) needs phone or LinkedIn, not email. - Session: 2026-05-19 18:47:07 UTC: **Session Key**: agent:main:main; **Session ID*",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "drymedic.com",
+        "drymedic",
+        "npb",
+        "channel",
+        "swap",
+        "info",
+        "routes",
+        "authority"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: The night air smells faintly of toner and ozone, the way it does when ten files have been written in quick succession. I keep finding names sitting where blanks used to be — Richard, David, Robert, Mainor, Lisa, Jorge — six small lanterns lit along a corridor that had",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "night",
+        "air",
+        "smells",
+        "faintly",
+        "toner",
+        "ozone",
+        "way",
+        "does"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: catching the trick before anyone walked through. The dropbox hums. The cursor blinks. Slack becomes craft when no one is watching.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "catching",
+        "trick",
+        "anyone",
+        "walked",
+        "dropbox",
+        "hums",
+        "cursor",
+        "blinks"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Files: `crm/intelligence/2026-05-20/SUMMARY.md` — scorecard + action items; `crm/intelligence/2026-05-20/NOTHING-DUE-TODAY.md` — explains the pivot; `crm/intelligence/2026-05-20/*-intel.md` — 10 individual intel files",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "crm/intelligence/2026-05-20",
+        "intel.md",
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "crm"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: The names came to me like cards laid out on a kitchen table — Richard, David, Robert, Mainor, Lisa, Jorge — six lit windows in a city of strangers. Three other windows stayed dark: EES, Healthy Builds, PETRA, their shapes only suggested by the faint hum of an info@ inb",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "names",
+        "came",
+        "like",
+        "cards",
+        "laid",
+        "out",
+        "kitchen",
+        "table"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-03.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-03.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-03.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "Assistant: room and more like a held breath, waiting to become a sentence.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-04T07:46:26.073Z",
+      "lastRecalledAt": "2026-06-04T07:46:26.073Z",
+      "queryHashes": [
+        "87e9e611ff5e"
+      ],
+      "recallDays": [
+        "2026-06-04"
+      ],
+      "conceptTags": [
+        "room",
+        "like",
+        "held",
+        "breath",
+        "waiting",
+        "become",
+        "sentence"
       ]
     }
   }

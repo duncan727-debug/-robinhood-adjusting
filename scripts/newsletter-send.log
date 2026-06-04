@@ -528,3 +528,103 @@ urllib.error.URLError: <urlopen error [Errno 8] nodename nor servname provided, 
 [2026-05-29 09:00] === Daily brief send start: 2026-05-29 ===
 [2026-05-29 09:00] Already sent for 2026-05-29 — skipping (delete .newsletter-sent-2026-05-29 to force resend)
 [2026-05-29 09:00] cron daily-newsletter-send: no-op, already sent for 2026-05-29 (sentinel present)
+[2026-05-31 09:00] === Weekly trends send start: 2026-05-31 ===
+[2026-05-31 09:00] Using trends file: 2026-05-23.html
+[2026-05-31 09:00]   list 18: 4 subscribers
+[2026-05-31 09:00]   list 19: 20 subscribers
+[2026-05-31 09:00]   list 20: 0 subscribers
+[2026-05-31 09:00]   deduped total: 24 unique subscribers
+[2026-05-31 09:00]   Sent: 24 | Failed: 0
+[2026-05-31 09:00] === Done — sent: 24 | failed: 0 ===
+[2026-05-31 09:00] weekly-trends-send OK — file 2026-05-23.html, 24 sent / 0 failed
+[2026-06-01 05:49] === Daily brief send start: 2026-06-01 ===
+[2026-06-01 05:49]   [homeowner] 4 subscribers in list 18
+[2026-06-01 05:49]   [homeowner] Sent: 4 | Failed: 0
+[2026-06-01 05:50]   [service-provider] 20 subscribers in list 19
+[2026-06-01 05:50]   [service-provider] Sent: 20 | Failed: 0
+[2026-06-01 05:50]   [real-estate] 0 subscribers in list 20
+[2026-06-01 05:50]   [real-estate] No subscribers — skipping
+[2026-06-01 05:50] === Done — total sent: 24 | total failed: 0 ===
+[2026-06-01 05:49] === Daily brief send start: 2026-06-01 ===
+[2026-06-01 05:49]   [homeowner] 4 subscribers in list 18
+[2026-06-01 05:49]   [homeowner] Sent: 4 | Failed: 0
+[2026-06-01 05:50]   [service-provider] 20 subscribers in list 19
+[2026-06-01 05:50]   [service-provider] Sent: 20 | Failed: 0
+[2026-06-01 05:50]   [real-estate] 0 subscribers in list 20
+[2026-06-01 05:50]   [real-estate] No subscribers — skipping
+[2026-06-01 05:50] === Done — total sent: 24 | total failed: 0 ===
+[2026-06-01 09:03] === Daily brief send start: 2026-06-01 ===
+[2026-06-01 09:03] Already sent for 2026-06-01 — skipping (delete .newsletter-sent-2026-06-01 to force resend)
+[2026-06-01 09:03] cron daily-newsletter-send: already sent for 2026-06-01, skip (idempotent)
+[2026-06-02 05:45] === Daily brief send start: 2026-06-02 ===
+[2026-06-02 05:46]   [list 18] guardrail skipped 3 non-subscriber contact(s): juliana.littlejohn@gmail.com (stage=opportunity), gabibussotti@gmail.com (stage=opportunity), dlittlej54@gmail.com (stage=opportunity)
+[2026-06-02 05:46]   [homeowner] 1 subscribers in list 18
+[2026-06-02 05:46]   [homeowner] Sent: 1 | Failed: 0
+[2026-06-02 05:46]   [service-provider] 1 subscribers in list 19
+[2026-06-02 05:46]   [service-provider] Sent: 1 | Failed: 0
+[2026-06-02 05:46]   [real-estate] 0 subscribers in list 20
+[2026-06-02 05:46]   [real-estate] No subscribers — skipping
+[2026-06-02 05:46] === Done — total sent: 2 | total failed: 0 ===
+[2026-06-02 05:45] === Daily brief send start: 2026-06-02 ===
+[2026-06-02 05:46]   [list 18] guardrail skipped 3 non-subscriber contact(s): juliana.littlejohn@gmail.com (stage=opportunity), gabibussotti@gmail.com (stage=opportunity), dlittlej54@gmail.com (stage=opportunity)
+[2026-06-02 05:46]   [homeowner] 1 subscribers in list 18
+[2026-06-02 05:46]   [homeowner] Sent: 1 | Failed: 0
+[2026-06-02 05:46]   [service-provider] 1 subscribers in list 19
+[2026-06-02 05:46]   [service-provider] Sent: 1 | Failed: 0
+[2026-06-02 05:46]   [real-estate] 0 subscribers in list 20
+[2026-06-02 05:46]   [real-estate] No subscribers — skipping
+[2026-06-02 05:46] === Done — total sent: 2 | total failed: 0 ===
+[2026-06-02 09:00] === Daily brief send start: 2026-06-02 ===
+[2026-06-02 09:00] Already sent for 2026-06-02 — skipping (delete .newsletter-sent-2026-06-02 to force resend)
+[2026-06-02 09:00] cron daily-newsletter-send: script ran OK — already sent for 2026-06-02, skipped (idempotent)
+[2026-06-03 05:56] === Daily brief send start: 2026-06-03 ===
+[2026-06-03 05:56]   [segmented] splitting 2026-06-03.html into 3 segment variants
+[2026-06-03 05:56]   [segmented] wrote content/briefs/2026-06-03-homeowner.html (4,455 bytes)
+[2026-06-03 05:56]   [segmented] wrote content/briefs/2026-06-03-service-provider.html (4,467 bytes)
+[2026-06-03 05:56]   [segmented] wrote content/briefs/2026-06-03-real-estate.html (4,477 bytes)
+[2026-06-03 05:56]   [segmented] OK: 3 segmented variants written for 2026-06-03
+[2026-06-03 05:56]   [list 18] guardrail skipped 3 non-subscriber contact(s): juliana.littlejohn@gmail.com (stage=opportunity), gabibussotti@gmail.com (stage=opportunity), dlittlej54@gmail.com (stage=opportunity)
+[2026-06-03 05:56]   [homeowner] 1 subscribers in list 18
+[2026-06-03 05:56]   [homeowner] Sent: 1 | Failed: 0
+[2026-06-03 05:57]   [list 19] guardrail skipped 4 non-subscriber contact(s): jason@tridentmiami.com (stage=opportunity), info@cohennorris.com (stage=opportunity), outreach@luxurypropertycare.com (stage=opportunity), info@johnwagnerlaw.com (stage=opportunity)
+[2026-06-03 05:57]   [service-provider] 1 subscribers in list 19
+[2026-06-03 05:57]   [service-provider] Sent: 1 | Failed: 0
+[2026-06-03 05:57]   [real-estate] 0 subscribers in list 20
+[2026-06-03 05:57]   [real-estate] No subscribers — skipping
+[2026-06-03 05:57] === Done — total sent: 2 | total failed: 0 ===
+[2026-06-03 05:56] === Daily brief send start: 2026-06-03 ===
+[2026-06-03 05:56]   [segmented] splitting 2026-06-03.html into 3 segment variants
+[2026-06-03 05:56]   [segmented] wrote content/briefs/2026-06-03-homeowner.html (4,455 bytes)
+[2026-06-03 05:56]   [segmented] wrote content/briefs/2026-06-03-service-provider.html (4,467 bytes)
+[2026-06-03 05:56]   [segmented] wrote content/briefs/2026-06-03-real-estate.html (4,477 bytes)
+[2026-06-03 05:56]   [segmented] OK: 3 segmented variants written for 2026-06-03
+[2026-06-03 05:56]   [list 18] guardrail skipped 3 non-subscriber contact(s): juliana.littlejohn@gmail.com (stage=opportunity), gabibussotti@gmail.com (stage=opportunity), dlittlej54@gmail.com (stage=opportunity)
+[2026-06-03 05:56]   [homeowner] 1 subscribers in list 18
+[2026-06-03 05:56]   [homeowner] Sent: 1 | Failed: 0
+[2026-06-03 05:57]   [list 19] guardrail skipped 4 non-subscriber contact(s): jason@tridentmiami.com (stage=opportunity), info@cohennorris.com (stage=opportunity), outreach@luxurypropertycare.com (stage=opportunity), info@johnwagnerlaw.com (stage=opportunity)
+[2026-06-03 05:57]   [service-provider] 1 subscribers in list 19
+[2026-06-03 05:57]   [service-provider] Sent: 1 | Failed: 0
+[2026-06-03 05:57]   [real-estate] 0 subscribers in list 20
+[2026-06-03 05:57]   [real-estate] No subscribers — skipping
+[2026-06-03 05:57] === Done — total sent: 2 | total failed: 0 ===
+[2026-06-03 09:00] === Daily brief send start: 2026-06-03 ===
+[2026-06-03 09:00] Already sent for 2026-06-03 — skipping (delete .newsletter-sent-2026-06-03 to force resend)
+[2026-06-03 09:00] cron run: skipped — already sent for 2026-06-03
+[2026-06-04 09:08] === Daily brief send start: 2026-06-04 ===
+[2026-06-04 09:08]   [homeowner] No brief found for 2026-06-04 — skipping segment
+[2026-06-04 09:08]   [service-provider] No brief found for 2026-06-04 — skipping segment
+[2026-06-04 09:08]   [real-estate] No brief found for 2026-06-04 — skipping segment
+[2026-06-04 09:08] === Done — total sent: 0 | total failed: 0 ===
+[2026-06-04 09:08] Newsletter send ran — no briefs found for 2026-06-04, 0 sent / 0 failed (segments skipped)
+[2026-06-04 09:22] === Daily brief send start: 2026-06-04 ===
+[2026-06-04 09:22] Already sent for 2026-06-04 — skipping (delete .newsletter-sent-2026-06-04 to force resend)
+[2026-06-04 09:22] === Daily brief send start: 2026-06-04 ===
+[2026-06-04 09:22]   [list 18] guardrail skipped 3 non-subscriber contact(s): juliana.littlejohn@gmail.com (stage=opportunity), gabibussotti@gmail.com (stage=opportunity), dlittlej54@gmail.com (stage=opportunity)
+[2026-06-04 09:22]   [homeowner] 1 subscribers in list 18
+[2026-06-04 09:22]   [homeowner] Sent: 1 | Failed: 0
+[2026-06-04 09:22]   [list 19] guardrail skipped 5 non-subscriber contact(s): jason@tridentmiami.com (stage=opportunity), info@cohennorris.com (stage=opportunity), outreach@luxurypropertycare.com (stage=opportunity), info@johnwagnerlaw.com (stage=opportunity), info@beneslaw.com (stage=opportunity)
+[2026-06-04 09:22]   [service-provider] 1 subscribers in list 19
+[2026-06-04 09:22]   [service-provider] Sent: 1 | Failed: 0
+[2026-06-04 09:22]   [real-estate] 0 subscribers in list 20
+[2026-06-04 09:22]   [real-estate] No subscribers — skipping
+[2026-06-04 09:22] === Done — total sent: 2 | total failed: 0 ===
