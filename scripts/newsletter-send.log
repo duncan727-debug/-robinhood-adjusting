@@ -628,3 +628,14 @@ urllib.error.URLError: <urlopen error [Errno 8] nodename nor servname provided, 
 [2026-06-04 09:22]   [real-estate] 0 subscribers in list 20
 [2026-06-04 09:22]   [real-estate] No subscribers — skipping
 [2026-06-04 09:22] === Done — total sent: 2 | total failed: 0 ===
+[2026-06-12 10:15] === Daily brief send start: --help ===
+[2026-06-12 10:16] === Daily brief send start: 2026-06-12 ===
+[2026-06-12 10:16]   [list 18] guardrail skipped 3 non-subscriber contact(s): juliana.littlejohn@gmail.com (stage=opportunity), gabibussotti@gmail.com (stage=opportunity), dlittlej54@gmail.com (stage=opportunity)
+[2026-06-12 10:16]   [homeowner] 1 subscribers in list 18
+[2026-06-12 10:16]   [homeowner] Sent: 1 | Failed: 0
+[2026-06-12 10:16]   [list 19] guardrail skipped 10 non-subscriber contact(s): jason@tridentmiami.com (stage=opportunity), info@cohennorris.com (stage=opportunity), outreach@luxurypropertycare.com (stage=opportunity), info@johnwagnerlaw.com (stage=opportunity), andy@wymanlegalsolutions.com (stage=opportunity) ...
+[2026-06-12 10:16]   [service-provider] 1 subscribers in list 19
+[2026-06-12 10:16]   [service-provider] Sent: 1 | Failed: 0
+[2026-06-12 10:16]   [real-estate] 0 subscribers in list 20
+[2026-06-12 10:16]   [real-estate] No subscribers — skipping
+[2026-06-12 10:16] === Done — total sent: 2 | total failed: 0 ===

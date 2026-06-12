@@ -1,0 +1,6 @@
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L2] User: hi smith, how u been?
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L3] User: did u see anthropic release fable 5?
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L4] User: yes, check
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L5] User: what do u mean run it side by side this wk?
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L6] User: lets just switch over to the new model entirely - see how it runs.
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L8] User: sure, go ahead with restart

@@ -34256,3 +34256,663 @@ ERROR: HUBSPOT_API_KEY not found.
 [2026-06-04T09:05:03]   Sent folder: 1 messages to inspect
 [2026-06-04T09:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 330  Max SENT UID: 477 ===
 [2026-06-04T09:05:03] 
+[2026-06-04T10:05:00] === IMAP bridge run (last_uid=330) ===
+[2026-06-04T10:05:00] Fetching HubSpot contacts…
+[2026-06-04T10:05:02]   Loaded 289 contacts
+[2026-06-04T10:05:02] Connecting to Gmail IMAP…
+[2026-06-04T10:05:03]   2 messages to inspect
+[2026-06-04T10:05:03]   Sent folder: 8 messages to inspect
+[2026-06-04T10:05:09] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 332  Max SENT UID: 485 ===
+[2026-06-04T10:05:09] 
+[2026-06-04T10:05:00] === IMAP bridge run (last_uid=330) ===
+[2026-06-04T10:05:00] Fetching HubSpot contacts…
+[2026-06-04T10:05:02]   Loaded 289 contacts
+[2026-06-04T10:05:02] Connecting to Gmail IMAP…
+[2026-06-04T10:05:03]   2 messages to inspect
+[2026-06-04T10:05:03]   Sent folder: 8 messages to inspect
+[2026-06-04T10:05:09] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 332  Max SENT UID: 485 ===
+[2026-06-04T10:05:09] 
+[2026-06-04T11:05:01] === IMAP bridge run (last_uid=332) ===
+[2026-06-04T11:05:01] Fetching HubSpot contacts…
+[2026-06-04T11:05:03]   Loaded 290 contacts
+[2026-06-04T11:05:03] Connecting to Gmail IMAP…
+[2026-06-04T11:05:04]   1 messages to inspect
+[2026-06-04T11:05:04]   Sent folder: 2 messages to inspect
+[2026-06-04T11:05:06] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 332  Max SENT UID: 487 ===
+[2026-06-04T11:05:06] 
+[2026-06-04T11:05:01] === IMAP bridge run (last_uid=332) ===
+[2026-06-04T11:05:01] Fetching HubSpot contacts…
+[2026-06-04T11:05:03]   Loaded 290 contacts
+[2026-06-04T11:05:03] Connecting to Gmail IMAP…
+[2026-06-04T11:05:04]   1 messages to inspect
+[2026-06-04T11:05:04]   Sent folder: 2 messages to inspect
+[2026-06-04T11:05:06] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 332  Max SENT UID: 487 ===
+[2026-06-04T11:05:06] 
+[2026-06-04T12:05:01] === IMAP bridge run (last_uid=332) ===
+[2026-06-04T12:05:01] Fetching HubSpot contacts…
+[2026-06-04T12:05:03]   Loaded 290 contacts
+[2026-06-04T12:05:03] Connecting to Gmail IMAP…
+[2026-06-04T12:05:04]   1 messages to inspect
+[2026-06-04T12:05:04]   Sent folder: 1 messages to inspect
+[2026-06-04T12:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 332  Max SENT UID: 487 ===
+[2026-06-04T12:05:04] 
+[2026-06-04T12:05:01] === IMAP bridge run (last_uid=332) ===
+[2026-06-04T12:05:01] Fetching HubSpot contacts…
+[2026-06-04T12:05:03]   Loaded 290 contacts
+[2026-06-04T12:05:03] Connecting to Gmail IMAP…
+[2026-06-04T12:05:04]   1 messages to inspect
+[2026-06-04T12:05:04]   Sent folder: 1 messages to inspect
+[2026-06-04T12:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 332  Max SENT UID: 487 ===
+[2026-06-04T12:05:04] 
+[2026-06-04T13:05:01] === IMAP bridge run (last_uid=332) ===
+[2026-06-04T13:05:01] Fetching HubSpot contacts…
+[2026-06-04T13:05:03]   Loaded 290 contacts
+[2026-06-04T13:05:03] Connecting to Gmail IMAP…
+[2026-06-04T13:05:03]   1 messages to inspect
+[2026-06-04T13:05:03]   Sent folder: 1 messages to inspect
+[2026-06-04T13:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 333  Max SENT UID: 487 ===
+[2026-06-04T13:05:04] 
+[2026-06-04T13:05:01] === IMAP bridge run (last_uid=332) ===
+[2026-06-04T13:05:01] Fetching HubSpot contacts…
+[2026-06-04T13:05:03]   Loaded 290 contacts
+[2026-06-04T13:05:03] Connecting to Gmail IMAP…
+[2026-06-04T13:05:03]   1 messages to inspect
+[2026-06-04T13:05:03]   Sent folder: 1 messages to inspect
+[2026-06-04T13:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 333  Max SENT UID: 487 ===
+[2026-06-04T13:05:04] 
+[2026-06-04T14:05:01] === IMAP bridge run (last_uid=333) ===
+[2026-06-04T14:05:01] Fetching HubSpot contacts…
+[2026-06-04T14:05:03]   Loaded 290 contacts
+[2026-06-04T14:05:03] Connecting to Gmail IMAP…
+[2026-06-04T14:05:04]   1 messages to inspect
+[2026-06-04T14:05:04]   Sent folder: 1 messages to inspect
+[2026-06-04T14:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 333  Max SENT UID: 487 ===
+[2026-06-04T14:05:04] 
+[2026-06-04T14:05:01] === IMAP bridge run (last_uid=333) ===
+[2026-06-04T14:05:01] Fetching HubSpot contacts…
+[2026-06-04T14:05:03]   Loaded 290 contacts
+[2026-06-04T14:05:03] Connecting to Gmail IMAP…
+[2026-06-04T14:05:04]   1 messages to inspect
+[2026-06-04T14:05:04]   Sent folder: 1 messages to inspect
+[2026-06-04T14:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 333  Max SENT UID: 487 ===
+[2026-06-04T14:05:04] 
+[2026-06-04T15:05:00] === IMAP bridge run (last_uid=333) ===
+[2026-06-04T15:05:00] Fetching HubSpot contacts…
+[2026-06-04T15:05:02]   Loaded 290 contacts
+[2026-06-04T15:05:02] Connecting to Gmail IMAP…
+[2026-06-04T15:05:03]   1 messages to inspect
+[2026-06-04T15:05:03]   Sent folder: 1 messages to inspect
+[2026-06-04T15:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 334  Max SENT UID: 487 ===
+[2026-06-04T15:05:03] 
+[2026-06-04T15:05:00] === IMAP bridge run (last_uid=333) ===
+[2026-06-04T15:05:00] Fetching HubSpot contacts…
+[2026-06-04T15:05:02]   Loaded 290 contacts
+[2026-06-04T15:05:02] Connecting to Gmail IMAP…
+[2026-06-04T15:05:03]   1 messages to inspect
+[2026-06-04T15:05:03]   Sent folder: 1 messages to inspect
+[2026-06-04T15:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 334  Max SENT UID: 487 ===
+[2026-06-04T15:05:03] 
+[2026-06-04T16:05:00] === IMAP bridge run (last_uid=334) ===
+[2026-06-04T16:05:00] Fetching HubSpot contacts…
+[2026-06-04T16:05:02]   Loaded 290 contacts
+[2026-06-04T16:05:02] Connecting to Gmail IMAP…
+[2026-06-04T16:05:02]   1 messages to inspect
+[2026-06-04T16:05:02]   Sent folder: 1 messages to inspect
+[2026-06-04T16:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 334  Max SENT UID: 487 ===
+[2026-06-04T16:05:03] 
+[2026-06-04T16:05:00] === IMAP bridge run (last_uid=334) ===
+[2026-06-04T16:05:00] Fetching HubSpot contacts…
+[2026-06-04T16:05:02]   Loaded 290 contacts
+[2026-06-04T16:05:02] Connecting to Gmail IMAP…
+[2026-06-04T16:05:02]   1 messages to inspect
+[2026-06-04T16:05:02]   Sent folder: 1 messages to inspect
+[2026-06-04T16:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 334  Max SENT UID: 487 ===
+[2026-06-04T16:05:03] 
+[2026-06-07T08:05:00] === IMAP bridge run (last_uid=334) ===
+[2026-06-07T08:05:00] Fetching HubSpot contacts…
+[2026-06-07T08:05:02]   Loaded 295 contacts
+[2026-06-07T08:05:02] Connecting to Gmail IMAP…
+[2026-06-07T08:05:03]   10 messages to inspect
+[2026-06-07T08:05:05]   ✓ REPLY   → creator-spotlight@mail.beehiiv.com (contact 490407084747)  subject: =?UTF-8?q?=F0=9F=94=B4_What_makes_you_trust_a_creator=3F?=
+[2026-06-07T08:05:05]   ↪ ANSWERS routed to parse_listing_answers.py (contact 490407084747)
+[2026-06-07T08:05:06]   Sent folder: 1 messages to inspect
+[2026-06-07T08:05:06] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 1  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 344  Max SENT UID: 487 ===
+[2026-06-07T08:05:06] 
+[2026-06-07T08:05:00] === IMAP bridge run (last_uid=334) ===
+[2026-06-07T08:05:00] Fetching HubSpot contacts…
+[2026-06-07T08:05:02]   Loaded 295 contacts
+[2026-06-07T08:05:02] Connecting to Gmail IMAP…
+[2026-06-07T08:05:03]   10 messages to inspect
+[2026-06-07T08:05:05]   ✓ REPLY   → creator-spotlight@mail.beehiiv.com (contact 490407084747)  subject: =?UTF-8?q?=F0=9F=94=B4_What_makes_you_trust_a_creator=3F?=
+[2026-06-07T08:05:05]   ↪ ANSWERS routed to parse_listing_answers.py (contact 490407084747)
+[2026-06-07T08:05:06]   Sent folder: 1 messages to inspect
+[2026-06-07T08:05:06] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 1  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 344  Max SENT UID: 487 ===
+[2026-06-07T08:05:06] 
+Traceback (most recent call last):
+  File "/Users/victoria/.openclaw/workspace/scripts/parse_listing_answers.py", line 280, in <module>
+    main()
+  File "/Users/victoria/.openclaw/workspace/scripts/parse_listing_answers.py", line 271, in main
+    subject, email_body = render_welcome(template_text, props, parsed)
+  File "/Users/victoria/.openclaw/workspace/scripts/parse_listing_answers.py", line 185, in render_welcome
+    body = template_text.split("---")[2].strip()  # strip header + frontmatter, take email body
+IndexError: list index out of range
+[2026-06-07T12:05:00] === IMAP bridge run (last_uid=344) ===
+[2026-06-07T12:05:00] Fetching HubSpot contacts…
+[2026-06-07T12:05:02]   Loaded 295 contacts
+[2026-06-07T12:05:02] Connecting to Gmail IMAP…
+[2026-06-07T12:05:02]   2 messages to inspect
+[2026-06-07T12:05:03]   Sent folder: 1 messages to inspect
+[2026-06-07T12:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T12:05:03] 
+[2026-06-07T12:05:00] === IMAP bridge run (last_uid=344) ===
+[2026-06-07T12:05:00] Fetching HubSpot contacts…
+[2026-06-07T12:05:02]   Loaded 295 contacts
+[2026-06-07T12:05:02] Connecting to Gmail IMAP…
+[2026-06-07T12:05:02]   2 messages to inspect
+[2026-06-07T12:05:03]   Sent folder: 1 messages to inspect
+[2026-06-07T12:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T12:05:03] 
+[2026-06-07T16:05:00] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T16:05:00] Fetching HubSpot contacts…
+[2026-06-07T16:05:02]   Loaded 295 contacts
+[2026-06-07T16:05:02] Connecting to Gmail IMAP…
+[2026-06-07T16:05:02]   1 messages to inspect
+[2026-06-07T16:05:02]   Sent folder: 1 messages to inspect
+[2026-06-07T16:05:02] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T16:05:02] 
+[2026-06-07T16:05:00] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T16:05:00] Fetching HubSpot contacts…
+[2026-06-07T16:05:02]   Loaded 295 contacts
+[2026-06-07T16:05:02] Connecting to Gmail IMAP…
+[2026-06-07T16:05:02]   1 messages to inspect
+[2026-06-07T16:05:02]   Sent folder: 1 messages to inspect
+[2026-06-07T16:05:02] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T16:05:02] 
+[2026-06-07T18:05:01] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T18:05:01] Fetching HubSpot contacts…
+[2026-06-07T18:05:02]   Loaded 295 contacts
+[2026-06-07T18:05:02] Connecting to Gmail IMAP…
+[2026-06-07T18:05:03]   1 messages to inspect
+[2026-06-07T18:05:03]   Sent folder: 1 messages to inspect
+[2026-06-07T18:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T18:05:03] 
+[2026-06-07T18:05:01] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T18:05:01] Fetching HubSpot contacts…
+[2026-06-07T18:05:02]   Loaded 295 contacts
+[2026-06-07T18:05:02] Connecting to Gmail IMAP…
+[2026-06-07T18:05:03]   1 messages to inspect
+[2026-06-07T18:05:03]   Sent folder: 1 messages to inspect
+[2026-06-07T18:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T18:05:03] 
+[2026-06-07T19:05:05] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T19:05:05] Fetching HubSpot contacts…
+[2026-06-07T19:05:06]   Loaded 295 contacts
+[2026-06-07T19:05:06] Connecting to Gmail IMAP…
+[2026-06-07T19:05:07]   1 messages to inspect
+[2026-06-07T19:05:07]   Sent folder: 1 messages to inspect
+[2026-06-07T19:05:07] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T19:05:07] 
+[2026-06-07T19:05:05] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T19:05:05] Fetching HubSpot contacts…
+[2026-06-07T19:05:06]   Loaded 295 contacts
+[2026-06-07T19:05:06] Connecting to Gmail IMAP…
+[2026-06-07T19:05:07]   1 messages to inspect
+[2026-06-07T19:05:07]   Sent folder: 1 messages to inspect
+[2026-06-07T19:05:07] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T19:05:07] 
+[2026-06-07T20:06:08] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T20:06:08] Fetching HubSpot contacts…
+[2026-06-07T20:06:09]   Loaded 295 contacts
+[2026-06-07T20:06:09] Connecting to Gmail IMAP…
+[2026-06-07T20:06:10]   1 messages to inspect
+[2026-06-07T20:06:10]   Sent folder: 1 messages to inspect
+[2026-06-07T20:06:10] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T20:06:10] 
+[2026-06-07T20:06:08] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T20:06:08] Fetching HubSpot contacts…
+[2026-06-07T20:06:09]   Loaded 295 contacts
+[2026-06-07T20:06:09] Connecting to Gmail IMAP…
+[2026-06-07T20:06:10]   1 messages to inspect
+[2026-06-07T20:06:10]   Sent folder: 1 messages to inspect
+[2026-06-07T20:06:10] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T20:06:10] 
+[2026-06-07T21:07:20] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T21:07:20] Fetching HubSpot contacts…
+[2026-06-07T21:07:23]   Loaded 295 contacts
+[2026-06-07T21:07:23] Connecting to Gmail IMAP…
+[2026-06-07T21:07:24]   1 messages to inspect
+[2026-06-07T21:07:24]   Sent folder: 1 messages to inspect
+[2026-06-07T21:07:24] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T21:07:24] 
+[2026-06-07T21:07:20] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T21:07:20] Fetching HubSpot contacts…
+[2026-06-07T21:07:23]   Loaded 295 contacts
+[2026-06-07T21:07:23] Connecting to Gmail IMAP…
+[2026-06-07T21:07:24]   1 messages to inspect
+[2026-06-07T21:07:24]   Sent folder: 1 messages to inspect
+[2026-06-07T21:07:24] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T21:07:24] 
+[2026-06-07T22:08:15] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T22:08:15] Fetching HubSpot contacts…
+[2026-06-07T22:08:17]   Loaded 295 contacts
+[2026-06-07T22:08:17] Connecting to Gmail IMAP…
+[2026-06-07T22:08:17]   1 messages to inspect
+[2026-06-07T22:08:17]   Sent folder: 1 messages to inspect
+[2026-06-07T22:08:17] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T22:08:17] 
+[2026-06-07T22:08:15] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T22:08:15] Fetching HubSpot contacts…
+[2026-06-07T22:08:17]   Loaded 295 contacts
+[2026-06-07T22:08:17] Connecting to Gmail IMAP…
+[2026-06-07T22:08:17]   1 messages to inspect
+[2026-06-07T22:08:17]   Sent folder: 1 messages to inspect
+[2026-06-07T22:08:17] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T22:08:17] 
+[2026-06-07T23:09:46] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T23:09:46] Fetching HubSpot contacts…
+[2026-06-07T23:09:48]   Loaded 295 contacts
+[2026-06-07T23:09:48] Connecting to Gmail IMAP…
+[2026-06-07T23:09:48]   1 messages to inspect
+[2026-06-07T23:09:48]   Sent folder: 1 messages to inspect
+[2026-06-07T23:09:48] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T23:09:48] 
+[2026-06-07T23:09:46] === IMAP bridge run (last_uid=346) ===
+[2026-06-07T23:09:46] Fetching HubSpot contacts…
+[2026-06-07T23:09:48]   Loaded 295 contacts
+[2026-06-07T23:09:48] Connecting to Gmail IMAP…
+[2026-06-07T23:09:48]   1 messages to inspect
+[2026-06-07T23:09:48]   Sent folder: 1 messages to inspect
+[2026-06-07T23:09:48] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-07T23:09:48] 
+[2026-06-08T01:10:33] === IMAP bridge run (last_uid=346) ===
+[2026-06-08T01:10:33] Fetching HubSpot contacts…
+[2026-06-08T01:10:35]   Loaded 295 contacts
+[2026-06-08T01:10:35] Connecting to Gmail IMAP…
+[2026-06-08T01:10:35]   1 messages to inspect
+[2026-06-08T01:10:36]   Sent folder: 1 messages to inspect
+[2026-06-08T01:10:36] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-08T01:10:36] 
+[2026-06-08T01:10:33] === IMAP bridge run (last_uid=346) ===
+[2026-06-08T01:10:33] Fetching HubSpot contacts…
+[2026-06-08T01:10:35]   Loaded 295 contacts
+[2026-06-08T01:10:35] Connecting to Gmail IMAP…
+[2026-06-08T01:10:35]   1 messages to inspect
+[2026-06-08T01:10:36]   Sent folder: 1 messages to inspect
+[2026-06-08T01:10:36] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-08T01:10:36] 
+[2026-06-08T02:11:26] === IMAP bridge run (last_uid=346) ===
+[2026-06-08T02:11:26] Fetching HubSpot contacts…
+[2026-06-08T02:11:27]   Loaded 295 contacts
+[2026-06-08T02:11:27] Connecting to Gmail IMAP…
+[2026-06-08T02:11:28]   1 messages to inspect
+[2026-06-08T02:11:28]   Sent folder: 1 messages to inspect
+[2026-06-08T02:11:28] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-08T02:11:28] 
+[2026-06-08T02:11:26] === IMAP bridge run (last_uid=346) ===
+[2026-06-08T02:11:26] Fetching HubSpot contacts…
+[2026-06-08T02:11:27]   Loaded 295 contacts
+[2026-06-08T02:11:27] Connecting to Gmail IMAP…
+[2026-06-08T02:11:28]   1 messages to inspect
+[2026-06-08T02:11:28]   Sent folder: 1 messages to inspect
+[2026-06-08T02:11:28] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-08T02:11:28] 
+[2026-06-08T03:05:01] === IMAP bridge run (last_uid=346) ===
+[2026-06-08T03:05:01] Fetching HubSpot contacts…
+[2026-06-08T03:05:02]   Loaded 295 contacts
+[2026-06-08T03:05:02] Connecting to Gmail IMAP…
+[2026-06-08T03:05:03]   1 messages to inspect
+[2026-06-08T03:05:03]   Sent folder: 1 messages to inspect
+[2026-06-08T03:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-08T03:05:03] 
+[2026-06-08T03:05:01] === IMAP bridge run (last_uid=346) ===
+[2026-06-08T03:05:01] Fetching HubSpot contacts…
+[2026-06-08T03:05:02]   Loaded 295 contacts
+[2026-06-08T03:05:02] Connecting to Gmail IMAP…
+[2026-06-08T03:05:03]   1 messages to inspect
+[2026-06-08T03:05:03]   Sent folder: 1 messages to inspect
+[2026-06-08T03:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 346  Max SENT UID: 487 ===
+[2026-06-08T03:05:03] 
+[2026-06-09T10:05:01] === IMAP bridge run (last_uid=346) ===
+[2026-06-09T10:05:01] Fetching HubSpot contacts…
+[2026-06-09T10:05:03]   Loaded 295 contacts
+[2026-06-09T10:05:03] Connecting to Gmail IMAP…
+[2026-06-09T10:05:03]   4 messages to inspect
+[2026-06-09T10:05:04]   Sent folder: 1 messages to inspect
+[2026-06-09T10:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 350  Max SENT UID: 487 ===
+[2026-06-09T10:05:04] 
+[2026-06-09T10:05:01] === IMAP bridge run (last_uid=346) ===
+[2026-06-09T10:05:01] Fetching HubSpot contacts…
+[2026-06-09T10:05:03]   Loaded 295 contacts
+[2026-06-09T10:05:03] Connecting to Gmail IMAP…
+[2026-06-09T10:05:03]   4 messages to inspect
+[2026-06-09T10:05:04]   Sent folder: 1 messages to inspect
+[2026-06-09T10:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 350  Max SENT UID: 487 ===
+[2026-06-09T10:05:04] 
+[2026-06-09T11:05:01] === IMAP bridge run (last_uid=350) ===
+[2026-06-09T11:05:01] Fetching HubSpot contacts…
+[2026-06-09T11:05:03]   Loaded 295 contacts
+[2026-06-09T11:05:03] Connecting to Gmail IMAP…
+[2026-06-09T11:05:03]   1 messages to inspect
+[2026-06-09T11:05:05]   ✓ BOUNCE  → creator-spotlight@mail.beehiiv.com (contact 490407084747)  reason: 550 Mailbox not found  deals→closedlost: 0
+[2026-06-09T11:05:05]   Sent folder: 7 messages to inspect
+[2026-06-09T11:05:13]   ✓ SENT    → creator-spotlight@mail.beehiiv.com: created deal 329195133641 (Outreach Sent)
+[2026-06-09T11:05:13] === Done. Hard bounces: 1  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 1  reopened: 0  Max INBOX UID: 351  Max SENT UID: 494 ===
+[2026-06-09T11:05:13] 
+[2026-06-09T11:05:01] === IMAP bridge run (last_uid=350) ===
+[2026-06-09T11:05:01] Fetching HubSpot contacts…
+[2026-06-09T11:05:03]   Loaded 295 contacts
+[2026-06-09T11:05:03] Connecting to Gmail IMAP…
+[2026-06-09T11:05:03]   1 messages to inspect
+[2026-06-09T11:05:05]   ✓ BOUNCE  → creator-spotlight@mail.beehiiv.com (contact 490407084747)  reason: 550 Mailbox not found  deals→closedlost: 0
+[2026-06-09T11:05:05]   Sent folder: 7 messages to inspect
+[2026-06-09T11:05:13]   ✓ SENT    → creator-spotlight@mail.beehiiv.com: created deal 329195133641 (Outreach Sent)
+[2026-06-09T11:05:13] === Done. Hard bounces: 1  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 1  reopened: 0  Max INBOX UID: 351  Max SENT UID: 494 ===
+[2026-06-09T11:05:13] 
+[2026-06-10T08:05:01] === IMAP bridge run (last_uid=351) ===
+[2026-06-10T08:05:01] Fetching HubSpot contacts…
+[2026-06-10T08:05:02]   Loaded 295 contacts
+[2026-06-10T08:05:02] Connecting to Gmail IMAP…
+[2026-06-10T08:05:04]   4 messages to inspect
+[2026-06-10T08:05:06]   ✓ REPLY   → creator-spotlight@mail.beehiiv.com (contact 490407084747)  subject: =?UTF-8?q?=F0=9F=94=B4_Shoot_for_the_moon?=
+[2026-06-10T08:05:07]   Sent folder: 6 messages to inspect
+[2026-06-10T08:05:13] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 1  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 355  Max SENT UID: 500 ===
+[2026-06-10T08:05:13] 
+[2026-06-10T08:05:01] === IMAP bridge run (last_uid=351) ===
+[2026-06-10T08:05:01] Fetching HubSpot contacts…
+[2026-06-10T08:05:02]   Loaded 295 contacts
+[2026-06-10T08:05:02] Connecting to Gmail IMAP…
+[2026-06-10T08:05:04]   4 messages to inspect
+[2026-06-10T08:05:06]   ✓ REPLY   → creator-spotlight@mail.beehiiv.com (contact 490407084747)  subject: =?UTF-8?q?=F0=9F=94=B4_Shoot_for_the_moon?=
+[2026-06-10T08:05:07]   Sent folder: 6 messages to inspect
+[2026-06-10T08:05:13] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 1  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 355  Max SENT UID: 500 ===
+[2026-06-10T08:05:13] 
+[2026-06-10T09:05:01] === IMAP bridge run (last_uid=355) ===
+[2026-06-10T09:05:01] Fetching HubSpot contacts…
+[2026-06-10T09:05:03]   Loaded 295 contacts
+[2026-06-10T09:05:03] Connecting to Gmail IMAP…
+[2026-06-10T09:05:03]   1 messages to inspect
+[2026-06-10T09:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T09:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 355  Max SENT UID: 500 ===
+[2026-06-10T09:05:04] 
+[2026-06-10T09:05:01] === IMAP bridge run (last_uid=355) ===
+[2026-06-10T09:05:01] Fetching HubSpot contacts…
+[2026-06-10T09:05:03]   Loaded 295 contacts
+[2026-06-10T09:05:03] Connecting to Gmail IMAP…
+[2026-06-10T09:05:03]   1 messages to inspect
+[2026-06-10T09:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T09:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 355  Max SENT UID: 500 ===
+[2026-06-10T09:05:04] 
+[2026-06-10T10:05:01] === IMAP bridge run (last_uid=355) ===
+[2026-06-10T10:05:01] Fetching HubSpot contacts…
+[2026-06-10T10:05:03]   Loaded 295 contacts
+[2026-06-10T10:05:03] Connecting to Gmail IMAP…
+[2026-06-10T10:05:03]   1 messages to inspect
+[2026-06-10T10:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T10:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 356  Max SENT UID: 500 ===
+[2026-06-10T10:05:04] 
+[2026-06-10T10:05:01] === IMAP bridge run (last_uid=355) ===
+[2026-06-10T10:05:01] Fetching HubSpot contacts…
+[2026-06-10T10:05:03]   Loaded 295 contacts
+[2026-06-10T10:05:03] Connecting to Gmail IMAP…
+[2026-06-10T10:05:03]   1 messages to inspect
+[2026-06-10T10:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T10:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 356  Max SENT UID: 500 ===
+[2026-06-10T10:05:04] 
+[2026-06-10T11:05:00] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T11:05:00] Fetching HubSpot contacts…
+[2026-06-10T11:05:02]   Loaded 295 contacts
+[2026-06-10T11:05:02] Connecting to Gmail IMAP…
+[2026-06-10T11:05:03]   1 messages to inspect
+[2026-06-10T11:05:03]   Sent folder: 2 messages to inspect
+[2026-06-10T11:05:07]   ✓ SENT    → info@restorationxperts.net: created deal 328960749301 (Outreach Sent)
+[2026-06-10T11:05:07] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 1  reopened: 0  Max INBOX UID: 356  Max SENT UID: 502 ===
+[2026-06-10T11:05:07] 
+[2026-06-10T11:05:00] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T11:05:00] Fetching HubSpot contacts…
+[2026-06-10T11:05:02]   Loaded 295 contacts
+[2026-06-10T11:05:02] Connecting to Gmail IMAP…
+[2026-06-10T11:05:03]   1 messages to inspect
+[2026-06-10T11:05:03]   Sent folder: 2 messages to inspect
+[2026-06-10T11:05:07]   ✓ SENT    → info@restorationxperts.net: created deal 328960749301 (Outreach Sent)
+[2026-06-10T11:05:07] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 1  reopened: 0  Max INBOX UID: 356  Max SENT UID: 502 ===
+[2026-06-10T11:05:07] 
+[2026-06-10T12:05:00] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T12:05:00] Fetching HubSpot contacts…
+[2026-06-10T12:05:02]   Loaded 295 contacts
+[2026-06-10T12:05:02] Connecting to Gmail IMAP…
+[2026-06-10T12:05:03]   1 messages to inspect
+[2026-06-10T12:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T12:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 356  Max SENT UID: 502 ===
+[2026-06-10T12:05:03] 
+[2026-06-10T12:05:00] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T12:05:00] Fetching HubSpot contacts…
+[2026-06-10T12:05:02]   Loaded 295 contacts
+[2026-06-10T12:05:02] Connecting to Gmail IMAP…
+[2026-06-10T12:05:03]   1 messages to inspect
+[2026-06-10T12:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T12:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 356  Max SENT UID: 502 ===
+[2026-06-10T12:05:03] 
+[2026-06-10T13:05:01] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T13:05:01] Fetching HubSpot contacts…
+[2026-06-10T13:05:03]   Loaded 295 contacts
+[2026-06-10T13:05:03] Connecting to Gmail IMAP…
+[2026-06-10T13:05:03]   1 messages to inspect
+[2026-06-10T13:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T13:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 356  Max SENT UID: 502 ===
+[2026-06-10T13:05:03] 
+[2026-06-10T13:05:01] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T13:05:01] Fetching HubSpot contacts…
+[2026-06-10T13:05:03]   Loaded 295 contacts
+[2026-06-10T13:05:03] Connecting to Gmail IMAP…
+[2026-06-10T13:05:03]   1 messages to inspect
+[2026-06-10T13:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T13:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 356  Max SENT UID: 502 ===
+[2026-06-10T13:05:03] 
+[2026-06-10T14:05:01] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T14:05:01] Fetching HubSpot contacts…
+[2026-06-10T14:05:03]   Loaded 295 contacts
+[2026-06-10T14:05:03] Connecting to Gmail IMAP…
+[2026-06-10T14:05:03]   1 messages to inspect
+[2026-06-10T14:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T14:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T14:05:03] 
+[2026-06-10T14:05:01] === IMAP bridge run (last_uid=356) ===
+[2026-06-10T14:05:01] Fetching HubSpot contacts…
+[2026-06-10T14:05:03]   Loaded 295 contacts
+[2026-06-10T14:05:03] Connecting to Gmail IMAP…
+[2026-06-10T14:05:03]   1 messages to inspect
+[2026-06-10T14:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T14:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T14:05:03] 
+[2026-06-10T16:05:00] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T16:05:00] Fetching HubSpot contacts…
+[2026-06-10T16:05:02]   Loaded 295 contacts
+[2026-06-10T16:05:02] Connecting to Gmail IMAP…
+[2026-06-10T16:05:03]   1 messages to inspect
+[2026-06-10T16:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T16:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T16:05:03] 
+[2026-06-10T16:05:00] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T16:05:00] Fetching HubSpot contacts…
+[2026-06-10T16:05:02]   Loaded 295 contacts
+[2026-06-10T16:05:02] Connecting to Gmail IMAP…
+[2026-06-10T16:05:03]   1 messages to inspect
+[2026-06-10T16:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T16:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T16:05:03] 
+[2026-06-10T17:05:00] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T17:05:00] Fetching HubSpot contacts…
+[2026-06-10T17:05:03]   Loaded 295 contacts
+[2026-06-10T17:05:03] Connecting to Gmail IMAP…
+[2026-06-10T17:05:03]   1 messages to inspect
+[2026-06-10T17:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T17:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T17:05:04] 
+[2026-06-10T17:05:00] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T17:05:00] Fetching HubSpot contacts…
+[2026-06-10T17:05:03]   Loaded 295 contacts
+[2026-06-10T17:05:03] Connecting to Gmail IMAP…
+[2026-06-10T17:05:03]   1 messages to inspect
+[2026-06-10T17:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T17:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T17:05:04] 
+[2026-06-10T21:05:01] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T21:05:01] Fetching HubSpot contacts…
+[2026-06-10T21:05:03]   Loaded 295 contacts
+[2026-06-10T21:05:03] Connecting to Gmail IMAP…
+[2026-06-10T21:05:03]   1 messages to inspect
+[2026-06-10T21:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T21:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T21:05:04] 
+[2026-06-10T21:05:01] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T21:05:01] Fetching HubSpot contacts…
+[2026-06-10T21:05:03]   Loaded 295 contacts
+[2026-06-10T21:05:03] Connecting to Gmail IMAP…
+[2026-06-10T21:05:03]   1 messages to inspect
+[2026-06-10T21:05:04]   Sent folder: 1 messages to inspect
+[2026-06-10T21:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 357  Max SENT UID: 502 ===
+[2026-06-10T21:05:04] 
+[2026-06-10T22:05:01] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T22:05:01] Fetching HubSpot contacts…
+[2026-06-10T22:05:02]   Loaded 295 contacts
+[2026-06-10T22:05:02] Connecting to Gmail IMAP…
+[2026-06-10T22:05:03]   1 messages to inspect
+[2026-06-10T22:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T22:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-10T22:05:03] 
+[2026-06-10T22:05:01] === IMAP bridge run (last_uid=357) ===
+[2026-06-10T22:05:01] Fetching HubSpot contacts…
+[2026-06-10T22:05:02]   Loaded 295 contacts
+[2026-06-10T22:05:02] Connecting to Gmail IMAP…
+[2026-06-10T22:05:03]   1 messages to inspect
+[2026-06-10T22:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T22:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-10T22:05:03] 
+[2026-06-10T23:05:01] === IMAP bridge run (last_uid=358) ===
+[2026-06-10T23:05:01] Fetching HubSpot contacts…
+[2026-06-10T23:05:02]   Loaded 295 contacts
+[2026-06-10T23:05:02] Connecting to Gmail IMAP…
+[2026-06-10T23:05:03]   1 messages to inspect
+[2026-06-10T23:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T23:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-10T23:05:03] 
+[2026-06-10T23:05:01] === IMAP bridge run (last_uid=358) ===
+[2026-06-10T23:05:01] Fetching HubSpot contacts…
+[2026-06-10T23:05:02]   Loaded 295 contacts
+[2026-06-10T23:05:02] Connecting to Gmail IMAP…
+[2026-06-10T23:05:03]   1 messages to inspect
+[2026-06-10T23:05:03]   Sent folder: 1 messages to inspect
+[2026-06-10T23:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-10T23:05:03] 
+[2026-06-11T00:05:00] === IMAP bridge run (last_uid=358) ===
+[2026-06-11T00:05:00] Fetching HubSpot contacts…
+[2026-06-11T00:05:02]   Loaded 295 contacts
+[2026-06-11T00:05:02] Connecting to Gmail IMAP…
+[2026-06-11T00:05:03]   1 messages to inspect
+[2026-06-11T00:05:03]   Sent folder: 1 messages to inspect
+[2026-06-11T00:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-11T00:05:03] 
+[2026-06-11T00:05:00] === IMAP bridge run (last_uid=358) ===
+[2026-06-11T00:05:00] Fetching HubSpot contacts…
+[2026-06-11T00:05:02]   Loaded 295 contacts
+[2026-06-11T00:05:02] Connecting to Gmail IMAP…
+[2026-06-11T00:05:03]   1 messages to inspect
+[2026-06-11T00:05:03]   Sent folder: 1 messages to inspect
+[2026-06-11T00:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-11T00:05:03] 
+[2026-06-11T01:05:01] === IMAP bridge run (last_uid=358) ===
+[2026-06-11T01:05:01] Fetching HubSpot contacts…
+[2026-06-11T01:05:03]   Loaded 295 contacts
+[2026-06-11T01:05:03] Connecting to Gmail IMAP…
+[2026-06-11T01:05:03]   1 messages to inspect
+[2026-06-11T01:05:04]   Sent folder: 1 messages to inspect
+[2026-06-11T01:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-11T01:05:04] 
+[2026-06-11T01:05:01] === IMAP bridge run (last_uid=358) ===
+[2026-06-11T01:05:01] Fetching HubSpot contacts…
+[2026-06-11T01:05:03]   Loaded 295 contacts
+[2026-06-11T01:05:03] Connecting to Gmail IMAP…
+[2026-06-11T01:05:03]   1 messages to inspect
+[2026-06-11T01:05:04]   Sent folder: 1 messages to inspect
+[2026-06-11T01:05:04] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 358  Max SENT UID: 502 ===
+[2026-06-11T01:05:04] 
+[2026-06-11T11:06:25] === IMAP bridge run (last_uid=358) ===
+[2026-06-11T11:06:25] Fetching HubSpot contacts…
+[2026-06-11T11:06:28]   Loaded 295 contacts
+[2026-06-11T11:06:28] Connecting to Gmail IMAP…
+[2026-06-11T11:06:28]   2 messages to inspect
+[2026-06-11T11:06:29]   Sent folder: 1 messages to inspect
+[2026-06-11T11:06:29] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 360  Max SENT UID: 502 ===
+[2026-06-11T11:06:29] 
+[2026-06-11T11:06:25] === IMAP bridge run (last_uid=358) ===
+[2026-06-11T11:06:25] Fetching HubSpot contacts…
+[2026-06-11T11:06:28]   Loaded 295 contacts
+[2026-06-11T11:06:28] Connecting to Gmail IMAP…
+[2026-06-11T11:06:28]   2 messages to inspect
+[2026-06-11T11:06:29]   Sent folder: 1 messages to inspect
+[2026-06-11T11:06:29] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 360  Max SENT UID: 502 ===
+[2026-06-11T11:06:29] 
+[2026-06-11T22:05:00] === IMAP bridge run (last_uid=360) ===
+[2026-06-11T22:05:00] Fetching HubSpot contacts…
+[2026-06-11T22:05:02]   Loaded 295 contacts
+[2026-06-11T22:05:02] Connecting to Gmail IMAP…
+[2026-06-11T22:05:03]   1 messages to inspect
+[2026-06-11T22:05:03]   Sent folder: 1 messages to inspect
+[2026-06-11T22:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-11T22:05:03] 
+[2026-06-11T22:05:00] === IMAP bridge run (last_uid=360) ===
+[2026-06-11T22:05:00] Fetching HubSpot contacts…
+[2026-06-11T22:05:02]   Loaded 295 contacts
+[2026-06-11T22:05:02] Connecting to Gmail IMAP…
+[2026-06-11T22:05:03]   1 messages to inspect
+[2026-06-11T22:05:03]   Sent folder: 1 messages to inspect
+[2026-06-11T22:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-11T22:05:03] 
+[2026-06-11T23:05:00] === IMAP bridge run (last_uid=361) ===
+[2026-06-11T23:05:00] Fetching HubSpot contacts…
+[2026-06-11T23:05:02]   Loaded 295 contacts
+[2026-06-11T23:05:02] Connecting to Gmail IMAP…
+[2026-06-11T23:05:03]   1 messages to inspect
+[2026-06-11T23:05:03]   Sent folder: 1 messages to inspect
+[2026-06-11T23:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-11T23:05:03] 
+[2026-06-11T23:05:00] === IMAP bridge run (last_uid=361) ===
+[2026-06-11T23:05:00] Fetching HubSpot contacts…
+[2026-06-11T23:05:02]   Loaded 295 contacts
+[2026-06-11T23:05:02] Connecting to Gmail IMAP…
+[2026-06-11T23:05:03]   1 messages to inspect
+[2026-06-11T23:05:03]   Sent folder: 1 messages to inspect
+[2026-06-11T23:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-11T23:05:03] 
+[2026-06-12T00:05:00] === IMAP bridge run (last_uid=361) ===
+[2026-06-12T00:05:00] Fetching HubSpot contacts…
+[2026-06-12T00:05:02]   Loaded 295 contacts
+[2026-06-12T00:05:02] Connecting to Gmail IMAP…
+[2026-06-12T00:05:02]   1 messages to inspect
+[2026-06-12T00:05:03]   Sent folder: 1 messages to inspect
+[2026-06-12T00:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-12T00:05:03] 
+[2026-06-12T00:05:00] === IMAP bridge run (last_uid=361) ===
+[2026-06-12T00:05:00] Fetching HubSpot contacts…
+[2026-06-12T00:05:02]   Loaded 295 contacts
+[2026-06-12T00:05:02] Connecting to Gmail IMAP…
+[2026-06-12T00:05:02]   1 messages to inspect
+[2026-06-12T00:05:03]   Sent folder: 1 messages to inspect
+[2026-06-12T00:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-12T00:05:03] 
+[2026-06-12T10:05:00] === IMAP bridge run (last_uid=361) ===
+[2026-06-12T10:05:00] Fetching HubSpot contacts…
+[2026-06-12T10:05:02]   Loaded 295 contacts
+[2026-06-12T10:05:02] Connecting to Gmail IMAP…
+[2026-06-12T10:05:03]   1 messages to inspect
+[2026-06-12T10:05:03]   Sent folder: 1 messages to inspect
+[2026-06-12T10:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-12T10:05:03] 
+[2026-06-12T10:05:00] === IMAP bridge run (last_uid=361) ===
+[2026-06-12T10:05:00] Fetching HubSpot contacts…
+[2026-06-12T10:05:02]   Loaded 295 contacts
+[2026-06-12T10:05:02] Connecting to Gmail IMAP…
+[2026-06-12T10:05:03]   1 messages to inspect
+[2026-06-12T10:05:03]   Sent folder: 1 messages to inspect
+[2026-06-12T10:05:03] === Done. Hard bounces: 0  Soft bounces: 0  Replies: 0  Calendly deals: 0  Sent-deals created: 0  reopened: 0  Max INBOX UID: 361  Max SENT UID: 502 ===
+[2026-06-12T10:05:03] 

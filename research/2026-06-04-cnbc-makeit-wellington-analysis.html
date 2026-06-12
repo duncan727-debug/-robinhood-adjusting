@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CNBC Make It → Wellington Opportunity Map</title>
+<style>
+  :root{
+    --bg:#fafaf7; --ink:#1c1c1a; --muted:#5a5a52; --line:#e3e2dc;
+    --accent:#1f6f4a; --accent-soft:#e9f3ed; --warn:#9c5a00; --warn-soft:#fbf1e0;
+    --hi:#fff7d6; --rule:#2a2a26;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",sans-serif;}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 28px 96px;}
+  h1{font-size:30px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:32px}
+  h2{font-size:22px;margin:44px 0 12px;padding-top:18px;border-top:2px solid var(--rule);letter-spacing:-.005em}
+  h3{font-size:17px;margin:24px 0 8px;color:var(--ink)}
+  p{margin:8px 0 14px}
+  small{color:var(--muted)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #c8e0d3}
+  a:hover{background:var(--accent-soft)}
+  .tldr{background:var(--accent-soft);border-left:4px solid var(--accent);padding:18px 22px;border-radius:4px;margin:0 0 24px}
+  .tldr h2{border:0;padding:0;margin:0 0 8px;font-size:18px}
+  .tldr p{margin:6px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0 20px}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#f1efe7;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;background:#eee;color:#333;margin-right:4px;vertical-align:middle}
+  .pill.win{background:var(--accent-soft);color:var(--accent)}
+  .pill.warn{background:var(--warn-soft);color:var(--warn)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0}
+  .card{border:1px solid var(--line);border-radius:6px;padding:16px 18px;background:#fff}
+  .card h3{margin-top:0}
+  .lead{font-size:18px;line-height:1.5;color:var(--ink)}
+  blockquote{border-left:3px solid #cdb87a;background:var(--hi);margin:14px 0;padding:10px 14px;font-size:15px}
+  .strike{color:var(--muted);text-decoration:line-through}
+  ol li, ul li{margin:5px 0}
+  .footnote{font-size:12px;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+  .answer{border:2px solid var(--accent);border-radius:8px;padding:20px 24px;background:#fff;margin:18px 0}
+  .answer h2{border:0;padding:0;margin:0 0 6px;color:var(--accent)}
+  .kpi{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0}
+  .kpi>div{flex:1;min-width:160px;background:#f6f4ec;border-radius:4px;padding:10px 12px}
+  .kpi b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+  .kpi small{font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>CNBC Make It → Wellington Opportunity Map</h1>
+<div class="sub">Researched 2026-06-04 · 40 case studies pulled · pattern library + local overlay + recommended wedge</div>
+
+<div class="tldr">
+  <h2>TL;DR</h2>
+  <p><b>The wasteful Wellington industry is equestrian manure management — ~50,000 tons/yr, regulated (must use approved hauler), and right now five existing haulers are publicly feuding with the county over routing.</b> No dominant brand. Wellington's government has literally been shopping a manure-disposal business plan to find a new entrant.</p>
+  <p>Run the <b>Bay Area Sanitation playbook</b> (porta-potties, $0 → $4.3M in 3 years on recurring B2B contracts) <b>with the Junk Teens dual-stream trick</b> (resell what you haul). Charge barns to remove waste, compost it, sell premium "Wellington Stable Blend" to PBC landscapers + nurseries.</p>
+  <p>Capital range: <b>$80K–$250K</b>. Path to <b>$3-5M revenue in 3 years</b> at PBC market saturation, defensible because it's low-tech, AI-proof, and license-gated.</p>
+</div>
+
+<h2>1 · The Pattern Library (40 case studies, 2024–2026)</h2>
+
+<p>Pulled across CNBC Make It's Side Hustle, Millennial Money, and How I Made It series — every business shown below was verified to a CNBC article. Showing the 15 most relevant to Duncan's thesis (boring, recurring, capital-efficient, local-services-translatable). Full 40 in the appendix file.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business</th><th>Industry wedge</th><th class="num">Revenue</th><th class="num">Time to scale</th><th class="num">Capital</th><th>Why it works</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><b>Bay Area Sanitation</b><br><small>Daniel Tom, 31 · SF Bay</small></td><td>Porta-potty rental + service</td><td class="num">$4.3M (2025)</td><td class="num">~2 yrs</td><td class="num">~$250K</td><td>"Low-tech, AI-proof" recurring B2B contracts at events &amp; jobsites</td></tr>
+    <tr><td><b>Junk Teens</b><br><small>McKinney bros · Norwood MA</small></td><td>Junk removal + resale</td><td class="num">$3.04M (2025)</td><td class="num">~5 yrs</td><td class="num">$4,000</td><td>Resell rescued items on FB Marketplace = 2nd revenue stream on same trip</td></tr>
+    <tr><td><b>Stall Mates</b><br><small>Kevin Corey · NY</small></td><td>Flushable bathroom wipes</td><td class="num">$3.8M (2025)</td><td class="num">n/d</td><td class="num">n/d</td><td>DTC consumable in a category dominated by Big-CPG; founder still teaches full-time</td></tr>
+    <tr><td><b>Repair.sg</b><br><small>Chew brothers, 24 &amp; 26 · Singapore</small></td><td>Handyman aggregator</td><td class="num">$1.3M (2024)</td><td class="num">9 yrs</td><td class="num">$23</td><td>First mover digitizing a word-of-mouth informal industry</td></tr>
+    <tr><td><b>Crown's Corner Mechanic</b><br><small>Desiree Hill, 39 · Conyers GA</small></td><td>Mobile/shop auto repair</td><td class="num">$440K → $1M proj.</td><td class="num">~4 yrs</td><td class="num">"Couple thousand"</td><td>Trust brand around a female mechanic; she Googled her way in</td></tr>
+    <tr><td><b>Bay Area Kids Rentals</b><br><small>Lanlehins · Silicon Valley</small></td><td>Premium party rentals</td><td class="num">$295K (Jan-Nov '25)</td><td class="num">~3 yrs</td><td class="num">$2,000</td><td>Two founders keep day jobs, outsource delivery; 8 hr/week combined</td></tr>
+    <tr><td><b>Rowan</b><br><small>L. Schneider, 48 · NYC HQ</small></td><td>Medical-grade ear piercing</td><td class="num">$70M → $150M proj.</td><td class="num">~5 yrs</td><td class="num">n/d</td><td>Brought nurses + clean aesthetic into mall ear-piercing</td></tr>
+    <tr><td><b>Penny Linn Designs</b><br><small>K. Ray, 33 · Norwalk CT</small></td><td>Modernized needlepoint canvases</td><td class="num">$4.43M (2024)</td><td class="num">~4 yrs</td><td class="num">$7,000</td><td>Modern aesthetic in a boomer-dominated craft category</td></tr>
+    <tr><td><b>Bite by Bite &amp; Co.</b></td><td>Refinish FB Marketplace junk islands</td><td class="num">$379K</td><td class="num">~1 yr</td><td class="num">&lt;$1K</td><td>Buy ugly $50 islands, resell at 5-10x after refinish</td></tr>
+    <tr><td><b>Delivrd</b><br><small>Tomi, 33 · Houston-remote</small></td><td>Car-negotiation-as-a-service</td><td class="num">$2.3M (2024)</td><td class="num">&lt;5 yrs</td><td class="num">n/d</td><td>Flat $1,000 to negotiate car deals; 15 remote employees</td></tr>
+    <tr><td><b>Abbode</b><br><small>A. Price, 29 · NYC</small></td><td>Embroidery + brand pop-ups</td><td class="num">$1.59M → $4M proj.</td><td class="num">~6 yrs</td><td class="num">$20,000</td><td>25% of revenue from corporate pop-ups (L.L. Bean, Ritz Carlton)</td></tr>
+    <tr><td><b>Heart Bandits</b></td><td>Custom proposal planning</td><td class="num">7-figures</td><td class="num">~15 yrs</td><td class="num">n/d</td><td>Raised rates from $300 to $2,149; high-emotion premium service</td></tr>
+    <tr><td><b>Insomnia Cookies</b></td><td>Late-night cookie delivery</td><td class="num">$200M+ (2023)</td><td class="num">20+ yrs</td><td class="num">$150</td><td>Time-of-day monopoly: nobody else delivers cookies after 11pm</td></tr>
+    <tr><td><b>YoungLA</b></td><td>Men's gymwear DTC</td><td class="num">$176M (2024)</td><td class="num">~10 yrs</td><td class="num">&lt;$1K</td><td>Started as eBay reseller, pivoted to brand once demand was clear</td></tr>
+    <tr><td><b>Cobbler Bushwick</b></td><td>Premium sneaker upcycling</td><td class="num">~$37K H1 2025</td><td class="num">3 yrs</td><td class="num">basement</td><td>Productized a dying trade at $350-$520/pair</td></tr>
+  </tbody>
+</table>
+
+<h2>2 · The 7 Patterns That Repeat</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>1. Boring beats sexy at the top</h3>
+    <p>The 5 highest-revenue businesses outside of food: porta-potties, junk, wipes, handyman, mechanic. Categories competition is allergic to. <span class="pill win">DIRECT FIT</span></p>
+  </div>
+  <div class="card">
+    <h3>2. Recurring B2B contracts &gt; one-shot B2C</h3>
+    <p>Bay Area Sanitation, Patsnap, Awardco, Heart Bandits all cluster in the $3M-$200M tier because they sell to customers who renew. Pure DTC plateaus lower.</p>
+  </div>
+  <div class="card">
+    <h3>3. Dual-stream the waste</h3>
+    <p>Junk Teens charges to haul + resells what they haul. Bite by Bite buys junk for $0 and sells refinished for $400. The waste IS the product.</p>
+  </div>
+  <div class="card">
+    <h3>4. Formalize the informal</h3>
+    <p>Repair.sg, Crown's Corner, Rowan, Cobbler Bushwick. Take a category that runs on word-of-mouth + handshakes, add brand + UX + trust signals.</p>
+  </div>
+  <div class="card">
+    <h3>5. Single-SKU launches beat catalogs</h3>
+    <p>Sleepy Hat, Citymouse, Stall Mates — one product, one demo, one TikTok wedge. Catalog comes after PMF, not before.</p>
+  </div>
+  <div class="card">
+    <h3>6. Side-hustle while-employed is the new default</h3>
+    <p>Stall Mates founder still teaches HS. Bay Area Kids Rentals: 8 hr/week. Legit Kits: 1 day/wk. The 2024-26 cohort treats "still working day job" as a strategy, not a stopgap.</p>
+  </div>
+  <div class="card">
+    <h3>7. Acquired skill &gt; credential</h3>
+    <p>~1/3 of founders had zero prior industry experience. Desiree Hill (ex-nurse) Googled how to fix cars. The McKinneys (junk) learned on YouTube.</p>
+  </div>
+  <div class="card">
+    <h3>Bonus: capital efficiency</h3>
+    <p>Of 40, only 3 raised meaningful outside capital. Bootstrap is the genre. The median start was under $10K. <span class="pill win">FITS YOUR PROFILE</span></p>
+  </div>
+</div>
+
+<h2>3 · Wellington Overlay — Which Pattern, Which Local Waste?</h2>
+
+<p>Five candidate "wasteful enough" Wellington industries, scored against the CNBC patterns and your existing infrastructure (PA license, B2B referral ecosystem, brand presence):</p>
+
+<table>
+  <thead><tr><th>Local waste stream</th><th>CNBC template</th><th>Recurring B2B?</th><th>Regulatory moat?</th><th>Dual-stream?</th><th>Fit</th></tr></thead>
+  <tbody>
+    <tr><td><b>Equestrian manure</b> (~50K tons/yr PBC)</td><td>Bay Area Sanitation + Junk Teens</td><td>Yes — barns + WEF venues</td><td>Yes — Wellington requires approved hauler</td><td>Yes — compost resale</td><td><span class="pill win">A+</span></td></tr>
+    <tr><td><b>Storm debris hauling</b></td><td>Junk Teens</td><td>Seasonal spikes</td><td>Permits, not licensing</td><td>Limited (mulch)</td><td><span class="pill win">B+</span></td></tr>
+    <tr><td><b>Construction-site porta-potty + dumpster</b></td><td>Bay Area Sanitation literal</td><td>Yes</td><td>Local permitting only</td><td>No</td><td>B</td></tr>
+    <tr><td><b>Estate-clear / probate junk</b></td><td>Junk Teens + Bite by Bite</td><td>One-shot</td><td>None</td><td>Yes — resale</td><td>B-</td></tr>
+    <tr><td><b>Pool / hot-tub decommissioning</b></td><td>Crown's Corner mobile model</td><td>No</td><td>Some permits</td><td>Scrap only</td><td>C+</td></tr>
+  </tbody>
+</table>
+
+<div class="answer">
+  <h2>4 · The Answer: Equestrian Waste Management</h2>
+  <p class="lead">Wellington is the #1 equestrian destination in the US during winter. The 9,000-acre Equestrian Preserve has hundreds of private horse properties + Palm Beach International Equestrian Center hosting 12 weeks of WEF (12,000+ horses) + International Polo Club. Each horse produces ~50 lbs/day of manure. Combined: <b>~50,000 tons/yr that must be hauled by a licensed operator</b>.</p>
+
+  <h3>Why this beats everything else</h3>
+  <ul>
+    <li><b>Regulatory moat.</b> Wellington Code requires all livestock waste to be removed by an approved hauler, containerized and covered. <a href="https://www.wellingtonfl.gov/515/Manure-Regulations-Best-Management-Pract">Wellington Manure Regs &amp; BMP</a>. Customers can't legally DIY past a tiny threshold.</li>
+    <li><b>Fragmented, contested incumbents.</b> Five existing manure haulers are <b>publicly feuding with PBC municipalities right now</b> over routing favoritism — meaning the market has demand, the brands are weak, and the government is unhappy with the current providers. <a href="https://www.wflx.com/2026/01/27/horse-manure-haulers-accuse-palm-beach-county-municipalities-steering-business-competitor/">WFLX, Jan 2026</a>.</li>
+    <li><b>Wellington gov is courting entrants.</b> The Village sent Agricultural Blending Company a business plan to dispose of/reuse manure and reduce illegal dumping. Translation: the local government will help you launch.</li>
+    <li><b>Recurring, sticky, weekly contracts.</b> Bay Area Sanitation's exact model. Barn owners need pickup 1-3x/week, every week, forever.</li>
+    <li><b>Dual revenue stream.</b> Junk Teens' trick: don't just charge to haul — process and resell as composted "Wellington Stable Blend" to PBC landscapers, nurseries, and HOAs (the buyer market you already touch via your B2B referral ecosystem).</li>
+    <li><b>AI-proof, recession-proof.</b> Horses don't stop producing manure when ChatGPT releases v6 or a recession hits.</li>
+  </ul>
+
+  <h3>The concept (one-liner)</h3>
+  <blockquote><b>"Wellington Stable Co." — premium equestrian waste service for the Preserve.</b> Sealed dumpsters at the barn, scheduled weekly pickup, composted on-site at an Ag-zoned partner parcel, resold as branded soil amendment to landscapers and nurseries. Tagline: <i>"The barn-to-garden loop."</i></blockquote>
+
+  <h3>Capital + path (modeled on Bay Area Sanitation)</h3>
+  <div class="kpi">
+    <div><small>Starting capital</small><b>$80–250K</b><br><small>1 truck w/ hooklift, 20-40 dumpsters, compost partner setup</small></div>
+    <div><small>Year-1 target</small><b>$300–500K</b><br><small>20-40 barn accounts × $400-700/mo</small></div>
+    <div><small>Year-3 target</small><b>$3–5M</b><br><small>Bay Area Sanitation precedent on similar timeline</small></div>
+    <div><small>Recurring base</small><b>~85%</b><br><small>Monthly contracts; rest from WEF event spikes</small></div>
+  </div>
+
+  <h3>Why YOU specifically (the unfair advantages)</h3>
+  <ul>
+    <li>You're already inside the PBC service-provider + real-estate ecosystem (every barn owner has an insurance and property situation you can intro into). The CRM is the cold-start advantage.</li>
+    <li>The Robinhood Adjusting brand + newsletter audience already includes the Wellington homeowner + RE pro segment — they know the equestrian residents you'd be selling to.</li>
+    <li>You're capital-light enough to start as the <b>aggregator layer first</b> (Repair.sg model): a single phone number + booking flow that brokers across existing haulers under a quality-branded wrapper, while you stand up your own ops. Get to revenue in weeks, not quarters.</li>
+    <li>Side-hustle-while-employed is the dominant CNBC playbook — fits your "Barclays exit end of June" timing exactly.</li>
+  </ul>
+</div>
+
+<h2>5 · The Two Backup Plays (if equestrian is a "no")</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3><span class="pill win">B+</span> Premium Storm-Debris Hauling</h3>
+    <p>You've already vetted the storm-debris pivot with the father-son venture deck. CNBC template: Junk Teens. PBC has $200M+ annual debris market across hurricane season. Less recurring than manure, but capital-light, and you've done the homework.</p>
+    <p><small>Strongest pitch: pre-sold seasonal subscription — "Hurricane Ready Subscription" billed Apr-Nov, includes pre-storm prep + post-storm priority haul. Recurringizes a seasonal category.</small></p>
+  </div>
+  <div class="card">
+    <h3><span class="pill win">B</span> Wellington Event Sanitation</h3>
+    <p>Direct Bay Area Sanitation clone. WEF, polo, equestrian shows, Wellington Amphitheater concerts, Chamber events — all need porta-potty + handwash + waste. ~$60K to start (1 truck, 50 units). But: more competitors and lower regulatory moat than manure.</p>
+    <p><small>Combo play: bundle event sanitation with equestrian manure under one brand. Same trucks, same labor pool, same compost endpoint.</small></p>
+  </div>
+</div>
+
+<h2>6 · What I'd Do This Week (if you want to move on it)</h2>
+
+<ol>
+  <li><b>Validate demand in 48 hours.</b> Call 5 Wellington barn owners from your existing CRM and ask: who hauls your manure today, how much do you pay, what would you change? (~30 min total.)</li>
+  <li><b>Pull the regulatory permit list.</b> Wellington publishes its approved Livestock Waste Haulers — read the 5 incumbents the WFLX article named, and study their pricing pages. (~1 hr.)</li>
+  <li><b>Stand up a one-page lead magnet.</b> "Wellington Stable Manure Hauling — quote in 60 sec." Drive traffic from your IG + newsletter. Brokering to existing haulers is fine for v1. (Half day.)</li>
+  <li><b>Reach out to Wellington Village staff.</b> They were shopping a manure business plan; ask for the deck Ag Blending Co received. Free market research. (1 email.)</li>
+  <li><b>Hold the build-out trigger</b> until you have 10 LOI-grade verbal commitments and a permit pathway confirmed.</li>
+</ol>
+
+<p>I can drive items 3 + 4 today on my own, no input needed from you, if you want me to.</p>
+
+<div class="footnote">
+  <p><b>Sources</b> — <a href="https://www.wellingtonfl.gov/515/Manure-Regulations-Best-Management-Pract">Wellington Manure Regulations &amp; BMP</a> · <a href="https://www.wflx.com/2026/01/27/horse-manure-haulers-accuse-palm-beach-county-municipalities-steering-business-competitor/">WFLX: PBC manure haulers feud (Jan 2026)</a> · <a href="https://discover.pbcgov.org/pzb/planning/Ordinances/Equestrian%20Waste.pdf">PBC Equestrian Waste Ordinance 2017-005</a> · <a href="https://www.wellingtonfl.gov/527/Waste-Haulers-Disposal-Locations">Wellington approved hauler list</a> · <a href="https://cbs12.com/news/local/in-horse-country-manure-disposal-in-transition">CBS12: horse country manure disposal in transition</a> · 40 CNBC Make It case studies (links retained in research notes).</p>
+  <p><small>Built 2026-06-04 · CNBC Make It overlay × Wellington FL market scan. Numbers are from CNBC reporting or municipal documents. Year-1/year-3 revenue targets are projections based on Bay Area Sanitation's documented trajectory — flagged as estimates, not promises.</small></p>
+</div>
+
+</div>
+</body>
+</html>

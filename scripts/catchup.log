@@ -14811,3 +14811,735 @@ To https://github.com/duncan727-debug/-robinhood-adjusting.git
 [2026-06-04T13:29:43Z]   newsletter-send: already sent today, skip
 [2026-06-04T13:29:43Z]   build-website: site/briefs/2026-06-04.html exists, skip
 [2026-06-04T13:29:43Z]   daily-git-sync: no commit today, running git-sync-daily.sh
+[main 0839155] Daily content sync:        1 brief(s)        3 content piece(s)
+ 246 files changed, 29663 insertions(+), 610 deletions(-)
+ create mode 100644 .openclaw-cli-images/35bae1d351c6c6a300f227de5e009763391ed344035a523ef3c1a0b39b0f7517.png
+ create mode 100644 .openclaw-cli-images/d4191a9a1ae69025e14ea2bbc3d85dd1bfa605cc04906ea0adc28790e34f4b6e.png
+ create mode 100644 .openclaw-cli-images/f9573149461038a74622864d49780e4640746cc8dab0257457c9d2f6cbd7947e.png
+ create mode 100644 briefs/2026-06-02-homeowner-verify.md
+ create mode 100644 briefs/2026-06-02-homeowner.md
+ create mode 100644 briefs/2026-06-02-real-estate-verify.md
+ create mode 100644 briefs/2026-06-02-real-estate.md
+ create mode 100644 briefs/2026-06-02-service-provider-verify.md
+ create mode 100644 briefs/2026-06-02-service-provider.md
+ create mode 100644 briefs/2026-06-02-verify.md
+ create mode 100644 briefs/2026-06-02.md
+ create mode 100644 briefs/2026-06-03-homeowner.md
+ create mode 100644 briefs/2026-06-03-real-estate.md
+ create mode 100644 briefs/2026-06-03-service-provider.md
+ create mode 100644 briefs/2026-06-03.md
+ create mode 100644 briefs/2026-06-04-homeowner-verify.md
+ create mode 100644 briefs/2026-06-04-homeowner.md
+ create mode 100644 briefs/2026-06-04-real-estate-verify.md
+ create mode 100644 briefs/2026-06-04-real-estate.md
+ create mode 100644 briefs/2026-06-04-service-provider-verify.md
+ create mode 100644 briefs/2026-06-04-service-provider.md
+ create mode 100644 briefs/2026-06-04-verify.md
+ create mode 100644 briefs/2026-06-04.md
+ create mode 100644 content/2026-05-31/facebook.md
+ create mode 100644 content/2026-06-01/blog.md
+ create mode 100644 content/2026-06-01/facebook.md
+ create mode 100644 content/2026-06-01/instagram.md
+ create mode 100644 content/2026-06-02/blog.md
+ create mode 100644 content/2026-06-02/facebook.md
+ create mode 100644 content/2026-06-02/instagram.md
+ create mode 100644 content/2026-06-03/blog.md
+ create mode 100644 content/2026-06-03/facebook.md
+ create mode 100644 content/2026-06-03/instagram.md
+ create mode 100644 content/2026-06-04/blog.md
+ create mode 100644 content/2026-06-04/facebook.md
+ create mode 100644 content/2026-06-04/instagram.md
+ create mode 100644 content/briefs/2026-06-02-homeowner.html
+ create mode 100644 content/briefs/2026-06-02-real-estate.html
+ create mode 100644 content/briefs/2026-06-02-service-provider.html
+ create mode 100644 content/briefs/2026-06-02.html
+ create mode 100644 content/briefs/2026-06-03-homeowner.html
+ create mode 100644 content/briefs/2026-06-03-real-estate.html
+ create mode 100644 content/briefs/2026-06-03-service-provider.html
+ create mode 100644 content/briefs/2026-06-03.html
+ create mode 100644 content/briefs/2026-06-04-homeowner.html
+ create mode 100644 content/briefs/2026-06-04-real-estate.html
+ create mode 100644 content/briefs/2026-06-04-service-provider.html
+ create mode 100644 content/briefs/2026-06-04.html
+ create mode 100644 content/health-options-2026-06-02.html
+ create mode 100644 content/summary-2026-06-02.html
+ create mode 100644 crm/contact_form_queue/2026-06-01.csv
+ create mode 100644 crm/contact_form_queue/2026-06-02.csv
+ create mode 100644 crm/contact_form_queue/2026-06-03.csv
+ create mode 100644 crm/drafts/2026-06-01/broward-allphase-roofing-all-phase-construction-usa.md
+ create mode 100644 crm/drafts/2026-06-01/broward-coastal-property-mgmt-coastal-property-management-group.md
+ create mode 100644 crm/drafts/2026-06-01/broward-elite-contractors-elite-general-contracting.md
+ create mode 100644 crm/drafts/2026-06-01/miamidade-florida-insurance-partners-florida-insurance-partners-llc.md
+ create mode 100644 crm/drafts/2026-06-01/miamidade-prestige-realty-prestige-realty-management.md
+ create mode 100644 crm/drafts/2026-06-01/miamidade-quantum-roofing-quantum-roofing-solutions.md
+ create mode 100644 crm/drafts/2026-06-01/new-prospects.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-all-out-air-conditioning-all-out-air-conditioning.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-anderson-construction-group-anderson-construction-group.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-atlantic-water-mitigation-atlantic-water-mold-solutions.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-blue-view-real-estate-blue-view-real-estate.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-brent-and-raquel-crowe-great-palm-beach--brent-and-raquel-crowe-great-palm-beach-homes-wellington-real-estate.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-cleary-plumbing-air-cleary-plumbing-air.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-davies-plumbing-services-davies-plumbing-services.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-drymedic-restoration-services-north-palm-drymedic-restoration-services-north-palm-beach.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-ees-restoration-ees-restoration.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-florida-coastal-premier-realty-florida-coastal-premier-realty.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-general-contractor-construction-llc-general-contractor-construction-llc.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-general-plumbing-general-plumbing.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-healthy-builds-restoration-healthy-builds-restoration.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-hoa-advocates-hoa-advocates-management.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-integrity-plumbing-and-drain-inc-integrity-plumbing-and-drain-inc.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-kelvin-comfort-air-conditioning-west-pal-kelvin-comfort-air-conditioning-west-palm-beach.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-modern-living-group-modern-living-group.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-nena-s-roofing-llc-palm-beach-county-ins-nena-s-roofing-llc-palm-beach-county-insta-quote-re-roofs-repairs.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-o-neal-jr-roofing-o-neal-jr-roofing.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-petra-a-c-services-petra-a-c-services.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-pinewood-construction-pinewood-construction.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-roof-repairs-lake-worth-beach-by-apexroo-roof-repairs-lake-worth-beach-by-apexroof.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-smart-choice-plumbing-air-conditioning-l-smart-choice-plumbing-air-conditioning-llc.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-snyder-air-conditioning-plumbing-electri-snyder-air-conditioning-plumbing-electric.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-storm-shield-roofing-storm-shield-roofing.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-top-flight-property-restoration-top-flight-property-restoration.md
+ create mode 100644 crm/drafts/2026-06-01/palmbeach-w-j-contractors-w-j-contractors.md
+ create mode 100644 crm/drafts/2026-06-01/stlucie-safehaven-properties-safehaven-property-consulting.md
+ create mode 100644 crm/drafts/2026-06-02/STATUS.md
+ create mode 100644 crm/drafts/2026-06-03/STATUS.md
+ create mode 100644 crm/drafts/2026-06-04/STATUS.md
+ create mode 100644 crm/homeowner_groups_to_join.md
+ create mode 100644 crm/hot-leads/2026-06-02/palmbeach-ithink-financial-HOT.md
+ create mode 100644 crm/hubspot_master_import_2026-06-01.csv
+ create mode 100644 crm/hubspot_master_import_2026-06-02.csv
+ create mode 100644 crm/hubspot_master_import_2026-06-03.csv
+ create mode 100644 crm/hubspot_master_import_2026-06-04.csv
+ create mode 100644 crm/intelligence/2026-06-01/_SUMMARY.md
+ create mode 100644 crm/intelligence/2026-06-01/_generate.py
+ create mode 100644 crm/intelligence/2026-06-01/broward-allphase-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/broward-coastal-property-mgmt-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/broward-elite-contractors-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/miamidade-florida-insurance-partners-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/miamidade-miami-best-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/miamidade-prestige-realty-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/miamidade-quantum-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palm-beach-serac-construction-inc-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-all-out-air-conditioning-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-anderson-construction-group-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-atlantic-water-mitigation-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-blue-view-real-estate-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-brent-and-raquel-crowe-great-palm-beach--intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-cleary-plumbing-air-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-davies-plumbing-services-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-drymedic-restoration-services-north-palm-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-ees-restoration-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-florida-coastal-premier-realty-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-general-contractor-construction-llc-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-general-plumbing-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-healthy-builds-restoration-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-hoa-advocates-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-integrity-plumbing-and-drain-inc-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-kelvin-comfort-air-conditioning-west-pal-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-modern-living-group-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-nena-s-roofing-llc-palm-beach-county-ins-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-o-neal-jr-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-petra-a-c-services-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-pinewood-construction-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-roof-repairs-lake-worth-beach-by-apexroo-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-smart-choice-plumbing-air-conditioning-l-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-snyder-air-conditioning-plumbing-electri-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-storm-shield-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-top-flight-property-restoration-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/palmbeach-w-j-contractors-intel.md
+ create mode 100644 crm/intelligence/2026-06-01/stlucie-safehaven-properties-intel.md
+ create mode 100644 crm/intelligence/2026-06-02/_generate.py
+ create mode 100644 crm/intelligence/2026-06-02/miamidade-miami-best-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-02/palm-beach-serac-construction-inc-intel.md
+ create mode 100644 crm/intelligence/2026-06-03/miamidade-miami-best-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-03/palm-beach-serac-construction-inc-intel.md
+ create mode 100644 crm/intelligence/2026-06-03/palmbeach-ithink-financial-intel.md
+ create mode 100644 crm/intelligence/2026-06-04/miamidade-miami-best-roofing-intel.md
+ create mode 100644 crm/intelligence/2026-06-04/palm-beach-serac-construction-inc-intel.md
+ create mode 100644 crm/intelligence/2026-06-04/palmbeach-ithink-financial-intel.md
+ create mode 100644 crm/intelligence/2026-06-04/palmbeach-renegade-roofing-co-intel.md
+ create mode 100644 crm/organizations.csv.bak.2026-06-01-0600
+ create mode 100644 crm/reply_queue/2026-05-31.jsonl
+ create mode 100644 crm/reply_queue/2026-06-01.jsonl
+ create mode 100644 crm/reply_queue/2026-06-02.jsonl
+ create mode 100644 crm/reply_queue/answers_488502345434_321.txt
+ create mode 100644 crm/reply_queue/answers_490407084747_322.txt
+ create mode 100644 crm/responses/2026-06-01/NO-REPLIES.md
+ create mode 100644 crm/responses/2026-06-02/palmbeach-ithink-financial-reply-options.md
+ create mode 100644 crm/responses/2026-06-03/NO-REPLIES.md
+ create mode 100644 crm/responses/2026-06-04/NO-REPLIES.md
+ create mode 100644 crm/review_queue/phone_only_2026-06-02.csv
+ create mode 100644 crm/review_queue/phone_only_2026-06-03.csv
+ create mode 100644 crm/social_dm_templates.md
+ create mode 100644 crm/social_engagement_log.csv
+ create mode 100644 crm/social_engagement_queue.csv
+ create mode 100644 crm/social_outreach_targets.csv
+ create mode 100644 crm/social_outreach_targets_seed.csv
+ create mode 100644 crm/wellington_service_pros_social.csv
+ create mode 100644 memory/.dreams/session-corpus/2026-06-01.txt
+ create mode 100644 memory/.dreams/session-corpus/2026-06-02.txt
+ create mode 100644 memory/.dreams/session-corpus/2026-06-03.txt
+ create mode 100644 memory/dreaming/deep/2026-06-01.md
+ create mode 100644 memory/dreaming/deep/2026-06-02.md
+ create mode 100644 memory/dreaming/deep/2026-06-03.md
+ create mode 100644 memory/dreaming/deep/2026-06-04.md
+ create mode 100644 memory/dreaming/light/2026-06-01.md
+ create mode 100644 memory/dreaming/light/2026-06-02.md
+ create mode 100644 memory/dreaming/light/2026-06-03.md
+ create mode 100644 memory/dreaming/light/2026-06-04.md
+ create mode 100644 memory/dreaming/rem/2026-06-01.md
+ create mode 100644 memory/dreaming/rem/2026-06-02.md
+ create mode 100644 memory/dreaming/rem/2026-06-03.md
+ create mode 100644 memory/dreaming/rem/2026-06-04.md
+ create mode 100644 monthly/2026-05-overview.md
+ create mode 100644 monthly/2026-06-overview.md
+ create mode 100644 ops-review/2026-06-01.md
+ create mode 100644 ops-review/2026-06-02.md
+ create mode 100644 ops-review/2026-06-03.md
+ create mode 100644 ops-review/2026-06-04.md
+ create mode 100644 projects/business-formation/LLC-WALKTHROUGH.md
+ create mode 100644 scripts/.git-sync-done-2026-05-31
+ create mode 100644 scripts/.git-sync-done-2026-06-01
+ create mode 100644 scripts/.git-sync-done-2026-06-02
+ create mode 100644 scripts/.git-sync-done-2026-06-03
+ create mode 100644 scripts/.newsletter-sent-2026-06-01
+ create mode 100644 scripts/.newsletter-sent-2026-06-02
+ create mode 100644 scripts/.newsletter-sent-2026-06-03
+ create mode 100644 scripts/.newsletter-sent-2026-06-04
+ create mode 100644 scripts/.weekly-trends-sent-2026-05-31
+ create mode 100644 scripts/_daily_outreach_2026_06_01.py
+ create mode 100755 scripts/enrich_social_urls.py
+ create mode 100644 scripts/meta_listen.err
+ create mode 100644 scripts/meta_listen.log
+ create mode 100644 scripts/meta_listen.out
+ create mode 100755 scripts/meta_listen.py
+ create mode 100644 scripts/meta_post.err
+ create mode 100644 scripts/meta_post.log
+ create mode 100644 scripts/meta_post.out
+ create mode 100755 scripts/meta_post.py
+ create mode 100644 scripts/social_engage.err
+ create mode 100644 scripts/social_engage.out
+ create mode 100644 scripts/social_engage.py
+ create mode 100644 scripts/state/meta_listen/last_seen.json
+ create mode 100644 scripts/state/meta_posted/2026-05-31.json
+ create mode 100644 scripts/state/meta_posted/2026-06-01.json
+ create mode 100644 site/briefs/2026-06-04-homeowner.html
+ create mode 100644 site/briefs/2026-06-04-real-estate.html
+ create mode 100644 site/briefs/2026-06-04-service-provider.html
+ create mode 100644 site/briefs/2026-06-04.html
+ create mode 100644 weekly-self-review/2026-W22.html
+ create mode 100644 weekly-self-review/2026-W22.md
+To https://github.com/duncan727-debug/-robinhood-adjusting.git
+   a58601e..0839155  main -> main
+[2026-06-04 09:29:46] Building website...
+[2026-06-04 09:29:47] Briefs: 2026-06-04 2026-06-03 2026-06-02 2026-06-01 2026-05-29
+[2026-06-04 09:29:47] Trends: 4 found
+[SKIP] No template markers found in site/PA-WEBSITE.html
+[SKIP] No template markers found in site/index.html
+[2026-06-04 09:29:47] Done.
+[2026-06-04 09:29:47] Sync complete
+[2026-06-04T13:29:47Z]   daily-git-sync: OK, pushed
+[2026-06-04T13:29:47Z] === catchup end ===
+[2026-06-04T13:44:50Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=584 ===
+[2026-06-04T13:44:50Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T13:44:50Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T13:44:50Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T13:44:50Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T13:44:50Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T13:44:50Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T13:44:50Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T13:44:50Z]   drip: already ran today, skip
+[2026-06-04T13:44:50Z]   outreach batch 1: already ran today, skip
+[2026-06-04T13:44:50Z]   imap_bridge: ran 39m ago, skip
+[2026-06-04T13:44:50Z]   newsletter-send: already sent today, skip
+[2026-06-04T13:44:50Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T13:44:50Z] === catchup end ===
+[2026-06-04T13:59:53Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=599 ===
+[2026-06-04T13:59:53Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T13:59:53Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T13:59:53Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T13:59:53Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T13:59:53Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T13:59:53Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T13:59:53Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T13:59:53Z]   drip: already ran today, skip
+[2026-06-04T13:59:53Z]   outreach batch 1: already ran today, skip
+[2026-06-04T13:59:53Z]   imap_bridge: ran 54m ago, skip
+[2026-06-04T13:59:53Z]   newsletter-send: already sent today, skip
+[2026-06-04T13:59:53Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T13:59:53Z] === catchup end ===
+[2026-06-04T14:14:57Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=614 ===
+[2026-06-04T14:14:57Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T14:14:57Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T14:14:57Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T14:14:57Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T14:14:57Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T14:14:57Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T14:14:57Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T14:14:57Z]   drip: already ran today, skip
+[2026-06-04T14:14:57Z]   enrich_before_upload: running
+[2026-06-04T14:30:55Z]   enrich_before_upload: done
+[2026-06-04T14:30:55Z]   outreach batch 1: already ran today, skip
+[2026-06-04T14:30:55Z]   imap_bridge: ran 25m ago, skip
+[2026-06-04T14:30:55Z]   newsletter-send: already sent today, skip
+[2026-06-04T14:30:55Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T14:30:55Z] === catchup end ===
+[2026-06-04T14:45:59Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=645 ===
+[2026-06-04T14:45:59Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T14:45:59Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T14:45:59Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T14:45:59Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T14:45:59Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T14:45:59Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T14:45:59Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T14:45:59Z]   drip: already ran today, skip
+[2026-06-04T14:45:59Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T14:45:59Z]   outreach batch 1: already ran today, skip
+[2026-06-04T14:45:59Z]   outreach batch 2: already ran today, skip
+[2026-06-04T14:45:59Z]   imap_bridge: ran 40m ago, skip
+[2026-06-04T14:45:59Z]   newsletter-send: already sent today, skip
+[2026-06-04T14:45:59Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T14:45:59Z] === catchup end ===
+[2026-06-04T15:01:03Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=661 ===
+[2026-06-04T15:01:03Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T15:01:03Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T15:01:03Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T15:01:03Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T15:01:03Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T15:01:03Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T15:01:03Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T15:01:03Z]   drip: already ran today, skip
+[2026-06-04T15:01:03Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T15:01:03Z]   outreach batch 1: already ran today, skip
+[2026-06-04T15:01:03Z]   outreach batch 2: already ran today, skip
+[2026-06-04T15:01:03Z]   imap_bridge: ran 55m ago, skip
+[2026-06-04T15:01:03Z]   newsletter-send: already sent today, skip
+[2026-06-04T15:01:03Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T15:01:03Z] === catchup end ===
+[2026-06-04T15:16:06Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=676 ===
+[2026-06-04T15:16:06Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T15:16:06Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T15:16:06Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T15:16:06Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T15:16:06Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T15:16:06Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T15:16:06Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T15:16:06Z]   drip: already ran today, skip
+[2026-06-04T15:16:06Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T15:16:06Z]   outreach batch 1: already ran today, skip
+[2026-06-04T15:16:06Z]   outreach batch 2: already ran today, skip
+[2026-06-04T15:16:06Z]   imap_bridge: ran 11m ago, skip
+[2026-06-04T15:16:06Z]   newsletter-send: already sent today, skip
+[2026-06-04T15:16:06Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T15:16:06Z] === catchup end ===
+[2026-06-04T15:31:10Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=691 ===
+[2026-06-04T15:31:10Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T15:31:10Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T15:31:10Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T15:31:10Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T15:31:10Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T15:31:10Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T15:31:10Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T15:31:10Z]   drip: already ran today, skip
+[2026-06-04T15:31:10Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T15:31:10Z]   outreach batch 1: already ran today, skip
+[2026-06-04T15:31:10Z]   outreach batch 2: already ran today, skip
+[2026-06-04T15:31:10Z]   imap_bridge: ran 26m ago, skip
+[2026-06-04T15:31:10Z]   newsletter-send: already sent today, skip
+[2026-06-04T15:31:10Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T15:31:10Z] === catchup end ===
+[2026-06-04T15:46:13Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=706 ===
+[2026-06-04T15:46:13Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T15:46:13Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T15:46:13Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T15:46:13Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T15:46:13Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T15:46:13Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T15:46:13Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T15:46:13Z]   drip: already ran today, skip
+[2026-06-04T15:46:13Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T15:46:13Z]   outreach batch 1: already ran today, skip
+[2026-06-04T15:46:13Z]   outreach batch 2: already ran today, skip
+[2026-06-04T15:46:13Z]   imap_bridge: ran 41m ago, skip
+[2026-06-04T15:46:13Z]   newsletter-send: already sent today, skip
+[2026-06-04T15:46:13Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T15:46:13Z] === catchup end ===
+[2026-06-04T16:01:17Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=721 ===
+[2026-06-04T16:01:17Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T16:01:17Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T16:01:17Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T16:01:17Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T16:01:17Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T16:01:17Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T16:01:17Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T16:01:17Z]   drip: already ran today, skip
+[2026-06-04T16:01:17Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T16:01:17Z]   outreach batch 1: already ran today, skip
+[2026-06-04T16:01:17Z]   outreach batch 2: already ran today, skip
+[2026-06-04T16:01:17Z]   imap_bridge: ran 56m ago, skip
+[2026-06-04T16:01:17Z]   newsletter-send: already sent today, skip
+[2026-06-04T16:01:17Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T16:01:17Z] === catchup end ===
+[2026-06-04T16:16:20Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=736 ===
+[2026-06-04T16:16:20Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T16:16:20Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T16:16:20Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T16:16:20Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T16:16:20Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T16:16:20Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T16:16:20Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T16:16:20Z]   drip: already ran today, skip
+[2026-06-04T16:16:20Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T16:16:20Z]   outreach batch 1: already ran today, skip
+[2026-06-04T16:16:20Z]   outreach batch 2: already ran today, skip
+[2026-06-04T16:16:20Z]   imap_bridge: ran 11m ago, skip
+[2026-06-04T16:16:20Z]   newsletter-send: already sent today, skip
+[2026-06-04T16:16:20Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T16:16:20Z] === catchup end ===
+[2026-06-04T16:31:24Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=751 ===
+[2026-06-04T16:31:24Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T16:31:24Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T16:31:24Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T16:31:24Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T16:31:24Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T16:31:24Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T16:31:24Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T16:31:24Z]   drip: already ran today, skip
+[2026-06-04T16:31:24Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T16:31:24Z]   outreach batch 1: already ran today, skip
+[2026-06-04T16:31:24Z]   outreach batch 2: already ran today, skip
+[2026-06-04T16:31:24Z]   outreach batch 3: running
+[2026-06-04T16:31:24Z]   outreach batch 3: done
+[2026-06-04T16:31:24Z]   imap_bridge: ran 26m ago, skip
+[2026-06-04T16:31:24Z]   newsletter-send: already sent today, skip
+[2026-06-04T16:31:24Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T16:31:24Z] === catchup end ===
+[2026-06-04T16:46:28Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=766 ===
+[2026-06-04T16:46:28Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T16:46:28Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T16:46:28Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T16:46:28Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T16:46:28Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T16:46:28Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T16:46:28Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T16:46:28Z]   drip: already ran today, skip
+[2026-06-04T16:46:28Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T16:46:28Z]   outreach batch 1: already ran today, skip
+[2026-06-04T16:46:28Z]   outreach batch 2: already ran today, skip
+[2026-06-04T16:46:28Z]   outreach batch 3: running
+[2026-06-04T16:46:28Z]   outreach batch 3: done
+[2026-06-04T16:46:28Z]   imap_bridge: ran 41m ago, skip
+[2026-06-04T16:46:28Z]   newsletter-send: already sent today, skip
+[2026-06-04T16:46:28Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T16:46:28Z] === catchup end ===
+[2026-06-04T17:01:31Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=781 ===
+[2026-06-04T17:01:31Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T17:01:31Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T17:01:31Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T17:01:31Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T17:01:31Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T17:01:31Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T17:01:31Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T17:01:31Z]   drip: already ran today, skip
+[2026-06-04T17:01:31Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T17:01:31Z]   outreach batch 1: already ran today, skip
+[2026-06-04T17:01:31Z]   outreach batch 2: already ran today, skip
+[2026-06-04T17:01:31Z]   outreach batch 3: running
+[2026-06-04T17:01:32Z]   outreach batch 3: done
+[2026-06-04T17:01:32Z]   imap_bridge: ran 56m ago, skip
+[2026-06-04T17:01:32Z]   newsletter-send: already sent today, skip
+[2026-06-04T17:01:32Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T17:01:32Z] === catchup end ===
+[2026-06-04T17:16:35Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=796 ===
+[2026-06-04T17:16:35Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T17:16:35Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T17:16:35Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T17:16:35Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T17:16:35Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T17:16:35Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T17:16:35Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T17:16:35Z]   drip: already ran today, skip
+[2026-06-04T17:16:35Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T17:16:35Z]   outreach batch 1: already ran today, skip
+[2026-06-04T17:16:35Z]   outreach batch 2: already ran today, skip
+[2026-06-04T17:16:35Z]   outreach batch 3: running
+[2026-06-04T17:16:35Z]   outreach batch 3: done
+[2026-06-04T17:16:36Z]   imap_bridge: ran 11m ago, skip
+[2026-06-04T17:16:36Z]   newsletter-send: already sent today, skip
+[2026-06-04T17:16:36Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T17:16:36Z] === catchup end ===
+[2026-06-04T17:31:39Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=811 ===
+[2026-06-04T17:31:39Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T17:31:39Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T17:31:39Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T17:31:39Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T17:31:39Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T17:31:39Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T17:31:39Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T17:31:39Z]   drip: already ran today, skip
+[2026-06-04T17:31:39Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T17:31:39Z]   outreach batch 1: already ran today, skip
+[2026-06-04T17:31:39Z]   outreach batch 2: already ran today, skip
+[2026-06-04T17:31:39Z]   outreach batch 3: running
+[2026-06-04T17:31:39Z]   outreach batch 3: done
+[2026-06-04T17:31:39Z]   imap_bridge: ran 26m ago, skip
+[2026-06-04T17:31:39Z]   newsletter-send: already sent today, skip
+[2026-06-04T17:31:39Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T17:31:39Z] === catchup end ===
+[2026-06-04T17:46:43Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=826 ===
+[2026-06-04T17:46:43Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T17:46:43Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T17:46:43Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T17:46:43Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T17:46:43Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T17:46:43Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T17:46:43Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T17:46:43Z]   drip: already ran today, skip
+[2026-06-04T17:46:43Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T17:46:43Z]   outreach batch 1: already ran today, skip
+[2026-06-04T17:46:43Z]   outreach batch 2: already ran today, skip
+[2026-06-04T17:46:43Z]   outreach batch 3: running
+[2026-06-04T17:46:43Z]   outreach batch 3: done
+[2026-06-04T17:46:43Z]   imap_bridge: ran 41m ago, skip
+[2026-06-04T17:46:43Z]   newsletter-send: already sent today, skip
+[2026-06-04T17:46:43Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T17:46:43Z] === catchup end ===
+[2026-06-04T18:01:46Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=841 ===
+[2026-06-04T18:01:46Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T18:01:46Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T18:01:46Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T18:01:46Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T18:01:46Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T18:01:46Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T18:01:46Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T18:01:46Z]   drip: already ran today, skip
+[2026-06-04T18:01:46Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T18:01:46Z]   outreach batch 1: already ran today, skip
+[2026-06-04T18:01:46Z]   outreach batch 2: already ran today, skip
+[2026-06-04T18:01:46Z]   outreach batch 3: running
+[2026-06-04T18:01:46Z]   outreach batch 3: done
+[2026-06-04T18:01:46Z]   imap_bridge: ran 56m ago, skip
+[2026-06-04T18:01:46Z]   newsletter-send: already sent today, skip
+[2026-06-04T18:01:46Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T18:01:46Z] === catchup end ===
+[2026-06-04T18:16:49Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=856 ===
+[2026-06-04T18:16:49Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T18:16:49Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T18:16:49Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T18:16:49Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T18:16:49Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T18:16:49Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T18:16:49Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T18:16:49Z]   drip: already ran today, skip
+[2026-06-04T18:16:49Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T18:16:49Z]   outreach batch 1: already ran today, skip
+[2026-06-04T18:16:49Z]   outreach batch 2: already ran today, skip
+[2026-06-04T18:16:49Z]   outreach batch 3: running
+[2026-06-04T18:16:49Z]   outreach batch 3: done
+[2026-06-04T18:16:49Z]   imap_bridge: ran 11m ago, skip
+[2026-06-04T18:16:49Z]   newsletter-send: already sent today, skip
+[2026-06-04T18:16:49Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T18:16:49Z] === catchup end ===
+[2026-06-04T18:31:51Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=871 ===
+[2026-06-04T18:31:51Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T18:31:51Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T18:31:51Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T18:31:51Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T18:31:51Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T18:31:51Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T18:31:51Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T18:31:51Z]   drip: already ran today, skip
+[2026-06-04T18:31:51Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T18:31:51Z]   outreach batch 1: already ran today, skip
+[2026-06-04T18:31:51Z]   outreach batch 2: already ran today, skip
+[2026-06-04T18:31:51Z]   outreach batch 3: running
+[2026-06-04T18:31:51Z]   outreach batch 3: done
+[2026-06-04T18:31:51Z]   imap_bridge: ran 26m ago, skip
+[2026-06-04T18:31:51Z]   newsletter-send: already sent today, skip
+[2026-06-04T18:31:51Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T18:31:51Z] === catchup end ===
+[2026-06-04T18:46:55Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=886 ===
+[2026-06-04T18:46:55Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T18:46:55Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T18:46:55Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T18:46:55Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T18:46:55Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T18:46:55Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T18:46:55Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T18:46:55Z]   drip: already ran today, skip
+[2026-06-04T18:46:55Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T18:46:55Z]   outreach batch 1: already ran today, skip
+[2026-06-04T18:46:55Z]   outreach batch 2: already ran today, skip
+[2026-06-04T18:46:55Z]   outreach batch 3: running
+[2026-06-04T18:46:55Z]   outreach batch 3: done
+[2026-06-04T18:46:55Z]   imap_bridge: ran 41m ago, skip
+[2026-06-04T18:46:55Z]   newsletter-send: already sent today, skip
+[2026-06-04T18:46:55Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T18:46:55Z] === catchup end ===
+[2026-06-04T19:02:00Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=902 ===
+[2026-06-04T19:02:00Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T19:02:00Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T19:02:00Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T19:02:00Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T19:02:00Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T19:02:00Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T19:02:00Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T19:02:00Z]   drip: already ran today, skip
+[2026-06-04T19:02:00Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T19:02:00Z]   outreach batch 1: already ran today, skip
+[2026-06-04T19:02:00Z]   outreach batch 2: already ran today, skip
+[2026-06-04T19:02:00Z]   outreach batch 3: running
+[2026-06-04T19:02:00Z]   outreach batch 3: done
+[2026-06-04T19:02:00Z]   outreach batch 4: running
+[2026-06-04T19:02:00Z]   outreach batch 4: done
+[2026-06-04T19:02:00Z]   imap_bridge: ran 56m ago, skip
+[2026-06-04T19:02:00Z]   newsletter-send: already sent today, skip
+[2026-06-04T19:02:00Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T19:02:00Z] === catchup end ===
+[2026-06-04T19:17:04Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=917 ===
+[2026-06-04T19:17:04Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T19:17:04Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T19:17:04Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T19:17:04Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T19:17:04Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T19:17:04Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T19:17:04Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T19:17:04Z]   drip: already ran today, skip
+[2026-06-04T19:17:04Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T19:17:04Z]   outreach batch 1: already ran today, skip
+[2026-06-04T19:17:04Z]   outreach batch 2: already ran today, skip
+[2026-06-04T19:17:04Z]   outreach batch 3: running
+[2026-06-04T19:17:04Z]   outreach batch 3: done
+[2026-06-04T19:17:04Z]   outreach batch 4: running
+[2026-06-04T19:17:04Z]   outreach batch 4: done
+[2026-06-04T19:17:04Z]   imap_bridge: ran 12m ago, skip
+[2026-06-04T19:17:04Z]   newsletter-send: already sent today, skip
+[2026-06-04T19:17:04Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T19:17:04Z] === catchup end ===
+[2026-06-04T19:32:07Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=932 ===
+[2026-06-04T19:32:07Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T19:32:07Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T19:32:07Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T19:32:07Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T19:32:07Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T19:32:07Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T19:32:07Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T19:32:07Z]   drip: already ran today, skip
+[2026-06-04T19:32:07Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T19:32:07Z]   outreach batch 1: already ran today, skip
+[2026-06-04T19:32:07Z]   outreach batch 2: already ran today, skip
+[2026-06-04T19:32:07Z]   outreach batch 3: running
+[2026-06-04T19:32:07Z]   outreach batch 3: done
+[2026-06-04T19:32:07Z]   outreach batch 4: running
+[2026-06-04T19:32:08Z]   outreach batch 4: done
+[2026-06-04T19:32:08Z]   imap_bridge: ran 27m ago, skip
+[2026-06-04T19:32:08Z]   newsletter-send: already sent today, skip
+[2026-06-04T19:32:08Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T19:32:08Z] === catchup end ===
+[2026-06-04T19:47:11Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=947 ===
+[2026-06-04T19:47:11Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T19:47:11Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T19:47:11Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T19:47:11Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T19:47:11Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T19:47:11Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T19:47:11Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T19:47:11Z]   drip: already ran today, skip
+[2026-06-04T19:47:11Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T19:47:11Z]   outreach batch 1: already ran today, skip
+[2026-06-04T19:47:11Z]   outreach batch 2: already ran today, skip
+[2026-06-04T19:47:11Z]   outreach batch 3: running
+[2026-06-04T19:47:11Z]   outreach batch 3: done
+[2026-06-04T19:47:11Z]   outreach batch 4: running
+[2026-06-04T19:47:11Z]   outreach batch 4: done
+[2026-06-04T19:47:11Z]   imap_bridge: ran 42m ago, skip
+[2026-06-04T19:47:11Z]   newsletter-send: already sent today, skip
+[2026-06-04T19:47:11Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T19:47:11Z] === catchup end ===
+[2026-06-04T20:02:14Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=962 ===
+[2026-06-04T20:02:14Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T20:02:14Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T20:02:14Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T20:02:14Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T20:02:14Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T20:02:14Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T20:02:14Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T20:02:14Z]   drip: already ran today, skip
+[2026-06-04T20:02:15Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T20:02:15Z]   outreach batch 1: already ran today, skip
+[2026-06-04T20:02:15Z]   outreach batch 2: already ran today, skip
+[2026-06-04T20:02:15Z]   outreach batch 3: running
+[2026-06-04T20:02:15Z]   outreach batch 3: done
+[2026-06-04T20:02:15Z]   outreach batch 4: running
+[2026-06-04T20:02:15Z]   outreach batch 4: done
+[2026-06-04T20:02:15Z]   imap_bridge: ran 57m ago, skip
+[2026-06-04T20:02:15Z]   newsletter-send: already sent today, skip
+[2026-06-04T20:02:15Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T20:02:15Z] === catchup end ===
+[2026-06-04T20:17:18Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=977 ===
+[2026-06-04T20:17:18Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T20:17:18Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T20:17:18Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T20:17:18Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T20:17:18Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T20:17:18Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T20:17:18Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T20:17:18Z]   drip: already ran today, skip
+[2026-06-04T20:17:18Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T20:17:18Z]   outreach batch 1: already ran today, skip
+[2026-06-04T20:17:18Z]   outreach batch 2: already ran today, skip
+[2026-06-04T20:17:18Z]   outreach batch 3: running
+[2026-06-04T20:17:18Z]   outreach batch 3: done
+[2026-06-04T20:17:18Z]   outreach batch 4: running
+[2026-06-04T20:17:19Z]   outreach batch 4: done
+[2026-06-04T20:17:19Z]   imap_bridge: ran 12m ago, skip
+[2026-06-04T20:17:19Z]   newsletter-send: already sent today, skip
+[2026-06-04T20:17:19Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T20:17:19Z] === catchup end ===
+[2026-06-04T20:32:22Z] === catchup start: today=2026-06-04 dow=4 dom=4 mins=992 ===
+[2026-06-04T20:32:22Z]   daily-research-brief: output exists (/Users/victoria/.openclaw/workspace/briefs/2026-06-04.md), skip
+[2026-06-04T20:32:22Z]   daily-content: output exists (/Users/victoria/.openclaw/workspace/content/2026-06-04/blog.md), skip
+[2026-06-04T20:32:22Z]   prospect-deep-intelligence: output exists (/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-04), skip
+[2026-06-04T20:32:22Z]   weekday-crm-outreach: output exists (/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-04), skip
+[2026-06-04T20:32:22Z]   response-handler: output exists (/Users/victoria/.openclaw/workspace/crm/responses/2026-06-04), skip
+[2026-06-04T20:32:22Z]   weekday-ops-review: output exists (/Users/victoria/.openclaw/workspace/ops-review/2026-06-04.md), skip
+[2026-06-04T20:32:22Z]   prospect_palm_beach: already ran today, skip
+[2026-06-04T20:32:22Z]   drip: already ran today, skip
+[2026-06-04T20:32:22Z]   enrich_before_upload: already ran today, skip
+[2026-06-04T20:32:22Z]   outreach batch 1: already ran today, skip
+[2026-06-04T20:32:22Z]   outreach batch 2: already ran today, skip
+[2026-06-04T20:32:22Z]   outreach batch 3: running
+[2026-06-04T20:32:22Z]   outreach batch 3: done
+[2026-06-04T20:32:22Z]   outreach batch 4: running
+[2026-06-04T20:32:22Z]   outreach batch 4: done
+[2026-06-04T20:32:22Z]   imap_bridge: ran 27m ago, skip
+[2026-06-04T20:32:22Z]   newsletter-send: already sent today, skip
+[2026-06-04T20:32:22Z]   build-website: site/briefs/2026-06-04.html exists, skip
+[2026-06-04T20:32:22Z] === catchup end ===
+[2026-06-05T16:52:09Z] === catchup start: today=2026-06-05 dow=5 dom=5 mins=772 ===
+[2026-06-05T16:52:09Z]   daily-research-brief: MISSING output=/Users/victoria/.openclaw/workspace/briefs/2026-06-05.md lastRun=0 status=- — triggering openclaw cron run 8a47ce9a-b505-4247-a0cb-84ac817f588c
+GatewayClientRequestError: invalid cron.run params: unknown cron job id: 8a47ce9a-b505-4247-a0cb-84ac817f588c
+[2026-06-05T16:52:10Z]   daily-research-brief: ERROR submitting run
+[2026-06-05T16:52:10Z]   prospect-deep-intelligence: MISSING output=/Users/victoria/.openclaw/workspace/crm/intelligence/2026-06-05 lastRun=0 status=- — triggering openclaw cron run 9bc7dbc3-9138-4819-a495-3606eb3129c5
+GatewayClientRequestError: invalid cron.run params: unknown cron job id: 9bc7dbc3-9138-4819-a495-3606eb3129c5
+[2026-06-05T16:52:12Z]   prospect-deep-intelligence: ERROR submitting run
+[2026-06-05T16:52:12Z]   weekday-crm-outreach: MISSING output=/Users/victoria/.openclaw/workspace/crm/drafts/2026-06-05 lastRun=0 status=- — triggering openclaw cron run bd327112-f77e-4030-8d60-89c0374a01ed
+GatewayClientRequestError: invalid cron.run params: unknown cron job id: bd327112-f77e-4030-8d60-89c0374a01ed
+[2026-06-05T16:52:13Z]   weekday-crm-outreach: ERROR submitting run
+[2026-06-05T16:52:13Z]   response-handler: MISSING output=/Users/victoria/.openclaw/workspace/crm/responses/2026-06-05 lastRun=0 status=- — triggering openclaw cron run 3a2c2f9a-967a-457a-974d-f575143e695e
+GatewayClientRequestError: invalid cron.run params: unknown cron job id: 3a2c2f9a-967a-457a-974d-f575143e695e
+[2026-06-05T16:52:15Z]   response-handler: ERROR submitting run
+[2026-06-05T16:52:15Z]   weekday-ops-review: MISSING output=/Users/victoria/.openclaw/workspace/ops-review/2026-06-05.md lastRun=0 status=- — triggering openclaw cron run 89b2d286-f9bb-4f61-ac56-4cb5e9bddb48
+GatewayClientRequestError: invalid cron.run params: unknown cron job id: 89b2d286-f9bb-4f61-ac56-4cb5e9bddb48
+[2026-06-05T16:52:16Z]   weekday-ops-review: ERROR submitting run
+[2026-06-05T16:52:16Z]   prospect_palm_beach: running
+[2026-06-05T16:52:57Z]   prospect_palm_beach: done
+[2026-06-05T16:52:57Z]   drip: running
+[2026-06-05T16:53:04Z]   drip: done
+[2026-06-05T16:53:04Z]   enrich_before_upload: running
+[2026-06-05T18:57:15Z]   enrich_before_upload: ERROR (see email_enrichment.log)
+[2026-06-05T18:57:15Z]   outreach batch 1: running
+[2026-06-05T23:01:14Z]   outreach batch 1: done
+[2026-06-05T23:01:14Z]   outreach batch 2: running
+[2026-06-06T03:05:13Z]   outreach batch 2: ERROR (see outreach_send.log)
+[2026-06-06T03:05:13Z]   outreach batch 3: running

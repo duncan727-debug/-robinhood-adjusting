@@ -1232,3 +1232,447 @@ Contacts missing email: 12
 [2026-06-03 14:33]   Phone-only (no email found): 17
 [2026-06-03 14:33]   Recycled (retry tomorrow): 18
 [2026-06-03 14:33]   Skipped (duplicates): 0
+[2026-06-04 10:00] === enrich_before_upload start ===
+[2026-06-04 10:00]   RECYCLE (attempt 1): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL — no email found
+[2026-06-04 10:00]   RECYCLE (attempt 1): Wright's Impact Window & Door (East Coast) — no email found
+[2026-06-04 10:00]   RECYCLE (attempt 1): Impact Windows and Doors by Project and Property — no email found
+[2026-06-04 10:01]   RECYCLE (attempt 1): Castle Impact Windows Doors & Shutters — no email found
+[2026-06-04 10:01]   RECYCLE (attempt 1): Boca Impact Window and Door — no email found
+[2026-06-04 10:01]   RECYCLE (attempt 1): Max Guard Hurricane Windows & Doors — no email found
+[2026-06-04 10:01]   ✓ NEW → HubSpot (scraped): Monster Impact Windows and Doors | contact@monsterimpactwindows.com | deal=328535584485
+[2026-06-04 10:02]   RECYCLE (attempt 1): Statewide Windows & Doors — no email found
+[2026-06-04 10:02]   ✓ NEW → HubSpot (scraped): K Line Impact Windows & Doors | office@klineimpact.com | deal=328572647102
+[2026-06-04 10:02]   RECYCLE (attempt 1): Window and Door Replacement Company — no email found
+[2026-06-04 10:02]   ✓ NEW → HubSpot (scraped): STS Impact Windows & Doors. | contact@stswindows.com | deal=328567245560
+[2026-06-04 10:02]   RECYCLE (attempt 1): The Window Guys of Florida — no email found
+[2026-06-04 10:03]   ✓ NEW → HubSpot (scraped): Newman Windows & Doors | info@newman-windows.com | deal=328567246532
+[2026-06-04 10:03]   RECYCLE (attempt 1): Florida Impact Windows & Doors — no email found
+[2026-06-04 10:03]   ✓ NEW → HubSpot (scraped): Impact Windows Center | contact@impactwindowscenter.com | deal=328533786334
+[2026-06-04 10:03]   RECYCLE (attempt 1): MCi Impact Windows & Doors — no email found
+[2026-06-04 10:04]   RECYCLE (attempt 1): Roofing Systems of America, Inc. - Palm Beach — no email found
+[2026-06-04 10:04]   ✓ NEW → HubSpot (scraped): All Pro Builders & Roofing | sales@allprobuildersroofing.com | deal=328604719823
+[2026-06-04 10:04]   RECYCLE (attempt 1): Elite Property Inspection & Management — no email found
+[2026-06-04 10:04]   ✓ NEW → HubSpot (scraped): Billings Home Inspections | contact@billingshomeinspections.com | deal=328573173473
+[2026-06-04 10:04]   RECYCLE (attempt 1): Home Inspection Solutions - Palm Beach County Property Inspection — no email found
+[2026-06-04 10:05]   ✓ NEW → HubSpot (scraped): Guardian Angel Inspections Inc. | office@guardianangelinspections.com | deal=328580374262
+[2026-06-04 10:05]   RECYCLE (attempt 1): Palm Beach Inspections, LLC — no email found
+[2026-06-04 10:05]   RECYCLE (attempt 1): Florida State Inspectors — no email found
+[2026-06-04 10:05]   ✓ NEW → HubSpot (scraped): Multi Point Home Inspections | stuart@multipointhomeinspections.com | deal=328576772817
+[2026-06-04 10:06]   PHONE-ONLY (recycled, still no email): A Plus Mold Remediation Inc.
+[2026-06-04 10:06]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - West Palm Beach
+[2026-06-04 10:06]   PHONE-ONLY (recycled, still no email): Mold Only, Inc
+[2026-06-04 10:07]   PHONE-ONLY (recycled, still no email): Ambar Mold
+[2026-06-04 10:08]   PHONE-ONLY (recycled, still no email): A&A Mold Busters
+[2026-06-04 10:08]   PHONE-ONLY (recycled, still no email): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results
+[2026-06-04 10:08]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - Boca Raton
+[2026-06-04 10:09]   PHONE-ONLY (recycled, still no email): Affordable Mold Testing and Assessments
+[2026-06-04 10:09]   PHONE-ONLY (recycled, still no email): ITS Mold - (Inspection, Testing, Solutions)
+[2026-06-04 10:09]   PHONE-ONLY (recycled, still no email): RCI Home and Mold Inspections, Inc.
+[2026-06-04 10:10]   PHONE-ONLY (recycled, still no email): Mold Response Team
+[2026-06-04 10:10]   PHONE-ONLY (recycled, still no email): SporeSure Mold Inspections
+[2026-06-04 10:10]   PHONE-ONLY (recycled, still no email): Eagle Eye Mold Inspection of South Florida
+[2026-06-04 10:11]   PHONE-ONLY (recycled, still no email): COREQ Mold Analysis
+[2026-06-04 10:11]   PHONE-ONLY (recycled, still no email): Wonderful
+[2026-06-04 10:11]   PHONE-ONLY (recycled, still no email): Noah Restoration
+[2026-06-04 10:12]   PHONE-ONLY (recycled, still no email): Patriot Disaster Specialist
+[2026-06-04 10:12]   PHONE-ONLY (recycled, still no email): Guardian Storm Protection
+[2026-06-04 10:14] === enrich_before_upload start ===
+[2026-06-04 10:15]   RECYCLE (attempt 1): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL — no email found
+[2026-06-04 10:15]   RECYCLE (attempt 1): Wright's Impact Window & Door (East Coast) — no email found
+[2026-06-04 10:15]   RECYCLE (attempt 1): Impact Windows and Doors by Project and Property — no email found
+[2026-06-04 10:16]   RECYCLE (attempt 1): Castle Impact Windows Doors & Shutters — no email found
+[2026-06-04 10:16]   RECYCLE (attempt 1): Boca Impact Window and Door — no email found
+[2026-06-04 10:16]   RECYCLE (attempt 1): Max Guard Hurricane Windows & Doors — no email found
+[2026-06-04 10:16]   SKIP (already in HubSpot): Monster Impact Windows and Doors
+[2026-06-04 10:16]   Phone-only call list: wrote 18 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-04.csv
+[2026-06-04 10:16] === Done ===
+[2026-06-04 10:16]   Uploaded to HubSpot (NEW, verified): 9  (of which 0 via FB/IG fallback)
+[2026-06-04 10:16]   Rejected by verify gate: 0
+[2026-06-04 10:16]   Phone-only (no email found): 18
+[2026-06-04 10:16]   Recycled (retry tomorrow): 16
+[2026-06-04 10:16]   Skipped (duplicates): 0
+[2026-06-04 10:00] === enrich_before_upload start ===
+[2026-06-04 10:00]   RECYCLE (attempt 1): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL — no email found
+[2026-06-04 10:00]   RECYCLE (attempt 1): Wright's Impact Window & Door (East Coast) — no email found
+[2026-06-04 10:00]   RECYCLE (attempt 1): Impact Windows and Doors by Project and Property — no email found
+[2026-06-04 10:01]   RECYCLE (attempt 1): Castle Impact Windows Doors & Shutters — no email found
+[2026-06-04 10:01]   RECYCLE (attempt 1): Boca Impact Window and Door — no email found
+[2026-06-04 10:01]   RECYCLE (attempt 1): Max Guard Hurricane Windows & Doors — no email found
+[2026-06-04 10:01]   ✓ NEW → HubSpot (scraped): Monster Impact Windows and Doors | contact@monsterimpactwindows.com | deal=328535584485
+[2026-06-04 10:02]   RECYCLE (attempt 1): Statewide Windows & Doors — no email found
+[2026-06-04 10:02]   ✓ NEW → HubSpot (scraped): K Line Impact Windows & Doors | office@klineimpact.com | deal=328572647102
+[2026-06-04 10:02]   RECYCLE (attempt 1): Window and Door Replacement Company — no email found
+[2026-06-04 10:02]   ✓ NEW → HubSpot (scraped): STS Impact Windows & Doors. | contact@stswindows.com | deal=328567245560
+[2026-06-04 10:02]   RECYCLE (attempt 1): The Window Guys of Florida — no email found
+[2026-06-04 10:03]   ✓ NEW → HubSpot (scraped): Newman Windows & Doors | info@newman-windows.com | deal=328567246532
+[2026-06-04 10:03]   RECYCLE (attempt 1): Florida Impact Windows & Doors — no email found
+[2026-06-04 10:03]   ✓ NEW → HubSpot (scraped): Impact Windows Center | contact@impactwindowscenter.com | deal=328533786334
+[2026-06-04 10:03]   RECYCLE (attempt 1): MCi Impact Windows & Doors — no email found
+[2026-06-04 10:04]   RECYCLE (attempt 1): Roofing Systems of America, Inc. - Palm Beach — no email found
+[2026-06-04 10:04]   ✓ NEW → HubSpot (scraped): All Pro Builders & Roofing | sales@allprobuildersroofing.com | deal=328604719823
+[2026-06-04 10:04]   RECYCLE (attempt 1): Elite Property Inspection & Management — no email found
+[2026-06-04 10:04]   ✓ NEW → HubSpot (scraped): Billings Home Inspections | contact@billingshomeinspections.com | deal=328573173473
+[2026-06-04 10:04]   RECYCLE (attempt 1): Home Inspection Solutions - Palm Beach County Property Inspection — no email found
+[2026-06-04 10:05]   ✓ NEW → HubSpot (scraped): Guardian Angel Inspections Inc. | office@guardianangelinspections.com | deal=328580374262
+[2026-06-04 10:05]   RECYCLE (attempt 1): Palm Beach Inspections, LLC — no email found
+[2026-06-04 10:05]   RECYCLE (attempt 1): Florida State Inspectors — no email found
+[2026-06-04 10:05]   ✓ NEW → HubSpot (scraped): Multi Point Home Inspections | stuart@multipointhomeinspections.com | deal=328576772817
+[2026-06-04 10:06]   PHONE-ONLY (recycled, still no email): A Plus Mold Remediation Inc.
+[2026-06-04 10:06]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - West Palm Beach
+[2026-06-04 10:06]   PHONE-ONLY (recycled, still no email): Mold Only, Inc
+[2026-06-04 10:07]   PHONE-ONLY (recycled, still no email): Ambar Mold
+[2026-06-04 10:08]   PHONE-ONLY (recycled, still no email): A&A Mold Busters
+[2026-06-04 10:08]   PHONE-ONLY (recycled, still no email): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results
+[2026-06-04 10:08]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - Boca Raton
+[2026-06-04 10:09]   PHONE-ONLY (recycled, still no email): Affordable Mold Testing and Assessments
+[2026-06-04 10:09]   PHONE-ONLY (recycled, still no email): ITS Mold - (Inspection, Testing, Solutions)
+[2026-06-04 10:09]   PHONE-ONLY (recycled, still no email): RCI Home and Mold Inspections, Inc.
+[2026-06-04 10:10]   PHONE-ONLY (recycled, still no email): Mold Response Team
+[2026-06-04 10:10]   PHONE-ONLY (recycled, still no email): SporeSure Mold Inspections
+[2026-06-04 10:10]   PHONE-ONLY (recycled, still no email): Eagle Eye Mold Inspection of South Florida
+[2026-06-04 10:11]   PHONE-ONLY (recycled, still no email): COREQ Mold Analysis
+[2026-06-04 10:11]   PHONE-ONLY (recycled, still no email): Wonderful
+[2026-06-04 10:11]   PHONE-ONLY (recycled, still no email): Noah Restoration
+[2026-06-04 10:12]   PHONE-ONLY (recycled, still no email): Patriot Disaster Specialist
+[2026-06-04 10:12]   PHONE-ONLY (recycled, still no email): Guardian Storm Protection
+[2026-06-04 10:16]   Phone-only call list: wrote 18 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-04.csv
+[2026-06-04 10:16] === Done ===
+[2026-06-04 10:16]   Uploaded to HubSpot (NEW, verified): 9  (of which 0 via FB/IG fallback)
+[2026-06-04 10:16]   Rejected by verify gate: 0
+[2026-06-04 10:16]   Phone-only (no email found): 18
+[2026-06-04 10:16]   Recycled (retry tomorrow): 16
+[2026-06-04 10:16]   Skipped (duplicates): 0
+[2026-06-04 10:17]   RECYCLE (attempt 1): Statewide Windows & Doors — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): K Line Impact Windows & Doors
+[2026-06-04 10:17]   RECYCLE (attempt 1): Window and Door Replacement Company — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): STS Impact Windows & Doors.
+[2026-06-04 10:17]   RECYCLE (attempt 1): The Window Guys of Florida — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): Newman Windows & Doors
+[2026-06-04 10:17]   RECYCLE (attempt 1): Florida Impact Windows & Doors — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): Impact Windows Center
+[2026-06-04 10:18]   RECYCLE (attempt 1): MCi Impact Windows & Doors — no email found
+[2026-06-04 10:18]   RECYCLE (attempt 1): Roofing Systems of America, Inc. - Palm Beach — no email found
+[2026-06-04 10:18]   SKIP (already in HubSpot): All Pro Builders & Roofing
+[2026-06-04 10:18]   RECYCLE (attempt 1): Elite Property Inspection & Management — no email found
+[2026-06-04 10:18]   SKIP (already in HubSpot): Billings Home Inspections
+[2026-06-04 10:19]   RECYCLE (attempt 1): Home Inspection Solutions - Palm Beach County Property Inspection — no email found
+[2026-06-04 10:19]   SKIP (already in HubSpot): Guardian Angel Inspections Inc.
+[2026-06-04 10:19]   RECYCLE (attempt 1): Palm Beach Inspections, LLC — no email found
+[2026-06-04 10:19]   RECYCLE (attempt 1): Florida State Inspectors — no email found
+[2026-06-04 10:19]   SKIP (already in HubSpot): Multi Point Home Inspections
+[2026-06-04 10:20]   PHONE-ONLY (recycled, still no email): A Plus Mold Remediation Inc.
+[2026-06-04 10:20]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - West Palm Beach
+[2026-06-04 10:20]   PHONE-ONLY (recycled, still no email): Mold Only, Inc
+[2026-06-04 10:21]   PHONE-ONLY (recycled, still no email): Ambar Mold
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): A&A Mold Busters
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - Boca Raton
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): Affordable Mold Testing and Assessments
+[2026-06-04 10:23]   PHONE-ONLY (recycled, still no email): ITS Mold - (Inspection, Testing, Solutions)
+[2026-06-04 10:23]   PHONE-ONLY (recycled, still no email): RCI Home and Mold Inspections, Inc.
+[2026-06-04 10:23]   PHONE-ONLY (recycled, still no email): Mold Response Team
+[2026-06-04 10:24]   PHONE-ONLY (recycled, still no email): SporeSure Mold Inspections
+[2026-06-04 10:24]   PHONE-ONLY (recycled, still no email): Eagle Eye Mold Inspection of South Florida
+[2026-06-04 10:24]   PHONE-ONLY (recycled, still no email): COREQ Mold Analysis
+[2026-06-04 10:25]   PHONE-ONLY (recycled, still no email): Wonderful
+[2026-06-04 10:25]   PHONE-ONLY (recycled, still no email): Noah Restoration
+[2026-06-04 10:25]   PHONE-ONLY (recycled, still no email): Patriot Disaster Specialist
+[2026-06-04 10:26]   PHONE-ONLY (recycled, still no email): Guardian Storm Protection
+[2026-06-04 10:30]   Phone-only call list: wrote 18 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-04.csv
+[2026-06-04 10:30] === Done ===
+[2026-06-04 10:30]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-04 10:30]   Rejected by verify gate: 0
+[2026-06-04 10:30]   Phone-only (no email found): 18
+[2026-06-04 10:30]   Recycled (retry tomorrow): 16
+[2026-06-04 10:30]   Skipped (duplicates): 9
+[2026-06-04 10:14] === enrich_before_upload start ===
+[2026-06-04 10:15]   RECYCLE (attempt 1): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL — no email found
+[2026-06-04 10:15]   RECYCLE (attempt 1): Wright's Impact Window & Door (East Coast) — no email found
+[2026-06-04 10:15]   RECYCLE (attempt 1): Impact Windows and Doors by Project and Property — no email found
+[2026-06-04 10:16]   RECYCLE (attempt 1): Castle Impact Windows Doors & Shutters — no email found
+[2026-06-04 10:16]   RECYCLE (attempt 1): Boca Impact Window and Door — no email found
+[2026-06-04 10:16]   RECYCLE (attempt 1): Max Guard Hurricane Windows & Doors — no email found
+[2026-06-04 10:16]   SKIP (already in HubSpot): Monster Impact Windows and Doors
+[2026-06-04 10:17]   RECYCLE (attempt 1): Statewide Windows & Doors — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): K Line Impact Windows & Doors
+[2026-06-04 10:17]   RECYCLE (attempt 1): Window and Door Replacement Company — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): STS Impact Windows & Doors.
+[2026-06-04 10:17]   RECYCLE (attempt 1): The Window Guys of Florida — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): Newman Windows & Doors
+[2026-06-04 10:17]   RECYCLE (attempt 1): Florida Impact Windows & Doors — no email found
+[2026-06-04 10:17]   SKIP (already in HubSpot): Impact Windows Center
+[2026-06-04 10:18]   RECYCLE (attempt 1): MCi Impact Windows & Doors — no email found
+[2026-06-04 10:18]   RECYCLE (attempt 1): Roofing Systems of America, Inc. - Palm Beach — no email found
+[2026-06-04 10:18]   SKIP (already in HubSpot): All Pro Builders & Roofing
+[2026-06-04 10:18]   RECYCLE (attempt 1): Elite Property Inspection & Management — no email found
+[2026-06-04 10:18]   SKIP (already in HubSpot): Billings Home Inspections
+[2026-06-04 10:19]   RECYCLE (attempt 1): Home Inspection Solutions - Palm Beach County Property Inspection — no email found
+[2026-06-04 10:19]   SKIP (already in HubSpot): Guardian Angel Inspections Inc.
+[2026-06-04 10:19]   RECYCLE (attempt 1): Palm Beach Inspections, LLC — no email found
+[2026-06-04 10:19]   RECYCLE (attempt 1): Florida State Inspectors — no email found
+[2026-06-04 10:19]   SKIP (already in HubSpot): Multi Point Home Inspections
+[2026-06-04 10:20]   PHONE-ONLY (recycled, still no email): A Plus Mold Remediation Inc.
+[2026-06-04 10:20]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - West Palm Beach
+[2026-06-04 10:20]   PHONE-ONLY (recycled, still no email): Mold Only, Inc
+[2026-06-04 10:21]   PHONE-ONLY (recycled, still no email): Ambar Mold
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): A&A Mold Busters
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): 5 Star Mold Inspection & Home Inspection of S. Florida 25 yrs exp ⭐⭐⭐⭐⭐ FREE Airborne Allergy Test incl. Next Day Lab Results
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): Fast Mold Testing - Boca Raton
+[2026-06-04 10:22]   PHONE-ONLY (recycled, still no email): Affordable Mold Testing and Assessments
+[2026-06-04 10:23]   PHONE-ONLY (recycled, still no email): ITS Mold - (Inspection, Testing, Solutions)
+[2026-06-04 10:23]   PHONE-ONLY (recycled, still no email): RCI Home and Mold Inspections, Inc.
+[2026-06-04 10:23]   PHONE-ONLY (recycled, still no email): Mold Response Team
+[2026-06-04 10:24]   PHONE-ONLY (recycled, still no email): SporeSure Mold Inspections
+[2026-06-04 10:24]   PHONE-ONLY (recycled, still no email): Eagle Eye Mold Inspection of South Florida
+[2026-06-04 10:24]   PHONE-ONLY (recycled, still no email): COREQ Mold Analysis
+[2026-06-04 10:25]   PHONE-ONLY (recycled, still no email): Wonderful
+[2026-06-04 10:25]   PHONE-ONLY (recycled, still no email): Noah Restoration
+[2026-06-04 10:25]   PHONE-ONLY (recycled, still no email): Patriot Disaster Specialist
+[2026-06-04 10:26]   PHONE-ONLY (recycled, still no email): Guardian Storm Protection
+[2026-06-04 10:30]   Phone-only call list: wrote 18 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-04.csv
+[2026-06-04 10:30] === Done ===
+[2026-06-04 10:30]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-04 10:30]   Rejected by verify gate: 0
+[2026-06-04 10:30]   Phone-only (no email found): 18
+[2026-06-04 10:30]   Recycled (retry tomorrow): 16
+[2026-06-04 10:30]   Skipped (duplicates): 9
+[2026-06-05 12:53] === enrich_before_upload start ===
+[2026-06-05 12:53]   RECYCLE (attempt 1): Universal Engineering Inc — no email found
+[2026-06-05 12:53]   ✓ NEW → HubSpot (scraped): United Professional Engineering | info@upefl.com | deal=328551731923
+[2026-06-05 12:53]   RECYCLE (attempt 1): Specialty Engineering Consultants — no email found
+[2026-06-05 12:53]   RECYCLE (attempt 1): WGI — no email found
+[2026-06-05 12:53]   RECYCLE (attempt 1): DKK Consulting Incorporated — no email found
+[2026-06-05 12:54]   RECYCLE (attempt 1): Simmons & White, Inc. — no email found
+[2026-06-05 12:54]   ✓ NEW → HubSpot (scraped): Structural Systems, Inc | info@structuralsi.com | deal=328560665276
+[2026-06-05 12:54]   RECYCLE (attempt 1): Kimley-Horn — no email found
+[2026-06-05 12:54]   ✓ NEW → HubSpot (scraped): Century Public Adjusters | office@centurypublicadjusters.com | deal=328581169893
+[2026-06-05 12:54]   ✓ NEW → HubSpot (scraped): Claim Concepts Public Adjusters | info@claimconcepts.com | deal=328705674950
+[2026-06-05 12:54]   RECYCLE (attempt 1): Assurance Claim Services, Inc. - Public Adjusters — no email found
+[2026-06-05 12:55]   RECYCLE (attempt 1): Dash Public Adjusters — no email found
+[2026-06-05 12:55]   RECYCLE (attempt 1): Florida's Best Public Adjusters — no email found
+[2026-06-05 12:55]   RECYCLE (attempt 1): Legacy Contracting Solutions Inc. — no email found
+[2026-06-05 12:55]   REJECT (verify failed: mx_fail): Palm Beach Plumbing Services | brooklyn@davecomerplumbingsvs.com
+[2026-06-05 12:56]   RECYCLE (attempt 1): Elite All Seasons Roofing — no email found
+[2026-06-05 12:56]   RECYCLE (attempt 1): Restoration Rebuild Solutions — no email found
+[2026-06-05 12:53] === enrich_before_upload start ===
+[2026-06-05 12:53]   RECYCLE (attempt 1): Universal Engineering Inc — no email found
+[2026-06-05 12:53]   ✓ NEW → HubSpot (scraped): United Professional Engineering | info@upefl.com | deal=328551731923
+[2026-06-05 12:53]   RECYCLE (attempt 1): Specialty Engineering Consultants — no email found
+[2026-06-05 12:53]   RECYCLE (attempt 1): WGI — no email found
+[2026-06-05 12:53]   RECYCLE (attempt 1): DKK Consulting Incorporated — no email found
+[2026-06-05 12:54]   RECYCLE (attempt 1): Simmons & White, Inc. — no email found
+[2026-06-05 12:54]   ✓ NEW → HubSpot (scraped): Structural Systems, Inc | info@structuralsi.com | deal=328560665276
+[2026-06-05 12:54]   RECYCLE (attempt 1): Kimley-Horn — no email found
+[2026-06-05 12:54]   ✓ NEW → HubSpot (scraped): Century Public Adjusters | office@centurypublicadjusters.com | deal=328581169893
+[2026-06-05 12:54]   ✓ NEW → HubSpot (scraped): Claim Concepts Public Adjusters | info@claimconcepts.com | deal=328705674950
+[2026-06-05 12:54]   RECYCLE (attempt 1): Assurance Claim Services, Inc. - Public Adjusters — no email found
+[2026-06-05 12:55]   RECYCLE (attempt 1): Dash Public Adjusters — no email found
+[2026-06-05 12:55]   RECYCLE (attempt 1): Florida's Best Public Adjusters — no email found
+[2026-06-05 12:55]   RECYCLE (attempt 1): Legacy Contracting Solutions Inc. — no email found
+[2026-06-05 12:55]   REJECT (verify failed: mx_fail): Palm Beach Plumbing Services | brooklyn@davecomerplumbingsvs.com
+[2026-06-05 12:56]   RECYCLE (attempt 1): Elite All Seasons Roofing — no email found
+[2026-06-05 12:56]   RECYCLE (attempt 1): Restoration Rebuild Solutions — no email found
+Traceback (most recent call last):
+  File "/Users/victoria/.openclaw/workspace/scripts/enrich_before_upload.py", line 413, in <module>
+    main()
+  File "/Users/victoria/.openclaw/workspace/scripts/enrich_before_upload.py", line 323, in main
+    _upload(prospect, email, source)
+  File "/Users/victoria/.openclaw/workspace/scripts/enrich_before_upload.py", line 300, in _upload
+    contact_id = create_contact(prospect, company_id, email, "NEW")
+  File "/Users/victoria/.openclaw/workspace/scripts/enrich_before_upload.py", line 164, in create_contact
+    status, data = hs("POST", "/crm/v3/objects/contacts", {"properties": props})
+  File "/Users/victoria/.openclaw/workspace/scripts/enrich_before_upload.py", line 107, in hs
+    with urllib.request.urlopen(req, timeout=15) as r:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 517, in open
+    response = self._open(req, data)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1350, in do_open
+    r = h.getresponse()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+[2026-06-09 10:00] === enrich_before_upload start ===
+[2026-06-09 10:00]   RECYCLE (attempt 1): Universal Engineering Inc — no email found
+[2026-06-09 10:00]   SKIP (already in HubSpot): United Professional Engineering
+[2026-06-09 10:00]   RECYCLE (attempt 1): Specialty Engineering Consultants — no email found
+[2026-06-09 10:00]   RECYCLE (attempt 1): WGI — no email found
+[2026-06-09 10:00]   RECYCLE (attempt 1): DKK Consulting Incorporated — no email found
+[2026-06-09 10:01]   RECYCLE (attempt 1): Simmons & White, Inc. — no email found
+[2026-06-09 10:01]   SKIP (already in HubSpot): Structural Systems, Inc
+[2026-06-09 10:01]   RECYCLE (attempt 1): Kimley-Horn — no email found
+[2026-06-09 10:01]   SKIP (already in HubSpot): Century Public Adjusters
+[2026-06-09 10:01]   SKIP (already in HubSpot): Claim Concepts Public Adjusters
+[2026-06-09 10:01]   RECYCLE (attempt 1): Assurance Claim Services, Inc. - Public Adjusters — no email found
+[2026-06-09 10:02]   RECYCLE (attempt 1): Dash Public Adjusters — no email found
+[2026-06-09 10:02]   RECYCLE (attempt 1): Florida's Best Public Adjusters — no email found
+[2026-06-09 10:02]   RECYCLE (attempt 1): Legacy Contracting Solutions Inc. — no email found
+[2026-06-09 10:02]   REJECT (verify failed: mx_fail): Palm Beach Plumbing Services | brooklyn@davecomerplumbingsvs.com
+[2026-06-09 10:03]   RECYCLE (attempt 1): Elite All Seasons Roofing — no email found
+[2026-06-09 10:03]   RECYCLE (attempt 1): Restoration Rebuild Solutions — no email found
+[2026-06-09 10:03]   SKIP (already in HubSpot): Restoration Xperts
+[2026-06-09 10:04]   RECYCLE (attempt 1): C.R. Insurance Agency — no email found
+[2026-06-09 10:04]   RECYCLE (attempt 1): Blue Sky Insurance Inc — no email found
+[2026-06-09 10:04]   RECYCLE (attempt 1): The Baldwin Group (formerly Foundation Insurance of Florida) — no email found
+[2026-06-09 10:05]   RECYCLE (attempt 1): Brightway Insurance, Boca North — no email found
+[2026-06-09 10:05]   RECYCLE (attempt 1): Behar Insurance — no email found
+[2026-06-09 10:06]   RECYCLE (attempt 1): Universal Insurance & Associates — no email found
+[2026-06-09 10:06]   RECYCLE (attempt 1): Magen Insurance Inc. — no email found
+[2026-06-09 10:06]   PHONE-ONLY (recycled, still no email): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL
+[2026-06-09 10:06]   PHONE-ONLY (recycled, still no email): Wright's Impact Window & Door (East Coast)
+[2026-06-09 10:07]   PHONE-ONLY (recycled, still no email): Impact Windows and Doors by Project and Property
+[2026-06-09 10:07]   PHONE-ONLY (recycled, still no email): Castle Impact Windows Doors & Shutters
+[2026-06-09 10:07]   PHONE-ONLY (recycled, still no email): Boca Impact Window and Door
+[2026-06-09 10:08]   PHONE-ONLY (recycled, still no email): Max Guard Hurricane Windows & Doors
+[2026-06-09 10:08]   PHONE-ONLY (recycled, still no email): Statewide Windows & Doors
+[2026-06-09 10:09]   PHONE-ONLY (recycled, still no email): Window and Door Replacement Company
+[2026-06-09 10:09]   PHONE-ONLY (recycled, still no email): The Window Guys of Florida
+[2026-06-09 10:09]   PHONE-ONLY (recycled, still no email): Florida Impact Windows & Doors
+[2026-06-09 10:10]   PHONE-ONLY (recycled, still no email): MCi Impact Windows & Doors
+[2026-06-09 10:10]   PHONE-ONLY (recycled, still no email): Roofing Systems of America, Inc. - Palm Beach
+[2026-06-09 10:11]   PHONE-ONLY (recycled, still no email): Elite Property Inspection & Management
+[2026-06-09 10:11]   PHONE-ONLY (recycled, still no email): Home Inspection Solutions - Palm Beach County Property Inspection
+[2026-06-09 10:11]   PHONE-ONLY (recycled, still no email): Palm Beach Inspections, LLC
+[2026-06-09 10:12]   PHONE-ONLY (recycled, still no email): Florida State Inspectors
+[2026-06-09 10:18]   Rejected (failed verify): wrote 1 → /Users/victoria/.openclaw/workspace/crm/review_queue/rejected_2026-06-09.csv
+[2026-06-09 10:18]   Phone-only call list: wrote 16 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-09.csv
+[2026-06-09 10:18] === Done ===
+[2026-06-09 10:18]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-09 10:18]   Rejected by verify gate: 1
+[2026-06-09 10:18]   Phone-only (no email found): 16
+[2026-06-09 10:18]   Recycled (retry tomorrow): 19
+[2026-06-09 10:18]   Skipped (duplicates): 5
+[2026-06-09 10:00] === enrich_before_upload start ===
+[2026-06-09 10:00]   RECYCLE (attempt 1): Universal Engineering Inc — no email found
+[2026-06-09 10:00]   SKIP (already in HubSpot): United Professional Engineering
+[2026-06-09 10:00]   RECYCLE (attempt 1): Specialty Engineering Consultants — no email found
+[2026-06-09 10:00]   RECYCLE (attempt 1): WGI — no email found
+[2026-06-09 10:00]   RECYCLE (attempt 1): DKK Consulting Incorporated — no email found
+[2026-06-09 10:01]   RECYCLE (attempt 1): Simmons & White, Inc. — no email found
+[2026-06-09 10:01]   SKIP (already in HubSpot): Structural Systems, Inc
+[2026-06-09 10:01]   RECYCLE (attempt 1): Kimley-Horn — no email found
+[2026-06-09 10:01]   SKIP (already in HubSpot): Century Public Adjusters
+[2026-06-09 10:01]   SKIP (already in HubSpot): Claim Concepts Public Adjusters
+[2026-06-09 10:01]   RECYCLE (attempt 1): Assurance Claim Services, Inc. - Public Adjusters — no email found
+[2026-06-09 10:02]   RECYCLE (attempt 1): Dash Public Adjusters — no email found
+[2026-06-09 10:02]   RECYCLE (attempt 1): Florida's Best Public Adjusters — no email found
+[2026-06-09 10:02]   RECYCLE (attempt 1): Legacy Contracting Solutions Inc. — no email found
+[2026-06-09 10:02]   REJECT (verify failed: mx_fail): Palm Beach Plumbing Services | brooklyn@davecomerplumbingsvs.com
+[2026-06-09 10:03]   RECYCLE (attempt 1): Elite All Seasons Roofing — no email found
+[2026-06-09 10:03]   RECYCLE (attempt 1): Restoration Rebuild Solutions — no email found
+[2026-06-09 10:03]   SKIP (already in HubSpot): Restoration Xperts
+[2026-06-09 10:04]   RECYCLE (attempt 1): C.R. Insurance Agency — no email found
+[2026-06-09 10:04]   RECYCLE (attempt 1): Blue Sky Insurance Inc — no email found
+[2026-06-09 10:04]   RECYCLE (attempt 1): The Baldwin Group (formerly Foundation Insurance of Florida) — no email found
+[2026-06-09 10:05]   RECYCLE (attempt 1): Brightway Insurance, Boca North — no email found
+[2026-06-09 10:05]   RECYCLE (attempt 1): Behar Insurance — no email found
+[2026-06-09 10:06]   RECYCLE (attempt 1): Universal Insurance & Associates — no email found
+[2026-06-09 10:06]   RECYCLE (attempt 1): Magen Insurance Inc. — no email found
+[2026-06-09 10:06]   PHONE-ONLY (recycled, still no email): Windpact Windows And Doors | Impact Windows and Doors Palm Beach, FL
+[2026-06-09 10:06]   PHONE-ONLY (recycled, still no email): Wright's Impact Window & Door (East Coast)
+[2026-06-09 10:07]   PHONE-ONLY (recycled, still no email): Impact Windows and Doors by Project and Property
+[2026-06-09 10:07]   PHONE-ONLY (recycled, still no email): Castle Impact Windows Doors & Shutters
+[2026-06-09 10:07]   PHONE-ONLY (recycled, still no email): Boca Impact Window and Door
+[2026-06-09 10:08]   PHONE-ONLY (recycled, still no email): Max Guard Hurricane Windows & Doors
+[2026-06-09 10:08]   PHONE-ONLY (recycled, still no email): Statewide Windows & Doors
+[2026-06-09 10:09]   PHONE-ONLY (recycled, still no email): Window and Door Replacement Company
+[2026-06-09 10:09]   PHONE-ONLY (recycled, still no email): The Window Guys of Florida
+[2026-06-09 10:09]   PHONE-ONLY (recycled, still no email): Florida Impact Windows & Doors
+[2026-06-09 10:10]   PHONE-ONLY (recycled, still no email): MCi Impact Windows & Doors
+[2026-06-09 10:10]   PHONE-ONLY (recycled, still no email): Roofing Systems of America, Inc. - Palm Beach
+[2026-06-09 10:11]   PHONE-ONLY (recycled, still no email): Elite Property Inspection & Management
+[2026-06-09 10:11]   PHONE-ONLY (recycled, still no email): Home Inspection Solutions - Palm Beach County Property Inspection
+[2026-06-09 10:11]   PHONE-ONLY (recycled, still no email): Palm Beach Inspections, LLC
+[2026-06-09 10:12]   PHONE-ONLY (recycled, still no email): Florida State Inspectors
+[2026-06-09 10:18]   Rejected (failed verify): wrote 1 → /Users/victoria/.openclaw/workspace/crm/review_queue/rejected_2026-06-09.csv
+[2026-06-09 10:18]   Phone-only call list: wrote 16 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-09.csv
+[2026-06-09 10:18] === Done ===
+[2026-06-09 10:18]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-09 10:18]   Rejected by verify gate: 1
+[2026-06-09 10:18]   Phone-only (no email found): 16
+[2026-06-09 10:18]   Recycled (retry tomorrow): 19
+[2026-06-09 10:18]   Skipped (duplicates): 5
+[2026-06-10 10:00] === enrich_before_upload start ===
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): Universal Engineering Inc
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): Specialty Engineering Consultants
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): WGI
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): DKK Consulting Incorporated
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Simmons & White, Inc.
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Kimley-Horn
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Assurance Claim Services, Inc. - Public Adjusters
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Dash Public Adjusters
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Florida's Best Public Adjusters
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Legacy Contracting Solutions Inc.
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Elite All Seasons Roofing
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Restoration Rebuild Solutions
+[2026-06-10 10:03]   PHONE-ONLY (recycled, still no email): C.R. Insurance Agency
+[2026-06-10 10:03]   PHONE-ONLY (recycled, still no email): Blue Sky Insurance Inc
+[2026-06-10 10:03]   PHONE-ONLY (recycled, still no email): The Baldwin Group (formerly Foundation Insurance of Florida)
+[2026-06-10 10:04]   PHONE-ONLY (recycled, still no email): Brightway Insurance, Boca North
+[2026-06-10 10:04]   PHONE-ONLY (recycled, still no email): Behar Insurance
+[2026-06-10 10:04]   PHONE-ONLY (recycled, still no email): Universal Insurance & Associates
+[2026-06-10 10:05]   PHONE-ONLY (recycled, still no email): Magen Insurance Inc.
+[2026-06-10 10:05]   Phone-only call list: wrote 19 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-10.csv
+[2026-06-10 10:05] === Done ===
+[2026-06-10 10:05]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-10 10:05]   Rejected by verify gate: 0
+[2026-06-10 10:05]   Phone-only (no email found): 19
+[2026-06-10 10:05]   Recycled (retry tomorrow): 0
+[2026-06-10 10:05]   Skipped (duplicates): 0
+[2026-06-10 10:00] === enrich_before_upload start ===
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): Universal Engineering Inc
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): Specialty Engineering Consultants
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): WGI
+[2026-06-10 10:00]   PHONE-ONLY (recycled, still no email): DKK Consulting Incorporated
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Simmons & White, Inc.
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Kimley-Horn
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Assurance Claim Services, Inc. - Public Adjusters
+[2026-06-10 10:01]   PHONE-ONLY (recycled, still no email): Dash Public Adjusters
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Florida's Best Public Adjusters
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Legacy Contracting Solutions Inc.
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Elite All Seasons Roofing
+[2026-06-10 10:02]   PHONE-ONLY (recycled, still no email): Restoration Rebuild Solutions
+[2026-06-10 10:03]   PHONE-ONLY (recycled, still no email): C.R. Insurance Agency
+[2026-06-10 10:03]   PHONE-ONLY (recycled, still no email): Blue Sky Insurance Inc
+[2026-06-10 10:03]   PHONE-ONLY (recycled, still no email): The Baldwin Group (formerly Foundation Insurance of Florida)
+[2026-06-10 10:04]   PHONE-ONLY (recycled, still no email): Brightway Insurance, Boca North
+[2026-06-10 10:04]   PHONE-ONLY (recycled, still no email): Behar Insurance
+[2026-06-10 10:04]   PHONE-ONLY (recycled, still no email): Universal Insurance & Associates
+[2026-06-10 10:05]   PHONE-ONLY (recycled, still no email): Magen Insurance Inc.
+[2026-06-10 10:05]   Phone-only call list: wrote 19 → /Users/victoria/.openclaw/workspace/crm/review_queue/phone_only_2026-06-10.csv
+[2026-06-10 10:05] === Done ===
+[2026-06-10 10:05]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-10 10:05]   Rejected by verify gate: 0
+[2026-06-10 10:05]   Phone-only (no email found): 19
+[2026-06-10 10:05]   Recycled (retry tomorrow): 0
+[2026-06-10 10:05]   Skipped (duplicates): 0
+[2026-06-12 10:00] === enrich_before_upload start ===
+[2026-06-12 10:00] === Done ===
+[2026-06-12 10:00]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-12 10:00]   Rejected by verify gate: 0
+[2026-06-12 10:00]   Phone-only (no email found): 0
+[2026-06-12 10:00]   Recycled (retry tomorrow): 0
+[2026-06-12 10:00]   Skipped (duplicates): 0
+[2026-06-12 10:00] === enrich_before_upload start ===
+[2026-06-12 10:00] === Done ===
+[2026-06-12 10:00]   Uploaded to HubSpot (NEW, verified): 0  (of which 0 via FB/IG fallback)
+[2026-06-12 10:00]   Rejected by verify gate: 0
+[2026-06-12 10:00]   Phone-only (no email found): 0
+[2026-06-12 10:00]   Recycled (retry tomorrow): 0
+[2026-06-12 10:00]   Skipped (duplicates): 0

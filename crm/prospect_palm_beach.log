@@ -2065,3 +2065,160 @@
     QUEUED (25/25): Multi Point Home Inspections [Wellington] — (561) 445-2297
   Done: 25 added, 18 duplicate/existing, 0 large firms skipped, 1 quality-filtered, 0 errors
   Google Places API: 2026-06-04 | calls: 3 | $0.0510 today | $0.0510 MTD | 0.03% used | 99.97% remaining
+[2026-06-05 12:52:16] Palm Beach prospect run started
+  Searching: structural engineer Palm Beach County FL
+    → 20 results
+    QUEUED (1/25): Universal Engineering Inc [West Palm Beach] — (561) 204-5000
+    QUEUED (2/25): United Professional Engineering [Lake Worth Beach] — (561) 582-1733
+    QUEUED (3/25): Specialty Engineering Consultants [Boynton Beach] — (561) 752-5440
+    SKIP (only 2 reviews): Jezerinac Group, PLLC
+    SKIP (only 2 reviews): Quantum Engineering Associates, Inc.
+    SKIP (no website): m2e Consulting Engineers
+    SKIP (no website): Bliss & Nyitray, Inc.
+    SKIP (only 1 reviews): AB Plus Engineering & Restoration, LLC
+    QUEUED (4/25): WGI [West Palm Beach] — (561) 687-2220
+    QUEUED (5/25): DKK Consulting Incorporated [Royal Palm Beach] — (561) 612-7312
+    SKIP (only 1 reviews): Turquoise Engineering, LLC
+    SKIP (no website): Thomas J. Twomey, P.E., Engineers
+    SKIP (only 2 reviews): Alan Gerwig & Associates, Inc.
+    SKIP (only 2 reviews): Atlantic Construction Engineers, LLC.
+    SKIP (only 0 reviews): McNamara • Salvia, Structural Engineers
+    QUEUED (6/25): Simmons & White, Inc. [West Palm Beach] — (561) 478-7848
+    SKIP (only 2 reviews): CS3 Engineering
+    QUEUED (7/25): Structural Systems, Inc [Deerfield Beach] — (954) 781-5399
+    SKIP (no website): John M Averkamp Inc
+    QUEUED (8/25): Kimley-Horn [West Palm Beach] — (561) 845-0665
+  Searching: public adjuster Palm Beach County FL
+    → 5 results
+    QUEUED (9/25): Century Public Adjusters [West Palm Beach] — (888) 585-8010
+    QUEUED (10/25): Claim Concepts Public Adjusters [Palm Beach Gardens] — (561) 768-7880
+    QUEUED (11/25): Assurance Claim Services, Inc. - Public Adjusters [Wellington] — (561) 352-5960
+    QUEUED (12/25): Dash Public Adjusters [West Palm Beach] — (561) 402-9069
+    QUEUED (13/25): Florida's Best Public Adjusters [Boca Raton] — (561) 715-8986
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+    QUEUED (14/25): Legacy Contracting Solutions Inc. [West Palm Beach] — (561) 844-4910
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 20 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+    QUEUED (15/25): Palm Beach Plumbing Services [West Palm Beach] — (561) 934-4656
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (16/25): Elite All Seasons Roofing [Boca Raton] — (833) 205-2549
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+    SKIP (only 0 reviews): Roofing Company West Palm Beach - Roof Repair Squad
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    SKIP (no website): Air Cooling and Heating Boca Raton
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (17/25): Restoration Rebuild Solutions [Boca Raton] — (954) 471-5598
+    QUEUED (18/25): Restoration Xperts [Deerfield Beach] — (561) 285-0680
+  Searching: independent insurance agent Palm Beach County FL
+    → 20 results
+    QUEUED (19/25): C.R. Insurance Agency [West Palm Beach] — (561) 683-6333
+  Searching: insurance agency Boca Raton FL
+    → 20 results
+    QUEUED (20/25): Blue Sky Insurance Inc [Boca Raton] — no phone
+    QUEUED (21/25): The Baldwin Group (formerly Foundation Insurance of Florida) [Boca Raton] — (561) 994-9333
+    QUEUED (22/25): Brightway Insurance, Boca North [Boca Raton] — (561) 372-3100
+    QUEUED (23/25): Behar Insurance [Boca Raton] — (561) 510-1442
+    QUEUED (24/25): Universal Insurance & Associates [Boca Raton] — (954) 420-9051
+    QUEUED (25/25): Magen Insurance Inc. [Boca Raton] — (561) 221-6710
+  Done: 25 added, 292 duplicate/existing, 0 large firms skipped, 14 quality-filtered, 0 errors
+  Google Places API: 2026-06-05 | calls: 18 | $0.3060 today | $0.3060 MTD | 0.15% used | 99.85% remaining
+[2026-06-05 12:52:57] Run complete
+
+  Searching: structural engineer Palm Beach County FL
+    → 20 results
+    QUEUED (1/25): Universal Engineering Inc [West Palm Beach] — (561) 204-5000
+    QUEUED (2/25): United Professional Engineering [Lake Worth Beach] — (561) 582-1733
+    QUEUED (3/25): Specialty Engineering Consultants [Boynton Beach] — (561) 752-5440
+    SKIP (only 2 reviews): Jezerinac Group, PLLC
+    SKIP (only 2 reviews): Quantum Engineering Associates, Inc.
+    SKIP (no website): m2e Consulting Engineers
+    SKIP (no website): Bliss & Nyitray, Inc.
+    SKIP (only 1 reviews): AB Plus Engineering & Restoration, LLC
+    QUEUED (4/25): WGI [West Palm Beach] — (561) 687-2220
+    QUEUED (5/25): DKK Consulting Incorporated [Royal Palm Beach] — (561) 612-7312
+    SKIP (only 1 reviews): Turquoise Engineering, LLC
+    SKIP (no website): Thomas J. Twomey, P.E., Engineers
+    SKIP (only 2 reviews): Alan Gerwig & Associates, Inc.
+    SKIP (only 2 reviews): Atlantic Construction Engineers, LLC.
+    SKIP (only 0 reviews): McNamara • Salvia, Structural Engineers
+    QUEUED (6/25): Simmons & White, Inc. [West Palm Beach] — (561) 478-7848
+    SKIP (only 2 reviews): CS3 Engineering
+    QUEUED (7/25): Structural Systems, Inc [Deerfield Beach] — (954) 781-5399
+    SKIP (no website): John M Averkamp Inc
+    QUEUED (8/25): Kimley-Horn [West Palm Beach] — (561) 845-0665
+  Searching: public adjuster Palm Beach County FL
+    → 5 results
+    QUEUED (9/25): Century Public Adjusters [West Palm Beach] — (888) 585-8010
+    QUEUED (10/25): Claim Concepts Public Adjusters [Palm Beach Gardens] — (561) 768-7880
+    QUEUED (11/25): Assurance Claim Services, Inc. - Public Adjusters [Wellington] — (561) 352-5960
+    QUEUED (12/25): Dash Public Adjusters [West Palm Beach] — (561) 402-9069
+    QUEUED (13/25): Florida's Best Public Adjusters [Boca Raton] — (561) 715-8986
+  Searching: roofing contractor Palm Beach County FL
+    → 20 results
+    QUEUED (14/25): Legacy Contracting Solutions Inc. [West Palm Beach] — (561) 844-4910
+  Searching: restoration company Palm Beach County FL
+    → 20 results
+  Searching: HVAC company Palm Beach County FL
+    → 20 results
+  Searching: plumbing company Palm Beach County FL
+    → 19 results
+    QUEUED (15/25): Palm Beach Plumbing Services [West Palm Beach] — (561) 934-4656
+  Searching: property management Palm Beach County FL
+    → 20 results
+  Searching: real estate brokerage Palm Beach County FL
+    → 20 results
+  Searching: general contractor Palm Beach County FL
+    → 16 results
+  Searching: water damage restoration Palm Beach County FL
+    → 19 results
+  Searching: roofing company Boca Raton FL
+    → 20 results
+    QUEUED (16/25): Elite All Seasons Roofing [Boca Raton] — (833) 205-2549
+  Searching: roofing company Wellington FL
+    → 20 results
+  Searching: roofing company West Palm Beach FL
+    → 20 results
+    SKIP (only 0 reviews): Roofing Company West Palm Beach - Roof Repair Squad
+  Searching: HVAC service Boca Raton FL
+    → 20 results
+    SKIP (no website): Air Cooling and Heating Boca Raton
+  Searching: property manager West Palm Beach FL
+    → 19 results
+  Searching: insurance restoration contractor FL
+    → 20 results
+    QUEUED (17/25): Restoration Rebuild Solutions [Boca Raton] — (954) 471-5598
+    QUEUED (18/25): Restoration Xperts [Deerfield Beach] — (561) 285-0680
+  Searching: independent insurance agent Palm Beach County FL
+    → 20 results
+    QUEUED (19/25): C.R. Insurance Agency [West Palm Beach] — (561) 683-6333
+  Searching: insurance agency Boca Raton FL
+    → 20 results
+    QUEUED (20/25): Blue Sky Insurance Inc [Boca Raton] — no phone
+    QUEUED (21/25): The Baldwin Group (formerly Foundation Insurance of Florida) [Boca Raton] — (561) 994-9333
+    QUEUED (22/25): Brightway Insurance, Boca North [Boca Raton] — (561) 372-3100
+    QUEUED (23/25): Behar Insurance [Boca Raton] — (561) 510-1442
+    QUEUED (24/25): Universal Insurance & Associates [Boca Raton] — (954) 420-9051
+    QUEUED (25/25): Magen Insurance Inc. [Boca Raton] — (561) 221-6710
+  Done: 25 added, 292 duplicate/existing, 0 large firms skipped, 14 quality-filtered, 0 errors
+  Google Places API: 2026-06-05 | calls: 18 | $0.3060 today | $0.3060 MTD | 0.15% used | 99.85% remaining
