@@ -2222,3 +2222,128 @@
     QUEUED (25/25): Magen Insurance Inc. [Boca Raton] — (561) 221-6710
   Done: 25 added, 292 duplicate/existing, 0 large firms skipped, 14 quality-filtered, 0 errors
   Google Places API: 2026-06-05 | calls: 18 | $0.3060 today | $0.3060 MTD | 0.15% used | 99.85% remaining
+[2026-06-17 09:00:01] Palm Beach prospect run started
+  Searching: insurance agency Wellington FL
+    → 20 results
+    QUEUED (1/25): Barker Insurance Group [Wellington] — (561) 242-3603
+    QUEUED (2/25): Brightway Insurance, PBC [Wellington] — (561) 473-4700
+  Searching: insurance agency West Palm Beach FL
+    → 20 results
+    QUEUED (3/25): Worth Insurance [West Palm Beach] — (561) 867-0065
+    QUEUED (4/25): DanaNicko Insurance [West Palm Beach] — (561) 942-8111
+  Searching: condominium management Palm Beach County FL
+    → 20 results
+    SKIP (rating 1.7 < 3.5): Infinity Community Management Inc
+  Searching: HOA management Palm Beach County FL
+    → 20 results
+    SKIP (exists): JMA Community Management
+    QUEUED (5/25): Vesta Property Services - Wellington [Wellington] — (561) 823-8296
+    SKIP (rating 3.4 < 3.5): Ocean Breeze Community Management
+    SKIP (rating 2.3 < 3.5): RealManage Palm Beach Gardens
+    SKIP (rating 2.3 < 3.5): Pointe Management Group Inc
+    QUEUED (6/25): Terracina Homeowners' Association, Inc. [West Palm Beach] — (561) 890-4293
+  Searching: HOA management Boca Raton FL
+    → 20 results
+  Searching: real estate attorney Palm Beach County FL
+    → 20 results
+    QUEUED (7/25): Clyatt & Richardson, P.A. [West Palm Beach] — (561) 621-9657
+  Searching: real estate attorney Boca Raton FL
+    → 20 results
+    QUEUED (8/25): Reyer Law Group, P.A. [Boca Raton] — (561) 241-9003
+  Searching: construction attorney Palm Beach County FL
+    → 20 results
+    SKIP (only 0 reviews): AS-BUILT LAW, PLLC
+    SKIP (only 2 reviews): The Cunningham Law Firm, P.A.
+    QUEUED (9/25): Law Offices of Jonathan I. Jacobson PLLC [West Palm Beach] — (561) 290-2111
+    QUEUED (10/25): Pike & Lustig, LLP [West Palm Beach] — (561) 291-8298
+    QUEUED (11/25): Cousins Law Firm [West Palm Beach] — (866) 605-9909
+    QUEUED (12/25): Sovereign Law Group PLLC [West Palm Beach] — (561) 424-7041
+    QUEUED (13/25): The Law Office of James Hogan, PLLC [Palm Beach Gardens] — (561) 515-6044
+    QUEUED (14/25): Elstein Law Firm [Wellington] — (561) 422-9888
+  Searching: mold remediation Palm Beach County FL
+    → 14 results
+    QUEUED (15/25): Pure Maintenance Mold Removal [North Palm Beach] — (561) 678-3900
+  Searching: mold inspection Boca Raton FL
+    → 17 results
+    SKIP (only 2 reviews): MoldAct of Boca Raton
+    QUEUED (16/25): PuroClean of Deerfield Beach & Boca Raton [Deerfield Beach] — (954) 645-2999
+  Searching: storm damage contractor Palm Beach County FL
+    → 20 results
+    SKIP (only 1 reviews): Maxtec Storm Hurricane Roofing Group
+  Searching: hurricane shutters Palm Beach County FL
+    → 20 results
+    QUEUED (17/25): Hurricane Shutters Wholesale [West Palm Beach] — (561) 626-8708
+    QUEUED (18/25): Storm Depot Hurricane Shutters [West Palm Beach] — (561) 247-2282
+    QUEUED (19/25): Total Hurricane Shutters [Lake Worth Corridor] — (954) 857-5014
+    QUEUED (20/25): West Palm Shutters [West Palm Beach] — (561) 412-1331
+    SKIP (only 2 reviews): Supreme Hurricane Shutters Boynton Beach
+    QUEUED (21/25): First Alert Hurricane Shutters, Windows & Wholesale [Jupiter] — (561) 210-5944
+    QUEUED (22/25): Shutter Services & Screen Repairs, Inc. [Delray Beach] — (561) 274-4949
+    QUEUED (23/25): HurricaneShutterHardware [Greenacres] — (561) 255-1102
+    QUEUED (24/25): Big Al's Services - Hurricane Fabric [Lake Worth Beach] — (561) 506-0334
+    QUEUED (25/25): Shutter Up Windows & Doors, Inc [West Palm Beach] — (561) 588-2623
+  Done: 25 added, 189 duplicate/existing, 0 large firms skipped, 9 quality-filtered, 0 errors
+  Google Places API: 2026-06-17 | calls: 12 | $0.2040 today | $0.2040 MTD | 0.1% used | 99.9% remaining
+[2026-06-17 09:00:39] Run complete
+
+  Searching: insurance agency Wellington FL
+    → 20 results
+    QUEUED (1/25): Barker Insurance Group [Wellington] — (561) 242-3603
+    QUEUED (2/25): Brightway Insurance, PBC [Wellington] — (561) 473-4700
+  Searching: insurance agency West Palm Beach FL
+    → 20 results
+    QUEUED (3/25): Worth Insurance [West Palm Beach] — (561) 867-0065
+    QUEUED (4/25): DanaNicko Insurance [West Palm Beach] — (561) 942-8111
+  Searching: condominium management Palm Beach County FL
+    → 20 results
+    SKIP (rating 1.7 < 3.5): Infinity Community Management Inc
+  Searching: HOA management Palm Beach County FL
+    → 20 results
+    SKIP (exists): JMA Community Management
+    QUEUED (5/25): Vesta Property Services - Wellington [Wellington] — (561) 823-8296
+    SKIP (rating 3.4 < 3.5): Ocean Breeze Community Management
+    SKIP (rating 2.3 < 3.5): RealManage Palm Beach Gardens
+    SKIP (rating 2.3 < 3.5): Pointe Management Group Inc
+    QUEUED (6/25): Terracina Homeowners' Association, Inc. [West Palm Beach] — (561) 890-4293
+  Searching: HOA management Boca Raton FL
+    → 20 results
+  Searching: real estate attorney Palm Beach County FL
+    → 20 results
+    QUEUED (7/25): Clyatt & Richardson, P.A. [West Palm Beach] — (561) 621-9657
+  Searching: real estate attorney Boca Raton FL
+    → 20 results
+    QUEUED (8/25): Reyer Law Group, P.A. [Boca Raton] — (561) 241-9003
+  Searching: construction attorney Palm Beach County FL
+    → 20 results
+    SKIP (only 0 reviews): AS-BUILT LAW, PLLC
+    SKIP (only 2 reviews): The Cunningham Law Firm, P.A.
+    QUEUED (9/25): Law Offices of Jonathan I. Jacobson PLLC [West Palm Beach] — (561) 290-2111
+    QUEUED (10/25): Pike & Lustig, LLP [West Palm Beach] — (561) 291-8298
+    QUEUED (11/25): Cousins Law Firm [West Palm Beach] — (866) 605-9909
+    QUEUED (12/25): Sovereign Law Group PLLC [West Palm Beach] — (561) 424-7041
+    QUEUED (13/25): The Law Office of James Hogan, PLLC [Palm Beach Gardens] — (561) 515-6044
+    QUEUED (14/25): Elstein Law Firm [Wellington] — (561) 422-9888
+  Searching: mold remediation Palm Beach County FL
+    → 14 results
+    QUEUED (15/25): Pure Maintenance Mold Removal [North Palm Beach] — (561) 678-3900
+  Searching: mold inspection Boca Raton FL
+    → 17 results
+    SKIP (only 2 reviews): MoldAct of Boca Raton
+    QUEUED (16/25): PuroClean of Deerfield Beach & Boca Raton [Deerfield Beach] — (954) 645-2999
+  Searching: storm damage contractor Palm Beach County FL
+    → 20 results
+    SKIP (only 1 reviews): Maxtec Storm Hurricane Roofing Group
+  Searching: hurricane shutters Palm Beach County FL
+    → 20 results
+    QUEUED (17/25): Hurricane Shutters Wholesale [West Palm Beach] — (561) 626-8708
+    QUEUED (18/25): Storm Depot Hurricane Shutters [West Palm Beach] — (561) 247-2282
+    QUEUED (19/25): Total Hurricane Shutters [Lake Worth Corridor] — (954) 857-5014
+    QUEUED (20/25): West Palm Shutters [West Palm Beach] — (561) 412-1331
+    SKIP (only 2 reviews): Supreme Hurricane Shutters Boynton Beach
+    QUEUED (21/25): First Alert Hurricane Shutters, Windows & Wholesale [Jupiter] — (561) 210-5944
+    QUEUED (22/25): Shutter Services & Screen Repairs, Inc. [Delray Beach] — (561) 274-4949
+    QUEUED (23/25): HurricaneShutterHardware [Greenacres] — (561) 255-1102
+    QUEUED (24/25): Big Al's Services - Hurricane Fabric [Lake Worth Beach] — (561) 506-0334
+    QUEUED (25/25): Shutter Up Windows & Doors, Inc [West Palm Beach] — (561) 588-2623
+  Done: 25 added, 189 duplicate/existing, 0 large firms skipped, 9 quality-filtered, 0 errors
+  Google Places API: 2026-06-17 | calls: 12 | $0.2040 today | $0.2040 MTD | 0.1% used | 99.9% remaining

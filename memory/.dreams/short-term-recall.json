@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-11T07:23:01.259Z",
+  "updatedAt": "2026-06-21T07:21:52.347Z",
   "entries": {
     "memory:memory/2026-05-20-0818.md:3:4": {
       "key": "memory:memory/2026-05-20-0818.md:3:4",
@@ -3011,6 +3011,1584 @@
         "sure",
         "ahead",
         "restart"
+      ]
+    },
+    "memory:memory/2026-06-12.md:3:6": {
+      "key": "memory:memory/2026-06-12.md:3:6",
+      "path": "memory/2026-06-12.md",
+      "startLine": 3,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Daily brief run (10:08 AM, late cron): Produced + sent 2026-06-12 brief (master + 3 segments). Verify pass: 0 contradictions. Site rebuilt + pushed (commit 50db183).; **MAJOR CORRECTION:** SB 266 (PA contracts) AND HB 815 (roof-age reform) both DIED in committee 3/13/2026 per fls",
+      "recallCount": 0,
+      "dailyCount": 8,
+      "groundedCount": 0,
+      "totalScore": 4.96,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-19T07:58:28.243Z",
+      "queryHashes": [
+        "a7e4b69283bd"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19"
+      ],
+      "conceptTags": [
+        "roof-age",
+        "3/13/2026",
+        "brief",
+        "run",
+        "late",
+        "cron",
+        "produced",
+        "sent"
+      ],
+      "promotedAt": "2026-06-15T07:00:33.257Z"
+    },
+    "memory:memory/2026-06-12.md:7:7": {
+      "key": "memory:memory/2026-06-12.md:7:7",
+      "path": "memory/2026-06-12.md",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Daily brief run (10:08 AM, late cron): Subscriber counts at send: homeowner 1, service-provider 1, real-estate 0.",
+      "recallCount": 0,
+      "dailyCount": 8,
+      "groundedCount": 0,
+      "totalScore": 4.96,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-19T07:58:28.243Z",
+      "queryHashes": [
+        "a7e4b69283bd"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19"
+      ],
+      "conceptTags": [
+        "service-provider",
+        "real-estate",
+        "brief",
+        "run",
+        "late",
+        "cron",
+        "subscriber",
+        "counts"
+      ],
+      "promotedAt": "2026-06-16T07:09:27.901Z"
+    },
+    "memory:memory/2026-06-12.md:10:13": {
+      "key": "memory:memory/2026-06-12.md:10:13",
+      "path": "memory/2026-06-12.md",
+      "startLine": 10,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "daily-trends catch-up fire (10:17 AM) — intentionally skipped: The weekly trends cron (Saturday 9am ET) fired today (Friday) as a catch-up replay after the 6/12 cron restoration — it was making up the missed 6/06 run.; Skipped generation: schedule is correctly Saturday-only; tomo",
+      "recallCount": 0,
+      "dailyCount": 8,
+      "groundedCount": 0,
+      "totalScore": 4.96,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-19T07:58:28.243Z",
+      "queryHashes": [
+        "a7e4b69283bd"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19"
+      ],
+      "conceptTags": [
+        "daily-trends",
+        "catch-up",
+        "6/12",
+        "6/06",
+        "saturday-only",
+        "trends",
+        "catch",
+        "fire"
+      ],
+      "promotedAt": "2026-06-16T07:09:27.901Z"
+    },
+    "memory:memory/2026-06-12.md:16:19": {
+      "key": "memory:memory/2026-06-12.md:16:19",
+      "path": "memory/2026-06-12.md",
+      "startLine": 16,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "CRM outreach run (10:20am cron, first since outage restore): Found 28 overdue orgs; cross-check showed the 24 followup-1 drafts from 6/01 were NEVER sent (no send-log trace, 0 replies in IMAP bridge) — refreshed them at same stage instead of escalating; New hooks from today's bri",
+      "recallCount": 0,
+      "dailyCount": 8,
+      "groundedCount": 0,
+      "totalScore": 4.96,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-19T07:58:28.243Z",
+      "queryHashes": [
+        "a7e4b69283bd"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19"
+      ],
+      "conceptTags": [
+        "cross-check",
+        "followup-1",
+        "6/01",
+        "send-log",
+        "crm",
+        "outreach",
+        "run",
+        "20am"
+      ],
+      "promotedAt": "2026-06-15T07:00:33.257Z"
+    },
+    "memory:memory/2026-06-12.md:20:21": {
+      "key": "memory:memory/2026-06-12.md:20:21",
+      "path": "memory/2026-06-12.md",
+      "startLine": 20,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "CRM outreach run (10:20am cron, first since outage restore): State: +28 interactions.csv rows; organizations.csv dates advanced (backup .bak.2026-06-12-1025); Gap identified: drafts marked draft-pending-review have no stale-draft tripwire — recommend adding >3-day pending check t",
+      "recallCount": 0,
+      "dailyCount": 8,
+      "groundedCount": 0,
+      "totalScore": 4.96,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-19T07:58:28.243Z",
+      "queryHashes": [
+        "a7e4b69283bd"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19"
+      ],
+      "conceptTags": [
+        "backup",
+        "interactions.csv",
+        "organizations.csv",
+        "bak.2026-06-12-1025",
+        "draft-pending-review",
+        "stale-draft",
+        "3-day",
+        "crm"
+      ],
+      "promotedAt": "2026-06-15T07:00:33.257Z"
+    },
+    "memory:memory/2026-06-12.md:24:26": {
+      "key": "memory:memory/2026-06-12.md:24:26",
+      "path": "memory/2026-06-12.md",
+      "startLine": 24,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Ops review (11:35 AM, end-of-day cron fired late-morning post-restore): Wrote ops-review/2026-06-12.md — recovery-day verdict (🟡): outage triage clean, but iTHINK now 11 days stale, 6/01 batch root cause = stage_gmail_drafts.py silently skips generic info@ orgs; Top asks for Dun",
+      "recallCount": 0,
+      "dailyCount": 8,
+      "groundedCount": 0,
+      "totalScore": 4.96,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-19T07:58:28.243Z",
+      "queryHashes": [
+        "a7e4b69283bd"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-13",
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19"
+      ],
+      "conceptTags": [
+        "end-of-day",
+        "late-morning",
+        "post-restore",
+        "ops-review/2026-06-12.md",
+        "recovery-day",
+        "6/01",
+        "stage-gmail-drafts.py",
+        "ops"
+      ],
+      "promotedAt": "2026-06-16T07:09:27.901Z"
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: hey smith, are u up and running with fable 5?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-12T15:33:57.836Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-12"
+      ],
+      "conceptTags": [
+        "hey",
+        "smith",
+        "running",
+        "fable"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: im looking at our website now, it does not look like daily reports or weekly analysis have been posted since june 4th?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-12T15:33:57.836Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-12"
+      ],
+      "conceptTags": [
+        "looking",
+        "website",
+        "now",
+        "does",
+        "not",
+        "look",
+        "like",
+        "reports"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: sounds good, can u make sure update missing daily reports and weekly trends - plz get us up to date. No need to sent out emails to subscribers fro previous reports.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-12T15:33:57.836Z",
+      "lastRecalledAt": "2026-06-12T15:33:57.836Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-12"
+      ],
+      "conceptTags": [
+        "sounds",
+        "good",
+        "can",
+        "sure",
+        "update",
+        "missing",
+        "reports",
+        "weekly"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: hey, u back?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-13T07:49:06.884Z",
+      "lastRecalledAt": "2026-06-13T07:49:06.884Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-13"
+      ],
+      "conceptTags": [
+        "hey",
+        "back"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Yep — back. The usage limit hit around 11:30am and killed all four backfill writers mid-flight; it reset at 3pm. Checking what survived before relaunching.Writers relaunched (4 agents, post-reset). Now pushing today's content live.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-13T07:49:06.884Z",
+      "lastRecalledAt": "2026-06-13T07:49:06.884Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-13"
+      ],
+      "conceptTags": [
+        "mid-flight",
+        "relaunching.writers",
+        "post-reset",
+        "yep",
+        "back",
+        "usage",
+        "limit",
+        "hit"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: we are burning through usage - lets go back to the opus model we were previously using",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-13T07:49:06.884Z",
+      "lastRecalledAt": "2026-06-13T07:49:06.884Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-13"
+      ],
+      "conceptTags": [
+        "burning",
+        "usage",
+        "lets",
+        "back",
+        "opus",
+        "model",
+        "previously"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-12.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-12.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-12.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "User: are we back?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-13T07:49:06.884Z",
+      "lastRecalledAt": "2026-06-13T07:49:06.884Z",
+      "queryHashes": [
+        "3a37f9bd3c48"
+      ],
+      "recallDays": [
+        "2026-06-13"
+      ],
+      "conceptTags": [
+        "back"
+      ]
+    },
+    "memory:memory/2026-06-13.md:5:5": {
+      "key": "memory:memory/2026-06-13.md:5:5",
+      "path": "memory/2026-06-13.md",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: First morning after the 6/04–6/12 cron migration outage was restored. Dashboard reports 0% with most morning jobs flagged \"Not found\":",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "6/04",
+        "6/12",
+        "edt",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "first"
+      ],
+      "promotedAt": "2026-06-17T07:51:08.592Z"
+    },
+    "memory:memory/2026-06-13.md:6:9": {
+      "key": "memory:memory/2026-06-13.md:6:9",
+      "path": "memory/2026-06-13.md",
+      "startLine": 6,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: daily-research-brief (5am): cron fired ~2h ago, status=error → no briefs/2026-06-13*.md; daily-content (5:30am): still actively `running` at 8:07am — long-running; prospect-deep-intelligence (5am): error → no prospect data; response-ha",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "daily-research-brief",
+        "briefs/2026-06-13",
+        "daily-content",
+        "long-running",
+        "prospect-deep-intelligence",
+        "response-ha",
+        "edt",
+        "dashboard"
+      ],
+      "promotedAt": "2026-06-17T07:51:08.592Z"
+    },
+    "memory:memory/2026-06-13.md:10:13": {
+      "key": "memory:memory/2026-06-13.md:10:13",
+      "path": "memory/2026-06-13.md",
+      "startLine": 10,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: weekday-crm-outreach (6am, last fire 7:52am): error → no crm/drafts/2026-06-13/; weekday-ops-review (8am): currently `running` at 8:07am; daily-trends (9am Sat): not yet due — will fire 9:00am; daily-hubspot-consolidation: scheduled 8:",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "weekday-crm-outreach",
+        "crm/drafts/2026-06-13",
+        "weekday-ops-review",
+        "daily-trends",
+        "daily-hubspot-consolidation",
+        "edt",
+        "dashboard",
+        "cron"
+      ],
+      "promotedAt": "2026-06-18T07:12:58.842Z"
+    },
+    "memory:memory/2026-06-13.md:14:14": {
+      "key": "memory:memory/2026-06-13.md:14:14",
+      "path": "memory/2026-06-13.md",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: update-dashboard (this job): ran fine",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "update-dashboard",
+        "edt",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "update",
+        "job"
+      ],
+      "promotedAt": "2026-06-18T07:12:58.842Z"
+    },
+    "memory:memory/2026-06-13.md:16:16": {
+      "key": "memory:memory/2026-06-13.md:16:16",
+      "path": "memory/2026-06-13.md",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: Pattern resembles 2026-05-23 + 2026-05-30 Saturday widespread cron misses but with a twist — the cron *fires*, the agent errors out before writing files. Could be model overload (Fable 5 free-window pressure per memory note) or first-d",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "free-window",
+        "first-d",
+        "edt",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "pattern"
+      ],
+      "promotedAt": "2026-06-18T07:12:58.842Z"
+    },
+    "memory:memory/2026-06-13.md:18:18": {
+      "key": "memory:memory/2026-06-13.md:18:18",
+      "path": "memory/2026-06-13.md",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: Saturday brief is site-only per Duncan's rules (no newsletter send), so subscriber impact = zero.",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "site-only",
+        "edt",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "saturday",
+        "brief"
+      ],
+      "promotedAt": "2026-06-18T07:12:58.842Z"
+    },
+    "memory:memory/2026-06-13.md:20:20": {
+      "key": "memory:memory/2026-06-13.md:20:20",
+      "path": "memory/2026-06-13.md",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: Letting the 10:30am `daily-health-check` cron triage with the playbook; if it can't recover, it'll surface to Duncan.",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "daily-health-check",
+        "edt",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "letting",
+        "30am"
+      ],
+      "promotedAt": "2026-06-17T07:51:08.592Z"
+    },
+    "memory:memory/2026-06-13.md:22:22": {
+      "key": "memory:memory/2026-06-13.md:22:22",
+      "path": "memory/2026-06-13.md",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "08:07 EDT — dashboard cron fired, health=0%: No user message — this was the 8:05am dashboard cron firing. Staying quiet on channel.",
+      "recallCount": 0,
+      "dailyCount": 7,
+      "groundedCount": 0,
+      "totalScore": 4.34,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-06-14T07:01:01.249Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "1e8c8be95424"
+      ],
+      "recallDays": [
+        "2026-06-14",
+        "2026-06-15",
+        "2026-06-16",
+        "2026-06-17",
+        "2026-06-18",
+        "2026-06-19",
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "edt",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "message",
+        "was",
+        "05am"
+      ],
+      "promotedAt": "2026-06-18T07:12:58.842Z"
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-16.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-16.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-16.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: hi smith, u alive?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-17T07:51:08.592Z",
+      "lastRecalledAt": "2026-06-17T07:51:08.592Z",
+      "queryHashes": [
+        "b7d3c83e45f0"
+      ],
+      "recallDays": [
+        "2026-06-17"
+      ],
+      "conceptTags": [
+        "smith",
+        "alive"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-16.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-16.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-16.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: hehllo?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-17T07:51:08.592Z",
+      "lastRecalledAt": "2026-06-17T07:51:08.592Z",
+      "queryHashes": [
+        "b7d3c83e45f0"
+      ],
+      "recallDays": [
+        "2026-06-17"
+      ],
+      "conceptTags": [
+        "hehllo"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-17.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-17.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-17.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: what up smith, how are u?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-18T07:12:58.842Z",
+      "lastRecalledAt": "2026-06-18T07:12:58.842Z",
+      "queryHashes": [
+        "66cbfb8009fe"
+      ],
+      "recallDays": [
+        "2026-06-18"
+      ],
+      "conceptTags": [
+        "what",
+        "smith",
+        "how"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-17.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-17.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-17.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: smith?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-18T07:12:58.842Z",
+      "lastRecalledAt": "2026-06-18T07:12:58.842Z",
+      "queryHashes": [
+        "66cbfb8009fe"
+      ],
+      "recallDays": [
+        "2026-06-18"
+      ],
+      "conceptTags": [
+        "smith"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-17.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-17.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-17.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: smith?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-18T07:12:58.842Z",
+      "lastRecalledAt": "2026-06-18T07:12:58.842Z",
+      "queryHashes": [
+        "66cbfb8009fe"
+      ],
+      "recallDays": [
+        "2026-06-18"
+      ],
+      "conceptTags": [
+        "smith"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-17.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-17.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-17.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: u there smith?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-18T07:12:58.842Z",
+      "lastRecalledAt": "2026-06-18T07:12:58.842Z",
+      "queryHashes": [
+        "66cbfb8009fe"
+      ],
+      "recallDays": [
+        "2026-06-18"
+      ],
+      "conceptTags": [
+        "smith"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-17.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-17.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-17.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "User: smith?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-18T07:12:58.842Z",
+      "lastRecalledAt": "2026-06-18T07:12:58.842Z",
+      "queryHashes": [
+        "66cbfb8009fe"
+      ],
+      "recallDays": [
+        "2026-06-18"
+      ],
+      "conceptTags": [
+        "smith"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-17.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-17.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-17.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: are u back",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-18T07:12:58.842Z",
+      "lastRecalledAt": "2026-06-18T07:12:58.842Z",
+      "queryHashes": [
+        "66cbfb8009fe"
+      ],
+      "recallDays": [
+        "2026-06-18"
+      ],
+      "conceptTags": [
+        "back"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-19.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-19.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-19.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-20T07:09:51.190Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "a88ede50a2db"
+      ],
+      "recallDays": [
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-19.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-19.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-19.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-20T07:09:51.190Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "a88ede50a2db"
+      ],
+      "recallDays": [
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-19.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-19.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-19.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: openclaw onboarding",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-20T07:09:51.190Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "a88ede50a2db"
+      ],
+      "recallDays": [
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "openclaw",
+        "onboarding"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-19.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-19.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-19.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-20T07:09:51.190Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "a88ede50a2db"
+      ],
+      "recallDays": [
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-19.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-19.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-19.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "User: openclaw onboarding",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-20T07:09:51.190Z",
+      "lastRecalledAt": "2026-06-20T07:09:51.190Z",
+      "queryHashes": [
+        "a88ede50a2db"
+      ],
+      "recallDays": [
+        "2026-06-20"
+      ],
+      "conceptTags": [
+        "openclaw",
+        "onboarding"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Assistant: [assistant turn failed before producing content] - User: openclaw onboarding - Daily brief run (10:08 AM, late cron): Produced + sent 2026-06-12 brief (master + 3 segments). Verify pass: 0 contradictions. S",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "turn",
+        "failed",
+        "producing"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: correctly Saturday-only; tomo - CRM outreach run (10:20am cron, first since outage restore): Found 28 overdue orgs; cross-check showed the 24 followup-1 drafts from 6/01 were NEVER sent (no send-log trace, 0 replies in IMAP bridge) — refreshed them at same stage instead of",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "saturday-only",
+        "cross-check",
+        "followup-1",
+        "6/01",
+        "send-log",
+        "correctly",
+        "saturday",
+        "only"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "User: cause = stage_gmail_drafts.py silently skips generic info@ orgs; Top asks for Dun - 08:07 EDT — dashboard cron fired, health=0%: First morning after the 6/04–6/12 cron migration outage was restored. Dashboard reports 0% with most morning jobs flagged \"Not found\": - 08:07 ED",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "stage-gmail-drafts.py",
+        "6/04",
+        "6/12",
+        "cause",
+        "silently",
+        "skips",
+        "generic",
+        "info"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: daily-hubspot-consolidation: scheduled 8: - 08:07 EDT — dashboard cron fired, health=0%: update-dashboard (this job): ran fine Recurring themes: - turn - failed - producing - content - openclaw - onboarding",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "daily-hubspot-consolidation",
+        "update-dashboard",
+        "hubspot",
+        "consolidation",
+        "scheduled",
+        "edt",
+        "dashboard",
+        "cron"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Assistant: [assistant turn failed before producing content] - User: openclaw onboarding - Daily brief run (10:08 AM, late cron): Produced + sent 2026-06-12 brief (master + 3 segments). Verify pass: 0 contradictions. S",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "turn",
+        "failed",
+        "producing"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "User: correctly Saturday-only; tomo - CRM outreach run (10:20am cron, first since outage restore): Found 28 overdue orgs; cross-check showed the 24 followup-1 drafts from 6/01 were NEVER sent (no send-log trace, 0 replies in IMAP bridge) — refreshed them at same stage instead of",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "saturday-only",
+        "cross-check",
+        "followup-1",
+        "6/01",
+        "send-log",
+        "correctly",
+        "saturday",
+        "only"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "User: cause = stage_gmail_drafts.py silently skips generic info@ orgs; Top asks for Dun - 08:07 EDT — dashboard cron fired, health=0%: First morning after the 6/04–6/12 cron migration outage was restored. Dashboard reports 0% with most morning jobs flagged \"Not found\": - 08:07 ED",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "stage-gmail-drafts.py",
+        "6/04",
+        "6/12",
+        "cause",
+        "silently",
+        "skips",
+        "generic",
+        "info"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "User: daily-hubspot-consolidation: scheduled 8: - 08:07 EDT — dashboard cron fired, health=0%: update-dashboard (this job): ran fine Recurring themes: - turn - failed - producing - content - openclaw - onboarding",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "daily-hubspot-consolidation",
+        "update-dashboard",
+        "hubspot",
+        "consolidation",
+        "scheduled",
+        "edt",
+        "dashboard",
+        "cron"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Daily brief run (10:08 AM, late cron): Produced + sent 2026-06-12 brief (master + 3 segments). Verify pass: 0 contradictions. Site rebuilt + pushed (commit 50db183).; **MAJOR CORRECTION:** SB 266 (PA contracts) AND HB",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "brief",
+        "run",
+        "late"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "User: Found 28 overdue orgs; cross-check showed the 24 followup-1 drafts from 6/01 were NEVER sent (no send-log trace, 0 replies in IMAP bridge) — refreshed them at same stage instead of escalating; New hooks from today's bri - CRM outreach run (10:20am cron, first since outage r",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "cross-check",
+        "followup-1",
+        "6/01",
+        "send-log",
+        "found",
+        "overdue",
+        "orgs",
+        "cross"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "User: dashboard cron fired, health=0%: First morning after the 6/04–6/12 cron migration outage was restored. Dashboard reports 0% with most morning jobs flagged \"Not found\": - 08:07 EDT — dashboard cron fired, health=0%: daily-research-brief (5am): cron fired ~2h ago, status=erro",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "6/04",
+        "6/12",
+        "daily-research-brief",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "first"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "User: Write a dream diary entry from these memory fragments: - Daily brief run (10:08 AM, late cron): Produced + sent 2026-06-12 brief (master + 3 segments). Verify pass: 0 contradictions. Site rebuilt + pushed (commit 50db183).; **MAJOR CORRECTION:** SB 266 (PA contracts) AND HB",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "write",
+        "dream",
+        "diary",
+        "entry",
+        "fragments",
+        "brief",
+        "run",
+        "late"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "User: Found 28 overdue orgs; cross-check showed the 24 followup-1 drafts from 6/01 were NEVER sent (no send-log trace, 0 replies in IMAP bridge) — refreshed them at same stage instead of escalating; New hooks from today's bri - CRM outreach run (10:20am cron, first since outage r",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "cross-check",
+        "followup-1",
+        "6/01",
+        "send-log",
+        "found",
+        "overdue",
+        "orgs",
+        "cross"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-20.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-20.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-06-20.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "User: dashboard cron fired, health=0%: First morning after the 6/04–6/12 cron migration outage was restored. Dashboard reports 0% with most morning jobs flagged \"Not found\": - 08:07 EDT — dashboard cron fired, health=0%: daily-research-brief (5am): cron fired ~2h ago, status=erro",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-21T07:21:52.347Z",
+      "lastRecalledAt": "2026-06-21T07:21:52.347Z",
+      "queryHashes": [
+        "5aefc03ae643"
+      ],
+      "recallDays": [
+        "2026-06-21"
+      ],
+      "conceptTags": [
+        "6/04",
+        "6/12",
+        "daily-research-brief",
+        "dashboard",
+        "cron",
+        "fired",
+        "health",
+        "first"
       ]
     }
   }

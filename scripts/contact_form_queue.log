@@ -176,3 +176,6 @@
 [2026-06-03 12:10 EDT] Protective Choice Insurance (324917817053) HALT mis-tagged (insurance agency, not GC) — task 373570792183
 [2026-06-03 12:10 EDT] DSI Educators Premier (324917690057) HALT mis-tagged (insurance agency, not GC) — task 373570792183
 [2026-06-03 12:10 EDT] queued=5 submitted=0 blacklisted=1 errors=0 halted=4 (industry-tag bug)
+[2026-06-15T10:46:02] === Build contact-form queue for 2026-06-15 ===
+[2026-06-15T10:46:02]   Loaded 33 companies on do-not-retry blacklist
+[2026-06-15T10:46:02] Fetching UNQUALIFIED contacts and their companies…

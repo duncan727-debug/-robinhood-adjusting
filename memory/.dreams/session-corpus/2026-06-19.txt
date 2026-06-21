@@ -1,0 +1,5 @@
+[main/sessions/main/2d274fa2-fd8e-4db2-baf4-43b52bf78293.jsonl#L6] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/2d274fa2-fd8e-4db2-baf4-43b52bf78293.jsonl#L8] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/2d274fa2-fd8e-4db2-baf4-43b52bf78293.jsonl#L9] User: openclaw onboarding
+[main/sessions/main/2d274fa2-fd8e-4db2-baf4-43b52bf78293.jsonl#L10] Assistant: [assistant turn failed before producing content]
+[main/sessions/main/2d274fa2-fd8e-4db2-baf4-43b52bf78293.jsonl#L11] User: openclaw onboarding

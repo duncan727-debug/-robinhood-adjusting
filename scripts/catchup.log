@@ -15543,3 +15543,16 @@ GatewayClientRequestError: invalid cron.run params: unknown cron job id: 89b2d28
 [2026-06-05T23:01:14Z]   outreach batch 2: running
 [2026-06-06T03:05:13Z]   outreach batch 2: ERROR (see outreach_send.log)
 [2026-06-06T03:05:13Z]   outreach batch 3: running
+[2026-06-16 06:30:01] Briefs: 2026-06-12 2026-06-04 2026-06-03 2026-06-02 2026-06-01
+[2026-06-16 06:30:01] Trends: 4 found
+[SKIP] No template markers found in site/PA-WEBSITE.html
+[SKIP] No template markers found in site/index.html
+[2026-06-16 06:30:01] Done.
+[2026-06-18 06:30:01] Briefs: 2026-06-12 2026-06-04 2026-06-03 2026-06-02 2026-06-01
+[2026-06-18 06:30:01] Trends: 4 found
+[SKIP] No template markers found in site/PA-WEBSITE.html
+[SKIP] No template markers found in site/index.html
+[2026-06-18 06:30:01] Done.
+[2026-06-21T15:50:41Z] === catchup start: today=2026-06-21 dow=7 dom=21 mins=710 ===
+[2026-06-21T15:50:42Z]   imap_bridge: ran 0m ago, skip
+[2026-06-21T15:50:42Z]   daily-git-sync: no commit today, running git-sync-daily.sh

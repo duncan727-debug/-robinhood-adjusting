@@ -1,0 +1,7 @@
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L9] User: hey smith, are u up and running with fable 5?
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L10] User: im looking at our website now, it does not look like daily reports or weekly analysis have been posted since june 4th?
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl#L11] User: sounds good, can u make sure update missing daily reports and weekly trends - plz get us up to date. No need to sent out emails to subscribers fro previous reports.
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl.reset.2026-06-12T19-25-15.447Z#L12] User: hey, u back?
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl.reset.2026-06-12T19-25-15.447Z#L13] Assistant: Yep — back. The usage limit hit around 11:30am and killed all four backfill writers mid-flight; it reset at 3pm. Checking what survived before relaunching.Writers relaunched (4 agents, post-reset). Now pushing today's content live.
+[main/sessions/main/39100e3c-0b62-40af-b02c-27678197dc14.jsonl.reset.2026-06-12T19-25-15.447Z#L14] User: we are burning through usage - lets go back to the opus model we were previously using
+[main/sessions/main/a2715e35-c129-434d-9192-5bd191b84e19.jsonl#L2] User: are we back?

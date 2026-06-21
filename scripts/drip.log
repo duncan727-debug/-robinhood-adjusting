@@ -194,3 +194,11 @@ ERROR: HUBSPOT_API_KEY not set.
 [2026-06-05 12:52] Found 13 subscriber contacts across all lists
 [2026-06-05 12:53] Done — sent: 0 | skipped: 13 | errors: 0
 [2026-06-05 12:53] === Drip run complete ===
+[2026-06-17 09:00] === Drip sequence run start ===
+[2026-06-17 09:00] Found 15 subscriber contacts across all lists
+[2026-06-17 09:00] Done — sent: 0 | skipped: 15 | errors: 0
+[2026-06-17 09:00] === Drip run complete ===
+[2026-06-17 09:00] === Drip sequence run start ===
+[2026-06-17 09:00] Found 15 subscriber contacts across all lists
+[2026-06-17 09:00] Done — sent: 0 | skipped: 15 | errors: 0
+[2026-06-17 09:00] === Drip run complete ===
