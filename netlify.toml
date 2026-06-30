@@ -1,7 +1,7 @@
 [build]
   # If META_PIXEL_ID is set in Netlify env, inline-replace the placeholder across the site.
   # Pixel IDs are purely numeric, so the sed substitution is safe.
-  command = "if [ -n \"$META_PIXEL_ID\" ]; then find site -type f \\( -name '*.html' -o -name '*.js' \\) -exec sed -i \"s/__META_PIXEL_ID__/$META_PIXEL_ID/g\" {} +; echo \"Meta Pixel ID injected.\"; else echo \"META_PIXEL_ID not set — Pixel will no-op.\"; fi"
+  command = "if [ -n \"$META_PIXEL_ID\" ]; then find site -type f \\( -name '*.html' -o -name '*.js' \\) -exec perl -0pi -e 's/__META_PIXEL_ID__/$ENV{META_PIXEL_ID}/g' {} +; echo \"Meta Pixel ID injected.\"; else echo \"META_PIXEL_ID not set — Pixel will no-op.\"; fi"
   publish = "site"
   functions = "netlify/functions"
 
