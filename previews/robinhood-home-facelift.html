@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robinhood Adjusting — Homepage Facelift Preview</title>
+  <meta name="robots" content="noindex">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --ink: #18212b;
+      --navy: #0f2d4a;
+      --navy-2: #163d61;
+      --red: #c41e3a;
+      --gold: #c9922a;
+      --paper: #fbfaf7;
+      --mist: #eef3f6;
+      --white: #ffffff;
+      --muted: #617181;
+      --line: #dce3e8;
+      --green: #2f6f5e;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .preview-ribbon {
+      background: var(--gold);
+      color: #20170a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding: 8px 16px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(15,45,74,.96);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .brand img { width: 42px; height: 42px; }
+    .brand small {
+      display: block;
+      color: var(--gold);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-top: -3px;
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .links a:hover { color: var(--gold); }
+    .nav-action {
+      background: var(--red);
+      color: var(--white);
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 96px);
+      max-height: 880px;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(8,27,45,.92) 0%, rgba(8,27,45,.78) 46%, rgba(8,27,45,.50) 100%),
+        url("../site/fb-cover.png") center / cover no-repeat;
+      border-bottom: 5px solid var(--gold);
+    }
+    .hero-inner {
+      padding: 94px 0 54px;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      max-width: 690px;
+      margin: 22px 0 0;
+      color: rgba(255,255,255,.88);
+      font-size: clamp(18px, 2.2vw, 22px);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .button.primary { background: var(--red); color: var(--white); }
+    .button.secondary { border: 1px solid rgba(255,255,255,.48); color: var(--white); }
+    .button.light { background: var(--white); color: var(--navy); }
+    .button.ghost { border: 1px solid var(--line); color: var(--navy); background: transparent; }
+
+    .signal-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+    .signal {
+      background: var(--white);
+      padding: 18px 20px;
+      min-height: 96px;
+    }
+    .signal strong {
+      display: block;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .signal span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section { padding: 78px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .55fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+    .label {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4.2vw, 48px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .brief-band { background: var(--mist); }
+    .brief-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .feature-brief,
+    .brief-list a,
+    .audience-card,
+    .claim-card,
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 10px 28px rgba(16,35,51,.06);
+    }
+    .feature-brief {
+      padding: 28px;
+      border-top: 4px solid var(--gold);
+    }
+    .date {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .feature-brief h3,
+    .audience-card h3,
+    .claim-card h3,
+    .resource-card h3 {
+      margin: 10px 0 10px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.18;
+    }
+    .feature-brief p,
+    .audience-card p,
+    .claim-card p,
+    .resource-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0;
+    }
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 10px;
+    }
+    .brief-list {
+      display: grid;
+      gap: 12px;
+    }
+    .brief-list a {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 20px;
+    }
+    .brief-list h4 {
+      margin: 4px 0 3px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1.22;
+    }
+    .brief-list p { margin: 0; color: var(--muted); font-size: 13px; }
+    .arrow {
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .audience-grid,
+    .claim-grid,
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .audience-card,
+    .claim-card,
+    .resource-card {
+      padding: 24px;
+    }
+    .audience-card {
+      border-top: 4px solid var(--navy);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .audience-card:nth-child(2) { border-top-color: var(--green); }
+    .audience-card:nth-child(3) { border-top-color: var(--gold); }
+    .text-link {
+      display: inline-block;
+      color: var(--red);
+      font-weight: 800;
+      margin-top: 18px;
+    }
+
+    .claims-band { background: var(--white); }
+    .claim-card { min-height: 214px; }
+    .claim-card .mini {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-band {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .process-band h2 { color: var(--white); }
+    .process-band .lead { color: rgba(255,255,255,.72); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .step {
+      background: rgba(255,255,255,.06);
+      padding: 24px;
+      min-height: 210px;
+    }
+    .step b {
+      display: block;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--white);
+    }
+    .step p {
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+    }
+
+    .resources-band { background: var(--paper); }
+    .resource-card {
+      min-height: 230px;
+      border-top: 4px solid var(--red);
+    }
+    .resource-card:nth-child(2) { border-top-color: var(--gold); }
+    .resource-card:nth-child(3) { border-top-color: var(--navy); }
+
+    .subscribe {
+      background: var(--red);
+      color: var(--white);
+      padding: 58px 0;
+    }
+    .subscribe-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .subscribe h2 { color: var(--white); }
+    .subscribe p { color: rgba(255,255,255,.82); margin: 14px 0 0; }
+    .form {
+      display: grid;
+      gap: 10px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+    }
+    input, select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 4px;
+      padding: 0 14px;
+      font: inherit;
+    }
+    select {
+      color: var(--white);
+      background: rgba(0,0,0,.18);
+    }
+    select option { color: var(--ink); background: var(--white); }
+    .form .button {
+      border: 0;
+      cursor: pointer;
+      min-width: 150px;
+    }
+
+    .footer {
+      background: #111820;
+      color: rgba(255,255,255,.72);
+      padding: 44px 0;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+    }
+    .footer strong { color: var(--white); }
+    .footer a { color: var(--gold); }
+
+    @media (max-width: 940px) {
+      .links { display: none; }
+      .hero { min-height: 720px; }
+      .signal-grid,
+      .brief-layout,
+      .section-head,
+      .subscribe-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .signal-grid { gap: 0; }
+      .audience-grid,
+      .claim-grid,
+      .resource-grid,
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .brand { font-size: 18px; }
+      .brand img { width: 36px; height: 36px; }
+      .hero-inner { padding: 78px 0 38px; }
+      .hero { min-height: 690px; background-position: 34% center; }
+      .signal-grid,
+      .audience-grid,
+      .claim-grid,
+      .resource-grid,
+      .steps,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      section { padding: 56px 0; }
+      .feature-brief,
+      .audience-card,
+      .claim-card,
+      .resource-card,
+      .step {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-ribbon">Preview only — not the live homepage</div>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="../site/index.html">
+        <img src="../site/shield-light.svg" alt="">
+        <span>Robinhood Adjusting <small>South Florida Public Adjusters</small></span>
+      </a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#intelligence">Intelligence</a>
+        <a href="#claims">Claims</a>
+        <a href="#partners">Partners</a>
+        <a href="../site/providers/index.html">Providers</a>
+        <a href="../site/free-review.html" class="nav-action">Free Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="eyebrow">South Florida claims advocacy + property intelligence</div>
+        <h1>Your insurance company has an adjuster. Now you have one too.</h1>
+        <p class="hero-copy">Robinhood helps property owners understand claims, document damage, and push back on underpaid or denied settlements. We also publish free market briefs for the homeowners, agents, and service pros who hear about property problems first.</p>
+        <div class="hero-actions">
+          <a href="../site/free-review.html" class="button primary">Book a Free Claim Review</a>
+          <a href="#intelligence" class="button secondary">Read Today’s Briefs</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="signal-bar">
+      <div class="wrap signal-grid">
+        <div class="signal"><strong>No fee</strong><span>Unless you collect on the claim.</span></div>
+        <div class="signal"><strong>FL</strong><span>Licensed public adjuster support.</span></div>
+        <div class="signal"><strong>3 languages</strong><span>English, Portuguese, and Spanish.</span></div>
+        <div class="signal"><strong>Free intel</strong><span>Briefs for homeowners, agents, and trades.</span></div>
+      </div>
+    </div>
+
+    <section id="intelligence" class="brief-band">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="label">Robinhood Property Intelligence</div>
+            <h2>Local market signal that earns trust before the claim.</h2>
+          </div>
+          <p class="lead">The publication is the front door for homeowners, real estate professionals, and service providers. It gives them practical South Florida insurance, storm, permitting, and property-market insight without asking for anything first.</p>
+        </div>
+
+        <div class="brief-layout">
+          <a class="feature-brief" href="../site/briefs/2026-07-01.html">
+            <div class="date">July 1, 2026 · Full research edition</div>
+            <h3>Citizens rate cuts, quiet tropics, HB 803 permit changes, and Live Local conversions.</h3>
+            <p>Today’s brief connects policy renewals, storm documentation, local permitting, development pipeline, and service-provider opportunities into one practical read.</p>
+            <div class="tag-row">
+              <span class="tag">Citizens</span>
+              <span class="tag">Hurricane season</span>
+              <span class="tag">Permits</span>
+              <span class="tag">Live Local</span>
+            </div>
+            <span class="button ghost">Open Full Brief</span>
+          </a>
+
+          <div class="brief-list">
+            <a href="../site/briefs/2026-07-01-homeowner.html">
+              <div>
+                <div class="date">Homeowners</div>
+                <h4>Citizens Rate Cuts, Quiet Tropics, and Permit Rules</h4>
+                <p>Renewal timing, before-loss documentation, and what the new permit exemption does not cover.</p>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+            <a href="../site/briefs/2026-07-01-real-estate.html">
+              <div>
+                <div class="date">Real estate</div>
+                <h4>Insurance Assumptions and Live Local Conversions</h4>
+                <p>Buyer carrying-cost assumptions, Aventura redevelopment, and luxury deal documentation.</p>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+            <a href="../site/briefs/2026-07-01-service-provider.html">
+              <div>
+                <div class="date">Service providers</div>
+                <h4>Permit Screening, Renewal Season, and Conversion Pipeline</h4>
+                <p>How contractors and trade firms can turn market signals into useful client conversations.</p>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="claims" class="claims-band">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="label">Claim support</div>
+            <h2>When property damage turns into an insurance problem, Robinhood steps in.</h2>
+          </div>
+          <p class="lead">The site should make it obvious what to do next: schedule a review, understand whether there is a claim, and stop negotiating against a carrier team alone.</p>
+        </div>
+        <div class="claim-grid">
+          <div class="claim-card">
+            <div class="mini">Storm + roof</div>
+            <h3>Wind, hurricane, roof, and exterior damage</h3>
+            <p>We help document scope, causation, pricing, and policy language when a carrier’s first read feels incomplete.</p>
+          </div>
+          <div class="claim-card">
+            <div class="mini">Interior losses</div>
+            <h3>Water, plumbing, mold-adjacent, fire, and smoke claims</h3>
+            <p>Fast documentation matters. The sooner a loss is organized, the harder it is for key details to disappear.</p>
+          </div>
+          <div class="claim-card">
+            <div class="mini">Disputes</div>
+            <h3>Denied, delayed, or underpaid settlements</h3>
+            <p>A low check or denial letter is not always the final answer. We review the file and explain the options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="brief-band">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="label">Referral ecosystem</div>
+            <h2>Built for the people already inside homes and businesses.</h2>
+          </div>
+          <p class="lead">This version speaks directly to the three audiences most likely to remember Robinhood when damage or claim confusion shows up in their circle.</p>
+        </div>
+        <div class="audience-grid">
+          <a class="audience-card" href="../site/briefs/2026-07-01-homeowner.html">
+            <div>
+              <div class="date">Homeowners</div>
+              <h3>Useful before there is a claim.</h3>
+              <p>Documentation habits, storm prep, coverage questions, renewal timing, and plain-English claim guidance.</p>
+            </div>
+            <span class="text-link">Read homeowner brief →</span>
+          </a>
+          <a class="audience-card" href="../site/briefs/2026-07-01-real-estate.html">
+            <div>
+              <div class="date">Real estate professionals</div>
+              <h3>Better diligence conversations.</h3>
+              <p>Insurance assumptions, roof and flood documentation, development signals, and closing-table friction.</p>
+            </div>
+            <span class="text-link">Read real estate brief →</span>
+          </a>
+          <a class="audience-card" href="../site/briefs/2026-07-01-service-provider.html">
+            <div>
+              <div class="date">Trades + service firms</div>
+              <h3>A clean claims resource for customers.</h3>
+              <p>Signals for roofers, plumbers, HVAC, mitigation, property managers, GCs, and home-service teams.</p>
+            </div>
+            <span class="text-link">Read trade brief →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-band">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="label">The process</div>
+            <h2>Simple enough for a homeowner. Serious enough for a complex claim.</h2>
+          </div>
+          <p class="lead">The facelift keeps the claims process short and scannable, with a clear path from first review to settlement.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><b>01</b><h3>Free review</h3><p>Policy, damage, denial letter, estimate, or coverage question reviewed without pressure.</p></div>
+          <div class="step"><b>02</b><h3>Documentation</h3><p>Photos, scope, estimates, policy language, and carrier communications organized.</p></div>
+          <div class="step"><b>03</b><h3>Negotiation</h3><p>Robinhood communicates with the carrier and pushes for the documented amount owed.</p></div>
+          <div class="step"><b>04</b><h3>Settlement</h3><p>No fee unless the policyholder collects. The incentives stay aligned.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-band">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="label">Free resources</div>
+            <h2>Give people something useful before asking for the call.</h2>
+          </div>
+          <p class="lead">The free review stays prominent, but guides and provider resources support the broader trust-building strategy.</p>
+        </div>
+        <div class="resource-grid">
+          <a class="resource-card" href="../site/free-review.html">
+            <div class="date">Free · 15 minute video</div>
+            <h3>Virtual Property Review</h3>
+            <p>Show damage, paperwork, or a confusing coverage issue and get a straight read from a licensed Florida public adjuster.</p>
+            <span class="text-link">Book the review →</span>
+          </a>
+          <a class="resource-card" href="../site/hurricane-checklist.html">
+            <div class="date">Free with signup</div>
+            <h3>2026 Hurricane Checklist</h3>
+            <p>Practical prep for insurance review, exterior documentation, storm readiness, and post-loss claim protection.</p>
+            <span class="text-link">Get checklist →</span>
+          </a>
+          <a class="resource-card" href="../site/providers/index.html">
+            <div class="date">Always free</div>
+            <h3>Trusted Provider Directory</h3>
+            <p>County-organized contractors, plumbers, roofers, restoration firms, and other claim-adjacent providers.</p>
+            <span class="text-link">Browse providers →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <div class="wrap subscribe-grid">
+        <div>
+          <div class="eyebrow">Stay informed</div>
+          <h2>Get Robinhood Property Intelligence free.</h2>
+          <p>Choose the version that matches how you encounter property problems: homeowner, real estate, or service provider.</p>
+        </div>
+        <form class="form" onsubmit="event.preventDefault(); alert('Preview only. Live form stays connected on approval.');">
+          <div class="form-row">
+            <input type="email" placeholder="your@email.com" required>
+            <button class="button light" type="submit">Subscribe</button>
+          </div>
+          <select required>
+            <option value="">Select your interest...</option>
+            <option>Homeowner / Property Owner</option>
+            <option>Service Provider / Contractor</option>
+            <option>Real Estate Professional</option>
+          </select>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Robinhood Adjusting</strong><br>
+        South Florida public adjuster support for property owners, referral partners, and local professionals.
+      </div>
+      <div>
+        <a href="../site/free-review.html">Free Review</a> ·
+        <a href="../site/briefs/">Daily Briefs</a> ·
+        <a href="../site/trends/">Weekly Trends</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
