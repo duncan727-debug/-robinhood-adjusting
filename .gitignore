@@ -1,5 +1,6 @@
 config/.services-config.txt
 config/.secrets
+.DS_Store
 scripts/setup-hubspot-lists.py
 .env
 *.env
