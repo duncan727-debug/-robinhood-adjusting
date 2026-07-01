@@ -23,11 +23,12 @@ import urllib.error
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from email.utils import parseaddr, parsedate_to_datetime
+from workspace_config import REPO_ROOT, WORKSPACE_SECRETS_PATH, get_secret
 
-WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
+WORKSPACE = REPO_ROOT
 STATE_PATH = WORKSPACE / "crm" / ".imap_bridge_state.json"
 LOG_PATH = WORKSPACE / "scripts" / "imap_bridge.log"
-SECRETS_PATH = WORKSPACE / "config" / ".secrets"
+SECRETS_PATH = WORKSPACE_SECRETS_PATH
 REPLY_QUEUE_DIR = WORKSPACE / "crm" / "reply_queue"
 
 BOUNCE_SENDERS = (
@@ -99,25 +100,9 @@ def log(msg):
         f.write(line + "\n")
 
 
-def load_secret(name):
-    val = os.environ.get(name, "").strip()
-    if val:
-        return val
-    if SECRETS_PATH.exists():
-        for line in SECRETS_PATH.read_text().splitlines():
-            if line.strip().startswith("#") or "=" not in line:
-                continue
-            k, v = line.split("=", 1)
-            k = k.replace("export", "").strip()
-            v = v.strip().strip('"').strip("'")
-            if k == name:
-                return v
-    sys.exit(f"ERROR: {name} not set in env or config/.secrets")
-
-
-GMAIL_USER = load_secret("GMAIL_USER")
-GMAIL_PASS = load_secret("GMAIL_APP_PASSWORD").replace(" ", "")
-HUBSPOT_TOKEN = load_secret("HUBSPOT_API_KEY")
+GMAIL_USER = get_secret("GMAIL_USER", "duncanlittlejohn727@gmail.com")
+GMAIL_PASS = get_secret("GMAIL_APP_PASSWORD").replace(" ", "")
+HUBSPOT_TOKEN = get_secret("HUBSPOT_API_KEY")
 
 
 def load_state():

@@ -29,19 +29,15 @@ import imaplib, email, time, os, json, sys, urllib.request
 from email.mime.text import MIMEText
 from email.utils import formatdate, make_msgid
 from pathlib import Path
+from workspace_config import REPO_ROOT, get_secret, load_dotenv_secrets
 
-WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
-SECRETS = WORKSPACE / "config" / ".secrets"
-
-for line in SECRETS.read_text().splitlines():
-    if line.startswith("export "): line = line[len("export "):]
-    if "=" in line:
-        k,v = line.split("=",1); os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+WORKSPACE = REPO_ROOT
+load_dotenv_secrets()
 
 GMAIL_USER = "duncanlittlejohn727@gmail.com"
-GMAIL_PWD  = os.environ["GMAIL_APP_PASSWORD"]
+GMAIL_PWD  = get_secret("GMAIL_APP_PASSWORD").replace(" ", "")
 HUBSPOT_BCC = "246055074@bcc.hubspot.com"
-HUBSPOT_TOKEN = os.environ["HUBSPOT_API_KEY"]
+HUBSPOT_TOKEN = get_secret("HUBSPOT_API_KEY")
 
 
 def hs_post(path, body, method="POST"):

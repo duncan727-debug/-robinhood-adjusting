@@ -22,11 +22,12 @@ from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
+from workspace_config import REPO_ROOT, WORKSPACE_CONFIG_DIR, get_secret, load_dotenv_secrets
 
-WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
+WORKSPACE = REPO_ROOT
 BRIEFS_DIR = WORKSPACE / "content" / "briefs"
 MD_BRIEFS_DIR = WORKSPACE / "briefs"
-CONFIG_FILE = WORKSPACE / "config" / ".services-config.txt"
+CONFIG_FILE = WORKSPACE_CONFIG_DIR / ".services-config.txt"
 LOG_PATH    = WORKSPACE / "scripts" / "newsletter-send.log"
 MARKER_DIR  = WORKSPACE / "scripts"
 
@@ -42,17 +43,17 @@ SEGMENTS = [
 
 
 def load_credentials():
-    content = CONFIG_FILE.read_text()
-    m = re.search(r"Gmail App Password.*?:\s*([a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4})", content)
-    gmail_pw = m.group(1) if m else None
+    load_dotenv_secrets()
+    gmail_pw = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
+    content = CONFIG_FILE.read_text() if CONFIG_FILE.exists() else ""
+    if not gmail_pw:
+        m = re.search(r"Gmail App Password.*?:\s*([a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4})", content)
+        gmail_pw = m.group(1).replace(" ", "") if m else None
     if not gmail_pw:
         sys.exit("ERROR: Gmail App Password not found in config.")
     hs_token = os.environ.get("HUBSPOT_API_KEY", "")
     if not hs_token:
-        secrets_path = WORKSPACE / "config" / ".secrets"
-        if secrets_path.exists():
-            m2 = re.search(r'HUBSPOT_API_KEY="([^"]+)"', secrets_path.read_text())
-            hs_token = m2.group(1) if m2 else ""
+        hs_token = get_secret("HUBSPOT_API_KEY", "")
     if not hs_token:
         sys.exit("ERROR: HUBSPOT_API_KEY not set and fallback not found.")
     return gmail_pw, hs_token

@@ -18,6 +18,7 @@ from datetime import datetime, timedelta
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
+from workspace_config import REPO_ROOT
 
 # Reuse the daily-brief helpers (HubSpot list fetch, branded HTML wrapper, etc.)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -29,7 +30,7 @@ spec = importlib.util.spec_from_file_location(
 sdb = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(sdb)
 
-WORKSPACE = Path("/Users/victoria/.openclaw/workspace")
+WORKSPACE = REPO_ROOT
 TRENDS_DIR = WORKSPACE / "content" / "trends"
 LOG_PATH = WORKSPACE / "scripts" / "newsletter-send.log"
 MARKER_DIR = WORKSPACE / "scripts"
