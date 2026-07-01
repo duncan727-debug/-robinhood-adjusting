@@ -24,6 +24,7 @@
 
 const SITE_URL    = "https://robinhoodadjusting.com";
 const GITHUB_REF  = "main";
+const GITHUB_API_VERSION = "2022-11-28";
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -52,33 +53,61 @@ async function hs(method, path, body, token) {
   return { status: res.status, data };
 }
 
-async function ghGet(path, ghToken, owner, repo) {
-  const res = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${GITHUB_REF}`,
-    { headers: { Authorization: `Bearer ${ghToken}`, Accept: "application/vnd.github+json" } }
-  );
-  return res.json();
+function githubHeaders(ghToken) {
+  return {
+    Authorization: `Bearer ${ghToken}`,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json",
+    "User-Agent": "robinhood-adjusting-netlify",
+    "X-GitHub-Api-Version": GITHUB_API_VERSION,
+  };
 }
 
-async function ghPut(path, content, sha, message, ghToken, owner, repo) {
+async function ghRequest(url, options = {}) {
   const res = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+    url,
+    {
+      ...options,
+      headers: { ...options.headers },
+    }
+  );
+
+  let data = null;
+  const text = await res.text();
+  if (text) {
+    try { data = JSON.parse(text); } catch (_) { data = { raw: text }; }
+  }
+
+  if (!res.ok) {
+    const message = data?.message || res.statusText || "GitHub API request failed";
+    throw new Error(`GitHub ${res.status} ${message}`);
+  }
+
+  return data || {};
+}
+
+async function ghGet(path, ghToken, owner, repo, ref = GITHUB_REF) {
+  return ghRequest(
+    `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path).replace(/%2F/g, "/")}?ref=${encodeURIComponent(ref)}`,
+    { headers: githubHeaders(ghToken) }
+  );
+}
+
+async function ghPut(path, content, sha, message, ghToken, owner, repo, ref = GITHUB_REF) {
+  if (!sha) throw new Error(`Missing GitHub sha for ${path}`);
+  return ghRequest(
+    `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path).replace(/%2F/g, "/")}`,
     {
       method: "PUT",
-      headers: {
-        Authorization:  `Bearer ${ghToken}`,
-        Accept:         "application/vnd.github+json",
-        "Content-Type": "application/json",
-      },
+      headers: githubHeaders(ghToken),
       body: JSON.stringify({
         message,
-        content: Buffer.from(content).toString("base64"),
+        content: Buffer.from(content, "utf8").toString("base64"),
         sha,
-        branch: GITHUB_REF,
+        branch: ref,
       }),
     }
   );
-  return res.json();
 }
 
 // ── directory JSON update ─────────────────────────────────────────────────────
@@ -225,10 +254,10 @@ export async function handler(event) {
   const contactId  = params.contact_id  || "";
   const action     = (params.action     || "").toLowerCase();
 
-  const hsToken  = process.env.HUBSPOT_API_KEY;
-  const ghToken  = process.env.GITHUB_TOKEN;
-  const ghOwner  = process.env.GITHUB_OWNER || "duncan727-debug";
-  const ghRepo   = process.env.GITHUB_REPO  || "-robinhood-adjusting";
+  const hsToken  = (process.env.HUBSPOT_API_KEY || "").trim();
+  const ghToken  = (process.env.GITHUB_TOKEN || "").trim();
+  const ghOwner  = (process.env.GITHUB_OWNER || "duncan727-debug").trim();
+  const ghRepo   = (process.env.GITHUB_REPO  || "-robinhood-adjusting").trim();
 
   if (!hsToken) {
     return { statusCode: 500, headers: { "Content-Type": "text/html" },
@@ -277,7 +306,7 @@ export async function handler(event) {
 
   // 4. Update GitHub directory JSON + HTML (best-effort — don't fail the response)
   const today = new Date().toISOString().split("T")[0];
-  if (ghToken && companyName) {
+  if (ghToken && ghOwner && ghRepo && companyName) {
     try {
       await markVerifiedInJson(companyName, today, ghToken, ghOwner, ghRepo);
       await patchProviderBadge(companyName, ghToken, ghOwner, ghRepo);
