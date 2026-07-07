@@ -14,6 +14,7 @@ Falls back to a single content/briefs/YYYY-MM-DD.html if segment files don't exi
 Usage:
   python3 scripts/send-daily-brief.py 2026-07-07
   python3 scripts/send-daily-brief.py 2026-07-07 --send-approved
+  python3 scripts/send-daily-brief.py 2026-07-07 --send-approved --test-to duncan@example.com
 """
 
 import html as html_lib
@@ -71,16 +72,29 @@ def load_credentials(require_gmail=True):
 def parse_cli(argv):
     date_str = None
     send_approved = False
-    for arg in argv:
+    test_to = None
+    idx = 0
+    while idx < len(argv):
+        arg = argv[idx]
         if arg == "--send-approved":
             send_approved = True
+        elif arg == "--test-to":
+            idx += 1
+            if idx >= len(argv):
+                sys.exit("ERROR: --test-to requires an email address")
+            test_to = argv[idx].strip().lower()
+            if not re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", test_to):
+                sys.exit(f"ERROR: invalid --test-to email address: {test_to}")
         elif arg.startswith("-"):
             sys.exit(f"ERROR: Unknown option {arg}")
         elif date_str is None:
             date_str = arg
         else:
             sys.exit(f"ERROR: Unexpected extra argument {arg}")
-    return date_str or datetime.now().strftime("%Y-%m-%d"), send_approved
+        idx += 1
+    if test_to and not send_approved:
+        sys.exit("ERROR: --test-to requires --send-approved")
+    return date_str or datetime.now().strftime("%Y-%m-%d"), send_approved, test_to
 
 
 def require_send_package(date_str):
@@ -505,13 +519,16 @@ def log(message):
 
 
 def main():
-    date_str, send_approved = parse_cli(sys.argv[1:])
+    date_str, send_approved, test_to = parse_cli(sys.argv[1:])
     marker = MARKER_DIR / f".newsletter-sent-{date_str}"
-    mode = "SEND-APPROVED" if send_approved else "NO-SEND PREFLIGHT"
+    if send_approved and test_to:
+        mode = f"TEST-SEND to {test_to}"
+    else:
+        mode = "SEND-APPROVED" if send_approved else "NO-SEND PREFLIGHT"
 
     log(f"=== Daily brief send start: {date_str} ({mode}) ===")
 
-    if marker.exists():
+    if marker.exists() and not test_to:
         log(f"Already sent for {date_str} — skipping (delete {marker.name} to force resend)")
         return
 
@@ -519,6 +536,8 @@ def main():
     if send_approved:
         package_path = require_send_package(date_str)
         log(f"Approval package found: {package_path.relative_to(WORKSPACE)}")
+        if test_to:
+            log(f"TEST-SEND mode: real subscriber lists will not receive email.")
     else:
         log("NO-SEND mode: pass --send-approved after Duncan approves the send package.")
 
@@ -550,7 +569,10 @@ def main():
         emails = get_list_emails(list_id, hs_token)
         log(f"  [{key}] {len(emails)} subscribers in list {list_id}")
 
-        if not emails:
+        if test_to:
+            emails = [test_to]
+            log(f"  [{key}] TEST-SEND recipient override: {test_to}")
+        elif not emails:
             log(f"  [{key}] No subscribers — skipping")
             continue
 
@@ -570,8 +592,10 @@ def main():
         total_sent += sent
         total_failed += len(failed)
 
-    if send_approved:
+    if send_approved and not test_to:
         log(f"=== Done — total sent: {total_sent} | total failed: {total_failed} ===")
+    elif send_approved and test_to:
+        log(f"=== Done — test emails sent: {total_sent} | failed: {total_failed} ===")
     else:
         log(f"=== Done — no emails sent | planned recipients: {total_planned} ===")
 
@@ -580,8 +604,10 @@ def main():
     elif fallback_segments:
         log(f"  [no-send] fallback alert suppressed for: {', '.join(fallback_segments)}")
 
-    if send_approved:
+    if send_approved and not test_to:
         marker.touch()
+    elif send_approved and test_to:
+        log("TEST-SEND mode: newsletter sent marker not created.")
 
 
 def alert_fallback(date_str, segments):

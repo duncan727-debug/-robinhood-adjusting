@@ -49,8 +49,16 @@ Approved send after the package is reviewed:
 python3 scripts/send-daily-brief.py 2026-07-07 --send-approved
 ```
 
+Approved internal test send only:
+
+```bash
+python3 scripts/send-daily-brief.py 2026-07-07 --send-approved --test-to duncan@example.com
+```
+
 ## Operating rule
 
 This is the approval checkpoint for subscriber sending. The actual send step should stay separate until Duncan explicitly approves the package.
 
 The sender itself is approval-gated: without `--send-approved`, it only reports what it would do. With `--send-approved`, it also requires `publication/briefs/YYYY-MM-DD/send-package.json` to exist before any email can leave Gmail.
+
+Use `--test-to` for an internal approval send. It sends only to that address and does not create the `.newsletter-sent-YYYY-MM-DD` marker.
