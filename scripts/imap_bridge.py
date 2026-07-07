@@ -40,6 +40,23 @@ BOUNCE_SENDERS = (
 
 SELF_SKIP = {"duncanlittlejohn727@gmail.com"}
 
+BLOCKED_REPLY_DOMAINS = (
+    "beehiiv.com",
+    "mail.beehiiv.com",
+    "creatorspotlight.com",
+    "google.com",
+)
+
+BLOCKED_REPLY_LOCAL_PARTS = (
+    "no-reply",
+    "noreply",
+    "newsletter",
+    "notifications",
+    "product",
+    "marketing",
+    "news",
+)
+
 CALENDLY_SENDERS = (
     "no-reply@calendly.com",
     "notifications@calendly.com",
@@ -668,6 +685,43 @@ def extract_snippet(msg):
     return " ".join(keep)[:800]
 
 
+def reply_skip_reason(msg, from_addr, subject):
+    """Return a reason to skip false-positive replies, or None for real replies."""
+    local, _, domain = from_addr.partition("@")
+    domain = domain.lower()
+    if "beehiiv" in from_addr or any(domain == d or domain.endswith("." + d) for d in BLOCKED_REPLY_DOMAINS):
+        return "blocked bulk/vendor domain"
+    if local.startswith(BLOCKED_REPLY_LOCAL_PARTS):
+        return "blocked bulk/vendor sender"
+
+    bulk_headers = (
+        "List-Unsubscribe",
+        "List-Id",
+        "List-Post",
+        "X-Campaign",
+        "X-Newsletter",
+        "X-Mailgun-Tag",
+        "X-SES-MESSAGE-TAGS",
+    )
+    if any(msg.get(h) for h in bulk_headers):
+        return "bulk/list header"
+
+    precedence = (msg.get("Precedence") or "").lower()
+    if precedence in {"bulk", "list", "junk"}:
+        return f"precedence={precedence}"
+
+    auto_submitted = (msg.get("Auto-Submitted") or "").lower()
+    if auto_submitted and auto_submitted != "no":
+        return f"auto-submitted={auto_submitted}"
+
+    has_reply_header = bool(msg.get("In-Reply-To") or msg.get("References"))
+    subject_l = (subject or "").strip().lower()
+    if not has_reply_header and not subject_l.startswith(("re:", "fw:", "fwd:")):
+        return "no reply headers"
+
+    return None
+
+
 def extract_full_text(msg):
     """Return the plain-text body of a reply with quoted history removed.
     Falls back to stripped HTML if no text/plain part exists."""
@@ -810,6 +864,10 @@ def main():
 
         # Reply path — sender's email matches a known contact
         if from_addr in contacts_by_email and from_addr not in SELF_SKIP:
+            skip_reason = reply_skip_reason(msg, from_addr, subject)
+            if skip_reason:
+                log(f"  · SKIP REPLY → {from_addr}  reason: {skip_reason}  subject: {subject[:60]}")
+                continue
             cid = contacts_by_email[from_addr]
             if uid not in state["processed_replies"]:
                 snippet = extract_snippet(msg)
