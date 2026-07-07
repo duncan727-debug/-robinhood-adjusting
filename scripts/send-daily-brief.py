@@ -2,11 +2,18 @@
 """
 Daily newsletter send: routes segment-specific briefs to the correct HubSpot lists.
 
+Safety default: this script does not send unless --send-approved is passed and
+publication/briefs/YYYY-MM-DD/send-package.json exists.
+
 Brief files expected at: content/briefs/YYYY-MM-DD-{segment}.html
   Segments: homeowner, service-provider, real-estate
 
 Falls back to a single content/briefs/YYYY-MM-DD.html if segment files don't exist
 (backward compat with older briefs).
+
+Usage:
+  python3 scripts/send-daily-brief.py 2026-07-07
+  python3 scripts/send-daily-brief.py 2026-07-07 --send-approved
 """
 
 import html as html_lib
@@ -27,9 +34,11 @@ from workspace_config import REPO_ROOT, WORKSPACE_CONFIG_DIR, get_secret, load_d
 WORKSPACE = REPO_ROOT
 BRIEFS_DIR = WORKSPACE / "content" / "briefs"
 MD_BRIEFS_DIR = WORKSPACE / "briefs"
+SITE_BRIEFS_DIR = WORKSPACE / "site" / "briefs"
 CONFIG_FILE = WORKSPACE_CONFIG_DIR / ".services-config.txt"
 LOG_PATH    = WORKSPACE / "scripts" / "newsletter-send.log"
 MARKER_DIR  = WORKSPACE / "scripts"
+PACKAGE_DIR = WORKSPACE / "publication" / "briefs"
 
 GMAIL_USER = "duncanlittlejohn727@gmail.com"
 FROM_NAME = "Robinhood Adjusting"
@@ -42,14 +51,14 @@ SEGMENTS = [
 ]
 
 
-def load_credentials():
+def load_credentials(require_gmail=True):
     load_dotenv_secrets()
     gmail_pw = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
     content = CONFIG_FILE.read_text() if CONFIG_FILE.exists() else ""
-    if not gmail_pw:
+    if require_gmail and not gmail_pw:
         m = re.search(r"Gmail App Password.*?:\s*([a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4})", content)
         gmail_pw = m.group(1).replace(" ", "") if m else None
-    if not gmail_pw:
+    if require_gmail and not gmail_pw:
         sys.exit("ERROR: Gmail App Password not found in config.")
     hs_token = os.environ.get("HUBSPOT_API_KEY", "")
     if not hs_token:
@@ -57,6 +66,38 @@ def load_credentials():
     if not hs_token:
         sys.exit("ERROR: HUBSPOT_API_KEY not set and fallback not found.")
     return gmail_pw, hs_token
+
+
+def parse_cli(argv):
+    date_str = None
+    send_approved = False
+    for arg in argv:
+        if arg == "--send-approved":
+            send_approved = True
+        elif arg.startswith("-"):
+            sys.exit(f"ERROR: Unknown option {arg}")
+        elif date_str is None:
+            date_str = arg
+        else:
+            sys.exit(f"ERROR: Unexpected extra argument {arg}")
+    return date_str or datetime.now().strftime("%Y-%m-%d"), send_approved
+
+
+def require_send_package(date_str):
+    package_path = PACKAGE_DIR / date_str / "send-package.json"
+    if not package_path.exists():
+        sys.exit(
+            "ERROR: send approval package missing. Run "
+            f"`python3 scripts/prepare-brief-send-package.py {date_str} --write` "
+            "and get explicit approval before sending."
+        )
+    try:
+        package = json.loads(package_path.read_text())
+    except Exception as exc:
+        sys.exit(f"ERROR: invalid send package JSON at {package_path}: {exc}")
+    if package.get("date") != date_str:
+        sys.exit(f"ERROR: send package date mismatch in {package_path}")
+    return package_path
 
 
 def hubspot_get(path, token, retries=3):
@@ -333,11 +374,27 @@ def get_brief_html(date_str, segment_key=None):
 
     # Fallback: single brief for all segments
     path = BRIEFS_DIR / f"{date_str}.html"
-    if not path.exists():
-        return None
-    html = path.read_text()
-    m = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
-    return m.group(1).strip() if m else html
+    if path.exists():
+        html = path.read_text()
+        m = re.search(r"<body[^>]*>(.*?)</body>", html, re.DOTALL | re.IGNORECASE)
+        return m.group(1).strip() if m else html
+
+    # Current review-first workflow publishes approved briefs under site/briefs.
+    # Use the core article body when legacy content/briefs files have not been
+    # generated for the date.
+    site_path = SITE_BRIEFS_DIR / f"{date_str}.html"
+    if site_path.exists():
+        site_html = site_path.read_text()
+        core = re.search(
+            r'(<div style="font-family:Georgia,[^"]*max-width:640px;">.*?</div>)\s*</td></tr>',
+            site_html,
+            re.DOTALL | re.IGNORECASE,
+        )
+        if core:
+            return core.group(1).strip()
+        body = re.search(r"<body[^>]*>(.*?)</body>", site_html, re.DOTALL | re.IGNORECASE)
+        return body.group(1).strip() if body else site_html
+    return None
 
 
 def build_brief_page_html(body_content, date_str, subject, *, include_unsubscribe=False):
@@ -448,22 +505,31 @@ def log(message):
 
 
 def main():
-    date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
+    date_str, send_approved = parse_cli(sys.argv[1:])
     marker = MARKER_DIR / f".newsletter-sent-{date_str}"
+    mode = "SEND-APPROVED" if send_approved else "NO-SEND PREFLIGHT"
 
-    log(f"=== Daily brief send start: {date_str} ===")
+    log(f"=== Daily brief send start: {date_str} ({mode}) ===")
 
     if marker.exists():
         log(f"Already sent for {date_str} — skipping (delete {marker.name} to force resend)")
         return
 
+    package_path = None
+    if send_approved:
+        package_path = require_send_package(date_str)
+        log(f"Approval package found: {package_path.relative_to(WORKSPACE)}")
+    else:
+        log("NO-SEND mode: pass --send-approved after Duncan approves the send package.")
+
     ensure_html_brief(date_str)
     ensure_segmented_briefs(date_str)
-    password, hs_token = load_credentials()
+    password, hs_token = load_credentials(require_gmail=send_approved)
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
 
     total_sent = 0
     total_failed = 0
+    total_planned = 0
     fallback_segments = []
 
     for segment in SEGMENTS:
@@ -491,6 +557,11 @@ def main():
         subject = f"{label} — {date_fmt}"
         html = build_email_html(brief_body, date_str, subject)
 
+        if not send_approved:
+            total_planned += len(emails)
+            log(f"  [{key}] NO-SEND would send subject `{subject}` to {len(emails)} recipient(s)")
+            continue
+
         sent, failed = send_segment(emails, subject, html, password)
         log(f"  [{key}] Sent: {sent} | Failed: {len(failed)}")
         for email, err in failed:
@@ -499,12 +570,18 @@ def main():
         total_sent += sent
         total_failed += len(failed)
 
-    log(f"=== Done — total sent: {total_sent} | total failed: {total_failed} ===")
+    if send_approved:
+        log(f"=== Done — total sent: {total_sent} | total failed: {total_failed} ===")
+    else:
+        log(f"=== Done — no emails sent | planned recipients: {total_planned} ===")
 
-    if fallback_segments:
+    if send_approved and fallback_segments:
         alert_fallback(date_str, fallback_segments)
+    elif fallback_segments:
+        log(f"  [no-send] fallback alert suppressed for: {', '.join(fallback_segments)}")
 
-    marker.touch()
+    if send_approved:
+        marker.touch()
 
 
 def alert_fallback(date_str, segments):

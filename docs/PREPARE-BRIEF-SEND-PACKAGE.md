@@ -37,6 +37,20 @@ Build the shell package without HubSpot:
 python3 scripts/prepare-brief-send-package.py 2026-07-07 --offline --write
 ```
 
+No-send sender preflight:
+
+```bash
+python3 scripts/send-daily-brief.py 2026-07-07
+```
+
+Approved send after the package is reviewed:
+
+```bash
+python3 scripts/send-daily-brief.py 2026-07-07 --send-approved
+```
+
 ## Operating rule
 
 This is the approval checkpoint for subscriber sending. The actual send step should stay separate until Duncan explicitly approves the package.
+
+The sender itself is approval-gated: without `--send-approved`, it only reports what it would do. With `--send-approved`, it also requires `publication/briefs/YYYY-MM-DD/send-package.json` to exist before any email can leave Gmail.
