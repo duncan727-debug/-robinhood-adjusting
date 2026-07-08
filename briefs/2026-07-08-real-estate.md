@@ -4,32 +4,26 @@
 
 ## Today's Signal
 
-The market can feel calmer when the tropics are quiet and insurance-rate headlines improve. That calm is useful, but it should not replace diligence.
-
-The National Hurricane Center says tropical cyclone formation is not expected during the next seven days. Citizens says approved 2026 homeowners multiperil rates are dropping by an average of 8.8%. Those are both helpful facts for buyer confidence, but they do not eliminate property-level friction.
+The strongest real-estate story today is carrying-cost clarity. Taxes, condo assessments, insurance, roof coverage, and local development momentum all affect whether a buyer's monthly number is real.
 
 ## Closing-Table Read
 
-Before buyers rely on a carrying-cost estimate, verify the property facts:
+The Wall Street Journal reports that Florida local governments are already preparing for a possible homestead-exemption expansion on the November 2026 ballot. If passed, the proposal would expand the exemption from $50,000 to $150,000 in 2027 and to $250,000 in 2028. That is a buyer-interest story, but it also raises questions about local services and fees.
 
-- Roof age and permits
-- Wind mitigation and opening protection
-- Flood zone and flood policy requirements
-- Prior claims and repairs
-- HOA or condo rules that affect use, parking, repairs, or assessments
-- Current insurance quote assumptions
+MarketWatch reports that condo prices are softening while association costs rise. It cited a May 2026 survey finding that 54% of community associations plan to increase regular assessments because of insurance costs and reserve needs, while 14% plan special assessments.
 
-Florida's Office of Insurance Regulation now receives residential market-share reports monthly at county and ZIP-code level. That is another reminder that "the Florida insurance market" is not one uniform thing. Local carrier appetite and property facts matter.
+The Real Deal's July 8 Hallandale Beach development map shows Broward continuing to absorb demand between Miami and Fort Lauderdale, with residential, office, hotel, and mixed-use projects in motion.
 
 ## Practical Script
 
-"The broader market is improving, but let's verify this property's insurance and repair facts before we treat the estimate as final."
+"The market headline looks better, but let's verify the real monthly number: taxes, insurance, association budget, reserves, assessments, flood, roof condition, and open permits."
 
-That sentence keeps the conversation calm without pretending risk is gone.
+That script keeps buyers calm while protecting the deal from surprise costs.
 
 ## Sources
 
-- National Hurricane Center: https://www.nhc.noaa.gov/gtwo.php
-- Citizens Property Insurance Corporation: https://www.citizensfla.com/-/20260304-citizens-2026-multiperil-rates-to-drop-statewide
-- Florida Office of Insurance Regulation residential market share reports: https://floir.com/tools-and-data/residential-market-share-reports
-- Florida Realtors HOA article: https://www.floridarealtors.org/news-media/news-articles/2026/06/hoa-parking-bans-hinge-who-owns-road-not-rules
+- Wall Street Journal: https://www.wsj.com/us-news/florida-state-property-taxes-f5921237
+- MarketWatch: https://www.marketwatch.com/story/condos-are-getting-cheaper-but-list-prices-dont-include-this-fast-growing-hidden-cost-042bcdfd
+- The Real Deal Hallandale Beach development: https://therealdeal.com/miami/2026/07/08/hallandale-beach-attracts-wave-of-new-development/
+- Johnson Pope HB 913 guide: https://www.jpfirm.com/news-resources/florida-hb-913-guide-2026-impacts-condo-association-lawyer-johnson-pope/
+- RWorld market reports: https://rworld.com/market

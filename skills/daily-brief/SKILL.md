@@ -59,6 +59,8 @@ When a homeowner, a trade professional, and a real-estate agent open their respe
 - No Duncan-in-first-person unless quoting him.
 - No mention of Duncan, the CRM, outreach, or content-marketing plans. Reader-facing only.
 - No watchlist items or internal operational notes in any reader-facing brief, site page, newsletter, or send package. Keep watchlists in private planning files only.
+- Lead with a substantive market, insurance, legal, development, claims, or local-government story. A lack of storms or quiet tropics can be included as a secondary risk note, but should not be the top story unless it is genuinely the most important property signal.
+- Each daily brief must present at least 3 separate stories. Use up to 5 on busy days. The preferred format is: one strong lead story, 2-4 additional distinct stories, then audience-specific segment notes.
 
 ## Fact-checking (mandatory before publish)
 Every factual claim must be verified against a primary or major-publisher source before it appears in the brief. No plausible-sounding fakes. No estimates rendered as facts. If a number can't be verified, either omit it or label it explicitly (e.g., "industry-estimated", "as reported by [source]"). When citing legislation, link the bill page (flsenate.gov / flhouse.gov). When citing carrier filings, link FLOIR or the carrier's release. When citing weather, link NOAA / NWS / NHC. Per `feedback_no_fabrication` — verified or labeled estimate, nothing in between.

@@ -4,26 +4,27 @@
 
 ## Today's Signal
 
-The tropics are quiet, but your house still has normal summer risk today. The National Hurricane Center says tropical cyclone formation is not expected during the next seven days, while Florida Disaster says isolated afternoon storms can still be slow-moving and produce brief heavy downpours.
+The biggest homeowner story today is not the lack of a storm. It is cost pressure shifting around the house: Florida's property-tax debate, condo assessment pressure, Citizens rate relief, and roof coverage choices are all moving at once.
 
-That means this is a file-prep day, not a fear day. The homeowners who have the easiest claims later are usually the ones who already have roof photos, attic or ceiling photos, mitigation forms, flood documents, paid invoices, permits, and contractor scopes organized before water gets in.
+## What Changed
 
-## What To Do Today
+The Wall Street Journal reports that Florida cities and counties are already preparing for a possible constitutional amendment that would expand the homestead property-tax exemption if voters approve it in November 2026. That could lower homeowner taxes, but it could also pressure local services that affect property life: permitting, drainage, emergency response, code enforcement, and infrastructure maintenance.
 
-- Photograph roof edges, ceilings, attic staining, gutters, drains, exterior doors, windows, fences, trees, and HVAC equipment.
-- Save your wind mitigation form, flood policy, homeowners declaration page, paid invoices, and recent work orders in one folder.
-- If an afternoon storm causes damage, photograph the condition before cleanup when it is safe.
-- Do not rely only on verbal contractor notes. Ask for a written scope, photos, and completion notes.
+For condo owners, MarketWatch reports that 54% of community associations plan to raise regular assessments because of insurance costs and reserve needs, while 14% plan special assessments. That is the hidden cost behind softer condo list prices.
 
-## Insurance Note
+Citizens also has a practical note today: its website, PolicyCenter, ClaimCenter, electronic payments, and online claim tools are scheduled to be unavailable July 8 from 6:30 p.m. to 10:00 p.m. Claims can still be reported by phone at 866-411-2742.
 
-Citizens says its 2026 homeowners multiperil rates are dropping by an average of 8.8%, and wind-only policyholders are seeing an average 5.5% decrease. That is good news, but a lower renewal is not the same thing as a correct renewal.
+## What To Do
 
-When your policy renews, check the property facts: roof age, mitigation credits, opening protection, flood coverage, deductibles, replacement-cost assumptions, and prior claim history.
+- Keep your property-tax notice, insurance renewal, association budget, assessment notices, and flood documents in one folder.
+- If you own a condo, ask for reserve, budget, insurance appraisal, structural inspection, and assessment history before assuming the monthly cost is stable.
+- Save Citizens' claim phone number if you are a policyholder.
+- Photograph roof edges, ceilings, attic staining, gutters, drains, exterior doors, windows, fences, trees, and HVAC equipment before the next loss.
 
 ## Sources
 
+- Wall Street Journal: https://www.wsj.com/us-news/florida-state-property-taxes-f5921237
+- MarketWatch: https://www.marketwatch.com/story/condos-are-getting-cheaper-but-list-prices-dont-include-this-fast-growing-hidden-cost-042bcdfd
+- Citizens Property Insurance Corporation: https://www.citizensfla.com/
+- Florida Insurance Consumer Advocate: https://www.myfloridacfo.com/division/ica/propertyinsurancechanges
 - National Hurricane Center: https://www.nhc.noaa.gov/gtwo.php
-- Florida Disaster weather briefing: https://www.floridadisaster.org/weather/
-- Citizens Property Insurance Corporation: https://www.citizensfla.com/-/20260304-citizens-2026-multiperil-rates-to-drop-statewide
-- NOAA 2026 Atlantic hurricane outlook: https://www.noaa.gov/news-release/noaa-predicts-below-normal-2026-atlantic-hurricane-season
