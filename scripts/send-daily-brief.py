@@ -377,6 +377,27 @@ def ensure_segmented_briefs(date_str):
             log(f"  [segmented] {line.strip()}")
 
 
+def missing_segment_variants(date_str):
+    """Return segment keys missing a dedicated rendered HTML variant."""
+    return [
+        segment["key"]
+        for segment in SEGMENTS
+        if not (BRIEFS_DIR / f"{date_str}-{segment['key']}.html").exists()
+    ]
+
+
+def require_segment_variants(date_str):
+    missing = missing_segment_variants(date_str)
+    if not missing:
+        return
+    missing_text = ", ".join(missing)
+    raise SystemExit(
+        "ERROR: approved daily sends require dedicated segment variants. "
+        f"Missing content/briefs/{date_str}-{{{missing_text}}}.html. "
+        "Generate and review homeowner, service-provider, and real-estate variants before sending."
+    )
+
+
 def get_brief_html(date_str, segment_key=None):
     """Load segment-specific brief, falling back to generic brief."""
     if segment_key:
@@ -543,6 +564,12 @@ def main():
 
     ensure_html_brief(date_str)
     ensure_segmented_briefs(date_str)
+    if send_approved:
+        require_segment_variants(date_str)
+    else:
+        missing = missing_segment_variants(date_str)
+        if missing:
+            log(f"  [no-send] missing dedicated segment variants: {', '.join(missing)}")
     password, hs_token = load_credentials(require_gmail=send_approved)
     date_fmt = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
 
