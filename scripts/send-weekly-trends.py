@@ -24,6 +24,7 @@ from workspace_config import REPO_ROOT
 # Reuse the daily-brief helpers (HubSpot list fetch, branded HTML wrapper, etc.)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import importlib.util
+from publication_guard import assert_publication_safe
 spec = importlib.util.spec_from_file_location(
     "sdb",
     str(Path(__file__).resolve().parent / "send-daily-brief.py"),
@@ -170,6 +171,7 @@ def main() -> int:
 
     # Extract the body content from the standalone trends HTML
     raw = trends_path.read_text()
+    assert_publication_safe(raw, trends_path)
     m = re.search(r"<body[^>]*>(.*?)</body>", raw, re.DOTALL | re.IGNORECASE)
     body = m.group(1).strip() if m else raw
 

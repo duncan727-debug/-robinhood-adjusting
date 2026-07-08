@@ -58,6 +58,7 @@ When a homeowner, a trade professional, and a real-estate agent open their respe
 - No "stay tuned" / "watch this space" filler.
 - No Duncan-in-first-person unless quoting him.
 - No mention of Duncan, the CRM, outreach, or content-marketing plans. Reader-facing only.
+- No watchlist items or internal operational notes in any reader-facing brief, site page, newsletter, or send package. Keep watchlists in private planning files only.
 
 ## Fact-checking (mandatory before publish)
 Every factual claim must be verified against a primary or major-publisher source before it appears in the brief. No plausible-sounding fakes. No estimates rendered as facts. If a number can't be verified, either omit it or label it explicitly (e.g., "industry-estimated", "as reported by [source]"). When citing legislation, link the bill page (flsenate.gov / flhouse.gov). When citing carrier filings, link FLOIR or the carrier's release. When citing weather, link NOAA / NWS / NHC. Per `feedback_no_fabrication` — verified or labeled estimate, nothing in between.

@@ -39,3 +39,4 @@ python3 scripts/send-weekly-trends.py 2026-05-30 --send-approved
 - With `--send-approved`, `publication/trends/YYYY-MM-DD/send-package.json` must exist.
 - `--test-to` sends only to the internal test address and does not create the weekly sent marker.
 - Weekly trends remain review-first; no cron should send them automatically yet.
+- Watchlist items and internal operational notes are private only. Remove them before building the public trends HTML or preparing a subscriber send package.

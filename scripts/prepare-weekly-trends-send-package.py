@@ -10,6 +10,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+from publication_guard import assert_publication_safe
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://robinhoodadjusting.com"
@@ -108,6 +110,7 @@ def main() -> int:
     trends_path = swt.find_trends_html(requested_date, datetime.now())
     if not trends_path:
         raise SystemExit("ERROR: no weekly trends HTML found")
+    assert_publication_safe(trends_path.read_text(encoding="utf-8", errors="replace"), trends_path)
     trends_date = trends_path.stem
     week_label = swt.build_week_label(trends_path)
     subject = f"South Florida Weekly Trends - Week of {week_label}"

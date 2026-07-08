@@ -18,7 +18,11 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
-import markdown
+try:
+    import markdown
+except ModuleNotFoundError:
+    markdown = None
+from publication_guard import assert_publication_safe
 
 WORKSPACE = Path(__file__).resolve().parent.parent
 SRC_DIR = WORKSPACE / "trends"
@@ -47,16 +51,74 @@ def published_label(date_str: str) -> str:
     return d.strftime("%B %-d, %Y")
 
 
+def basic_markdown_to_html(md: str) -> str:
+    """Small fallback for this repo's trend-report markdown shape."""
+    def inline(text: str) -> str:
+        text = re.sub(r"&", "&amp;", text)
+        text = re.sub(r"<", "&lt;", text)
+        text = re.sub(r">", "&gt;", text)
+        text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+        text = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', text)
+        text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
+        return text
+
+    html_parts: list[str] = []
+    paragraph: list[str] = []
+    list_items: list[str] = []
+
+    def flush_paragraph() -> None:
+        if paragraph:
+            html_parts.append(f"<p>{inline(' '.join(paragraph))}</p>")
+            paragraph.clear()
+
+    def flush_list() -> None:
+        if list_items:
+            items = "\n".join(f"<li>{inline(item)}</li>" for item in list_items)
+            html_parts.append(f"<ul>\n{items}\n</ul>")
+            list_items.clear()
+
+    for raw_line in md.splitlines():
+        line = raw_line.strip()
+        if not line or line == "---":
+            flush_paragraph()
+            flush_list()
+            continue
+        if line.startswith("## "):
+            flush_paragraph()
+            flush_list()
+            html_parts.append(f"<h2>{inline(line[3:].strip())}</h2>")
+            continue
+        if line.startswith("### "):
+            flush_paragraph()
+            flush_list()
+            html_parts.append(f"<h3>{inline(line[4:].strip())}</h3>")
+            continue
+        if line.startswith("- "):
+            flush_paragraph()
+            list_items.append(line[2:].strip())
+            continue
+        flush_list()
+        paragraph.append(line)
+
+    flush_paragraph()
+    flush_list()
+    return "\n".join(html_parts)
+
+
 def build(md_path: Path) -> Path:
     date_str = md_path.stem
     src_md = md_path.read_text()
+    assert_publication_safe(src_md, md_path)
     body_md = re.sub(
         r"^# .*\n+\*\*[^\n]+\*\*[^\n]*\n+(---\n+)?",
         "",
         src_md,
         count=1,
     )
-    body_html = markdown.markdown(body_md, extensions=["tables", "fenced_code"])
+    if markdown:
+        body_html = markdown.markdown(body_md, extensions=["tables", "fenced_code"])
+    else:
+        body_html = basic_markdown_to_html(body_md)
 
     template = find_template().read_text()
     out = re.sub(

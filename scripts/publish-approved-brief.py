@@ -21,6 +21,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
+from publication_guard import assert_publication_safe
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://robinhoodadjusting.com"
@@ -412,8 +414,12 @@ def main() -> int:
     if args.commit_push and not args.write:
         raise SystemExit("--commit-push requires --write")
 
-    brief = parse_brief(date_text, read_draft(date_text))
+    draft = read_draft(date_text)
+    assert_publication_safe(draft, f"publication/briefs/{date_text}/README.md")
+    brief = parse_brief(date_text, draft)
     updates = build_updates(brief, args)
+    for path, content in updates.items():
+        assert_publication_safe(content, path)
     changed = [
         path for path, content in updates.items()
         if not path.exists() or path.read_text(encoding="utf-8") != content

@@ -34,13 +34,13 @@ The National Hurricane Center's 8:00 AM EDT July 7 outlook says tropical cyclone
 
 Source: [NHC Graphical Tropical Weather Outlook](https://www.nhc.noaa.gov/gtwo.php)
 
-### Rate transparency is becoming a better consumer conversation
+### Rate transparency is becoming a better consumer conversation, not a final 2026 mandate
 
-HB 767's analysis says property insurers seeking residential rate changes after October 1, 2026 must prepare a rate transparency report for consumers. It must be plain-language and show factors affecting the rate, including reinsurance, claims costs, and profits. The bill analysis also says statewide average requested and approved rate changes, plus county rating examples submitted for display by OIR, are not trade secrets.
+Earlier HB 767 analyses described a plain-language rate-transparency report for residential property-insurance rate changes after October 1, 2026. The final bill status matters: Florida's Senate and House bill pages show CS/HB 767 died in Rules, so this should be framed as a policy and consumer-education theme rather than an enacted 2026 mandate.
 
-**Implication:** this gives homeowners and agents a better framework for renewal conversations. The more transparent rate environment will reward clean documentation: mitigation, roof age, opening protection, claims history, occupancy, flood risk, and replacement-cost assumptions.
+**Implication:** homeowners and agents should still ask better renewal questions: what changed because of reinsurance, claims costs, roof age, mitigation credits, opening protection, claims history, occupancy, flood risk, and replacement-cost assumptions? The safe public message is documentation discipline, not overstating a bill that did not become law.
 
-Source: [Florida Senate HB 767 analysis](https://www.flsenate.gov/Session/Bill/2026/767/Analyses/h0767a.IBS.PDF)
+Sources: [Florida Senate CS/HB 767 status](https://www.flsenate.gov/Session/Bill/2026/767), [Florida House HB 767 status](https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=83407)
 
 ## Also Noted
 
@@ -61,13 +61,6 @@ For active listings, ask for proof instead of assurances: roof permits, wind mit
 
 Storm calls from ordinary afternoon weather are credibility moments. Use time-stamped photos, moisture readings, written scopes, and closeout notes so the customer has a claim-ready record if coverage becomes an issue.
 
-## Watchlist
-
-- NHC remains quiet, but daily thunderstorms can still create water, electrical, and roof-leak claims.
-- Logistics and ultra-luxury assets continue to trade, supporting referral opportunities with brokers, property managers, roofers, mitigation firms, and facility operators.
-- HB 767's October 1 rate-transparency framework should feed an autumn renewal-review campaign.
-- Phase 1 cron is installed; Phase 2 publishing should stay review-first until these July 6 and July 7 briefs are approved.
-
 ## Sources
 
 - National Hurricane Center: https://www.nhc.noaa.gov/gtwo.php
@@ -75,6 +68,7 @@ Storm calls from ordinary afternoon weather are credibility moments. Use time-st
 - Florida Disaster weather briefing: https://www.floridadisaster.org/weather/
 - NWS Miami Area Forecast Discussion: https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=mfl&product=AFD&site=NWS&version=1
 - The Real Deal: https://therealdeal.com/miami/2026/07/07/south-florida-top-real-estate-deals-june-29-2026-2/
-- Florida Senate HB 767 analysis: https://www.flsenate.gov/Session/Bill/2026/767/Analyses/h0767a.IBS.PDF
+- Florida Senate CS/HB 767 status: https://www.flsenate.gov/Session/Bill/2026/767
+- Florida House HB 767 status: https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=83407
 - Redfin: https://www.redfin.com/news/luxury-housing-market-may-2026/
 - Bisnow: https://www.bisnow.com/south-florida/news/commercial-real-estate/new-york-miami-migration-story-evolving-what-it-looks-like-to-live-it-135266

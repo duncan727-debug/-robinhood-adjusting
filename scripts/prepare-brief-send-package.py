@@ -21,6 +21,7 @@ from datetime import datetime
 from pathlib import Path
 
 from workspace_config import get_secret, load_dotenv_secrets
+from publication_guard import assert_publication_safe
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -130,6 +131,7 @@ def load_brief_title(date_text: str) -> str:
     if not page_path.exists():
         raise SystemExit(f"Published site brief not found: {page_path}")
     page = page_path.read_text(encoding="utf-8")
+    assert_publication_safe(page, page_path)
     h3 = re.search(r"<h3[^>]*>(.*?)</h3>", page, re.S | re.I)
     if h3:
         return re.sub(r"<[^>]+>", "", h3.group(1)).strip()
