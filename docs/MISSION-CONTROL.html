@@ -234,7 +234,7 @@
           <p class="muted">Production health endpoint confirms repo access, branch access, and required content checks.</p>
         </article>
         <article class="card major">
-          <span class="status ok">Phase 2B</span>
+          <span class="status ok">Phase 5</span>
           <div class="metric">7</div>
           <h3>Scheduled Jobs</h3>
           <p class="muted">OpenClaw cron has 7 enabled jobs. Reply sweeps now include bulk/newsletter/vendor filters.</p>
@@ -248,27 +248,27 @@
       </section>
 
       <div class="note">
-        <strong>Blunt read:</strong> the public face is alive, HubSpot is connected, review-first brief drafting is scheduled, and reply sweeps have been filtered against vendor/newsletter false positives. Email sends, public deploy jobs, and cold outreach remain intentionally off.
+        <strong>Blunt read:</strong> the public face is alive, HubSpot is connected, review-first daily drafting is scheduled, and publishing/sending now have approval gates. Email sends are possible only through explicit package review and approval. Cold outreach and autonomous public posting remain intentionally off.
       </div>
 
       <h2>Today At A Glance</h2>
       <section class="grid three">
         <article class="card">
           <h3>Publication</h3>
-          <div class="row"><div class="label">Latest daily brief</div><div>July 1, 2026, with homeowner, real-estate, service-provider, and full editions.</div></div>
-          <div class="row"><div class="label">Latest weekly trend</div><div>May 30, 2026. This is the biggest public freshness gap.</div></div>
+          <div class="row"><div class="label">Latest daily brief</div><div>July 7, 2026. July 6 and July 7 catch-up pages are live.</div></div>
+          <div class="row"><div class="label">Latest weekly trend</div><div>May 30, 2026. Weekly approval tooling is ready; content freshness is the remaining gap.</div></div>
           <div class="row"><div class="label">Live archive</div><div><a href="https://robinhoodadjusting.com/briefs/">robinhoodadjusting.com/briefs</a></div></div>
         </article>
         <article class="card">
           <h3>Website / Repo</h3>
           <div class="row"><div class="label">Live site</div><div><a href="https://robinhoodadjusting.com/">robinhoodadjusting.com</a></div></div>
-          <div class="row"><div class="label">Last pushed commit</div><div><code>76fd882</code> from July 1, 2026: Add project operating audit.</div></div>
-          <div class="row"><div class="label">Working tree</div><div>Two untracked docs previews exist: cron audit and July 1 current-state page.</div></div>
+          <div class="row"><div class="label">Last pushed commit</div><div><code>acf183f</code> from July 7, 2026: Add newsletter list hygiene audit.</div></div>
+          <div class="row"><div class="label">Working tree</div><div>Generated logs, reply-queue artifacts, review packages, and old docs previews remain local and intentionally uncommitted.</div></div>
         </article>
         <article class="card">
           <h3>Operating Assets</h3>
           <div class="row"><div class="label">CRM files</div><div>645 CRM-related files are present across drafts, intel, and source records.</div></div>
-          <div class="row"><div class="label">Scripts</div><div>142 top-level scripts exist; 52 still reference the old <code>/Users/victoria</code> workspace path.</div></div>
+          <div class="row"><div class="label">Scripts</div><div>146 top-level scripts exist; 55 still reference the old <code>/Users/victoria</code> workspace path.</div></div>
           <div class="row"><div class="label">Always-on base</div><div>OpenClaw cron service has 7 enabled Robinhood jobs registered across Phase 1 and Phase 2B.</div></div>
         </article>
       </section>
@@ -287,13 +287,13 @@
         </div>
         <div class="tl">
           <div class="time">Publication</div>
-          <div><div class="name">Brief and trend cadence</div><div class="detail">Latest live daily brief is July 1. Latest live weekly trend is May 30. The site looks fine, but the publishing rhythm is stale.</div></div>
-          <div><span class="status warn">Stale</span></div>
+          <div><div class="name">Brief and trend cadence</div><div class="detail">Latest live daily brief is July 7. Latest live weekly trend is May 30. Daily catch-up is fixed; weekly freshness still needs a new issue.</div></div>
+          <div><span class="status warn">Daily Live</span></div>
         </div>
         <div class="tl">
           <div class="time">Email</div>
-          <div><div class="name">Gmail operating channel</div><div class="detail">Prior audit verified Gmail IMAP, SMTP, drafts, and sends. Sending still needs explicit approval.</div></div>
-          <div><span class="status ok">Usable</span></div>
+          <div><div class="name">Approval-gated sender</div><div class="detail">Daily and weekly senders default to no-send preflight. Real sends require <code>--send-approved</code> plus a generated send-package JSON. Internal test sends use <code>--test-to</code>.</div></div>
+          <div><span class="status ok">Guarded</span></div>
         </div>
         <div class="tl">
           <div class="time">CRM</div>
@@ -306,6 +306,11 @@
           <div><span class="status ok">Filtered</span></div>
         </div>
         <div class="tl">
+          <div class="time">Lists</div>
+          <div><div class="name">Newsletter list hygiene</div><div class="detail">Read-only audit found 3 eligible contacts total and 13 skipped opportunity/non-subscriber contacts across HubSpot lists 18, 19, and 20.</div></div>
+          <div><span class="status warn">Needs Cleanup</span></div>
+        </div>
+        <div class="tl">
           <div class="time">Scripts</div>
           <div><div class="name">Legacy automation</div><div class="detail">A useful base exists, but many scripts are one-offs or still point to an old workspace. Review before running anything operational.</div></div>
           <div><span class="status warn">Partial</span></div>
@@ -316,23 +321,23 @@
       <section class="grid three">
         <article class="card">
           <span class="status ok">Ready</span>
-          <h3>Use HubSpot Carefully</h3>
-          <p class="muted">HubSpot is connected. Keep write tests deliberate because contact creation, list enrollment, and notifications touch the live CRM.</p>
+          <h3>Run Review-First Daily Briefs</h3>
+          <p class="muted">Morning cron drafts the package; Duncan reviews HTML; approved briefs publish through <code>publish-approved-brief.py</code>.</p>
         </article>
         <article class="card">
-          <span class="status bad">P0</span>
-          <h3>Rebuild Cron</h3>
-          <p class="muted">Register only the jobs we actually want now: publication build, website publish, reply check, health check, and weekly trend/report.</p>
-        </article>
-        <article class="card">
-          <span class="status warn">P1</span>
-          <h3>Refresh Public Content</h3>
-          <p class="muted">Publish a July reset trend and resume daily briefs before the archive starts signaling abandonment.</p>
+          <span class="status ok">Ready</span>
+          <h3>Use Approval Packages</h3>
+          <p class="muted">Daily and weekly sends now require review packages before test sends or subscriber sends can run.</p>
         </article>
         <article class="card">
           <span class="status warn">P1</span>
-          <h3>Triage Scripts</h3>
-          <p class="muted">Keep the five patched core scripts active; quarantine or modernize old path-dependent scripts before scheduling them.</p>
+          <h3>Refresh Weekly Trends</h3>
+          <p class="muted">The weekly workflow is guarded, but the latest public weekly trend is still May 30. Draft the next issue before turning on any weekly distribution.</p>
+        </article>
+        <article class="card">
+          <span class="status warn">P1</span>
+          <h3>Clean Newsletter Lists</h3>
+          <p class="muted">HubSpot lists include opportunity-stage contacts. Keep send guardrails active and clean list membership deliberately.</p>
         </article>
         <article class="card">
           <span class="status idle">P2</span>
@@ -341,8 +346,8 @@
         </article>
         <article class="card">
           <span class="status idle">P2</span>
-          <h3>Promote Homepage Preview</h3>
-          <p class="muted">Review <code>previews/robinhood-home-facelift.html</code> and decide whether it becomes the next live homepage iteration.</p>
+          <h3>Triage Legacy Scripts</h3>
+          <p class="muted">Several older automations still point to the old workspace path. Review before scheduling anything beyond the current cron set.</p>
         </article>
       </section>
 
@@ -353,8 +358,8 @@
           <div class="list">
             <p>Trust the live site, GitHub/Netlify health endpoint, and this mission-control page for operating status.</p>
             <p>Trust <code>site/briefs/</code> and <code>site/trends/</code> for public publication state.</p>
-            <p>Trust HubSpot for read-only CRM checks; use deliberate test leads before running write-heavy automations.</p>
-            <p>Trust checked scripts only. Age and path references matter in this repo.</p>
+            <p>Trust <code>publication/briefs/</code> and <code>publication/trends/</code> for review packages and local approval artifacts.</p>
+            <p>Trust approval-gated scripts: daily publish, daily send package, daily send, weekly send package, weekly send, and newsletter list audit.</p>
           </div>
         </article>
         <article class="card">
@@ -363,6 +368,7 @@
             <p><code>docs/DASHBOARD.html</code> and <code>docs/dashboard-data.js</code> are stale from June 15 and report 0% health.</p>
             <p>Old operations schedules claim jobs exist, but current scheduler checks contradict that.</p>
             <p>HubSpot write-heavy workflows should still be tested deliberately before scheduling.</p>
+            <p>Generated send packages and list audits include email addresses; do not commit them.</p>
             <p>Legacy CRM and outreach scripts may still contain old machine paths.</p>
           </div>
         </article>
@@ -373,13 +379,17 @@
         <a class="linkbox" href="https://robinhoodadjusting.com/"><strong>Live Website</strong><span>Production homepage</span></a>
         <a class="linkbox" href="https://robinhoodadjusting.com/briefs/"><strong>Daily Briefs</strong><span>Public publication archive</span></a>
         <a class="linkbox" href="https://robinhoodadjusting.com/trends/"><strong>Weekly Trends</strong><span>Public trend archive</span></a>
-        <a class="linkbox" href="./CRON-JOBS-2026-07-01.html"><strong>Cron Audit</strong><span>Scheduler reference snapshot</span></a>
+        <a class="linkbox" href="./CRON-PHASE-1-2026-07-07.md"><strong>Phase 1 Cron</strong><span>Live scheduler baseline</span></a>
+        <a class="linkbox" href="./CRON-PHASE-2B-2026-07-07.md"><strong>Daily Draft Cron</strong><span>Review-first daily brief job</span></a>
+        <a class="linkbox" href="./PUBLISH-APPROVED-BRIEF.md"><strong>Publish Helper</strong><span>Approved website publishing</span></a>
+        <a class="linkbox" href="./PREPARE-BRIEF-SEND-PACKAGE.md"><strong>Daily Send Package</strong><span>Subscriber preflight</span></a>
+        <a class="linkbox" href="./WEEKLY-TRENDS-APPROVAL-WORKFLOW.md"><strong>Weekly Approval</strong><span>Trends preflight and guarded send</span></a>
+        <a class="linkbox" href="./NEWSLETTER-LIST-HYGIENE.md"><strong>List Hygiene</strong><span>Read-only HubSpot list audit</span></a>
         <a class="linkbox" href="./PROJECT-AUDIT-2026-07-01.md"><strong>Project Audit</strong><span>July 1 operating review</span></a>
-        <a class="linkbox" href="../previews/robinhood-home-facelift.html"><strong>Homepage Facelift</strong><span>Saved preview, not live</span></a>
       </section>
 
       <footer>
-        Updated from July 7 checks plus <code>docs/PROJECT-AUDIT-2026-07-01.md</code>, <code>docs/CRON-JOBS-2026-07-01.html</code>, live site checks, OpenClaw cron status, local crontab status, repo history, and publication file inventory.
+        Updated from July 7 operations work: Phase 1 cron, Phase 2B daily drafts, approval-gated publishing and sending, weekly trends approval workflow, HubSpot list hygiene audit, live site checks, repo history, and publication file inventory.
       </footer>
     </div>
   </main>
