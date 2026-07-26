@@ -11,6 +11,7 @@ publication/trends/YYYY-MM-DD/send-package.json exists for the trends issue.
 """
 from __future__ import annotations
 
+import html
 import re
 import smtplib
 import sys
@@ -128,6 +129,138 @@ def build_week_label(trends_path: Path) -> str:
     return trends_path.stem
 
 
+def _inline_markdown(text: str) -> str:
+    """Render the small inline Markdown subset used by weekly reports."""
+    rendered = html.escape(text, quote=False)
+    rendered = re.sub(
+        r"\[([^\]]+)\]\((https?://[^)]+)\)",
+        r'<a href="\2" style="color:#b4233d;text-decoration:underline;">\1</a>',
+        rendered,
+    )
+    rendered = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", rendered)
+    rendered = re.sub(r"`([^`]+)`", r"<code>\1</code>", rendered)
+    rendered = re.sub(r"(?<!\w)_(.+?)_(?!\w)", r"<em>\1</em>", rendered)
+    return rendered
+
+
+def build_markdown_email_body(md_path: Path, trends_date: str) -> str:
+    """Build an email-safe report body from the approved Markdown source.
+
+    Rich website reports rely on class-based CSS, navigation, and layout
+    wrappers that do not survive consistently across email clients. The
+    Markdown sibling is the same approved editorial content, rendered here
+    with conservative inline styles.
+    """
+    source = md_path.read_text(encoding="utf-8")
+    assert_publication_safe(source, md_path)
+
+    date_match = re.search(
+        r"^\*\*(Week of [^*]+)\*\*\s*\|\s*Published\s+(.+?)\s*$",
+        source,
+        flags=re.MULTILINE,
+    )
+    date_line = (
+        f"{date_match.group(1)} | Published {date_match.group(2)}"
+        if date_match
+        else f"Week ending {trends_date}"
+    )
+    body_md = re.sub(
+        r"^# .*\n+\*\*[^*\n]+\*\*\s*\|[^\n]*\n+",
+        "",
+        source,
+        count=1,
+    )
+
+    parts: list[str] = []
+    paragraph: list[str] = []
+    list_items: list[str] = []
+
+    def flush_paragraph() -> None:
+        if not paragraph:
+            return
+        text = " ".join(paragraph)
+        source_line = text.startswith(("Source:", "Sources:"))
+        style = (
+            "font-family:Arial,sans-serif;color:#667085;font-size:12px;"
+            "line-height:1.55;margin:16px 0 0;"
+            if source_line
+            else
+            "font-family:Arial,sans-serif;color:#344454;font-size:15px;"
+            "line-height:1.68;margin:0 0 14px;"
+        )
+        parts.append(f'<p style="{style}">{_inline_markdown(text)}</p>')
+        paragraph.clear()
+
+    def flush_list() -> None:
+        if not list_items:
+            return
+        items = "\n".join(
+            '<li style="font-family:Arial,sans-serif;color:#3e4d5a;'
+            'font-size:14px;line-height:1.6;margin:0 0 9px;">'
+            f"{_inline_markdown(item)}</li>"
+            for item in list_items
+        )
+        parts.append(
+            '<ul style="margin:8px 0 20px;padding-left:22px;">'
+            f"{items}</ul>"
+        )
+        list_items.clear()
+
+    for raw_line in body_md.splitlines():
+        line = raw_line.strip()
+        if not line or line == "---":
+            flush_paragraph()
+            flush_list()
+            continue
+        if line.startswith("## "):
+            flush_paragraph()
+            flush_list()
+            parts.append(
+                '<h2 style="font-family:Georgia,serif;color:#0f2d4a;'
+                'font-size:25px;line-height:1.25;margin:30px 0 12px;'
+                'padding-top:22px;border-top:1px solid #dde3ea;">'
+                f"{_inline_markdown(line[3:].strip())}</h2>"
+            )
+            continue
+        if line.startswith("### "):
+            flush_paragraph()
+            flush_list()
+            parts.append(
+                '<h3 style="font-family:Arial,sans-serif;color:#0f2d4a;'
+                'font-size:12px;line-height:1.4;margin:20px 0 10px;'
+                'letter-spacing:1.4px;text-transform:uppercase;">'
+                f"{_inline_markdown(line[4:].strip())}</h3>"
+            )
+            continue
+        if line.startswith("- "):
+            flush_paragraph()
+            list_items.append(line[2:].strip())
+            continue
+        flush_list()
+        paragraph.append(line)
+
+    flush_paragraph()
+    flush_list()
+
+    report_url = f"https://robinhoodadjusting.com/trends/{trends_date}"
+    header = (
+        '<div style="border-bottom:3px solid #c9922a;padding-bottom:18px;'
+        'margin-bottom:24px;">'
+        '<h1 style="font-family:Georgia,serif;color:#0f2d4a;font-size:32px;'
+        'line-height:1.15;margin:0 0 10px;">South Florida Market Intelligence</h1>'
+        '<p style="font-family:Arial,sans-serif;color:#0f2d4a;font-size:18px;'
+        'font-weight:bold;line-height:1.4;margin:0 0 5px;">Weekly Trends Report</p>'
+        '<p style="font-family:Arial,sans-serif;color:#667085;font-size:13px;'
+        f'line-height:1.5;margin:0;">{html.escape(date_line)}</p>'
+        "</div>"
+        '<p style="font-family:Arial,sans-serif;margin:0 0 18px;">'
+        f'<a href="{report_url}" style="display:inline-block;background:#0f2d4a;'
+        'color:#ffffff;padding:10px 16px;text-decoration:none;border-radius:4px;'
+        'font-size:13px;font-weight:bold;">Read the report online →</a></p>'
+    )
+    return header + "\n".join(parts)
+
+
 def dedupe(emails: list[str]) -> list[str]:
     seen, out = set(), []
     for e in emails:
@@ -169,17 +302,22 @@ def main() -> int:
     else:
         log("NO-SEND mode: pass --send-approved after Duncan approves the weekly package.")
 
-    # Extract the body content from the standalone trends HTML
+    # Extract the body content from the standalone trends HTML. Rich report
+    # pages use their approved Markdown sibling for email-safe rendering.
     raw = trends_path.read_text()
     assert_publication_safe(raw, trends_path)
-    m = re.search(r"<body[^>]*>(.*?)</body>", raw, re.DOTALL | re.IGNORECASE)
-    body = m.group(1).strip() if m else raw
+    md_sibling = trends_path.with_suffix(".md")
+    if 'id="report"' in raw and md_sibling.exists():
+        body = build_markdown_email_body(md_sibling, trends_path.stem)
+    else:
+        m = re.search(r"<body[^>]*>(.*?)</body>", raw, re.DOTALL | re.IGNORECASE)
+        body = m.group(1).strip() if m else raw
 
-    # The standalone trends pages carry their own <style> block. The branded
-    # email wrapper expects bare body content, so strip the trends-page
-    # container chrome and let the wrapper's styles take over.
-    body = re.sub(r"<style[^>]*>.*?</style>", "", body, flags=re.DOTALL | re.IGNORECASE)
-    body = re.sub(r'</?(div|main|header)[^>]*>', "", body, flags=re.IGNORECASE)
+        # Legacy standalone trends pages carry their own <style> block. The
+        # branded email wrapper expects bare body content, so strip the page
+        # container chrome and let the wrapper's styles take over.
+        body = re.sub(r"<style[^>]*>.*?</style>", "", body, flags=re.DOTALL | re.IGNORECASE)
+        body = re.sub(r'</?(div|main|header)[^>]*>', "", body, flags=re.IGNORECASE)
 
     week_label = build_week_label(trends_path)
     subject = f"South Florida Weekly Trends — Week of {week_label}"

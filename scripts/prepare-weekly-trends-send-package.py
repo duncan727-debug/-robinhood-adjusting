@@ -113,7 +113,7 @@ def main() -> int:
     assert_publication_safe(trends_path.read_text(encoding="utf-8", errors="replace"), trends_path)
     trends_date = trends_path.stem
     week_label = swt.build_week_label(trends_path)
-    subject = f"South Florida Weekly Trends - Week of {week_label}"
+    subject = f"South Florida Weekly Trends — Week of {week_label}"
 
     _, hs_token = swt.sdb.load_credentials(require_gmail=False)
     all_emails: list[str] = []
