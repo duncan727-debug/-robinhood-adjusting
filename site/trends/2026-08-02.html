@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="South Florida Market Intelligence Weekly Trends Report for Week of July 27–August 2, 2026.">
+  <title>South Florida Market Intelligence | Weekly Trends Report | August 2, 2026</title>
+  <link rel="canonical" href="https://robinhoodadjusting.com/trends/2026-08-02">
+  <style>
+    :root {
+      --navy-950: #081b2d;
+      --navy-900: #0f2d4a;
+      --navy-800: #153b5d;
+      --blue-100: #eaf2f7;
+      --gold: #c9922a;
+      --gold-soft: #f4e7c9;
+      --red: #b4233d;
+      --ink: #202b36;
+      --muted: #667481;
+      --line: #d9e1e8;
+      --paper: #ffffff;
+      --canvas: #f3f5f7;
+      --green: #24715b;
+      --green-soft: #e7f4ef;
+      --shadow: 0 16px 44px rgba(8, 27, 45, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--red);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #7f152a;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 100;
+      padding: 10px 14px;
+      background: white;
+      color: var(--navy-900);
+    }
+
+    .skip-link:focus {
+      left: 12px;
+      top: 12px;
+    }
+
+    .masthead {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(201, 146, 42, 0.25), transparent 25rem),
+        linear-gradient(135deg, var(--navy-950), var(--navy-800));
+      color: white;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .masthead::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -175px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 42px rgba(255, 255, 255, 0.025),
+        0 0 0 96px rgba(255, 255, 255, 0.018);
+      pointer-events: none;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .masthead-inner {
+      position: relative;
+      z-index: 1;
+      padding: 32px 0 66px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 58px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .review-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .review-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201, 146, 42, 0.16);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    .pull-quote,
+    .judgment-title {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(40px, 5.8vw, 64px);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 0.99;
+    }
+
+    .report-subtitle {
+      margin: 18px 0 0;
+      color: white;
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 750;
+      letter-spacing: 0.01em;
+    }
+
+    .dek {
+      max-width: 790px;
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: clamp(15px, 1.8vw, 18px);
+      line-height: 1.55;
+    }
+
+    .report-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 24px;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    main {
+      padding: 0 0 76px;
+    }
+
+    .review-status {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin-top: -24px;
+      padding: 16px 18px;
+      border: 1px solid #e5cf9d;
+      border-radius: 11px;
+      background: #fffaf0;
+      box-shadow: 0 8px 26px rgba(8, 27, 45, 0.08);
+      color: #54401b;
+      font-size: 14px;
+    }
+
+    .status-icon {
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      margin: 28px 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      min-height: 132px;
+      padding: 22px 20px;
+      background: var(--paper);
+    }
+
+    .stat-value {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy-900);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      line-height: 1.45;
+    }
+
+    .opening {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.75fr);
+      gap: 28px;
+      margin: 30px 0;
+    }
+
+    .opening-copy,
+    .signal-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .opening-copy {
+      padding: 30px;
+    }
+
+    .opening-copy p {
+      margin: 0 0 15px;
+      font-size: 17px;
+    }
+
+    .opening-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .opening-copy strong {
+      color: var(--navy-900);
+    }
+
+    .signal-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 27px;
+      background: var(--navy-900);
+      color: white;
+    }
+
+    .signal-card-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .pull-quote {
+      margin: 24px 0 28px;
+      font-size: 25px;
+      line-height: 1.25;
+    }
+
+    .signal-card-note {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+    }
+
+    .jump-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .jump-nav a {
+      display: inline-block;
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--navy-800);
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .jump-nav a:hover {
+      border-color: #b8c7d3;
+      background: white;
+    }
+
+    .trend {
+      scroll-margin-top: 18px;
+      margin-bottom: 24px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .trend.lead {
+      border-top: 5px solid var(--gold);
+    }
+
+    .trend-heading {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .trend-number {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border: 1px solid #ccd8e1;
+      border-radius: 50%;
+      color: var(--navy-900);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .trend.lead .trend-number {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: white;
+    }
+
+    .trend-kicker {
+      display: block;
+      margin: 1px 0 5px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy-900);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.13;
+    }
+
+    .trend-body {
+      max-width: 920px;
+    }
+
+    .trend-body > p {
+      margin: 0 0 15px;
+      font-size: 16px;
+    }
+
+    .trend-body > p:first-child {
+      color: #344454;
+      font-size: 18px;
+    }
+
+    .why {
+      margin-top: 25px;
+      padding: 23px 24px;
+      border-left: 4px solid var(--navy-800);
+      border-radius: 0 9px 9px 0;
+      background: var(--blue-100);
+    }
+
+    .why h3 {
+      margin: 0 0 13px;
+      color: var(--navy-900);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .why ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .why li {
+      position: relative;
+      padding-left: 16px;
+      color: #3e4d5a;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .why li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .why strong {
+      color: var(--navy-900);
+    }
+
+    .sources {
+      margin-top: 22px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .sources strong {
+      color: #4c5b68;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .dates {
+      scroll-margin-top: 18px;
+      margin: 35px 0 24px;
+      padding: 34px;
+      border-radius: 14px;
+      background: var(--navy-950);
+      box-shadow: var(--shadow);
+      color: white;
+    }
+
+    .dates .section-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .dates h2 {
+      color: white;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .date-item {
+      min-height: 150px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .date-item time {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .date-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .judgment {
+      scroll-margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(210px, 0.62fr) minmax(0, 1.38fr);
+      gap: 28px;
+      margin-top: 24px;
+      padding: 35px;
+      border: 1px solid #cfe5dc;
+      border-radius: 14px;
+      background: var(--green-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .judgment-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .judgment-title {
+      margin: 0;
+      color: #174f40;
+      font-size: 30px;
+      line-height: 1.18;
+    }
+
+    .judgment-copy p {
+      margin: 0 0 13px;
+      color: #315a4e;
+      font-size: 16px;
+    }
+
+    .judgment-copy p:last-child {
+      margin-bottom: 0;
+      color: #174f40;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .source-note {
+      margin-top: 24px;
+      padding: 19px 22px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 860px) {
+      .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .opening,
+      .judgment {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 26px, 1120px);
+      }
+
+      .masthead-inner {
+        padding: 22px 0 48px;
+      }
+
+      .brand-row {
+        align-items: flex-start;
+        margin-bottom: 44px;
+      }
+
+      .review-badge {
+        max-width: 130px;
+        border-radius: 12px;
+        line-height: 1.3;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        min-height: 118px;
+        padding: 18px 15px;
+      }
+
+      .stat-value {
+        font-size: 28px;
+      }
+
+      .opening-copy,
+      .signal-card,
+      .trend,
+      .dates,
+      .judgment {
+        padding: 23px 20px;
+      }
+
+      .trend-heading {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 13px;
+      }
+
+      .trend-number {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
+
+      .why ul,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .why {
+        padding: 19px;
+      }
+
+      .footer-row {
+        display: block;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        font-size: 11pt;
+      }
+
+      .masthead {
+        background: var(--navy-900) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .jump-nav,
+      .review-status {
+        display: none;
+      }
+
+      .stat-grid,
+      .opening,
+      .trend,
+      .dates,
+      .judgment {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#report">Skip to report</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="brand-row">
+        <a class="brand" href="https://robinhoodadjusting.com/" aria-label="Robinhood Adjusting home">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span>
+            <span class="brand-name">ROBINHOOD</span>
+            <span class="brand-sub">Property Intelligence</span>
+          </span>
+        </a>
+      </div>
+
+      <h1>South Florida Market Intelligence</h1>
+      <p class="report-subtitle">Weekly Trends Report</p>
+      <p class="dek">Week of July 27–August 2, 2026 | Published August 2, 2026</p>
+      <div class="report-meta">
+        <span>Robinhood Intelligence</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="report">
+<h2>Headline Trend — The Proof Burden Is Moving Upstream</h2>
+<p>South Florida's property market is functioning better in some respects, but it is becoming less forgiving of incomplete files.</p>
+<p>The week's most important developments were not one dramatic storm or one universal market turn. They were document tests arriving earlier in the process: the policy and claim chronology before a proposed mediation conference, the association records before a condominium loan, the written permit decision before work begins, the actual renewal rather than a statewide rate average, and the receipts and eligibility records behind a resilience benefit.</p>
+<p>The practical advantage is shifting to the owner, association, agent, contractor, or claims professional who can make a property easy to underwrite, insure, repair, finance, sell, and defend.</p>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Property owners:</strong> Keep insurance, flood, mitigation, permit, maintenance, and claim records together before renewal or loss.</li>
+<li><strong>Real estate professionals:</strong> Treat association condition, insurance, taxes, permits, and repair records as transaction inputs rather than closing cleanup.</li>
+<li><strong>Service providers:</strong> The closeout packet is part of the work product: permits or written exemptions, product information, receipts, photos, readings, disposal records, and completion notes should travel with the job.</li>
+<li><strong>Claims professionals and referral partners:</strong> Precise timelines and written status updates are becoming a trust and compliance differentiator.</li>
+</ul>
+<p>Sources: <a href="https://flrules.org/gateway/notice_Files.asp?ID=31037592">Florida DFS — proposed property-claim mediation rule</a>, <a href="https://singlefamily.fanniemae.com/media/document/pdf/lender-letter-ll-2026-03-updates-project-standards-property-insurance-requirements">Fannie Mae — Lender Letter LL-2026-03</a>, <a href="https://www.miamidade.gov/global/permit.page?Mduid_permit=per1614110071046330">Miami-Dade County — permit exemptions</a></p>
+<h2>Trend 2 — Insurance Is Calmer, but the Answer Is More Property-Specific</h2>
+<p>Florida's July insurance-stability material points toward a healthier statewide direction, including lower personal-residential lawsuit filings, improved reinsurance conditions, and lower average premiums from the prior reporting snapshot. Citizens also says its 2026 rate changes produce meaningful average reductions for some policyholders, and its policy count is far below its prior peak.</p>
+<p>South Florida's local result is less dramatic and more concentrated. Citizens' remaining policy base still has substantial exposure in Miami-Dade, Broward, and Palm Beach, and the January 1, 2027 flood phase-in remains important for subject personal-residential policies. A lower average does not tell an owner whether a particular roof, deductible, wind-mitigation credit, flood obligation, policy form, or renewal offer will improve.</p>
+<p>This is a move from broad scarcity toward narrower questions of timing, form, eligibility, total cost, and documentation. The stronger advisory conversation is no longer simply “rates are high” or “rates are falling.” It is: which fact in this property's file changes the insurance outcome?</p>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Property owners:</strong> Compare the actual renewal using matching limits, deductibles, endorsements, mitigation credits, and flood cost.</li>
+<li><strong>Real estate professionals:</strong> Verify the actual carrier's binding status and policy form before putting an insurance assumption into a closing timeline.</li>
+<li><strong>Commercial and association clients:</strong> Start diligence early enough to compare coverage, deductibles, exclusions, financial strength, and total cost.</li>
+<li><strong>Service providers:</strong> A documented roof, mitigation, repair, and maintenance history can support the next insurance conversation even when it cannot guarantee a price.</li>
+</ul>
+<p>Sources: <a href="https://floir.gov/docs-sf/default-source/property-and-casualty/stability-unit-reports/july-2026-isu-report.pdf">Florida OIR — July 2026 Insurance Stability Unit report</a>, <a href="https://www.citizensfla.com/-/20260630-policies-in-force">Citizens — June 30 policies in force</a>, <a href="https://www.citizensfla.com/flood">Citizens — flood requirements</a>, <a href="https://www.citizensfla.com/news">Citizens — public news</a></p>
+<h2>Trend 3 — Condo Financing Is Becoming an Association-Document Test</h2>
+<p>For applicable conventional mortgage applications dated August 3 or later, Fannie Mae retires Limited Review and Freddie Mac retires Streamlined Review. This is not a universal ban on condominium lending. Eligible projects may still qualify for a waiver, reciprocal review, an established-project route, or another exemption.</p>
+<p>It does make the application date and building file more consequential. Association budgets, reserve studies, master insurance, assessment history, critical-repair records, and project questionnaires may determine whether financing stays on schedule. The reserve-study change also requires Fannie Mae's highest recommended reserve allocation to be reflected in the budget when the lender relies on that study. The separate 15% minimum replacement-reserve allocation for applicable Full Reviews begins January 4, 2027.</p>
+<p>The financing signal was reinforced by the national mortgage-rate benchmark: Freddie Mac reported a 30-year average of 6.66% on July 30, up from 6.58% the prior week. That is a national benchmark, not a South Florida quote, but it reinforces the need to refresh payment, cash-to-close, debt-to-income, and lock assumptions rather than carry a stale worksheet into an August transaction.</p>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Buyers and sellers:</strong> Ask the lender for the project's review route and document list before treating a closing date as secure.</li>
+<li><strong>Associations:</strong> Keep the budget, reserve study, master policy, assessment history, repair records, and project questionnaire current and accessible.</li>
+<li><strong>Real estate professionals:</strong> Separate borrower preapproval from project approval and identify the association-document owner early.</li>
+<li><strong>Service providers:</strong> Repair scopes and completion records can become part of the association's financing and insurance file, not just the contractor's invoice package.</li>
+</ul>
+<p>Sources: <a href="https://singlefamily.fanniemae.com/media/document/pdf/lender-letter-ll-2026-03-updates-project-standards-property-insurance-requirements">Fannie Mae — Lender Letter LL-2026-03</a>, <a href="https://sf.freddiemac.com/faqs/condominium-unit-mortgage-faq">Freddie Mac — Condominium Unit Mortgage FAQ</a>, <a href="https://guide.freddiemac.com/app/guide/bulletin/2026-C">Freddie Mac — Guide Bulletin 2026-C</a>, <a href="https://www.freddiemac.com/pmms">Freddie Mac — Primary Mortgage Market Survey</a></p>
+<h2>Trend 4 — Local Programs Are Useful, but Jurisdiction and Eligibility Control Access</h2>
+<p>The week produced several useful property and resilience programs, but none should be marketed as a universal shortcut.</p>
+<p>Miami-Dade's new under-$7,500 permit-exemption path applies only to qualifying work and properties under its stated conditions. The County's same-day residential-permitting program can speed eligible electronically submitted applications, but structural review, historic-district properties, open code-enforcement cases, and work intended to legalize violations remain outside the expedited route. Palm Beach County has separately stated that the HB 803 exemption is not available there because of its flood-hazard designation under the Florida Building Code.</p>
+<p>The same administrative pattern appears in resilience funding. My Safe Florida Home grant eligibility depends on the inspection and program rules, while Florida's home-hardening sales-tax benefit depends on qualifying products, receipts, and the required refund form. Miami-Dade's multifamily Surtax, SHIP, and HOME funding round has a defined August 14 closing date. The benefit is real only when the property, applicant, product, scope, timing, and documentation match the program.</p>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Property owners:</strong> Get a written permit or exemption determination from the correct authority before work begins; retain receipts and eligibility records for any refund or grant.</li>
+<li><strong>Service providers:</strong> Do not promise “no permit,” same-day approval, or reimbursement from a headline. Match the scope, address, value, product, permit, and closeout file.</li>
+<li><strong>Housing and development teams:</strong> Reconcile site, financing, insurance, compliance, schedule, and scope before the Miami-Dade funding deadline.</li>
+<li><strong>Real estate professionals:</strong> Ask which jurisdiction, program, and approval document actually govern the property instead of assuming a county program travels across the region.</li>
+</ul>
+<p>Sources: <a href="https://www.miamidade.gov/global/permit.page?Mduid_permit=per1614110071046330">Miami-Dade County — permit exemptions</a>, <a href="https://www.miamidade.gov/global/release.page?Mduid_release=rel1784664891463197">Miami-Dade County — same-day residential permitting</a>, <a href="https://discover.pbc.gov/pzb/Lists/latestnews/NewsDispForm.aspx?ContentTypeId=0x010400191217236A06A64B833871212E254D1B&amp;ID=241">Palm Beach County — HB 803 notice</a>, <a href="https://mysafeflhome.com/faq/">My Safe Florida Home — FAQ</a>, <a href="https://floridarevenue.com/Forms_library/current/dr26hh.pdf">Florida DOR — Form DR-26HH</a>, <a href="https://www.miamidade.gov/global/housing/requests.page">Miami-Dade housing requests</a></p>
+<h2>Trend 5 — Claims Preparation Is Moving Before the Conference and Before the Storm</h2>
+<p>Florida's proposed property-claim mediation rewrite would require each party to exchange a pre-mediation statement 10 days before the conference unless all parties waive it. The draft statement would summarize the dispute, identify prior demands and offers, state the party's view of a fair resolution, and identify any professional attending. The insurer would bring the policy and entire claim file. Association claims receive additional authority, structural, governing-document, and damage-allocation documentation requirements.</p>
+<p>The rule is only proposed, but it captures a broader operating direction: file assembly is moving upstream. That was also visible in the week's field conditions. South Florida avoided an active tropical system, yet heat advisories, lightning, heavy rain, slow cells, and localized flooding affected open roofs, exterior work, mitigation, HVAC systems, and occupied properties.</p>
+<p>For claims teams, the distinction between “the storm caused it” and “the site was already open when rain arrived” is established by the chronology, photographs, work log, readings, temporary repairs, invoices, and removed materials. For owners and contractors, accurate local weather language is part of credibility; a quiet tropical map does not mean a quiet loss environment.</p>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Property owners:</strong> Keep a dated chronology, policy, estimates, photographs, correspondence, temporary-repair records, and invoices together.</li>
+<li><strong>Service providers:</strong> Close each weather-sensitive job with source notes, readings where relevant, time-stamped photos, material records, and completion notes.</li>
+<li><strong>Real estate professionals:</strong> Preserve repair and claim records that may later affect disclosure, inspection, insurance, or financing conversations.</li>
+<li><strong>Claims professionals:</strong> Coordinate authority, experts, interpreters, contractors, and association representatives before any formal conference deadline.</li>
+</ul>
+<p>Sources: <a href="https://myfloridacfo.com/division/generalcounsel/upcoming-rulemaking/2026/08/05/rulemaking-workshops-and-hearings/69j-166.002---69j-166.031--property-insurance-claims">Florida DFS — August 5 property-claim mediation hearings</a>, <a href="https://flrules.org/gateway/notice_Files.asp?ID=31037592">Florida Administrative Register — proposed Rule 69J-166.031</a>, <a href="https://www.weather.gov/mfl/">NWS Miami — forecast and hazards</a>, <a href="https://www.nhc.noaa.gov/CurrentStorms.json">National Hurricane Center — current storms</a></p>
+<h2>Trend 6 — Property Work Is Increasingly Judged by Its Closeout File</h2>
+<p>The week's Miami-Dade developments added a broader property-management signal. The County's July 31 Zero Waste Master Plan emphasizes waste reduction, recycling, organics management, and a more circular economy. The Historic Dade County Courthouse auction also put preservation requirements, zoning, structural conditions, and adaptive reuse into the redevelopment conversation.</p>
+<p>Neither development creates a new residential claim rule. Together, they reinforce the value of a complete material and property record. Restoration, roofing, demolition, mitigation, and redevelopment files should identify what was removed, what was salvaged or recycled, where debris went, what was repaired, and what remained unresolved. That record supports billing, insurance, future maintenance, permitting, and a later buyer's diligence.</p>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Property owners:</strong> Keep repair, maintenance, disposal, and improvement records with the property file, not only in a contractor's inbox.</li>
+<li><strong>Service providers:</strong> Treat photographs, invoices, permits, disposal or recycling records, and completion notes as part of the deliverable.</li>
+<li><strong>Real estate professionals:</strong> Older, historic, or heavily repaired properties need diligence on preservation, zoning, structural condition, insurance, and closeout—not only price and square footage.</li>
+<li><strong>Referral partners:</strong> The strongest introduction is often a documented handoff between owner, association, contractor, engineer, and claims professional.</li>
+</ul>
+<p>Sources: <a href="https://www.miamidade.gov/global/release.page?Mduid_release=rel1784227965641865">Miami-Dade County — Zero Waste Master Plan</a>, <a href="https://www.miamidade.gov/global/release.page?Mduid_release=rel1780606101613942">Miami-Dade County — Historic Dade County Courthouse auction</a></p>
+<h2>Dates to Watch</h2>
+<ul>
+<li><strong>August 3:</strong> Fannie Mae Limited Review and Freddie Mac Streamlined Review retire for applicable condominium loan applications; related reserve-study changes begin.</li>
+<li><strong>August 5, 2 p.m. and 3 p.m.:</strong> Florida DFS hearings on proposed residential and commercial-residential property-claim mediation changes. These are proposed changes, not final rules.</li>
+<li><strong>August 14:</strong> Miami-Dade's FY 2026 Surtax, SHIP, and HOME multifamily funding request window closes.</li>
+<li><strong>January 1, 2027:</strong> Citizens' commercial clearinghouses are due, and the final flood-coverage phase begins for remaining subject personal-residential policies.</li>
+<li><strong>January 4, 2027:</strong> Fannie Mae's 15% minimum annual replacement-reserve allocation begins for applicable Full Reviews.</li>
+</ul>
+<h2>Robinhood Judgment</h2>
+<p>South Florida's market is becoming more functional, not more forgiving.</p>
+<p>Insurance pricing is stabilizing in places, transactions are moving, local permitting is becoming faster for some work, and resilience programs are available. But the week's daily briefs point to the same conclusion from different directions: the owner, association, agent, contractor, or claims professional with the cleanest file has the most room to move.</p>
+<p>The property file is part of the asset now. Treat it that way.</p>
+<h2>Source Note</h2>
+<p>This report synthesizes the Robinhood Intelligence daily briefs dated July 27, July 28, July 29, July 30, July 31, August 1, and August 2, 2026. Direct primary-source links are used where stable. Time-sensitive weather and rulemaking facts remain tied to the dated daily briefs.</p>
+<p>_Prepared by Robinhood Intelligence. Informational only; not legal, tax, lending, engineering, or insurance advice._</p>
+</main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>Prepared by Robinhood Intelligence.</span>
+      <span>Informational only; not legal, tax, lending, engineering, or insurance advice.</span>
+    </div>
+  </footer>
+</body>
+</html>

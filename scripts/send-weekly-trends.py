@@ -118,10 +118,10 @@ def build_week_label(trends_path: Path) -> str:
         text = md_sibling.read_text()
         m = re.search(r"\*\*Week of ([^*]+)\*\*", text)
         if m:
-            return m.group(1).strip()
+            return m.group(1).split("|", 1)[0].strip()
         m = re.search(r"^\*\*([^*]+)\*\*\s*\|", text, flags=re.MULTILINE)
         if m:
-            return m.group(1).strip()
+            return m.group(1).split("|", 1)[0].strip()
     html_text = trends_path.read_text(errors="replace")
     m = re.search(r'<div class="date-info">Week of ([^|<]+)', html_text)
     if m:
